@@ -1,0 +1,37 @@
+{
+  "navigation": {
+    "aiData": "AI i Dane",
+    "services": "Usługi",
+    "insights": "Insights",
+    "about": "O nas",
+    "getInTouch": "Skontaktuj się",
+    "aiDataItems": {
+      "machineLearning": {
+        "title": "Machine Learning",
+        "description": "Niestandardowe modele ML i rozwiązania AI"
+      },
+      "dataAnalytics": {
+        "title": "Analityka Danych",
+        "description": "Przekształć dane w praktyczne wnioski"
+      },
+      "aiConsulting": {
+        "title": "Konsulting AI",
+        "description": "Strategiczne wdrażanie AI"
+      }
+    },
+    "servicesItems": {
+      "webDevelopment": {
+        "title": "Tworzenie Stron",
+        "description": "Nowoczesne, skalowalne aplikacje webowe"
+      },
+      "mobileApps": {
+        "title": "Aplikacje Mobilne",
+        "description": "Rozwiązania natywne i wieloplatformowe"
+      },
+      "cloudSolutions": {
+        "title": "Rozwiązania Chmurowe",
+        "description": "Infrastruktura i migracja do chmury"
+      }
+    }
+  }
+}
