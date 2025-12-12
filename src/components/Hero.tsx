@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Image from 'next/image';
 
 interface NetworkInformation extends EventTarget {
@@ -15,6 +15,7 @@ interface NavigatorWithConnection extends Navigator {
 
 export default function Hero() {
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [locale, setLocale] = useState('en');
   
   // Check connection speed on component mount
   const shouldUseVideo = useMemo(() => {
@@ -34,11 +35,41 @@ export default function Hero() {
 
   const [videoError, setVideoError] = useState(!shouldUseVideo);
 
+  // Read locale from cookie after hydration and listen for changes
+  useEffect(() => {
+    // Initial read after hydration
+    const cookieLocale = document.cookie
+      .split('; ')
+      .find(row => row.startsWith('locale='))
+      ?.split('=')[1];
+    if (cookieLocale && cookieLocale !== locale) {
+      setLocale(cookieLocale);
+      setVideoLoaded(false);
+    }
+
+    // Check for locale changes periodically
+    const checkLocale = () => {
+      const currentCookieLocale = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('locale='))
+        ?.split('=')[1];
+      if (currentCookieLocale && currentCookieLocale !== locale) {
+        setLocale(currentCookieLocale);
+        setVideoLoaded(false);
+      }
+    };
+
+    const interval = setInterval(checkLocale, 500);
+    
+    return () => clearInterval(interval);
+  }, [locale]);
+
   return (
     <section className="relative h-screen w-full overflow-hidden">
       {/* Video Background */}
       {!videoError && (
         <video
+          key={locale} // Force remount when locale changes
           autoPlay
           muted
           loop
@@ -48,8 +79,8 @@ export default function Hero() {
           onError={() => setVideoError(true)}
           className="absolute inset-0 h-full w-full object-cover"
         >
-          <source src="/assets/hero/hero-video.mp4" type="video/mp4" />
-          <source src="/assets/hero/hero-video.webm" type="video/webm" />
+          <source src={`/assets/hero/hero-video-${locale}.mp4`} type="video/mp4" />
+          <source src={`/assets/hero/hero-video-${locale}.webm`} type="video/webm" />
         </video>
       )}
 

@@ -1,0 +1,37 @@
+{
+  "navigation": {
+    "aiData": "AI & Data",
+    "services": "Services",
+    "insights": "Insights",
+    "about": "About us",
+    "getInTouch": "Get in touch",
+    "aiDataItems": {
+      "machineLearning": {
+        "title": "Machine Learning",
+        "description": "Custom ML models and AI solutions"
+      },
+      "dataAnalytics": {
+        "title": "Data Analytics",
+        "description": "Transform data into actionable insights"
+      },
+      "aiConsulting": {
+        "title": "AI Consulting",
+        "description": "Strategic AI implementation guidance"
+      }
+    },
+    "servicesItems": {
+      "webDevelopment": {
+        "title": "Web Development",
+        "description": "Modern, scalable web applications"
+      },
+      "mobileApps": {
+        "title": "Mobile Apps",
+        "description": "Native and cross-platform solutions"
+      },
+      "cloudSolutions": {
+        "title": "Cloud Solutions",
+        "description": "Infrastructure and cloud migration"
+      }
+    }
+  }
+}
