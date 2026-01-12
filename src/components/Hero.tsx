@@ -1,110 +1,125 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
-import Image from 'next/image';
-
-interface NetworkInformation extends EventTarget {
-  effectiveType?: '4g' | '3g' | '2g' | 'slow-2g';
-}
-
-interface NavigatorWithConnection extends Navigator {
-  connection?: NetworkInformation;
-  mozConnection?: NetworkInformation;
-  webkitConnection?: NetworkInformation;
-}
+import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const [locale, setLocale] = useState('en');
-  
-  // Check connection speed on component mount
-  const shouldUseVideo = useMemo(() => {
-    if (typeof window === 'undefined') return true;
-    
-    const nav = navigator as NavigatorWithConnection;
-    const connection = nav.connection || nav.mozConnection || nav.webkitConnection;
-    
-    if (connection && connection.effectiveType) {
-      const effectiveType = connection.effectiveType;
-      // Use image fallback for slow connections (2g, slow-2g)
-      return effectiveType !== 'slow-2g' && effectiveType !== '2g';
-    }
-    
-    return true; // Default to video if connection info unavailable
-  }, []);
+  const t = useTranslations('hero');
+  const headline = t('headline');
+  const highlight = t('headlineHighlight');
 
-  const [videoError, setVideoError] = useState(!shouldUseVideo);
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 0.2,
+      },
+    },
+  };
 
-  // Read locale from cookie after hydration and listen for changes
-  useEffect(() => {
-    // Initial read after hydration
-    const cookieLocale = document.cookie
-      .split('; ')
-      .find(row => row.startsWith('locale='))
-      ?.split('=')[1];
-    if (cookieLocale && cookieLocale !== locale) {
-      setLocale(cookieLocale);
-      setVideoLoaded(false);
-    }
+  const wordVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 20,
+      filter: 'blur(8px)',
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      filter: 'blur(0px)',
+      transition: {
+        duration: 0.5,
+        ease: [0.25, 0.4, 0.25, 1] as const,
+      },
+    },
+  };
 
-    // Check for locale changes periodically
-    const checkLocale = () => {
-      const currentCookieLocale = document.cookie
-        .split('; ')
-        .find(row => row.startsWith('locale='))
-        ?.split('=')[1];
-      if (currentCookieLocale && currentCookieLocale !== locale) {
-        setLocale(currentCookieLocale);
-        setVideoLoaded(false);
-      }
-    };
+  const subtextVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.6,
+        delay: 0.8,
+        ease: [0.25, 0.4, 0.25, 1] as const,
+      },
+    },
+  };
 
-    const interval = setInterval(checkLocale, 500);
+  const buttonVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        delay: 1.1,
+        ease: [0.25, 0.4, 0.25, 1] as const,
+      },
+    },
+  };
+
+  // Split headline into words and render with highlight
+  const renderAnimatedHeadline = () => {
+    const words = headline.split(' ');
     
-    return () => clearInterval(interval);
-  }, [locale]);
+    return words.map((word, index) => {
+      const isHighlight = word === highlight || word.includes(highlight);
+      
+      return (
+        <motion.span
+          key={index}
+          variants={wordVariants}
+          className={`inline-block mr-[0.25em] ${isHighlight ? 'text-purple-500' : ''}`}
+        >
+          {word}
+        </motion.span>
+      );
+    });
+  };
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Video Background */}
-      {!videoError && (
-        <video
-          key={locale} // Force remount when locale changes
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          onLoadedData={() => setVideoLoaded(true)}
-          onError={() => setVideoError(true)}
-          className="absolute inset-0 h-full w-full object-cover"
+      {/* Plain white background */}
+      <div className="absolute inset-0 bg-white" />
+
+      {/* Content - Bottom Left */}
+      <div className="absolute bottom-24 left-6 right-6 sm:bottom-20 sm:left-12 md:bottom-16 md:left-16 md:right-auto max-w-5xl z-10">
+        <motion.h1 
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-medium text-black mb-4 sm:mb-6 md:mb-8 leading-[1.1] tracking-normal"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
-          <source src={`/assets/hero/hero-video-${locale}.mp4`} type="video/mp4" />
-          <source src={`/assets/hero/hero-video-${locale}.webm`} type="video/webm" />
-        </video>
-      )}
-
-      {/* Image Fallback - Solid color background - only shows if video fails */}
-      {videoError && (
-        <div className="absolute inset-0 bg-linear-to-br from-gray-900 via-gray-800 to-black" />
-      )}
-
-      {/* Overlay Gradient */}
-      {/* <div className="absolute inset-0 bg-linear-to-b from-black/50 via-black/30 to-black/70" /> */}
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 animate-bounce">
-        <svg
-          className="h-6 w-6 text-white"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+          {renderAnimatedHeadline()}
+        </motion.h1>
+        
+        <motion.p 
+          className="text-base sm:text-lg md:text-xl lg:text-2xl text-black/70 mb-6 sm:mb-8 md:mb-10 leading-relaxed max-w-2xl font-light"
+          variants={subtextVariants}
+          initial="hidden"
+          animate="visible"
         >
-          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
+          {t('subtext')}
+        </motion.p>
+        
+        <motion.div
+          variants={buttonVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center bg-black text-white px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl sm:rounded-2xl text-sm sm:text-base font-medium tracking-wide hover:bg-gray-800 transition-all duration-300"
+          >
+            {t('needAdvice')}
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

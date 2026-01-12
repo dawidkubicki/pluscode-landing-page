@@ -116,11 +116,12 @@ export default function Navigation() {
   }, [isMenuOpen]);
 
   return (
+    <>
     <div 
-      className={`fixed top-0 left-0 right-0 z-50 px-6 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 transition-all duration-300 ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       } ${
-        hasScrolled ? 'pt-3' : 'pt-6'
+        hasScrolled ? 'pt-2 sm:pt-3' : 'pt-4 sm:pt-6'
       }`}
     >
       <nav 
@@ -135,7 +136,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 z-10">
             <Image 
-              src="/assets/logo/pluscode-logo.svg" 
+              src={hasScrolled ? "/assets/logo/pluscode-logo.svg" : "/assets/logo/pluscode-black-logo.svg"}
               alt="PLUSCODE" 
               width={80} 
               height={20}
@@ -145,7 +146,7 @@ export default function Navigation() {
 
           {/* Center Menu - Absolutely positioned to stay centered */}
           <div className={`absolute left-1/2 -translate-x-1/2 items-center space-x-4 ${
-            hasScrolled ? 'hidden' : 'hidden md:flex'
+            hasScrolled ? 'hidden' : 'hidden lg:flex'
           }`}>
             {/* AI & Data with Dropdown */}
             <div
@@ -153,87 +154,19 @@ export default function Navigation() {
               onMouseEnter={() => setActiveDropdown('ai-data')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className={`text-white/90 hover:text-white transition-all duration-200 font-medium text-sm tracking-wide flex items-center gap-1 px-3 py-1.5 rounded-xl ${
-                activeDropdown === 'ai-data'
-                  ? 'bg-white/10 backdrop-blur-sm'
-                  : 'hover:bg-white/5'
-              }`}>
-                {t('aiData')}
+              <button className={`${hasScrolled ? 'text-white/90 hover:text-white' : 'text-black/90 hover:text-black'} transition-all duration-200 font-normal text-sm tracking-wide flex items-center gap-1 px-3 py-1.5 relative group`}>
+                <span className="relative">
+                  {t('aiData')}
+                  <span className={`absolute left-0 bottom-0 h-px ${hasScrolled ? 'bg-white' : 'bg-black'} transition-all duration-300 ease-out ${
+                    activeDropdown === 'ai-data' ? 'w-full' : 'w-0'
+                  }`} />
+                </span>
                 <svg className="w-3 h-3" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                   <path d="M19 9l-7 7-7-7"></path>
                 </svg>
               </button>
-              
-              {/* Dropdown Menu */}
-              <div
-                className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[720px] bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 origin-top border border-gray-200 ${
-                  activeDropdown === 'ai-data'
-                    ? 'opacity-100 scale-100 translate-y-0'
-                    : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'
-                }`}
-              >
-                <div className="flex">
-                  {/* Left side - Menu items */}
-                  <div className="flex-1 p-5 space-y-2">
-                    {aiDataItems.map((item, index) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        className="flex items-start gap-3 p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-all duration-200 group border border-gray-200"
-                      >
-                        <div className="shrink-0 w-8 h-8 bg-gray-200 rounded-lg flex items-center justify-center mt-0.5">
-                          <svg className="w-4 h-4 text-gray-700" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                            {index === 0 ? (
-                              <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                            ) : index === 1 ? (
-                              <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                            ) : (
-                              <path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            )}
-                          </svg>
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="font-semibold text-black group-hover:text-black transition-colors text-sm">
-                            {item.title}
-                          </div>
-                          <div className="text-xs text-gray-600 mt-0.5 leading-relaxed">
-                            {item.description}
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                  
-                  {/* Right side - Featured content */}
-                  <div className="w-72 p-5">
-                    <div className="h-full bg-gray-900 rounded-2xl p-5 relative overflow-hidden shadow-lg">
-                      <div className="absolute top-3 right-3">
-                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                          <svg className="w-4 h-4 text-black" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                            <path d="M7 17L17 7M17 7H7M17 7V17" />
-                          </svg>
-                        </div>
-                      </div>
-                      <div className="relative z-10">
-                        <div className="text-gray-400 text-xs font-medium mb-2 uppercase tracking-wider">Featured</div>
-                        <h3 className="text-white font-bold text-lg mb-2 leading-tight">AI Innovation Report 2025</h3>
-                        <p className="text-gray-300 text-xs leading-relaxed mb-4">Explore the latest trends and insights in artificial intelligence.</p>
-                        <div className="flex items-center gap-2 text-white text-xs font-medium">
-                          <span>Learn more</span>
-                          <svg className="w-3 h-3" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                            <path d="M9 5l7 7-7 7" />
-                          </svg>
-                        </div>
-                      </div>
-                      <div className="absolute bottom-0 right-0 w-32 h-32 opacity-10">
-                        <svg viewBox="0 0 100 100" className="text-white" fill="currentColor">
-                          <circle cx="80" cy="80" r="60" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {/* Invisible bridge to dropdown */}
+              <div className="absolute left-0 right-0 h-20 top-full" />
             </div>
 
             {/* Services with Dropdown */}
@@ -242,103 +175,41 @@ export default function Navigation() {
               onMouseEnter={() => setActiveDropdown('services')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className={`text-white/90 hover:text-white transition-all duration-200 font-medium text-sm tracking-wide flex items-center gap-1 px-3 py-1.5 rounded-xl ${
-                activeDropdown === 'services'
-                  ? 'bg-white/10 backdrop-blur-sm'
-                  : 'hover:bg-white/5'
-              }`}>
-                {t('services')}
+              <button className={`${hasScrolled ? 'text-white/90 hover:text-white' : 'text-black/90 hover:text-black'} transition-all duration-200 font-normal text-sm tracking-wide flex items-center gap-1 px-3 py-1.5 relative group`}>
+                <span className="relative">
+                  {t('services')}
+                  <span className={`absolute left-0 bottom-0 h-px ${hasScrolled ? 'bg-white' : 'bg-black'} transition-all duration-300 ease-out ${
+                    activeDropdown === 'services' ? 'w-full' : 'w-0'
+                  }`} />
+                </span>
                 <svg className="w-3 h-3" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                   <path d="M19 9l-7 7-7-7"></path>
                 </svg>
               </button>
-              
-              {/* Dropdown Menu */}
-              <div
-                className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[720px] bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 origin-top border border-gray-200 ${
-                  activeDropdown === 'services'
-                    ? 'opacity-100 scale-100 translate-y-0'
-                    : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'
-                }`}
-              >
-                <div className="flex">
-                  {/* Left side - Menu items */}
-                  <div className="flex-1 p-5 space-y-2">
-                    {servicesItems.map((item, index) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        className="flex items-start gap-3 p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-all duration-200 group border border-gray-200"
-                      >
-                        <div className="shrink-0 w-8 h-8 bg-gray-200 rounded-lg flex items-center justify-center mt-0.5">
-                          <svg className="w-4 h-4 text-gray-700" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                            {index === 0 ? (
-                              <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                            ) : index === 1 ? (
-                              <path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                            ) : (
-                              <path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                            )}
-                          </svg>
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="font-semibold text-black group-hover:text-black transition-colors text-sm">
-                            {item.title}
-                          </div>
-                          <div className="text-xs text-gray-600 mt-0.5 leading-relaxed">
-                            {item.description}
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                  
-                  {/* Right side - Featured content */}
-                  <div className="w-72 p-5">
-                    <div className="h-full bg-gray-900 rounded-2xl p-5 relative overflow-hidden shadow-lg">
-                      <div className="absolute top-3 right-3">
-                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                          <svg className="w-4 h-4 text-black" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                            <path d="M7 17L17 7M17 7H7M17 7V17" />
-                          </svg>
-                        </div>
-                      </div>
-                      <div className="relative z-10">
-                        <div className="text-gray-400 text-xs font-medium mb-2 uppercase tracking-wider">Case Study</div>
-                        <h3 className="text-white font-bold text-lg mb-2 leading-tight">Digital Transformation Success</h3>
-                        <p className="text-gray-300 text-xs leading-relaxed mb-4">See how we helped businesses scale with modern solutions.</p>
-                        <div className="flex items-center gap-2 text-white text-xs font-medium">
-                          <span>Learn more</span>
-                          <svg className="w-3 h-3" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                            <path d="M9 5l7 7-7 7" />
-                          </svg>
-                        </div>
-                      </div>
-                      <div className="absolute bottom-0 right-0 w-32 h-32 opacity-10">
-                        <svg viewBox="0 0 100 100" className="text-white" fill="currentColor">
-                          <circle cx="80" cy="80" r="60" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {/* Invisible bridge to dropdown */}
+              <div className="absolute left-0 right-0 h-20 top-full" />
             </div>
 
             {/* Insights */}
             <Link
               href="/insights"
-              className="text-white/90 hover:text-white transition-all duration-200 font-medium text-sm tracking-wide px-3 py-1.5 rounded-xl hover:bg-white/5"
+              className={`${hasScrolled ? 'text-white/90 hover:text-white' : 'text-black/90 hover:text-black'} transition-all duration-200 font-normal text-sm tracking-wide px-3 py-1.5 relative group`}
             >
-              {t('insights')}
+              <span className="relative">
+                {t('insights')}
+                <span className={`absolute left-0 bottom-0 h-px ${hasScrolled ? 'bg-white' : 'bg-black'} transition-all duration-300 ease-out w-0 group-hover:w-full`} />
+              </span>
             </Link>
 
             {/* About us */}
             <Link
               href="/about"
-              className="text-white/90 hover:text-white transition-all duration-200 font-medium text-sm tracking-wide px-3 py-1.5 rounded-xl hover:bg-white/5"
+              className={`${hasScrolled ? 'text-white/90 hover:text-white' : 'text-black/90 hover:text-black'} transition-all duration-200 font-normal text-sm tracking-wide px-3 py-1.5 relative group`}
             >
-              {t('about')}
+              <span className="relative">
+                {t('about')}
+                <span className={`absolute left-0 bottom-0 h-px ${hasScrolled ? 'bg-white' : 'bg-black'} transition-all duration-300 ease-out w-0 group-hover:w-full`} />
+              </span>
             </Link>
           </div>
 
@@ -346,14 +217,14 @@ export default function Navigation() {
           <div className="flex items-center gap-3 z-10">
             {/* Language switcher dropdown */}
             <div 
-              className="hidden md:block relative"
+              className="hidden lg:block relative"
               onMouseEnter={() => setIsLangDropdownOpen(true)}
               onMouseLeave={() => setIsLangDropdownOpen(false)}
             >
-              <button className={`cursor-pointer text-white px-2 py-1 rounded-xl text-xs font-medium transition-all duration-200 flex items-center gap-1 ${
+              <button className={`cursor-pointer ${hasScrolled ? 'text-white' : 'text-black'} px-2 py-1 rounded-xl text-xs font-normal transition-all duration-200 flex items-center gap-1 ${
                 isLangDropdownOpen 
-                  ? 'bg-white/10 backdrop-blur-sm' 
-                  : 'hover:bg-white/5'
+                  ? hasScrolled ? 'bg-white/10 backdrop-blur-sm' : 'bg-black/10'
+                  : hasScrolled ? 'hover:bg-white/5' : 'hover:bg-black/5'
               }`} suppressHydrationWarning>
                 {currentLocale.toUpperCase()}
                 <svg className="w-3 h-3" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -397,168 +268,205 @@ export default function Navigation() {
             {/* Get in touch button */}
             <Link
               href="/contact"
-              className={`hidden md:flex items-center justify-center bg-white text-black px-5 h-9 rounded-2xl text-xs font-normal tracking-wide hover:bg-gray-100 transition-all duration-300 ${
+              className={`hidden lg:flex items-center justify-center ${hasScrolled ? 'bg-white text-black hover:bg-gray-100' : 'bg-black text-white hover:bg-gray-900'} px-5 h-9 rounded-2xl text-xs font-normal tracking-wide transition-all duration-300 ${
                 hasScrolled ? '-translate-x-2' : 'translate-x-0'
               }`}
             >
               <span className="mt-px">{t('getInTouch')}</span>
             </Link>
 
-            {/* Hamburger button - shows on scroll for desktop, always shows on mobile */}
+            {/* Menu button - always visible on mobile/tablet, shows on scroll for desktop */}
             <button 
               onClick={() => setIsMenuOpen(true)}
-              className={`bg-white hover:cursor-pointer text-black px-3 h-9 rounded-2xl transition-all duration-300 hover:bg-gray-100 flex items-center justify-center ${
+              className={`${hasScrolled ? 'text-white hover:text-white/80' : 'text-black hover:text-black/70'} hover:cursor-pointer text-sm font-medium transition-all duration-300 ${
                 hasScrolled 
-                  ? 'md:opacity-100 md:pointer-events-auto' 
-                  : 'md:opacity-0 md:pointer-events-none'
-              } opacity-100 scale-100`}
+                  ? '' 
+                  : 'lg:opacity-0 lg:pointer-events-none'
+              }`}
             >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
+              Menu
             </button>
           </div>
         </div>
         </div>
       </nav>
+    </div>
 
-      {/* Full-screen Menu */}
-      <div
-        className={`fixed inset-0 bg-black z-50 transition-all duration-500 ${
-          isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
-      >
-        <div className="h-full w-full overflow-y-auto">
-          {/* Close button */}
-          <div className="flex justify-end p-6">
-            <button
-              onClick={() => setIsMenuOpen(false)}
-              className="text-white hover:text-gray-300 transition-colors"
-            >
-              <svg
-                className="w-8 h-8"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-            </button>
-          </div>
-
-          {/* Menu Content */}
-          <div className="flex flex-col items-center justify-center px-6 pb-12 space-y-12">
-            {/* Language switcher for mobile */}
-            <div className="flex flex-col items-center gap-3">
-              <div className="text-white/60 text-sm font-medium">Language</div>
-              <div className="flex items-center gap-3">
-                <button
-                  onClick={() => changeLocale('en')}
-                  className={`px-6 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${
-                    currentLocale === 'en'
-                      ? 'bg-white text-black'
-                      : 'bg-white/10 text-white/70 hover:text-white hover:bg-white/20'
-                  }`}
-                >
-                  English
-                </button>
-                <button
-                  onClick={() => changeLocale('pl')}
-                  className={`px-6 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${
-                    currentLocale === 'pl'
-                      ? 'bg-white text-black'
-                      : 'bg-white/10 text-white/70 hover:text-white hover:bg-white/20'
-                  }`}
-                >
-                  Polski
-                </button>
-              </div>
-            </div>
-
-            {/* AI & Data Section */}
-            <div className="text-center space-y-6">
-              <h3 className="text-white text-3xl md:text-4xl font-bold">{t('aiData')}</h3>
-              <div className="space-y-4">
-                {aiDataItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="block group"
-                  >
-                    <div className="text-white/90 hover:text-white text-xl md:text-2xl font-medium transition-colors">
-                      {item.title}
-                    </div>
-                    <div className="text-white/60 text-sm md:text-base mt-1">
-                      {item.description}
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Services Section */}
-            <div className="text-center space-y-6">
-              <h3 className="text-white text-3xl md:text-4xl font-bold">{t('services')}</h3>
-              <div className="space-y-4">
-                {servicesItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="block group"
-                  >
-                    <div className="text-white/90 hover:text-white text-xl md:text-2xl font-medium transition-colors">
-                      {item.title}
-                    </div>
-                    <div className="text-white/60 text-sm md:text-base mt-1">
-                      {item.description}
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Other Links */}
-            <div className="flex flex-col items-center space-y-6">
+    {/* AI & Data Dropdown Panel - Full width, behind nav */}
+    <div
+      className={`fixed top-0 left-0 right-0 w-full bg-white z-40 transition-all duration-300 ${
+        activeDropdown === 'ai-data'
+          ? 'opacity-100 visible'
+          : 'opacity-0 invisible pointer-events-none'
+      }`}
+      onMouseEnter={() => setActiveDropdown('ai-data')}
+      onMouseLeave={() => setActiveDropdown(null)}
+    >
+      <div className="w-full px-8 lg:px-16 pt-20 pb-10">
+        <div className="py-8">
+          <h3 className="text-black text-xs font-semibold uppercase tracking-wider mb-6">{t('aiData')}</h3>
+          <div className="space-y-4">
+            {aiDataItems.map((item) => (
               <Link
-                href="/insights"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-white/90 hover:text-white text-3xl md:text-4xl font-bold transition-colors"
+                key={item.href}
+                href={item.href}
+                className="block text-black text-sm uppercase tracking-wide hover:opacity-60 transition-opacity"
               >
-                {t('insights')}
+                {item.title}
               </Link>
-              <Link
-                href="/about"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-white/90 hover:text-white text-3xl md:text-4xl font-bold transition-colors"
-              >
-                {t('about')}
-              </Link>
-            </div>
-
-            {/* CTA Button */}
-            <Link
-              href="/contact"
-              onClick={() => setIsMenuOpen(false)}
-              className="bg-white text-black px-12 py-4 rounded-full font-bold text-xl hover:bg-gray-100 transition-all duration-200 hover:shadow-lg hover:scale-105"
-            >
-              {t('getInTouch')}
-            </Link>
+            ))}
           </div>
         </div>
       </div>
     </div>
+
+    {/* Services Dropdown Panel - Full width, behind nav */}
+    <div
+      className={`fixed top-0 left-0 right-0 w-full bg-white z-40 transition-all duration-300 ${
+        activeDropdown === 'services'
+          ? 'opacity-100 visible'
+          : 'opacity-0 invisible pointer-events-none'
+      }`}
+      onMouseEnter={() => setActiveDropdown('services')}
+      onMouseLeave={() => setActiveDropdown(null)}
+    >
+      <div className="w-full px-8 lg:px-16 pt-20 pb-10">
+        <div className="py-8">
+          <h3 className="text-black text-xs font-semibold uppercase tracking-wider mb-6">{t('services')}</h3>
+          <div className="space-y-4">
+            {servicesItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block text-black text-sm uppercase tracking-wide hover:opacity-60 transition-opacity"
+              >
+                {item.title}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Full-screen Menu - Outside nav wrapper to avoid stacking context issues */}
+    <div
+      className={`fixed inset-0 bg-black z-100 transition-all duration-500 ${
+        isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+      }`}
+    >
+      <div className="h-full w-full overflow-y-auto overscroll-contain">
+        {/* Close button */}
+        <div className="flex justify-end p-4 sm:p-6 sticky top-0 bg-black z-10">
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="text-white hover:text-gray-300 transition-colors text-sm font-medium"
+          >
+            Close
+          </button>
+        </div>
+
+        {/* Menu Content */}
+        <div className="flex flex-col items-center px-4 sm:px-6 pb-12 pt-2 space-y-5 sm:space-y-8 md:space-y-10">
+          {/* Language switcher for mobile */}
+          <div className="flex flex-col items-center gap-2 sm:gap-3">
+            <div className="text-white/60 text-xs sm:text-sm font-medium">Language</div>
+            <div className="flex items-center gap-2 sm:gap-3">
+              <button
+                onClick={() => changeLocale('en')}
+                className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm font-medium transition-all duration-200 ${
+                  currentLocale === 'en'
+                    ? 'bg-white text-black'
+                    : 'bg-white/10 text-white/70 hover:text-white hover:bg-white/20'
+                }`}
+              >
+                English
+              </button>
+              <button
+                onClick={() => changeLocale('pl')}
+                className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm font-medium transition-all duration-200 ${
+                  currentLocale === 'pl'
+                    ? 'bg-white text-black'
+                    : 'bg-white/10 text-white/70 hover:text-white hover:bg-white/20'
+                }`}
+              >
+                Polski
+              </button>
+            </div>
+          </div>
+
+          {/* AI & Data Section */}
+          <div className="text-center space-y-2 sm:space-y-3 md:space-y-4">
+            <h3 className="text-white text-lg sm:text-xl md:text-3xl font-bold">{t('aiData')}</h3>
+            <div className="space-y-1 sm:space-y-2 md:space-y-3">
+              {aiDataItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block group"
+                >
+                  <div className="text-white/90 hover:text-white text-sm sm:text-base md:text-xl font-medium transition-colors">
+                    {item.title}
+                  </div>
+                  <div className="text-white/60 text-xs sm:text-sm hidden sm:block mt-0.5">
+                    {item.description}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Services Section */}
+          <div className="text-center space-y-2 sm:space-y-3 md:space-y-4">
+            <h3 className="text-white text-lg sm:text-xl md:text-3xl font-bold">{t('services')}</h3>
+            <div className="space-y-1 sm:space-y-2 md:space-y-3">
+              {servicesItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block group"
+                >
+                  <div className="text-white/90 hover:text-white text-sm sm:text-base md:text-xl font-medium transition-colors">
+                    {item.title}
+                  </div>
+                  <div className="text-white/60 text-xs sm:text-sm hidden sm:block mt-0.5">
+                    {item.description}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Other Links */}
+          <div className="flex flex-col items-center space-y-2 sm:space-y-3 md:space-y-4">
+            <Link
+              href="/insights"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-white/90 hover:text-white text-lg sm:text-xl md:text-3xl font-bold transition-colors"
+            >
+              {t('insights')}
+            </Link>
+            <Link
+              href="/about"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-white/90 hover:text-white text-lg sm:text-xl md:text-3xl font-bold transition-colors"
+            >
+              {t('about')}
+            </Link>
+          </div>
+
+          {/* CTA Button */}
+          <Link
+            href="/contact"
+            onClick={() => setIsMenuOpen(false)}
+            className="bg-white text-black px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4 rounded-full font-bold text-sm sm:text-base md:text-lg hover:bg-gray-100 transition-all duration-200"
+          >
+            {t('getInTouch')}
+          </Link>
+        </div>
+      </div>
+    </div>
+    </>
   );
 }
