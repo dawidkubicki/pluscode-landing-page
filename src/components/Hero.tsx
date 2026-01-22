@@ -3,11 +3,26 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
+import { TypeAnimation } from 'react-type-animation';
+import { useMemo } from 'react';
 
 export default function Hero() {
   const t = useTranslations('hero');
-  const headline = t('headline');
+  const headlineStart = t('headlineStart');
   const highlight = t('headlineHighlight');
+  
+  // Get rotating words as raw value and parse it
+  const rotatingWordsRaw = t.raw('rotatingWords') as string[];
+
+  // Build the typing sequence: [word1, delay, word2, delay, ...]
+  const typingSequence = useMemo(() => {
+    const sequence: (string | number)[] = [];
+    rotatingWordsRaw.forEach((word) => {
+      sequence.push(word);
+      sequence.push(4000); // Wait 4 seconds before typing next word
+    });
+    return sequence;
+  }, [rotatingWordsRaw]);
 
   // Animation variants
   const containerVariants = {
@@ -66,21 +81,40 @@ export default function Hero() {
 
   // Split headline into words and render with highlight
   const renderAnimatedHeadline = () => {
-    const words = headline.split(' ');
+    const words = headlineStart.split(' ');
     
-    return words.map((word, index) => {
-      const isHighlight = word === highlight || word.includes(highlight);
-      
-      return (
+    return (
+      <>
+        {words.map((word, index) => {
+          const isHighlight = word === highlight || word.includes(highlight);
+          
+          return (
+            <motion.span
+              key={index}
+              variants={wordVariants}
+              className={`inline-block mr-[0.25em] ${isHighlight ? 'text-purple-500' : ''}`}
+            >
+              {word}
+            </motion.span>
+          );
+        })}
+        {/* Animated rotating word - whitespace-nowrap prevents line break */}
         <motion.span
-          key={index}
           variants={wordVariants}
-          className={`inline-block mr-[0.25em] ${isHighlight ? 'text-purple-500' : ''}`}
+          className="inline-block text-purple-500 whitespace-nowrap"
         >
-          {word}
+          <TypeAnimation
+            sequence={typingSequence}
+            wrapper="span"
+            speed={30}
+            deletionSpeed={30}
+            repeat={Infinity}
+            cursor={false}
+            preRenderFirstString={true}
+          />
         </motion.span>
-      );
-    });
+      </>
+    );
   };
 
   return (
@@ -89,9 +123,9 @@ export default function Hero() {
       <div className="absolute inset-0 bg-white" />
 
       {/* Content - Bottom Left */}
-      <div className="absolute bottom-24 left-6 right-6 sm:bottom-20 sm:left-12 md:bottom-16 md:left-16 md:right-auto max-w-5xl z-10">
+      <div className="absolute bottom-24 left-6 right-6 sm:bottom-20 sm:left-12 md:bottom-16 md:left-16 md:right-16 lg:right-auto max-w-5xl lg:max-w-6xl xl:max-w-7xl z-10">
         <motion.h1 
-          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-medium text-black mb-4 sm:mb-6 md:mb-8 leading-[1.1] tracking-normal"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-medium text-black mb-4 sm:mb-6 md:mb-8 leading-[1.1] tracking-normal"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
