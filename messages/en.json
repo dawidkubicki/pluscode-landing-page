@@ -35,7 +35,8 @@
     }
   },
   "hero": {
-    "headline": "CRAFTING SOFTWARE THAT MATTERS",
+    "headlineStart": "CRAFTING SOFTWARE THAT",
+    "rotatingWords": ["MATTERS", "INSPIRES", "TRANSFORMS", "SCALES"],
     "headlineHighlight": "SOFTWARE",
     "subtext": "From AI-driven innovation to custom applications. We deliver expert software development and consultancy that drives measurable business impact.",
     "needAdvice": "Need advice?"
