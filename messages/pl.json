@@ -40,5 +40,31 @@
     "headlineHighlight": "OPROGRAMOWANIE",
     "subtext": "Od innowacji opartych na AI po dedykowane aplikacje. Dostarczamy eksperckie rozwiązania i doradztwo, które przekładają się na wymierne rezultaty biznesowe.",
     "needAdvice": "Potrzebujesz porady?"
+  },
+  "services": {
+    "title": "Co robimy",
+    "subtitle": "Tworzymy cyfrowe doświadczenia, które transformują biznesy",
+    "items": {
+      "ai": {
+        "title": "AI i Machine Learning",
+        "description": "Inteligentne rozwiązania, które uczą się, adaptują i ewoluują wraz z potrzebami Twojego biznesu.",
+        "tagline": "Przyszłość, dziś"
+      },
+      "web": {
+        "title": "Aplikacje Webowe",
+        "description": "Błyskawiczne, pięknie zaprojektowane aplikacje internetowe stworzone do skalowania.",
+        "tagline": "Perfekcja w każdym pikselu"
+      },
+      "mobile": {
+        "title": "Aplikacje Mobilne",
+        "description": "Natywne doświadczenia, które użytkownicy kochają, na każdej platformie.",
+        "tagline": "Zawsze pod ręką"
+      },
+      "cloud": {
+        "title": "Rozwiązania Chmurowe",
+        "description": "Solidna infrastruktura, która rośnie wraz z Twoimi ambicjami.",
+        "tagline": "Nieskończenie skalowalne"
+      }
+    }
   }
 }
