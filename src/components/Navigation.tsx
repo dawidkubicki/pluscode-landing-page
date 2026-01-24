@@ -310,9 +310,14 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block text-black text-sm uppercase tracking-wide hover:opacity-60 transition-opacity cursor-pointer"
+                className="block group cursor-pointer relative"
               >
-                {item.title}
+                <div className="text-black text-sm uppercase tracking-wide transition-opacity duration-200 group-hover:opacity-60">
+                  {item.title}
+                </div>
+                <div className="absolute left-0 top-full text-black/50 text-xs mt-0.5 transition-all duration-300 ease-out opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none">
+                  {item.description}
+                </div>
               </Link>
             ))}
           </div>
@@ -338,9 +343,14 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block text-black text-sm uppercase tracking-wide hover:opacity-60 transition-opacity cursor-pointer"
+                className="block group cursor-pointer relative"
               >
-                {item.title}
+                <div className="text-black text-sm uppercase tracking-wide transition-opacity duration-200 group-hover:opacity-60">
+                  {item.title}
+                </div>
+                <div className="absolute left-0 top-full text-black/50 text-xs mt-0.5 transition-all duration-300 ease-out opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none">
+                  {item.description}
+                </div>
               </Link>
             ))}
           </div>
@@ -377,18 +387,18 @@ export default function Navigation() {
             {/* AI & Data Section */}
             <div className="space-y-6">
               <h3 className="text-white/40 text-xs sm:text-sm font-medium tracking-wider uppercase">{t('aiData')}</h3>
-              <nav className="space-y-5">
+              <nav className="space-y-10">
                 {aiDataItems.map((item, index) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="block group"
+                    className="block group relative"
                   >
                     <div className="text-white text-xl sm:text-2xl lg:text-3xl font-medium transition-colors duration-200 group-hover:text-white/60">
                       {item.title}
                     </div>
-                    <div className="text-white/50 text-sm sm:text-base mt-1.5 transition-colors duration-200 group-hover:text-white/40">
+                    <div className="absolute left-0 top-full text-white/50 text-sm sm:text-base mt-1 transition-all duration-300 ease-out opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none">
                       {item.description}
                     </div>
                   </Link>
@@ -399,18 +409,18 @@ export default function Navigation() {
             {/* Services Section */}
             <div className="space-y-6">
               <h3 className="text-white/40 text-xs sm:text-sm font-medium tracking-wider uppercase">{t('services')}</h3>
-              <nav className="space-y-5">
+              <nav className="space-y-10">
                 {servicesItems.map((item, index) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="block group"
+                    className="block group relative"
                   >
                     <div className="text-white text-xl sm:text-2xl lg:text-3xl font-medium transition-colors duration-200 group-hover:text-white/60">
                       {item.title}
                     </div>
-                    <div className="text-white/50 text-sm sm:text-base mt-1.5 transition-colors duration-200 group-hover:text-white/40">
+                    <div className="absolute left-0 top-full text-white/50 text-sm sm:text-base mt-1 transition-all duration-300 ease-out opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none">
                       {item.description}
                     </div>
                   </Link>
@@ -421,7 +431,7 @@ export default function Navigation() {
             {/* Other Links Section */}
             <div className="space-y-6">
               <h3 className="text-white/40 text-xs sm:text-sm font-medium tracking-wider uppercase">Quick Links</h3>
-              <nav className="space-y-5">
+              <nav className="space-y-10">
                 <Link
                   href="/insights"
                   onClick={() => setIsMenuOpen(false)}

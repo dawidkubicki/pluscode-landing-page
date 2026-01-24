@@ -40,5 +40,31 @@
     "headlineHighlight": "SOFTWARE",
     "subtext": "From AI-driven innovation to custom applications. We deliver expert software development and consultancy that drives measurable business impact.",
     "needAdvice": "Need advice?"
+  },
+  "services": {
+    "title": "What we do",
+    "subtitle": "We craft digital experiences that transform businesses",
+    "items": {
+      "ai": {
+        "title": "AI & Machine Learning",
+        "description": "Intelligent solutions that learn, adapt, and evolve with your business needs.",
+        "tagline": "The future, today"
+      },
+      "web": {
+        "title": "Web Development",
+        "description": "Lightning-fast, beautifully crafted web applications built for scale.",
+        "tagline": "Pixel perfect"
+      },
+      "mobile": {
+        "title": "Mobile Apps",
+        "description": "Native experiences that users love, across every platform.",
+        "tagline": "Always in hand"
+      },
+      "cloud": {
+        "title": "Cloud Solutions",
+        "description": "Robust infrastructure that grows with your ambitions.",
+        "tagline": "Infinitely scalable"
+      }
+    }
   }
 }
