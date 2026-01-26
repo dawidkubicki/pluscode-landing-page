@@ -1,10 +1,16 @@
 {
+  "announcement": {
+    "text": "Nowość: Oferujemy darmowe konsultacje AI dla startupów.",
+    "linkText": "Dowiedz się więcej",
+    "linkUrl": "/contact"
+  },
   "navigation": {
     "aiData": "AI i Dane",
     "services": "Usługi",
     "insights": "Insights",
     "about": "O nas",
     "getInTouch": "Skontaktuj się",
+    "language": "Język",
     "aiDataItems": {
       "machineLearning": {
         "title": "Machine Learning",
@@ -66,5 +72,115 @@
         "tagline": "Nieskończenie skalowalne"
       }
     }
+  },
+  "industries": {
+    "title": "Dostarczamy dedykowane rozwiązania IT dla każdej branży.",
+    "subtitle": "Od startupów po korporacje — rozumiemy wyzwania Twojej branży i tworzymy oprogramowanie, które przynosi realne rezultaty.",
+    "cta": "Porozmawiajmy",
+    "items": {
+      "finance": "USŁUGI FINANSOWE",
+      "healthcare": "OCHRONA ZDROWIA",
+      "ecommerce": "E-COMMERCE I HANDEL",
+      "hr": "HR I REKRUTACJA",
+      "logistics": "LOGISTYKA I TRANSPORT",
+      "ai": "AI I MACHINE LEARNING",
+      "saas": "SAAS I STARTUPY",
+      "manufacturing": "PRODUKCJA I PRZEMYSŁ"
+    }
+  },
+  "portfolio": {
+    "label": "Case Studies",
+    "title": "Nasze projekty mówią same za siebie",
+    "subtitle": "Zobacz, jak pomogliśmy wiodącym firmom przekształcić ich cyfrową obecność i osiągnąć niezwykłe rezultaty.",
+    "cta": "Zobacz wszystkie case studies",
+    "items": {
+      "zabka": {
+        "category": "Rozwiązania Chmurowe",
+        "title": "Architektura systemów dla autonomicznych sklepów Żabka",
+        "description": "Planowanie, projektowanie, implementacja i utrzymanie architektury autonomicznych sklepów dla dużej sieci"
+      },
+      "ubs": {
+        "category": "Redesign Aplikacji Mobilnej",
+        "title": "Rozszerzenie zespołu dla szybkiego redesignu aplikacji mobilnej",
+        "description": "Spójne doświadczenie użytkownika, ujednolicone przepływy płatności i łatwiejsza nawigacja w aplikacji"
+      }
+    }
+  },
+  "testimonial": {
+    "quote": "Nigdy nie zaczynamy od technologii — zaczynamy od ludzi. Technologia to narzędzie, nie cel sam w sobie. Kiedy naprawdę słuchasz, czego potrzebuje biznes, właściwe wybory stają się oczywiste.",
+    "name": "Dawid Kubicki",
+    "title": "CEO i Założyciel Pluscode"
+  },
+  "insights": {
+    "label": "Insights",
+    "title": "Najnowsze z naszego bloga",
+    "viewAll": "Zobacz wszystkie artykuły",
+    "readTime": "{minutes} min czytania",
+    "categories": {
+      "ai": "AI i Machine Learning",
+      "development": "Rozwój oprogramowania",
+      "business": "Biznes",
+      "technology": "Technologia"
+    },
+    "items": {
+      "featured": {
+        "title": "Jak AI transformuje operacje biznesowe w 2025 roku",
+        "excerpt": "Odkryj kluczowe sposoby, w jakie sztuczna inteligencja rewolucjonizuje działanie firm — od zautomatyzowanych procesów po analitykę predykcyjną wspierającą lepsze decyzje."
+      },
+      "post1": {
+        "title": "Budowanie skalowalnej architektury mikroserwisów",
+        "excerpt": "Praktyczny przewodnik po projektowaniu i wdrażaniu mikroserwisów, które rosną wraz z potrzebami Twojego biznesu."
+      },
+      "post2": {
+        "title": "Od startupu do scale-upu: wyciągnięte wnioski",
+        "excerpt": "Kluczowe spostrzeżenia z naszego doświadczenia w pomaganiu startupom przechodzić przez fazy szybkiego wzrostu."
+      },
+      "post3": {
+        "title": "Najlepsze praktyki cloud-native development",
+        "excerpt": "Niezbędne wzorce i praktyki do budowania odpornych aplikacji chmurowych."
+      }
+    }
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Stwórzmy razem coś wyjątkowego",
+    "subtitle": "Masz pomysł na projekt? Chętnie o nim usłyszymy. Napisz do nas, a odpowiemy najszybciej jak to możliwe.",
+    "info": {
+      "email": "Napisz do nas",
+      "location": "Siedziba"
+    },
+    "form": {
+      "name": "Twoje imię",
+      "email": "Adres email",
+      "company": "Firma (opcjonalnie)",
+      "message": "Opowiedz nam o swoim projekcie",
+      "submit": "Wyślij wiadomość",
+      "sending": "Wysyłanie...",
+      "privacyPrefix": "Wysyłając formularz, akceptujesz naszą",
+      "privacyLink": "politykę prywatności",
+      "privacySuffix": "."
+    },
+    "validation": {
+      "nameRequired": "Imię jest wymagane",
+      "nameMinLength": "Imię musi mieć co najmniej 2 znaki",
+      "emailRequired": "Email jest wymagany",
+      "emailInvalid": "Podaj prawidłowy adres email",
+      "messageRequired": "Wiadomość jest wymagana",
+      "messageMinLength": "Wiadomość musi mieć co najmniej 10 znaków",
+      "captchaRequired": "Proszę potwierdzić, że nie jesteś robotem"
+    },
+    "success": {
+      "title": "Wiadomość wysłana!",
+      "message": "Dziękujemy za kontakt. Odpowiemy w ciągu 24 godzin."
+    }
+  },
+  "footer": {
+    "allRightsReserved": "Wszelkie prawa zastrzeżone.",
+    "privacyPolicy": "Polityka prywatności",
+    "termsOfUse": "Regulamin",
+    "sitemap": "Mapa strony",
+    "krs": "KRS",
+    "nip": "NIP",
+    "regon": "REGON"
   }
 }
