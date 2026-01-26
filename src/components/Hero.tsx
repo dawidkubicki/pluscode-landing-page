@@ -122,8 +122,9 @@ export default function Hero() {
       {/* Plain white background */}
       <div className="absolute inset-0 bg-white" />
 
-      {/* Content - Bottom Left */}
-      <div className="absolute bottom-24 left-6 right-6 sm:bottom-20 sm:left-12 md:bottom-16 md:left-16 md:right-16 lg:right-auto max-w-5xl lg:max-w-6xl xl:max-w-7xl z-10">
+      {/* Content - Bottom Center */}
+      <div className="absolute bottom-32 inset-x-0 sm:bottom-28 md:bottom-24 flex justify-center px-6 sm:px-12 md:px-16 z-10">
+        <div className="w-full max-w-5xl lg:max-w-6xl xl:max-w-7xl">
         <motion.h1 
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-medium text-black mb-4 sm:mb-6 md:mb-8 leading-[1.1] tracking-normal"
           variants={containerVariants}
@@ -149,11 +150,12 @@ export default function Hero() {
         >
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center bg-black text-white px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl sm:rounded-2xl text-sm sm:text-base font-medium tracking-wide hover:bg-gray-800 transition-all duration-300"
+            className="inline-flex items-center justify-center bg-black text-white px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl sm:rounded-2xl text-sm sm:text-base font-medium tracking-wide hover:bg-gray-800 transition-all duration-300 cursor-pointer"
           >
             {t('needAdvice')}
           </Link>
         </motion.div>
+        </div>
       </div>
     </section>
   );

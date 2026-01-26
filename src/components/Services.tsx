@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 // Service card component with hover animations
 function ServiceCard({ 
@@ -23,9 +23,29 @@ function ServiceCard({
   isInView: boolean;
 }) {
   const isFeatured = variant === 'featured';
+  const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    setMousePosition({ x, y });
+  };
+
+  // Parse gradient colors from the gradient string
+  const getGradientColors = () => {
+    if (gradient.includes('violet')) return 'rgba(139, 92, 246, 0.15)';
+    if (gradient.includes('blue')) return 'rgba(59, 130, 246, 0.15)';
+    if (gradient.includes('rose')) return 'rgba(244, 63, 94, 0.15)';
+    if (gradient.includes('emerald')) return 'rgba(16, 185, 129, 0.15)';
+    return 'rgba(156, 163, 175, 0.15)';
+  };
 
   return (
     <motion.div
+      ref={cardRef}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{
@@ -33,23 +53,22 @@ function ServiceCard({
         delay: index * 0.15,
         ease: [0.25, 0.4, 0.25, 1],
       }}
-      whileHover={{ 
-        scale: 1.02,
-        transition: { duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }
-      }}
+      onMouseMove={handleMouseMove}
       className={`
         group relative overflow-hidden rounded-3xl bg-neutral-50 h-full
         transition-shadow duration-500 ease-out cursor-pointer
         hover:shadow-2xl hover:shadow-black/8
       `}
     >
-      {/* Gradient overlay that appears on hover */}
+      {/* Gradient overlay - always visible for featured, appears on hover for others, follows cursor */}
       <div 
         className={`
-          absolute inset-0 opacity-0 group-hover:opacity-100
+          absolute inset-0 ${isFeatured ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}
           transition-opacity duration-500 ease-out
-          ${gradient}
         `}
+        style={{
+          background: `radial-gradient(1200px circle at ${mousePosition.x}% ${mousePosition.y}%, ${getGradientColors()}, transparent 40%)`
+        }}
       />
       
       {/* Subtle border */}
@@ -166,7 +185,7 @@ export default function Services() {
       ref={sectionRef}
       className="py-24 md:py-32 lg:py-40 px-6 sm:px-12 md:px-16 bg-white"
     >
-      <div className="max-w-5xl lg:max-w-6xl xl:max-w-7xl">
+      <div className="max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="mb-16 md:mb-20 lg:mb-24">
           <motion.p 
@@ -189,7 +208,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
-            className="mt-6 text-lg md:text-xl text-neutral-500 max-w-2xl leading-relaxed"
+            className="mt-3 text-lg md:text-xl text-neutral-500 max-w-2xl leading-relaxed"
           >
             {t('subtitle')}
           </motion.p>

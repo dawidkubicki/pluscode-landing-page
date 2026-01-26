@@ -4,6 +4,7 @@ import { useState, useEffect, useLayoutEffect, startTransition } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { useAnnouncement } from './AnnouncementContext';
 
 interface DropdownItem {
   title: string;
@@ -13,6 +14,7 @@ interface DropdownItem {
 
 export default function Navigation() {
   const t = useTranslations('navigation');
+  const { isVisible: isAnnouncementVisible } = useAnnouncement();
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(true);
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -115,10 +117,15 @@ export default function Navigation() {
     };
   }, [isMenuOpen]);
 
+  // Announcement bar height for positioning - only offset when visible AND not scrolled
+  const announcementBarHeight = (isAnnouncementVisible && !hasScrolled) ? 'top-[38px] sm:top-[42px]' : 'top-0';
+  // Slightly more offset for dropdowns to fully clear the announcement bar
+  const dropdownTopOffset = (isAnnouncementVisible && !hasScrolled) ? 'top-[46px] sm:top-[50px]' : 'top-0';
+
   return (
     <>
     <div 
-      className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 transition-all duration-300 ${
+      className={`fixed left-0 right-0 z-50 px-4 sm:px-6 transition-all duration-300 ${announcementBarHeight} ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       } ${
         hasScrolled ? 'pt-2 sm:pt-3' : 'pt-4 sm:pt-6'
@@ -154,7 +161,7 @@ export default function Navigation() {
               onMouseEnter={() => setActiveDropdown('ai-data')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="text-black/90 hover:text-black transition-all duration-200 font-normal text-sm tracking-wide flex items-center gap-1 px-3 py-1.5 relative group">
+              <button className="text-black/90 hover:text-black transition-all duration-200 font-normal text-sm tracking-wide flex items-center gap-1 px-3 py-1.5 relative group cursor-pointer">
                 <span className="relative">
                   {t('aiData')}
                   <span className={`absolute left-0 bottom-0 h-px bg-black transition-all duration-300 ease-out ${
@@ -175,7 +182,7 @@ export default function Navigation() {
               onMouseEnter={() => setActiveDropdown('services')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="text-black/90 hover:text-black transition-all duration-200 font-normal text-sm tracking-wide flex items-center gap-1 px-3 py-1.5 relative group">
+              <button className="text-black/90 hover:text-black transition-all duration-200 font-normal text-sm tracking-wide flex items-center gap-1 px-3 py-1.5 relative group cursor-pointer">
                 <span className="relative">
                   {t('services')}
                   <span className={`absolute left-0 bottom-0 h-px bg-black transition-all duration-300 ease-out ${
@@ -193,7 +200,7 @@ export default function Navigation() {
             {/* Insights */}
             <Link
               href="/insights"
-              className="text-black/90 hover:text-black transition-all duration-200 font-normal text-sm tracking-wide px-3 py-1.5 relative group"
+              className="text-black/90 hover:text-black transition-all duration-200 font-normal text-sm tracking-wide px-3 py-1.5 relative group cursor-pointer"
             >
               <span className="relative">
                 {t('insights')}
@@ -204,7 +211,7 @@ export default function Navigation() {
             {/* About us */}
             <Link
               href="/about"
-              className="text-black/90 hover:text-black transition-all duration-200 font-normal text-sm tracking-wide px-3 py-1.5 relative group"
+              className="text-black/90 hover:text-black transition-all duration-200 font-normal text-sm tracking-wide px-3 py-1.5 relative group cursor-pointer"
             >
               <span className="relative">
                 {t('about')}
@@ -294,7 +301,7 @@ export default function Navigation() {
 
     {/* AI & Data Dropdown Panel - Full width, behind nav */}
     <div
-      className={`fixed top-0 left-0 right-0 w-full bg-white z-40 transition-all duration-300 ${
+      className={`fixed left-0 right-0 w-full bg-white z-40 transition-all duration-300 ${dropdownTopOffset} ${
         activeDropdown === 'ai-data'
           ? 'opacity-100 visible'
           : 'opacity-0 invisible pointer-events-none'
@@ -302,7 +309,7 @@ export default function Navigation() {
       onMouseEnter={() => setActiveDropdown('ai-data')}
       onMouseLeave={() => setActiveDropdown(null)}
     >
-      <div className="w-full px-4 sm:px-6 pt-20 pb-10">
+      <div className="w-full px-4 sm:px-6 pt-16 pb-10">
         <div className="mx-auto max-w-[1400px] px-6 py-8">
           <h3 className="text-black text-xs font-semibold uppercase tracking-wider mb-6">{t('aiData')}</h3>
           <div className="space-y-4">
@@ -310,13 +317,10 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block group cursor-pointer relative"
+                className="block cursor-pointer"
               >
-                <div className="text-black text-sm uppercase tracking-wide transition-opacity duration-200 group-hover:opacity-60">
+                <div className="text-black text-sm uppercase tracking-wide">
                   {item.title}
-                </div>
-                <div className="absolute left-0 top-full text-black/50 text-xs mt-0.5 transition-all duration-300 ease-out opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none">
-                  {item.description}
                 </div>
               </Link>
             ))}
@@ -327,7 +331,7 @@ export default function Navigation() {
 
     {/* Services Dropdown Panel - Full width, behind nav */}
     <div
-      className={`fixed top-0 left-0 right-0 w-full bg-white z-40 transition-all duration-300 ${
+      className={`fixed left-0 right-0 w-full bg-white z-40 transition-all duration-300 ${dropdownTopOffset} ${
         activeDropdown === 'services'
           ? 'opacity-100 visible'
           : 'opacity-0 invisible pointer-events-none'
@@ -335,7 +339,7 @@ export default function Navigation() {
       onMouseEnter={() => setActiveDropdown('services')}
       onMouseLeave={() => setActiveDropdown(null)}
     >
-      <div className="w-full px-4 sm:px-6 pt-20 pb-10">
+      <div className="w-full px-4 sm:px-6 pt-16 pb-10">
         <div className="mx-auto max-w-[1400px] px-6 py-8">
           <h3 className="text-black text-xs font-semibold uppercase tracking-wider mb-6">{t('services')}</h3>
           <div className="space-y-4">
@@ -343,13 +347,10 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block group cursor-pointer relative"
+                className="block cursor-pointer"
               >
-                <div className="text-black text-sm uppercase tracking-wide transition-opacity duration-200 group-hover:opacity-60">
+                <div className="text-black text-sm uppercase tracking-wide">
                   {item.title}
-                </div>
-                <div className="absolute left-0 top-full text-black/50 text-xs mt-0.5 transition-all duration-300 ease-out opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none">
-                  {item.description}
                 </div>
               </Link>
             ))}
@@ -367,11 +368,22 @@ export default function Navigation() {
       <div className={`h-full w-full overflow-y-auto overscroll-contain transition-transform duration-700 ease-out ${
         isMenuOpen ? 'translate-y-0' : 'translate-y-full'
       }`}>
-        {/* Close button */}
-        <div className="flex justify-end p-4 sm:p-6 sticky top-0 bg-linear-to-b from-black via-black to-transparent z-10">
+        {/* Header with Get in touch (mobile) and Close button */}
+        <div className="flex justify-between items-center p-4 sm:p-6 sticky top-0 bg-linear-to-b from-black via-black to-transparent z-10">
+          {/* Get in touch button - visible on mobile/tablet */}
+          <Link
+            href="/contact"
+            onClick={() => setIsMenuOpen(false)}
+            className="lg:hidden bg-white text-black px-5 py-2 rounded-full font-medium text-sm transition-all duration-150 hover:bg-white/90 cursor-pointer"
+          >
+            {t('getInTouch')}
+          </Link>
+          {/* Spacer for desktop to push close button to the right */}
+          <div className="hidden lg:block" />
+          
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="group relative px-4 py-2 overflow-hidden rounded-full border border-white/20 hover:border-white/40 transition-all duration-300"
+            className="group relative px-4 py-2 overflow-hidden rounded-full border border-white/20 hover:border-white/40 transition-all duration-300 cursor-pointer"
           >
             <span className="relative z-10 text-white text-sm font-medium tracking-wide">Close</span>
             <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -393,12 +405,12 @@ export default function Navigation() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="block group relative"
+                    className="block group cursor-pointer"
                   >
                     <div className="text-white text-xl sm:text-2xl lg:text-3xl font-medium transition-colors duration-200 group-hover:text-white/60">
                       {item.title}
                     </div>
-                    <div className="absolute left-0 top-full text-white/50 text-sm sm:text-base mt-1 transition-all duration-300 ease-out opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none">
+                    <div className="text-white/50 text-sm sm:text-base mt-1 transition-all duration-300 ease-out opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-20">
                       {item.description}
                     </div>
                   </Link>
@@ -415,12 +427,12 @@ export default function Navigation() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="block group relative"
+                    className="block group cursor-pointer"
                   >
                     <div className="text-white text-xl sm:text-2xl lg:text-3xl font-medium transition-colors duration-200 group-hover:text-white/60">
                       {item.title}
                     </div>
-                    <div className="absolute left-0 top-full text-white/50 text-sm sm:text-base mt-1 transition-all duration-300 ease-out opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none">
+                    <div className="text-white/50 text-sm sm:text-base mt-1 transition-all duration-300 ease-out opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-20">
                       {item.description}
                     </div>
                   </Link>
@@ -435,7 +447,7 @@ export default function Navigation() {
                 <Link
                   href="/insights"
                   onClick={() => setIsMenuOpen(false)}
-                  className="block group"
+                  className="block group cursor-pointer"
                 >
                   <div className="text-white text-xl sm:text-2xl lg:text-3xl font-medium transition-colors duration-200 group-hover:text-white/60">
                     {t('insights')}
@@ -444,7 +456,7 @@ export default function Navigation() {
                 <Link
                   href="/about"
                   onClick={() => setIsMenuOpen(false)}
-                  className="block group"
+                  className="block group cursor-pointer"
                 >
                   <div className="text-white text-xl sm:text-2xl lg:text-3xl font-medium transition-colors duration-200 group-hover:text-white/60">
                     {t('about')}
@@ -461,10 +473,10 @@ export default function Navigation() {
             
             {/* Language switcher */}
             <div className="flex items-center gap-3">
-              <span className="text-white/40 text-sm">Language:</span>
+              <span className="text-white/40 text-sm">{t('language')}:</span>
               <button
                 onClick={() => changeLocale('en')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-150 cursor-pointer ${
                   currentLocale === 'en'
                     ? 'bg-white text-black'
                     : 'text-white/70 hover:text-white hover:bg-white/10'
@@ -474,7 +486,7 @@ export default function Navigation() {
               </button>
               <button
                 onClick={() => changeLocale('pl')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-150 cursor-pointer ${
                   currentLocale === 'pl'
                     ? 'bg-white text-black'
                     : 'text-white/70 hover:text-white hover:bg-white/10'
@@ -484,11 +496,11 @@ export default function Navigation() {
               </button>
             </div>
 
-            {/* CTA Button */}
+            {/* CTA Button - hidden on mobile/tablet since it's in the header */}
             <Link
               href="/contact"
               onClick={() => setIsMenuOpen(false)}
-              className="bg-white text-black px-8 py-3.5 rounded-full font-medium text-base transition-all duration-150 hover:bg-white/90 hover:scale-105"
+              className="hidden lg:block bg-white text-black px-8 py-3.5 rounded-full font-medium text-base transition-all duration-150 hover:bg-white/90 hover:scale-105 cursor-pointer"
             >
               {t('getInTouch')}
             </Link>

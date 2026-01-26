@@ -1,10 +1,16 @@
 {
+  "announcement": {
+    "text": "New: We're now offering free AI consultations for startups.",
+    "linkText": "Learn more",
+    "linkUrl": "/contact"
+  },
   "navigation": {
     "aiData": "AI & Data",
     "services": "Services",
     "insights": "Insights",
     "about": "About us",
     "getInTouch": "Get in touch",
+    "language": "Language",
     "aiDataItems": {
       "machineLearning": {
         "title": "Machine Learning",
@@ -66,5 +72,115 @@
         "tagline": "Infinitely scalable"
       }
     }
+  },
+  "industries": {
+    "title": "Delivering tailored IT solutions for every sector.",
+    "subtitle": "From startups to enterprises, we understand your industry's unique challenges and build software that drives real results.",
+    "cta": "Let's talk",
+    "items": {
+      "finance": "FINANCIAL SERVICES",
+      "healthcare": "HEALTHCARE",
+      "ecommerce": "E-COMMERCE & RETAIL",
+      "hr": "HR & RECRUITMENT",
+      "logistics": "LOGISTICS & TRANSPORT",
+      "ai": "AI & MACHINE LEARNING",
+      "saas": "SAAS & STARTUPS",
+      "manufacturing": "MANUFACTURING & INDUSTRY"
+    }
+  },
+  "portfolio": {
+    "label": "Case Studies",
+    "title": "Our work speaks for itself",
+    "subtitle": "Discover how we've helped leading companies transform their digital presence and achieve remarkable results.",
+    "cta": "View all case studies",
+    "items": {
+      "zabka": {
+        "category": "Cloud Development",
+        "title": "System Architecture for Autonomous Stores by Żabka",
+        "description": "Planning, designing, implementing, and maintaining autonomous stores architecture for a major chain"
+      },
+      "ubs": {
+        "category": "Mobile App Redesign",
+        "title": "Team extension for mobile design revamp at speed",
+        "description": "Seamless and consistent experience, unified payment flows, and easier in-app navigation"
+      }
+    }
+  },
+  "testimonial": {
+    "quote": "We never start with technology — we start with people. Technology is a tool, not a destination. When you truly listen to what businesses need, the right choices become clear.",
+    "name": "Dawid Kubicki",
+    "title": "CEO & Founder at Pluscode"
+  },
+  "insights": {
+    "label": "Insights",
+    "title": "Latest from our blog",
+    "viewAll": "View all articles",
+    "readTime": "{minutes} min read",
+    "categories": {
+      "ai": "AI & Machine Learning",
+      "development": "Development",
+      "business": "Business",
+      "technology": "Technology"
+    },
+    "items": {
+      "featured": {
+        "title": "How AI is Transforming Business Operations in 2025",
+        "excerpt": "Discover the key ways artificial intelligence is revolutionizing how companies operate, from automated workflows to predictive analytics that drive smarter decision-making."
+      },
+      "post1": {
+        "title": "Building Scalable Microservices Architecture",
+        "excerpt": "A practical guide to designing and implementing microservices that grow with your business needs."
+      },
+      "post2": {
+        "title": "From Startup to Scale-up: Lessons Learned",
+        "excerpt": "Key insights from our experience helping startups navigate rapid growth phases."
+      },
+      "post3": {
+        "title": "Cloud-Native Development Best Practices",
+        "excerpt": "Essential patterns and practices for building resilient cloud applications."
+      }
+    }
+  },
+  "contact": {
+    "label": "Get in Touch",
+    "title": "Let's build something amazing together",
+    "subtitle": "Have a project in mind? We'd love to hear about it. Drop us a message and we'll get back to you as soon as possible.",
+    "info": {
+      "email": "Email us at",
+      "location": "Based in"
+    },
+    "form": {
+      "name": "Your name",
+      "email": "Email address",
+      "company": "Company (optional)",
+      "message": "Tell us about your project",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "privacyPrefix": "By submitting, you agree to our",
+      "privacyLink": "privacy policy",
+      "privacySuffix": "."
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "nameMinLength": "Name must be at least 2 characters",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "messageRequired": "Message is required",
+      "messageMinLength": "Message must be at least 10 characters",
+      "captchaRequired": "Please complete the captcha verification"
+    },
+    "success": {
+      "title": "Message sent!",
+      "message": "Thank you for reaching out. We'll get back to you within 24 hours."
+    }
+  },
+  "footer": {
+    "allRightsReserved": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of use",
+    "sitemap": "Sitemap",
+    "krs": "KRS",
+    "nip": "VAT-ID",
+    "regon": "REGON"
   }
 }
