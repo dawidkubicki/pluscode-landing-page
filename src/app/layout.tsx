@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { nohemi } from './fonts';
+import { AnnouncementProvider } from "@/components/AnnouncementContext";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -22,7 +23,9 @@ export default async function RootLayout({
         className={`${nohemi.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <AnnouncementProvider>
+            {children}
+          </AnnouncementProvider>
         </NextIntlClientProvider>
       </body>
     </html>
