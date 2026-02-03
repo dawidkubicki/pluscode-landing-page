@@ -1,4 +1,3 @@
-import { AnnouncementProvider } from "@/components/AnnouncementContext";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
@@ -12,7 +11,6 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <AnnouncementProvider>
     <div className="min-h-screen">
       <AnnouncementBar />
       <Navigation />
@@ -25,6 +23,5 @@ export default function Home() {
       <Contact />
       <Footer />
     </div>
-    </AnnouncementProvider>
   );
 }

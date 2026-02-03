@@ -182,5 +182,719 @@
     "krs": "KRS",
     "nip": "NIP",
     "regon": "REGON"
+  },
+  "shared": {
+    "home": "Strona główna",
+    "readMore": "Czytaj więcej",
+    "viewCaseStudy": "Zobacz case study",
+    "learnMore": "Dowiedz się więcej"
+  },
+  "pages": {
+    "services": {
+      "machineLearning": {
+        "label": "AI i Dane",
+        "title": "Rozwiązania Machine Learning",
+        "subtitle": "Buduj inteligentne systemy, które uczą się z danych, automatyzują decyzje, przewidują wyniki i otwierają nowe możliwości biznesowe.",
+        "breadcrumb": "Machine Learning",
+        "features": {
+          "predictive": {
+            "title": "Analityka Predykcyjna",
+            "description": "Prognozuj trendy, zachowania klientów i zmiany rynkowe za pomocą zaawansowanych modeli predykcyjnych."
+          },
+          "nlp": {
+            "title": "Przetwarzanie Języka Naturalnego",
+            "description": "Wydobywaj wiedzę z tekstu, automatyzuj obsługę klienta i włącz AI konwersacyjne."
+          },
+          "computerVision": {
+            "title": "Wizja Komputerowa",
+            "description": "Automatyzuj inspekcję wizualną, wykrywanie obiektów i zadania analizy obrazu."
+          },
+          "deepLearning": {
+            "title": "Deep Learning",
+            "description": "Wykorzystaj sieci neuronowe do złożonego rozpoznawania wzorców i podejmowania decyzji."
+          },
+          "mlOps": {
+            "title": "MLOps i Wdrożenia",
+            "description": "Gotowe do produkcji pipeline'y ML z monitoringiem, wersjonowaniem i ciągłym doskonaleniem."
+          },
+          "customModels": {
+            "title": "Rozwój Modeli Niestandardowych",
+            "description": "Modele szyte na miarę, trenowane na Twoich danych dla maksymalnej dokładności."
+          }
+        },
+        "process": {
+          "discovery": {
+            "title": "Discovery",
+            "description": "Zrozum cele biznesowe i zidentyfikuj możliwości ML z mierzalnym wpływem."
+          },
+          "dataPrep": {
+            "title": "Przygotowanie Danych",
+            "description": "Zbierz, oczyść i przygotuj cechy z Twoich danych dla optymalnej wydajności modelu."
+          },
+          "development": {
+            "title": "Rozwój Modelu",
+            "description": "Trenuj i waliduj modele przy użyciu najnowocześniejszych algorytmów i technik."
+          },
+          "deployment": {
+            "title": "Wdrożenie i Monitoring",
+            "description": "Wdróż modele na produkcję z monitoringiem i ciągłym doskonaleniem."
+          }
+        },
+        "cta": {
+          "title": "Gotowy wykorzystać AI?",
+          "subtitle": "Porozmawiajmy o tym, jak machine learning może zmienić Twoje operacje biznesowe.",
+          "button": "Rozpocznij rozmowę"
+        }
+      },
+      "analytics": {
+        "label": "AI i Dane",
+        "title": "Analityka Danych",
+        "subtitle": "Przekształć surowe dane w praktyczne wnioski, które napędzają strategiczne decyzje i mierzalny wzrost biznesowy.",
+        "breadcrumb": "Analityka Danych",
+        "features": {
+          "businessIntelligence": {
+            "title": "Business Intelligence",
+            "description": "Interaktywne dashboardy i raporty zapewniające widoczność KPI w czasie rzeczywistym."
+          },
+          "dataVisualization": {
+            "title": "Wizualizacja Danych",
+            "description": "Piękne, intuicyjne wizualizacje, które czynią złożone dane łatwymi do zrozumienia."
+          },
+          "dataWarehousing": {
+            "title": "Hurtownie Danych",
+            "description": "Scentralizowane repozytoria danych łączące informacje z wielu źródeł."
+          },
+          "realTimeAnalytics": {
+            "title": "Analityka Real-Time",
+            "description": "Przetwarzanie strumieniowe i wnioski w czasie rzeczywistym dla decyzji wrażliwych na czas."
+          },
+          "predictiveAnalytics": {
+            "title": "Analityka Predykcyjna",
+            "description": "Prognozuj przyszłe trendy i wyniki na podstawie historycznych wzorców danych."
+          },
+          "dataGovernance": {
+            "title": "Data Governance",
+            "description": "Zapewnij jakość, bezpieczeństwo i zgodność danych w całej organizacji."
+          }
+        },
+        "process": {
+          "assessment": {
+            "title": "Ocena",
+            "description": "Oceń aktualny krajobraz danych i zidentyfikuj możliwości poprawy."
+          },
+          "architecture": {
+            "title": "Projektowanie Architektury",
+            "description": "Zaprojektuj skalowalną architekturę danych spełniającą obecne i przyszłe potrzeby."
+          },
+          "implementation": {
+            "title": "Implementacja",
+            "description": "Zbuduj i wdróż pipeline'y danych, hurtownie i rozwiązania analityczne."
+          },
+          "optimization": {
+            "title": "Optymalizacja",
+            "description": "Ciągle ulepszaj wydajność i rozszerzaj możliwości analityczne."
+          }
+        },
+        "cta": {
+          "title": "Odblokuj potencjał swoich danych",
+          "subtitle": "Zbudujmy fundamenty oparte na danych dla lepszych decyzji biznesowych.",
+          "button": "Zacznij teraz"
+        }
+      },
+      "consulting": {
+        "label": "AI i Dane",
+        "title": "Konsulting AI",
+        "subtitle": "Strategiczne doradztwo, które pomoże Ci nawigować po świecie AI i wdrożyć rozwiązania przynoszące realną wartość biznesową.",
+        "breadcrumb": "Konsulting AI",
+        "features": {
+          "strategy": {
+            "title": "Rozwój Strategii AI",
+            "description": "Stwórz mapę drogową adopcji AI zgodną z celami biznesowymi."
+          },
+          "assessment": {
+            "title": "Ocena Gotowości AI",
+            "description": "Oceń zdolność organizacji do adopcji i czerpania korzyści z AI."
+          },
+          "implementation": {
+            "title": "Planowanie Wdrożenia",
+            "description": "Szczegółowe plany projektów dla udanej realizacji inicjatyw AI."
+          },
+          "training": {
+            "title": "Szkolenie Zespołu",
+            "description": "Podnieś kompetencje zespołu w zakresie AI i praktyczne szkolenia techniczne."
+          },
+          "governance": {
+            "title": "Governance AI",
+            "description": "Ustal etyczne wytyczne i ramy governance dla odpowiedzialnego AI."
+          },
+          "optimization": {
+            "title": "Optymalizacja Wydajności",
+            "description": "Ulepszaj istniejące systemy AI dla lepszej dokładności i efektywności."
+          }
+        },
+        "process": {
+          "discovery": {
+            "title": "Discovery",
+            "description": "Głębokie zanurzenie w wyzwania biznesowe i możliwości AI."
+          },
+          "strategy": {
+            "title": "Strategia",
+            "description": "Opracuj kompleksową strategię AI z jasnymi celami i kamieniami milowymi."
+          },
+          "execution": {
+            "title": "Realizacja",
+            "description": "Prowadź wdrożenie z praktycznym wsparciem i ekspertyzą."
+          },
+          "support": {
+            "title": "Ciągłe Wsparcie",
+            "description": "Stałe doradztwo i optymalizacja w miarę dojrzewania możliwości AI."
+          }
+        },
+        "cta": {
+          "title": "Potrzebujesz eksperckiego doradztwa?",
+          "subtitle": "Nasi konsultanci AI są gotowi pomóc Ci na drodze do sukcesu z AI.",
+          "button": "Umów konsultację"
+        }
+      },
+      "webDevelopment": {
+        "label": "Usługi",
+        "title": "Tworzenie Aplikacji Webowych",
+        "subtitle": "Buduj potężne, skalowalne aplikacje webowe, które dostarczają wyjątkowe doświadczenia użytkownika i napędzają wzrost biznesowy.",
+        "breadcrumb": "Aplikacje Webowe",
+        "features": {
+          "frontend": {
+            "title": "Rozwój Frontend",
+            "description": "Nowoczesne, responsywne interfejsy zbudowane z React, Next.js i najnowocześniejszych technologii."
+          },
+          "backend": {
+            "title": "Rozwój Backend",
+            "description": "Solidne rozwiązania serwerowe z Node.js, Python i architekturami cloud-native."
+          },
+          "ecommerce": {
+            "title": "Rozwiązania E-Commerce",
+            "description": "Sklepy online o wysokiej konwersji z płynnym procesem płatności."
+          },
+          "cms": {
+            "title": "Rozwój CMS",
+            "description": "Niestandardowe systemy zarządzania treścią umożliwiające zespołowi zarządzanie contentem."
+          },
+          "api": {
+            "title": "Rozwój API",
+            "description": "API RESTful i GraphQL zasilające Twoje aplikacje i integracje."
+          },
+          "performance": {
+            "title": "Optymalizacja Wydajności",
+            "description": "Szybko ładujące się aplikacje zoptymalizowane pod Core Web Vitals i SEO."
+          }
+        },
+        "process": {
+          "discovery": {
+            "title": "Discovery",
+            "description": "Zrozum wymagania, użytkowników i cele biznesowe."
+          },
+          "design": {
+            "title": "Projektowanie",
+            "description": "Twórz intuicyjne interfejsy z nowoczesnymi zasadami UX/UI."
+          },
+          "development": {
+            "title": "Rozwój",
+            "description": "Buduj z czystym kodem, najlepszymi praktykami i rygorystycznymi testami."
+          },
+          "launch": {
+            "title": "Uruchomienie i Wsparcie",
+            "description": "Wdrażaj z pewnością i zapewnij bieżące utrzymanie."
+          }
+        },
+        "cta": {
+          "title": "Gotowy zbudować swoją aplikację webową?",
+          "subtitle": "Stwórzmy doświadczenie webowe, które wyróżni Cię na tle konkurencji.",
+          "button": "Rozpocznij projekt"
+        }
+      },
+      "mobile": {
+        "label": "Usługi",
+        "title": "Tworzenie Aplikacji Mobilnych",
+        "subtitle": "Twórz natywne i wieloplatformowe doświadczenia mobilne, które użytkownicy kochają i do których wracają.",
+        "breadcrumb": "Aplikacje Mobilne",
+        "features": {
+          "ios": {
+            "title": "Rozwój iOS",
+            "description": "Natywne aplikacje iOS zbudowane w Swift dla optymalnej wydajności i integracji z ekosystemem Apple."
+          },
+          "android": {
+            "title": "Rozwój Android",
+            "description": "Natywne aplikacje Android z Kotlin dla płynnej wydajności na wszystkich urządzeniach."
+          },
+          "crossPlatform": {
+            "title": "Aplikacje Wieloplatformowe",
+            "description": "Rozwiązania React Native i Flutter dla efektywnego rozwoju na wielu platformach."
+          },
+          "ui": {
+            "title": "Projektowanie UI/UX",
+            "description": "Piękne, intuicyjne interfejsy zgodne z wytycznymi platform."
+          },
+          "backend": {
+            "title": "Backend i API",
+            "description": "Skalowalna infrastruktura backendowa zasilająca Twoje aplikacje mobilne."
+          },
+          "maintenance": {
+            "title": "Utrzymanie Aplikacji",
+            "description": "Bieżące aktualizacje, poprawki błędów i rozwój nowych funkcji."
+          }
+        },
+        "process": {
+          "concept": {
+            "title": "Koncepcja",
+            "description": "Zdefiniuj wizję aplikacji, funkcje i grupę docelową."
+          },
+          "design": {
+            "title": "Projektowanie",
+            "description": "Twórz wireframe'y i high-fidelity projekty wszystkich ekranów."
+          },
+          "development": {
+            "title": "Rozwój",
+            "description": "Buduj aplikację z iteracyjnymi sprintami i ciągłym feedbackiem."
+          },
+          "release": {
+            "title": "Wydanie",
+            "description": "Publikuj w sklepach z aplikacjami z optymalizacją i wsparciem marketingowym."
+          }
+        },
+        "cta": {
+          "title": "Masz pomysł na aplikację mobilną?",
+          "subtitle": "Zamieńmy Twoją wizję w mobilne doświadczenie, które użytkownicy pokochają.",
+          "button": "Porozmawiaj o aplikacji"
+        }
+      },
+      "cloud": {
+        "label": "Usługi",
+        "title": "Rozwiązania Chmurowe",
+        "subtitle": "Buduj, migruj i optymalizuj infrastrukturę chmurową pod kątem skalowalności, niezawodności i efektywności kosztowej.",
+        "breadcrumb": "Rozwiązania Chmurowe",
+        "features": {
+          "migration": {
+            "title": "Migracja do Chmury",
+            "description": "Płynnie przenieś aplikacje i dane do chmury z minimalnym przestojem."
+          },
+          "infrastructure": {
+            "title": "Infrastructure as Code",
+            "description": "Zautomatyzowana, wersjonowana infrastruktura z Terraform i CloudFormation."
+          },
+          "kubernetes": {
+            "title": "Kubernetes i Kontenery",
+            "description": "Orkiestracja kontenerów dla skalowalnych, odpornych architektur mikroserwisów."
+          },
+          "devops": {
+            "title": "DevOps i CI/CD",
+            "description": "Zautomatyzowane pipeline'y dla szybszego i bardziej niezawodnego dostarczania oprogramowania."
+          },
+          "security": {
+            "title": "Bezpieczeństwo Chmury",
+            "description": "Kompleksowe zabezpieczenia chroniące Twoje zasoby chmurowe."
+          },
+          "monitoring": {
+            "title": "Monitoring i Observability",
+            "description": "Pełna widoczność systemów z logowaniem, metrykami i alertami."
+          }
+        },
+        "process": {
+          "assessment": {
+            "title": "Ocena",
+            "description": "Oceń obecną infrastrukturę i zdefiniuj cele chmurowe."
+          },
+          "planning": {
+            "title": "Planowanie",
+            "description": "Zaprojektuj architekturę chmurową i strategię migracji."
+          },
+          "migration": {
+            "title": "Migracja",
+            "description": "Przeprowadź migrację z minimalnym przestojem i ryzykiem."
+          },
+          "optimization": {
+            "title": "Optymalizacja",
+            "description": "Ciągle poprawiaj wydajność, bezpieczeństwo i efektywność kosztową."
+          }
+        },
+        "cta": {
+          "title": "Gotowy na chmurę?",
+          "subtitle": "Zbudujmy infrastrukturę chmurową, która skaluje się z Twoim biznesem.",
+          "button": "Zaplanuj migrację"
+        }
+      }
+    },
+    "about": {
+      "label": "O Nas",
+      "title": "Budujemy przyszłość oprogramowania",
+      "subtitle": "Zespół pasjonatów inżynierów, projektantów i strategów dedykowanych pomaganiu firmom prosperować w erze cyfrowej.",
+      "breadcrumb": "O nas",
+      "story": {
+        "label": "Nasza Historia",
+        "title": "Zaczęliśmy z wizją uczynienia technologii dostępną",
+        "paragraph1": "Pluscode zostało założone z prostym przekonaniem: że świetna technologia powinna być dostępna dla firm każdej wielkości. Zaczęliśmy jako mały zespół inżynierów sfrustrowanych złożonością i kosztami oprogramowania korporacyjnego.",
+        "paragraph2": "Dziś rozwinęliśmy się w pełnoprawną firmę tworzącą oprogramowanie, ale nasza misja pozostaje ta sama: dostarczać wyjątkowe rozwiązania programowe, które przynoszą realne wyniki biznesowe."
+      },
+      "values": {
+        "label": "Nasze Wartości",
+        "title": "Za czym stoimy",
+        "items": {
+          "excellence": {
+            "title": "Doskonałość",
+            "description": "Stawiamy sobie najwyższe standardy we wszystkim co robimy, od jakości kodu po komunikację z klientem."
+          },
+          "innovation": {
+            "title": "Innowacja",
+            "description": "Przyjmujemy nowe technologie i podejścia, zawsze szukając lepszych sposobów rozwiązywania problemów."
+          },
+          "partnership": {
+            "title": "Partnerstwo",
+            "description": "Postrzegamy siebie jako rozszerzenie Twojego zespołu, zaangażowani w Twój sukces tak samo jak w nasz."
+          },
+          "transparency": {
+            "title": "Przejrzystość",
+            "description": "Wierzymy w szczerą, otwartą komunikację. Bez ukrytych agend, bez niespodzianek."
+          }
+        }
+      },
+      "stats": {
+        "items": {
+          "years": {
+            "value": "8+",
+            "label": "Lat doświadczenia"
+          },
+          "projects": {
+            "value": "150+",
+            "label": "Zrealizowanych projektów"
+          },
+          "clients": {
+            "value": "50+",
+            "label": "Zadowolonych klientów"
+          },
+          "team": {
+            "value": "25+",
+            "label": "Członków zespołu"
+          }
+        }
+      },
+      "team": {
+        "label": "Nasz Zespół",
+        "title": "Poznaj ludzi stojących za Pluscode",
+        "members": {
+          "ceo": {
+            "name": "Dawid Kubicki",
+            "role": "CEO i Założyciel",
+            "bio": "Pasjonat technologii i jej potencjału do transformacji biznesów."
+          },
+          "cto": {
+            "name": "Tech Lead",
+            "role": "CTO",
+            "bio": "Kieruje naszymi wysiłkami inżynieryjnymi z naciskiem na innowację i jakość."
+          },
+          "design": {
+            "name": "Design Lead",
+            "role": "Head of Design",
+            "bio": "Tworzy piękne, intuicyjne doświadczenia, które użytkownicy kochają."
+          },
+          "engineering": {
+            "name": "Engineering Lead",
+            "role": "Head of Engineering",
+            "bio": "Buduje skalowalne rozwiązania z najnowocześniejszymi technologiami."
+          }
+        }
+      },
+      "cta": {
+        "title": "Chcesz dołączyć do naszego zespołu?",
+        "subtitle": "Zawsze szukamy utalentowanych ludzi, którzy podzielają naszą pasję do świetnego oprogramowania.",
+        "button": "Skontaktuj się"
+      }
+    },
+    "caseStudies": {
+      "label": "Case Studies",
+      "title": "Nasze projekty w akcji",
+      "subtitle": "Poznaj nasze portfolio udanych projektów i zobacz, jak pomogliśmy firmom osiągnąć ich cele.",
+      "breadcrumb": "Case Studies",
+      "cta": {
+        "title": "Masz projekt na myśli?",
+        "subtitle": "Porozmawiajmy o tym, jak możemy pomóc Ci osiągnąć podobne wyniki.",
+        "button": "Rozpocznij rozmowę"
+      },
+      "detail": {
+        "breadcrumbParent": "Case Studies",
+        "client": "Klient",
+        "overview": {
+          "label": "Przegląd",
+          "title": "O tym projekcie",
+          "description": "To case study pokazuje, jak współpracowaliśmy z klientem, aby dostarczyć transformacyjne rozwiązanie, które przekroczyło oczekiwania.",
+          "industry": "Branża",
+          "industryValue": "Technologia",
+          "services": "Usługi",
+          "servicesValue": "Rozwój, Design, Strategia"
+        },
+        "challenge": {
+          "label": "Wyzwanie",
+          "title": "Zrozumienie problemu",
+          "description": "Klient stanął przed znaczącymi wyzwaniami wymagającymi innowacyjnych rozwiązań. Ściśle współpracowaliśmy, aby zrozumieć ich bolączki i opracować strategiczne podejście."
+        },
+        "solution": {
+          "label": "Nasze Rozwiązanie",
+          "title": "Jak to rozwiązaliśmy",
+          "description": "Wdrożyliśmy kompleksowe rozwiązanie, które spełniło wszystkie kluczowe wymagania, zachowując elastyczność dla przyszłego rozwoju.",
+          "steps": {
+            "step1": {
+              "title": "Badania i Discovery",
+              "description": "Głębokie zanurzenie w wymagania, potrzeby użytkowników i ograniczenia techniczne."
+            },
+            "step2": {
+              "title": "Projektowanie i Architektura",
+              "description": "Stworzenie skalowalnej architektury i intuicyjnego doświadczenia użytkownika."
+            },
+            "step3": {
+              "title": "Implementacja",
+              "description": "Zwinny rozwój z ciągłym feedbackiem i iteracją."
+            }
+          }
+        },
+        "results": {
+          "label": "Wyniki",
+          "title": "Wpływ jaki osiągnęliśmy",
+          "metrics": {
+            "metric1": {
+              "value": "40%",
+              "label": "Wzrost efektywności"
+            },
+            "metric2": {
+              "value": "2x",
+              "label": "Szybsze wdrożenia"
+            },
+            "metric3": {
+              "value": "99.9%",
+              "label": "Dostępność systemu"
+            },
+            "metric4": {
+              "value": "50%",
+              "label": "Redukcja kosztów"
+            }
+          }
+        },
+        "cta": {
+          "title": "Gotowy osiągnąć podobne wyniki?",
+          "subtitle": "Porozmawiajmy o tym, jak możemy pomóc przekształcić Twój biznes.",
+          "button": "Rozpocznij projekt",
+          "viewAll": "Zobacz wszystkie case studies"
+        }
+      }
+    },
+    "insights": {
+      "label": "Insights",
+      "title": "Myśli i pomysły",
+      "subtitle": "Eksperckie perspektywy na temat technologii, biznesu i innowacji od naszego zespołu.",
+      "breadcrumb": "Insights",
+      "allArticles": "Wszystkie artykuły",
+      "newsletter": {
+        "title": "Bądź na bieżąco",
+        "subtitle": "Otrzymuj najnowsze insights bezpośrednio na swoją skrzynkę.",
+        "placeholder": "Wpisz swój email",
+        "button": "Subskrybuj"
+      },
+      "article": {
+        "breadcrumbParent": "Insights",
+        "content": {
+          "intro": "Ten artykuł omawia kluczowe koncepcje i dostarcza praktycznych wniosków dla profesjonalistów chcących być na bieżąco w swojej dziedzinie.",
+          "section1": {
+            "title": "Zrozumienie Krajobrazu",
+            "paragraph": "Krajobraz technologiczny stale ewoluuje, a bycie na bieżąco jest kluczowe dla podejmowania strategicznych decyzji. W tej sekcji badamy obecny stan branży i pojawiające się trendy."
+          },
+          "section2": {
+            "title": "Najlepsze Praktyki",
+            "paragraph": "Bazując na naszym doświadczeniu w pracy z klientami z różnych branż, zidentyfikowaliśmy kilka najlepszych praktyk, które konsekwentnie przynoszą rezultaty. Te podejścia zostały przetestowane i udoskonalone w wielu projektach."
+          },
+          "section3": {
+            "title": "Spojrzenie w Przyszłość",
+            "paragraph": "Patrząc w przyszłość, kilka ekscytujących zmian pojawia się na horyzoncie. Organizacje, które przygotują się teraz, będą najlepiej przygotowane do wykorzystania tych możliwości."
+          },
+          "keyTakeaways": {
+            "title": "Kluczowe Wnioski",
+            "item1": "Bądź na bieżąco z nowymi technologiami i trendami w branży",
+            "item2": "Skup się na dostarczaniu mierzalnej wartości biznesowej",
+            "item3": "Buduj od początku z myślą o skalowalności i elastyczności"
+          }
+        },
+        "related": {
+          "title": "Powiązane artykuły"
+        }
+      }
+    },
+    "contact": {
+      "breadcrumb": "Kontakt",
+      "hero": {
+        "title": "Skontaktuj się",
+        "subtitle": "Jesteśmy tutaj, aby pomóc w realizacji Twoich pomysłów. Napisz do nas i rozpocznijmy rozmowę."
+      },
+      "location": {
+        "label": "Nasza Lokalizacja",
+        "title": "Odwiedź nas w Poznaniu",
+        "description": "Nasze biuro znajduje się w sercu Poznania. Zawsze chętnie spotkamy się osobiście, aby omówić Twój projekt.",
+        "address": {
+          "title": "Adres Biura",
+          "line1": "Poznań, Polska",
+          "line2": "Województwo Wielkopolskie"
+        },
+        "hours": {
+          "title": "Godziny Pracy",
+          "weekdays": "Poniedziałek - Piątek: 9:00 - 18:00",
+          "timezone": "Czas Środkowoeuropejski (CET)"
+        }
+      },
+      "faq": {
+        "label": "FAQ",
+        "title": "Najczęściej zadawane pytania",
+        "items": {
+          "timeline": {
+            "question": "Jaki jest typowy czas realizacji projektu?",
+            "answer": "Czas realizacji zależy od zakresu i złożoności projektu. Typowe MVP zajmuje 2-4 miesiące, podczas gdy większe projekty mogą trwać 6-12 miesięcy. Szczegółowy harmonogram przedstawimy podczas wstępnej konsultacji."
+          },
+          "process": {
+            "question": "Jaki jest Wasz proces rozwoju?",
+            "answer": "Stosujemy metodologię agile z 2-tygodniowymi sprintami, regularnymi demo i ciągłym feedbackiem. To zapewnia przejrzystość i pozwala na korekty w trakcie projektu."
+          },
+          "technologies": {
+            "question": "Z jakimi technologiami pracujecie?",
+            "answer": "Specjalizujemy się w nowoczesnych technologiach, w tym React, Next.js, Node.js, Python, AWS i Google Cloud. Dobieramy najlepsze narzędzia do specyficznych potrzeb każdego projektu."
+          },
+          "support": {
+            "question": "Czy oferujecie wsparcie po wdrożeniu?",
+            "answer": "Tak, oferujemy kompleksowe pakiety wsparcia i utrzymania. Obejmują one poprawki błędów, aktualizacje bezpieczeństwa, monitoring wydajności i rozwój nowych funkcji."
+          }
+        }
+      }
+    },
+    "legal": {
+      "privacy": {
+        "title": "Polityka Prywatności",
+        "subtitle": "Twoja prywatność jest dla nas ważna. Dowiedz się, jak zbieramy, wykorzystujemy i chronimy Twoje dane.",
+        "breadcrumb": "Polityka Prywatności",
+        "lastUpdated": "Ostatnia aktualizacja: Styczeń 2025",
+        "tableOfContents": "Spis Treści",
+        "sections": {
+          "introduction": {
+            "title": "Wprowadzenie",
+            "content": "Niniejsza Polityka Prywatności wyjaśnia, jak Pluscode zbiera, wykorzystuje, ujawnia i chroni Twoje dane podczas korzystania z naszej strony internetowej lub usług. Prosimy o uważne zapoznanie się z tą polityką prywatności."
+          },
+          "dataCollection": {
+            "title": "Dane, które Zbieramy",
+            "content": "Zbieramy informacje, które nam bezpośrednio przekazujesz, np. wypełniając formularz kontaktowy, subskrybując newsletter lub kontaktując się z nami. Może to obejmować Twoje imię, adres email, nazwę firmy i inne informacje, które zdecydujesz się podać."
+          },
+          "dataUsage": {
+            "title": "Jak Wykorzystujemy Twoje Dane",
+            "content": "Wykorzystujemy zebrane informacje do świadczenia, utrzymywania i ulepszania naszych usług, komunikacji z Tobą, wysyłania powiadomień technicznych i wiadomości wsparcia oraz odpowiadania na Twoje komentarze, pytania i prośby."
+          },
+          "dataSecurity": {
+            "title": "Bezpieczeństwo Danych",
+            "content": "Podejmujemy odpowiednie środki, aby chronić informacje o Tobie przed utratą, kradzieżą, nadużyciem, nieautoryzowanym dostępem, ujawnieniem, modyfikacją i zniszczeniem. Jednak żadna transmisja internetowa ani email nie jest w pełni bezpieczna ani wolna od błędów."
+          },
+          "cookies": {
+            "title": "Pliki Cookie i Śledzenie",
+            "content": "Możemy używać plików cookie i podobnych technologii śledzenia do monitorowania aktywności na naszej stronie i przechowywania pewnych informacji. Możesz ustawić przeglądarkę, aby odrzucała wszystkie pliki cookie lub informowała, gdy plik cookie jest wysyłany."
+          },
+          "thirdParty": {
+            "title": "Usługi Podmiotów Trzecich",
+            "content": "Możemy korzystać z usług podmiotów trzecich, aby pomóc nam prowadzić naszą działalność i stronę internetową lub zarządzać działaniami w naszym imieniu. Możemy udostępniać Twoje informacje tym podmiotom trzecim w tych ograniczonych celach."
+          },
+          "rights": {
+            "title": "Twoje Prawa",
+            "content": "Masz prawo do dostępu, aktualizacji lub usunięcia posiadanych przez nas informacji o Tobie. Jeśli chcesz skorzystać z któregokolwiek z tych praw, skontaktuj się z nami, korzystając z podanych poniżej danych kontaktowych."
+          },
+          "contact": {
+            "title": "Kontakt",
+            "content": "Jeśli masz pytania dotyczące niniejszej Polityki Prywatności, skontaktuj się z nami pod adresem contact@pluscode.io."
+          }
+        }
+      },
+      "terms": {
+        "title": "Regulamin",
+        "subtitle": "Prosimy o uważne zapoznanie się z niniejszym regulaminem przed skorzystaniem z naszych usług.",
+        "breadcrumb": "Regulamin",
+        "lastUpdated": "Ostatnia aktualizacja: Styczeń 2025",
+        "tableOfContents": "Spis Treści",
+        "sections": {
+          "acceptance": {
+            "title": "Akceptacja Warunków",
+            "content": "Uzyskując dostęp lub korzystając z naszej strony internetowej i usług, zgadzasz się na przestrzeganie niniejszego Regulaminu. Jeśli nie zgadzasz się z tymi warunkami, prosimy o niekorzystanie z naszych usług."
+          },
+          "services": {
+            "title": "Opis Usług",
+            "content": "Pluscode świadczy usługi tworzenia oprogramowania, konsultingu i usług pokrewnych. Konkretne świadczone usługi będą określone w odrębnych umowach lub zakresach prac."
+          },
+          "userObligations": {
+            "title": "Obowiązki Użytkownika",
+            "content": "Zgadzasz się korzystać z naszych usług wyłącznie w celach zgodnych z prawem i zgodnie z niniejszym regulaminem. Jesteś odpowiedzialny za zachowanie poufności wszelkich danych uwierzytelniających konto."
+          },
+          "intellectualProperty": {
+            "title": "Własność Intelektualna",
+            "content": "Wszystkie treści na naszej stronie internetowej, w tym teksty, grafiki, logo i oprogramowanie, są własnością Pluscode lub jego licencjodawców i są chronione prawem własności intelektualnej."
+          },
+          "limitations": {
+            "title": "Ograniczenie Odpowiedzialności",
+            "content": "W najszerszym zakresie dozwolonym przez prawo, Pluscode nie ponosi odpowiedzialności za żadne pośrednie, przypadkowe, specjalne, wynikowe lub karne szkody wynikające z korzystania z naszych usług lub związane z nim."
+          },
+          "termination": {
+            "title": "Rozwiązanie",
+            "content": "Możemy zakończyć lub zawiesić Twój dostęp do naszych usług natychmiast, bez wcześniejszego powiadomienia, z jakiegokolwiek powodu, w tym bez ograniczeń, jeśli naruszysz niniejszy Regulamin."
+          },
+          "governing": {
+            "title": "Prawo Właściwe",
+            "content": "Niniejszy regulamin podlega prawu polskiemu i będzie interpretowany zgodnie z nim, bez uwzględnienia przepisów kolizyjnych."
+          },
+          "changes": {
+            "title": "Zmiany Regulaminu",
+            "content": "Zastrzegamy sobie prawo do modyfikacji lub zastąpienia niniejszego Regulaminu w dowolnym momencie. Powiadomimy o wszelkich zmianach, publikując nowy regulamin na tej stronie."
+          }
+        }
+      }
+    },
+    "sitemap": {
+      "title": "Mapa Strony",
+      "subtitle": "Znajdź drogę po naszej stronie dzięki kompleksowemu przeglądowi wszystkich stron.",
+      "breadcrumb": "Mapa Strony",
+      "sections": {
+        "main": {
+          "title": "Strony Główne",
+          "links": {
+            "home": "Strona główna",
+            "about": "O nas",
+            "contact": "Kontakt"
+          }
+        },
+        "aiData": {
+          "title": "AI i Dane",
+          "links": {
+            "machineLearning": "Machine Learning",
+            "analytics": "Analityka Danych",
+            "consulting": "Konsulting AI"
+          }
+        },
+        "services": {
+          "title": "Usługi",
+          "links": {
+            "webDevelopment": "Aplikacje Webowe",
+            "mobile": "Aplikacje Mobilne",
+            "cloud": "Rozwiązania Chmurowe"
+          }
+        },
+        "content": {
+          "title": "Treści",
+          "links": {
+            "caseStudies": "Case Studies",
+            "insights": "Insights"
+          }
+        },
+        "legal": {
+          "title": "Prawne",
+          "links": {
+            "privacy": "Polityka Prywatności",
+            "terms": "Regulamin"
+          }
+        }
+      }
+    }
   }
 }
