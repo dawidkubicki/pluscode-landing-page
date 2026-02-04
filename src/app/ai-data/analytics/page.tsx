@@ -92,9 +92,6 @@ export default function AnalyticsPage() {
       label={t('label')}
       title={t('title')}
       subtitle={t('subtitle')}
-      breadcrumbLabel={t('breadcrumb')}
-      breadcrumbParentLabel="AI & Data"
-      breadcrumbParentHref="/ai-data/analytics"
       gradient="bg-gradient-to-br from-blue-50/50 via-cyan-50/30 to-white"
       features={features}
       processSteps={processSteps}

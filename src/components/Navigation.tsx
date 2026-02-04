@@ -275,7 +275,7 @@ export default function Navigation() {
             {/* Get in touch button */}
             <Link
               href="/contact"
-              className={`hidden lg:flex items-center justify-center bg-black text-white hover:bg-gray-900 px-5 h-9 rounded-2xl text-xs font-normal tracking-wide transition-all duration-300 ${
+              className={`hidden lg:flex items-center justify-center bg-black text-white hover:bg-gray-900 hover:shadow-md hover:shadow-purple-500/20 px-5 h-9 rounded-2xl text-xs font-normal tracking-wide transition-all duration-300 ${
                 hasScrolled ? '-translate-x-2' : 'translate-x-0'
               }`}
             >

@@ -44,6 +44,19 @@ export default function SitemapPage() {
       ],
     },
     {
+      title: t('sections.industries.title'),
+      links: [
+        { label: t('sections.industries.links.finance'), href: '/industries/finance' },
+        { label: t('sections.industries.links.healthcare'), href: '/industries/healthcare' },
+        { label: t('sections.industries.links.ecommerce'), href: '/industries/ecommerce' },
+        { label: t('sections.industries.links.hr'), href: '/industries/hr' },
+        { label: t('sections.industries.links.logistics'), href: '/industries/logistics' },
+        { label: t('sections.industries.links.ai'), href: '/industries/ai' },
+        { label: t('sections.industries.links.saas'), href: '/industries/saas' },
+        { label: t('sections.industries.links.manufacturing'), href: '/industries/manufacturing' },
+      ],
+    },
+    {
       title: t('sections.content.title'),
       links: [
         { label: t('sections.content.links.caseStudies'), href: '/case-studies' },
@@ -67,7 +80,6 @@ export default function SitemapPage() {
       <PageHeader
         title={t('title')}
         subtitle={t('subtitle')}
-        breadcrumbs={[{ label: t('breadcrumb') }]}
       />
 
       {/* Content */}

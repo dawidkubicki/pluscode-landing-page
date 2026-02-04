@@ -6,6 +6,7 @@ import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import Testimonial from '@/components/Testimonial';
 import { PageHeader } from '@/components/shared';
 
 export default function AboutPage() {
@@ -13,13 +14,11 @@ export default function AboutPage() {
 
   const storyRef = useRef(null);
   const valuesRef = useRef(null);
-  const teamRef = useRef(null);
   const statsRef = useRef(null);
   const ctaRef = useRef(null);
 
   const storyInView = useInView(storyRef, { once: true, amount: 0.3 });
   const valuesInView = useInView(valuesRef, { once: true, amount: 0.2 });
-  const teamInView = useInView(teamRef, { once: true, amount: 0.2 });
   const statsInView = useInView(statsRef, { once: true, amount: 0.3 });
   const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 });
 
@@ -63,29 +62,6 @@ export default function AboutPage() {
     },
   ];
 
-  const team = [
-    {
-      name: t('team.members.ceo.name'),
-      role: t('team.members.ceo.role'),
-      bio: t('team.members.ceo.bio'),
-    },
-    {
-      name: t('team.members.cto.name'),
-      role: t('team.members.cto.role'),
-      bio: t('team.members.cto.bio'),
-    },
-    {
-      name: t('team.members.design.name'),
-      role: t('team.members.design.role'),
-      bio: t('team.members.design.bio'),
-    },
-    {
-      name: t('team.members.engineering.name'),
-      role: t('team.members.engineering.role'),
-      bio: t('team.members.engineering.bio'),
-    },
-  ];
-
   const stats = [
     { value: t('stats.items.years.value'), label: t('stats.items.years.label') },
     { value: t('stats.items.projects.value'), label: t('stats.items.projects.label') },
@@ -102,7 +78,6 @@ export default function AboutPage() {
         label={t('label')}
         title={t('title')}
         subtitle={t('subtitle')}
-        breadcrumbs={[{ label: t('breadcrumb') }]}
       />
 
       {/* Story Section */}
@@ -225,58 +200,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section
-        ref={teamRef}
-        className="py-20 md:py-28 lg:py-36 px-6 sm:px-12 md:px-16 bg-white"
-      >
-        <div className="max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={teamInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-            className="text-center mb-12 md:mb-16"
-          >
-            <p className="text-[11px] font-medium tracking-[0.2em] uppercase text-neutral-400 mb-4">
-              {t('team.label')}
-            </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-neutral-900 leading-[1.1] tracking-tight">
-              {t('team.title')}
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                animate={teamInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.1,
-                  ease: [0.25, 0.4, 0.25, 1],
-                }}
-                className="text-center"
-              >
-                <div className="aspect-square rounded-2xl bg-gradient-to-br from-neutral-100 to-neutral-50 mb-5 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center">
-                    <svg className="w-8 h-8 text-neutral-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                  </div>
-                </div>
-                <h3 className="text-lg md:text-xl font-semibold text-neutral-900 mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-sm text-neutral-400 mb-3">{member.role}</p>
-                <p className="text-neutral-500 text-sm leading-relaxed">
-                  {member.bio}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Testimonial Section */}
+      <Testimonial />
 
       {/* CTA Section */}
       <section

@@ -114,13 +114,19 @@
   "insights": {
     "label": "Insights",
     "title": "Najnowsze z naszego bloga",
+    "subtitle": "Eksperckie perspektywy na temat technologii, biznesu i innowacji od naszego zespołu.",
     "viewAll": "Zobacz wszystkie artykuły",
+    "readMore": "Czytaj artykuł",
+    "minRead": "min czytania",
+    "cta": "Zobacz wszystkie artykuły",
     "readTime": "{minutes} min czytania",
     "categories": {
       "ai": "AI i Machine Learning",
       "development": "Rozwój oprogramowania",
       "business": "Biznes",
-      "technology": "Technologia"
+      "technology": "Technologia",
+      "cloud": "Chmura",
+      "mobile": "Mobile"
     },
     "items": {
       "featured": {
@@ -880,6 +886,19 @@
             "cloud": "Rozwiązania Chmurowe"
           }
         },
+        "industries": {
+          "title": "Branże",
+          "links": {
+            "finance": "Usługi Finansowe",
+            "healthcare": "Ochrona Zdrowia",
+            "ecommerce": "E-Commerce i Handel",
+            "hr": "HR i Rekrutacja",
+            "logistics": "Logistyka i Transport",
+            "ai": "AI i Machine Learning",
+            "saas": "SaaS i Startupy",
+            "manufacturing": "Produkcja i Przemysł"
+          }
+        },
         "content": {
           "title": "Treści",
           "links": {
@@ -893,6 +912,496 @@
             "privacy": "Polityka Prywatności",
             "terms": "Regulamin"
           }
+        }
+      }
+    },
+    "industries": {
+      "shared": {
+        "challengesTitle": "Wyzwania Branży",
+        "challengesSubtitle": "Typowe problemy, które pomagamy rozwiązać",
+        "solutionsTitle": "Nasze Rozwiązania",
+        "solutionsSubtitle": "Jak możemy pomóc w transformacji Twojego biznesu",
+        "useCasesTitle": "Przypadki Użycia",
+        "useCasesSubtitle": "Realne zastosowania, które dostarczamy"
+      },
+      "finance": {
+        "label": "Usługi Finansowe",
+        "title": "Transformacja Usług Finansowych przez Technologię",
+        "subtitle": "Od wykrywania oszustw po zgodność regulacyjną — budujemy bezpieczne, skalowalne rozwiązania, które pomagają instytucjom finansowym innowować przy jednoczesnym zarządzaniu ryzykiem.",
+        "challenges": {
+          "challenge1": {
+            "title": "Zagrożenia Cyberbezpieczeństwa",
+            "description": "Instytucje finansowe nieustannie stają w obliczu wyrafinowanych cyberataków wymierzonych w wrażliwe dane klientów i transakcje."
+          },
+          "challenge2": {
+            "title": "Zgodność Regulacyjna",
+            "description": "Nadążanie za zmieniającymi się przepisami jak RODO, PSD2 i wymogami przeciwdziałania praniu pieniędzy wymaga znacznych zasobów."
+          },
+          "challenge3": {
+            "title": "Modernizacja Starszych Systemów",
+            "description": "Przestarzała infrastruktura ogranicza zwinność i innowacje, jednocześnie zwiększając koszty utrzymania i podatność na zagrożenia."
+          },
+          "challenge4": {
+            "title": "Zarządzanie Danymi na Dużą Skalę",
+            "description": "Zarządzanie i wydobywanie wniosków z ogromnych ilości danych finansowych przy zapewnieniu dokładności i przetwarzania w czasie rzeczywistym."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI i Machine Learning",
+            "description": "Systemy wykrywania oszustw, modele scoringu kredytowego, handel algorytmiczny i zautomatyzowana zgodność KYC/AML."
+          },
+          "web": {
+            "title": "Platformy Webowe",
+            "description": "Bezpieczne portale bankowości internetowej, platformy tradingowe i panele samoobsługi klienta."
+          },
+          "mobile": {
+            "title": "Bankowość Mobilna",
+            "description": "Bogate funkcjonalnie aplikacje bankowe z zabezpieczeniami biometrycznymi, natychmiastowymi płatnościami i śledzeniem inwestycji."
+          },
+          "cloud": {
+            "title": "Infrastruktura Chmurowa",
+            "description": "Zgodne z przepisami architektury chmurowe z disaster recovery, szyfrowaniem danych i śladami audytu."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Wykrywanie Oszustw w Czasie Rzeczywistym",
+            "description": "Systemy oparte na ML analizujące wzorce transakcji, aby wykrywać i zapobiegać oszustwom, zanim dotkną klientów."
+          },
+          "case2": {
+            "title": "Automatyczne Raportowanie Zgodności",
+            "description": "Inteligentne systemy automatycznie generujące raporty regulacyjne, redukując pracę ręczną i zapewniając dokładność."
+          },
+          "case3": {
+            "title": "Cyfrowy Onboarding",
+            "description": "Usprawnienie procesu onboardingu klienta z weryfikacją dokumentów i walidacją tożsamości opartą na AI."
+          }
+        },
+        "cta": {
+          "title": "Gotowy zmodernizować usługi finansowe?",
+          "subtitle": "Porozmawiajmy o tym, jak technologia może pomóc lepiej obsługiwać klientów przy jednoczesnym zarządzaniu ryzykiem.",
+          "button": "Umów konsultację"
+        }
+      },
+      "healthcare": {
+        "label": "Ochrona Zdrowia",
+        "title": "Rozwój Ochrony Zdrowia przez Cyfrowe Innowacje",
+        "subtitle": "Budujemy rozwiązania skoncentrowane na pacjencie, które poprawiają świadczenie opieki, usprawniają przepływy kliniczne i zapewniają bezpieczeństwo danych oraz zgodność.",
+        "challenges": {
+          "challenge1": {
+            "title": "Prywatność Danych i Zgodność",
+            "description": "Organizacje ochrony zdrowia muszą nawigować przez złożone przepisy jak RODO, jednocześnie zarządzając wrażliwymi danymi pacjentów."
+          },
+          "challenge2": {
+            "title": "Interoperacyjność",
+            "description": "Łączenie różnorodnych systemów i umożliwianie płynnej wymiany danych między świadczeniodawcami, płatnikami i pacjentami."
+          },
+          "challenge3": {
+            "title": "Zaangażowanie Pacjenta",
+            "description": "Spełnianie oczekiwań pacjentów dotyczących cyfrowego dostępu przy zachowaniu jakości opieki i osobistego kontaktu."
+          },
+          "challenge4": {
+            "title": "Efektywność Przepływów Klinicznych",
+            "description": "Zmniejszanie obciążeń administracyjnych pracowników służby zdrowia, aby umożliwić więcej czasu na opiekę nad pacjentem."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI i Machine Learning",
+            "description": "Systemy wsparcia diagnostycznego, analityka predykcyjna wyników pacjentów i analiza obrazowania medycznego."
+          },
+          "web": {
+            "title": "Aplikacje Webowe",
+            "description": "Portale pacjenta, interfejsy elektronicznej dokumentacji medycznej i panele dla świadczeniodawców."
+          },
+          "mobile": {
+            "title": "Aplikacje Mobilne dla Zdrowia",
+            "description": "Platformy telemedyczne, śledzenie leków, umawianie wizyt i zdalne monitorowanie pacjentów."
+          },
+          "cloud": {
+            "title": "Bezpieczne Rozwiązania Chmurowe",
+            "description": "Infrastruktura zgodna z przepisami ochrony danych, bezpieczne przechowywanie danych i disaster recovery dla danych medycznych."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Platforma Telemedyczna",
+            "description": "Bezpieczne konsultacje wideo z zintegrowanym dostępem do EHR, e-receptami i planowaniem wizyt kontrolnych."
+          },
+          "case2": {
+            "title": "Wsparcie Decyzji Klinicznych",
+            "description": "Narzędzia diagnostyczne wspomagane AI, które pomagają klinicystom identyfikować schorzenia i rekomendować opcje leczenia."
+          },
+          "case3": {
+            "title": "Panel Monitorowania Pacjenta",
+            "description": "Śledzenie metryk zdrowia w czasie rzeczywistym dla zarządzania chorobami przewlekłymi i wczesnej interwencji."
+          }
+        },
+        "cta": {
+          "title": "Gotowy przekształcić opiekę nad pacjentem?",
+          "subtitle": "Zbadajmy, jak technologia może poprawić świadczenie opieki zdrowotnej i wyniki leczenia.",
+          "button": "Rozpocznij rozmowę"
+        }
+      },
+      "ecommerce": {
+        "label": "E-Commerce i Handel",
+        "title": "Napędzamy Przyszłość Handlu",
+        "subtitle": "Tworzymy płynne doświadczenia zakupowe, które zwiększają konwersje, budują lojalność i skalują się wraz z rozwojem Twojego biznesu.",
+        "challenges": {
+          "challenge1": {
+            "title": "Skalowalność w Szczytach",
+            "description": "Obsługa skoków ruchu podczas wyprzedaży i sezonowych szczytów bez pogorszenia wydajności."
+          },
+          "challenge2": {
+            "title": "Doświadczenie Klienta",
+            "description": "Spełnianie rosnących oczekiwań dotyczących personalizacji, szybkiej dostawy i płynnych doświadczeń omnichannel."
+          },
+          "challenge3": {
+            "title": "Zarządzanie Zapasami",
+            "description": "Utrzymywanie optymalnych poziomów zapasów w wielu kanałach przy minimalizacji kosztów i unikaniu braków."
+          },
+          "challenge4": {
+            "title": "Decyzje Oparte na Danych",
+            "description": "Wykorzystywanie danych klientów do optymalizacji cen, marketingu i oferty produktowej w czasie rzeczywistym."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI i Machine Learning",
+            "description": "Spersonalizowane rekomendacje, prognozowanie popytu, dynamiczne ceny i analiza zachowań klientów."
+          },
+          "web": {
+            "title": "Platformy E-Commerce",
+            "description": "Wysoko wydajne sklepy internetowe z zoptymalizowanymi procesami płatności i integracją magazynową."
+          },
+          "mobile": {
+            "title": "Handel Mobilny",
+            "description": "Natywne aplikacje zakupowe z powiadomieniami push, płatnościami mobilnymi i wizualizacją produktów AR."
+          },
+          "cloud": {
+            "title": "Skalowalna Infrastruktura",
+            "description": "Auto-skalowalna architektura chmurowa obsługująca skoki ruchu i zapewniająca 99.99% dostępności."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Spersonalizowane Doświadczenie Zakupowe",
+            "description": "Rekomendacje produktów i dynamiczna treść napędzana AI, która zwiększa współczynniki konwersji dzięki zrozumieniu preferencji klientów."
+          },
+          "case2": {
+            "title": "Ujednolicona Platforma Handlowa",
+            "description": "Płynna integracja doświadczeń online, mobilnych i stacjonarnych z widocznością zapasów w czasie rzeczywistym."
+          },
+          "case3": {
+            "title": "Inteligentny System Magazynowy",
+            "description": "Predykcyjne zarządzanie zapasami optymalizujące poziomy magazynowe i automatyzujące zamówienia na podstawie prognoz popytu."
+          }
+        },
+        "cta": {
+          "title": "Gotowy zwiększyć wyniki sprzedaży?",
+          "subtitle": "Zbudujmy platformę handlową, która zamienia odwiedzających w lojalnych klientów.",
+          "button": "Omów swój projekt"
+        }
+      },
+      "hr": {
+        "label": "HR i Rekrutacja",
+        "title": "Rewolucja w Zarządzaniu Zasobami Ludzkimi",
+        "subtitle": "Budujemy inteligentne rozwiązania HR, które usprawniają rekrutację, zwiększają doświadczenie pracowników i dostarczają praktycznych wniosków o sile roboczej.",
+        "challenges": {
+          "challenge1": {
+            "title": "Pozyskiwanie Talentów",
+            "description": "Znajdowanie i przyciąganie wykwalifikowanych kandydatów na konkurencyjnym rynku przy jednoczesnym skracaniu czasu rekrutacji."
+          },
+          "challenge2": {
+            "title": "Zaangażowanie Pracowników",
+            "description": "Utrzymanie motywacji zespołu i zmniejszanie rotacji w erze pracy zdalnej i hybrydowej."
+          },
+          "challenge3": {
+            "title": "Obciążenie Administracyjne",
+            "description": "Ręczne procesy HR pochłaniają cenny czas, który mógłby być poświęcony na inicjatywy strategiczne."
+          },
+          "challenge4": {
+            "title": "HR Oparty na Danych",
+            "description": "Przekształcanie danych HR w wnioski dla lepszego planowania siły roboczej i podejmowania decyzji."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI i Machine Learning",
+            "description": "Dopasowywanie kandydatów oparte na AI, screening CV, analiza nastrojów pracowników i przewidywanie odejść."
+          },
+          "web": {
+            "title": "Platformy HR",
+            "description": "Kompleksowe systemy HRIS, śledzenie kandydatów i portale samoobsługi pracowników."
+          },
+          "mobile": {
+            "title": "Aplikacje Mobilne HR",
+            "description": "Mobilny dostęp do rejestracji czasu, wniosków urlopowych, komunikacji zespołowej i e-learningu."
+          },
+          "cloud": {
+            "title": "Bezpieczna Chmura HR",
+            "description": "Skalowalna infrastruktura dla danych HR z kontrolą dostępu opartą na rolach i funkcjami zgodności."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Inteligentna Platforma Rekrutacyjna",
+            "description": "Kompleksowy ATS ze screeningiem kandydatów opartym na AI, planowaniem rozmów i współpracą w procesie rekrutacji."
+          },
+          "case2": {
+            "title": "Centrum Doświadczenia Pracownika",
+            "description": "Ujednolicona platforma do onboardingu, szkoleń, zarządzania wydajnością i komunikacji wewnętrznej."
+          },
+          "case3": {
+            "title": "Panel Analityki Siły Roboczej",
+            "description": "Wgląd w czasie rzeczywistym w zatrudnienie, rotację, wyniki zaangażowania i benchmarking wynagrodzeń."
+          }
+        },
+        "cta": {
+          "title": "Gotowy przekształcić operacje HR?",
+          "subtitle": "Zbudujmy rozwiązania, które pomogą przyciągać, utrzymywać i rozwijać najlepsze talenty.",
+          "button": "Zacznij teraz"
+        }
+      },
+      "logistics": {
+        "label": "Logistyka i Transport",
+        "title": "Optymalizacja Operacji Łańcucha Dostaw",
+        "subtitle": "Rozwijamy inteligentne rozwiązania logistyczne, które poprawiają widoczność, redukują koszty i zwiększają wydajność dostaw w całym łańcuchu dostaw.",
+        "challenges": {
+          "challenge1": {
+            "title": "Optymalizacja Tras",
+            "description": "Minimalizacja czasów dostaw i kosztów paliwa przy adaptacji do warunków drogowych i pogodowych w czasie rzeczywistym."
+          },
+          "challenge2": {
+            "title": "Widoczność w Czasie Rzeczywistym",
+            "description": "Śledzenie przesyłek, pojazdów i zapasów w wielu lokalizacjach i u partnerów w czasie rzeczywistym."
+          },
+          "challenge3": {
+            "title": "Wahania Popytu",
+            "description": "Adaptacja do nieprzewidywalnych zmian popytu przy zachowaniu poziomu usług i kontroli kosztów."
+          },
+          "challenge4": {
+            "title": "Koordynacja z Wieloma Partnerami",
+            "description": "Orkiestracja operacji między przewoźnikami, magazynami i dostawcami z różnymi systemami i procesami."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI i Machine Learning",
+            "description": "Prognozowanie popytu, algorytmy optymalizacji tras, predykcyjne utrzymanie ruchu i wykrywanie anomalii."
+          },
+          "web": {
+            "title": "Platformy Zarządzania",
+            "description": "Systemy zarządzania transportem, zarządzanie magazynem i dashboardy widoczności łańcucha dostaw."
+          },
+          "mobile": {
+            "title": "Rozwiązania Mobilne",
+            "description": "Aplikacje dla kierowców z nawigacją, potwierdzeniem dostawy, komunikacją w czasie rzeczywistym i zarządzaniem zadaniami."
+          },
+          "cloud": {
+            "title": "Skalowalna Infrastruktura",
+            "description": "Wysoko dostępne systemy chmurowe do przetwarzania danych IoT i zarządzania operacjami globalnymi."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "System Zarządzania Flotą",
+            "description": "Śledzenie pojazdów w czasie rzeczywistym, monitoring wydajności kierowców i automatyczna optymalizacja dyspozycji."
+          },
+          "case2": {
+            "title": "Inteligentna Platforma Magazynowa",
+            "description": "Optymalizacja zapasów, automatyzacja tras kompletacji i integracja z robotyką i automatyzacją."
+          },
+          "case3": {
+            "title": "Centrum Widoczności Łańcucha Dostaw",
+            "description": "Śledzenie przesyłek od początku do końca z predykcyjnymi ETA, alertami wyjątków i narzędziami współpracy z partnerami."
+          }
+        },
+        "cta": {
+          "title": "Gotowy zoptymalizować logistykę?",
+          "subtitle": "Zbudujmy rozwiązania, które przynoszą wzrost efektywności w całym łańcuchu dostaw.",
+          "button": "Zaplanuj projekt"
+        }
+      },
+      "ai": {
+        "label": "AI i Machine Learning",
+        "title": "Budujemy Przyszłość Napędzaną AI",
+        "subtitle": "Pomagamy organizacjom wykorzystać moc AI i machine learning do automatyzacji procesów, pozyskiwania wniosków i tworzenia przewagi konkurencyjnej.",
+        "challenges": {
+          "challenge1": {
+            "title": "Jakość i Przygotowanie Danych",
+            "description": "Modele AI są tak dobre, jak ich dane. Czyszczenie, etykietowanie i organizacja danych wymaga znacznego wysiłku."
+          },
+          "challenge2": {
+            "title": "Niedobór Talentów",
+            "description": "Znajdowanie i utrzymanie wykwalifikowanych inżynierów AI/ML i data scientistów na konkurencyjnym rynku."
+          },
+          "challenge3": {
+            "title": "Wdrożenie Produkcyjne",
+            "description": "Przejście od udanych eksperymentów do skalowalnych, utrzymywalnych systemów produkcyjnych to poważne wyzwanie."
+          },
+          "challenge4": {
+            "title": "Governance Modeli",
+            "description": "Zapewnienie, że systemy AI są sprawiedliwe, wyjaśnialne i zgodne z pojawiającymi się regulacjami."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "Niestandardowy Rozwój AI",
+            "description": "Kompleksowy rozwój modeli ML od przygotowania danych przez wdrożenie i monitoring."
+          },
+          "web": {
+            "title": "Aplikacje Napędzane AI",
+            "description": "Aplikacje webowe z zintegrowanymi możliwościami AI dla inteligentnej automatyzacji i wniosków."
+          },
+          "mobile": {
+            "title": "Rozwiązania Edge AI",
+            "description": "Modele ML na urządzeniu dla aplikacji mobilnych umożliwiające wnioskowanie w czasie rzeczywistym bez zależności od chmury."
+          },
+          "cloud": {
+            "title": "Infrastruktura MLOps",
+            "description": "Skalowalne pipeline'y treningowe, wersjonowanie modeli, testy A/B i infrastruktura monitoringu."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Inteligentne Przetwarzanie Dokumentów",
+            "description": "Systemy AI ekstrahujące, klasyfikujące i walidujące informacje z dokumentów z dokładnością na poziomie człowieka."
+          },
+          "case2": {
+            "title": "Platforma Konwersacyjnego AI",
+            "description": "Interfejsy języka naturalnego do obsługi klienta, dostępu do wiedzy wewnętrznej i automatyzacji procesów."
+          },
+          "case3": {
+            "title": "System Analityki Predykcyjnej",
+            "description": "Modele ML prognozujące metryki biznesowe, identyfikujące ryzyka i rekomendujące optymalne działania."
+          }
+        },
+        "cta": {
+          "title": "Gotowy odblokować potencjał AI?",
+          "subtitle": "Zbadajmy, jak sztuczna inteligencja może przekształcić Twoje operacje biznesowe.",
+          "button": "Rozpocznij podróż z AI"
+        }
+      },
+      "saas": {
+        "label": "SaaS i Startupy",
+        "title": "Przyspieszamy Wzrost Startupów",
+        "subtitle": "Współpracujemy ze startupami, aby budować skalowalne produkty SaaS, które zachwycają użytkowników, rosną efektywnie i przyciągają inwestycje.",
+        "challenges": {
+          "challenge1": {
+            "title": "Czas do Rynku",
+            "description": "Wyścig o uruchomienie MVP i szybkie iterowanie, podczas gdy konkurencja się rozwija."
+          },
+          "challenge2": {
+            "title": "Skalowalność",
+            "description": "Budowanie architektury, która może rosnąć od setek do milionów użytkowników bez poważnych przepisań."
+          },
+          "challenge3": {
+            "title": "Ograniczone Zasoby",
+            "description": "Osiąganie więcej przy ograniczonym budżecie i wielkości zespołu przy zachowaniu jakości i tempa."
+          },
+          "challenge4": {
+            "title": "Product-Market Fit",
+            "description": "Szybka walidacja założeń i pivotowanie na podstawie feedbacku użytkowników i sygnałów rynkowych."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "Funkcje AI",
+            "description": "Wyróżnij swój produkt inteligentnymi funkcjami jak rekomendacje, automatyzacja i analityka."
+          },
+          "web": {
+            "title": "Platformy SaaS",
+            "description": "Architektury multi-tenant, zarządzanie subskrypcjami i portale administracyjne samoobsługi."
+          },
+          "mobile": {
+            "title": "Aplikacje Mobilne",
+            "description": "Wieloplatformowe doświadczenia mobilne rozszerzające zasięg i zaangażowanie Twojego produktu SaaS."
+          },
+          "cloud": {
+            "title": "Architektura Cloud-Native",
+            "description": "Auto-skalowalna infrastruktura, optymalizacja kosztów i automatyzacja DevOps dla szybkich iteracji."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Rozwój MVP",
+            "description": "Szybki rozwój minimalnych wartościowych produktów z czystą architekturą gotową na wzrost."
+          },
+          "case2": {
+            "title": "Skalowanie Produktu",
+            "description": "Przearchitekturowanie udanych produktów do obsługi obciążeń enterprise i globalnej ekspansji."
+          },
+          "case3": {
+            "title": "Rozszerzenie Zespołu",
+            "description": "Wzmocnienie zespołu developerskiego doświadczonymi inżynierami, którzy płynnie się integrują."
+          }
+        },
+        "cta": {
+          "title": "Gotowy zbudować swój produkt?",
+          "subtitle": "Zamieńmy Twoją wizję w produkt, który klienci pokochają, a inwestorzy sfinansują.",
+          "button": "Porozmawiajmy"
+        }
+      },
+      "manufacturing": {
+        "label": "Produkcja i Przemysł",
+        "title": "Napędzamy Transformację Przemysłu 4.0",
+        "subtitle": "Budujemy inteligentne rozwiązania produkcyjne, które zwiększają efektywność, redukują przestoje i umożliwiają operacje oparte na danych na hali produkcyjnej.",
+        "challenges": {
+          "challenge1": {
+            "title": "Integracja Starszego Sprzętu",
+            "description": "Łączenie starszych maszyn z nowoczesnymi systemami przy zachowaniu ciągłości produkcji."
+          },
+          "challenge2": {
+            "title": "Nieplanowane Przestoje",
+            "description": "Awarie sprzętu powodują kosztowne zatrzymania produkcji i niedotrzymanie terminów dostaw."
+          },
+          "challenge3": {
+            "title": "Kontrola Jakości",
+            "description": "Utrzymanie stałej jakości produktu przy jednoczesnym zwiększaniu prędkości produkcji i redukcji odpadów."
+          },
+          "challenge4": {
+            "title": "Widoczność Operacyjna",
+            "description": "Uzyskiwanie wglądu w czasie rzeczywistym w wydajność produkcji na wielu liniach i zakładach."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI i Machine Learning",
+            "description": "Predykcyjne utrzymanie ruchu, inspekcja jakości z wizją komputerową i optymalizacja procesów."
+          },
+          "web": {
+            "title": "Platformy Produkcyjne",
+            "description": "Systemy MES, dashboardy produkcyjne i portale integracji z łańcuchem dostaw."
+          },
+          "mobile": {
+            "title": "Aplikacje Halowe",
+            "description": "Aplikacje mobilne dla operatorów z instrukcjami pracy, logowaniem jakości i raportowaniem problemów."
+          },
+          "cloud": {
+            "title": "Przemysłowy IoT",
+            "description": "Infrastruktura edge computing, przetwarzanie danych z sensorów i bezpieczna łączność z chmurą."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "System Predykcyjnego Utrzymania Ruchu",
+            "description": "Modele ML analizujące dane z sensorów sprzętu, aby przewidywać awarie zanim spowodują przestoje."
+          },
+          "case2": {
+            "title": "Wizualna Inspekcja Jakości",
+            "description": "Systemy wizji komputerowej wykrywające wady z wyższą dokładnością niż inspekcja manualna."
+          },
+          "case3": {
+            "title": "Platforma Inteligencji Produkcyjnej",
+            "description": "Śledzenie OEE w czasie rzeczywistym, analityka produkcji i rekomendacje optymalizacji wydajności."
+          }
+        },
+        "cta": {
+          "title": "Gotowy zmodernizować produkcję?",
+          "subtitle": "Zbudujmy rozwiązania inteligentnej fabryki, które napędzają efektywność i jakość.",
+          "button": "Odkryj rozwiązania"
         }
       }
     }

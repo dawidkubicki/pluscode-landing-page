@@ -1,18 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Breadcrumb from './Breadcrumb';
-
-interface BreadcrumbItem {
-  label: string;
-  href?: string;
-}
 
 interface PageHeaderProps {
   label?: string;
   title: string;
   subtitle?: string;
-  breadcrumbs?: BreadcrumbItem[];
   gradient?: string;
   centered?: boolean;
 }
@@ -21,7 +14,6 @@ export default function PageHeader({
   label,
   title,
   subtitle,
-  breadcrumbs,
   gradient,
   centered = false,
 }: PageHeaderProps) {
@@ -41,12 +33,6 @@ export default function PageHeader({
           centered ? 'text-center' : ''
         }`}
       >
-        {/* Breadcrumb */}
-        {breadcrumbs && breadcrumbs.length > 0 && (
-          <div className={`mb-8 ${centered ? 'flex justify-center' : ''}`}>
-            <Breadcrumb items={breadcrumbs} />
-          </div>
-        )}
 
         {/* Label */}
         {label && (

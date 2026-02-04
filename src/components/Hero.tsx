@@ -150,7 +150,7 @@ export default function Hero() {
         >
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center bg-black text-white px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl sm:rounded-2xl text-sm sm:text-base font-medium tracking-wide hover:bg-gray-800 transition-all duration-300 cursor-pointer"
+            className="inline-flex items-center justify-center bg-black text-white px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl sm:rounded-2xl text-sm sm:text-base font-medium tracking-wide hover:bg-gray-800 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 cursor-pointer"
           >
             {t('needAdvice')}
           </Link>
