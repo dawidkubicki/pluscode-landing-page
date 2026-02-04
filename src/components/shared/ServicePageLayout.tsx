@@ -23,9 +23,6 @@ interface ServicePageLayoutProps {
   label: string;
   title: string;
   subtitle: string;
-  breadcrumbLabel: string;
-  breadcrumbParentLabel?: string;
-  breadcrumbParentHref?: string;
   gradient?: string;
   features: Feature[];
   processSteps: ProcessStep[];
@@ -38,9 +35,6 @@ export default function ServicePageLayout({
   label,
   title,
   subtitle,
-  breadcrumbLabel,
-  breadcrumbParentLabel,
-  breadcrumbParentHref,
   gradient = 'bg-gradient-to-br from-violet-50/50 via-white to-white',
   features,
   processSteps,
@@ -56,13 +50,6 @@ export default function ServicePageLayout({
   const processInView = useInView(processRef, { once: true, amount: 0.2 });
   const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 });
 
-  const breadcrumbs = breadcrumbParentLabel && breadcrumbParentHref
-    ? [
-        { label: breadcrumbParentLabel, href: breadcrumbParentHref },
-        { label: breadcrumbLabel },
-      ]
-    : [{ label: breadcrumbLabel }];
-
   return (
     <main className="min-h-screen bg-white">
       <Navigation />
@@ -72,7 +59,6 @@ export default function ServicePageLayout({
         label={label}
         title={title}
         subtitle={subtitle}
-        breadcrumbs={breadcrumbs}
         gradient={gradient}
       />
 

@@ -36,7 +36,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/pluscode"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-600 hover:text-neutral-900 transition-colors"
+                className="text-neutral-600 hover:text-purple-600 transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -47,7 +47,7 @@ export default function Footer() {
                 href="https://www.instagram.com/pluscode"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-600 hover:text-neutral-900 transition-colors"
+                className="text-neutral-600 hover:text-purple-600 transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">

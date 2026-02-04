@@ -92,9 +92,6 @@ export default function MachineLearningPage() {
       label={t('label')}
       title={t('title')}
       subtitle={t('subtitle')}
-      breadcrumbLabel={t('breadcrumb')}
-      breadcrumbParentLabel="AI & Data"
-      breadcrumbParentHref="/ai-data/machine-learning"
       gradient="bg-gradient-to-br from-violet-50/50 via-purple-50/30 to-white"
       features={features}
       processSteps={processSteps}

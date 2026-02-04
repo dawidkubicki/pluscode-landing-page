@@ -91,9 +91,6 @@ export default function WebDevelopmentPage() {
       label={t('label')}
       title={t('title')}
       subtitle={t('subtitle')}
-      breadcrumbLabel={t('breadcrumb')}
-      breadcrumbParentLabel="Services"
-      breadcrumbParentHref="/services/web-development"
       gradient="bg-gradient-to-br from-blue-50/50 via-indigo-50/30 to-white"
       features={features}
       processSteps={processSteps}

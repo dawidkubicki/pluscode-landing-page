@@ -1,16 +1,33 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
-interface InsightPost {
-  key: string;
-  image: string;
-  category: 'ai' | 'development' | 'business' | 'technology';
+export interface InsightForList {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
   readTime: number;
-  featured?: boolean;
+  featured: boolean;
+  gradient: string;
+  image?: string;
+}
+
+interface InsightsProps {
+  featured: InsightForList | null;
+  posts: InsightForList[];
+  translations: {
+    label: string;
+    title: string;
+    subtitle: string;
+    readMore: string;
+    minRead: string;
+    cta: string;
+    categories: Record<string, string>;
+  };
 }
 
 const categoryColors: Record<string, { bg: string; text: string }> = {
@@ -18,29 +35,26 @@ const categoryColors: Record<string, { bg: string; text: string }> = {
   development: { bg: 'bg-blue-100', text: 'text-blue-700' },
   business: { bg: 'bg-amber-100', text: 'text-amber-700' },
   technology: { bg: 'bg-emerald-100', text: 'text-emerald-700' },
+  cloud: { bg: 'bg-cyan-100', text: 'text-cyan-700' },
+  mobile: { bg: 'bg-orange-100', text: 'text-orange-700' },
 };
 
 function InsightCard({
   post,
-  title,
-  excerpt,
-  category,
-  readTime,
   index,
   isInView,
   featured = false,
+  translations,
 }: {
-  post: InsightPost;
-  title: string;
-  excerpt: string;
-  category: string;
-  readTime: string;
+  post: InsightForList;
   index: number;
   isInView: boolean;
   featured?: boolean;
+  translations: InsightsProps['translations'];
 }) {
   const [imageError, setImageError] = useState(false);
-  const colors = categoryColors[post.category];
+  const colors = categoryColors[post.category] || categoryColors.technology;
+  const categoryLabel = translations.categories[post.category] || post.category;
 
   if (featured) {
     return (
@@ -54,61 +68,63 @@ function InsightCard({
         }}
         className="group cursor-pointer col-span-full lg:col-span-2"
       >
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 bg-neutral-50 rounded-3xl overflow-hidden hover:bg-neutral-100/80 transition-colors duration-500">
-          {/* Featured Image */}
-          <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[400px] overflow-hidden">
-            {!imageError ? (
-              <Image
-                src={post.image}
-                alt={title}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                onError={() => setImageError(true)}
-              />
-            ) : (
-              <div className="absolute inset-0 bg-gradient-to-br from-neutral-200 to-neutral-300 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-white/40 flex items-center justify-center">
-                    <svg className="w-8 h-8 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                    </svg>
+        <Link href={`/insights/${post.slug}`}>
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 bg-neutral-50 rounded-3xl overflow-hidden hover:bg-neutral-100/80 transition-colors duration-500">
+            {/* Featured Image */}
+            <div className={`relative aspect-4/3 lg:aspect-auto lg:min-h-[400px] overflow-hidden ${!post.image ? post.gradient : ''}`}>
+              {post.image && !imageError ? (
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  onError={() => setImageError(true)}
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-white/40 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                      </svg>
+                    </div>
+                    <p className="text-neutral-500 text-sm font-medium">Featured Article</p>
                   </div>
-                  <p className="text-neutral-500 text-sm font-medium">Featured Article</p>
                 </div>
+              )}
+            </div>
+
+            {/* Featured Content */}
+            <div className="p-6 lg:p-10 lg:py-12 flex flex-col justify-center">
+              <div className="flex items-center gap-3 mb-4">
+                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${colors.bg} ${colors.text}`}>
+                  {categoryLabel}
+                </span>
+                <span className="text-neutral-400 text-sm">{post.readTime} {translations.minRead}</span>
               </div>
-            )}
-          </div>
 
-          {/* Featured Content */}
-          <div className="p-6 lg:p-10 lg:py-12 flex flex-col justify-center">
-            <div className="flex items-center gap-3 mb-4">
-              <span className={`px-3 py-1 rounded-full text-xs font-semibold ${colors.bg} ${colors.text}`}>
-                {category}
-              </span>
-              <span className="text-neutral-400 text-sm">{readTime}</span>
-            </div>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-neutral-900 leading-tight tracking-tight mb-4 group-hover:text-neutral-700 transition-colors duration-300">
+                {post.title}
+              </h3>
 
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-neutral-900 leading-tight tracking-tight mb-4 group-hover:text-neutral-700 transition-colors duration-300">
-              {title}
-            </h3>
+              <p className="text-neutral-500 text-base md:text-lg leading-relaxed mb-6">
+                {post.excerpt}
+              </p>
 
-            <p className="text-neutral-500 text-base md:text-lg leading-relaxed mb-6">
-              {excerpt}
-            </p>
-
-            <div className="flex items-center gap-2 text-neutral-900 font-medium group/link">
-              <span className="group-hover/link:underline">Read article</span>
-              <svg
-                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <div className="flex items-center gap-2 text-neutral-900 font-medium group/link">
+                <span className="group-hover/link:underline">{translations.readMore}</span>
+                <svg
+                  className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
+        </Link>
       </motion.article>
     );
   }
@@ -124,83 +140,53 @@ function InsightCard({
       }}
       className="group cursor-pointer"
     >
-      {/* Image */}
-      <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-5 bg-neutral-100">
-        {!imageError ? (
-          <Image
-            src={post.image}
-            alt={title}
-            fill
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
-            onError={() => setImageError(true)}
-          />
-        ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-neutral-100 to-neutral-200 flex items-center justify-center">
-            <div className="w-12 h-12 rounded-lg bg-white/60 flex items-center justify-center">
-              <svg className="w-6 h-6 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-              </svg>
+      <Link href={`/insights/${post.slug}`}>
+        {/* Image */}
+        <div className={`relative aspect-16/10 rounded-2xl overflow-hidden mb-5 ${!post.image ? post.gradient : 'bg-neutral-100'}`}>
+          {post.image && !imageError ? (
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              onError={() => setImageError(true)}
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-lg bg-white/60 flex items-center justify-center">
+                <svg className="w-6 h-6 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                </svg>
+              </div>
             </div>
-          </div>
-        )}
-      </div>
-
-      {/* Content */}
-      <div className="space-y-3">
-        <div className="flex items-center gap-3">
-          <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-semibold ${colors.bg} ${colors.text}`}>
-            {category}
-          </span>
-          <span className="text-neutral-400 text-xs">{readTime}</span>
+          )}
         </div>
 
-        <h3 className="text-lg md:text-xl font-semibold text-neutral-900 leading-snug tracking-tight group-hover:text-neutral-700 transition-colors duration-300">
-          {title}
-        </h3>
+        {/* Content */}
+        <div className="space-y-3">
+          <div className="flex items-center gap-3">
+            <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-semibold ${colors.bg} ${colors.text}`}>
+              {categoryLabel}
+            </span>
+            <span className="text-neutral-400 text-xs">{post.readTime} {translations.minRead}</span>
+          </div>
 
-        <p className="text-neutral-500 text-sm leading-relaxed line-clamp-2">
-          {excerpt}
-        </p>
-      </div>
+          <h3 className="text-lg md:text-xl font-semibold text-neutral-900 leading-snug tracking-tight group-hover:text-neutral-700 transition-colors duration-300">
+            {post.title}
+          </h3>
+
+          <p className="text-neutral-500 text-sm leading-relaxed line-clamp-2">
+            {post.excerpt}
+          </p>
+        </div>
+      </Link>
     </motion.article>
   );
 }
 
-export default function Insights() {
-  const t = useTranslations('insights');
+export default function Insights({ featured, posts, translations }: InsightsProps) {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
-
-  const posts: InsightPost[] = [
-    {
-      key: 'featured',
-      image: '/assets/insights/ai-business-transformation.jpg',
-      category: 'ai',
-      readTime: 8,
-      featured: true,
-    },
-    {
-      key: 'post1',
-      image: '/assets/insights/modern-architecture.jpg',
-      category: 'development',
-      readTime: 5,
-    },
-    {
-      key: 'post2',
-      image: '/assets/insights/startup-scaling.jpg',
-      category: 'business',
-      readTime: 6,
-    },
-    {
-      key: 'post3',
-      image: '/assets/insights/cloud-native.jpg',
-      category: 'technology',
-      readTime: 4,
-    },
-  ];
-
-  const featuredPost = posts.find((p) => p.featured);
-  const regularPosts = posts.filter((p) => !p.featured);
 
   return (
     <section
@@ -217,7 +203,7 @@ export default function Insights() {
               transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
               className="text-[11px] font-medium tracking-[0.2em] uppercase text-neutral-400 mb-4"
             >
-              {t('label')}
+              {translations.label}
             </motion.p>
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
@@ -225,60 +211,59 @@ export default function Insights() {
               transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.4, 0.25, 1] }}
               className="text-4xl md:text-5xl lg:text-6xl font-semibold text-neutral-900 leading-[1.1] tracking-tight"
             >
-              {t('title')}
+              {translations.title}
             </motion.h2>
           </div>
 
-          <motion.a
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
-            href="/insights"
-            className="hidden md:inline-flex group items-center gap-2 text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors shrink-0"
           >
-            {t('viewAll')}
-            <svg
-              className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+            <Link
+              href="/insights"
+              className="hidden md:inline-flex group items-center gap-2 text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors shrink-0"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </motion.a>
+              {translations.cta}
+              <svg
+                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </motion.div>
         </div>
 
         {/* Featured Post */}
-        {featuredPost && (
+        {featured && (
           <div className="md:mb-14">
             <InsightCard
-              post={featuredPost}
-              title={t(`items.${featuredPost.key}.title`)}
-              excerpt={t(`items.${featuredPost.key}.excerpt`)}
-              category={t(`categories.${featuredPost.category}`)}
-              readTime={t('readTime', { minutes: featuredPost.readTime })}
+              post={featured}
               index={0}
               isInView={isInView}
               featured
+              translations={translations}
             />
           </div>
         )}
 
         {/* Regular Posts Grid - Hidden on mobile */}
-        <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-10">
-          {regularPosts.map((post, index) => (
-            <InsightCard
-              key={post.key}
-              post={post}
-              title={t(`items.${post.key}.title`)}
-              excerpt={t(`items.${post.key}.excerpt`)}
-              category={t(`categories.${post.category}`)}
-              readTime={t('readTime', { minutes: post.readTime })}
-              index={index}
-              isInView={isInView}
-            />
-          ))}
-        </div>
+        {posts.length > 0 && (
+          <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-10">
+            {posts.map((post, index) => (
+              <InsightCard
+                key={post.slug}
+                post={post}
+                index={index}
+                isInView={isInView}
+                translations={translations}
+              />
+            ))}
+          </div>
+        )}
 
         {/* Mobile CTA Button */}
         <motion.div
@@ -287,7 +272,7 @@ export default function Insights() {
           transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
           className="mt-8 md:hidden"
         >
-          <a
+          <Link
             href="/insights"
             className="
               group flex items-center justify-center gap-3 w-full
@@ -300,7 +285,7 @@ export default function Insights() {
               active:scale-[0.98]
             "
           >
-            {t('viewAll')}
+            {translations.cta}
             <svg
               className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
               fill="none"
@@ -309,7 +294,7 @@ export default function Insights() {
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

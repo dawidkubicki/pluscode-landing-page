@@ -91,9 +91,6 @@ export default function ConsultingPage() {
       label={t('label')}
       title={t('title')}
       subtitle={t('subtitle')}
-      breadcrumbLabel={t('breadcrumb')}
-      breadcrumbParentLabel="AI & Data"
-      breadcrumbParentHref="/ai-data/consulting"
       gradient="bg-gradient-to-br from-emerald-50/50 via-teal-50/30 to-white"
       features={features}
       processSteps={processSteps}

@@ -114,13 +114,19 @@
   "insights": {
     "label": "Insights",
     "title": "Latest from our blog",
+    "subtitle": "Expert perspectives on technology, business, and innovation from our team.",
     "viewAll": "View all articles",
+    "readMore": "Read article",
+    "minRead": "min read",
+    "cta": "View all articles",
     "readTime": "{minutes} min read",
     "categories": {
       "ai": "AI & Machine Learning",
       "development": "Development",
       "business": "Business",
-      "technology": "Technology"
+      "technology": "Technology",
+      "cloud": "Cloud",
+      "mobile": "Mobile"
     },
     "items": {
       "featured": {
@@ -880,6 +886,19 @@
             "cloud": "Cloud Solutions"
           }
         },
+        "industries": {
+          "title": "Industries",
+          "links": {
+            "finance": "Financial Services",
+            "healthcare": "Healthcare",
+            "ecommerce": "E-Commerce & Retail",
+            "hr": "HR & Recruitment",
+            "logistics": "Logistics & Transport",
+            "ai": "AI & Machine Learning",
+            "saas": "SaaS & Startups",
+            "manufacturing": "Manufacturing & Industry"
+          }
+        },
         "content": {
           "title": "Content",
           "links": {
@@ -893,6 +912,496 @@
             "privacy": "Privacy Policy",
             "terms": "Terms of Use"
           }
+        }
+      }
+    },
+    "industries": {
+      "shared": {
+        "challengesTitle": "Industry Challenges",
+        "challengesSubtitle": "Common pain points we help solve",
+        "solutionsTitle": "Our Solutions",
+        "solutionsSubtitle": "How we can help transform your business",
+        "useCasesTitle": "Use Cases",
+        "useCasesSubtitle": "Real-world applications we deliver"
+      },
+      "finance": {
+        "label": "Financial Services",
+        "title": "Transforming Financial Services with Technology",
+        "subtitle": "From fraud detection to regulatory compliance, we build secure, scalable solutions that help financial institutions innovate while managing risk.",
+        "challenges": {
+          "challenge1": {
+            "title": "Cybersecurity Threats",
+            "description": "Financial institutions face constant threats from sophisticated cyberattacks targeting sensitive customer data and transactions."
+          },
+          "challenge2": {
+            "title": "Regulatory Compliance",
+            "description": "Keeping up with evolving regulations like GDPR, PSD2, and anti-money laundering requirements demands significant resources."
+          },
+          "challenge3": {
+            "title": "Legacy System Modernization",
+            "description": "Outdated infrastructure limits agility and innovation while increasing maintenance costs and security vulnerabilities."
+          },
+          "challenge4": {
+            "title": "Data Management at Scale",
+            "description": "Managing and extracting insights from massive volumes of financial data while ensuring accuracy and real-time processing."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI & Machine Learning",
+            "description": "Fraud detection systems, credit scoring models, algorithmic trading, and automated KYC/AML compliance."
+          },
+          "web": {
+            "title": "Web Platforms",
+            "description": "Secure online banking portals, trading platforms, and customer self-service dashboards."
+          },
+          "mobile": {
+            "title": "Mobile Banking",
+            "description": "Feature-rich mobile banking apps with biometric security, instant payments, and investment tracking."
+          },
+          "cloud": {
+            "title": "Cloud Infrastructure",
+            "description": "Compliant cloud architectures with disaster recovery, data encryption, and regulatory audit trails."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Real-Time Fraud Detection",
+            "description": "ML-powered systems that analyze transaction patterns to detect and prevent fraudulent activities before they impact customers."
+          },
+          "case2": {
+            "title": "Automated Compliance Reporting",
+            "description": "Intelligent systems that automatically generate regulatory reports, reducing manual effort and ensuring accuracy."
+          },
+          "case3": {
+            "title": "Digital Onboarding",
+            "description": "Streamlined customer onboarding with AI-powered document verification and identity validation."
+          }
+        },
+        "cta": {
+          "title": "Ready to modernize your financial services?",
+          "subtitle": "Let's discuss how technology can help you serve customers better while managing risk.",
+          "button": "Schedule a consultation"
+        }
+      },
+      "healthcare": {
+        "label": "Healthcare",
+        "title": "Advancing Healthcare Through Digital Innovation",
+        "subtitle": "We build patient-centered solutions that improve care delivery, enhance clinical workflows, and ensure data security and compliance.",
+        "challenges": {
+          "challenge1": {
+            "title": "Data Privacy & Compliance",
+            "description": "Healthcare organizations must navigate complex regulations like HIPAA while managing sensitive patient information."
+          },
+          "challenge2": {
+            "title": "Interoperability",
+            "description": "Connecting disparate systems and enabling seamless data exchange between providers, payers, and patients."
+          },
+          "challenge3": {
+            "title": "Patient Engagement",
+            "description": "Meeting patient expectations for digital access while maintaining care quality and personal touch."
+          },
+          "challenge4": {
+            "title": "Clinical Workflow Efficiency",
+            "description": "Reducing administrative burden on healthcare providers to allow more time for patient care."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI & Machine Learning",
+            "description": "Diagnostic support systems, predictive analytics for patient outcomes, and medical image analysis."
+          },
+          "web": {
+            "title": "Web Applications",
+            "description": "Patient portals, electronic health records interfaces, and healthcare provider dashboards."
+          },
+          "mobile": {
+            "title": "Mobile Health Apps",
+            "description": "Telemedicine platforms, medication tracking, appointment scheduling, and remote patient monitoring."
+          },
+          "cloud": {
+            "title": "Secure Cloud Solutions",
+            "description": "HIPAA-compliant infrastructure, secure data storage, and disaster recovery for healthcare data."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Telemedicine Platform",
+            "description": "Secure video consultations with integrated EHR access, e-prescriptions, and follow-up scheduling."
+          },
+          "case2": {
+            "title": "Clinical Decision Support",
+            "description": "AI-assisted diagnostic tools that help clinicians identify conditions and recommend treatment options."
+          },
+          "case3": {
+            "title": "Patient Monitoring Dashboard",
+            "description": "Real-time health metrics tracking for chronic disease management and early intervention."
+          }
+        },
+        "cta": {
+          "title": "Ready to transform patient care?",
+          "subtitle": "Let's explore how technology can improve healthcare delivery and outcomes.",
+          "button": "Start a conversation"
+        }
+      },
+      "ecommerce": {
+        "label": "E-Commerce & Retail",
+        "title": "Powering the Future of Retail",
+        "subtitle": "We create seamless shopping experiences that drive conversions, build loyalty, and scale with your business growth.",
+        "challenges": {
+          "challenge1": {
+            "title": "Scalability During Peak",
+            "description": "Handling traffic spikes during sales events and seasonal peaks without performance degradation."
+          },
+          "challenge2": {
+            "title": "Customer Experience",
+            "description": "Meeting rising expectations for personalization, fast delivery, and seamless omnichannel experiences."
+          },
+          "challenge3": {
+            "title": "Inventory Management",
+            "description": "Maintaining optimal stock levels across multiple channels while minimizing costs and avoiding stockouts."
+          },
+          "challenge4": {
+            "title": "Data-Driven Decisions",
+            "description": "Leveraging customer data to optimize pricing, marketing, and product offerings in real-time."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI & Machine Learning",
+            "description": "Personalized recommendations, demand forecasting, dynamic pricing, and customer behavior analysis."
+          },
+          "web": {
+            "title": "E-Commerce Platforms",
+            "description": "High-performance online stores with optimized checkout flows and inventory integration."
+          },
+          "mobile": {
+            "title": "Mobile Commerce",
+            "description": "Native shopping apps with push notifications, mobile payments, and AR product visualization."
+          },
+          "cloud": {
+            "title": "Scalable Infrastructure",
+            "description": "Auto-scaling cloud architecture that handles traffic surges and ensures 99.99% uptime."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Personalized Shopping Experience",
+            "description": "AI-driven product recommendations and dynamic content that increases conversion rates by understanding customer preferences."
+          },
+          "case2": {
+            "title": "Unified Commerce Platform",
+            "description": "Seamless integration of online, mobile, and in-store experiences with real-time inventory visibility."
+          },
+          "case3": {
+            "title": "Smart Inventory System",
+            "description": "Predictive inventory management that optimizes stock levels and automates reordering based on demand forecasts."
+          }
+        },
+        "cta": {
+          "title": "Ready to boost your retail performance?",
+          "subtitle": "Let's build a commerce platform that converts visitors into loyal customers.",
+          "button": "Discuss your project"
+        }
+      },
+      "hr": {
+        "label": "HR & Recruitment",
+        "title": "Revolutionizing Human Resources",
+        "subtitle": "We build intelligent HR solutions that streamline recruitment, enhance employee experience, and provide actionable workforce insights.",
+        "challenges": {
+          "challenge1": {
+            "title": "Talent Acquisition",
+            "description": "Finding and attracting qualified candidates in a competitive market while reducing time-to-hire."
+          },
+          "challenge2": {
+            "title": "Employee Engagement",
+            "description": "Maintaining workforce motivation and reducing turnover in an era of remote and hybrid work."
+          },
+          "challenge3": {
+            "title": "Administrative Burden",
+            "description": "Manual HR processes consume valuable time that could be spent on strategic initiatives."
+          },
+          "challenge4": {
+            "title": "Data-Driven HR",
+            "description": "Turning HR data into insights for better workforce planning and decision-making."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI & Machine Learning",
+            "description": "AI-powered candidate matching, resume screening, employee sentiment analysis, and attrition prediction."
+          },
+          "web": {
+            "title": "HR Platforms",
+            "description": "Comprehensive HRIS systems, applicant tracking, and employee self-service portals."
+          },
+          "mobile": {
+            "title": "Mobile HR Apps",
+            "description": "On-the-go access for time tracking, leave requests, team communication, and mobile learning."
+          },
+          "cloud": {
+            "title": "Secure HR Cloud",
+            "description": "Scalable infrastructure for HR data with role-based access and compliance features."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Intelligent Recruitment Platform",
+            "description": "End-to-end ATS with AI-powered candidate screening, interview scheduling, and collaborative hiring workflows."
+          },
+          "case2": {
+            "title": "Employee Experience Hub",
+            "description": "Unified platform for onboarding, learning, performance management, and internal communications."
+          },
+          "case3": {
+            "title": "Workforce Analytics Dashboard",
+            "description": "Real-time insights into headcount, turnover, engagement scores, and compensation benchmarking."
+          }
+        },
+        "cta": {
+          "title": "Ready to transform your HR operations?",
+          "subtitle": "Let's build solutions that help you attract, retain, and develop top talent.",
+          "button": "Get started"
+        }
+      },
+      "logistics": {
+        "label": "Logistics & Transport",
+        "title": "Optimizing Supply Chain Operations",
+        "subtitle": "We develop intelligent logistics solutions that improve visibility, reduce costs, and enhance delivery performance across your supply chain.",
+        "challenges": {
+          "challenge1": {
+            "title": "Route Optimization",
+            "description": "Minimizing delivery times and fuel costs while adapting to real-time traffic and weather conditions."
+          },
+          "challenge2": {
+            "title": "Real-Time Visibility",
+            "description": "Tracking shipments, vehicles, and inventory across multiple locations and partners in real-time."
+          },
+          "challenge3": {
+            "title": "Demand Fluctuations",
+            "description": "Adapting to unpredictable demand changes while maintaining service levels and controlling costs."
+          },
+          "challenge4": {
+            "title": "Multi-Partner Coordination",
+            "description": "Orchestrating operations across carriers, warehouses, and suppliers with different systems and processes."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI & Machine Learning",
+            "description": "Demand forecasting, route optimization algorithms, predictive maintenance, and anomaly detection."
+          },
+          "web": {
+            "title": "Management Platforms",
+            "description": "Transportation management systems, warehouse management, and supply chain visibility dashboards."
+          },
+          "mobile": {
+            "title": "Mobile Solutions",
+            "description": "Driver apps with navigation, proof of delivery, real-time communication, and task management."
+          },
+          "cloud": {
+            "title": "Scalable Infrastructure",
+            "description": "High-availability cloud systems for IoT data processing and global operations management."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Fleet Management System",
+            "description": "Real-time vehicle tracking, driver performance monitoring, and automated dispatch optimization."
+          },
+          "case2": {
+            "title": "Smart Warehouse Platform",
+            "description": "Inventory optimization, automated picking routes, and integration with robotics and automation."
+          },
+          "case3": {
+            "title": "Supply Chain Visibility Hub",
+            "description": "End-to-end shipment tracking with predictive ETAs, exception alerts, and partner collaboration tools."
+          }
+        },
+        "cta": {
+          "title": "Ready to optimize your logistics?",
+          "subtitle": "Let's build solutions that deliver efficiency gains across your supply chain.",
+          "button": "Plan your project"
+        }
+      },
+      "ai": {
+        "label": "AI & Machine Learning",
+        "title": "Building the AI-Powered Future",
+        "subtitle": "We help organizations harness the power of AI and machine learning to automate processes, gain insights, and create competitive advantages.",
+        "challenges": {
+          "challenge1": {
+            "title": "Data Quality & Preparation",
+            "description": "AI models are only as good as their data. Cleaning, labeling, and organizing data requires significant effort."
+          },
+          "challenge2": {
+            "title": "Talent Shortage",
+            "description": "Finding and retaining skilled AI/ML engineers and data scientists in a competitive market."
+          },
+          "challenge3": {
+            "title": "Production Deployment",
+            "description": "Moving from successful experiments to scalable, maintainable production systems is a major hurdle."
+          },
+          "challenge4": {
+            "title": "Model Governance",
+            "description": "Ensuring AI systems are fair, explainable, and compliant with emerging regulations."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "Custom AI Development",
+            "description": "End-to-end ML model development from data preparation through deployment and monitoring."
+          },
+          "web": {
+            "title": "AI-Powered Applications",
+            "description": "Web applications with integrated AI capabilities for intelligent automation and insights."
+          },
+          "mobile": {
+            "title": "Edge AI Solutions",
+            "description": "On-device ML models for mobile apps enabling real-time inference without cloud dependency."
+          },
+          "cloud": {
+            "title": "MLOps Infrastructure",
+            "description": "Scalable training pipelines, model versioning, A/B testing, and monitoring infrastructure."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Intelligent Document Processing",
+            "description": "AI systems that extract, classify, and validate information from documents with human-level accuracy."
+          },
+          "case2": {
+            "title": "Conversational AI Platform",
+            "description": "Natural language interfaces for customer support, internal knowledge access, and process automation."
+          },
+          "case3": {
+            "title": "Predictive Analytics System",
+            "description": "ML models that forecast business metrics, identify risks, and recommend optimal actions."
+          }
+        },
+        "cta": {
+          "title": "Ready to unlock AI's potential?",
+          "subtitle": "Let's explore how artificial intelligence can transform your business operations.",
+          "button": "Start your AI journey"
+        }
+      },
+      "saas": {
+        "label": "SaaS & Startups",
+        "title": "Accelerating Startup Growth",
+        "subtitle": "We partner with startups to build scalable SaaS products that delight users, grow efficiently, and attract investment.",
+        "challenges": {
+          "challenge1": {
+            "title": "Time to Market",
+            "description": "Racing to launch an MVP and iterate quickly while competitors are moving fast."
+          },
+          "challenge2": {
+            "title": "Scalability",
+            "description": "Building architecture that can grow from hundreds to millions of users without major rewrites."
+          },
+          "challenge3": {
+            "title": "Resource Constraints",
+            "description": "Achieving more with limited budget and team size while maintaining quality and velocity."
+          },
+          "challenge4": {
+            "title": "Product-Market Fit",
+            "description": "Quickly validating assumptions and pivoting based on user feedback and market signals."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI Features",
+            "description": "Differentiate your product with intelligent features like recommendations, automation, and analytics."
+          },
+          "web": {
+            "title": "SaaS Platforms",
+            "description": "Multi-tenant architectures, subscription management, and self-service admin portals."
+          },
+          "mobile": {
+            "title": "Mobile Apps",
+            "description": "Cross-platform mobile experiences that extend your SaaS product's reach and engagement."
+          },
+          "cloud": {
+            "title": "Cloud-Native Architecture",
+            "description": "Auto-scaling infrastructure, cost optimization, and DevOps automation for fast iteration."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "MVP Development",
+            "description": "Rapid development of minimum viable products with clean architecture ready for growth."
+          },
+          "case2": {
+            "title": "Product Scaling",
+            "description": "Re-architecting successful products to handle enterprise workloads and global expansion."
+          },
+          "case3": {
+            "title": "Team Extension",
+            "description": "Augmenting your development team with experienced engineers who integrate seamlessly."
+          }
+        },
+        "cta": {
+          "title": "Ready to build your product?",
+          "subtitle": "Let's turn your vision into a product that customers love and investors fund.",
+          "button": "Let's talk"
+        }
+      },
+      "manufacturing": {
+        "label": "Manufacturing & Industry",
+        "title": "Driving Industry 4.0 Transformation",
+        "subtitle": "We build smart manufacturing solutions that increase efficiency, reduce downtime, and enable data-driven operations across the factory floor.",
+        "challenges": {
+          "challenge1": {
+            "title": "Legacy Equipment Integration",
+            "description": "Connecting older machinery to modern systems while maintaining production continuity."
+          },
+          "challenge2": {
+            "title": "Unplanned Downtime",
+            "description": "Equipment failures cause costly production stops and missed delivery commitments."
+          },
+          "challenge3": {
+            "title": "Quality Control",
+            "description": "Maintaining consistent product quality while increasing production speed and reducing waste."
+          },
+          "challenge4": {
+            "title": "Operational Visibility",
+            "description": "Getting real-time insights into production performance across multiple lines and facilities."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI & Machine Learning",
+            "description": "Predictive maintenance, quality inspection with computer vision, and process optimization."
+          },
+          "web": {
+            "title": "Manufacturing Platforms",
+            "description": "MES systems, production dashboards, and supply chain integration portals."
+          },
+          "mobile": {
+            "title": "Shop Floor Apps",
+            "description": "Mobile apps for operators with work instructions, quality logging, and issue reporting."
+          },
+          "cloud": {
+            "title": "Industrial IoT",
+            "description": "Edge computing infrastructure, sensor data processing, and secure cloud connectivity."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Predictive Maintenance System",
+            "description": "ML models that analyze equipment sensor data to predict failures before they cause downtime."
+          },
+          "case2": {
+            "title": "Visual Quality Inspection",
+            "description": "Computer vision systems that detect defects with higher accuracy than manual inspection."
+          },
+          "case3": {
+            "title": "Production Intelligence Platform",
+            "description": "Real-time OEE tracking, production analytics, and performance optimization recommendations."
+          }
+        },
+        "cta": {
+          "title": "Ready to modernize manufacturing?",
+          "subtitle": "Let's build smart factory solutions that drive efficiency and quality.",
+          "button": "Explore solutions"
         }
       }
     }

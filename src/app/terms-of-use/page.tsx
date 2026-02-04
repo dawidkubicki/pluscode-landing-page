@@ -28,7 +28,6 @@ export default function TermsOfUsePage() {
       <PageHeader
         title={t('title')}
         subtitle={t('subtitle')}
-        breadcrumbs={[{ label: t('breadcrumb') }]}
       />
 
       {/* Content */}

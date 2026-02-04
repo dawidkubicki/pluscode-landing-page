@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
+import Link from 'next/link';
 
 // Service card component with hover animations
 function ServiceCard({ 
@@ -12,7 +13,8 @@ function ServiceCard({
   index, 
   variant = 'default',
   gradient,
-  isInView
+  isInView,
+  href
 }: { 
   title: string; 
   description: string; 
@@ -21,6 +23,7 @@ function ServiceCard({
   variant?: 'featured' | 'medium' | 'default';
   gradient: string;
   isInView: boolean;
+  href: string;
 }) {
   const isFeatured = variant === 'featured';
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
@@ -44,22 +47,23 @@ function ServiceCard({
   };
 
   return (
-    <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{
-        duration: 0.7,
-        delay: index * 0.15,
-        ease: [0.25, 0.4, 0.25, 1],
-      }}
-      onMouseMove={handleMouseMove}
-      className={`
-        group relative overflow-hidden rounded-3xl bg-neutral-50 h-full
-        transition-shadow duration-500 ease-out cursor-pointer
-        hover:shadow-2xl hover:shadow-black/8
-      `}
-    >
+    <Link href={href} className="block h-full">
+      <motion.div
+        ref={cardRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{
+          duration: 0.7,
+          delay: index * 0.15,
+          ease: [0.25, 0.4, 0.25, 1],
+        }}
+        onMouseMove={handleMouseMove}
+        className={`
+          group relative overflow-hidden rounded-3xl bg-neutral-50 h-full
+          transition-shadow duration-500 ease-out cursor-pointer
+          hover:shadow-2xl hover:shadow-black/8
+        `}
+      >
       {/* Gradient overlay - always visible for featured, appears on hover for others, follows cursor */}
       <div 
         className={`
@@ -140,15 +144,16 @@ function ServiceCard({
         </div>
       </div>
 
-      {/* Decorative glow element */}
-      <div className={`
-        absolute -bottom-32 -right-32 w-64 h-64 rounded-full
-        bg-linear-to-br from-neutral-200/30 to-transparent
-        opacity-0 group-hover:opacity-100
-        transition-opacity duration-700 ease-out
-        blur-3xl pointer-events-none
-      `} />
-    </motion.div>
+        {/* Decorative glow element */}
+        <div className={`
+          absolute -bottom-32 -right-32 w-64 h-64 rounded-full
+          bg-linear-to-br from-neutral-200/30 to-transparent
+          opacity-0 group-hover:opacity-100
+          transition-opacity duration-700 ease-out
+          blur-3xl pointer-events-none
+        `} />
+      </motion.div>
+    </Link>
   );
 }
 
@@ -162,21 +167,25 @@ export default function Services() {
       key: 'ai',
       variant: 'featured' as const,
       gradient: 'bg-linear-to-br from-violet-100/80 via-purple-50/50 to-transparent',
+      href: '/ai-data/consulting',
     },
     {
       key: 'web',
       variant: 'medium' as const,
       gradient: 'bg-linear-to-br from-blue-100/80 via-cyan-50/50 to-transparent',
+      href: '/services/web-development',
     },
     {
       key: 'mobile',
       variant: 'default' as const,
       gradient: 'bg-linear-to-br from-rose-100/80 via-pink-50/50 to-transparent',
+      href: '/services/mobile',
     },
     {
       key: 'cloud',
       variant: 'default' as const,
       gradient: 'bg-linear-to-br from-emerald-100/80 via-teal-50/50 to-transparent',
+      href: '/services/cloud',
     },
   ];
 
@@ -226,6 +235,7 @@ export default function Services() {
               variant="featured"
               gradient={services[0].gradient}
               isInView={isInView}
+              href={services[0].href}
             />
           </div>
 
@@ -239,6 +249,7 @@ export default function Services() {
               variant="medium"
               gradient={services[1].gradient}
               isInView={isInView}
+              href={services[1].href}
             />
           </div>
 
@@ -252,6 +263,7 @@ export default function Services() {
               variant="default"
               gradient={services[2].gradient}
               isInView={isInView}
+              href={services[2].href}
             />
           </div>
 
@@ -265,6 +277,7 @@ export default function Services() {
               variant="default"
               gradient={services[3].gradient}
               isInView={isInView}
+              href={services[3].href}
             />
           </div>
         </div>

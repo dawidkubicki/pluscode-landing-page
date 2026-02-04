@@ -3,49 +3,74 @@
 import { useTranslations } from 'next-intl';
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
+import Link from 'next/link';
 
 function IndustryItem({ 
   name, 
+  slug,
   index, 
   isInView 
 }: { 
   name: string; 
+  slug: string;
   index: number;
   isInView: boolean;
 }) {
   const [isHovered, setIsHovered] = useState(false);
   
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 30 }}
-      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-      transition={{
-        duration: 0.6,
-        delay: 0.3 + index * 0.1,
-        ease: [0.25, 0.4, 0.25, 1],
-      }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="group border-t border-neutral-700/50 py-6 md:py-8 cursor-pointer"
-    >
-      <div className="flex items-center gap-6 md:gap-10">
-        {/* Number */}
-        <span className="text-sm text-neutral-600 font-medium w-4 tabular-nums">
-          {index + 1}
-        </span>
-        
-        {/* Industry Name */}
-        <h3 
-          className={`
-            text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light tracking-tight italic
-            transition-colors duration-300
-            ${isHovered ? 'text-white' : 'text-neutral-500'}
-          `}
-        >
-          {name}
-        </h3>
-      </div>
-    </motion.div>
+    <Link href={`/industries/${slug}`}>
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
+        transition={{
+          duration: 0.6,
+          delay: 0.3 + index * 0.1,
+          ease: [0.25, 0.4, 0.25, 1],
+        }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="group border-t border-neutral-700/50 py-6 md:py-8 cursor-pointer"
+      >
+        <div className="flex items-center justify-between gap-6 md:gap-10">
+          <div className="flex items-center gap-6 md:gap-10">
+            {/* Number */}
+            <span className="text-sm text-neutral-600 font-medium w-4 tabular-nums">
+              {index + 1}
+            </span>
+            
+            {/* Industry Name */}
+            <h3 
+              className={`
+                text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light tracking-tight italic
+                transition-colors duration-300
+                ${isHovered ? 'text-white' : 'text-neutral-500'}
+              `}
+            >
+              {name}
+            </h3>
+          </div>
+          
+          {/* Arrow indicator */}
+          <svg 
+            className={`
+              w-5 h-5 md:w-6 md:h-6 transition-all duration-300 -rotate-45
+              ${isHovered ? 'text-white translate-x-1 -translate-y-1' : 'text-neutral-600'}
+            `}
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M17 8l4 4m0 0l-4 4m4-4H3" 
+            />
+          </svg>
+        </div>
+      </motion.div>
+    </Link>
   );
 }
 
@@ -132,6 +157,7 @@ export default function Industries() {
               <IndustryItem
                 key={industry}
                 name={t(`items.${industry}`)}
+                slug={industry}
                 index={index}
                 isInView={isInView}
               />

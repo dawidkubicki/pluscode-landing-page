@@ -30,7 +30,7 @@ export default function Testimonial() {
             className="absolute -top-8 -left-4 md:-top-12 md:-left-8"
           >
             <svg
-              className="w-16 h-16 md:w-24 md:h-24 text-neutral-200"
+              className="w-16 h-16 md:w-24 md:h-24 text-purple-200"
               fill="currentColor"
               viewBox="0 0 32 32"
             >

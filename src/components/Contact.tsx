@@ -3,20 +3,19 @@
 import { useTranslations } from 'next-intl';
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useCallback } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 interface FormErrors {
   name?: string;
   email?: string;
   message?: string;
-  captcha?: string;
 }
 
 export default function Contact() {
   const t = useTranslations('contact');
   const sectionRef = useRef(null);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -28,9 +27,9 @@ export default function Contact() {
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const formCardRef = useRef<HTMLDivElement>(null);
@@ -83,10 +82,6 @@ export default function Contact() {
       message: validateMessage(formData.message),
     };
 
-    if (!captchaToken) {
-      newErrors.captcha = t('validation.captchaRequired');
-    }
-
     setErrors(newErrors);
     return !Object.values(newErrors).some((error) => error !== undefined);
   };
@@ -128,13 +123,6 @@ export default function Contact() {
     }));
   };
 
-  const handleCaptchaChange = useCallback((token: string | null) => {
-    setCaptchaToken(token);
-    if (token) {
-      setErrors((prev) => ({ ...prev, captcha: undefined }));
-    }
-  }, []);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -149,26 +137,47 @@ export default function Contact() {
       return;
     }
 
+    if (!executeRecaptcha) {
+      setSubmitError('reCAPTCHA not loaded. Please refresh the page.');
+      return;
+    }
+
     setIsSubmitting(true);
+    setSubmitError(null);
 
     try {
-      // Simulate API call - replace with actual submission logic
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Execute reCAPTCHA v3 and get token
+      const captchaToken = await executeRecaptcha('contact_form');
 
-      console.log('Form submitted:', { ...formData, captchaToken });
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          captchaToken,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
       setSubmitSuccess(true);
 
       // Reset form
       setFormData({ name: '', email: '', company: '', message: '' });
-      setCaptchaToken(null);
       setTouched({});
       setErrors({});
-      recaptchaRef.current?.reset();
 
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitSuccess(false), 5000);
     } catch (error) {
       console.error('Submission error:', error);
+      setSubmitError(error instanceof Error ? error.message : 'Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -423,26 +432,16 @@ export default function Contact() {
                     )}
                   </div>
 
-                  {/* reCAPTCHA */}
-                  <div className="flex flex-col items-center">
-                    <div className="recaptcha-wrapper">
-                      <ReCAPTCHA
-                        ref={recaptchaRef}
-                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
-                        onChange={handleCaptchaChange}
-                        theme="dark"
-                      />
-                    </div>
-                    {errors.captcha && (
-                      <motion.p
-                        initial={{ opacity: 0, y: -5 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-red-400 text-xs mt-2"
-                      >
-                        {errors.captcha}
-                      </motion.p>
-                    )}
-                  </div>
+                  {/* Error Message */}
+                  {submitError && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-4 rounded-xl bg-red-500/10 border border-red-500/20"
+                    >
+                      <p className="text-red-400 text-sm text-center">{submitError}</p>
+                    </motion.div>
+                  )}
 
                   {/* Submit Button */}
                   <button
@@ -484,7 +483,7 @@ export default function Contact() {
                     )}
                   </button>
 
-                  {/* Privacy Note */}
+                  {/* Privacy Note with reCAPTCHA info */}
                   <p className="text-center text-sm text-white/30 mt-6">
                     {t('form.privacyPrefix')}{' '}
                     <a
@@ -494,6 +493,10 @@ export default function Contact() {
                       {t('form.privacyLink')}
                     </a>
                     {t('form.privacySuffix')}
+                    <br />
+                    <span className="text-white/20 text-xs mt-2 block">
+                      Protected by reCAPTCHA
+                    </span>
                   </p>
                 </form>
               )}

@@ -1,18 +1,26 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAnnouncement } from './AnnouncementContext';
 import Link from 'next/link';
 
-export default function AnnouncementBar() {
-  const t = useTranslations('announcement');
+export interface AnnouncementData {
+  text: string;
+  linkText?: string | null;
+  linkUrl?: string | null;
+}
+
+interface AnnouncementBarProps {
+  announcement?: AnnouncementData | null;
+}
+
+export default function AnnouncementBar({ announcement }: AnnouncementBarProps) {
   const { isVisible, setIsVisible } = useAnnouncement();
   
-  // Get text and optional link
-  const text = t('text');
-  const linkText = t('linkText', { defaultValue: '' });
-  const linkUrl = t('linkUrl', { defaultValue: '' });
+  // Don't render if no announcement data
+  if (!announcement || !announcement.text) {
+    return null;
+  }
 
   return (
     <AnimatePresence>
@@ -29,15 +37,15 @@ export default function AnnouncementBar() {
               {/* Announcement text - left aligned */}
               <p className="text-white text-xs sm:text-sm font-normal tracking-wide">
                 <span className="text-purple-400 mr-2">✦</span>
-                {text}
-                {linkText && linkUrl && (
+                {announcement.text}
+                {announcement.linkText && announcement.linkUrl && (
                   <>
                     {' '}
                     <Link 
-                      href={linkUrl} 
+                      href={announcement.linkUrl} 
                       className="underline hover:text-purple-400 transition-colors duration-200 cursor-pointer"
                     >
-                      {linkText}
+                      {announcement.linkText}
                     </Link>
                   </>
                 )}

@@ -92,9 +92,6 @@ export default function MobilePage() {
       label={t('label')}
       title={t('title')}
       subtitle={t('subtitle')}
-      breadcrumbLabel={t('breadcrumb')}
-      breadcrumbParentLabel="Services"
-      breadcrumbParentHref="/services/mobile"
       gradient="bg-gradient-to-br from-rose-50/50 via-pink-50/30 to-white"
       features={features}
       processSteps={processSteps}

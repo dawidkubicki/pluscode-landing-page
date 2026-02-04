@@ -91,9 +91,6 @@ export default function CloudPage() {
       label={t('label')}
       title={t('title')}
       subtitle={t('subtitle')}
-      breadcrumbLabel={t('breadcrumb')}
-      breadcrumbParentLabel="Services"
-      breadcrumbParentHref="/services/cloud"
       gradient="bg-gradient-to-br from-emerald-50/50 via-green-50/30 to-white"
       features={features}
       processSteps={processSteps}
