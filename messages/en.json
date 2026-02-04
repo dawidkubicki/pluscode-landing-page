@@ -776,83 +776,107 @@
     "legal": {
       "privacy": {
         "title": "Privacy Policy",
-        "subtitle": "Your privacy is important to us. Learn how we collect, use, and protect your information.",
+        "subtitle": "Your privacy is important to us. Learn how we collect, use, and protect your information in compliance with GDPR and applicable data protection laws.",
         "breadcrumb": "Privacy Policy",
-        "lastUpdated": "Last updated: January 2025",
+        "lastUpdated": "Last updated: February 2026",
         "tableOfContents": "Table of Contents",
         "sections": {
           "introduction": {
             "title": "Introduction",
-            "content": "This Privacy Policy explains how Pluscode collects, uses, discloses, and safeguards your information when you visit our website or use our services. Please read this privacy policy carefully."
+            "content": "This Privacy Policy explains how Pluscode Sp. z o.o. (\"Pluscode\", \"we\", \"us\", or \"our\"), with its registered office at Kosowska 12/3, 60-464 Poznań, Poland (KRS: 0000811470, NIP: PL7812002984, REGON: 384741150), collects, uses, discloses, and safeguards your personal data when you visit our website (pluscode.io) or use our services. We are committed to protecting your privacy and ensuring transparency in how we handle your information. This policy is designed to comply with the General Data Protection Regulation (GDPR) and other applicable data protection laws. By using our website or services, you acknowledge that you have read and understood this Privacy Policy."
           },
           "dataCollection": {
             "title": "Information We Collect",
-            "content": "We collect information you provide directly to us, such as when you fill out a contact form, subscribe to our newsletter, or communicate with us. This may include your name, email address, company name, and any other information you choose to provide."
+            "content": "We collect several types of information to provide and improve our services. Personal Information: When you fill out a contact form, subscribe to our newsletter, or communicate with us, we may collect your name, email address, phone number, company name, job title, and project details. Technical Data: We automatically collect certain information when you visit our website, including your IP address, browser type and version, device information, operating system, referral source, pages visited, time spent on pages, and click patterns. Communication Data: We retain records of correspondence when you contact us via email, contact forms, or other channels. This includes the content of your messages and any attachments."
           },
           "dataUsage": {
             "title": "How We Use Your Information",
-            "content": "We use the information we collect to provide, maintain, and improve our services, to communicate with you, to send you technical notices and support messages, and to respond to your comments, questions, and requests."
+            "content": "We use the information we collect for the following purposes: Service Delivery - to provide, maintain, and improve our software development and consulting services; Communication - to respond to your inquiries, send project updates, and provide customer support; Marketing - with your consent, to send you newsletters, promotional materials, and information about our services; Analytics - to understand how visitors use our website and to improve user experience; Legal Compliance - to comply with applicable laws, regulations, and legal processes; Security - to detect, prevent, and address technical issues, fraud, and security threats. We process your data based on legitimate interests, contractual necessity, legal obligations, or your explicit consent, depending on the specific processing activity."
           },
           "dataSecurity": {
             "title": "Data Security",
-            "content": "We take reasonable measures to help protect information about you from loss, theft, misuse, unauthorized access, disclosure, alteration, and destruction. However, no internet or email transmission is ever fully secure or error-free."
+            "content": "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. These measures include: encryption of data in transit using TLS/SSL protocols; secure data storage with access controls and authentication; regular security assessments and penetration testing; employee training on data protection and security practices; incident response procedures for potential data breaches. While we strive to protect your personal information, no method of transmission over the internet or electronic storage is 100% secure. We cannot guarantee absolute security but are committed to maintaining industry-standard protection measures."
           },
           "cookies": {
-            "title": "Cookies and Tracking",
-            "content": "We may use cookies and similar tracking technologies to track activity on our website and hold certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent."
+            "title": "Cookies and Tracking Technologies",
+            "content": "Our website uses cookies and similar tracking technologies to enhance your browsing experience and collect analytical data. Essential Cookies: Required for basic website functionality, including session management and security features. These cannot be disabled. Analytics Cookies: Help us understand how visitors interact with our website through services like Google Analytics. This data is anonymized and used to improve our site. Marketing Cookies: Used to track visitors across websites and display relevant advertisements. These are only activated with your explicit consent. You can manage your cookie preferences through your browser settings or our cookie consent banner. Most browsers allow you to block or delete cookies, but this may affect website functionality."
           },
           "thirdParty": {
             "title": "Third-Party Services",
-            "content": "We may use third-party service providers to help us operate our business and the website or administer activities on our behalf. We may share your information with these third parties for those limited purposes."
+            "content": "We may share your information with trusted third-party service providers who assist us in operating our business. These include: Cloud hosting providers (for website and data hosting); Email service providers (for communication and marketing); Analytics services (for website performance analysis); Payment processors (for transaction processing); CRM systems (for customer relationship management). All third-party providers are contractually obligated to protect your data and use it only for the specified purposes. We do not sell your personal information to third parties."
+          },
+          "dataRetention": {
+            "title": "Data Retention",
+            "content": "We retain your personal data only for as long as necessary to fulfill the purposes for which it was collected, including satisfying legal, accounting, or reporting requirements. Contact form submissions and inquiries are retained for up to 3 years after our last interaction. Newsletter subscriptions are retained until you unsubscribe. Project-related data is retained for the duration of our business relationship and for 7 years thereafter for legal and accounting purposes. Analytics data is retained in anonymized form for up to 26 months."
           },
           "rights": {
-            "title": "Your Rights",
-            "content": "You have the right to access, update, or delete the information we have on you. If you wish to exercise any of these rights, please contact us using the information provided below."
+            "title": "Your Rights Under GDPR",
+            "content": "Under the General Data Protection Regulation (GDPR), you have the following rights regarding your personal data: Right of Access - request a copy of your personal data we hold; Right to Rectification - request correction of inaccurate or incomplete data; Right to Erasure - request deletion of your personal data (\"right to be forgotten\"); Right to Restriction - request limitation of processing of your data; Right to Data Portability - receive your data in a structured, machine-readable format; Right to Object - object to processing based on legitimate interests or direct marketing; Right to Withdraw Consent - withdraw consent at any time where processing is based on consent. To exercise any of these rights, please contact us using the details provided below. We will respond to your request within 30 days."
+          },
+          "international": {
+            "title": "International Data Transfers",
+            "content": "Your personal data may be transferred to and processed in countries outside the European Economic Area (EEA). When we transfer data outside the EEA, we ensure appropriate safeguards are in place, including: Standard Contractual Clauses approved by the European Commission; adequacy decisions by the European Commission; or other legally recognized transfer mechanisms. We take all reasonable steps to ensure your data is treated securely and in accordance with this Privacy Policy."
           },
           "contact": {
             "title": "Contact Us",
-            "content": "If you have any questions about this Privacy Policy, please contact us at contact@pluscode.io."
+            "content": "If you have any questions about this Privacy Policy, wish to exercise your data protection rights, or have concerns about how we handle your data, please contact us at: Pluscode Sp. z o.o., Kosowska 12/3, 60-464 Poznań, Poland. Email: contact@pluscode.io, Phone: +48 667 688 927. Data Protection Contact: Dawid Kubicki (CEO) - contact@pluscode.io. You also have the right to lodge a complaint with the Polish Data Protection Authority (Prezes Urzędu Ochrony Danych Osobowych - UODO) if you believe your data protection rights have been violated."
           }
         }
       },
       "terms": {
         "title": "Terms of Use",
-        "subtitle": "Please read these terms carefully before using our services.",
+        "subtitle": "Please read these terms carefully before using our website and services. They constitute a legally binding agreement between you and Pluscode.",
         "breadcrumb": "Terms of Use",
-        "lastUpdated": "Last updated: January 2025",
+        "lastUpdated": "Last updated: February 2026",
         "tableOfContents": "Table of Contents",
         "sections": {
           "acceptance": {
             "title": "Acceptance of Terms",
-            "content": "By accessing or using our website and services, you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use our services."
+            "content": "By accessing or using the Pluscode website (pluscode.io) and our services, you agree to be bound by these Terms of Use (\"Terms\"), our Privacy Policy, and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site. These Terms apply to all visitors, users, and others who access or use our website and services. We reserve the right to update these Terms at any time, and your continued use of the website following any changes constitutes acceptance of those changes."
           },
           "services": {
             "title": "Description of Services",
-            "content": "Pluscode provides software development, consulting, and related services. The specific services provided will be outlined in separate agreements or statements of work."
+            "content": "Pluscode Sp. z o.o., a company registered in Poland (KRS: 0000811470, NIP: PL7812002984, REGON: 384741150, share capital: 5,000 PLN), with its registered office at Kosowska 12/3, 60-464 Poznań, provides professional software development, AI and machine learning solutions, data analytics, cloud services, and technology consulting. Our website serves as an informational platform about our services and a means to contact us. The specific scope, deliverables, timelines, and fees for any services will be outlined in separate service agreements, statements of work (SOW), or contracts between Pluscode and the client. Nothing on this website constitutes a binding offer or commitment to provide services at any particular price or timeline."
           },
           "userObligations": {
             "title": "User Obligations",
-            "content": "You agree to use our services only for lawful purposes and in accordance with these terms. You are responsible for maintaining the confidentiality of any account credentials."
+            "content": "When using our website and services, you agree to: use the website only for lawful purposes and in accordance with these Terms; not use the website in any way that violates applicable local, national, or international laws or regulations; not attempt to gain unauthorized access to any portion of the website, other accounts, computer systems, or networks connected to the website; not transmit any malware, viruses, or other malicious code; not use any automated means (bots, scrapers, etc.) to access or collect data from the website without our express written permission; not interfere with or disrupt the integrity or performance of the website; provide accurate, current, and complete information when contacting us or using our services."
           },
           "intellectualProperty": {
             "title": "Intellectual Property",
-            "content": "All content on our website, including text, graphics, logos, and software, is the property of Pluscode or its licensors and is protected by intellectual property laws."
+            "content": "All content on the Pluscode website, including but not limited to text, graphics, logos, icons, images, audio clips, video clips, data compilations, software, and the design, selection, and arrangement thereof, is the exclusive property of Pluscode or its content suppliers and is protected by Polish and international copyright, trademark, and other intellectual property laws. The Pluscode name, logo, and all related product and service names, design marks, and slogans are trademarks of Pluscode. You may not use these marks without our prior written permission. Limited License: We grant you a limited, non-exclusive, non-transferable license to access and use the website for personal, non-commercial purposes. This license does not include the right to: modify, copy, or distribute any content; use any data mining, robots, or similar data gathering tools; download any content except as expressly permitted."
+          },
+          "confidentiality": {
+            "title": "Confidentiality",
+            "content": "Any confidential information shared during project discussions, consultations, or service delivery is protected under mutual confidentiality obligations. Confidential Information includes, but is not limited to: business plans, strategies, and financial information; technical specifications, source code, and proprietary methodologies; customer lists, pricing, and marketing strategies; any information marked as confidential or that a reasonable person would understand to be confidential. Both parties agree not to disclose, publish, or disseminate confidential information to third parties without prior written consent. This obligation survives the termination of any business relationship."
           },
           "limitations": {
             "title": "Limitation of Liability",
-            "content": "To the fullest extent permitted by law, Pluscode shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or relating to your use of our services."
+            "content": "To the fullest extent permitted by applicable law, Pluscode and its directors, employees, partners, agents, suppliers, or affiliates shall not be liable for: any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses; any damages resulting from your access to or use of or inability to access or use the website; any conduct or content of any third party on the website; any content obtained from the website; unauthorized access, use, or alteration of your transmissions or content. In no event shall Pluscode's total liability exceed the amount paid by you, if any, for accessing or using the website during the twelve (12) months preceding the claim."
+          },
+          "disclaimer": {
+            "title": "Disclaimer of Warranties",
+            "content": "The website and all content, services, and features are provided on an \"as is\" and \"as available\" basis without any warranties of any kind, either express or implied. Pluscode expressly disclaims all warranties, including but not limited to: implied warranties of merchantability, fitness for a particular purpose, and non-infringement; warranties that the website will be uninterrupted, timely, secure, or error-free; warranties as to the accuracy, reliability, or completeness of any information on the website. Any reliance you place on information from the website is strictly at your own risk."
           },
           "termination": {
             "title": "Termination",
-            "content": "We may terminate or suspend your access to our services immediately, without prior notice, for any reason whatsoever, including without limitation if you breach these Terms of Use."
+            "content": "We may terminate or suspend your access to the website immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach these Terms. Upon termination, your right to use the website will immediately cease. All provisions of these Terms which by their nature should survive termination shall survive, including ownership provisions, warranty disclaimers, indemnity, and limitations of liability."
+          },
+          "indemnification": {
+            "title": "Indemnification",
+            "content": "You agree to defend, indemnify, and hold harmless Pluscode, its affiliates, licensors, and service providers, and its and their respective officers, directors, employees, contractors, agents, licensors, suppliers, successors, and assigns from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, or fees (including reasonable attorneys' fees) arising out of or relating to your violation of these Terms or your use of the website."
           },
           "governing": {
-            "title": "Governing Law",
-            "content": "These terms shall be governed by and construed in accordance with the laws of Poland, without regard to its conflict of law provisions."
+            "title": "Governing Law and Jurisdiction",
+            "content": "These Terms shall be governed by and construed in accordance with the laws of the Republic of Poland, without regard to its conflict of law provisions. Any legal suit, action, or proceeding arising out of or related to these Terms or the website shall be instituted exclusively in the courts of Poland, located in Poznan. You waive any and all objections to the exercise of jurisdiction over you by such courts and to venue in such courts."
+          },
+          "severability": {
+            "title": "Severability",
+            "content": "If any provision of these Terms is held to be invalid, illegal, or unenforceable by a court of competent jurisdiction, such invalidity, illegality, or unenforceability shall not affect any other provision of these Terms. The invalid, illegal, or unenforceable provision shall be modified to the minimum extent necessary to make it valid, legal, and enforceable while preserving the original intent."
           },
           "changes": {
             "title": "Changes to Terms",
-            "content": "We reserve the right to modify or replace these Terms of Use at any time. We will provide notice of any changes by posting the new terms on this page."
+            "content": "We reserve the right to modify or replace these Terms at any time at our sole discretion. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect by posting the updated Terms on this page with a new \"Last updated\" date. What constitutes a material change will be determined at our sole discretion. By continuing to access or use our website after those revisions become effective, you agree to be bound by the revised terms."
           }
         }
       }

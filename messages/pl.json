@@ -776,83 +776,107 @@
     "legal": {
       "privacy": {
         "title": "Polityka Prywatności",
-        "subtitle": "Twoja prywatność jest dla nas ważna. Dowiedz się, jak zbieramy, wykorzystujemy i chronimy Twoje dane.",
+        "subtitle": "Twoja prywatność jest dla nas ważna. Dowiedz się, jak zbieramy, wykorzystujemy i chronimy Twoje dane zgodnie z RODO i obowiązującymi przepisami o ochronie danych.",
         "breadcrumb": "Polityka Prywatności",
-        "lastUpdated": "Ostatnia aktualizacja: Styczeń 2025",
+        "lastUpdated": "Ostatnia aktualizacja: Luty 2026",
         "tableOfContents": "Spis Treści",
         "sections": {
           "introduction": {
             "title": "Wprowadzenie",
-            "content": "Niniejsza Polityka Prywatności wyjaśnia, jak Pluscode zbiera, wykorzystuje, ujawnia i chroni Twoje dane podczas korzystania z naszej strony internetowej lub usług. Prosimy o uważne zapoznanie się z tą polityką prywatności."
+            "content": "Niniejsza Polityka Prywatności wyjaśnia, w jaki sposób Pluscode Sp. z o.o. (\"Pluscode\", \"my\", \"nas\" lub \"nasze\"), z siedzibą przy ul. Kosowskiej 12/3, 60-464 Poznań, Polska (KRS: 0000811470, NIP: PL7812002984, REGON: 384741150), zbiera, wykorzystuje, ujawnia i chroni Twoje dane osobowe podczas korzystania z naszej strony internetowej (pluscode.io) lub naszych usług. Zobowiązujemy się do ochrony Twojej prywatności i zapewnienia przejrzystości w sposobie przetwarzania Twoich danych. Niniejsza polityka została opracowana zgodnie z Ogólnym Rozporządzeniem o Ochronie Danych (RODO) oraz innymi obowiązującymi przepisami o ochronie danych. Korzystając z naszej strony internetowej lub usług, potwierdzasz, że zapoznałeś się z niniejszą Polityką Prywatności i ją rozumiesz."
           },
           "dataCollection": {
             "title": "Dane, które Zbieramy",
-            "content": "Zbieramy informacje, które nam bezpośrednio przekazujesz, np. wypełniając formularz kontaktowy, subskrybując newsletter lub kontaktując się z nami. Może to obejmować Twoje imię, adres email, nazwę firmy i inne informacje, które zdecydujesz się podać."
+            "content": "Zbieramy różne rodzaje informacji w celu świadczenia i ulepszania naszych usług. Dane osobowe: Wypełniając formularz kontaktowy, subskrybując newsletter lub kontaktując się z nami, możemy zbierać Twoje imię i nazwisko, adres email, numer telefonu, nazwę firmy, stanowisko oraz szczegóły projektu. Dane techniczne: Automatycznie zbieramy pewne informacje podczas odwiedzin na naszej stronie, w tym adres IP, typ i wersję przeglądarki, informacje o urządzeniu, system operacyjny, źródło przekierowania, odwiedzane strony, czas spędzony na stronach oraz wzorce kliknięć. Dane komunikacyjne: Przechowujemy zapisy korespondencji, gdy kontaktujesz się z nami przez email, formularze kontaktowe lub inne kanały. Obejmuje to treść Twoich wiadomości oraz wszelkie załączniki."
           },
           "dataUsage": {
             "title": "Jak Wykorzystujemy Twoje Dane",
-            "content": "Wykorzystujemy zebrane informacje do świadczenia, utrzymywania i ulepszania naszych usług, komunikacji z Tobą, wysyłania powiadomień technicznych i wiadomości wsparcia oraz odpowiadania na Twoje komentarze, pytania i prośby."
+            "content": "Wykorzystujemy zebrane informacje w następujących celach: Świadczenie usług – do dostarczania, utrzymywania i ulepszania naszych usług w zakresie tworzenia oprogramowania i konsultingu; Komunikacja – do odpowiadania na Twoje zapytania, wysyłania aktualizacji projektowych i zapewniania wsparcia klienta; Marketing – za Twoją zgodą, do wysyłania newsletterów, materiałów promocyjnych i informacji o naszych usługach; Analityka – do zrozumienia, w jaki sposób odwiedzający korzystają z naszej strony i do poprawy doświadczenia użytkownika; Zgodność prawna – do przestrzegania obowiązujących przepisów prawa i procesów prawnych; Bezpieczeństwo – do wykrywania, zapobiegania i rozwiązywania problemów technicznych, oszustw i zagrożeń bezpieczeństwa. Przetwarzamy Twoje dane na podstawie uzasadnionych interesów, konieczności umownej, obowiązków prawnych lub Twojej wyraźnej zgody, w zależności od konkretnej czynności przetwarzania."
           },
           "dataSecurity": {
             "title": "Bezpieczeństwo Danych",
-            "content": "Podejmujemy odpowiednie środki, aby chronić informacje o Tobie przed utratą, kradzieżą, nadużyciem, nieautoryzowanym dostępem, ujawnieniem, modyfikacją i zniszczeniem. Jednak żadna transmisja internetowa ani email nie jest w pełni bezpieczna ani wolna od błędów."
+            "content": "Wdrażamy odpowiednie środki techniczne i organizacyjne w celu ochrony Twoich danych osobowych przed nieautoryzowanym dostępem, modyfikacją, ujawnieniem lub zniszczeniem. Środki te obejmują: szyfrowanie danych w transmisji przy użyciu protokołów TLS/SSL; bezpieczne przechowywanie danych z kontrolą dostępu i uwierzytelnianiem; regularne oceny bezpieczeństwa i testy penetracyjne; szkolenia pracowników w zakresie ochrony danych i praktyk bezpieczeństwa; procedury reagowania na incydenty w przypadku potencjalnych naruszeń danych. Chociaż dokładamy wszelkich starań, aby chronić Twoje dane osobowe, żadna metoda transmisji przez internet ani przechowywania elektronicznego nie jest w 100% bezpieczna. Nie możemy zagwarantować całkowitego bezpieczeństwa, ale zobowiązujemy się do utrzymywania standardowych w branży środków ochrony."
           },
           "cookies": {
-            "title": "Pliki Cookie i Śledzenie",
-            "content": "Możemy używać plików cookie i podobnych technologii śledzenia do monitorowania aktywności na naszej stronie i przechowywania pewnych informacji. Możesz ustawić przeglądarkę, aby odrzucała wszystkie pliki cookie lub informowała, gdy plik cookie jest wysyłany."
+            "title": "Pliki Cookie i Technologie Śledzenia",
+            "content": "Nasza strona internetowa wykorzystuje pliki cookie i podobne technologie śledzenia w celu poprawy jakości przeglądania i zbierania danych analitycznych. Niezbędne pliki cookie: Wymagane do podstawowej funkcjonalności strony, w tym zarządzania sesją i funkcji bezpieczeństwa. Nie można ich wyłączyć. Analityczne pliki cookie: Pomagają nam zrozumieć, jak odwiedzający wchodzą w interakcję z naszą stroną za pośrednictwem usług takich jak Google Analytics. Dane te są anonimizowane i wykorzystywane do ulepszania naszej strony. Marketingowe pliki cookie: Służą do śledzenia odwiedzających na różnych stronach i wyświetlania odpowiednich reklam. Są aktywowane wyłącznie za Twoją wyraźną zgodą. Możesz zarządzać preferencjami dotyczącymi plików cookie poprzez ustawienia przeglądarki lub nasz baner zgody na pliki cookie. Większość przeglądarek pozwala blokować lub usuwać pliki cookie, ale może to wpłynąć na funkcjonalność strony."
           },
           "thirdParty": {
             "title": "Usługi Podmiotów Trzecich",
-            "content": "Możemy korzystać z usług podmiotów trzecich, aby pomóc nam prowadzić naszą działalność i stronę internetową lub zarządzać działaniami w naszym imieniu. Możemy udostępniać Twoje informacje tym podmiotom trzecim w tych ograniczonych celach."
+            "content": "Możemy udostępniać Twoje dane zaufanym dostawcom usług zewnętrznych, którzy pomagają nam w prowadzeniu działalności. Należą do nich: dostawcy hostingu w chmurze (do hostowania strony i danych); dostawcy usług email (do komunikacji i marketingu); usługi analityczne (do analizy wydajności strony); operatorzy płatności (do przetwarzania transakcji); systemy CRM (do zarządzania relacjami z klientami). Wszyscy dostawcy zewnętrzni są umownie zobowiązani do ochrony Twoich danych i wykorzystywania ich wyłącznie w określonych celach. Nie sprzedajemy Twoich danych osobowych podmiotom trzecim."
+          },
+          "dataRetention": {
+            "title": "Przechowywanie Danych",
+            "content": "Przechowujemy Twoje dane osobowe tylko tak długo, jak jest to konieczne do realizacji celów, dla których zostały zebrane, w tym w celu spełnienia wymogów prawnych, księgowych lub sprawozdawczych. Formularze kontaktowe i zapytania są przechowywane do 3 lat od ostatniej interakcji. Subskrypcje newslettera są przechowywane do momentu rezygnacji z subskrypcji. Dane związane z projektem są przechowywane przez okres trwania relacji biznesowej i przez 7 lat po jej zakończeniu dla celów prawnych i księgowych. Dane analityczne są przechowywane w formie anonimowej przez maksymalnie 26 miesięcy."
           },
           "rights": {
-            "title": "Twoje Prawa",
-            "content": "Masz prawo do dostępu, aktualizacji lub usunięcia posiadanych przez nas informacji o Tobie. Jeśli chcesz skorzystać z któregokolwiek z tych praw, skontaktuj się z nami, korzystając z podanych poniżej danych kontaktowych."
+            "title": "Twoje Prawa na Mocy RODO",
+            "content": "Zgodnie z Ogólnym Rozporządzeniem o Ochronie Danych (RODO) przysługują Ci następujące prawa dotyczące Twoich danych osobowych: Prawo dostępu – żądanie kopii przechowywanych przez nas danych osobowych; Prawo do sprostowania – żądanie poprawienia niedokładnych lub niekompletnych danych; Prawo do usunięcia – żądanie usunięcia danych osobowych (\"prawo do bycia zapomnianym\"); Prawo do ograniczenia – żądanie ograniczenia przetwarzania danych; Prawo do przenoszenia danych – otrzymanie danych w ustrukturyzowanym, nadającym się do odczytu maszynowego formacie; Prawo do sprzeciwu – sprzeciw wobec przetwarzania opartego na uzasadnionych interesach lub marketingu bezpośrednim; Prawo do wycofania zgody – wycofanie zgody w dowolnym momencie, gdy przetwarzanie opiera się na zgodzie. Aby skorzystać z któregokolwiek z tych praw, prosimy o kontakt za pomocą danych podanych poniżej. Odpowiemy na Twoje żądanie w ciągu 30 dni."
+          },
+          "international": {
+            "title": "Międzynarodowe Przekazywanie Danych",
+            "content": "Twoje dane osobowe mogą być przekazywane i przetwarzane w krajach poza Europejskim Obszarem Gospodarczym (EOG). Przekazując dane poza EOG, zapewniamy odpowiednie zabezpieczenia, w tym: Standardowe Klauzule Umowne zatwierdzone przez Komisję Europejską; decyzje stwierdzające odpowiedni stopień ochrony wydane przez Komisję Europejską; lub inne prawnie uznane mechanizmy przekazywania. Podejmujemy wszelkie uzasadnione kroki, aby zapewnić bezpieczne traktowanie Twoich danych zgodnie z niniejszą Polityką Prywatności."
           },
           "contact": {
             "title": "Kontakt",
-            "content": "Jeśli masz pytania dotyczące niniejszej Polityki Prywatności, skontaktuj się z nami pod adresem contact@pluscode.io."
+            "content": "Jeśli masz pytania dotyczące niniejszej Polityki Prywatności, chcesz skorzystać ze swoich praw do ochrony danych lub masz wątpliwości dotyczące sposobu przetwarzania Twoich danych, prosimy o kontakt: Pluscode Sp. z o.o., ul. Kosowska 12/3, 60-464 Poznań, Polska. Email: contact@pluscode.io, Telefon: +48 667 688 927. Kontakt w sprawach ochrony danych: Dawid Kubicki (CEO) - contact@pluscode.io. Masz również prawo złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych (UODO), jeśli uważasz, że Twoje prawa do ochrony danych zostały naruszone."
           }
         }
       },
       "terms": {
         "title": "Regulamin",
-        "subtitle": "Prosimy o uważne zapoznanie się z niniejszym regulaminem przed skorzystaniem z naszych usług.",
+        "subtitle": "Prosimy o uważne zapoznanie się z niniejszym regulaminem przed korzystaniem z naszej strony internetowej i usług. Stanowi on prawnie wiążącą umowę między Tobą a Pluscode.",
         "breadcrumb": "Regulamin",
-        "lastUpdated": "Ostatnia aktualizacja: Styczeń 2025",
+        "lastUpdated": "Ostatnia aktualizacja: Luty 2026",
         "tableOfContents": "Spis Treści",
         "sections": {
           "acceptance": {
             "title": "Akceptacja Warunków",
-            "content": "Uzyskując dostęp lub korzystając z naszej strony internetowej i usług, zgadzasz się na przestrzeganie niniejszego Regulaminu. Jeśli nie zgadzasz się z tymi warunkami, prosimy o niekorzystanie z naszych usług."
+            "content": "Uzyskując dostęp lub korzystając ze strony internetowej Pluscode (pluscode.io) i naszych usług, zgadzasz się na przestrzeganie niniejszego Regulaminu (\"Regulamin\"), naszej Polityki Prywatności oraz wszystkich obowiązujących przepisów prawa. Jeśli nie zgadzasz się z którymkolwiek z tych warunków, korzystanie z tej strony lub dostęp do niej jest zabroniony. Niniejszy Regulamin ma zastosowanie do wszystkich odwiedzających, użytkowników i innych osób, które uzyskują dostęp do naszej strony internetowej i usług lub z nich korzystają. Zastrzegamy sobie prawo do aktualizacji niniejszego Regulaminu w dowolnym momencie, a dalsze korzystanie ze strony po wprowadzeniu zmian oznacza akceptację tych zmian."
           },
           "services": {
             "title": "Opis Usług",
-            "content": "Pluscode świadczy usługi tworzenia oprogramowania, konsultingu i usług pokrewnych. Konkretne świadczone usługi będą określone w odrębnych umowach lub zakresach prac."
+            "content": "Pluscode Sp. z o.o., spółka zarejestrowana w Polsce (KRS: 0000811470, NIP: PL7812002984, REGON: 384741150, kapitał zakładowy: 5 000 PLN), z siedzibą przy ul. Kosowskiej 12/3, 60-464 Poznań, świadczy profesjonalne usługi w zakresie tworzenia oprogramowania, rozwiązań AI i machine learning, analityki danych, usług chmurowych oraz konsultingu technologicznego. Nasza strona internetowa służy jako platforma informacyjna o naszych usługach oraz środek do kontaktu z nami. Konkretny zakres, rezultaty, harmonogramy i opłaty za wszelkie usługi zostaną określone w odrębnych umowach o świadczenie usług, zakresach prac (SOW) lub kontraktach między Pluscode a klientem. Żadne informacje na tej stronie nie stanowią wiążącej oferty ani zobowiązania do świadczenia usług po określonej cenie lub w określonym terminie."
           },
           "userObligations": {
             "title": "Obowiązki Użytkownika",
-            "content": "Zgadzasz się korzystać z naszych usług wyłącznie w celach zgodnych z prawem i zgodnie z niniejszym regulaminem. Jesteś odpowiedzialny za zachowanie poufności wszelkich danych uwierzytelniających konto."
+            "content": "Korzystając z naszej strony internetowej i usług, zobowiązujesz się do: korzystania ze strony wyłącznie w celach zgodnych z prawem i zgodnie z niniejszym Regulaminem; niekorzystania ze strony w sposób naruszający obowiązujące przepisy prawa lokalnego, krajowego lub międzynarodowego; niepodejmowania prób uzyskania nieautoryzowanego dostępu do jakiejkolwiek części strony, innych kont, systemów komputerowych lub sieci połączonych ze stroną; nieprzesyłania złośliwego oprogramowania, wirusów lub innego szkodliwego kodu; niekorzystania z automatycznych środków (botów, scraperów itp.) do uzyskiwania dostępu lub zbierania danych ze strony bez naszej wyraźnej pisemnej zgody; nieingerowania w integralność lub wydajność strony ani jej niezakłócania; podawania dokładnych, aktualnych i kompletnych informacji podczas kontaktowania się z nami lub korzystania z naszych usług."
           },
           "intellectualProperty": {
             "title": "Własność Intelektualna",
-            "content": "Wszystkie treści na naszej stronie internetowej, w tym teksty, grafiki, logo i oprogramowanie, są własnością Pluscode lub jego licencjodawców i są chronione prawem własności intelektualnej."
+            "content": "Wszystkie treści na stronie internetowej Pluscode, w tym między innymi teksty, grafiki, logo, ikony, obrazy, klipy audio, klipy wideo, kompilacje danych, oprogramowanie oraz projekt, dobór i układ tych elementów, są wyłączną własnością Pluscode lub jego dostawców treści i są chronione polskim i międzynarodowym prawem autorskim, znaków towarowych i innymi przepisami dotyczącymi własności intelektualnej. Nazwa Pluscode, logo i wszystkie powiązane nazwy produktów i usług, znaki graficzne i slogany są znakami towarowymi Pluscode. Nie możesz używać tych znaków bez naszej uprzedniej pisemnej zgody. Ograniczona licencja: Udzielamy Ci ograniczonej, niewyłącznej, niezbywalnej licencji na dostęp i korzystanie ze strony w celach osobistych i niekomercyjnych. Niniejsza licencja nie obejmuje prawa do: modyfikowania, kopiowania ani rozpowszechniania jakichkolwiek treści; korzystania z narzędzi do eksploracji danych, robotów lub podobnych narzędzi do zbierania danych; pobierania jakichkolwiek treści, chyba że jest to wyraźnie dozwolone."
+          },
+          "confidentiality": {
+            "title": "Poufność",
+            "content": "Wszelkie informacje poufne udostępniane podczas dyskusji projektowych, konsultacji lub świadczenia usług są chronione wzajemnymi zobowiązaniami do zachowania poufności. Informacje poufne obejmują między innymi: plany biznesowe, strategie i informacje finansowe; specyfikacje techniczne, kod źródłowy i zastrzeżone metodologie; listy klientów, ceny i strategie marketingowe; wszelkie informacje oznaczone jako poufne lub które rozsądna osoba uznałaby za poufne. Obie strony zobowiązują się nie ujawniać, publikować ani rozpowszechniać informacji poufnych osobom trzecim bez uprzedniej pisemnej zgody. Zobowiązanie to obowiązuje również po zakończeniu jakiejkolwiek relacji biznesowej."
           },
           "limitations": {
             "title": "Ograniczenie Odpowiedzialności",
-            "content": "W najszerszym zakresie dozwolonym przez prawo, Pluscode nie ponosi odpowiedzialności za żadne pośrednie, przypadkowe, specjalne, wynikowe lub karne szkody wynikające z korzystania z naszych usług lub związane z nim."
+            "content": "W najszerszym zakresie dozwolonym przez obowiązujące prawo, Pluscode oraz jego dyrektorzy, pracownicy, partnerzy, przedstawiciele, dostawcy lub podmioty stowarzyszone nie ponoszą odpowiedzialności za: jakiekolwiek pośrednie, przypadkowe, specjalne, wynikowe lub karne szkody, w tym między innymi utratę zysków, danych, użytkowania, dobrej woli lub inne niematerialne straty; jakiekolwiek szkody wynikające z dostępu do lub korzystania lub niemożności dostępu do lub korzystania ze strony; jakiekolwiek działania lub treści osób trzecich na stronie; jakiekolwiek treści uzyskane ze strony; nieautoryzowany dostęp, użycie lub zmianę Twoich transmisji lub treści. W żadnym przypadku całkowita odpowiedzialność Pluscode nie przekroczy kwoty zapłaconej przez Ciebie, jeśli w ogóle, za dostęp do lub korzystanie ze strony w okresie dwunastu (12) miesięcy poprzedzających roszczenie."
+          },
+          "disclaimer": {
+            "title": "Wyłączenie Gwarancji",
+            "content": "Strona internetowa oraz wszystkie treści, usługi i funkcje są dostarczane w stanie \"takim, jakim są\" i \"w miarę dostępności\" bez jakichkolwiek gwarancji, wyraźnych lub dorozumianych. Pluscode wyraźnie wyłącza wszelkie gwarancje, w tym między innymi: dorozumiane gwarancje przydatności handlowej, przydatności do określonego celu i nienaruszania praw; gwarancje, że strona będzie działać bez przerw, terminowo, bezpiecznie lub bezbłędnie; gwarancje dotyczące dokładności, wiarygodności lub kompletności jakichkolwiek informacji na stronie. Poleganie na informacjach ze strony odbywa się wyłącznie na własne ryzyko."
           },
           "termination": {
             "title": "Rozwiązanie",
-            "content": "Możemy zakończyć lub zawiesić Twój dostęp do naszych usług natychmiast, bez wcześniejszego powiadomienia, z jakiegokolwiek powodu, w tym bez ograniczeń, jeśli naruszysz niniejszy Regulamin."
+            "content": "Możemy zakończyć lub zawiesić Twój dostęp do strony natychmiast, bez wcześniejszego powiadomienia lub odpowiedzialności, z jakiegokolwiek powodu, w tym bez ograniczeń, jeśli naruszysz niniejszy Regulamin. Po rozwiązaniu Twoje prawo do korzystania ze strony natychmiast wygasa. Wszystkie postanowienia niniejszego Regulaminu, które ze względu na swój charakter powinny obowiązywać po rozwiązaniu, pozostają w mocy, w tym postanowienia dotyczące własności, wyłączenia gwarancji, zwolnienia z odpowiedzialności i ograniczenia odpowiedzialności."
+          },
+          "indemnification": {
+            "title": "Zwolnienie z Odpowiedzialności",
+            "content": "Zgadzasz się bronić, zwolnić z odpowiedzialności i chronić Pluscode, jego podmioty stowarzyszone, licencjodawców i dostawców usług oraz ich odpowiednich członków zarządu, dyrektorów, pracowników, wykonawców, przedstawicieli, licencjodawców, dostawców, następców prawnych i cesjonariuszy przed wszelkimi roszczeniami, zobowiązaniami, szkodami, wyrokami, zasądzonymi kwotami, stratami, kosztami, wydatkami lub opłatami (w tym uzasadnionymi honorariami prawników) wynikającymi z lub związanymi z naruszeniem przez Ciebie niniejszego Regulaminu lub korzystaniem ze strony."
           },
           "governing": {
-            "title": "Prawo Właściwe",
-            "content": "Niniejszy regulamin podlega prawu polskiemu i będzie interpretowany zgodnie z nim, bez uwzględnienia przepisów kolizyjnych."
+            "title": "Prawo Właściwe i Jurysdykcja",
+            "content": "Niniejszy Regulamin podlega prawu Rzeczypospolitej Polskiej i będzie interpretowany zgodnie z nim, bez uwzględnienia przepisów kolizyjnych. Wszelkie powództwa, działania prawne lub postępowania wynikające z niniejszego Regulaminu lub strony internetowej lub z nimi związane będą wszczynane wyłącznie przed sądami polskimi z siedzibą w Poznaniu. Zrzekasz się wszelkich zastrzeżeń dotyczących wykonywania nad Tobą jurysdykcji przez takie sądy oraz właściwości miejscowej takich sądów."
+          },
+          "severability": {
+            "title": "Rozdzielność Postanowień",
+            "content": "Jeśli którekolwiek postanowienie niniejszego Regulaminu zostanie uznane przez właściwy sąd za nieważne, niezgodne z prawem lub niewykonalne, taka nieważność, niezgodność z prawem lub niewykonalność nie wpływa na pozostałe postanowienia niniejszego Regulaminu. Nieważne, niezgodne z prawem lub niewykonalne postanowienie zostanie zmodyfikowane w minimalnym zakresie niezbędnym do uczynienia go ważnym, zgodnym z prawem i wykonalnym przy zachowaniu pierwotnego zamiaru."
           },
           "changes": {
             "title": "Zmiany Regulaminu",
-            "content": "Zastrzegamy sobie prawo do modyfikacji lub zastąpienia niniejszego Regulaminu w dowolnym momencie. Powiadomimy o wszelkich zmianach, publikując nowy regulamin na tej stronie."
+            "content": "Zastrzegamy sobie prawo do modyfikacji lub zastąpienia niniejszego Regulaminu w dowolnym momencie według własnego uznania. Jeśli zmiana jest istotna, powiadomimy o niej z co najmniej 30-dniowym wyprzedzeniem przed wejściem w życie nowych warunków, publikując zaktualizowany Regulamin na tej stronie z nową datą \"Ostatnia aktualizacja\". To, co stanowi istotną zmianę, zostanie określone według naszego wyłącznego uznania. Kontynuując dostęp do lub korzystanie z naszej strony po wejściu w życie tych zmian, zgadzasz się na przestrzeganie zmienionego regulaminu."
           }
         }
       }

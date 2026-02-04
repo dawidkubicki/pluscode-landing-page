@@ -16,7 +16,9 @@ export default function PrivacyPolicyPage() {
     'dataSecurity',
     'cookies',
     'thirdParty',
+    'dataRetention',
     'rights',
+    'international',
     'contact',
   ];
 

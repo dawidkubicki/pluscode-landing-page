@@ -12,6 +12,42 @@ const siteConfig = {
   url: "https://pluscode.dev",
 };
 
+// JSON-LD Structured Data for Organization
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteConfig.name,
+  description: siteConfig.description,
+  url: siteConfig.url,
+  logo: `${siteConfig.url}/assets/logo/pluscode-logo.svg`,
+  sameAs: [
+    "https://x.com/pluscodeio",
+    "https://pl.linkedin.com/company/pluscodeio",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    url: `${siteConfig.url}/contact`,
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "PL",
+  },
+};
+
+// JSON-LD for WebSite with SearchAction
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  description: siteConfig.description,
+  publisher: {
+    "@type": "Organization",
+    name: siteConfig.name,
+  },
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -60,7 +96,7 @@ export const metadata: Metadata = {
     title: `${siteConfig.name} | Software Development & AI Solutions`,
     description: siteConfig.description,
     images: ["/og-image.png"],
-    creator: "@pluscode",
+    creator: "@pluscodeio",
   },
   robots: {
     index: true,
@@ -78,6 +114,14 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/apple-icon.png",
   },
+  alternates: {
+    canonical: siteConfig.url,
+  },
+  verification: {
+    // Add your verification codes here when you have them
+    // google: 'your-google-verification-code',
+    // yandex: 'your-yandex-verification-code',
+  },
 };
 
 export default async function RootLayout({
@@ -89,6 +133,16 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+      </head>
       <body
         className={`${nohemi.variable} antialiased`}
       >
