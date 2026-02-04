@@ -4,6 +4,11 @@ import { urlFor } from '@/sanity/client';
 import { getLocale } from '@/sanity/lib/getLocale';
 import InsightDetailClient from './InsightDetailClient';
 
+const siteConfig = {
+  name: "Pluscode",
+  url: "https://pluscode.dev",
+};
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
@@ -181,27 +186,67 @@ export default async function InsightDetailPage({ params }: PageProps) {
     getRelatedInsightsData(slug, fallbackArticlesData[slug]?.categoryKey || 'technology', locale),
   ]);
 
+  // Article JSON-LD structured data for SEO
+  const articleJsonLd = insight ? {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: insight.title,
+    description: insight.excerpt,
+    author: {
+      "@type": "Person",
+      name: insight.author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}/assets/logo/pluscode-logo.svg`,
+      },
+    },
+    datePublished: insight.publishedAt,
+    dateModified: insight.publishedAt,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${siteConfig.url}/insights/${slug}`,
+    },
+    ...(insight.image && {
+      image: {
+        "@type": "ImageObject",
+        url: insight.image,
+      },
+    }),
+  } : null;
+
   return (
-    <InsightDetailClient
-      insight={insight}
-      relatedInsights={relatedInsights}
-      translations={{
-        readTime: (minutes: number) => insightsT('readTime', { minutes }),
-        relatedTitle: t('related.title'),
-        contentIntro: t('content.intro'),
-        contentSection1Title: t('content.section1.title'),
-        contentSection1Paragraph: t('content.section1.paragraph'),
-        contentSection2Title: t('content.section2.title'),
-        contentSection2Paragraph: t('content.section2.paragraph'),
-        contentSection3Title: t('content.section3.title'),
-        contentSection3Paragraph: t('content.section3.paragraph'),
-        keyTakeawaysTitle: t('content.keyTakeaways.title'),
-        keyTakeaways: [
-          t('content.keyTakeaways.item1'),
-          t('content.keyTakeaways.item2'),
-          t('content.keyTakeaways.item3'),
-        ],
-      }}
-    />
+    <>
+      {articleJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        />
+      )}
+      <InsightDetailClient
+        insight={insight}
+        relatedInsights={relatedInsights}
+        translations={{
+          readTime: (minutes: number) => insightsT('readTime', { minutes }),
+          relatedTitle: t('related.title'),
+          contentIntro: t('content.intro'),
+          contentSection1Title: t('content.section1.title'),
+          contentSection1Paragraph: t('content.section1.paragraph'),
+          contentSection2Title: t('content.section2.title'),
+          contentSection2Paragraph: t('content.section2.paragraph'),
+          contentSection3Title: t('content.section3.title'),
+          contentSection3Paragraph: t('content.section3.paragraph'),
+          keyTakeawaysTitle: t('content.keyTakeaways.title'),
+          keyTakeaways: [
+            t('content.keyTakeaways.item1'),
+            t('content.keyTakeaways.item2'),
+            t('content.keyTakeaways.item3'),
+          ],
+        }}
+      />
+    </>
   );
 }

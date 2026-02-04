@@ -23,12 +23,20 @@ export default function Footer() {
               <p>60-464 Poznań, Polska</p>
             </div>
 
-            <a 
-              href="mailto:contact@pluscode.io"
-              className="inline-block text-sm text-neutral-900 font-medium underline underline-offset-2 hover:text-neutral-600 transition-colors"
-            >
-              contact@pluscode.io
-            </a>
+            <div className="space-y-2">
+              <a 
+                href="mailto:contact@pluscode.io"
+                className="block text-sm text-neutral-900 font-medium underline underline-offset-2 hover:text-neutral-600 transition-colors"
+              >
+                contact@pluscode.io
+              </a>
+              <a 
+                href="tel:+48667688927"
+                className="block text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
+              >
+                +48 667 688 927
+              </a>
+            </div>
 
             {/* Social Icons */}
             <div className="flex items-center gap-4 pt-2">
@@ -102,7 +110,7 @@ export default function Footer() {
                 {t('termsOfUse')}
               </Link>
               <Link 
-                href="/sitemap" 
+                href="/site-map" 
                 className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
               >
                 {t('sitemap')}

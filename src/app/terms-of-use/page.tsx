@@ -14,9 +14,13 @@ export default function TermsOfUsePage() {
     'services',
     'userObligations',
     'intellectualProperty',
+    'confidentiality',
     'limitations',
+    'disclaimer',
     'termination',
+    'indemnification',
     'governing',
+    'severability',
     'changes',
   ];
 
