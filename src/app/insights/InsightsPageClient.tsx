@@ -16,7 +16,6 @@ interface InsightsPageClientProps {
     title: string;
     subtitle: string;
     allArticles: string;
-    readTime: (minutes: number) => string;
     newsletterTitle: string;
     newsletterSubtitle: string;
     newsletterPlaceholder: string;
@@ -68,7 +67,7 @@ export default function InsightsPageClient({
                     {featured.category}
                   </span>
                   <span className="text-[11px] text-neutral-400">
-                    {translations.readTime(featured.readTime)}
+                    {featured.readTimeLabel}
                   </span>
                 </div>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-neutral-900 leading-tight tracking-tight group-hover:text-neutral-700 transition-colors duration-300 mb-4 max-w-3xl">
@@ -109,7 +108,7 @@ export default function InsightsPageClient({
                 title={article.title}
                 description={article.excerpt}
                 gradient={article.gradient}
-                metadata={translations.readTime(article.readTime)}
+                metadata={article.readTimeLabel}
                 index={index}
                 isInView={gridInView}
               />

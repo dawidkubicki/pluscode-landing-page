@@ -68,6 +68,7 @@ export interface InsightDetailData {
   category: string;
   categoryKey: string;
   readTime: number;
+  readTimeLabel: string;
   author: string;
   publishedAt: string;
   gradient: string;
@@ -83,18 +84,20 @@ export interface RelatedInsight {
   gradient: string;
 }
 
-async function getInsightData(slug: string, locale: string): Promise<InsightDetailData | null> {
+async function getInsightData(slug: string, locale: string, insightsT: Awaited<ReturnType<typeof getTranslations>>): Promise<InsightDetailData | null> {
   try {
     const sanityInsight = await getInsight(slug, locale);
     
     if (sanityInsight) {
+      const minutes = sanityInsight.readTime || 5;
       return {
         slug: sanityInsight.slug,
         title: sanityInsight.title || '',
         excerpt: sanityInsight.excerpt || '',
         category: sanityInsight.category || 'technology',
         categoryKey: sanityInsight.category || 'technology',
-        readTime: sanityInsight.readTime || 5,
+        readTime: minutes,
+        readTimeLabel: insightsT('readTime', { minutes }),
         author: sanityInsight.author || 'Team',
         publishedAt: sanityInsight.publishedAt || new Date().toISOString(),
         gradient: sanityInsight.gradient || 'bg-gradient-to-br from-neutral-100 to-neutral-50',
@@ -113,8 +116,6 @@ async function getInsightData(slug: string, locale: string): Promise<InsightDeta
     return null;
   }
   
-  const insightsT = await getTranslations('insights');
-  
   return {
     slug,
     title: insightsT(`items.${fallback.translationKey}.title`),
@@ -122,6 +123,7 @@ async function getInsightData(slug: string, locale: string): Promise<InsightDeta
     category: insightsT(`categories.${fallback.categoryKey}`),
     categoryKey: fallback.categoryKey,
     readTime: fallback.readTime,
+    readTimeLabel: insightsT('readTime', { minutes: fallback.readTime }),
     author: fallback.author,
     publishedAt: fallback.date,
     gradient: fallback.gradient,
@@ -182,7 +184,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
   ]);
   
   const [insight, relatedInsights] = await Promise.all([
-    getInsightData(slug, locale),
+    getInsightData(slug, locale, insightsT),
     getRelatedInsightsData(slug, fallbackArticlesData[slug]?.categoryKey || 'technology', locale),
   ]);
 
@@ -230,7 +232,6 @@ export default async function InsightDetailPage({ params }: PageProps) {
         insight={insight}
         relatedInsights={relatedInsights}
         translations={{
-          readTime: (minutes: number) => insightsT('readTime', { minutes }),
           relatedTitle: t('related.title'),
           contentIntro: t('content.intro'),
           contentSection1Title: t('content.section1.title'),
