@@ -18,11 +18,16 @@ export async function POST(req: NextRequest) {
     }
 
     // Revalidate based on document type
-    revalidateTag(body._type)
+    revalidateTag(body._type, 'max')
 
     // If it's a case study with a slug, also revalidate that specific slug
     if (body._type === 'caseStudy' && body.slug?.current) {
-      revalidateTag(`caseStudy:${body.slug.current}`)
+      revalidateTag(`caseStudy:${body.slug.current}`, 'max')
+    }
+
+    // If it's an insight with a slug, also revalidate that specific slug
+    if (body._type === 'insight' && body.slug?.current) {
+      revalidateTag(`insight:${body.slug.current}`, 'max')
     }
 
     return NextResponse.json({
