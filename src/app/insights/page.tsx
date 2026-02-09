@@ -66,7 +66,7 @@ async function getInsightsData(locale: string, insightsT: Awaited<ReturnType<typ
           readTimeLabel: insightsT('readTime', { minutes }),
           featured: insight.featured || false,
           gradient: insight.gradient || 'bg-gradient-to-br from-neutral-100 to-neutral-50',
-          image: insight.featuredImage?.asset?._ref ? urlFor(insight.featuredImage).width(800).height(600).url() : undefined,
+          image: insight.featuredImage?.asset?._ref ? urlFor(insight.featuredImage).width(1600).height(1200).quality(90).url() : undefined,
         };
       });
     }
