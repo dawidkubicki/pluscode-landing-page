@@ -27,6 +27,6 @@ export async function getActiveAnnouncement(locale: string = 'en'): Promise<Anno
   // No cache in development, 5 min revalidation in production
   const isDev = process.env.NODE_ENV === 'development'
   return client.fetch(query, {}, { 
-    next: isDev ? { revalidate: 0 } : { revalidate: 300 } 
+    next: isDev ? { revalidate: 0 } : { revalidate: 300, tags: ['announcement'] } 
   })
 }

@@ -57,7 +57,7 @@ export async function getInsights(locale: string = 'en'): Promise<InsightCard[]>
     }
   `
   
-  return client.fetch(query, {}, { next: { revalidate } })
+  return client.fetch(query, {}, { next: { revalidate, tags: ['insight'] } })
 }
 
 // Fetch featured insight for homepage
@@ -68,7 +68,7 @@ export async function getFeaturedInsight(locale: string = 'en'): Promise<Insight
     }
   `
   
-  return client.fetch(query, {}, { next: { revalidate } })
+  return client.fetch(query, {}, { next: { revalidate, tags: ['insight'] } })
 }
 
 // Fetch recent insights for homepage (excluding featured)
@@ -79,7 +79,7 @@ export async function getRecentInsights(locale: string = 'en', limit: number = 3
     }
   `
   
-  return client.fetch(query, {}, { next: { revalidate } })
+  return client.fetch(query, {}, { next: { revalidate, tags: ['insight'] } })
 }
 
 // Fetch single insight by slug
@@ -90,7 +90,7 @@ export async function getInsight(slug: string, locale: string = 'en'): Promise<I
     }
   `
   
-  return client.fetch(query, { slug }, { next: { revalidate } })
+  return client.fetch(query, { slug }, { next: { revalidate, tags: ['insight', `insight:${slug}`] } })
 }
 
 // Get related insights (same category, excluding current)
@@ -106,11 +106,11 @@ export async function getRelatedInsights(
     }
   `
   
-  return client.fetch(query, { slug, category }, { next: { revalidate } })
+  return client.fetch(query, { slug, category }, { next: { revalidate, tags: ['insight'] } })
 }
 
 // Get all insight slugs for static generation
 export async function getInsightSlugs(): Promise<string[]> {
   const query = groq`*[_type == "insight"].slug.current`
-  return client.fetch(query, {}, { next: { revalidate } })
+  return client.fetch(query, {}, { next: { revalidate, tags: ['insight'] } })
 }
