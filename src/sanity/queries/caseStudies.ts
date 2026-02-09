@@ -76,7 +76,7 @@ export async function getCaseStudies(locale: string = 'en'): Promise<CaseStudyCa
     }
   `
   
-  return client.fetch(query, {}, { next: { revalidate } })
+  return client.fetch(query, {}, { next: { revalidate, tags: ['caseStudy'] } })
 }
 
 // Fetch featured case studies for homepage
@@ -87,7 +87,7 @@ export async function getFeaturedCaseStudies(locale: string = 'en', limit: numbe
     }
   `
   
-  return client.fetch(query, {}, { next: { revalidate } })
+  return client.fetch(query, {}, { next: { revalidate, tags: ['caseStudy'] } })
 }
 
 // Fetch single case study by slug
@@ -98,11 +98,11 @@ export async function getCaseStudy(slug: string, locale: string = 'en'): Promise
     }
   `
   
-  return client.fetch(query, { slug }, { next: { revalidate } })
+  return client.fetch(query, { slug }, { next: { revalidate, tags: ['caseStudy', `caseStudy:${slug}`] } })
 }
 
 // Get all case study slugs for static generation
 export async function getCaseStudySlugs(): Promise<string[]> {
   const query = groq`*[_type == "caseStudy"].slug.current`
-  return client.fetch(query, {}, { next: { revalidate } })
+  return client.fetch(query, {}, { next: { revalidate, tags: ['caseStudy'] } })
 }
