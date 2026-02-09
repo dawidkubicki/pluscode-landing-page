@@ -154,7 +154,7 @@ async function getInsightsData(locale: string): Promise<{ featured: InsightForLi
         readTime: insight.readTime || 5,
         featured: insight.featured || false,
         gradient: insight.gradient || 'bg-gradient-to-br from-neutral-200 via-neutral-100 to-white',
-        image: insight.featuredImage?.asset?._ref ? urlFor(insight.featuredImage).width(800).height(600).url() : undefined,
+        image: insight.featuredImage?.asset?._ref ? urlFor(insight.featuredImage).width(1600).height(1200).quality(90).url() : undefined,
       });
       
       return {
