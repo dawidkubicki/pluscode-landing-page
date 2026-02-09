@@ -13,7 +13,6 @@ interface InsightDetailClientProps {
   insight: InsightDetailData | null;
   relatedInsights: RelatedInsight[];
   translations: {
-    readTime: (minutes: number) => string;
     relatedTitle: string;
     contentIntro: string;
     contentSection1Title: string;
@@ -76,7 +75,7 @@ export default function InsightDetailClient({
               {insight.category}
             </span>
             <span className="text-sm text-neutral-400">
-              {translations.readTime(insight.readTime)}
+              {insight.readTimeLabel}
             </span>
           </motion.div>
 

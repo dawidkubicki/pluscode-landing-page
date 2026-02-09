@@ -43,34 +43,38 @@ export interface InsightForPage {
   category: string;
   categoryKey: string;
   readTime: number;
+  readTimeLabel: string;
   featured: boolean;
   gradient: string;
   image?: string;
 }
 
-async function getInsightsData(locale: string): Promise<InsightForPage[]> {
+async function getInsightsData(locale: string, insightsT: Awaited<ReturnType<typeof getTranslations>>): Promise<InsightForPage[]> {
   try {
     const sanityInsights = await getInsights(locale);
     
     if (sanityInsights && sanityInsights.length > 0) {
-      return sanityInsights.map((insight) => ({
-        slug: insight.slug,
-        title: insight.title || '',
-        excerpt: insight.excerpt || '',
-        category: insight.category || 'technology',
-        categoryKey: insight.category || 'technology',
-        readTime: insight.readTime || 5,
-        featured: insight.featured || false,
-        gradient: insight.gradient || 'bg-gradient-to-br from-neutral-100 to-neutral-50',
-        image: insight.featuredImage?.asset?._ref ? urlFor(insight.featuredImage).width(800).height(600).url() : undefined,
-      }));
+      return sanityInsights.map((insight) => {
+        const minutes = insight.readTime || 5;
+        return {
+          slug: insight.slug,
+          title: insight.title || '',
+          excerpt: insight.excerpt || '',
+          category: insight.category || 'technology',
+          categoryKey: insight.category || 'technology',
+          readTime: minutes,
+          readTimeLabel: insightsT('readTime', { minutes }),
+          featured: insight.featured || false,
+          gradient: insight.gradient || 'bg-gradient-to-br from-neutral-100 to-neutral-50',
+          image: insight.featuredImage?.asset?._ref ? urlFor(insight.featuredImage).width(800).height(600).url() : undefined,
+        };
+      });
     }
   } catch (error) {
     console.log('Sanity insights fetch failed, using fallback:', error);
   }
   
   // Use fallback with translations
-  const insightsT = await getTranslations('insights');
   const keyMap: Record<string, string> = {
     'ai-transforming-business': 'featured',
     'scalable-microservices': 'post1',
@@ -85,6 +89,7 @@ async function getInsightsData(locale: string): Promise<InsightForPage[]> {
     category: insightsT(`categories.${insight.category}`),
     categoryKey: insight.category,
     readTime: insight.readTime,
+    readTimeLabel: insightsT('readTime', { minutes: insight.readTime }),
     featured: insight.featured,
     gradient: insight.gradient,
   }));
@@ -97,7 +102,7 @@ export default async function InsightsPage() {
     getTranslations('insights'),
   ]);
   
-  const insights = await getInsightsData(locale);
+  const insights = await getInsightsData(locale, insightsT);
   const featuredInsight = insights.find((i) => i.featured) || insights[0];
   const regularInsights = insights.filter((i) => i.slug !== featuredInsight?.slug);
 
@@ -110,7 +115,6 @@ export default async function InsightsPage() {
         title: t('title'),
         subtitle: t('subtitle'),
         allArticles: t('allArticles'),
-        readTime: (minutes: number) => insightsT('readTime', { minutes }),
         newsletterTitle: t('newsletter.title'),
         newsletterSubtitle: t('newsletter.subtitle'),
         newsletterPlaceholder: t('newsletter.placeholder'),
