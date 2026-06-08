@@ -1,0 +1,21 @@
+import "server-only";
+
+import type { Locale } from "./config";
+import en from "@/dictionaries/en.json";
+import pl from "@/dictionaries/pl.json";
+
+/**
+ * Static UI copy per locale. The English file is the canonical shape; `pl`
+ * mirrors it. Imported on the server only, so translation files never reach the
+ * client bundle (client components receive just the slice they render).
+ */
+export type Dictionary = typeof en;
+
+const dictionaries: Record<Locale, Dictionary> = {
+  en,
+  pl: pl as Dictionary,
+};
+
+export function getDictionary(locale: Locale): Dictionary {
+  return dictionaries[locale] ?? dictionaries.en;
+}

@@ -1,0 +1,1489 @@
+{
+  "announcement": {
+    "text": "New: We're now offering free AI consultations for startups.",
+    "linkText": "Learn more",
+    "linkUrl": "/contact"
+  },
+  "navigation": {
+    "aiData": "AI & Data",
+    "services": "Services",
+    "insights": "Insights",
+    "about": "About us",
+    "getInTouch": "Get in touch",
+    "language": "Language",
+    "aiDataItems": {
+      "machineLearning": {
+        "title": "Machine Learning",
+        "description": "Custom ML models and AI solutions"
+      },
+      "dataAnalytics": {
+        "title": "Data Analytics",
+        "description": "Transform data into actionable insights"
+      },
+      "aiConsulting": {
+        "title": "AI Consulting",
+        "description": "Strategic AI implementation guidance"
+      }
+    },
+    "servicesItems": {
+      "webDevelopment": {
+        "title": "Web Development",
+        "description": "Modern, scalable web applications"
+      },
+      "mobileApps": {
+        "title": "Mobile Apps",
+        "description": "Native and cross-platform solutions"
+      },
+      "cloudSolutions": {
+        "title": "Cloud Solutions",
+        "description": "Infrastructure and cloud migration"
+      }
+    }
+  },
+  "hero": {
+    "headlineStart": "CRAFTING SOFTWARE THAT",
+    "rotatingWords": [
+      "MATTERS",
+      "INSPIRES",
+      "TRANSFORMS",
+      "SCALES"
+    ],
+    "headlineHighlight": "SOFTWARE",
+    "subtext": "From AI-driven innovation to custom applications. We deliver expert software development and consultancy that drives measurable business impact.",
+    "needAdvice": "Need advice?",
+    "tags": [
+      "AI & DATA",
+      "SOFTWARE",
+      "CONSULTING"
+    ],
+    "ctaPrimary": "Get in touch",
+    "ctaSecondary": "Explore services",
+    "online": "Online",
+    "talkTo": "Chat with",
+    "call": "Call",
+    "fallbackName": "Dawid Kubicki",
+    "fallbackRole": "CEO & Founder"
+  },
+  "services": {
+    "title": "What we do",
+    "subtitle": "We craft digital experiences that transform businesses",
+    "items": {
+      "ai": {
+        "title": "AI & Machine Learning",
+        "description": "Intelligent solutions that learn, adapt, and evolve with your business needs.",
+        "tagline": "The future, today"
+      },
+      "web": {
+        "title": "Web Development",
+        "description": "Lightning-fast, beautifully crafted web applications built for scale.",
+        "tagline": "Pixel perfect"
+      },
+      "mobile": {
+        "title": "Mobile Apps",
+        "description": "Native experiences that users love, across every platform.",
+        "tagline": "Always in hand"
+      },
+      "cloud": {
+        "title": "Cloud Solutions",
+        "description": "Robust infrastructure that grows with your ambitions.",
+        "tagline": "Infinitely scalable"
+      }
+    }
+  },
+  "industries": {
+    "title": "Delivering tailored IT solutions for every sector.",
+    "subtitle": "From startups to enterprises, we understand your industry's unique challenges and build software that drives real results.",
+    "cta": "Let's talk",
+    "items": {
+      "finance": "FINANCIAL SERVICES",
+      "healthcare": "HEALTHCARE",
+      "ecommerce": "E-COMMERCE & RETAIL",
+      "hr": "HR & RECRUITMENT",
+      "logistics": "LOGISTICS & TRANSPORT",
+      "ai": "AI & MACHINE LEARNING",
+      "saas": "SAAS & STARTUPS",
+      "manufacturing": "MANUFACTURING & INDUSTRY"
+    }
+  },
+  "portfolio": {
+    "label": "Case Studies",
+    "title": "Our work speaks for itself",
+    "subtitle": "Discover how we've helped leading companies transform their digital presence and achieve remarkable results.",
+    "cta": "View all case studies",
+    "items": {
+      "zabka": {
+        "category": "Cloud Development",
+        "title": "System Architecture for Autonomous Stores by Żabka",
+        "description": "Planning, designing, implementing, and maintaining autonomous stores architecture for a major chain"
+      },
+      "ubs": {
+        "category": "Mobile App Redesign",
+        "title": "Team extension for mobile design revamp at speed",
+        "description": "Seamless and consistent experience, unified payment flows, and easier in-app navigation"
+      }
+    }
+  },
+  "testimonial": {
+    "quote": "We never start with technology — we start with people. Technology is a tool, not a destination. When you truly listen to what businesses need, the right choices become clear.",
+    "name": "Dawid Kubicki",
+    "title": "CEO & Founder at Pluscode"
+  },
+  "insights": {
+    "label": "Insights",
+    "title": "Latest from our blog",
+    "subtitle": "Expert perspectives on technology, business, and innovation from our team.",
+    "viewAll": "View all articles",
+    "readMore": "Read article",
+    "minRead": "min read",
+    "cta": "View all articles",
+    "readTime": "{minutes} min read",
+    "categories": {
+      "ai": "AI & Machine Learning",
+      "development": "Development",
+      "business": "Business",
+      "technology": "Technology",
+      "cloud": "Cloud",
+      "mobile": "Mobile"
+    },
+    "items": {
+      "featured": {
+        "title": "How AI is Transforming Business Operations in 2025",
+        "excerpt": "Discover the key ways artificial intelligence is revolutionizing how companies operate, from automated workflows to predictive analytics that drive smarter decision-making."
+      },
+      "post1": {
+        "title": "Building Scalable Microservices Architecture",
+        "excerpt": "A practical guide to designing and implementing microservices that grow with your business needs."
+      },
+      "post2": {
+        "title": "From Startup to Scale-up: Lessons Learned",
+        "excerpt": "Key insights from our experience helping startups navigate rapid growth phases."
+      },
+      "post3": {
+        "title": "Cloud-Native Development Best Practices",
+        "excerpt": "Essential patterns and practices for building resilient cloud applications."
+      }
+    }
+  },
+  "contact": {
+    "label": "Get in Touch",
+    "title": "Let's build something amazing together",
+    "subtitle": "Have a project in mind? We'd love to hear about it. Drop us a message and we'll get back to you as soon as possible.",
+    "info": {
+      "email": "Email us at",
+      "location": "Based in"
+    },
+    "form": {
+      "name": "Your name",
+      "email": "Email address",
+      "company": "Company (optional)",
+      "message": "Tell us about your project",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "privacyPrefix": "By submitting, you agree to our",
+      "privacyLink": "privacy policy",
+      "privacySuffix": "."
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "nameMinLength": "Name must be at least 2 characters",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "messageRequired": "Message is required",
+      "messageMinLength": "Message must be at least 10 characters",
+      "captchaRequired": "Please complete the captcha verification"
+    },
+    "success": {
+      "title": "Message sent!",
+      "message": "Thank you for reaching out. We'll get back to you within 24 hours."
+    }
+  },
+  "footer": {
+    "allRightsReserved": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of use",
+    "sitemap": "Sitemap",
+    "krs": "KRS",
+    "nip": "VAT-ID",
+    "regon": "REGON",
+    "tagline": "Crafting software that matters — from AI-driven innovation to custom applications and cloud.",
+    "columns": {
+      "company": "Company",
+      "explore": "Explore",
+      "content": "Content",
+      "contact": "Contact"
+    }
+  },
+  "shared": {
+    "home": "Home",
+    "readMore": "Read more",
+    "viewCaseStudy": "View case study",
+    "learnMore": "Learn more"
+  },
+  "pages": {
+    "services": {
+      "machineLearning": {
+        "label": "AI & Data",
+        "title": "Machine Learning Solutions",
+        "subtitle": "Build intelligent systems that learn from data to automate decisions, predict outcomes, and unlock new business opportunities.",
+        "breadcrumb": "Machine Learning",
+        "features": {
+          "predictive": {
+            "title": "Predictive Analytics",
+            "description": "Forecast trends, customer behavior, and market changes with advanced predictive models."
+          },
+          "nlp": {
+            "title": "Natural Language Processing",
+            "description": "Extract insights from text, automate customer support, and enable conversational AI."
+          },
+          "computerVision": {
+            "title": "Computer Vision",
+            "description": "Automate visual inspection, object detection, and image analysis tasks."
+          },
+          "deepLearning": {
+            "title": "Deep Learning",
+            "description": "Leverage neural networks for complex pattern recognition and decision-making."
+          },
+          "mlOps": {
+            "title": "MLOps & Deployment",
+            "description": "Production-ready ML pipelines with monitoring, versioning, and continuous improvement."
+          },
+          "customModels": {
+            "title": "Custom Model Development",
+            "description": "Tailor-made models trained on your specific data for maximum accuracy."
+          }
+        },
+        "process": {
+          "discovery": {
+            "title": "Discovery",
+            "description": "Understand your business goals and identify ML opportunities with measurable impact."
+          },
+          "dataPrep": {
+            "title": "Data Preparation",
+            "description": "Collect, clean, and engineer features from your data for optimal model performance."
+          },
+          "development": {
+            "title": "Model Development",
+            "description": "Train and validate models using state-of-the-art algorithms and techniques."
+          },
+          "deployment": {
+            "title": "Deployment & Monitoring",
+            "description": "Deploy models to production with monitoring and continuous improvement."
+          }
+        },
+        "cta": {
+          "title": "Ready to leverage AI?",
+          "subtitle": "Let's discuss how machine learning can transform your business operations.",
+          "button": "Start a conversation"
+        }
+      },
+      "analytics": {
+        "label": "AI & Data",
+        "title": "Data Analytics",
+        "subtitle": "Transform raw data into actionable insights that drive strategic decisions and measurable business growth.",
+        "breadcrumb": "Data Analytics",
+        "features": {
+          "businessIntelligence": {
+            "title": "Business Intelligence",
+            "description": "Interactive dashboards and reports that provide real-time visibility into your KPIs."
+          },
+          "dataVisualization": {
+            "title": "Data Visualization",
+            "description": "Beautiful, intuitive visualizations that make complex data easy to understand."
+          },
+          "dataWarehousing": {
+            "title": "Data Warehousing",
+            "description": "Centralized data repositories that unify information from multiple sources."
+          },
+          "realTimeAnalytics": {
+            "title": "Real-Time Analytics",
+            "description": "Stream processing and real-time insights for time-sensitive decisions."
+          },
+          "predictiveAnalytics": {
+            "title": "Predictive Analytics",
+            "description": "Forecast future trends and outcomes using historical data patterns."
+          },
+          "dataGovernance": {
+            "title": "Data Governance",
+            "description": "Ensure data quality, security, and compliance across your organization."
+          }
+        },
+        "process": {
+          "assessment": {
+            "title": "Assessment",
+            "description": "Evaluate your current data landscape and identify opportunities for improvement."
+          },
+          "architecture": {
+            "title": "Architecture Design",
+            "description": "Design a scalable data architecture that meets your current and future needs."
+          },
+          "implementation": {
+            "title": "Implementation",
+            "description": "Build and deploy data pipelines, warehouses, and analytics solutions."
+          },
+          "optimization": {
+            "title": "Optimization",
+            "description": "Continuously improve performance and expand analytics capabilities."
+          }
+        },
+        "cta": {
+          "title": "Unlock your data's potential",
+          "subtitle": "Let's build a data-driven foundation for better business decisions.",
+          "button": "Get started"
+        }
+      },
+      "consulting": {
+        "label": "AI & Data",
+        "title": "AI Consulting",
+        "subtitle": "Strategic guidance to help you navigate the AI landscape and implement solutions that deliver real business value.",
+        "breadcrumb": "AI Consulting",
+        "features": {
+          "strategy": {
+            "title": "AI Strategy Development",
+            "description": "Create a roadmap for AI adoption aligned with your business objectives."
+          },
+          "assessment": {
+            "title": "AI Readiness Assessment",
+            "description": "Evaluate your organization's capability to adopt and benefit from AI."
+          },
+          "implementation": {
+            "title": "Implementation Planning",
+            "description": "Detailed project plans for successful AI initiative execution."
+          },
+          "training": {
+            "title": "Team Training",
+            "description": "Upskill your team with AI literacy and hands-on technical training."
+          },
+          "governance": {
+            "title": "AI Governance",
+            "description": "Establish ethical guidelines and governance frameworks for responsible AI."
+          },
+          "optimization": {
+            "title": "Performance Optimization",
+            "description": "Improve existing AI systems for better accuracy and efficiency."
+          }
+        },
+        "process": {
+          "discovery": {
+            "title": "Discovery",
+            "description": "Deep dive into your business challenges and AI opportunities."
+          },
+          "strategy": {
+            "title": "Strategy",
+            "description": "Develop a comprehensive AI strategy with clear goals and milestones."
+          },
+          "execution": {
+            "title": "Execution",
+            "description": "Guide implementation with hands-on support and expertise."
+          },
+          "support": {
+            "title": "Ongoing Support",
+            "description": "Continuous advisory and optimization as your AI capabilities mature."
+          }
+        },
+        "cta": {
+          "title": "Need expert guidance?",
+          "subtitle": "Our AI consultants are ready to help you navigate the path to AI success.",
+          "button": "Schedule a consultation"
+        }
+      },
+      "webDevelopment": {
+        "label": "Services",
+        "title": "Web Development",
+        "subtitle": "Build powerful, scalable web applications that deliver exceptional user experiences and drive business growth.",
+        "breadcrumb": "Web Development",
+        "features": {
+          "frontend": {
+            "title": "Frontend Development",
+            "description": "Modern, responsive interfaces built with React, Next.js, and cutting-edge technologies."
+          },
+          "backend": {
+            "title": "Backend Development",
+            "description": "Robust server-side solutions with Node.js, Python, and cloud-native architectures."
+          },
+          "ecommerce": {
+            "title": "E-Commerce Solutions",
+            "description": "High-converting online stores with seamless checkout and payment integration."
+          },
+          "cms": {
+            "title": "CMS Development",
+            "description": "Custom content management systems that empower your team to manage content."
+          },
+          "api": {
+            "title": "API Development",
+            "description": "RESTful and GraphQL APIs that power your applications and integrations."
+          },
+          "performance": {
+            "title": "Performance Optimization",
+            "description": "Fast-loading applications optimized for Core Web Vitals and SEO."
+          }
+        },
+        "process": {
+          "discovery": {
+            "title": "Discovery",
+            "description": "Understand your requirements, users, and business goals."
+          },
+          "design": {
+            "title": "Design",
+            "description": "Create intuitive interfaces with modern UX/UI design principles."
+          },
+          "development": {
+            "title": "Development",
+            "description": "Build with clean code, best practices, and rigorous testing."
+          },
+          "launch": {
+            "title": "Launch & Support",
+            "description": "Deploy with confidence and provide ongoing maintenance."
+          }
+        },
+        "cta": {
+          "title": "Ready to build your web app?",
+          "subtitle": "Let's create a web experience that sets you apart from the competition.",
+          "button": "Start your project"
+        }
+      },
+      "mobile": {
+        "label": "Services",
+        "title": "Mobile App Development",
+        "subtitle": "Create native and cross-platform mobile experiences that users love and keep coming back to.",
+        "breadcrumb": "Mobile Apps",
+        "features": {
+          "ios": {
+            "title": "iOS Development",
+            "description": "Native iOS apps built with Swift for optimal performance and Apple ecosystem integration."
+          },
+          "android": {
+            "title": "Android Development",
+            "description": "Native Android apps with Kotlin for seamless performance across devices."
+          },
+          "crossPlatform": {
+            "title": "Cross-Platform Apps",
+            "description": "React Native and Flutter solutions for efficient multi-platform development."
+          },
+          "ui": {
+            "title": "UI/UX Design",
+            "description": "Beautiful, intuitive interfaces following platform design guidelines."
+          },
+          "backend": {
+            "title": "Backend & APIs",
+            "description": "Scalable backend infrastructure to power your mobile applications."
+          },
+          "maintenance": {
+            "title": "App Maintenance",
+            "description": "Ongoing updates, bug fixes, and feature enhancements."
+          }
+        },
+        "process": {
+          "concept": {
+            "title": "Concept",
+            "description": "Define your app's vision, features, and target audience."
+          },
+          "design": {
+            "title": "Design",
+            "description": "Create wireframes and high-fidelity designs for all screens."
+          },
+          "development": {
+            "title": "Development",
+            "description": "Build your app with iterative sprints and continuous feedback."
+          },
+          "release": {
+            "title": "Release",
+            "description": "Launch to app stores with optimization and marketing support."
+          }
+        },
+        "cta": {
+          "title": "Have a mobile app idea?",
+          "subtitle": "Let's turn your vision into a mobile experience users will love.",
+          "button": "Discuss your app"
+        }
+      },
+      "cloud": {
+        "label": "Services",
+        "title": "Cloud Solutions",
+        "subtitle": "Build, migrate, and optimize your cloud infrastructure for scalability, reliability, and cost efficiency.",
+        "breadcrumb": "Cloud Solutions",
+        "features": {
+          "migration": {
+            "title": "Cloud Migration",
+            "description": "Seamlessly move your applications and data to the cloud with minimal disruption."
+          },
+          "infrastructure": {
+            "title": "Infrastructure as Code",
+            "description": "Automated, version-controlled infrastructure using Terraform and CloudFormation."
+          },
+          "kubernetes": {
+            "title": "Kubernetes & Containers",
+            "description": "Container orchestration for scalable, resilient microservices architectures."
+          },
+          "devops": {
+            "title": "DevOps & CI/CD",
+            "description": "Automated pipelines for faster, more reliable software delivery."
+          },
+          "security": {
+            "title": "Cloud Security",
+            "description": "Comprehensive security measures to protect your cloud resources."
+          },
+          "monitoring": {
+            "title": "Monitoring & Observability",
+            "description": "Full visibility into your systems with logging, metrics, and alerting."
+          }
+        },
+        "process": {
+          "assessment": {
+            "title": "Assessment",
+            "description": "Evaluate your current infrastructure and define cloud objectives."
+          },
+          "planning": {
+            "title": "Planning",
+            "description": "Design a cloud architecture and migration strategy."
+          },
+          "migration": {
+            "title": "Migration",
+            "description": "Execute the migration with minimal downtime and risk."
+          },
+          "optimization": {
+            "title": "Optimization",
+            "description": "Continuously improve performance, security, and cost efficiency."
+          }
+        },
+        "cta": {
+          "title": "Ready for the cloud?",
+          "subtitle": "Let's build a cloud infrastructure that scales with your business.",
+          "button": "Plan your migration"
+        }
+      }
+    },
+    "about": {
+      "label": "About Us",
+      "title": "We're building the future of software",
+      "subtitle": "A team of passionate engineers, designers, and strategists dedicated to helping businesses thrive in the digital age.",
+      "breadcrumb": "About",
+      "story": {
+        "label": "Our Story",
+        "title": "Started with a vision to make technology accessible",
+        "paragraph1": "Pluscode was founded with a simple belief: that great technology should be accessible to businesses of all sizes. We started as a small team of engineers who were frustrated with the complexity and cost of enterprise software.",
+        "paragraph2": "Today, we've grown into a full-service software development company, but our mission remains the same: to deliver exceptional software solutions that drive real business results."
+      },
+      "values": {
+        "label": "Our Values",
+        "title": "What we stand for",
+        "items": {
+          "excellence": {
+            "title": "Excellence",
+            "description": "We hold ourselves to the highest standards in everything we do, from code quality to client communication."
+          },
+          "innovation": {
+            "title": "Innovation",
+            "description": "We embrace new technologies and approaches, always looking for better ways to solve problems."
+          },
+          "partnership": {
+            "title": "Partnership",
+            "description": "We see ourselves as an extension of your team, invested in your success as much as our own."
+          },
+          "transparency": {
+            "title": "Transparency",
+            "description": "We believe in honest, open communication. No hidden agendas, no surprises."
+          }
+        }
+      },
+      "stats": {
+        "items": {
+          "years": {
+            "value": "8+",
+            "label": "Years of experience"
+          },
+          "projects": {
+            "value": "150+",
+            "label": "Projects delivered"
+          },
+          "clients": {
+            "value": "50+",
+            "label": "Happy clients"
+          },
+          "team": {
+            "value": "25+",
+            "label": "Team members"
+          }
+        }
+      },
+      "team": {
+        "label": "Our Team",
+        "title": "Meet the people behind Pluscode",
+        "members": {
+          "ceo": {
+            "name": "Dawid Kubicki",
+            "role": "CEO & Founder",
+            "bio": "Passionate about technology and its potential to transform businesses."
+          },
+          "cto": {
+            "name": "Tech Lead",
+            "role": "CTO",
+            "bio": "Leading our engineering efforts with a focus on innovation and quality."
+          },
+          "design": {
+            "name": "Design Lead",
+            "role": "Head of Design",
+            "bio": "Creating beautiful, intuitive experiences that users love."
+          },
+          "engineering": {
+            "name": "Engineering Lead",
+            "role": "Head of Engineering",
+            "bio": "Building scalable solutions with cutting-edge technologies."
+          }
+        }
+      },
+      "cta": {
+        "title": "Want to join our team?",
+        "subtitle": "We're always looking for talented people who share our passion for great software.",
+        "button": "Get in touch"
+      }
+    },
+    "caseStudies": {
+      "label": "Case Studies",
+      "title": "Our work in action",
+      "subtitle": "Explore our portfolio of successful projects and see how we've helped businesses achieve their goals.",
+      "breadcrumb": "Case Studies",
+      "cta": {
+        "title": "Have a project in mind?",
+        "subtitle": "Let's discuss how we can help you achieve similar results.",
+        "button": "Start a conversation"
+      },
+      "detail": {
+        "breadcrumbParent": "Case Studies",
+        "client": "Client",
+        "overview": {
+          "label": "Overview",
+          "title": "About this project",
+          "description": "This case study showcases how we partnered with the client to deliver a transformative solution that exceeded expectations.",
+          "industry": "Industry",
+          "industryValue": "Technology",
+          "services": "Services",
+          "servicesValue": "Development, Design, Strategy"
+        },
+        "challenge": {
+          "label": "The Challenge",
+          "title": "Understanding the problem",
+          "description": "The client faced significant challenges that required innovative solutions. We worked closely to understand their pain points and develop a strategic approach."
+        },
+        "solution": {
+          "label": "Our Solution",
+          "title": "How we solved it",
+          "description": "We implemented a comprehensive solution that addressed all key requirements while maintaining flexibility for future growth.",
+          "steps": {
+            "step1": {
+              "title": "Research & Discovery",
+              "description": "Deep dive into requirements, user needs, and technical constraints."
+            },
+            "step2": {
+              "title": "Design & Architecture",
+              "description": "Created a scalable architecture and intuitive user experience."
+            },
+            "step3": {
+              "title": "Implementation",
+              "description": "Agile development with continuous feedback and iteration."
+            }
+          }
+        },
+        "results": {
+          "label": "Results",
+          "title": "The impact we made",
+          "metrics": {
+            "metric1": {
+              "value": "40%",
+              "label": "Increase in efficiency"
+            },
+            "metric2": {
+              "value": "2x",
+              "label": "Faster deployment"
+            },
+            "metric3": {
+              "value": "99.9%",
+              "label": "System uptime"
+            },
+            "metric4": {
+              "value": "50%",
+              "label": "Cost reduction"
+            }
+          }
+        },
+        "cta": {
+          "title": "Ready to achieve similar results?",
+          "subtitle": "Let's discuss how we can help transform your business.",
+          "button": "Start your project",
+          "viewAll": "View all case studies"
+        }
+      }
+    },
+    "insights": {
+      "label": "Insights",
+      "title": "Thoughts and ideas",
+      "subtitle": "Expert perspectives on technology, business, and innovation from our team.",
+      "breadcrumb": "Insights",
+      "allArticles": "All articles",
+      "newsletter": {
+        "title": "Stay in the loop",
+        "subtitle": "Get the latest insights delivered directly to your inbox.",
+        "placeholder": "Enter your email",
+        "button": "Subscribe"
+      },
+      "article": {
+        "breadcrumbParent": "Insights",
+        "content": {
+          "intro": "This article explores key concepts and provides actionable insights for professionals looking to stay ahead in their field.",
+          "section1": {
+            "title": "Understanding the Landscape",
+            "paragraph": "The technology landscape is constantly evolving, and staying informed is crucial for making strategic decisions. In this section, we explore the current state of the industry and emerging trends."
+          },
+          "section2": {
+            "title": "Best Practices",
+            "paragraph": "Based on our experience working with clients across industries, we've identified several best practices that consistently deliver results. These approaches have been tested and refined over numerous projects."
+          },
+          "section3": {
+            "title": "Looking Ahead",
+            "paragraph": "As we look to the future, several exciting developments are on the horizon. Organizations that prepare now will be best positioned to take advantage of these opportunities."
+          },
+          "keyTakeaways": {
+            "title": "Key Takeaways",
+            "item1": "Stay informed about emerging technologies and industry trends",
+            "item2": "Focus on delivering measurable business value",
+            "item3": "Build for scalability and flexibility from the start"
+          }
+        },
+        "related": {
+          "title": "Related articles"
+        }
+      }
+    },
+    "contact": {
+      "breadcrumb": "Contact",
+      "hero": {
+        "title": "Contact Us",
+        "subtitle": "We're here to help bring your ideas to life. Reach out and let's start a conversation."
+      },
+      "location": {
+        "label": "Our Location",
+        "title": "Visit us in Poznan",
+        "description": "Our office is located in the heart of Poznan, Poland. We're always happy to meet in person to discuss your project.",
+        "address": {
+          "title": "Office Address",
+          "line1": "Poznan, Poland",
+          "line2": "Greater Poland Voivodeship"
+        },
+        "hours": {
+          "title": "Business Hours",
+          "weekdays": "Monday - Friday: 9:00 - 18:00",
+          "timezone": "Central European Time (CET)"
+        }
+      },
+      "faq": {
+        "label": "FAQ",
+        "title": "Frequently asked questions",
+        "items": {
+          "timeline": {
+            "question": "What's the typical project timeline?",
+            "answer": "Project timelines vary based on scope and complexity. A typical MVP takes 2-4 months, while larger projects may take 6-12 months. We'll provide a detailed timeline during our initial consultation."
+          },
+          "process": {
+            "question": "What's your development process?",
+            "answer": "We follow an agile methodology with 2-week sprints, regular demos, and continuous feedback. This ensures transparency and allows for adjustments throughout the project."
+          },
+          "technologies": {
+            "question": "What technologies do you work with?",
+            "answer": "We specialize in modern technologies including React, Next.js, Node.js, Python, AWS, and Google Cloud. We choose the best tools for each project's specific needs."
+          },
+          "support": {
+            "question": "Do you provide ongoing support?",
+            "answer": "Yes, we offer comprehensive support and maintenance packages. This includes bug fixes, security updates, performance monitoring, and feature enhancements."
+          }
+        }
+      }
+    },
+    "legal": {
+      "privacy": {
+        "title": "Privacy Policy",
+        "subtitle": "Your privacy is important to us. Learn how we collect, use, and protect your information in compliance with GDPR and applicable data protection laws.",
+        "breadcrumb": "Privacy Policy",
+        "lastUpdated": "Last updated: February 2026",
+        "tableOfContents": "Table of Contents",
+        "sections": {
+          "introduction": {
+            "title": "Introduction",
+            "content": "This Privacy Policy explains how Pluscode Sp. z o.o. (\"Pluscode\", \"we\", \"us\", or \"our\"), with its registered office at Kosowska 12/3, 60-464 Poznań, Poland (KRS: 0000811470, NIP: PL7812002984, REGON: 384741150), collects, uses, discloses, and safeguards your personal data when you visit our website (pluscode.io) or use our services. We are committed to protecting your privacy and ensuring transparency in how we handle your information. This policy is designed to comply with the General Data Protection Regulation (GDPR) and other applicable data protection laws. By using our website or services, you acknowledge that you have read and understood this Privacy Policy."
+          },
+          "dataCollection": {
+            "title": "Information We Collect",
+            "content": "We collect several types of information to provide and improve our services. Personal Information: When you fill out a contact form, subscribe to our newsletter, or communicate with us, we may collect your name, email address, phone number, company name, job title, and project details. Technical Data: We automatically collect certain information when you visit our website, including your IP address, browser type and version, device information, operating system, referral source, pages visited, time spent on pages, and click patterns. Communication Data: We retain records of correspondence when you contact us via email, contact forms, or other channels. This includes the content of your messages and any attachments."
+          },
+          "dataUsage": {
+            "title": "How We Use Your Information",
+            "content": "We use the information we collect for the following purposes: Service Delivery - to provide, maintain, and improve our software development and consulting services; Communication - to respond to your inquiries, send project updates, and provide customer support; Marketing - with your consent, to send you newsletters, promotional materials, and information about our services; Analytics - to understand how visitors use our website and to improve user experience; Legal Compliance - to comply with applicable laws, regulations, and legal processes; Security - to detect, prevent, and address technical issues, fraud, and security threats. We process your data based on legitimate interests, contractual necessity, legal obligations, or your explicit consent, depending on the specific processing activity."
+          },
+          "dataSecurity": {
+            "title": "Data Security",
+            "content": "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. These measures include: encryption of data in transit using TLS/SSL protocols; secure data storage with access controls and authentication; regular security assessments and penetration testing; employee training on data protection and security practices; incident response procedures for potential data breaches. While we strive to protect your personal information, no method of transmission over the internet or electronic storage is 100% secure. We cannot guarantee absolute security but are committed to maintaining industry-standard protection measures."
+          },
+          "cookies": {
+            "title": "Cookies and Tracking Technologies",
+            "content": "Our website uses cookies and similar tracking technologies to enhance your browsing experience and collect analytical data. Essential Cookies: Required for basic website functionality, including session management and security features. These cannot be disabled. Analytics Cookies: Help us understand how visitors interact with our website through services like Google Analytics. This data is anonymized and used to improve our site. Marketing Cookies: Used to track visitors across websites and display relevant advertisements. These are only activated with your explicit consent. You can manage your cookie preferences through your browser settings or our cookie consent banner. Most browsers allow you to block or delete cookies, but this may affect website functionality."
+          },
+          "thirdParty": {
+            "title": "Third-Party Services",
+            "content": "We may share your information with trusted third-party service providers who assist us in operating our business. These include: Cloud hosting providers (for website and data hosting); Email service providers (for communication and marketing); Analytics services (for website performance analysis); Payment processors (for transaction processing); CRM systems (for customer relationship management). All third-party providers are contractually obligated to protect your data and use it only for the specified purposes. We do not sell your personal information to third parties."
+          },
+          "dataRetention": {
+            "title": "Data Retention",
+            "content": "We retain your personal data only for as long as necessary to fulfill the purposes for which it was collected, including satisfying legal, accounting, or reporting requirements. Contact form submissions and inquiries are retained for up to 3 years after our last interaction. Newsletter subscriptions are retained until you unsubscribe. Project-related data is retained for the duration of our business relationship and for 7 years thereafter for legal and accounting purposes. Analytics data is retained in anonymized form for up to 26 months."
+          },
+          "rights": {
+            "title": "Your Rights Under GDPR",
+            "content": "Under the General Data Protection Regulation (GDPR), you have the following rights regarding your personal data: Right of Access - request a copy of your personal data we hold; Right to Rectification - request correction of inaccurate or incomplete data; Right to Erasure - request deletion of your personal data (\"right to be forgotten\"); Right to Restriction - request limitation of processing of your data; Right to Data Portability - receive your data in a structured, machine-readable format; Right to Object - object to processing based on legitimate interests or direct marketing; Right to Withdraw Consent - withdraw consent at any time where processing is based on consent. To exercise any of these rights, please contact us using the details provided below. We will respond to your request within 30 days."
+          },
+          "international": {
+            "title": "International Data Transfers",
+            "content": "Your personal data may be transferred to and processed in countries outside the European Economic Area (EEA). When we transfer data outside the EEA, we ensure appropriate safeguards are in place, including: Standard Contractual Clauses approved by the European Commission; adequacy decisions by the European Commission; or other legally recognized transfer mechanisms. We take all reasonable steps to ensure your data is treated securely and in accordance with this Privacy Policy."
+          },
+          "contact": {
+            "title": "Contact Us",
+            "content": "If you have any questions about this Privacy Policy, wish to exercise your data protection rights, or have concerns about how we handle your data, please contact us at: Pluscode Sp. z o.o., Kosowska 12/3, 60-464 Poznań, Poland. Email: contact@pluscode.io, Phone: +48 667 688 927. Data Protection Contact: Dawid Kubicki (CEO) - contact@pluscode.io. You also have the right to lodge a complaint with the Polish Data Protection Authority (Prezes Urzędu Ochrony Danych Osobowych - UODO) if you believe your data protection rights have been violated."
+          }
+        }
+      },
+      "terms": {
+        "title": "Terms of Use",
+        "subtitle": "Please read these terms carefully before using our website and services. They constitute a legally binding agreement between you and Pluscode.",
+        "breadcrumb": "Terms of Use",
+        "lastUpdated": "Last updated: February 2026",
+        "tableOfContents": "Table of Contents",
+        "sections": {
+          "acceptance": {
+            "title": "Acceptance of Terms",
+            "content": "By accessing or using the Pluscode website (pluscode.io) and our services, you agree to be bound by these Terms of Use (\"Terms\"), our Privacy Policy, and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site. These Terms apply to all visitors, users, and others who access or use our website and services. We reserve the right to update these Terms at any time, and your continued use of the website following any changes constitutes acceptance of those changes."
+          },
+          "services": {
+            "title": "Description of Services",
+            "content": "Pluscode Sp. z o.o., a company registered in Poland (KRS: 0000811470, NIP: PL7812002984, REGON: 384741150, share capital: 5,000 PLN), with its registered office at Kosowska 12/3, 60-464 Poznań, provides professional software development, AI and machine learning solutions, data analytics, cloud services, and technology consulting. Our website serves as an informational platform about our services and a means to contact us. The specific scope, deliverables, timelines, and fees for any services will be outlined in separate service agreements, statements of work (SOW), or contracts between Pluscode and the client. Nothing on this website constitutes a binding offer or commitment to provide services at any particular price or timeline."
+          },
+          "userObligations": {
+            "title": "User Obligations",
+            "content": "When using our website and services, you agree to: use the website only for lawful purposes and in accordance with these Terms; not use the website in any way that violates applicable local, national, or international laws or regulations; not attempt to gain unauthorized access to any portion of the website, other accounts, computer systems, or networks connected to the website; not transmit any malware, viruses, or other malicious code; not use any automated means (bots, scrapers, etc.) to access or collect data from the website without our express written permission; not interfere with or disrupt the integrity or performance of the website; provide accurate, current, and complete information when contacting us or using our services."
+          },
+          "intellectualProperty": {
+            "title": "Intellectual Property",
+            "content": "All content on the Pluscode website, including but not limited to text, graphics, logos, icons, images, audio clips, video clips, data compilations, software, and the design, selection, and arrangement thereof, is the exclusive property of Pluscode or its content suppliers and is protected by Polish and international copyright, trademark, and other intellectual property laws. The Pluscode name, logo, and all related product and service names, design marks, and slogans are trademarks of Pluscode. You may not use these marks without our prior written permission. Limited License: We grant you a limited, non-exclusive, non-transferable license to access and use the website for personal, non-commercial purposes. This license does not include the right to: modify, copy, or distribute any content; use any data mining, robots, or similar data gathering tools; download any content except as expressly permitted."
+          },
+          "confidentiality": {
+            "title": "Confidentiality",
+            "content": "Any confidential information shared during project discussions, consultations, or service delivery is protected under mutual confidentiality obligations. Confidential Information includes, but is not limited to: business plans, strategies, and financial information; technical specifications, source code, and proprietary methodologies; customer lists, pricing, and marketing strategies; any information marked as confidential or that a reasonable person would understand to be confidential. Both parties agree not to disclose, publish, or disseminate confidential information to third parties without prior written consent. This obligation survives the termination of any business relationship."
+          },
+          "limitations": {
+            "title": "Limitation of Liability",
+            "content": "To the fullest extent permitted by applicable law, Pluscode and its directors, employees, partners, agents, suppliers, or affiliates shall not be liable for: any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses; any damages resulting from your access to or use of or inability to access or use the website; any conduct or content of any third party on the website; any content obtained from the website; unauthorized access, use, or alteration of your transmissions or content. In no event shall Pluscode's total liability exceed the amount paid by you, if any, for accessing or using the website during the twelve (12) months preceding the claim."
+          },
+          "disclaimer": {
+            "title": "Disclaimer of Warranties",
+            "content": "The website and all content, services, and features are provided on an \"as is\" and \"as available\" basis without any warranties of any kind, either express or implied. Pluscode expressly disclaims all warranties, including but not limited to: implied warranties of merchantability, fitness for a particular purpose, and non-infringement; warranties that the website will be uninterrupted, timely, secure, or error-free; warranties as to the accuracy, reliability, or completeness of any information on the website. Any reliance you place on information from the website is strictly at your own risk."
+          },
+          "termination": {
+            "title": "Termination",
+            "content": "We may terminate or suspend your access to the website immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach these Terms. Upon termination, your right to use the website will immediately cease. All provisions of these Terms which by their nature should survive termination shall survive, including ownership provisions, warranty disclaimers, indemnity, and limitations of liability."
+          },
+          "indemnification": {
+            "title": "Indemnification",
+            "content": "You agree to defend, indemnify, and hold harmless Pluscode, its affiliates, licensors, and service providers, and its and their respective officers, directors, employees, contractors, agents, licensors, suppliers, successors, and assigns from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, or fees (including reasonable attorneys' fees) arising out of or relating to your violation of these Terms or your use of the website."
+          },
+          "governing": {
+            "title": "Governing Law and Jurisdiction",
+            "content": "These Terms shall be governed by and construed in accordance with the laws of the Republic of Poland, without regard to its conflict of law provisions. Any legal suit, action, or proceeding arising out of or related to these Terms or the website shall be instituted exclusively in the courts of Poland, located in Poznan. You waive any and all objections to the exercise of jurisdiction over you by such courts and to venue in such courts."
+          },
+          "severability": {
+            "title": "Severability",
+            "content": "If any provision of these Terms is held to be invalid, illegal, or unenforceable by a court of competent jurisdiction, such invalidity, illegality, or unenforceability shall not affect any other provision of these Terms. The invalid, illegal, or unenforceable provision shall be modified to the minimum extent necessary to make it valid, legal, and enforceable while preserving the original intent."
+          },
+          "changes": {
+            "title": "Changes to Terms",
+            "content": "We reserve the right to modify or replace these Terms at any time at our sole discretion. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect by posting the updated Terms on this page with a new \"Last updated\" date. What constitutes a material change will be determined at our sole discretion. By continuing to access or use our website after those revisions become effective, you agree to be bound by the revised terms."
+          }
+        }
+      }
+    },
+    "sitemap": {
+      "title": "Sitemap",
+      "subtitle": "Find your way around our website with this complete overview of all pages.",
+      "breadcrumb": "Sitemap",
+      "sections": {
+        "main": {
+          "title": "Main Pages",
+          "links": {
+            "home": "Home",
+            "about": "About Us",
+            "contact": "Contact"
+          }
+        },
+        "aiData": {
+          "title": "AI & Data",
+          "links": {
+            "machineLearning": "Machine Learning",
+            "analytics": "Data Analytics",
+            "consulting": "AI Consulting"
+          }
+        },
+        "services": {
+          "title": "Services",
+          "links": {
+            "webDevelopment": "Web Development",
+            "mobile": "Mobile Apps",
+            "cloud": "Cloud Solutions"
+          }
+        },
+        "industries": {
+          "title": "Industries",
+          "links": {
+            "finance": "Financial Services",
+            "healthcare": "Healthcare",
+            "ecommerce": "E-Commerce & Retail",
+            "hr": "HR & Recruitment",
+            "logistics": "Logistics & Transport",
+            "ai": "AI & Machine Learning",
+            "saas": "SaaS & Startups",
+            "manufacturing": "Manufacturing & Industry"
+          }
+        },
+        "content": {
+          "title": "Content",
+          "links": {
+            "caseStudies": "Case Studies",
+            "insights": "Insights"
+          }
+        },
+        "legal": {
+          "title": "Legal",
+          "links": {
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Use"
+          }
+        }
+      }
+    },
+    "industries": {
+      "shared": {
+        "challengesTitle": "Industry Challenges",
+        "challengesSubtitle": "Common pain points we help solve",
+        "solutionsTitle": "Our Solutions",
+        "solutionsSubtitle": "How we can help transform your business",
+        "useCasesTitle": "Use Cases",
+        "useCasesSubtitle": "Real-world applications we deliver"
+      },
+      "finance": {
+        "label": "Financial Services",
+        "title": "Transforming Financial Services with Technology",
+        "subtitle": "From fraud detection to regulatory compliance, we build secure, scalable solutions that help financial institutions innovate while managing risk.",
+        "challenges": {
+          "challenge1": {
+            "title": "Cybersecurity Threats",
+            "description": "Financial institutions face constant threats from sophisticated cyberattacks targeting sensitive customer data and transactions."
+          },
+          "challenge2": {
+            "title": "Regulatory Compliance",
+            "description": "Keeping up with evolving regulations like GDPR, PSD2, and anti-money laundering requirements demands significant resources."
+          },
+          "challenge3": {
+            "title": "Legacy System Modernization",
+            "description": "Outdated infrastructure limits agility and innovation while increasing maintenance costs and security vulnerabilities."
+          },
+          "challenge4": {
+            "title": "Data Management at Scale",
+            "description": "Managing and extracting insights from massive volumes of financial data while ensuring accuracy and real-time processing."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI & Machine Learning",
+            "description": "Fraud detection systems, credit scoring models, algorithmic trading, and automated KYC/AML compliance."
+          },
+          "web": {
+            "title": "Web Platforms",
+            "description": "Secure online banking portals, trading platforms, and customer self-service dashboards."
+          },
+          "mobile": {
+            "title": "Mobile Banking",
+            "description": "Feature-rich mobile banking apps with biometric security, instant payments, and investment tracking."
+          },
+          "cloud": {
+            "title": "Cloud Infrastructure",
+            "description": "Compliant cloud architectures with disaster recovery, data encryption, and regulatory audit trails."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Real-Time Fraud Detection",
+            "description": "ML-powered systems that analyze transaction patterns to detect and prevent fraudulent activities before they impact customers."
+          },
+          "case2": {
+            "title": "Automated Compliance Reporting",
+            "description": "Intelligent systems that automatically generate regulatory reports, reducing manual effort and ensuring accuracy."
+          },
+          "case3": {
+            "title": "Digital Onboarding",
+            "description": "Streamlined customer onboarding with AI-powered document verification and identity validation."
+          }
+        },
+        "cta": {
+          "title": "Ready to modernize your financial services?",
+          "subtitle": "Let's discuss how technology can help you serve customers better while managing risk.",
+          "button": "Schedule a consultation"
+        }
+      },
+      "healthcare": {
+        "label": "Healthcare",
+        "title": "Advancing Healthcare Through Digital Innovation",
+        "subtitle": "We build patient-centered solutions that improve care delivery, enhance clinical workflows, and ensure data security and compliance.",
+        "challenges": {
+          "challenge1": {
+            "title": "Data Privacy & Compliance",
+            "description": "Healthcare organizations must navigate complex regulations like HIPAA while managing sensitive patient information."
+          },
+          "challenge2": {
+            "title": "Interoperability",
+            "description": "Connecting disparate systems and enabling seamless data exchange between providers, payers, and patients."
+          },
+          "challenge3": {
+            "title": "Patient Engagement",
+            "description": "Meeting patient expectations for digital access while maintaining care quality and personal touch."
+          },
+          "challenge4": {
+            "title": "Clinical Workflow Efficiency",
+            "description": "Reducing administrative burden on healthcare providers to allow more time for patient care."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI & Machine Learning",
+            "description": "Diagnostic support systems, predictive analytics for patient outcomes, and medical image analysis."
+          },
+          "web": {
+            "title": "Web Applications",
+            "description": "Patient portals, electronic health records interfaces, and healthcare provider dashboards."
+          },
+          "mobile": {
+            "title": "Mobile Health Apps",
+            "description": "Telemedicine platforms, medication tracking, appointment scheduling, and remote patient monitoring."
+          },
+          "cloud": {
+            "title": "Secure Cloud Solutions",
+            "description": "HIPAA-compliant infrastructure, secure data storage, and disaster recovery for healthcare data."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Telemedicine Platform",
+            "description": "Secure video consultations with integrated EHR access, e-prescriptions, and follow-up scheduling."
+          },
+          "case2": {
+            "title": "Clinical Decision Support",
+            "description": "AI-assisted diagnostic tools that help clinicians identify conditions and recommend treatment options."
+          },
+          "case3": {
+            "title": "Patient Monitoring Dashboard",
+            "description": "Real-time health metrics tracking for chronic disease management and early intervention."
+          }
+        },
+        "cta": {
+          "title": "Ready to transform patient care?",
+          "subtitle": "Let's explore how technology can improve healthcare delivery and outcomes.",
+          "button": "Start a conversation"
+        }
+      },
+      "ecommerce": {
+        "label": "E-Commerce & Retail",
+        "title": "Powering the Future of Retail",
+        "subtitle": "We create seamless shopping experiences that drive conversions, build loyalty, and scale with your business growth.",
+        "challenges": {
+          "challenge1": {
+            "title": "Scalability During Peak",
+            "description": "Handling traffic spikes during sales events and seasonal peaks without performance degradation."
+          },
+          "challenge2": {
+            "title": "Customer Experience",
+            "description": "Meeting rising expectations for personalization, fast delivery, and seamless omnichannel experiences."
+          },
+          "challenge3": {
+            "title": "Inventory Management",
+            "description": "Maintaining optimal stock levels across multiple channels while minimizing costs and avoiding stockouts."
+          },
+          "challenge4": {
+            "title": "Data-Driven Decisions",
+            "description": "Leveraging customer data to optimize pricing, marketing, and product offerings in real-time."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI & Machine Learning",
+            "description": "Personalized recommendations, demand forecasting, dynamic pricing, and customer behavior analysis."
+          },
+          "web": {
+            "title": "E-Commerce Platforms",
+            "description": "High-performance online stores with optimized checkout flows and inventory integration."
+          },
+          "mobile": {
+            "title": "Mobile Commerce",
+            "description": "Native shopping apps with push notifications, mobile payments, and AR product visualization."
+          },
+          "cloud": {
+            "title": "Scalable Infrastructure",
+            "description": "Auto-scaling cloud architecture that handles traffic surges and ensures 99.99% uptime."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Personalized Shopping Experience",
+            "description": "AI-driven product recommendations and dynamic content that increases conversion rates by understanding customer preferences."
+          },
+          "case2": {
+            "title": "Unified Commerce Platform",
+            "description": "Seamless integration of online, mobile, and in-store experiences with real-time inventory visibility."
+          },
+          "case3": {
+            "title": "Smart Inventory System",
+            "description": "Predictive inventory management that optimizes stock levels and automates reordering based on demand forecasts."
+          }
+        },
+        "cta": {
+          "title": "Ready to boost your retail performance?",
+          "subtitle": "Let's build a commerce platform that converts visitors into loyal customers.",
+          "button": "Discuss your project"
+        }
+      },
+      "hr": {
+        "label": "HR & Recruitment",
+        "title": "Revolutionizing Human Resources",
+        "subtitle": "We build intelligent HR solutions that streamline recruitment, enhance employee experience, and provide actionable workforce insights.",
+        "challenges": {
+          "challenge1": {
+            "title": "Talent Acquisition",
+            "description": "Finding and attracting qualified candidates in a competitive market while reducing time-to-hire."
+          },
+          "challenge2": {
+            "title": "Employee Engagement",
+            "description": "Maintaining workforce motivation and reducing turnover in an era of remote and hybrid work."
+          },
+          "challenge3": {
+            "title": "Administrative Burden",
+            "description": "Manual HR processes consume valuable time that could be spent on strategic initiatives."
+          },
+          "challenge4": {
+            "title": "Data-Driven HR",
+            "description": "Turning HR data into insights for better workforce planning and decision-making."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI & Machine Learning",
+            "description": "AI-powered candidate matching, resume screening, employee sentiment analysis, and attrition prediction."
+          },
+          "web": {
+            "title": "HR Platforms",
+            "description": "Comprehensive HRIS systems, applicant tracking, and employee self-service portals."
+          },
+          "mobile": {
+            "title": "Mobile HR Apps",
+            "description": "On-the-go access for time tracking, leave requests, team communication, and mobile learning."
+          },
+          "cloud": {
+            "title": "Secure HR Cloud",
+            "description": "Scalable infrastructure for HR data with role-based access and compliance features."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Intelligent Recruitment Platform",
+            "description": "End-to-end ATS with AI-powered candidate screening, interview scheduling, and collaborative hiring workflows."
+          },
+          "case2": {
+            "title": "Employee Experience Hub",
+            "description": "Unified platform for onboarding, learning, performance management, and internal communications."
+          },
+          "case3": {
+            "title": "Workforce Analytics Dashboard",
+            "description": "Real-time insights into headcount, turnover, engagement scores, and compensation benchmarking."
+          }
+        },
+        "cta": {
+          "title": "Ready to transform your HR operations?",
+          "subtitle": "Let's build solutions that help you attract, retain, and develop top talent.",
+          "button": "Get started"
+        }
+      },
+      "logistics": {
+        "label": "Logistics & Transport",
+        "title": "Optimizing Supply Chain Operations",
+        "subtitle": "We develop intelligent logistics solutions that improve visibility, reduce costs, and enhance delivery performance across your supply chain.",
+        "challenges": {
+          "challenge1": {
+            "title": "Route Optimization",
+            "description": "Minimizing delivery times and fuel costs while adapting to real-time traffic and weather conditions."
+          },
+          "challenge2": {
+            "title": "Real-Time Visibility",
+            "description": "Tracking shipments, vehicles, and inventory across multiple locations and partners in real-time."
+          },
+          "challenge3": {
+            "title": "Demand Fluctuations",
+            "description": "Adapting to unpredictable demand changes while maintaining service levels and controlling costs."
+          },
+          "challenge4": {
+            "title": "Multi-Partner Coordination",
+            "description": "Orchestrating operations across carriers, warehouses, and suppliers with different systems and processes."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI & Machine Learning",
+            "description": "Demand forecasting, route optimization algorithms, predictive maintenance, and anomaly detection."
+          },
+          "web": {
+            "title": "Management Platforms",
+            "description": "Transportation management systems, warehouse management, and supply chain visibility dashboards."
+          },
+          "mobile": {
+            "title": "Mobile Solutions",
+            "description": "Driver apps with navigation, proof of delivery, real-time communication, and task management."
+          },
+          "cloud": {
+            "title": "Scalable Infrastructure",
+            "description": "High-availability cloud systems for IoT data processing and global operations management."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Fleet Management System",
+            "description": "Real-time vehicle tracking, driver performance monitoring, and automated dispatch optimization."
+          },
+          "case2": {
+            "title": "Smart Warehouse Platform",
+            "description": "Inventory optimization, automated picking routes, and integration with robotics and automation."
+          },
+          "case3": {
+            "title": "Supply Chain Visibility Hub",
+            "description": "End-to-end shipment tracking with predictive ETAs, exception alerts, and partner collaboration tools."
+          }
+        },
+        "cta": {
+          "title": "Ready to optimize your logistics?",
+          "subtitle": "Let's build solutions that deliver efficiency gains across your supply chain.",
+          "button": "Plan your project"
+        }
+      },
+      "ai": {
+        "label": "AI & Machine Learning",
+        "title": "Building the AI-Powered Future",
+        "subtitle": "We help organizations harness the power of AI and machine learning to automate processes, gain insights, and create competitive advantages.",
+        "challenges": {
+          "challenge1": {
+            "title": "Data Quality & Preparation",
+            "description": "AI models are only as good as their data. Cleaning, labeling, and organizing data requires significant effort."
+          },
+          "challenge2": {
+            "title": "Talent Shortage",
+            "description": "Finding and retaining skilled AI/ML engineers and data scientists in a competitive market."
+          },
+          "challenge3": {
+            "title": "Production Deployment",
+            "description": "Moving from successful experiments to scalable, maintainable production systems is a major hurdle."
+          },
+          "challenge4": {
+            "title": "Model Governance",
+            "description": "Ensuring AI systems are fair, explainable, and compliant with emerging regulations."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "Custom AI Development",
+            "description": "End-to-end ML model development from data preparation through deployment and monitoring."
+          },
+          "web": {
+            "title": "AI-Powered Applications",
+            "description": "Web applications with integrated AI capabilities for intelligent automation and insights."
+          },
+          "mobile": {
+            "title": "Edge AI Solutions",
+            "description": "On-device ML models for mobile apps enabling real-time inference without cloud dependency."
+          },
+          "cloud": {
+            "title": "MLOps Infrastructure",
+            "description": "Scalable training pipelines, model versioning, A/B testing, and monitoring infrastructure."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Intelligent Document Processing",
+            "description": "AI systems that extract, classify, and validate information from documents with human-level accuracy."
+          },
+          "case2": {
+            "title": "Conversational AI Platform",
+            "description": "Natural language interfaces for customer support, internal knowledge access, and process automation."
+          },
+          "case3": {
+            "title": "Predictive Analytics System",
+            "description": "ML models that forecast business metrics, identify risks, and recommend optimal actions."
+          }
+        },
+        "cta": {
+          "title": "Ready to unlock AI's potential?",
+          "subtitle": "Let's explore how artificial intelligence can transform your business operations.",
+          "button": "Start your AI journey"
+        }
+      },
+      "saas": {
+        "label": "SaaS & Startups",
+        "title": "Accelerating Startup Growth",
+        "subtitle": "We partner with startups to build scalable SaaS products that delight users, grow efficiently, and attract investment.",
+        "challenges": {
+          "challenge1": {
+            "title": "Time to Market",
+            "description": "Racing to launch an MVP and iterate quickly while competitors are moving fast."
+          },
+          "challenge2": {
+            "title": "Scalability",
+            "description": "Building architecture that can grow from hundreds to millions of users without major rewrites."
+          },
+          "challenge3": {
+            "title": "Resource Constraints",
+            "description": "Achieving more with limited budget and team size while maintaining quality and velocity."
+          },
+          "challenge4": {
+            "title": "Product-Market Fit",
+            "description": "Quickly validating assumptions and pivoting based on user feedback and market signals."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI Features",
+            "description": "Differentiate your product with intelligent features like recommendations, automation, and analytics."
+          },
+          "web": {
+            "title": "SaaS Platforms",
+            "description": "Multi-tenant architectures, subscription management, and self-service admin portals."
+          },
+          "mobile": {
+            "title": "Mobile Apps",
+            "description": "Cross-platform mobile experiences that extend your SaaS product's reach and engagement."
+          },
+          "cloud": {
+            "title": "Cloud-Native Architecture",
+            "description": "Auto-scaling infrastructure, cost optimization, and DevOps automation for fast iteration."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "MVP Development",
+            "description": "Rapid development of minimum viable products with clean architecture ready for growth."
+          },
+          "case2": {
+            "title": "Product Scaling",
+            "description": "Re-architecting successful products to handle enterprise workloads and global expansion."
+          },
+          "case3": {
+            "title": "Team Extension",
+            "description": "Augmenting your development team with experienced engineers who integrate seamlessly."
+          }
+        },
+        "cta": {
+          "title": "Ready to build your product?",
+          "subtitle": "Let's turn your vision into a product that customers love and investors fund.",
+          "button": "Let's talk"
+        }
+      },
+      "manufacturing": {
+        "label": "Manufacturing & Industry",
+        "title": "Driving Industry 4.0 Transformation",
+        "subtitle": "We build smart manufacturing solutions that increase efficiency, reduce downtime, and enable data-driven operations across the factory floor.",
+        "challenges": {
+          "challenge1": {
+            "title": "Legacy Equipment Integration",
+            "description": "Connecting older machinery to modern systems while maintaining production continuity."
+          },
+          "challenge2": {
+            "title": "Unplanned Downtime",
+            "description": "Equipment failures cause costly production stops and missed delivery commitments."
+          },
+          "challenge3": {
+            "title": "Quality Control",
+            "description": "Maintaining consistent product quality while increasing production speed and reducing waste."
+          },
+          "challenge4": {
+            "title": "Operational Visibility",
+            "description": "Getting real-time insights into production performance across multiple lines and facilities."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "AI & Machine Learning",
+            "description": "Predictive maintenance, quality inspection with computer vision, and process optimization."
+          },
+          "web": {
+            "title": "Manufacturing Platforms",
+            "description": "MES systems, production dashboards, and supply chain integration portals."
+          },
+          "mobile": {
+            "title": "Shop Floor Apps",
+            "description": "Mobile apps for operators with work instructions, quality logging, and issue reporting."
+          },
+          "cloud": {
+            "title": "Industrial IoT",
+            "description": "Edge computing infrastructure, sensor data processing, and secure cloud connectivity."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Predictive Maintenance System",
+            "description": "ML models that analyze equipment sensor data to predict failures before they cause downtime."
+          },
+          "case2": {
+            "title": "Visual Quality Inspection",
+            "description": "Computer vision systems that detect defects with higher accuracy than manual inspection."
+          },
+          "case3": {
+            "title": "Production Intelligence Platform",
+            "description": "Real-time OEE tracking, production analytics, and performance optimization recommendations."
+          }
+        },
+        "cta": {
+          "title": "Ready to modernize manufacturing?",
+          "subtitle": "Let's build smart factory solutions that drive efficiency and quality.",
+          "button": "Explore solutions"
+        }
+      }
+    }
+  },
+  "cta": {
+    "title": "Let's build something exceptional",
+    "text": "Have a project in mind? Tell us about it and we'll get back to you within 24 hours.",
+    "button": "Get in touch"
+  },
+  "home": {
+    "about": {
+      "tag": "Who we are",
+      "headingLead": "We don't start with technology —",
+      "headingRest": "we start with people."
+    },
+    "highlight": {
+      "tag": "By the numbers",
+      "amount": "150+",
+      "text": "Projects delivered for teams from fast-moving startups to global enterprises.",
+      "text2": "Eight years crafting software that drives measurable business impact — from AI and data to web, mobile and cloud.",
+      "features": [
+        {
+          "title": "AI & Data",
+          "text": "Machine learning, analytics and consulting that turn data into decisions."
+        },
+        {
+          "title": "Product engineering",
+          "text": "Web, mobile and cloud applications built to scale."
+        },
+        {
+          "title": "True partnership",
+          "text": "We work as an extension of your team, invested in your outcomes."
+        }
+      ]
+    }
+  }
+}
