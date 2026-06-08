@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+# local pnpm store (should live in pnpm's global store, never in the repo)
+/.pnpm-store
 /.pnp
 .pnp.*
 .yarn/*
