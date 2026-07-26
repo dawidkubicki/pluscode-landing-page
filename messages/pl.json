@@ -5,6 +5,7 @@
     "linkUrl": "/contact"
   },
   "navigation": {
+    "products": "Produkty",
     "aiData": "AI i Dane",
     "services": "Usługi",
     "insights": "Insights",
@@ -38,6 +39,20 @@
         "title": "Rozwiązania Chmurowe",
         "description": "Infrastruktura i migracja do chmury"
       }
+    },
+    "productsItems": {
+      "quanty": {
+        "title": "Quanty.ai",
+        "description": "Graf wiedzy AI dla rynków finansowych"
+      },
+      "trenerapp": {
+        "title": "TrenerApp.pl",
+        "description": "Platforma do pracy trenera personalnego"
+      },
+      "all": {
+        "title": "Wszystkie produkty",
+        "description": "Oprogramowanie, które tworzymy i rozwijamy"
+      }
     }
   },
   "hero": {
@@ -46,6 +61,49 @@
     "headlineHighlight": "OPROGRAMOWANIE",
     "subtext": "Od innowacji opartych na AI po dedykowane aplikacje. Dostarczamy eksperckie rozwiązania i doradztwo, które przekładają się na wymierne rezultaty biznesowe.",
     "needAdvice": "Potrzebujesz porady?"
+  },
+  "products": {
+    "label": "Nasze produkty",
+    "title": "Nie tylko tworzymy oprogramowanie. Prowadzimy je.",
+    "subtitle": "Dwa produkty zaprojektowane, zbudowane i rozwijane u nas — ten sam zespół i te same standardy, które wnosimy do projektów klientów.",
+    "builtBy": "Produkt Pluscode",
+    "learnMore": "Zobacz produkt",
+    "visitSite": "Przejdź do {domain}",
+    "cta": "Zobacz wszystkie produkty",
+    "items": {
+      "quanty": {
+        "name": "Quanty.ai",
+        "category": "AI · Dane finansowe",
+        "tagline": "Graf wiedzy, który przyspiesza decyzje rynkowe.",
+        "description": "Quanty czyta wiadomości finansowe tak jak analityk: wyciąga spółki, tickery i relacje między nimi, ocenia sentyment i udostępnia cały obraz przez jedno API GraphQL.",
+        "features": [
+          "Ekstrakcja encji i relacji z każdego artykułu, mapowana do żywego grafu wiedzy",
+          "Oceny sentymentu, streszczenia AI i trendujące słowa kluczowe dla akcji i krypto",
+          "Jeden endpoint GraphQL — pobierasz dokładnie te dane, których potrzebuje Twój produkt"
+        ],
+        "stats": [
+          { "value": "GraphQL", "label": "Jedno API: wiadomości, encje i sentyment" },
+          { "value": "Czas rzeczywisty", "label": "Insighty nadążające za rynkiem" },
+          { "value": "Graf", "label": "Relacje modelowane, nie tylko przechowywane" }
+        ]
+      },
+      "trenerapp": {
+        "name": "TrenerApp.pl",
+        "category": "SaaS · Fitness i coaching",
+        "tagline": "Wszystko, na czym trener personalny prowadzi swój biznes.",
+        "description": "TrenerApp daje trenerowi jedno miejsce na plany treningowe, prowadzenie podopiecznych między sesjami i sprawy organizacyjne — panel w przeglądarce dla trenera, aplikacja w telefonie dla klienta.",
+        "features": [
+          "Plany treningowe i żywieniowe budowane raz, wykorzystywane i personalizowane dla każdego podopiecznego",
+          "Postępy, wyniki i komunikacja z klientem w jednej osi czasu",
+          "Terminarz, kartoteka podopiecznych i rozliczenia bez arkuszy kalkulacyjnych"
+        ],
+        "stats": [
+          { "value": "Web + mobile", "label": "Panel trenera i aplikacja klienta" },
+          { "value": "Kreator planów", "label": "Szablony do wykorzystania u każdego klienta" },
+          { "value": "Polski rynek", "label": "Zbudowana pod realia pracy trenerów w Polsce" }
+        ]
+      }
+    }
   },
   "services": {
     "title": "Co robimy",
@@ -196,6 +254,131 @@
     "learnMore": "Dowiedz się więcej"
   },
   "pages": {
+    "products": {
+      "label": "Produkty",
+      "title": "Oprogramowanie, które tworzymy, prowadzimy i rozwijamy.",
+      "subtitle": "Pluscode to nie tylko software house. To platformy, za które odpowiadamy od pierwszej linii kodu po klientów korzystających z nich każdego dnia.",
+      "breadcrumb": "Produkty",
+      "viewProduct": "Zobacz produkt",
+      "talkToUs": "Porozmawiaj z nami",
+      "featuresLabel": "Możliwości",
+      "processLabel": "Jak to działa",
+      "cta": {
+        "title": "Masz własny pomysł na produkt?",
+        "subtitle": "Budujemy własne oprogramowanie — dlatego wiemy, czego potrzeba, żeby doprowadzić Twój produkt od pomysłu do produkcji i utrzymać go w ruchu.",
+        "button": "Zacznij rozmowę"
+      },
+      "items": {
+        "quanty": {
+          "title": "Zamień wiadomości finansowe w uporządkowaną, odpytywalną wiedzę.",
+          "intro": "Rynki reagują na informacje długo zanim widać to w cenie. Quanty na bieżąco pobiera wiadomości finansowe, rozpoznaje spółki, tickery i tematy, a następnie łączy je w graf wiedzy, który Twoje systemy mogą odpytywać bezpośrednio.",
+          "featuresTitle": "Co Quanty daje Twojemu zespołowi",
+          "features": [
+            {
+              "title": "Graf wiedzy",
+              "description": "Spółki, symbole, tematy i relacje między nimi modelowane jako graf, a nie płaskie tabele."
+            },
+            {
+              "title": "Ekstrakcja encji",
+              "description": "Symbole akcji i krypto, organizacje oraz słowa kluczowe wyciągane automatycznie z każdego artykułu."
+            },
+            {
+              "title": "Ocena sentymentu",
+              "description": "Sentyment na poziomie artykułu, który możesz agregować per symbol, temat lub dowolny przedział czasu."
+            },
+            {
+              "title": "Streszczenia AI",
+              "description": "Długie materiały skondensowane do streszczeń, które użytkownik przeczyta w kilka sekund."
+            },
+            {
+              "title": "API GraphQL",
+              "description": "Jeden typowany endpoint. Pytasz o konkretne pola i dokładnie je dostajesz — bez nadmiarowych danych."
+            },
+            {
+              "title": "Trendy i powiązania",
+              "description": "Trendujące słowa kluczowe i powiązane artykuły pokazujące, o czym rynek zaczyna mówić."
+            }
+          ],
+          "processTitle": "Od surowych newsów do zapytania w czterech krokach",
+          "process": [
+            {
+              "title": "Zbieranie",
+              "description": "Wiadomości finansowe i materiały rynkowe spływają w sposób ciągły z szerokiego zestawu źródeł."
+            },
+            {
+              "title": "Rozumienie",
+              "description": "Modele językowe wyciągają z każdego artykułu encje, słowa kluczowe, sentyment i streszczenia."
+            },
+            {
+              "title": "Łączenie",
+              "description": "Wszystko trafia do grafu wiedzy, powiązane z symbolami i tematami, których dotyczy."
+            },
+            {
+              "title": "Zapytanie",
+              "description": "Twój produkt odpytuje API GraphQL i dostaje gotowe, ustrukturyzowane insighty."
+            }
+          ],
+          "cta": {
+            "title": "Postaw finansowy graf wiedzy za swoim produktem.",
+            "subtitle": "Zobacz API, poznaj model danych i zacznij budować z Quanty."
+          }
+        },
+        "trenerapp": {
+          "title": "Platforma, na której trenerzy personalni prowadzą swój biznes.",
+          "intro": "Trenerzy tracą zbyt dużą część tygodnia na plany, wiadomości i papierologię zamiast na trening. TrenerApp łączy planowanie, postępy podopiecznych i stronę biznesową w jednym miejscu — trener pracuje w jednym narzędziu, klient dostaje jedną aplikację.",
+          "featuresTitle": "Co TrenerApp daje trenerom",
+          "features": [
+            {
+              "title": "Kreator planów",
+              "description": "Buduj plany treningowe z biblioteki ćwiczeń i personalizuj je dla podopiecznego w kilka minut."
+            },
+            {
+              "title": "Aplikacja klienta",
+              "description": "Podopieczny ma plan, sesje i postępy w telefonie — gdziekolwiek trenuje."
+            },
+            {
+              "title": "Śledzenie postępów",
+              "description": "Wyniki, pomiary i zrealizowane sesje zbierane w czasie, widoczne dla obu stron."
+            },
+            {
+              "title": "Dieta i nawyki",
+              "description": "Wskazówki żywieniowe i nawyki obok treningu, żeby prowadzenie obejmowało całość."
+            },
+            {
+              "title": "Terminarz",
+              "description": "Sesje, dostępność i przypomnienia w jednym kalendarzu zamiast w rozproszonych wiadomościach."
+            },
+            {
+              "title": "Obsługa biznesu",
+              "description": "Kartoteka podopiecznych, pakiety i płatności wewnątrz platformy, a nie w arkuszach."
+            }
+          ],
+          "processTitle": "Jak trenerzy pracują w TrenerApp",
+          "process": [
+            {
+              "title": "Wdrożenie",
+              "description": "Dodajesz podopiecznego, zapisujesz jego cele, punkt startowy i dostępność."
+            },
+            {
+              "title": "Plan",
+              "description": "Składasz plan treningowy i żywieniowy z szablonów, a potem dopasowujesz go do osoby."
+            },
+            {
+              "title": "Prowadzenie",
+              "description": "Klient trenuje z aplikacji, a Ty na bieżąco widzisz realizację, feedback i wyniki."
+            },
+            {
+              "title": "Korekta",
+              "description": "Analizujesz postępy, aktualizujesz plan i prowadzisz podopiecznego do celu."
+            }
+          ],
+          "cta": {
+            "title": "Zobacz TrenerApp oczami swoich podopiecznych.",
+            "subtitle": "Poznaj platformę, kreator planów i aplikację klienta na trenerapp.pl."
+          }
+        }
+      }
+    },
     "services": {
       "machineLearning": {
         "label": "AI i Dane",
@@ -892,6 +1075,14 @@
             "home": "Strona główna",
             "about": "O nas",
             "contact": "Kontakt"
+          }
+        },
+        "products": {
+          "title": "Produkty",
+          "links": {
+            "all": "Wszystkie produkty",
+            "quanty": "Quanty.ai",
+            "trenerapp": "TrenerApp.pl"
           }
         },
         "aiData": {

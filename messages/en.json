@@ -5,6 +5,7 @@
     "linkUrl": "/contact"
   },
   "navigation": {
+    "products": "Products",
     "aiData": "AI & Data",
     "services": "Services",
     "insights": "Insights",
@@ -38,6 +39,20 @@
         "title": "Cloud Solutions",
         "description": "Infrastructure and cloud migration"
       }
+    },
+    "productsItems": {
+      "quanty": {
+        "title": "Quanty.ai",
+        "description": "AI knowledge graph for financial markets"
+      },
+      "trenerapp": {
+        "title": "TrenerApp.pl",
+        "description": "The platform personal trainers run on"
+      },
+      "all": {
+        "title": "All products",
+        "description": "Software we build, run, and grow"
+      }
     }
   },
   "hero": {
@@ -46,6 +61,49 @@
     "headlineHighlight": "SOFTWARE",
     "subtext": "From AI-driven innovation to custom applications. We deliver expert software development and consultancy that drives measurable business impact.",
     "needAdvice": "Need advice?"
+  },
+  "products": {
+    "label": "Our products",
+    "title": "We don't just build software. We run it.",
+    "subtitle": "Two products designed, engineered and operated in-house — the same team and the same standards we bring to client work.",
+    "builtBy": "A Pluscode product",
+    "learnMore": "Explore product",
+    "visitSite": "Go to {domain}",
+    "cta": "See all products",
+    "items": {
+      "quanty": {
+        "name": "Quanty.ai",
+        "category": "AI · Financial data",
+        "tagline": "The knowledge graph behind faster market decisions.",
+        "description": "Quanty reads financial news the way an analyst would: it extracts companies, tickers and the relationships between them, scores sentiment, and serves the whole picture through a single GraphQL API.",
+        "features": [
+          "Entity and relationship extraction from every article, mapped into a live knowledge graph",
+          "Sentiment scores, AI summaries and trending keywords across stocks and crypto",
+          "One GraphQL endpoint — query exactly the data your product needs, nothing more"
+        ],
+        "stats": [
+          { "value": "GraphQL", "label": "One API for news, entities and sentiment" },
+          { "value": "Real time", "label": "Insights that move with the market" },
+          { "value": "Graph-native", "label": "Relationships modelled, not just stored" }
+        ]
+      },
+      "trenerapp": {
+        "name": "TrenerApp.pl",
+        "category": "SaaS · Fitness & coaching",
+        "tagline": "Everything a personal trainer runs their business on.",
+        "description": "TrenerApp gives trainers one place to build training plans, coach clients between sessions and keep the business side moving — on the web for the trainer, in the pocket for the client.",
+        "features": [
+          "Training and nutrition plans built once, reused and personalised per client",
+          "Progress, results and client communication tracked in a single timeline",
+          "Scheduling, client records and billing handled without a spreadsheet in sight"
+        ],
+        "stats": [
+          { "value": "Web + mobile", "label": "Trainer dashboard and client app" },
+          { "value": "Plan builder", "label": "Reusable templates for every client" },
+          { "value": "Polish market", "label": "Built for how trainers here actually work" }
+        ]
+      }
+    }
   },
   "services": {
     "title": "What we do",
@@ -196,6 +254,131 @@
     "learnMore": "Learn more"
   },
   "pages": {
+    "products": {
+      "label": "Products",
+      "title": "Software we build, run and grow.",
+      "subtitle": "Pluscode is a product company as much as a services one. These are the platforms we own end to end — from the first line of code to the customers using them every day.",
+      "breadcrumb": "Products",
+      "viewProduct": "Explore product",
+      "talkToUs": "Talk to our team",
+      "featuresLabel": "Capabilities",
+      "processLabel": "How it works",
+      "cta": {
+        "title": "Have a product idea of your own?",
+        "subtitle": "We build our own software — which means we know what it takes to get yours from idea to production and keep it running.",
+        "button": "Start a conversation"
+      },
+      "items": {
+        "quanty": {
+          "title": "Turn financial news into structured, queryable intelligence.",
+          "intro": "Markets move on information long before it shows up in price. Quanty ingests financial news continuously, resolves the companies, tickers and topics inside it, and connects them into a knowledge graph your systems can query directly.",
+          "featuresTitle": "What Quanty gives your team",
+          "features": [
+            {
+              "title": "Knowledge graph",
+              "description": "Companies, symbols, topics and the relationships between them, modelled as a graph instead of flat rows."
+            },
+            {
+              "title": "Entity extraction",
+              "description": "Stock and crypto symbols, organisations and keywords pulled out of every article automatically."
+            },
+            {
+              "title": "Sentiment scoring",
+              "description": "Article-level sentiment you can aggregate per symbol, per topic or over any time window."
+            },
+            {
+              "title": "AI summaries",
+              "description": "Long-form coverage condensed into summaries your users can read in seconds."
+            },
+            {
+              "title": "GraphQL API",
+              "description": "One typed endpoint. Ask for the fields you need and get exactly those back — no over-fetching."
+            },
+            {
+              "title": "Trends and pairs",
+              "description": "Trending keywords and related-article pairs that surface what the market is starting to talk about."
+            }
+          ],
+          "processTitle": "From raw news to a query in four steps",
+          "process": [
+            {
+              "title": "Ingest",
+              "description": "Financial news and market coverage streams in continuously from a broad set of sources."
+            },
+            {
+              "title": "Understand",
+              "description": "Language models extract entities, keywords, sentiment and summaries from every article."
+            },
+            {
+              "title": "Connect",
+              "description": "Everything extracted is written into the knowledge graph, linked to the symbols and topics it touches."
+            },
+            {
+              "title": "Query",
+              "description": "Your product calls the GraphQL API and gets structured, ready-to-use insight back."
+            }
+          ],
+          "cta": {
+            "title": "Put a financial knowledge graph behind your product.",
+            "subtitle": "See the API, explore the data model, and start building with Quanty."
+          }
+        },
+        "trenerapp": {
+          "title": "The platform personal trainers run their business on.",
+          "intro": "Trainers spend too much of the week on plans, messages and admin instead of coaching. TrenerApp puts planning, client progress and the business side in one place — so the trainer works in one tool and the client gets one app.",
+          "featuresTitle": "What TrenerApp gives trainers",
+          "features": [
+            {
+              "title": "Plan builder",
+              "description": "Build training plans from a reusable exercise library and personalise them per client in minutes."
+            },
+            {
+              "title": "Client app",
+              "description": "Clients get their plan, their sessions and their progress on the phone, wherever they train."
+            },
+            {
+              "title": "Progress tracking",
+              "description": "Results, measurements and completed sessions collected over time — visible to both sides."
+            },
+            {
+              "title": "Nutrition and habits",
+              "description": "Diet guidance and habit tracking alongside training, so coaching covers the whole picture."
+            },
+            {
+              "title": "Scheduling",
+              "description": "Sessions, availability and reminders kept in one calendar instead of scattered messages."
+            },
+            {
+              "title": "Business admin",
+              "description": "Client records, packages and payments handled inside the platform rather than in spreadsheets."
+            }
+          ],
+          "processTitle": "How trainers work in TrenerApp",
+          "process": [
+            {
+              "title": "Onboard",
+              "description": "Add the client, capture their goals, starting point and availability."
+            },
+            {
+              "title": "Plan",
+              "description": "Assemble a training and nutrition plan from templates, then tailor it to the person."
+            },
+            {
+              "title": "Coach",
+              "description": "The client trains from the app; you follow completion, feedback and results as they come in."
+            },
+            {
+              "title": "Adjust",
+              "description": "Review progress, update the plan and keep the client moving toward the goal."
+            }
+          ],
+          "cta": {
+            "title": "See TrenerApp the way your clients would.",
+            "subtitle": "Explore the platform, the plan builder and the client app at trenerapp.pl."
+          }
+        }
+      }
+    },
     "services": {
       "machineLearning": {
         "label": "AI & Data",
@@ -892,6 +1075,14 @@
             "home": "Home",
             "about": "About Us",
             "contact": "Contact"
+          }
+        },
+        "products": {
+          "title": "Products",
+          "links": {
+            "all": "All Products",
+            "quanty": "Quanty.ai",
+            "trenerapp": "TrenerApp.pl"
           }
         },
         "aiData": {

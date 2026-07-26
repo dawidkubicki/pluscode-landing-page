@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import AnnouncementBar, { type AnnouncementData } from "@/components/AnnouncementBar";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import Products from "@/components/Products";
 import Services from "@/components/Services";
 import Industries from "@/components/Industries";
 import Portfolio, { type PortfolioCaseStudy } from "@/components/Portfolio";
@@ -212,6 +213,7 @@ export default async function Home() {
       <AnnouncementBar announcement={announcement} />
       <Navigation />
       <Hero />
+      <Products />
       <Services />
       <Industries />
       <Portfolio 

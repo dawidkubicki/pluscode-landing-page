@@ -28,6 +28,14 @@ export default function SitemapPage() {
       ],
     },
     {
+      title: t('sections.products.title'),
+      links: [
+        { label: t('sections.products.links.all'), href: '/products' },
+        { label: t('sections.products.links.quanty'), href: '/products/quanty' },
+        { label: t('sections.products.links.trenerapp'), href: '/products/trenerapp' },
+      ],
+    },
+    {
       title: t('sections.aiData.title'),
       links: [
         { label: t('sections.aiData.links.machineLearning'), href: '/ai-data/machine-learning' },

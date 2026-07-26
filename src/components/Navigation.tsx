@@ -45,6 +45,24 @@ export default function Navigation() {
     window.location.reload();
   };
 
+  const productsItems: DropdownItem[] = [
+    {
+      title: t('productsItems.quanty.title'),
+      description: t('productsItems.quanty.description'),
+      href: '/products/quanty',
+    },
+    {
+      title: t('productsItems.trenerapp.title'),
+      description: t('productsItems.trenerapp.description'),
+      href: '/products/trenerapp',
+    },
+    {
+      title: t('productsItems.all.title'),
+      description: t('productsItems.all.description'),
+      href: '/products',
+    },
+  ];
+
   const aiDataItems: DropdownItem[] = [
     {
       title: t('aiDataItems.machineLearning.title'),
@@ -155,6 +173,27 @@ export default function Navigation() {
           <div className={`absolute left-1/2 -translate-x-1/2 items-center space-x-4 ${
             hasScrolled ? 'hidden' : 'hidden lg:flex'
           }`}>
+            {/* Products with Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown('products')}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <button className="text-black/90 hover:text-black transition-all duration-200 font-normal text-sm tracking-wide flex items-center gap-1 px-3 py-1.5 relative group cursor-pointer">
+                <span className="relative">
+                  {t('products')}
+                  <span className={`absolute left-0 bottom-0 h-px bg-black transition-all duration-300 ease-out ${
+                    activeDropdown === 'products' ? 'w-full' : 'w-0'
+                  }`} />
+                </span>
+                <svg className="w-3 h-3" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              {/* Invisible bridge to dropdown */}
+              <div className="absolute left-0 right-0 h-20 top-full" />
+            </div>
+
             {/* AI & Data with Dropdown */}
             <div
               className="relative"
@@ -299,6 +338,39 @@ export default function Navigation() {
       </nav>
     </div>
 
+    {/* Products Dropdown Panel - Full width, behind nav */}
+    <div
+      className={`fixed left-0 right-0 w-full bg-white z-40 transition-all duration-300 ${dropdownTopOffset} ${
+        activeDropdown === 'products'
+          ? 'opacity-100 visible'
+          : 'opacity-0 invisible pointer-events-none'
+      }`}
+      onMouseEnter={() => setActiveDropdown('products')}
+      onMouseLeave={() => setActiveDropdown(null)}
+    >
+      <div className="w-full px-4 sm:px-6 pt-16 pb-10">
+        <div className="mx-auto max-w-[1400px] px-6 py-8">
+          <h3 className="text-black text-xs font-semibold uppercase tracking-wider mb-6">{t('products')}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {productsItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group block cursor-pointer"
+              >
+                <div className="text-black text-sm uppercase tracking-wide group-hover:text-black/60 transition-colors duration-200">
+                  {item.title}
+                </div>
+                <div className="text-black/50 text-sm mt-1">
+                  {item.description}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
     {/* AI & Data Dropdown Panel - Full width, behind nav */}
     <div
       className={`fixed left-0 right-0 w-full bg-white z-40 transition-all duration-300 ${dropdownTopOffset} ${
@@ -392,10 +464,32 @@ export default function Navigation() {
 
         {/* Menu Content */}
         <div className="w-full max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-8 sm:py-12 lg:py-16">
-          <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-16 lg:gap-20 transition-all duration-500 ease-out ${
+          <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-16 lg:gap-14 transition-all duration-500 ease-out ${
             isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`} style={{ transitionDelay: '150ms' }}>
-            
+
+            {/* Products Section */}
+            <div className="space-y-6">
+              <h3 className="text-white/40 text-xs sm:text-sm font-medium tracking-wider uppercase">{t('products')}</h3>
+              <nav className="space-y-10">
+                {productsItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block group cursor-pointer"
+                  >
+                    <div className="text-white text-xl sm:text-2xl lg:text-3xl font-medium transition-colors duration-200 group-hover:text-white/60">
+                      {item.title}
+                    </div>
+                    <div className="text-white/50 text-sm sm:text-base mt-1 transition-all duration-300 ease-out opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-20">
+                      {item.description}
+                    </div>
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
             {/* AI & Data Section */}
             <div className="space-y-6">
               <h3 className="text-white/40 text-xs sm:text-sm font-medium tracking-wider uppercase">{t('aiData')}</h3>

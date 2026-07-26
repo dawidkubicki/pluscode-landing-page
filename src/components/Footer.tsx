@@ -5,7 +5,14 @@ import Link from 'next/link';
 
 export default function Footer() {
   const t = useTranslations('footer');
+  const nav = useTranslations('navigation');
   const currentYear = new Date().getFullYear();
+
+  const productLinks = [
+    { label: nav('productsItems.quanty.title'), href: '/products/quanty' },
+    { label: nav('productsItems.trenerapp.title'), href: '/products/trenerapp' },
+    { label: nav('productsItems.all.title'), href: '/products' },
+  ];
 
   return (
     <footer className="bg-neutral-100 border-t border-neutral-200">
@@ -83,8 +90,24 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Empty column for spacing on larger screens */}
-          <div className="hidden lg:block" />
+          {/* Products Column */}
+          <div className="space-y-4">
+            <h4 className="text-sm font-semibold text-neutral-900">
+              {nav('products')}
+            </h4>
+            <ul className="space-y-3">
+              {productLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
