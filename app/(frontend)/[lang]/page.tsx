@@ -1,6 +1,6 @@
 import Hero from "./components/hero";
-import Trust from "./components/trust";
 import Services from "./components/services";
+import Metrics from "./components/metrics";
 import Offerings from "./components/offerings";
 import Process from "./components/process";
 import UseCases from "./components/use-cases";
@@ -30,9 +30,9 @@ export default async function Home({
 
   return (
     <main>
-      <Hero dict={dict.hero} />
-      <Trust locale={locale} />
+      <Hero dict={dict.hero} trust={dict.trust} />
       <Services locale={locale} />
+      <Metrics locale={locale} />
       <Offerings locale={locale} />
       <Process locale={locale} />
       <UseCases locale={locale} />

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import "./globals.css";
-import { hanken, jetbrainsMono, fraunces } from "./fonts";
+import { figtree } from "./fonts";
 import SmoothScroll from "./components/smooth-scroll";
 import Header from "./components/header";
 import FloatingContact from "./components/floating-contact";
@@ -97,7 +97,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={lang}
-      className={`${hanken.variable} ${jetbrainsMono.variable} ${fraunces.variable} antialiased`}
+      className={`${figtree.variable} antialiased`}
     >
       <body className="min-h-screen bg-cream text-ink">
         <LocaleProvider locale={lang}>

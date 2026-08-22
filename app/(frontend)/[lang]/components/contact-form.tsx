@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-import { Arrow } from "./ui";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import LocaleLink from "./locale-link";
 
@@ -11,13 +9,10 @@ type ContactDict = Dictionary["contact"];
 type FieldErrors = { name?: string; email?: string; message?: string };
 
 const fieldCls =
-  "w-full rounded-xl border border-night-line bg-night-soft px-4 py-3 text-sm text-bone placeholder:text-bone-soft/60 outline-none transition-colors focus:border-lime/60";
-const labelCls =
-  "font-mono text-[11px] uppercase tracking-[0.16em] text-bone-soft";
+  "w-full rounded-[2px] border border-white/15 bg-night px-4 py-3.5 text-[15px] text-bone placeholder:text-bone-dim outline-none transition-colors focus:border-lime";
 
 export default function ContactForm({ t }: { t: ContactDict }) {
-  const { executeRecaptcha } = useGoogleReCaptcha();
-  const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [errors, setErrors] = useState<FieldErrors>({});
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
@@ -52,19 +47,15 @@ export default function ContactForm({ t }: { t: ContactDict }) {
 
     setSubmitting(true);
     try {
-      let captchaToken = "";
-      if (executeRecaptcha) {
-        captchaToken = await executeRecaptcha("contact_form");
-      }
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, captchaToken }),
+        body: JSON.stringify(form),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Failed to send message");
       setSent(true);
-      setForm({ name: "", email: "", company: "", message: "" });
+      setForm({ name: "", email: "", message: "" });
       setErrors({});
     } catch (err) {
       setSubmitError(
@@ -77,14 +68,16 @@ export default function ContactForm({ t }: { t: ContactDict }) {
 
   if (sent) {
     return (
-      <div className="flex h-full min-h-72 flex-col items-start justify-center rounded-3xl border border-night-line bg-night-soft p-8">
-        <span className="flex size-12 items-center justify-center rounded-full bg-lime text-ink">
+      <div className="flex min-h-72 flex-col items-start justify-center rounded border border-white/10 bg-night-soft p-8 sm:p-[42px]">
+        <span className="flex size-12 items-center justify-center rounded-full bg-lime text-white">
           <svg viewBox="0 0 24 24" className="size-6" fill="none" aria-hidden>
             <path d="m5 13 4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
-        <h3 className="mt-5 text-2xl font-medium text-bone">{t.success.title}</h3>
-        <p className="mt-2 max-w-sm text-sm text-bone-soft">{t.success.message}</p>
+        <h3 className="mt-5 text-2xl font-semibold text-bone">{t.success.title}</h3>
+        <p className="mt-2 max-w-sm text-sm leading-relaxed text-bone-soft">
+          {t.success.message}
+        </p>
       </div>
     );
   }
@@ -93,56 +86,71 @@ export default function ContactForm({ t }: { t: ContactDict }) {
     <form
       onSubmit={onSubmit}
       noValidate
-      className="grid gap-4 rounded-3xl border border-night-line bg-night-soft/50 p-6 sm:p-8"
+      className="rounded border border-white/10 bg-night-soft p-6 sm:p-[42px]"
     >
-      <div className="grid gap-4 sm:grid-cols-2">
-        <label className="grid gap-2">
-          <span className={labelCls}>{t.form.name}</span>
-          <input name="name" value={form.name} onChange={onChange} className={fieldCls} />
-          {errors.name && <span className="text-xs text-red-400">{errors.name}</span>}
-        </label>
-        <label className="grid gap-2">
-          <span className={labelCls}>{t.form.company}</span>
-          <input name="company" value={form.company} onChange={onChange} className={fieldCls} />
-        </label>
-      </div>
-      <label className="grid gap-2">
-        <span className={labelCls}>{t.form.email}</span>
-        <input type="email" name="email" value={form.email} onChange={onChange} className={fieldCls} />
-        {errors.email && <span className="text-xs text-red-400">{errors.email}</span>}
-      </label>
-      <label className="grid gap-2">
-        <span className={labelCls}>{t.form.message}</span>
-        <textarea name="message" rows={4} value={form.message} onChange={onChange} className={`${fieldCls} resize-none`} />
-        {errors.message && <span className="text-xs text-red-400">{errors.message}</span>}
-      </label>
-
-      {submitError && (
-        <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3">
-          <p className="text-sm text-red-300">{submitError}</p>
+      <div className="mb-6 text-[19px] font-semibold text-bone">{t.formTitle}</div>
+      <div className="flex flex-col gap-4">
+        <div>
+          <input
+            name="name"
+            value={form.name}
+            onChange={onChange}
+            placeholder={t.form.name}
+            className={fieldCls}
+          />
+          {errors.name && (
+            <span className="mt-1.5 block text-xs text-red-400">{errors.name}</span>
+          )}
         </div>
-      )}
+        <div>
+          <input
+            type="email"
+            name="email"
+            value={form.email}
+            onChange={onChange}
+            placeholder={t.form.email}
+            className={fieldCls}
+          />
+          {errors.email && (
+            <span className="mt-1.5 block text-xs text-red-400">{errors.email}</span>
+          )}
+        </div>
+        <div>
+          <textarea
+            name="message"
+            rows={4}
+            value={form.message}
+            onChange={onChange}
+            placeholder={t.form.message}
+            className={`${fieldCls} resize-y`}
+          />
+          {errors.message && (
+            <span className="mt-1.5 block text-xs text-red-400">{errors.message}</span>
+          )}
+        </div>
 
-      <div className="mt-2">
+        {submitError && (
+          <div className="rounded-[2px] border border-red-500/30 bg-red-500/10 px-4 py-3">
+            <p className="text-sm text-red-300">{submitError}</p>
+          </div>
+        )}
+
         <button
           type="submit"
           disabled={submitting}
-          className="group inline-flex items-center gap-2.5 rounded-full bg-lime px-6 py-3 text-sm font-medium text-ink transition-colors duration-300 hover:bg-lime-deep disabled:opacity-60"
+          className="rounded-[2px] bg-lime p-4 text-[15.5px] font-semibold text-white transition-colors duration-300 hover:bg-lime-bright disabled:opacity-60"
         >
           {submitting ? t.form.sending : t.form.submit}
-          {!submitting && (
-            <Arrow className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-          )}
         </button>
-      </div>
 
-      <p className="text-xs leading-relaxed text-bone-soft/70">
-        {t.form.privacyPrefix}{" "}
-        <LocaleLink href="/privacy-policy" className="text-bone-soft underline underline-offset-2 hover:text-bone">
-          {t.form.privacyLink}
-        </LocaleLink>
-        {t.form.privacySuffix}
-      </p>
+        <p className="text-[12.5px] leading-[1.5] text-bone-dim">
+          {t.form.privacyPrefix}{" "}
+          <LocaleLink href="/privacy-policy" className="text-lime-soft hover:text-bone">
+            {t.form.privacyLink}
+          </LocaleLink>
+          {t.form.privacySuffix}
+        </p>
+      </div>
     </form>
   );
 }

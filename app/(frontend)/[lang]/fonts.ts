@@ -1,28 +1,16 @@
-import { Fraunces, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 
-/** Editorial serif display — headlines & pull quotes. Variable font: we keep the
- *  full wght range and the optical-size axis so large display lines stay crisp
- *  and high-contrast. (next/font forbids combining a fixed `weight` with `axes`.) */
-export const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin", "latin-ext"],
-  axes: ["opsz"],
-  style: ["normal", "italic"],
+/**
+ * Figtree — a single humanist sans used across the whole site: display
+ * headlines, body copy, and the eyebrow / label / wordmark slots that used to be
+ * monospace. Loaded as a variable font (weight 300–900) with a matching italic
+ * file, so every weight and slant comes from one family.
+ */
+export const figtree = localFont({
+  variable: "--font-figtree",
   display: "swap",
-});
-
-/** Primary UI / body — humanist grotesque (variable wght). */
-export const hanken = Hanken_Grotesk({
-  variable: "--font-hanken",
-  subsets: ["latin", "latin-ext"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-/** Monospace — eyebrow labels, tags and the wordmark. */
-export const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500"],
-  display: "swap",
+  src: [
+    { path: "./fonts/Figtree.ttf", weight: "300 900", style: "normal" },
+    { path: "./fonts/Figtree-Italic.ttf", weight: "300 900", style: "italic" },
+  ],
 });

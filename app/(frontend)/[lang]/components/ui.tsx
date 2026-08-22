@@ -40,7 +40,7 @@ export function MonoLabel({
   );
 }
 
-/* Bordered pill tag, e.g. "+ WHAT WE DO" */
+/* Mono eyebrow label, e.g. "+ WHAT WE DO" */
 export function TagPill({
   children,
   className = "",
@@ -50,7 +50,7 @@ export function TagPill({
 }) {
   return (
     <span
-      className={`inline-flex items-center gap-2 rounded-full border border-current/15 px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] ${className}`}
+      className={`inline-flex items-center gap-2.5 font-mono text-[13px] uppercase tracking-[0.14em] ${className}`}
     >
       <Plus className="size-3" />
       {children}
@@ -83,14 +83,14 @@ type PillProps = {
 };
 
 const pillVariants: Record<NonNullable<PillProps["variant"]>, string> = {
-  lime: "bg-lime text-ink hover:bg-lime-deep",
-  dark: "bg-night text-bone hover:bg-night-soft",
-  light: "bg-cream text-ink hover:bg-cream-dim",
+  lime: "bg-lime text-white hover:bg-lime-bright",
+  dark: "bg-night text-white hover:bg-lime",
+  light: "bg-white text-ink hover:bg-night hover:text-white",
   outline:
     "border border-current/25 text-current hover:bg-current/5",
 };
 
-/* Primary call-to-action pill (renders as link when href is given) */
+/* Primary call-to-action button (renders as link when href is given) */
 export function Pill({
   children,
   href,
@@ -99,7 +99,7 @@ export function Pill({
   withArrow = true,
   onClick,
 }: PillProps) {
-  const cls = `group inline-flex items-center gap-2.5 rounded-full px-6 py-3 text-sm font-medium transition-colors duration-300 ${pillVariants[variant]} ${className}`;
+  const cls = `group inline-flex items-center gap-2.5 rounded-[2px] px-7 py-4 text-[15px] font-semibold transition-colors duration-300 ${pillVariants[variant]} ${className}`;
 
   const inner = (
     <>

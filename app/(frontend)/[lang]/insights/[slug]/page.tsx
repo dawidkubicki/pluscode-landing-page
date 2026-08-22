@@ -65,11 +65,11 @@ export default async function InsightPage({
     <main>
       <PageHero eyebrow={eyebrow} title={card.title} intro={card.excerpt} />
 
-      <article className="bg-cream px-5 py-24 sm:px-8 sm:py-32">
-        <div className="mx-auto max-w-3xl">
+      <article className="bg-white">
+        <div className="mx-auto max-w-3xl px-5 py-20 sm:px-10 sm:py-[6.25rem]">
           {/* byline */}
           <Reveal>
-            <div className="mb-10 flex items-center gap-3 border-b border-cream-line pb-6 font-mono text-[11px] uppercase tracking-[0.16em] text-ink-soft">
+            <div className="mb-10 flex items-center gap-3 border-b border-cream-line pb-6 font-mono text-xs uppercase tracking-[0.1em] text-ink-mute">
               <span>{card.author}</span>
               {date && <span>· {date}</span>}
             </div>
@@ -77,7 +77,7 @@ export default async function InsightPage({
 
           {/* cover */}
           <Reveal>
-            <div className={`mb-12 h-64 overflow-hidden rounded-3xl ${card.gradient}`}>
+            <div className={`mb-12 h-72 overflow-hidden rounded ${card.gradient}`}>
               {card.image && (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={card.image.url} alt={card.image.alt} className="size-full object-cover" />
@@ -112,7 +112,7 @@ export default async function InsightPage({
           <div className="mt-12">
             <LocaleLink
               href="/insights"
-              className="font-mono text-[11px] uppercase tracking-[0.16em] text-lime-deep transition-colors hover:text-ink"
+              className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime transition-colors hover:text-ink"
             >
               ← {article.breadcrumbParent}
             </LocaleLink>
@@ -122,9 +122,9 @@ export default async function InsightPage({
 
       {/* Related */}
       {related.length > 0 && (
-        <section className="bg-cream-dim px-5 py-20 sm:px-8 sm:py-24">
-          <div className="mx-auto max-w-[1500px]">
-            <h2 className="text-2xl font-medium tracking-tight text-ink">
+        <section className="border-t border-cream-line bg-cream">
+          <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-24">
+            <h2 className="font-serif text-[1.75rem] font-medium tracking-[-0.01em] text-ink">
               {article.related.title}
             </h2>
             <Stagger className="mt-8 grid gap-6 md:grid-cols-3" gap={0.08}>
@@ -132,16 +132,16 @@ export default async function InsightPage({
                 <StaggerItem key={r.slug}>
                   <LocaleLink
                     href={`/insights/${r.slug}`}
-                    className="group flex h-full flex-col overflow-hidden rounded-3xl border border-cream-line bg-cream transition-colors hover:border-lime/40"
+                    className="group flex h-full flex-col overflow-hidden rounded border border-cream-line bg-white transition-colors duration-300 hover:border-lime"
                   >
                     <div className={`h-32 ${r.gradient}`} />
                     <div className="flex flex-1 flex-col p-5">
-                      <h3 className="text-lg font-medium text-ink transition-colors group-hover:text-lime-deep">
+                      <h3 className="text-lg font-semibold text-ink transition-colors group-hover:text-lime-deep">
                         {r.title}
                       </h3>
-                      <span className="mt-4 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-lime-deep">
+                      <span className="mt-4 inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime">
                         {labels.readMore}
-                        <Arrow className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                        <Arrow className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                       </span>
                     </div>
                   </LocaleLink>

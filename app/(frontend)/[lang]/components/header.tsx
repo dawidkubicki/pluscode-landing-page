@@ -156,8 +156,11 @@ export default function Header({
   offset?: boolean;
 }) {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const lenis = useLenis();
+  // Lenis drives the real scroll position; fade the header chrome in once the
+  // page has moved off the top.
+  const lenis = useLenis(({ scroll }) => setScrolled(scroll > 8));
 
   // Lock scrolling while the mega menu is open.
   useEffect(() => {
@@ -173,6 +176,14 @@ export default function Header({
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  // Reflect the initial scroll position (e.g. on a refresh mid-page) before the
+  // first Lenis scroll event fires. Deferred a frame so we don't setState
+  // synchronously inside the effect.
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setScrolled(window.scrollY > 8));
+    return () => cancelAnimationFrame(id);
+  }, []);
+
   const close = () => setOpen(false);
   const basePath = pathWithoutLocale(pathname);
 
@@ -181,7 +192,6 @@ export default function Header({
   const mainLinks = [
     { label: nav.aiData, href: "/ai-data/consulting" },
     { label: nav.workshops, href: "/workshops" },
-    { label: nav.caseStudies, href: "/case-studies" },
     { label: nav.insights, href: "/insights" },
     { label: nav.about, href: "/about" },
   ];
@@ -200,12 +210,18 @@ export default function Header({
     { label: nav.workshops, href: "/workshops" },
     { label: nav.insights, href: "/insights" },
     { label: nav.caseStudies, href: "/case-studies" },
-    { label: nav.getInTouch, href: "/contact" },
+    { label: nav.getInTouch, href: "/book-a-call" },
   ];
 
   return (
     <header className={`fixed inset-x-0 z-50 ${offset ? "top-10" : "top-0"}`}>
-      <div className="relative z-20 border-b border-white/10 bg-night/90 backdrop-blur-xl">
+      <div
+        className={`relative z-20 border-b transition-colors duration-300 ${
+          scrolled || open
+            ? "border-white/10 bg-night/90 backdrop-blur-xl"
+            : "border-transparent bg-transparent"
+        }`}
+      >
         <div className="mx-auto flex h-[72px] max-w-[1240px] items-center justify-between px-5 sm:px-10">
           <Logo onNavigate={close} />
 
@@ -227,7 +243,7 @@ export default function Header({
                 );
               })}
               <LocaleLink
-                href="/contact"
+                href="/book-a-call"
                 onClick={close}
                 className="rounded-[2px] bg-lime px-[22px] py-[11px] text-sm font-semibold text-white transition-colors hover:bg-lime-bright"
               >
@@ -321,7 +337,7 @@ export default function Header({
                         {nav.getInTouch}
                       </p>
                       <div className="mt-6">
-                        <Pill variant="lime" href="/contact" onClick={close}>
+                        <Pill variant="lime" href="/book-a-call" onClick={close}>
                           {nav.getInTouch}
                         </Pill>
                       </div>

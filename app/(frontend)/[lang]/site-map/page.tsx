@@ -60,13 +60,13 @@ export default async function Page({
     <main>
       <PageHero eyebrow={t.breadcrumb} title={t.title} intro={t.subtitle} visual="grid" />
 
-      <section className="bg-cream px-5 py-24 sm:px-8 sm:py-32">
-        <div className="mx-auto max-w-[1500px]">
+      <section className="bg-white">
+        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
           <Stagger className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3" gap={0.06}>
             {sections.map(([sectionKey, section]) => (
               <StaggerItem key={sectionKey}>
-                <div className="rounded-3xl border border-cream-line bg-cream-dim/40 p-7">
-                  <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-lime-deep">
+                <div className="h-full border-t-2 border-lime pt-6">
+                  <h2 className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime">
                     {section.title}
                   </h2>
                   <ul className="mt-5 space-y-3">
@@ -74,7 +74,7 @@ export default async function Page({
                       <li key={linkKey}>
                         <LocaleLink
                           href={hrefMap[`${sectionKey}.${linkKey}`] ?? "/"}
-                          className="text-[15px] text-ink/80 transition-colors hover:text-lime-deep"
+                          className="text-[15px] text-ink-soft transition-colors hover:text-lime-deep"
                         >
                           {label}
                         </LocaleLink>

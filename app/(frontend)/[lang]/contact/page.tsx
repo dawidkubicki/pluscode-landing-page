@@ -3,7 +3,6 @@ import { PageHero } from "../components/page-hero";
 import Contact from "../components/contact";
 import Footer from "../components/footer";
 import { Reveal, Stagger, StaggerItem } from "../components/motion";
-import { TagPill } from "../components/ui";
 import { Visual } from "../components/visual";
 import { isLocale, defaultLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
@@ -32,31 +31,31 @@ export default async function ContactPage({
 
   return (
     <main>
-      <PageHero eyebrow={t.breadcrumb} title={t.hero.title} intro={t.hero.subtitle} />
+      <PageHero eyebrow={t.breadcrumb} title={t.hero.title} intro={t.hero.subtitle} grid={false} />
 
       <Contact locale={locale} showIntro={false} />
 
       {/* Location */}
-      <section className="bg-cream px-5 py-24 sm:px-8 sm:py-32">
-        <div className="mx-auto grid max-w-[1500px] items-center gap-12 lg:grid-cols-2 lg:gap-20">
+      <section className="bg-white">
+        <div className="mx-auto grid max-w-[1240px] items-center gap-12 px-5 py-20 sm:px-10 sm:py-[6.25rem] lg:grid-cols-2 lg:gap-20">
           <div>
             <Reveal>
-              <TagPill className="text-ink-soft">{t.location.label}</TagPill>
+              <div className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime">{t.location.label}</div>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="mt-6 text-balance text-4xl font-medium leading-[1.08] tracking-tight text-ink sm:text-5xl">
+              <h2 className="mt-4 text-balance font-serif text-[2.5rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-5xl">
                 {t.location.title}
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
-              <p className="mt-5 max-w-md text-lg leading-relaxed text-ink-soft">
+              <p className="mt-5 max-w-md text-[17px] leading-[1.7] text-ink-soft">
                 {t.location.description}
               </p>
             </Reveal>
             <Reveal delay={0.15}>
               <div className="mt-8 grid gap-6 sm:grid-cols-2">
-                <div className="rounded-2xl border border-cream-line bg-cream-dim/40 p-6">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-lime-deep">
+                <div className="rounded border border-cream-line bg-white p-6">
+                  <p className="font-mono text-xs uppercase tracking-[0.1em] text-lime">
                     {t.location.address.title}
                   </p>
                   <p className="mt-3 text-ink">
@@ -67,8 +66,8 @@ export default async function ContactPage({
                     {t.location.address.line2}
                   </p>
                 </div>
-                <div className="rounded-2xl border border-cream-line bg-cream-dim/40 p-6">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-lime-deep">
+                <div className="rounded border border-cream-line bg-white p-6">
+                  <p className="font-mono text-xs uppercase tracking-[0.1em] text-lime">
                     {t.location.hours.title}
                   </p>
                   <p className="mt-3 text-ink">
@@ -81,7 +80,7 @@ export default async function ContactPage({
             </Reveal>
           </div>
           <Reveal delay={0.1}>
-            <div className="aspect-[4/3] overflow-hidden rounded-3xl">
+            <div className="aspect-[4/3] overflow-hidden rounded">
               <Visual kind="grid" />
             </div>
           </Reveal>
@@ -89,23 +88,23 @@ export default async function ContactPage({
       </section>
 
       {/* FAQ */}
-      <section className="bg-cream-dim px-5 py-24 sm:px-8 sm:py-32">
-        <div className="mx-auto max-w-3xl">
+      <section className="border-t border-cream-line bg-cream">
+        <div className="mx-auto max-w-3xl px-5 py-20 sm:px-10 sm:py-[6.25rem]">
           <Reveal className="text-center">
-            <TagPill className="text-ink-soft">{t.faq.label}</TagPill>
+            <div className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime">{t.faq.label}</div>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="mx-auto mt-6 max-w-xl text-balance text-center text-4xl font-medium leading-[1.08] tracking-tight text-ink sm:text-5xl">
+            <h2 className="mx-auto mt-4 max-w-xl text-balance text-center font-serif text-[2.5rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-5xl">
               {t.faq.title}
             </h2>
           </Reveal>
           <Stagger className="mt-12 space-y-4" gap={0.06}>
             {faq.map((item) => (
               <StaggerItem key={item.question}>
-                <details className="group rounded-2xl border border-cream-line bg-cream p-6">
+                <details className="group rounded border border-cream-line bg-white p-6">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-medium text-ink">
                     {item.question}
-                    <span className="flex size-7 shrink-0 items-center justify-center rounded-full border border-cream-line text-ink-soft transition-transform duration-300 group-open:rotate-45">
+                    <span className="flex size-7 shrink-0 items-center justify-center rounded-[2px] border border-cream-line text-lime transition-transform duration-300 group-open:rotate-45">
                       <svg viewBox="0 0 24 24" className="size-4" fill="none" aria-hidden>
                         <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                       </svg>

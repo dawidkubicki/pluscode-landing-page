@@ -8,57 +8,16 @@ interface ContactFormData {
   email: string;
   company?: string;
   message: string;
-  captchaToken?: string;
-}
-
-interface RecaptchaResponse {
-  success: boolean;
-  score?: number;
-  "error-codes"?: string[];
-}
-
-/** Verify reCAPTCHA v3 token with Google. Skipped when no secret is configured. */
-async function verifyRecaptcha(
-  token: string | undefined,
-): Promise<{ success: boolean }> {
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
-  if (!secretKey) return { success: true }; // not configured → allow (dev)
-  if (!token) return { success: false };
-
-  try {
-    const response = await fetch(
-      "https://www.google.com/recaptcha/api/siteverify",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: `secret=${secretKey}&response=${token}`,
-      },
-    );
-    const data: RecaptchaResponse = await response.json();
-    if (!data.success) return { success: false };
-    if (data.score !== undefined && data.score < 0.5) return { success: false };
-    return { success: true };
-  } catch {
-    return { success: false };
-  }
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body: ContactFormData = await request.json();
-    const { name, email, company, message, captchaToken } = body;
+    const { name, email, company, message } = body;
 
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "Missing required fields" },
-        { status: 400 },
-      );
-    }
-
-    const recaptcha = await verifyRecaptcha(captchaToken);
-    if (!recaptcha.success) {
-      return NextResponse.json(
-        { error: "Security verification failed. Please try again." },
         { status: 400 },
       );
     }

@@ -37,35 +37,35 @@ export default async function InsightsPage({
     <main>
       <PageHero eyebrow={t.label} title={t.title} intro={t.subtitle} visual="aurora" />
 
-      <section className="bg-cream px-5 py-24 sm:px-8 sm:py-32">
-        <div className="mx-auto max-w-[1500px]">
-          <Stagger className="grid gap-8 md:grid-cols-2 lg:grid-cols-3" gap={0.08}>
+      <section className="bg-cream">
+        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
+          <Stagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" gap={0.08}>
             {insights.map((insight) => (
-              <StaggerItem key={insight.slug}>
+              <StaggerItem key={insight.slug} className="h-full">
                 <LocaleLink
                   href={`/insights/${insight.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-3xl border border-cream-line bg-cream-dim/40 transition-all duration-300 hover:-translate-y-1 hover:border-lime/40"
+                  className="group flex h-full flex-col overflow-hidden rounded border border-cream-line bg-white transition-colors duration-300 hover:border-lime"
                 >
-                  <div className={`relative h-44 overflow-hidden ${insight.gradient}`}>
+                  <div className={`relative h-48 overflow-hidden ${insight.gradient}`}>
                     {insight.image && (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img src={insight.image.url} alt={insight.image.alt} className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     )}
                   </div>
-                  <div className="flex flex-1 flex-col p-6">
-                    <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-lime-deep">
-                      <span>{labels.categories[insight.category]}</span>
-                      <span className="text-ink-soft">· {insight.readTime} {labels.minRead}</span>
+                  <div className="flex flex-1 flex-col gap-3 p-7">
+                    <div className="font-mono text-xs uppercase tracking-[0.1em] text-lime">
+                      {labels.categories[insight.category]}
+                      <span className="normal-case tracking-normal text-ink-mute"> · {insight.readTime} {labels.minRead}</span>
                     </div>
-                    <h2 className="mt-2 text-xl font-medium text-ink transition-colors group-hover:text-lime-deep">
+                    <h2 className="text-xl font-semibold leading-[1.35] text-ink">
                       {insight.title}
                     </h2>
-                    <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-ink-soft">
+                    <p className="line-clamp-3 flex-1 text-[15px] leading-[1.65] text-ink-soft">
                       {insight.excerpt}
                     </p>
-                    <span className="mt-5 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-lime-deep">
+                    <span className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime transition-colors group-hover:text-ink">
                       {labels.readMore}
-                      <Arrow className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                      <Arrow className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </span>
                   </div>
                 </LocaleLink>

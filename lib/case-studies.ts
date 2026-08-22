@@ -46,13 +46,18 @@ const DEFAULT_GRADIENT =
 const FALLBACK = [
   {
     slug: "zabka" as const,
-    logo: "/assets/portfolio/zabka-logo.svg",
+    logo: "/assets/portfolio/zabka-logo.svg" as string | null,
     gradient: "bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-400",
   },
   {
     slug: "ubs" as const,
-    logo: "/assets/portfolio/ubs-logo.svg",
+    logo: "/assets/portfolio/ubs-logo.svg" as string | null,
     gradient: "bg-gradient-to-br from-indigo-500 via-blue-600 to-slate-700",
+  },
+  {
+    slug: "ebm" as const,
+    logo: null as string | null,
+    gradient: "bg-gradient-to-br from-[#1a3fd9] via-[#2b5cff] to-[#6f92ff]",
   },
 ];
 
@@ -80,7 +85,7 @@ function fallbackCards(locale: Locale): CaseStudyCard[] {
       category: t.category,
       excerpt: t.description,
       client: t.title,
-      logo: { url: f.logo, alt: f.slug },
+      logo: f.logo ? { url: f.logo, alt: f.slug } : null,
       image: null,
       gradient: f.gradient,
       featured: true,
@@ -105,7 +110,17 @@ export async function getFeaturedCaseStudies(
 ): Promise<CaseStudyCard[]> {
   const all = await getCaseStudies(locale);
   const featured = all.filter((c) => c.featured);
-  return (featured.length > 0 ? featured : all).slice(0, limit);
+  const picked = (featured.length > 0 ? featured : all).slice(0, limit);
+  // Top up from the static fallbacks so the home grid always fills its layout,
+  // even while the CMS holds fewer entries than requested.
+  if (picked.length < limit) {
+    const seen = new Set(picked.map((c) => c.slug));
+    for (const f of fallbackCards(locale)) {
+      if (picked.length >= limit) break;
+      if (!seen.has(f.slug)) picked.push(f);
+    }
+  }
+  return picked;
 }
 
 /** Single case study: the full CMS doc when present, plus its resolved card. */

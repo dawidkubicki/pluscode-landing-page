@@ -73,6 +73,9 @@ export interface Config {
     insights: Insight;
     announcements: Announcement;
     team: Team;
+    reports: Report;
+    'use-cases': UseCase;
+    bookings: Booking;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -86,6 +89,9 @@ export interface Config {
     insights: InsightsSelect<false> | InsightsSelect<true>;
     announcements: AnnouncementsSelect<false> | AnnouncementsSelect<true>;
     team: TeamSelect<false> | TeamSelect<true>;
+    reports: ReportsSelect<false> | ReportsSelect<true>;
+    'use-cases': UseCasesSelect<false> | UseCasesSelect<true>;
+    bookings: BookingsSelect<false> | BookingsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -431,6 +437,122 @@ export interface Team {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "reports".
+ */
+export interface Report {
+  id: number;
+  /**
+   * Headline, e.g. "Jak polskie firmy wdrażają AI?".
+   */
+  title: string;
+  /**
+   * Small accent label above the headline.
+   */
+  eyebrow?: string | null;
+  /**
+   * One or two supporting sentences.
+   */
+  description?: string | null;
+  /**
+   * Large visual shown next to the copy.
+   */
+  image?: (number | null) | Media;
+  /**
+   * Button label. Defaults to "Learn more".
+   */
+  ctaLabel?: string | null;
+  /**
+   * Where the button leads: an internal path (e.g. "/insights/ai-report") or a full URL.
+   */
+  href?: string | null;
+  /**
+   * Show this report on the landing page.
+   */
+  featured?: boolean | null;
+  publishedAt?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "use-cases".
+ */
+export interface UseCase {
+  id: number;
+  title: string;
+  /**
+   * Small label above the title, e.g. "Document AI".
+   */
+  category?: string | null;
+  /**
+   * Card background image.
+   */
+  image?: (number | null) | Media;
+  /**
+   * Where the card leads: an internal path (e.g. "/insights/some-article") or a full URL.
+   */
+  href?: string | null;
+  /**
+   * Featured card renders as the large tile in the mosaic.
+   */
+  featured?: boolean | null;
+  /**
+   * Lower numbers appear first.
+   */
+  order?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Workshop / engagement booking requests and contact submissions.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "bookings".
+ */
+export interface Booking {
+  id: number;
+  name: string;
+  email: string;
+  company?: string | null;
+  /**
+   * Which page the request came from.
+   */
+  offering:
+    | 'ai-opportunity-workshop'
+    | 'ai-discovery-sprint'
+    | 'genai-proof-of-concept'
+    | 'fractional-ai-team'
+    | 'general';
+  /**
+   * Preferred format, e.g. Remote / On-site / Either.
+   */
+  format?: string | null;
+  /**
+   * Team / company size.
+   */
+  teamSize?: string | null;
+  /**
+   * The use case or problem they want to explore.
+   */
+  useCase?: string | null;
+  /**
+   * Desired timeline.
+   */
+  timeline?: string | null;
+  message?: string | null;
+  /**
+   * Site language at submission.
+   */
+  locale?: string | null;
+  /**
+   * Page path the form was on.
+   */
+  source?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -476,6 +598,18 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'team';
         value: number | Team;
+      } | null)
+    | ({
+        relationTo: 'reports';
+        value: number | Report;
+      } | null)
+    | ({
+        relationTo: 'use-cases';
+        value: number | UseCase;
+      } | null)
+    | ({
+        relationTo: 'bookings';
+        value: number | Booking;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -676,6 +810,55 @@ export interface TeamSelect<T extends boolean = true> {
   linkedin?: T;
   featuredOnHome?: T;
   order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "reports_select".
+ */
+export interface ReportsSelect<T extends boolean = true> {
+  title?: T;
+  eyebrow?: T;
+  description?: T;
+  image?: T;
+  ctaLabel?: T;
+  href?: T;
+  featured?: T;
+  publishedAt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "use-cases_select".
+ */
+export interface UseCasesSelect<T extends boolean = true> {
+  title?: T;
+  category?: T;
+  image?: T;
+  href?: T;
+  featured?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "bookings_select".
+ */
+export interface BookingsSelect<T extends boolean = true> {
+  name?: T;
+  email?: T;
+  company?: T;
+  offering?: T;
+  format?: T;
+  teamSize?: T;
+  useCase?: T;
+  timeline?: T;
+  message?: T;
+  locale?: T;
+  source?: T;
   updatedAt?: T;
   createdAt?: T;
 }

@@ -80,7 +80,12 @@
   },
   "trust": {
     "label": "Trusted by teams shipping AI to production",
-    "clients": ["Żabka", "UBS", "EBM Dental", "Startups & scale-ups"]
+    "clients": [
+      "Żabka",
+      "UBS",
+      "EBM Dental",
+      "Startups & scale-ups"
+    ]
   },
   "services": {
     "label": "Capabilities",
@@ -338,13 +343,13 @@
     "form": {
       "name": "Your name",
       "email": "Work email",
-      "company": "Company (optional)",
-      "message": "What would you like to explore? (e.g. document automation, AI strategy, a product build)",
+      "company": "Company",
+      "message": "What would you like to explore?",
       "submit": "Book my call",
       "sending": "Sending...",
       "privacyPrefix": "By submitting, you agree to our",
       "privacyLink": "privacy policy",
-      "privacySuffix": ". No spam, no sales sequence. A real reply from an engineer."
+      "privacySuffix": "."
     },
     "validation": {
       "nameRequired": "Name is required",
@@ -356,10 +361,10 @@
       "captchaRequired": "Please complete the captcha verification"
     },
     "success": {
-      "title": "Thank you! We'll reply within 24h",
-      "message": "We've received your message. A real engineer will get back to you within one business day."
+      "title": "Message sent.",
+      "message": "We'll reply within one business day."
     },
-    "formTitle": "Book your free AI strategy call"
+    "formTitle": "Book a call"
   },
   "footer": {
     "allRightsReserved": "All rights reserved.",
@@ -507,10 +512,22 @@
         },
         "faqTitle": "Questions, answered",
         "faq": [
-          { "q": "Build a custom model or buy off-the-shelf?", "a": "Buy when a general model solves it, build when your data or domain is the edge. We benchmark both, then recommend the cheaper path to your accuracy target. No dogma." },
-          { "q": "How do you stop hallucinations?", "a": "RAG grounds answers in your sources, backed by guardrails, citations, and automated evals on every release. We measure hallucination rate and gate deploys on it. Trust comes from tests, not hope." },
-          { "q": "Do we keep the IP and models?", "a": "Yes. You own the code, weights, and pipelines outright. No lock-in, no rent on your own models. We hand over everything and document it so your team can run it." },
-          { "q": "How do you keep models accurate after launch?", "a": "MLOps with monitoring, drift alerts, and eval suites in CI. When quality slips, we retrain or tune fast. Accuracy is a system we maintain, not a launch-day snapshot." }
+          {
+            "q": "Build a custom model or buy off-the-shelf?",
+            "a": "Buy when a general model solves it, build when your data or domain is the edge. We benchmark both, then recommend the cheaper path to your accuracy target. No dogma."
+          },
+          {
+            "q": "How do you stop hallucinations?",
+            "a": "RAG grounds answers in your sources, backed by guardrails, citations, and automated evals on every release. We measure hallucination rate and gate deploys on it. Trust comes from tests, not hope."
+          },
+          {
+            "q": "Do we keep the IP and models?",
+            "a": "Yes. You own the code, weights, and pipelines outright. No lock-in, no rent on your own models. We hand over everything and document it so your team can run it."
+          },
+          {
+            "q": "How do you keep models accurate after launch?",
+            "a": "MLOps with monitoring, drift alerts, and eval suites in CI. When quality slips, we retrain or tune fast. Accuracy is a system we maintain, not a launch-day snapshot."
+          }
         ]
       },
       "analytics": {
@@ -569,10 +586,22 @@
         },
         "faqTitle": "Questions, answered",
         "faq": [
-          { "q": "Do we need this before AI?", "a": "Mostly yes. AI is only as good as the data feeding it. A clean, governed data layer makes models cheaper, faster, and more accurate. We build the foundation AI actually needs." },
-          { "q": "How long until we see dashboards?", "a": "First useful dashboards in weeks, not quarters. We ship a working slice early, then extend. You get answers to real questions fast while the wider warehouse grows underneath." },
-          { "q": "Will it work with our existing stack?", "a": "Yes. We integrate with your warehouse, BI, and cloud, whether that is Snowflake, BigQuery, dbt, or Power BI. We meet your stack where it is, no rip and replace." },
-          { "q": "How do you keep data secure and compliant?", "a": "Access controls, encryption, lineage, and audit built in from day one. We design for GDPR and your internal policy. Governance is part of the pipeline, not a bolt-on afterthought." }
+          {
+            "q": "Do we need this before AI?",
+            "a": "Mostly yes. AI is only as good as the data feeding it. A clean, governed data layer makes models cheaper, faster, and more accurate. We build the foundation AI actually needs."
+          },
+          {
+            "q": "How long until we see dashboards?",
+            "a": "First useful dashboards in weeks, not quarters. We ship a working slice early, then extend. You get answers to real questions fast while the wider warehouse grows underneath."
+          },
+          {
+            "q": "Will it work with our existing stack?",
+            "a": "Yes. We integrate with your warehouse, BI, and cloud, whether that is Snowflake, BigQuery, dbt, or Power BI. We meet your stack where it is, no rip and replace."
+          },
+          {
+            "q": "How do you keep data secure and compliant?",
+            "a": "Access controls, encryption, lineage, and audit built in from day one. We design for GDPR and your internal policy. Governance is part of the pipeline, not a bolt-on afterthought."
+          }
         ]
       },
       "consulting": {
@@ -631,10 +660,22 @@
         },
         "faqTitle": "Questions, answered",
         "faq": [
-          { "q": "How do you find the right use cases?", "a": "We audit your workflows and data, then rank opportunities by value and feasibility. You get a shortlist of PoCs with clear ROI, not a wish list. High-impact, low-risk bets first." },
-          { "q": "How long until we see value?", "a": "A prioritized roadmap in the first two weeks, a first working PoC in four to six. We optimize for shipped outcomes, so value lands early, not after a year of decks." },
-          { "q": "Do we need clean data first?", "a": "No. We start with what you have and fix data only where a use case needs it. Perfect data is a myth. We scope the minimum required to ship." },
-          { "q": "How is this different from a big consultancy?", "a": "Engineers run the engagement, not analysts. We build and deploy, not just advise. Smaller team, senior people, production code you own. Less slideware, more shipped." }
+          {
+            "q": "How do you find the right use cases?",
+            "a": "We audit your workflows and data, then rank opportunities by value and feasibility. You get a shortlist of PoCs with clear ROI, not a wish list. High-impact, low-risk bets first."
+          },
+          {
+            "q": "How long until we see value?",
+            "a": "A prioritized roadmap in the first two weeks, a first working PoC in four to six. We optimize for shipped outcomes, so value lands early, not after a year of decks."
+          },
+          {
+            "q": "Do we need clean data first?",
+            "a": "No. We start with what you have and fix data only where a use case needs it. Perfect data is a myth. We scope the minimum required to ship."
+          },
+          {
+            "q": "How is this different from a big consultancy?",
+            "a": "Engineers run the engagement, not analysts. We build and deploy, not just advise. Smaller team, senior people, production code you own. Less slideware, more shipped."
+          }
         ]
       },
       "webDevelopment": {
@@ -1008,7 +1049,7 @@
       "breadcrumb": "Contact",
       "hero": {
         "title": "Contact Us",
-        "subtitle": "We're here to help bring your ideas to life. Reach out and let's start a conversation."
+        "subtitle": "Write to us. We reply within one business day."
       },
       "location": {
         "label": "Our Location",
@@ -1811,19 +1852,19 @@
     "form": {
       "name": "Your name",
       "email": "Work email",
-      "company": "Company (optional)",
-      "teamSize": "Team size (optional)",
-      "format": "Preferred format (optional)",
+      "company": "Company",
+      "teamSize": "Team size",
+      "format": "Preferred format",
       "useCase": "What would you like to explore?",
-      "timeline": "Ideal timeline (optional)",
-      "message": "Anything else? (optional)",
+      "timeline": "Timeline",
+      "message": "Anything else?",
       "sending": "Sending...",
-      "successTitle": "Thanks. Your request is in.",
-      "successMessage": "It landed with a real engineer. Expect a reply within one business day.",
+      "successTitle": "Request received.",
+      "successMessage": "We'll reply within one business day.",
       "error": "Something went wrong. Please try again, or email contact@pluscode.io.",
       "privacyPrefix": "By submitting, you agree to our",
       "privacyLink": "privacy policy",
-      "privacySuffix": ". No spam, no sales sequence.",
+      "privacySuffix": ".",
       "errName": "Please enter your name",
       "errEmail": "Please enter a valid email",
       "errUseCase": "Tell us a little about what you need"
@@ -2152,5 +2193,27 @@
         }
       }
     }
+  },
+  "booking": {
+    "nextTitle": "What happens next",
+    "steps": [
+      "We match you with the right engineer.",
+      "You hear back within one business day.",
+      "A 30-minute call to scope it."
+    ],
+    "contactName": "Dawid Kubicki",
+    "contactRole": "Founder, Pluscode",
+    "emailPrefix": "Or email",
+    "trustTitle": "Trusted by",
+    "summaryTitle": "What you're booking"
+  },
+  "consultation": {
+    "metaTitle": "Book a call",
+    "metaDescription": "Book a 30-minute call with a senior AI engineer. A concrete first step, no sales sequence.",
+    "eyebrow": "Book a call",
+    "title": "Let's scope your first AI win",
+    "subtitle": "Tell us what you want to move. A senior engineer replies within one business day.",
+    "submit": "Request a call",
+    "backLabel": "Back to home"
   }
 }

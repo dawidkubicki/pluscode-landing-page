@@ -24,15 +24,14 @@ export default function BookingForm({
   offering,
   fields,
   title,
-  note,
   submitLabel,
   source,
 }: {
   t: FormDict;
   offering: string;
   fields: BookingField[];
-  title: string;
-  note: string;
+  /** Optional heading; omitted when the page headline already frames the form. */
+  title?: string;
   submitLabel: string;
   source?: string;
 }) {
@@ -94,7 +93,7 @@ export default function BookingForm({
           </svg>
         </span>
         <h3 className="mt-5 text-2xl font-semibold text-bone">{t.successTitle}</h3>
-        <p className="mt-2 max-w-sm text-sm leading-relaxed text-bone-soft">{t.successMessage}</p>
+        <p className="mt-2 max-w-sm text-[14.5px] text-bone-soft">{t.successMessage}</p>
       </div>
     );
   }
@@ -104,7 +103,7 @@ export default function BookingForm({
 
   return (
     <form onSubmit={onSubmit} noValidate className="rounded border border-white/10 bg-night-soft p-6 sm:p-10">
-      <div className="mb-6 text-[19px] font-semibold text-bone">{title}</div>
+      {title && <div className="mb-6 text-[19px] font-semibold text-bone">{title}</div>}
       <div className="flex flex-col gap-4">
         <div>
           <input name="name" value={form.name} onChange={onChange} placeholder={t.name} className={fieldCls} />

@@ -67,16 +67,16 @@ export default async function CaseStudyPage({
         visual="mesh"
       />
 
-      <section className="bg-cream px-5 py-24 sm:px-8 sm:py-32">
-        <div className="mx-auto max-w-3xl">
+      <section className="bg-white">
+        <div className="mx-auto max-w-3xl px-5 py-20 sm:px-10 sm:py-[6.25rem]">
           {/* Stats */}
           {stats.length > 0 && (
             <Reveal>
-              <div className="mb-14 grid grid-cols-2 gap-6 rounded-3xl border border-cream-line bg-cream-dim/40 p-8 sm:grid-cols-4">
+              <div className="mb-14 grid grid-cols-2 gap-x-8 gap-y-8 border-y border-cream-line py-8 sm:grid-cols-4">
                 {stats.map((s, i) => (
                   <div key={i}>
-                    <div className="display text-4xl text-lime-deep">{s.value}</div>
-                    <p className="mt-2 text-xs leading-snug text-ink-soft">{s.label}</p>
+                    <div className="display text-4xl text-ink">{s.value}</div>
+                    <p className="mt-2 text-[13px] leading-snug text-ink-soft">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -88,7 +88,7 @@ export default async function CaseStudyPage({
               {richBlocks.map((b) => (
                 <Reveal key={b.label}>
                   <div>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-lime-deep">
+                    <p className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime">
                       {b.label}
                     </p>
                     <div className="prose-pc mt-4">
@@ -102,10 +102,10 @@ export default async function CaseStudyPage({
             <div className="space-y-12">
               <Reveal>
                 <div>
-                  <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-lime-deep">
+                  <p className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime">
                     {detail.overview.label}
                   </p>
-                  <h2 className="mt-3 text-2xl font-medium tracking-tight text-ink">
+                  <h2 className="mt-3 font-serif text-[1.75rem] font-medium tracking-[-0.01em] text-ink">
                     {detail.overview.title}
                   </h2>
                   <p className="mt-4 leading-relaxed text-ink-soft">
@@ -113,13 +113,13 @@ export default async function CaseStudyPage({
                   </p>
                   <div className="mt-6 flex flex-wrap gap-8 border-t border-cream-line pt-6">
                     <div>
-                      <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-soft">
+                      <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-mute">
                         {detail.overview.industry}
                       </p>
                       <p className="mt-1 text-ink">{detail.overview.industryValue}</p>
                     </div>
                     <div>
-                      <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-soft">
+                      <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-mute">
                         {detail.overview.services}
                       </p>
                       <p className="mt-1 text-ink">{detail.overview.servicesValue}</p>
@@ -130,10 +130,10 @@ export default async function CaseStudyPage({
 
               <Reveal>
                 <div>
-                  <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-lime-deep">
+                  <p className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime">
                     {detail.challenge.label}
                   </p>
-                  <h2 className="mt-3 text-2xl font-medium tracking-tight text-ink">
+                  <h2 className="mt-3 font-serif text-[1.75rem] font-medium tracking-[-0.01em] text-ink">
                     {detail.challenge.title}
                   </h2>
                   <p className="mt-4 leading-relaxed text-ink-soft">
@@ -144,10 +144,10 @@ export default async function CaseStudyPage({
 
               <Reveal>
                 <div>
-                  <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-lime-deep">
+                  <p className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime">
                     {detail.solution.label}
                   </p>
-                  <h2 className="mt-3 text-2xl font-medium tracking-tight text-ink">
+                  <h2 className="mt-3 font-serif text-[1.75rem] font-medium tracking-[-0.01em] text-ink">
                     {detail.solution.title}
                   </h2>
                   <p className="mt-4 leading-relaxed text-ink-soft">
@@ -155,8 +155,8 @@ export default async function CaseStudyPage({
                   </p>
                   <div className="mt-6 grid gap-4 sm:grid-cols-3">
                     {Object.values(detail.solution.steps).map((step, i) => (
-                      <div key={i} className="rounded-2xl border border-cream-line bg-cream-dim/40 p-5">
-                        <span className="font-mono text-[11px] text-lime-deep">
+                      <div key={i} className="rounded border border-cream-line bg-white p-5">
+                        <span className="font-mono text-xs text-lime">
                           0{i + 1}
                         </span>
                         <h3 className="mt-2 font-medium text-ink">{step.title}</h3>
@@ -174,7 +174,7 @@ export default async function CaseStudyPage({
           <div className="mt-14">
             <LocaleLink
               href="/case-studies"
-              className="font-mono text-[11px] uppercase tracking-[0.16em] text-lime-deep transition-colors hover:text-ink"
+              className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime transition-colors hover:text-ink"
             >
               ← {detail.cta.viewAll}
             </LocaleLink>

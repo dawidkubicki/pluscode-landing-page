@@ -31,12 +31,13 @@
   --color-lime-soft: #6f92ff; /* accent text on dark */
   --color-lime-bright: #4a73ff; /* primary button hover */
 
-  /* Typography */
-  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, -apple-system,
+  /* Typography — Figtree across every role (display, body, and the former
+     mono label slots), so the whole site is one humanist sans. */
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, -apple-system,
     sans-serif;
-  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SFMono-Regular",
-    monospace;
-  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-mono: var(--font-figtree), ui-sans-serif, system-ui, -apple-system,
+    sans-serif;
+  --font-serif: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
 
   /* Motion */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);

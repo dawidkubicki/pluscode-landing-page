@@ -18,10 +18,10 @@ const stack = [
 
 function Track() {
   return (
-    <div className="flex shrink-0 items-center gap-12 pr-12">
+    <div className="flex shrink-0 items-center gap-14 pr-14">
       {stack.map((name, i) => (
-        <div key={`${name}-${i}`} className="flex items-center gap-2.5 text-lg text-ink/70">
-          <Plus className="size-3.5 text-ink/30" />
+        <div key={`${name}-${i}`} className="flex items-center gap-2.5 text-xl text-ink/70">
+          <Plus className="size-4 text-ink/40" />
           <span className="font-medium">{name}</span>
         </div>
       ))}

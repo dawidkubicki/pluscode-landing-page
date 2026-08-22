@@ -39,7 +39,6 @@ export default function Offerings({ locale }: { locale: Locale }) {
       id="workshops"
       className="relative isolate scroll-mt-24 overflow-hidden bg-night text-bone"
     >
-      <div className="blueprint-grid absolute inset-0 -z-10 opacity-70" />
       <div className="pointer-events-none absolute -left-40 top-20 -z-10 size-[34rem] rounded-full bg-[radial-gradient(circle,rgba(43,92,255,0.16)_0%,rgba(43,92,255,0)_65%)]" />
 
       <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.875rem]">

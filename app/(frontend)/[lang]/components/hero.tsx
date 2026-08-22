@@ -29,9 +29,11 @@ const HERO_MEDIA: HeroMedia | null = null;
 
 export default function Hero({
   dict,
+  trust,
   media = HERO_MEDIA,
 }: {
   dict: Dictionary["hero"];
+  trust: Dictionary["trust"];
   media?: HeroMedia | null;
 }) {
   return (
@@ -64,7 +66,6 @@ export default function Hero({
           <div className="absolute inset-0 bg-gradient-to-t from-night via-night/30 to-transparent" />
         </div>
       )}
-      <div className="blueprint-grid absolute inset-0 -z-10" />
       <div className="absolute -right-44 -top-44 -z-10 size-[38rem] rounded-full bg-[radial-gradient(circle,rgba(43,92,255,0.22)_0%,rgba(43,92,255,0)_65%)]" />
 
       {/* main content fills the viewport; stats bar sits on the fold */}
@@ -94,37 +95,29 @@ export default function Hero({
 
         <motion.div {...rise(0.4)} className="mt-11 flex flex-wrap items-center gap-5">
           <LocaleLink
-            href="/contact"
+            href="/book-a-call"
             className="group inline-flex items-center gap-3 rounded-[2px] bg-lime px-[30px] py-4 text-[15.5px] font-semibold text-white transition-colors hover:bg-lime-bright"
           >
             {dict.ctaPrimary}
             <Arrow className="size-[18px] transition-transform duration-300 group-hover:translate-x-1" />
           </LocaleLink>
-          <LocaleLink
-            href="/case-studies"
-            className="inline-flex items-center gap-2.5 border-b border-white/25 px-2.5 py-4 text-[15.5px] font-medium text-bone transition-colors hover:text-lime-soft"
-          >
-            {dict.ctaSecondary}
-          </LocaleLink>
         </motion.div>
-      </div>
 
-      {/* stats bar */}
-      <div className="relative border-t border-white/10">
-        <motion.div
-          {...rise(0.55)}
-          className="mx-auto grid max-w-[1240px] grid-cols-2 gap-x-10 gap-y-8 px-5 py-8 sm:px-10 lg:grid-cols-4"
-        >
-          {dict.stats.map((s) => (
-            <div key={s.value} className="flex flex-col gap-1">
-              <span className="display text-3xl text-bone sm:text-[2.125rem]">
-                {s.value}
-              </span>
-              <span className="text-[13.5px] leading-[1.4] text-bone-dim">
-                {s.label}
-              </span>
-            </div>
-          ))}
+        {/* Minimal social-proof strip, folded into the hero */}
+        <motion.div {...rise(0.55)} className="mt-14 sm:mt-16">
+          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-bone-dim">
+            {trust.label}
+          </p>
+          <ul className="mt-4 flex flex-wrap items-center gap-x-8 gap-y-2.5 sm:gap-x-10">
+            {trust.clients.map((client) => (
+              <li
+                key={client}
+                className="text-[15px] font-medium text-bone/50 transition-colors hover:text-bone/80 sm:text-base"
+              >
+                {client}
+              </li>
+            ))}
+          </ul>
         </motion.div>
       </div>
     </section>

@@ -30,11 +30,11 @@ export default function LegalPage({
     <main>
       <PageHero eyebrow={d.lastUpdated} title={d.title} intro={d.subtitle} />
 
-      <section className="bg-cream px-5 py-24 sm:px-8 sm:py-32">
-        <div className="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[260px_1fr] lg:gap-16">
+      <section className="bg-white">
+        <div className="mx-auto grid max-w-[1240px] gap-12 px-5 py-20 sm:px-10 sm:py-[6.25rem] lg:grid-cols-[260px_1fr] lg:gap-16">
           {/* TOC */}
           <aside className="lg:sticky lg:top-28 lg:self-start">
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft">
+            <p className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime">
               {d.tableOfContents}
             </p>
             <nav className="mt-5 space-y-2.5 border-l border-cream-line pl-4">
@@ -55,7 +55,7 @@ export default function LegalPage({
             {entries.map(([key, s], i) => (
               <Reveal key={key} delay={i === 0 ? 0 : 0.02}>
                 <section id={key} className="scroll-mt-28 border-b border-cream-line py-8 first:pt-0 last:border-0">
-                  <h2 className="text-2xl font-medium tracking-tight text-ink">
+                  <h2 className="font-serif text-[1.75rem] font-medium tracking-[-0.01em] text-ink">
                     {s.title}
                   </h2>
                   <p className="mt-4 whitespace-pre-line leading-relaxed text-ink-soft">

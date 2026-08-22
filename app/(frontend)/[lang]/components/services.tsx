@@ -42,7 +42,7 @@ export default function Services({ locale }: { locale: Locale }) {
               <StaggerItem key={item.num}>
                 <LocaleLink
                   href={hrefs[i]}
-                  className="group grid gap-2 border-t border-cream-line py-9 transition-colors duration-300 hover:bg-cream sm:grid-cols-[minmax(0,84px)_1fr] sm:gap-x-14 sm:py-10"
+                  className="group grid gap-2 border-t border-cream-line py-9 pl-3 transition-colors duration-300 hover:bg-cream sm:grid-cols-[minmax(0,96px)_1fr] sm:gap-x-14 sm:py-10 sm:pl-8"
                 >
                   <div className="font-serif text-[2.5rem] font-light leading-none text-[#c3cede] transition-colors duration-300 group-hover:text-lime">
                     {item.num}

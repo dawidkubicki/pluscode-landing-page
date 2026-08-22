@@ -90,7 +90,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               Kosowska 12/3, 60-464 Poznań, Poland
             </span>
             <LocaleLink
-              href="/contact"
+              href="/book-a-call"
               className="mt-2 rounded-[2px] bg-lime px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-lime-bright"
             >
               {nav.getInTouch}
