@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import "./globals.css";
-import { nohemi, geistMono } from "./fonts";
+import { hanken, jetbrainsMono, fraunces } from "./fonts";
 import SmoothScroll from "./components/smooth-scroll";
 import Header from "./components/header";
 import FloatingContact from "./components/floating-contact";
@@ -36,7 +36,7 @@ export async function generateMetadata({
   return {
     metadataBase: new URL("https://pluscode.io"),
     title: {
-      default: "Pluscode — Software Development & AI Solutions",
+      default: "Pluscode | Software Development & AI Solutions",
       template: "%s · Pluscode",
     },
     description:
@@ -57,7 +57,7 @@ export async function generateMetadata({
       ),
     },
     openGraph: {
-      title: "Pluscode — Crafting software that matters",
+      title: "Pluscode | Crafting software that matters",
       description:
         "Expert software development, AI and consultancy that drives measurable business impact.",
       type: "website",
@@ -97,14 +97,17 @@ export default async function LocaleLayout({
   return (
     <html
       lang={lang}
-      className={`${nohemi.variable} ${geistMono.variable} antialiased`}
+      className={`${hanken.variable} ${jetbrainsMono.variable} ${fraunces.variable} antialiased`}
     >
       <body className="min-h-screen bg-cream text-ink">
         <LocaleProvider locale={lang}>
           {banner && <AnnouncementBar announcement={banner} />}
           <SmoothScroll>
             <Header locale={lang} nav={dict.navigation} offset={!!banner} />
-            {children}
+            {/* When the announcement bar is shown the fixed header sits 40px
+                lower, so push page content down by the same amount to keep the
+                hero clear of the nav. */}
+            <div className={banner ? "pt-10" : undefined}>{children}</div>
           </SmoothScroll>
           <FloatingContact
             dict={dict.hero}

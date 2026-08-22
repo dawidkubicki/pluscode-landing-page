@@ -3,33 +3,40 @@
 /* ------------------------------------------------------------------ *
  *  Pluscode — design tokens
  *
- *  Same system as the FH Trade template (surfaces / ink / accent), retuned
- *  for a software brand: a cool deep-navy dark surface, a cool near-white
- *  light surface and an electric-blue accent. Token names are kept stable
- *  (`night`, `cream`, `ink`, `bone`, `lime`) so the shared components read the
- *  same on both projects — here `lime` is the electric-blue brand accent.
+ *  Editorial blueprint system from the Claude Design "Pluscode landing page
+ *  redesign" project: deep-navy dark surfaces, a cool paper-white light
+ *  surface, an electric cobalt accent and a serif display voice. Token names
+ *  are kept stable (`night`, `cream`, `ink`, `bone`, `lime`) so shared
+ *  components keep reading the same — `lime` is the cobalt brand accent.
  * ------------------------------------------------------------------ */
 @theme {
   /* Surfaces */
-  --color-night: #0c111b; /* dark hero / footer (deep navy-slate) */
-  --color-night-soft: #141b29; /* raised cards on dark */
-  --color-night-line: #25304a; /* hairlines on dark */
-  --color-cream: #f4f6fb; /* light section background (cool white) */
-  --color-cream-dim: #e9edf5; /* muted light surface */
-  --color-cream-line: #dbe0ec; /* hairlines on light */
+  --color-night: #0a1929; /* dark hero / sections (deep navy) */
+  --color-night-soft: #0f2237; /* raised cards on dark */
+  --color-night-deep: #061220; /* footer (deepest navy) */
+  --color-night-line: #22303e; /* hairlines on dark */
+  --color-cream: #f7f8fa; /* light section background (paper white) */
+  --color-cream-dim: #eef0f4; /* muted light surface */
+  --color-cream-line: #e2e6ec; /* hairlines on light */
 
   /* Ink + accent */
-  --color-ink: #0a0e17; /* near-black text on light */
-  --color-ink-soft: #535b6b; /* secondary text on light */
-  --color-bone: #f4f6fb; /* text on dark */
-  --color-bone-soft: #94a0b8; /* secondary text on dark */
-  --color-lime: #3ba5f5; /* primary accent — electric blue */
-  --color-lime-deep: #1a73d4; /* hover / accent text on light */
+  --color-ink: #0a1929; /* near-black text on light */
+  --color-ink-soft: #4a5a6d; /* secondary text on light */
+  --color-ink-mute: #8093a8; /* mono tags / metadata on light */
+  --color-bone: #ffffff; /* headings on dark */
+  --color-bone-soft: #b9c6d8; /* body copy on dark */
+  --color-bone-dim: #8fa3bd; /* muted / metadata on dark */
+  --color-lime: #2b5cff; /* primary accent — electric cobalt */
+  --color-lime-deep: #1a3fd9; /* hover / accent text on light */
+  --color-lime-soft: #6f92ff; /* accent text on dark */
+  --color-lime-bright: #4a73ff; /* primary button hover */
 
   /* Typography */
-  --font-sans: var(--font-nohemi), ui-sans-serif, system-ui, -apple-system,
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, -apple-system,
     sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SFMono-Regular",
+    monospace;
+  --font-serif: var(--font-fraunces), Georgia, serif;
 
   /* Motion */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -37,6 +44,19 @@
   /* Marquee */
   --animate-marquee: marquee 38s linear infinite;
   --animate-marquee-slow: marquee 60s linear infinite;
+
+  /* Pulsing status dot (hero eyebrow) */
+  --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
 }
 
 @keyframes marquee {
@@ -67,7 +87,7 @@
 
   ::selection {
     background-color: var(--color-lime);
-    color: var(--color-ink);
+    color: #fff;
   }
 
   /* Lenis */
@@ -102,11 +122,22 @@
     text-wrap: balance;
   }
 
-  /* Big fluid display type used for the wordmark */
+  /* Editorial display voice — serif headlines across the site */
   .display {
+    font-family: var(--font-serif);
     font-weight: 600;
-    letter-spacing: -0.04em;
-    line-height: 0.9;
+    letter-spacing: -0.015em;
+    line-height: 1.05;
+  }
+
+  /* Faint cobalt blueprint grid used on dark hero / contact surfaces */
+  .blueprint-grid {
+    background-image: linear-gradient(
+        rgba(43, 92, 255, 0.07) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(43, 92, 255, 0.07) 1px, transparent 1px);
+    background-size: 56px 56px;
   }
 
   .mask-fade-x {

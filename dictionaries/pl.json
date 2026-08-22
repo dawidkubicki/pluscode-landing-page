@@ -1,6 +1,6 @@
 {
   "announcement": {
-    "text": "Nowość: Warsztaty AI Opportunity — od pomysłu do planu z policzonym ROI w jednej sesji.",
+    "text": "Nowość: Warsztaty AI Opportunity. Od pomysłu do planu z policzonym ROI w jednej sesji.",
     "linkText": "Umów warsztat",
     "linkUrl": "/contact"
   },
@@ -47,8 +47,8 @@
     }
   },
   "hero": {
-    "headlineStart": "Zamieniamy ambicje AI w",
-    "subtext": "PlusCode to butikowa firma konsultingowa AI dla zespołów, które potrzebują efektów, nie slajdów. Znajdujemy przypadki użycia z realnym ROI, potwierdzamy je w kilka tygodni i budujemy systemy, które działają na produkcji.",
+    "headlineStart": "Konsulting AI, który dowozi",
+    "subtext": "Nie prosimy o wiarę na słowo. Potwierdzamy AI na Twoich danych w kilka tygodni, a potem wdrażamy ją na produkcję.",
     "ctaPrimary": "Umów rozmowę wstępną",
     "ctaSecondary": "Zobacz nasze realizacje",
     "online": "Online",
@@ -56,8 +56,8 @@
     "call": "Zadzwoń",
     "fallbackName": "Dawid Kubicki",
     "fallbackRole": "CEO i Założyciel",
-    "eyebrow": "Konsulting i wdrożenia AI",
-    "headlineEm": "systemy na produkcji",
+    "eyebrow": "Konsulting AI · wdrożenia · warsztaty",
+    "headlineEm": "realne produkty",
     "headlineEnd": ".",
     "stats": [
       {
@@ -85,42 +85,42 @@
   "services": {
     "label": "Kompetencje",
     "title": "Od strategii AI po systemy na produkcji",
-    "subtitle": "Jeden doświadczony zespół — od pierwszego strategicznego pytania po system, na którym Twoi użytkownicy polegają każdego dnia. Każdy projekt obsługują inżynierowie, nie prezentacje.",
+    "subtitle": "Od strategii do produkcji. Realizują to doświadczeni inżynierowie, nie prezentacje.",
     "items": [
       {
         "num": "01",
         "title": "Strategia i roadmapa AI",
-        "desc": "Oddzielamy sygnał od szumu w AI: uczciwy audyt gotowości, przypadki użycia z realnym ROI i uporządkowana mapa drogowa od pilotażu do produkcji.",
+        "desc": "Uczciwy audyt gotowości i mapa drogowa do przypadków użycia z realnym ROI.",
         "tags": "audyt gotowości · odkrywanie use case'ów · roadmapping"
       },
       {
         "num": "02",
         "title": "Generatywne AI i aplikacje LLM",
-        "desc": "Copiloty, asystenci i systemy RAG oparte na Twoich danych — trafne, z cytowaniami i zbudowane na ewaluacjach, którym można zaufać.",
+        "desc": "Copiloty i RAG oparte na Twoich danych. Trafne, z cytowaniami, poparte realnymi ewaluacjami.",
         "tags": "RAG · copiloty · ewaluacje · guardrails"
       },
       {
         "num": "03",
         "title": "Agenci AI i automatyzacja",
-        "desc": "Agenci, którzy planują, korzystają z narzędzi i zdejmują realną pracę z barków Twojego zespołu — z człowiekiem w pętli tam, gdzie to istotne.",
+        "desc": "Agenci, którzy zdejmują realną pracę z Twojego zespołu, z człowiekiem w pętli tam, gdzie to istotne.",
         "tags": "agentowe workflow · orkiestracja · human-in-the-loop"
       },
       {
         "num": "04",
         "title": "Inteligentne przetwarzanie dokumentów",
-        "desc": "Nasza flagowa specjalizacja. Pipeline'y LLM, które ekstrahują, klasyfikują i walidują dane z dokumentów — audytowalna automatyzacja zamiast ręcznego wprowadzania.",
+        "desc": "Nasza flagowa specjalizacja. Pipeline'y LLM, które czytają, klasyfikują i walidują dokumenty. Audytowalnie, nie ręcznie.",
         "tags": "OCR + LLM · ekstrakcja · straight-through"
       },
       {
         "num": "05",
         "title": "ML i fundamenty danych",
-        "desc": "Od pipeline'ów danych po wdrożone modele, plus dyscyplina MLOps, która utrzymuje ich trafność długo po starcie.",
+        "desc": "Pipeline'y danych, wdrożone modele i MLOps, który utrzymuje ich trafność po starcie.",
         "tags": "modele ML · infrastruktura danych · MLOps"
       },
       {
         "num": "06",
         "title": "Enablement i governance AI",
-        "desc": "Podnosimy kompetencje Twojego zespołu i ustawiamy guardrails, aby kompetencja AI — i kontrola — została w firmie po naszym odejściu.",
+        "desc": "Podnosimy kompetencje zespołu i ustawiamy guardrails, aby kompetencja została w firmie.",
         "tags": "szkolenia · governance · adopcja"
       }
     ]
@@ -128,8 +128,8 @@
   "offerings": {
     "label": "Formy współpracy",
     "title": "Zacznij od warsztatu, rozwiń w system",
-    "subtitle": "Sproduktyzowane usługi z jasnym zakresem, harmonogramem i rezultatem — wiesz dokładnie, co dostajesz, zanim zaczniemy. Najpierw discovery o stałym zakresie, potem budowa: zderyzykowana ścieżka, z której korzystają najlepsze zespoły AI.",
-    "note": "Każda współpraca zaczyna się od bezpłatnej 30-minutowej rozmowy. Bez zobowiązań — i rozmawiasz z doświadczonym inżynierem, nie z handlowcem.",
+    "subtitle": "Jasny zakres, harmonogram i rezultat. Stała cena, bez niespodzianek. Zacznij mały, potwierdź wartość, skaluj to, co działa.",
+    "note": "Każda współpraca zaczyna się od bezpłatnej 30-minutowej rozmowy. Rozmawiasz z doświadczonym inżynierem, nie z handlowcem.",
     "forLabel": "Dla kogo",
     "deliverablesLabel": "Wychodzisz z",
     "featuredLabel": "Najczęściej wybierane",
@@ -138,7 +138,7 @@
         "name": "Warsztat AI Opportunity",
         "meta": "Pół dnia · stała cena",
         "for": "Liderów szukających punktu startu",
-        "desc": "Skupiona sesja robocza, by przetestować Twoje pomysły na AI pod kątem ROI i wykonalności — i wyjść z jasnym pierwszym krokiem.",
+        "desc": "Przetestuj swoje pomysły na AI pod kątem ROI i wykonalności. Wyjdź z jasnym pierwszym krokiem.",
         "deliverables": [
           "Priorytetyzowana lista przypadków użycia",
           "Ocena ROI i wykonalności",
@@ -151,7 +151,7 @@
         "name": "Sprint discovery AI",
         "meta": "2 tygodnie · stały zakres",
         "for": "Zespoły gotowe potwierdzić use case",
-        "desc": "Wchodzimy głęboko w jeden przypadek użycia — dane, wykonalność, architektura i działający prototyp — abyś mógł z pewnością zdecydować o budowie.",
+        "desc": "Jeden przypadek użycia w głąb: dane, wykonalność i działający prototyp. Zdecyduj z pewnością.",
         "deliverables": [
           "Ocena wykonalności technicznej",
           "Działający prototyp",
@@ -162,9 +162,9 @@
       },
       {
         "name": "Proof-of-Concept GenAI",
-        "meta": "4–6 tygodni",
+        "meta": "4-6 tygodni",
         "for": "Potwierdzony use case, który wymaga dowodu",
-        "desc": "Pilotaż klasy produkcyjnej w Twoim środowisku — mierzony realnymi ewaluacjami i gotowy do prezentacji wewnętrznej przed wdrożeniem.",
+        "desc": "Pilotaż klasy produkcyjnej na Twoich danych, mierzony realnymi ewaluacjami i gotowy do prezentacji przed wdrożeniem.",
         "deliverables": [
           "Pilotaż gotowy do produkcji",
           "Harness ewaluacyjny i metryki",
@@ -177,7 +177,7 @@
         "name": "Zespół AI na część etatu",
         "meta": "Miesięcznie · na stałe",
         "for": "Skalowanie AI w całej organizacji",
-        "desc": "Doświadczony zespół AI wbudowany w Twój — strategia, inżynieria i MLOps na żądanie, skalowane w górę lub w dół wraz z Twoją mapą drogową.",
+        "desc": "Doświadczony zespół AI wbudowany w Twój: strategia, inżynieria i MLOps, skalowane wraz z Twoją mapą drogową.",
         "deliverables": [
           "Wbudowani doświadczeni inżynierowie AI",
           "Wsparcie strategii i MLOps",
@@ -190,33 +190,33 @@
   },
   "process": {
     "label": "Jak pracujemy",
-    "title": "Jasna ścieżka od pomysłu do efektu — bez czarnych skrzynek",
-    "subtitle": "Ta sama zdyscyplinowana ścieżka w każdym projekcie. Zawsze wiesz, gdzie jesteśmy, co dalej i dlaczego.",
+    "title": "Jasna ścieżka od pomysłu do efektu, bez czarnych skrzynek",
+    "subtitle": "Ta sama ścieżka w każdym projekcie. Zawsze wiesz, gdzie jesteśmy i co dalej.",
     "steps": [
       {
         "num": "01",
         "title": "Mapowanie",
-        "desc": "Mapujemy Twoje cele, dane i ograniczenia, by znaleźć, gdzie AI tworzy mierzalną wartość — i uczciwie wskazujemy, gdzie jeszcze nie."
+        "desc": "Znajdujemy, gdzie AI tworzy mierzalną wartość, i uczciwie wskazujemy, gdzie jeszcze nie."
       },
       {
         "num": "02",
         "title": "Prototyp",
-        "desc": "Budujemy działający prototyp w kilka tygodni, aby decyzje opierały się na czymś realnym, a nie na prezentacji."
+        "desc": "Działający prototyp w kilka tygodni. Decyzje oparte na czymś realnym, nie na prezentacji."
       },
       {
         "num": "03",
         "title": "Budowa",
-        "desc": "Przekształcamy prototyp w niezawodny system — zewaluowany, obserwowalny, bezpieczny i gotowy na realnych użytkowników."
+        "desc": "Przekształcamy go w niezawodny system: zewaluowany, obserwowalny, bezpieczny, gotowy na produkcję."
       },
       {
         "num": "04",
         "title": "Skalowanie i enablement",
-        "desc": "Wdrażamy, przekazujemy wiedzę Twojemu zespołowi i zostajemy jako doradcy, gdy Twoja kompetencja AI się kumuluje."
+        "desc": "Wdrażamy, przekazujemy wiedzę i zostajemy jako doradcy, gdy skalujesz."
       }
     ]
   },
   "stats": {
-    "lead": "Osiem lat tworzenia oprogramowania, które robi różnicę. Liczby, które pokazują, dlaczego zespoły — od dynamicznych startupów po globalne korporacje — wybierają Pluscode."
+    "lead": "Osiem lat tworzenia oprogramowania, które robi różnicę. Liczby, które pokazują, dlaczego zespoły, od dynamicznych startupów po globalne korporacje, wybierają Pluscode."
   },
   "industries": {
     "title": "Znajomość branż, inżynierska głębia",
@@ -311,7 +311,7 @@
     "items": {
       "featured": {
         "title": "Jak AI transformuje operacje biznesowe w 2025 roku",
-        "excerpt": "Odkryj kluczowe sposoby, w jakie sztuczna inteligencja rewolucjonizuje działanie firm — od zautomatyzowanych procesów po analitykę predykcyjną wspierającą lepsze decyzje."
+        "excerpt": "Odkryj kluczowe sposoby, w jakie sztuczna inteligencja rewolucjonizuje działanie firm, od zautomatyzowanych procesów po analitykę predykcyjną wspierającą lepsze decyzje."
       },
       "post1": {
         "title": "Budowanie skalowalnej architektury mikroserwisów",
@@ -389,17 +389,17 @@
     "services": {
       "index": {
         "metaTitle": "Usługi",
-        "metaDescription": "Aplikacje webowe i mobilne, platformy chmurowe i zespoły inżynierskie — zobacz, jak Pluscode może pomóc, i wybierz formę współpracy, która pasuje.",
+        "metaDescription": "Aplikacje webowe i mobilne, platformy chmurowe i zespoły inżynierskie. Zobacz, jak Pluscode może pomóc, i wybierz formę współpracy, która pasuje.",
         "eyebrow": "Usługi",
         "title": "Usługi inżynierskie, od początku do końca.",
-        "intro": "Od aplikacji webowych i mobilnych po platformy chmurowe i wsparcie zespołem inżynierów — wybierz potrzebną usługę lub porozmawiaj z nami, a dopasujemy współpracę do Ciebie.",
+        "intro": "Od aplikacji webowych i mobilnych po platformy chmurowe i wsparcie zespołem inżynierów. Wybierz potrzebną usługę lub porozmawiaj z nami, a dopasujemy współpracę do Ciebie.",
         "view": "Zobacz usługę",
         "cta": "Rozpocznij projekt"
       },
       "teamExtension": {
         "label": "Usługi",
         "title": "Rozszerzenie zespołu",
-        "subtitle": "Doświadczeni inżynierowie jako część Twojego zespołu — pracujący na Twoim stacku, w Twoim procesie i tempie, bez kosztów i czasu rekrutacji.",
+        "subtitle": "Doświadczeni inżynierowie jako część Twojego zespołu, pracujący na Twoim stacku, w Twoim procesie i tempie, bez kosztów i czasu rekrutacji.",
         "breadcrumb": "Rozszerzenie zespołu",
         "features": {
           "seniorEngineers": {
@@ -408,7 +408,7 @@
           },
           "embedded": {
             "title": "Pełna integracja",
-            "description": "Pracujemy w Twoich narzędziach, rytuałach i procesach jako jeden zespół — nigdy jako czarna skrzynka."
+            "description": "Pracujemy w Twoich narzędziach, rytuałach i procesach jako jeden zespół, nigdy jako czarna skrzynka."
           },
           "flexibleScaling": {
             "title": "Elastyczne skalowanie",
@@ -1205,7 +1205,7 @@
       "finance": {
         "label": "Usługi Finansowe",
         "title": "Transformacja Usług Finansowych przez Technologię",
-        "subtitle": "Od wykrywania oszustw po zgodność regulacyjną — budujemy bezpieczne, skalowalne rozwiązania, które pomagają instytucjom finansowym innowować przy jednoczesnym zarządzaniu ryzykiem.",
+        "subtitle": "Od wykrywania oszustw po zgodność regulacyjną. Budujemy bezpieczne, skalowalne rozwiązania, które pomagają instytucjom finansowym innowować przy jednoczesnym zarządzaniu ryzykiem.",
         "challenges": {
           "challenge1": {
             "title": "Zagrożenia Cyberbezpieczeństwa",
@@ -1692,14 +1692,14 @@
   "home": {
     "about": {
       "tag": "Kim jesteśmy",
-      "headingLead": "Nie zaczynamy od technologii —",
+      "headingLead": "Nie zaczynamy od technologii,",
       "headingRest": "zaczynamy od ludzi."
     },
     "highlight": {
       "tag": "W liczbach",
       "amount": "150+",
-      "text": "Projektów zrealizowanych dla firm — od startupów po globalne przedsiębiorstwa.",
-      "text2": "Osiem lat tworzenia oprogramowania, które przynosi wymierne rezultaty biznesowe — od AI i danych po web, mobile i chmurę.",
+      "text": "Projektów zrealizowanych dla firm, od startupów po globalne przedsiębiorstwa.",
+      "text2": "Osiem lat tworzenia oprogramowania, które przynosi wymierne rezultaty biznesowe, od AI i danych po web, mobile i chmurę.",
       "features": [
         {
           "title": "AI i Dane",
@@ -1721,14 +1721,14 @@
       "titleStart": "Ile ",
       "titleEm": "naprawdę",
       "titleEnd": " kosztuje Cię ręczne wprowadzanie danych?",
-      "text": "Większość zespołów spędza 20–30% czasu na przenoszeniu danych między dokumentami a systemami. My to automatyzujemy.",
+      "text": "Większość zespołów spędza 20-30% czasu na przenoszeniu danych między dokumentami a systemami. My to automatyzujemy.",
       "cta": "Sprawdź w 45 minut"
     },
     "move": {
       "titleStart": "Opowiedz nam o swoim ",
       "titleEm": "najtrudniejszym",
       "titleEnd": " problemie z AI.",
-      "text": "Discovery o stałym zakresie, wdrożenie klasy inżynierskiej. Umów 30-minutową rozmowę, a zmapujemy, gdzie AI tworzy realną wartość w Twoim biznesie — bez slajdów, bez zobowiązań.",
+      "text": "Umów 30-minutową rozmowę. Zmapujemy, gdzie AI tworzy realną wartość w Twoim biznesie. Bez slajdów, bez zobowiązań.",
       "cta": "Umów rozmowę"
     }
   },

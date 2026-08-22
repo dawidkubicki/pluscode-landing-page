@@ -1,6 +1,6 @@
 {
   "announcement": {
-    "text": "New: AI Opportunity Workshops — from use case to an ROI-backed plan in one session.",
+    "text": "New: AI Opportunity Workshops. From use case to an ROI-backed plan in one session.",
     "linkText": "Book a workshop",
     "linkUrl": "/contact"
   },
@@ -47,8 +47,8 @@
     }
   },
   "hero": {
-    "headlineStart": "We turn AI ambition into",
-    "subtext": "PlusCode is a boutique AI consultancy for teams that need results, not slideware. We find the use cases with real ROI, prove them in weeks, and engineer the systems that run them in production.",
+    "headlineStart": "AI consulting that ships",
+    "subtext": "We don't ask for a leap of faith. We prove AI on your real data in weeks, then engineer it into production.",
     "ctaPrimary": "Book a discovery call",
     "ctaSecondary": "See our work",
     "online": "Online",
@@ -56,8 +56,8 @@
     "call": "Call",
     "fallbackName": "Dawid Kubicki",
     "fallbackRole": "CEO & Founder",
-    "eyebrow": "AI consulting & applied AI",
-    "headlineEm": "systems that ship",
+    "eyebrow": "AI consulting · product engineering · workshops",
+    "headlineEm": "real products",
     "headlineEnd": ".",
     "stats": [
       {
@@ -85,42 +85,42 @@
   "services": {
     "label": "Capabilities",
     "title": "From AI strategy to systems in production",
-    "subtitle": "One senior team, from the first strategic question to a system your users rely on every day. Engineers staff every engagement — not slide decks.",
+    "subtitle": "From strategy to production. Staffed by senior engineers, not slide decks.",
     "items": [
       {
         "num": "01",
         "title": "AI Strategy & Roadmap",
-        "desc": "We separate AI signal from noise: an honest readiness check, the use cases with real ROI, and a sequenced roadmap from pilot to production.",
+        "desc": "An honest readiness check and a roadmap to the use cases with real ROI.",
         "tags": "readiness audit · use-case discovery · roadmapping"
       },
       {
         "num": "02",
         "title": "Generative AI & LLM Apps",
-        "desc": "Copilots, assistants and RAG systems grounded in your data — accurate, cited, and built on evals you can actually trust.",
+        "desc": "Copilots and RAG grounded in your data. Accurate, cited, backed by real evals.",
         "tags": "RAG · copilots · evals · guardrails"
       },
       {
         "num": "03",
         "title": "AI Agents & Automation",
-        "desc": "Agents that plan, call tools and take real work off your team's plate — with humans in the loop where it counts.",
+        "desc": "Agents that take real work off your team's plate, with humans in the loop where it counts.",
         "tags": "agentic workflows · orchestration · human-in-the-loop"
       },
       {
         "num": "04",
         "title": "Intelligent Document Processing",
-        "desc": "Our flagship practice. LLM pipelines that extract, classify and validate data from documents — auditable automation instead of manual entry.",
+        "desc": "Our flagship. LLM pipelines that read, classify and validate documents. Auditable, not manual.",
         "tags": "OCR + LLM · extraction · straight-through"
       },
       {
         "num": "05",
         "title": "ML & Data Foundations",
-        "desc": "From data pipelines to deployed models, plus the MLOps discipline that keeps them accurate long after launch.",
+        "desc": "Data pipelines, deployed models, and the MLOps that keeps them accurate after launch.",
         "tags": "ML models · data infrastructure · MLOps"
       },
       {
         "num": "06",
         "title": "AI Enablement & Governance",
-        "desc": "We upskill your team and set the guardrails, so AI capability — and control — stays in-house after we ramp down.",
+        "desc": "We upskill your team and set the guardrails, so the capability stays in-house.",
         "tags": "training · governance · adoption"
       }
     ]
@@ -128,8 +128,8 @@
   "offerings": {
     "label": "Ways to work together",
     "title": "Start with a workshop, scale into a system",
-    "subtitle": "Productized engagements with a clear scope, timeline and deliverable — so you know exactly what you get before we start. Fixed-scope discovery first, build second: the de-risked path the best AI teams use.",
-    "note": "Every engagement starts with a free 30-minute call. No obligation — and you'll talk to a senior engineer, not a sales rep.",
+    "subtitle": "Clear scope, timeline and deliverable. Fixed price, no surprises. Start small, prove value, scale what works.",
+    "note": "Every engagement starts with a free 30-minute call. You'll talk to a senior engineer, not a sales rep.",
     "forLabel": "Best for",
     "deliverablesLabel": "You leave with",
     "featuredLabel": "Most popular",
@@ -138,7 +138,7 @@
         "name": "AI Opportunity Workshop",
         "meta": "Half day · fixed fee",
         "for": "Leaders scoping where to start",
-        "desc": "A focused working session to pressure-test your AI ideas against ROI and feasibility — and leave with a clear first move.",
+        "desc": "Pressure-test your AI ideas against ROI and feasibility. Leave with a clear first move.",
         "deliverables": [
           "Prioritized use-case shortlist",
           "ROI & feasibility scoring",
@@ -151,7 +151,7 @@
         "name": "AI Discovery Sprint",
         "meta": "2 weeks · fixed scope",
         "for": "Teams ready to prove a use case",
-        "desc": "We go deep on one use case — data, feasibility, architecture and a working prototype — so you can commit to the build with confidence.",
+        "desc": "One use case, taken deep: data, feasibility and a working prototype. Commit with confidence.",
         "deliverables": [
           "Technical feasibility assessment",
           "Working prototype",
@@ -162,9 +162,9 @@
       },
       {
         "name": "GenAI Proof-of-Concept",
-        "meta": "4–6 weeks",
+        "meta": "4-6 weeks",
         "for": "A validated use case that needs proof",
-        "desc": "A production-grade pilot in your environment — measured against real evals and ready to pitch internally for rollout.",
+        "desc": "A production-grade pilot on your data, measured on real evals and ready to pitch for rollout.",
         "deliverables": [
           "Production-ready pilot",
           "Evaluation harness & metrics",
@@ -177,7 +177,7 @@
         "name": "Fractional AI Team",
         "meta": "Monthly · ongoing",
         "for": "Scaling AI across the org",
-        "desc": "A senior AI team embedded in yours — strategy, engineering and MLOps on tap, scaling up or down as your roadmap shifts.",
+        "desc": "A senior AI team embedded in yours: strategy, engineering and MLOps, scaling with your roadmap.",
         "deliverables": [
           "Embedded senior AI engineers",
           "Strategy & MLOps support",
@@ -190,33 +190,33 @@
   },
   "process": {
     "label": "How we work",
-    "title": "A clear path from idea to impact — no black boxes",
-    "subtitle": "The same disciplined path on every engagement. You always know where we are, what's next, and why.",
+    "title": "A clear path from idea to impact, no black boxes",
+    "subtitle": "The same path on every engagement. You always know where we are and what's next.",
     "steps": [
       {
         "num": "01",
         "title": "Map",
-        "desc": "We map your goals, data and constraints to find where AI creates measurable value — and honestly flag where it won't yet."
+        "desc": "We find where AI creates measurable value, and honestly flag where it won't yet."
       },
       {
         "num": "02",
         "title": "Prototype",
-        "desc": "We build a working prototype in weeks, so decisions are grounded in something real instead of a slide deck."
+        "desc": "A working prototype in weeks. Decisions grounded in something real, not a slide deck."
       },
       {
         "num": "03",
         "title": "Build",
-        "desc": "We engineer the prototype into a reliable system — evaluated, observable, secure, and ready for real users."
+        "desc": "We engineer it into a reliable system: evaluated, observable, secure, production-ready."
       },
       {
         "num": "04",
         "title": "Scale & enable",
-        "desc": "We roll out, transfer the knowledge to your team, and stay on as advisors as your AI capability compounds."
+        "desc": "We roll out, hand over the knowledge, and stay on as advisors as you scale."
       }
     ]
   },
   "stats": {
-    "lead": "Eight years building software that moves the needle. The numbers behind why teams — from fast-moving startups to global enterprises — partner with Pluscode."
+    "lead": "Eight years building software that moves the needle. The numbers behind why teams, from fast-moving startups to global enterprises, partner with Pluscode."
   },
   "industries": {
     "title": "Sector knowledge, engineering depth",
@@ -389,17 +389,17 @@
     "services": {
       "index": {
         "metaTitle": "Services",
-        "metaDescription": "Web and mobile products, cloud platforms and embedded engineering teams — explore how Pluscode can help, then pick the engagement that fits.",
+        "metaDescription": "Web and mobile products, cloud platforms and embedded engineering teams. Explore how Pluscode can help, then pick the engagement that fits.",
         "eyebrow": "Services",
         "title": "Engineering services, end to end.",
-        "intro": "From web and mobile products to cloud platforms and embedded engineering teams — choose the service you need, or talk to us and we'll shape an engagement around you.",
+        "intro": "From web and mobile products to cloud platforms and embedded engineering teams. Choose the service you need, or talk to us and we'll shape an engagement around you.",
         "view": "View service",
         "cta": "Start a project"
       },
       "teamExtension": {
         "label": "Services",
         "title": "Team Extension",
-        "subtitle": "Senior engineers embedded in your team — shipping on your stack, your process, and your timeline, without the overhead and lead time of hiring.",
+        "subtitle": "Senior engineers embedded in your team, shipping on your stack, your process, and your timeline, without the overhead and lead time of hiring.",
         "breadcrumb": "Team Extension",
         "features": {
           "seniorEngineers": {
@@ -408,7 +408,7 @@
           },
           "embedded": {
             "title": "Fully Embedded",
-            "description": "We work inside your tools, ceremonies, and workflows as part of one team — never a black box."
+            "description": "We work inside your tools, ceremonies, and workflows as part of one team, never a black box."
           },
           "flexibleScaling": {
             "title": "Flexible Scaling",
@@ -1692,14 +1692,14 @@
   "home": {
     "about": {
       "tag": "Who we are",
-      "headingLead": "We don't start with technology —",
+      "headingLead": "We don't start with technology,",
       "headingRest": "we start with people."
     },
     "highlight": {
       "tag": "By the numbers",
       "amount": "150+",
       "text": "Projects delivered for teams from fast-moving startups to global enterprises.",
-      "text2": "Eight years crafting software that drives measurable business impact — from AI and data to web, mobile and cloud.",
+      "text2": "Eight years crafting software that drives measurable business impact, from AI and data to web, mobile and cloud.",
       "features": [
         {
           "title": "AI & Data",
@@ -1721,14 +1721,14 @@
       "titleStart": "How much is manual data entry ",
       "titleEm": "really",
       "titleEnd": " costing you?",
-      "text": "Most teams spend 20–30% of their time moving data between documents and systems. We automate that away.",
+      "text": "Most teams spend 20-30% of their time moving data between documents and systems. We automate that away.",
       "cta": "Find out in 45 minutes"
     },
     "move": {
       "titleStart": "Tell us your ",
       "titleEm": "hardest",
       "titleEnd": " AI problem.",
-      "text": "Fixed-scope discovery, engineering-grade delivery. Book a 30-minute call and we'll map where AI creates real value in your business — no slideware, no obligation.",
+      "text": "Book a 30-minute call. We'll map where AI creates real value in your business. No slideware, no obligation.",
       "cta": "Book a call"
     }
   },

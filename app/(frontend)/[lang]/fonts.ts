@@ -1,26 +1,28 @@
-import localFont from "next/font/local";
-import { Geist_Mono } from "next/font/google";
+import { Fraunces, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 
-/** Pluscode brand typeface (local). */
-export const nohemi = localFont({
-  src: [
-    { path: "../../../public/fonts/Nohemi-Thin.ttf", weight: "100", style: "normal" },
-    { path: "../../../public/fonts/Nohemi-ExtraLight.ttf", weight: "200", style: "normal" },
-    { path: "../../../public/fonts/Nohemi-Light.ttf", weight: "300", style: "normal" },
-    { path: "../../../public/fonts/Nohemi-Regular.ttf", weight: "400", style: "normal" },
-    { path: "../../../public/fonts/Nohemi-Medium.ttf", weight: "500", style: "normal" },
-    { path: "../../../public/fonts/Nohemi-SemiBold.ttf", weight: "600", style: "normal" },
-    { path: "../../../public/fonts/Nohemi-Bold.ttf", weight: "700", style: "normal" },
-    { path: "../../../public/fonts/Nohemi-ExtraBold.ttf", weight: "800", style: "normal" },
-    { path: "../../../public/fonts/Nohemi-Black.ttf", weight: "900", style: "normal" },
-  ],
-  variable: "--font-nohemi",
+/** Editorial serif display — headlines & pull quotes. Variable font: we keep the
+ *  full wght range and the optical-size axis so large display lines stay crisp
+ *  and high-contrast. (next/font forbids combining a fixed `weight` with `axes`.) */
+export const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin", "latin-ext"],
+  axes: ["opsz"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-/** Monospace used for eyebrow labels and small caps. */
-export const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+/** Primary UI / body — humanist grotesque (variable wght). */
+export const hanken = Hanken_Grotesk({
+  variable: "--font-hanken",
+  subsets: ["latin", "latin-ext"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+/** Monospace — eyebrow labels, tags and the wordmark. */
+export const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500"],
   display: "swap",
 });
