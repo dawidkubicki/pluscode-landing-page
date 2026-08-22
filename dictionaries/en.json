@@ -504,7 +504,14 @@
           "title": "Ready to leverage AI?",
           "subtitle": "Let's discuss how machine learning can transform your business operations.",
           "button": "Start a conversation"
-        }
+        },
+        "faqTitle": "Questions, answered",
+        "faq": [
+          { "q": "Build a custom model or buy off-the-shelf?", "a": "Buy when a general model solves it, build when your data or domain is the edge. We benchmark both, then recommend the cheaper path to your accuracy target. No dogma." },
+          { "q": "How do you stop hallucinations?", "a": "RAG grounds answers in your sources, backed by guardrails, citations, and automated evals on every release. We measure hallucination rate and gate deploys on it. Trust comes from tests, not hope." },
+          { "q": "Do we keep the IP and models?", "a": "Yes. You own the code, weights, and pipelines outright. No lock-in, no rent on your own models. We hand over everything and document it so your team can run it." },
+          { "q": "How do you keep models accurate after launch?", "a": "MLOps with monitoring, drift alerts, and eval suites in CI. When quality slips, we retrain or tune fast. Accuracy is a system we maintain, not a launch-day snapshot." }
+        ]
       },
       "analytics": {
         "label": "AI & Data",
@@ -559,7 +566,14 @@
           "title": "Unlock your data's potential",
           "subtitle": "Let's build a data-driven foundation for better business decisions.",
           "button": "Get started"
-        }
+        },
+        "faqTitle": "Questions, answered",
+        "faq": [
+          { "q": "Do we need this before AI?", "a": "Mostly yes. AI is only as good as the data feeding it. A clean, governed data layer makes models cheaper, faster, and more accurate. We build the foundation AI actually needs." },
+          { "q": "How long until we see dashboards?", "a": "First useful dashboards in weeks, not quarters. We ship a working slice early, then extend. You get answers to real questions fast while the wider warehouse grows underneath." },
+          { "q": "Will it work with our existing stack?", "a": "Yes. We integrate with your warehouse, BI, and cloud, whether that is Snowflake, BigQuery, dbt, or Power BI. We meet your stack where it is, no rip and replace." },
+          { "q": "How do you keep data secure and compliant?", "a": "Access controls, encryption, lineage, and audit built in from day one. We design for GDPR and your internal policy. Governance is part of the pipeline, not a bolt-on afterthought." }
+        ]
       },
       "consulting": {
         "label": "AI & Data",
@@ -614,7 +628,14 @@
           "title": "Need expert guidance?",
           "subtitle": "Our AI consultants are ready to help you navigate the path to AI success.",
           "button": "Schedule a consultation"
-        }
+        },
+        "faqTitle": "Questions, answered",
+        "faq": [
+          { "q": "How do you find the right use cases?", "a": "We audit your workflows and data, then rank opportunities by value and feasibility. You get a shortlist of PoCs with clear ROI, not a wish list. High-impact, low-risk bets first." },
+          { "q": "How long until we see value?", "a": "A prioritized roadmap in the first two weeks, a first working PoC in four to six. We optimize for shipped outcomes, so value lands early, not after a year of decks." },
+          { "q": "Do we need clean data first?", "a": "No. We start with what you have and fix data only where a use case needs it. Perfect data is a myth. We scope the minimum required to ship." },
+          { "q": "How is this different from a big consultancy?", "a": "Engineers run the engagement, not analysts. We build and deploy, not just advise. Smaller team, senior people, production code you own. Less slideware, more shipped." }
+        ]
       },
       "webDevelopment": {
         "label": "Services",

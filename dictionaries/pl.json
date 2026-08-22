@@ -504,7 +504,14 @@
           "title": "Gotowy wykorzystać AI?",
           "subtitle": "Porozmawiajmy o tym, jak machine learning może zmienić Twoje operacje biznesowe.",
           "button": "Rozpocznij rozmowę"
-        }
+        },
+        "faqTitle": "Odpowiadamy na pytania",
+        "faq": [
+          { "q": "Budować własny model czy kupić gotowy?", "a": "Kupuj, gdy ogólny model wystarcza, buduj, gdy przewagą są Twoje dane lub domena. Testujemy oba i wskazujemy tańszą drogę do celu jakościowego. Bez dogmatów." },
+          { "q": "Jak eliminujecie halucynacje?", "a": "RAG osadza odpowiedzi w Twoich źródłach, do tego guardrails, cytowania i automatyczne evals przy każdym wydaniu. Mierzymy poziom halucynacji i blokujemy wdrożenie, gdy rośnie. Zaufanie z testów, nie z nadziei." },
+          { "q": "Czy modele i IP zostają nasze?", "a": "Tak. Kod, wagi i pipeline'y są w pełni Twoje. Bez lock-inu, bez opłat za dostęp do własnych modeli. Przekazujemy wszystko i dokumentujemy, by Twój zespół mógł to prowadzić." },
+          { "q": "Jak utrzymujecie dokładność modeli po wdrożeniu?", "a": "MLOps z monitoringiem, alertami o dryfcie i evalami w CI. Gdy jakość spada, szybko dostrajamy lub trenujemy od nowa. Dokładność to utrzymywany system, nie zdjęcie z dnia startu." }
+        ]
       },
       "analytics": {
         "label": "AI i Dane",
@@ -559,7 +566,14 @@
           "title": "Odblokuj potencjał swoich danych",
           "subtitle": "Zbudujmy fundamenty oparte na danych dla lepszych decyzji biznesowych.",
           "button": "Zacznij teraz"
-        }
+        },
+        "faqTitle": "Odpowiadamy na pytania",
+        "faq": [
+          { "q": "Czy potrzebujemy tego przed AI?", "a": "Zwykle tak. AI jest tak dobre jak dane, które je zasilają. Uporządkowana, zarządzana warstwa danych czyni modele tańszymi, szybszymi i dokładniejszymi. Budujemy fundament, którego AI naprawdę potrzebuje." },
+          { "q": "Jak szybko zobaczymy dashboardy?", "a": "Pierwsze użyteczne dashboardy w tygodnie, nie kwartały. Wdrażamy działający wycinek wcześnie, potem rozbudowujemy. Szybko dostajesz odpowiedzi na realne pytania, a hurtownia rośnie pod spodem." },
+          { "q": "Czy zadziała z naszym obecnym stackiem?", "a": "Tak. Integrujemy się z Twoją hurtownią, BI i chmurą, czy to Snowflake, BigQuery, dbt, czy Power BI. Wchodzimy w Twój stack takim, jaki jest, bez wymiany wszystkiego." },
+          { "q": "Jak dbacie o bezpieczeństwo i zgodność danych?", "a": "Kontrola dostępu, szyfrowanie, lineage i audyt od pierwszego dnia. Projektujemy pod RODO i Twoją politykę wewnętrzną. Zarządzanie jest częścią pipeline'u, nie dodatkiem na koniec." }
+        ]
       },
       "consulting": {
         "label": "AI i Dane",
@@ -614,7 +628,14 @@
           "title": "Potrzebujesz eksperckiego doradztwa?",
           "subtitle": "Nasi konsultanci AI są gotowi pomóc Ci na drodze do sukcesu z AI.",
           "button": "Umów konsultację"
-        }
+        },
+        "faqTitle": "Odpowiadamy na pytania",
+        "faq": [
+          { "q": "Jak znajdujecie właściwe zastosowania AI?", "a": "Analizujemy Twoje procesy i dane, potem szeregujemy szanse według wartości i wykonalności. Dostajesz krótką listę PoC z jasnym ROI, nie listę życzeń. Najpierw pewne, wysokie zwroty." },
+          { "q": "Kiedy zobaczymy pierwsze efekty?", "a": "Priorytetowa mapa drogowa w pierwsze dwa tygodnie, pierwszy działający PoC w cztery do sześciu. Stawiamy na wdrożone rezultaty, więc wartość przychodzi szybko, nie po roku prezentacji." },
+          { "q": "Czy najpierw potrzebujemy czystych danych?", "a": "Nie. Zaczynamy od tego, co masz, i porządkujemy dane tylko tam, gdzie wymaga tego konkretny przypadek. Idealne dane nie istnieją. Robimy niezbędne minimum, żeby wdrożyć." },
+          { "q": "Czym różnicie się od dużej firmy doradczej?", "a": "Projekt prowadzą inżynierowie, nie analitycy. Budujemy i wdrażamy, nie tylko doradzamy. Mniejszy zespół, seniorzy, kod produkcyjny, który jest Twój. Mniej slajdów, więcej wdrożeń." }
+        ]
       },
       "webDevelopment": {
         "label": "Usługi",
