@@ -1,20 +1,22 @@
 import Hero from "./components/hero";
-import Marquee from "./components/marquee";
-import AboutIntro from "./components/about-intro";
+import Trust from "./components/trust";
 import Services from "./components/services";
-import Highlight from "./components/highlight";
+import Offerings from "./components/offerings";
+import Process from "./components/process";
+import UseCases from "./components/use-cases";
+import Banner from "./components/banner";
 import Industries from "./components/industries";
 import Portfolio from "./components/portfolio";
-import Stats from "./components/stats";
+import Reports from "./components/reports";
 import Testimonial from "./components/testimonial";
 import Insights from "./components/insights";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
 import { isLocale, defaultLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
-import { getFeatured, contactLinks } from "@/lib/team";
 
-// Revalidate so CMS-managed content (case studies, insights) refreshes periodically.
+// Revalidate so CMS-managed content (case studies, insights, reports,
+// use cases) refreshes periodically.
 export const revalidate = 60;
 
 export default async function Home({
@@ -25,26 +27,22 @@ export default async function Home({
   const { lang } = await params;
   const locale: Locale = isLocale(lang) ? lang : defaultLocale;
   const dict = getDictionary(locale);
-  const featured = await getFeatured(locale);
-  const { whatsappUrl, telUrl } = contactLinks(featured?.phone);
 
   return (
     <main>
-      <Hero
-        dict={dict.hero}
-        featured={featured}
-        whatsappUrl={whatsappUrl}
-        telUrl={telUrl}
-      />
-      <Marquee />
-      <AboutIntro locale={locale} />
+      <Hero dict={dict.hero} />
+      <Trust locale={locale} />
       <Services locale={locale} />
-      <Highlight locale={locale} />
+      <Offerings locale={locale} />
+      <Process locale={locale} />
+      <UseCases locale={locale} />
+      <Banner dict={dict.banners.documents} />
       <Industries locale={locale} />
       <Portfolio locale={locale} />
-      <Stats locale={locale} />
+      <Reports locale={locale} />
       <Testimonial locale={locale} />
       <Insights locale={locale} />
+      <Banner dict={dict.banners.move} className="border-t border-night" />
       <Contact locale={locale} />
       <Footer locale={locale} />
     </main>

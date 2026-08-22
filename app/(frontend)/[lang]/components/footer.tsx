@@ -1,134 +1,138 @@
-import { Reveal } from "./motion";
 import LocaleLink from "./locale-link";
 import { LinkedInIcon, InstagramIcon } from "./icons";
 import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 
+const linkCls = "text-[15px] text-bone-dim transition-colors hover:text-bone";
+
 const socials = [
   { label: "LinkedIn", Icon: LinkedInIcon, href: "https://www.linkedin.com/company/pluscode" },
-  { label: "Instagram", Icon: InstagramIcon, href: "https://instagram.com" },
+  { label: "Instagram", Icon: InstagramIcon, href: "https://www.instagram.com/pluscode" },
 ];
-
-const linkCls = "text-[15px] text-bone/90 transition-colors hover:text-lime";
 
 export default function Footer({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
   const nav = dict.navigation;
-  const { tagline, columns, privacyPolicy, termsOfUse, sitemap, allRightsReserved } =
-    dict.footer;
+  const f = dict.footer;
 
-  const serviceLinks = [
-    { label: nav.servicesItems.webDevelopment.title, href: "/services/web-development" },
-    { label: nav.servicesItems.mobileApps.title, href: "/services/mobile" },
-    { label: nav.servicesItems.cloudSolutions.title, href: "/services/cloud" },
-  ];
-
-  const aiLinks = [
-    { label: nav.aiDataItems.machineLearning.title, href: "/ai-data/machine-learning" },
-    { label: nav.aiDataItems.dataAnalytics.title, href: "/ai-data/analytics" },
-    { label: nav.aiDataItems.aiConsulting.title, href: "/ai-data/consulting" },
-  ];
-
-  const companyLinks = [
-    { label: nav.about, href: "/about" },
-    { label: nav.insights, href: "/insights" },
-    { label: "Case Studies", href: "/case-studies" },
-    { label: nav.getInTouch, href: "/contact" },
-  ];
-
-  const linkColumns = [
-    { title: nav.services, links: serviceLinks },
-    { title: nav.aiData, links: aiLinks },
-    { title: columns.company, links: companyLinks },
+  const columns = [
+    {
+      title: nav.aiData,
+      links: [
+        { label: nav.aiDataItems.machineLearning.title, href: "/ai-data/machine-learning" },
+        { label: nav.aiDataItems.dataAnalytics.title, href: "/ai-data/analytics" },
+        { label: nav.aiDataItems.aiConsulting.title, href: "/ai-data/consulting" },
+      ],
+    },
+    {
+      title: nav.services,
+      links: [
+        { label: nav.servicesItems.webDevelopment.title, href: "/services/web-development" },
+        { label: nav.servicesItems.mobileApps.title, href: "/services/mobile" },
+        { label: nav.servicesItems.cloudSolutions.title, href: "/services/cloud" },
+        { label: nav.servicesItems.teamExtension.title, href: "/services/team-extension" },
+      ],
+    },
+    {
+      title: f.columns.company,
+      links: [
+        { label: nav.about, href: "/about" },
+        { label: nav.workshops, href: "/#workshops" },
+        { label: nav.caseStudies, href: "/case-studies" },
+        { label: nav.insights, href: "/insights" },
+        { label: f.sitemap, href: "/site-map" },
+      ],
+    },
   ];
 
   return (
-    <footer className="bg-night px-5 pb-10 pt-20 text-bone sm:px-8">
-      <div className="mx-auto max-w-[1500px]">
-        <div className="grid gap-12 lg:grid-cols-[1.6fr_repeat(3,1fr)_1.2fr]">
-          <Reveal>
-            <div>
-              <LocaleLink href="/" className="display text-4xl text-bone sm:text-5xl">
-                Pluscode<span className="align-super text-[0.4em] text-lime">+</span>
-              </LocaleLink>
-              <p className="mt-5 max-w-xs text-lg leading-snug text-bone-soft">
-                {tagline}
-              </p>
-            </div>
-          </Reveal>
+    <footer className="border-t border-white/[0.08] bg-night-deep text-bone-dim">
+      <div className="mx-auto max-w-[1240px] px-5 pb-12 pt-20 sm:px-10 sm:pt-24">
+        {/* Brand row */}
+        <LocaleLink href="/" aria-label="Pluscode home" className="inline-block">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/logo/pluscode-logo.svg"
+            alt="Pluscode"
+            className="h-9 w-auto"
+          />
+        </LocaleLink>
+        <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-bone-soft">
+          {f.tagline}
+        </p>
 
-          {linkColumns.map((col) => (
-            <Reveal key={col.title} delay={0.05}>
-              <div>
-                <h3 className="font-mono text-[11px] uppercase tracking-[0.18em] text-bone-soft">
-                  {col.title}
-                </h3>
-                <ul className="mt-5 space-y-3">
-                  {col.links.map((l) => (
-                    <li key={l.href}>
-                      <LocaleLink href={l.href} className={linkCls}>
-                        {l.label}
-                      </LocaleLink>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-          ))}
-
-          <Reveal delay={0.05}>
-            <div>
-              <h3 className="font-mono text-[11px] uppercase tracking-[0.18em] text-bone-soft">
-                {columns.contact}
-              </h3>
-              <ul className="mt-5 space-y-3">
-                <li>
-                  <a href="mailto:contact@pluscode.io" className={linkCls}>
-                    contact@pluscode.io
-                  </a>
-                </li>
-                <li>
-                  <a href="tel:+48667688927" className={linkCls}>
-                    +48 667 688 927
-                  </a>
-                </li>
-                <li>
-                  <LocaleLink href="/contact" className={linkCls}>
-                    Kosowska 12/3, Poznań
-                  </LocaleLink>
-                </li>
-              </ul>
-            </div>
-          </Reveal>
-        </div>
-
-        <div className="mt-16 flex flex-col gap-6 border-t border-night-line pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-bone-soft">
-            © {new Date().getFullYear()} Pluscode Sp. z o.o. · KRS 0000811470 ·
-            NIP PL7812002984 · REGON 384741150
-          </p>
-          <div className="flex items-center gap-5">
-            <div className="flex items-center gap-4 text-[13px] text-bone-soft">
-              <LocaleLink href="/privacy-policy" className="transition-colors hover:text-lime">
-                {privacyPolicy}
-              </LocaleLink>
-              <LocaleLink href="/terms-of-use" className="transition-colors hover:text-lime">
-                {termsOfUse}
-              </LocaleLink>
-              <LocaleLink href="/site-map" className="transition-colors hover:text-lime">
-                {sitemap}
-              </LocaleLink>
-            </div>
-            <div className="flex items-center gap-4 text-bone-soft">
-              {socials.map(({ label, Icon, href }) => (
-                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="transition-colors hover:text-lime">
-                  <Icon className="size-[18px]" />
-                </a>
+        {/* Link columns + contact block */}
+        <div className="mt-14 grid gap-12 sm:grid-cols-2 lg:grid-cols-[repeat(3,minmax(0,1fr))_1.3fr] lg:gap-10">
+          {columns.map((col) => (
+            <div key={col.title} className="flex flex-col gap-3.5">
+              <span className="text-[13px] font-semibold uppercase tracking-[0.08em] text-bone">
+                {col.title}
+              </span>
+              {col.links.map((l) => (
+                <LocaleLink key={l.href} href={l.href} className={linkCls}>
+                  {l.label}
+                </LocaleLink>
               ))}
             </div>
+          ))}
+
+          <div className="flex flex-col items-start gap-3.5">
+            <span className="text-[13px] font-semibold uppercase tracking-[0.08em] text-bone">
+              {f.columns.connect}
+            </span>
+            <a href="mailto:contact@pluscode.io" className={linkCls}>
+              contact@pluscode.io
+            </a>
+            <a href="tel:+48667688927" className={linkCls}>
+              +48 667 688 927
+            </a>
+            <span className="text-[15px] text-bone-dim">
+              Kosowska 12/3, 60-464 Poznań, Poland
+            </span>
+            <LocaleLink
+              href="/contact"
+              className="mt-2 rounded-[2px] bg-lime px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-lime-bright"
+            >
+              {nav.getInTouch}
+            </LocaleLink>
           </div>
         </div>
-        <p className="sr-only">{allRightsReserved}</p>
+
+        {/* Social + legal links */}
+        <div className="mt-16 flex flex-col justify-between gap-6 border-t border-white/[0.08] pt-7 sm:flex-row sm:items-center">
+          <div className="flex items-center gap-4">
+            {socials.map(({ label, Icon, href }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="flex size-10 items-center justify-center rounded-full border border-white/15 text-bone-dim transition-colors hover:border-bone hover:text-bone"
+              >
+                <Icon className="size-[18px]" />
+              </a>
+            ))}
+          </div>
+          <div className="flex flex-wrap items-center gap-x-7 gap-y-2 text-sm">
+            <LocaleLink href="/privacy-policy" className={linkCls}>
+              {f.privacyPolicy}
+            </LocaleLink>
+            <LocaleLink href="/terms-of-use" className={linkCls}>
+              {f.termsOfUse}
+            </LocaleLink>
+          </div>
+        </div>
+
+        {/* Registry + copyright */}
+        <div className="mt-8 flex flex-col justify-between gap-3 text-[13px] sm:flex-row">
+          <span>
+            © {new Date().getFullYear()} Pluscode Sp. z o.o. {f.allRightsReserved}
+          </span>
+          <span>
+            {f.krs} 0000811470 · {f.nip} 7812002984 · {f.regon} 384741150
+          </span>
+        </div>
       </div>
     </footer>
   );

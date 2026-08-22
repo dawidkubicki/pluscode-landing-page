@@ -1,28 +1,30 @@
 {
   "announcement": {
-    "text": "New: We're now offering free AI consultations for startups.",
-    "linkText": "Learn more",
+    "text": "New: AI Opportunity Workshops — from use case to an ROI-backed plan in one session.",
+    "linkText": "Book a workshop",
     "linkUrl": "/contact"
   },
   "navigation": {
-    "aiData": "AI & Data",
-    "services": "Services",
+    "aiData": "AI Services",
+    "services": "Engineering",
+    "workshops": "Workshops",
     "insights": "Insights",
-    "about": "About us",
-    "getInTouch": "Get in touch",
+    "caseStudies": "Our work",
+    "about": "About",
+    "getInTouch": "Book a call",
     "language": "Language",
     "aiDataItems": {
       "machineLearning": {
-        "title": "Machine Learning",
-        "description": "Custom ML models and AI solutions"
+        "title": "Generative AI & LLMs",
+        "description": "Copilots, RAG and agents grounded in your data"
       },
       "dataAnalytics": {
-        "title": "Data Analytics",
-        "description": "Transform data into actionable insights"
+        "title": "ML & Data Foundations",
+        "description": "The data and models that make AI possible"
       },
       "aiConsulting": {
-        "title": "AI Consulting",
-        "description": "Strategic AI implementation guidance"
+        "title": "AI Strategy & Consulting",
+        "description": "Roadmaps, readiness audits and governance"
       }
     },
     "servicesItems": {
@@ -35,80 +37,236 @@
         "description": "Native and cross-platform solutions"
       },
       "cloudSolutions": {
-        "title": "Cloud Solutions",
-        "description": "Infrastructure and cloud migration"
+        "title": "Cloud & MLOps",
+        "description": "Infrastructure that runs AI in production"
+      },
+      "teamExtension": {
+        "title": "Team Extension",
+        "description": "Senior engineers embedded in your team"
       }
     }
   },
   "hero": {
-    "headlineStart": "CRAFTING SOFTWARE THAT",
-    "rotatingWords": [
-      "MATTERS",
-      "INSPIRES",
-      "TRANSFORMS",
-      "SCALES"
-    ],
-    "headlineHighlight": "SOFTWARE",
-    "subtext": "From AI-driven innovation to custom applications. We deliver expert software development and consultancy that drives measurable business impact.",
-    "needAdvice": "Need advice?",
-    "tags": [
-      "AI & DATA",
-      "SOFTWARE",
-      "CONSULTING"
-    ],
-    "ctaPrimary": "Get in touch",
-    "ctaSecondary": "Explore services",
+    "headlineStart": "We turn AI ambition into",
+    "subtext": "PlusCode is a boutique AI consultancy for teams that need results, not slideware. We find the use cases with real ROI, prove them in weeks, and engineer the systems that run them in production.",
+    "ctaPrimary": "Book a discovery call",
+    "ctaSecondary": "See our work",
     "online": "Online",
     "talkTo": "Chat with",
     "call": "Call",
     "fallbackName": "Dawid Kubicki",
-    "fallbackRole": "CEO & Founder"
+    "fallbackRole": "CEO & Founder",
+    "eyebrow": "AI consulting & applied AI",
+    "headlineEm": "systems that ship",
+    "headlineEnd": ".",
+    "stats": [
+      {
+        "value": "40+",
+        "label": "AI & software projects shipped across 8 industries"
+      },
+      {
+        "value": "99.2%",
+        "label": "Straight-through processing on our document-AI pipelines"
+      },
+      {
+        "value": "6 yrs",
+        "label": "Building AI & software systems since 2019"
+      },
+      {
+        "value": "2 wks",
+        "label": "From kickoff to a working AI prototype, typically"
+      }
+    ]
+  },
+  "trust": {
+    "label": "Trusted by teams shipping AI to production",
+    "clients": ["Żabka", "UBS", "EBM Dental", "Startups & scale-ups"]
   },
   "services": {
-    "title": "What we do",
-    "subtitle": "We craft digital experiences that transform businesses",
-    "items": {
-      "ai": {
-        "title": "AI & Machine Learning",
-        "description": "Intelligent solutions that learn, adapt, and evolve with your business needs.",
-        "tagline": "The future, today"
+    "label": "Capabilities",
+    "title": "From AI strategy to systems in production",
+    "subtitle": "One senior team, from the first strategic question to a system your users rely on every day. Engineers staff every engagement — not slide decks.",
+    "items": [
+      {
+        "num": "01",
+        "title": "AI Strategy & Roadmap",
+        "desc": "We separate AI signal from noise: an honest readiness check, the use cases with real ROI, and a sequenced roadmap from pilot to production.",
+        "tags": "readiness audit · use-case discovery · roadmapping"
       },
-      "web": {
-        "title": "Web Development",
-        "description": "Lightning-fast, beautifully crafted web applications built for scale.",
-        "tagline": "Pixel perfect"
+      {
+        "num": "02",
+        "title": "Generative AI & LLM Apps",
+        "desc": "Copilots, assistants and RAG systems grounded in your data — accurate, cited, and built on evals you can actually trust.",
+        "tags": "RAG · copilots · evals · guardrails"
       },
-      "mobile": {
-        "title": "Mobile Apps",
-        "description": "Native experiences that users love, across every platform.",
-        "tagline": "Always in hand"
+      {
+        "num": "03",
+        "title": "AI Agents & Automation",
+        "desc": "Agents that plan, call tools and take real work off your team's plate — with humans in the loop where it counts.",
+        "tags": "agentic workflows · orchestration · human-in-the-loop"
       },
-      "cloud": {
-        "title": "Cloud Solutions",
-        "description": "Robust infrastructure that grows with your ambitions.",
-        "tagline": "Infinitely scalable"
+      {
+        "num": "04",
+        "title": "Intelligent Document Processing",
+        "desc": "Our flagship practice. LLM pipelines that extract, classify and validate data from documents — auditable automation instead of manual entry.",
+        "tags": "OCR + LLM · extraction · straight-through"
+      },
+      {
+        "num": "05",
+        "title": "ML & Data Foundations",
+        "desc": "From data pipelines to deployed models, plus the MLOps discipline that keeps them accurate long after launch.",
+        "tags": "ML models · data infrastructure · MLOps"
+      },
+      {
+        "num": "06",
+        "title": "AI Enablement & Governance",
+        "desc": "We upskill your team and set the guardrails, so AI capability — and control — stays in-house after we ramp down.",
+        "tags": "training · governance · adoption"
       }
-    }
+    ]
+  },
+  "offerings": {
+    "label": "Ways to work together",
+    "title": "Start with a workshop, scale into a system",
+    "subtitle": "Productized engagements with a clear scope, timeline and deliverable — so you know exactly what you get before we start. Fixed-scope discovery first, build second: the de-risked path the best AI teams use.",
+    "note": "Every engagement starts with a free 30-minute call. No obligation — and you'll talk to a senior engineer, not a sales rep.",
+    "forLabel": "Best for",
+    "deliverablesLabel": "You leave with",
+    "featuredLabel": "Most popular",
+    "items": [
+      {
+        "name": "AI Opportunity Workshop",
+        "meta": "Half day · fixed fee",
+        "for": "Leaders scoping where to start",
+        "desc": "A focused working session to pressure-test your AI ideas against ROI and feasibility — and leave with a clear first move.",
+        "deliverables": [
+          "Prioritized use-case shortlist",
+          "ROI & feasibility scoring",
+          "Your recommended first pilot"
+        ],
+        "cta": "Book a workshop",
+        "featured": false
+      },
+      {
+        "name": "AI Discovery Sprint",
+        "meta": "2 weeks · fixed scope",
+        "for": "Teams ready to prove a use case",
+        "desc": "We go deep on one use case — data, feasibility, architecture and a working prototype — so you can commit to the build with confidence.",
+        "deliverables": [
+          "Technical feasibility assessment",
+          "Working prototype",
+          "Costed delivery roadmap"
+        ],
+        "cta": "Book a sprint",
+        "featured": true
+      },
+      {
+        "name": "GenAI Proof-of-Concept",
+        "meta": "4–6 weeks",
+        "for": "A validated use case that needs proof",
+        "desc": "A production-grade pilot in your environment — measured against real evals and ready to pitch internally for rollout.",
+        "deliverables": [
+          "Production-ready pilot",
+          "Evaluation harness & metrics",
+          "Rollout plan"
+        ],
+        "cta": "Scope a pilot",
+        "featured": false
+      },
+      {
+        "name": "Fractional AI Team",
+        "meta": "Monthly · ongoing",
+        "for": "Scaling AI across the org",
+        "desc": "A senior AI team embedded in yours — strategy, engineering and MLOps on tap, scaling up or down as your roadmap shifts.",
+        "deliverables": [
+          "Embedded senior AI engineers",
+          "Strategy & MLOps support",
+          "Flexible monthly capacity"
+        ],
+        "cta": "Talk to us",
+        "featured": false
+      }
+    ]
+  },
+  "process": {
+    "label": "How we work",
+    "title": "A clear path from idea to impact — no black boxes",
+    "subtitle": "The same disciplined path on every engagement. You always know where we are, what's next, and why.",
+    "steps": [
+      {
+        "num": "01",
+        "title": "Map",
+        "desc": "We map your goals, data and constraints to find where AI creates measurable value — and honestly flag where it won't yet."
+      },
+      {
+        "num": "02",
+        "title": "Prototype",
+        "desc": "We build a working prototype in weeks, so decisions are grounded in something real instead of a slide deck."
+      },
+      {
+        "num": "03",
+        "title": "Build",
+        "desc": "We engineer the prototype into a reliable system — evaluated, observable, secure, and ready for real users."
+      },
+      {
+        "num": "04",
+        "title": "Scale & enable",
+        "desc": "We roll out, transfer the knowledge to your team, and stay on as advisors as your AI capability compounds."
+      }
+    ]
+  },
+  "stats": {
+    "lead": "Eight years building software that moves the needle. The numbers behind why teams — from fast-moving startups to global enterprises — partner with Pluscode."
   },
   "industries": {
-    "title": "Delivering tailored IT solutions for every sector.",
-    "subtitle": "From startups to enterprises, we understand your industry's unique challenges and build software that drives real results.",
-    "cta": "Let's talk",
-    "items": {
-      "finance": "FINANCIAL SERVICES",
-      "healthcare": "HEALTHCARE",
-      "ecommerce": "E-COMMERCE & RETAIL",
-      "hr": "HR & RECRUITMENT",
-      "logistics": "LOGISTICS & TRANSPORT",
-      "ai": "AI & MACHINE LEARNING",
-      "saas": "SAAS & STARTUPS",
-      "manufacturing": "MANUFACTURING & INDUSTRY"
-    }
+    "title": "Sector knowledge, engineering depth",
+    "subtitle": "Every industry hides its complexity in different places. We've learned where to look.",
+    "items": [
+      {
+        "num": "01",
+        "name": "Financial Services",
+        "note": "Document-heavy workflows, compliance automation"
+      },
+      {
+        "num": "02",
+        "name": "Healthcare",
+        "note": "Patient records, scheduling, secure data flows"
+      },
+      {
+        "num": "03",
+        "name": "E-commerce & Retail",
+        "note": "Personalization, demand forecasting"
+      },
+      {
+        "num": "04",
+        "name": "HR & Recruitment",
+        "note": "CV parsing, candidate matching at scale"
+      },
+      {
+        "num": "05",
+        "name": "Logistics & Transport",
+        "note": "Route optimization, freight document automation"
+      },
+      {
+        "num": "06",
+        "name": "Legal",
+        "note": "Contract analysis, clause extraction, review"
+      },
+      {
+        "num": "07",
+        "name": "SaaS & Startups",
+        "note": "Product engineering from MVP to scale"
+      },
+      {
+        "num": "08",
+        "name": "Manufacturing",
+        "note": "Quality data, predictive maintenance"
+      }
+    ]
   },
   "portfolio": {
-    "label": "Case Studies",
-    "title": "Our work speaks for itself",
-    "subtitle": "Discover how we've helped leading companies transform their digital presence and achieve remarkable results.",
+    "label": "Selected work",
+    "title": "Impact our clients can measure",
     "cta": "View all case studies",
     "items": {
       "zabka": {
@@ -120,19 +278,24 @@
         "category": "Mobile App Redesign",
         "title": "Team extension for mobile design revamp at speed",
         "description": "Seamless and consistent experience, unified payment flows, and easier in-app navigation"
+      },
+      "ebm": {
+        "category": "Web Development & UX",
+        "title": "Modern web platform for a premium dental clinic",
+        "description": "Full design and Next.js development for EBM Dental Clinic, a multi-specialist practice in Poznań."
       }
     }
   },
   "testimonial": {
-    "quote": "We never start with technology — we start with people. Technology is a tool, not a destination. When you truly listen to what businesses need, the right choices become clear.",
+    "quote": "We never start with technology. We start with people. When you truly listen to what businesses need, the right choices become clear.",
     "name": "Dawid Kubicki",
-    "title": "CEO & Founder at Pluscode"
+    "title": "CEO & Founder, Pluscode"
   },
   "insights": {
     "label": "Insights",
-    "title": "Latest from our blog",
+    "title": "Our latest thinking on AI",
     "subtitle": "Expert perspectives on technology, business, and innovation from our team.",
-    "viewAll": "View all articles",
+    "viewAll": "See all insights",
     "readMore": "Read article",
     "minRead": "min read",
     "cta": "View all articles",
@@ -166,22 +329,22 @@
   },
   "contact": {
     "label": "Get in Touch",
-    "title": "Let's build something amazing together",
-    "subtitle": "Have a project in mind? We'd love to hear about it. Drop us a message and we'll get back to you as soon as possible.",
+    "title": "Start with a conversation, not a contract.",
+    "subtitle": "In 45 minutes we'll map where AI can create measurable value in your organization, and where it can't.",
     "info": {
       "email": "Email us at",
       "location": "Based in"
     },
     "form": {
       "name": "Your name",
-      "email": "Email address",
+      "email": "Work email",
       "company": "Company (optional)",
-      "message": "Tell us about your project",
-      "submit": "Send message",
+      "message": "What would you like to explore? (e.g. document automation, AI strategy, a product build)",
+      "submit": "Book my call",
       "sending": "Sending...",
       "privacyPrefix": "By submitting, you agree to our",
       "privacyLink": "privacy policy",
-      "privacySuffix": "."
+      "privacySuffix": ". No spam, no sales sequence. A real reply from an engineer."
     },
     "validation": {
       "nameRequired": "Name is required",
@@ -193,9 +356,10 @@
       "captchaRequired": "Please complete the captcha verification"
     },
     "success": {
-      "title": "Message sent!",
-      "message": "Thank you for reaching out. We'll get back to you within 24 hours."
-    }
+      "title": "Thank you! We'll reply within 24h",
+      "message": "We've received your message. A real engineer will get back to you within one business day."
+    },
+    "formTitle": "Book your free AI strategy call"
   },
   "footer": {
     "allRightsReserved": "All rights reserved.",
@@ -205,22 +369,88 @@
     "krs": "KRS",
     "nip": "VAT-ID",
     "regon": "REGON",
-    "tagline": "Crafting software that matters — from AI-driven innovation to custom applications and cloud.",
+    "tagline": "Software and AI systems that create measurable business impact.",
     "columns": {
       "company": "Company",
       "explore": "Explore",
       "content": "Content",
-      "contact": "Contact"
+      "contact": "Contact",
+      "connect": "Connect",
+      "legal": "Legal"
     }
   },
   "shared": {
     "home": "Home",
     "readMore": "Read more",
-    "viewCaseStudy": "View case study",
+    "viewCaseStudy": "Read the case study",
     "learnMore": "Learn more"
   },
   "pages": {
     "services": {
+      "index": {
+        "metaTitle": "Services",
+        "metaDescription": "Web and mobile products, cloud platforms and embedded engineering teams — explore how Pluscode can help, then pick the engagement that fits.",
+        "eyebrow": "Services",
+        "title": "Engineering services, end to end.",
+        "intro": "From web and mobile products to cloud platforms and embedded engineering teams — choose the service you need, or talk to us and we'll shape an engagement around you.",
+        "view": "View service",
+        "cta": "Start a project"
+      },
+      "teamExtension": {
+        "label": "Services",
+        "title": "Team Extension",
+        "subtitle": "Senior engineers embedded in your team — shipping on your stack, your process, and your timeline, without the overhead and lead time of hiring.",
+        "breadcrumb": "Team Extension",
+        "features": {
+          "seniorEngineers": {
+            "title": "Senior Engineers",
+            "description": "Vetted senior developers who hit the ground running and raise the bar on your codebase."
+          },
+          "embedded": {
+            "title": "Fully Embedded",
+            "description": "We work inside your tools, ceremonies, and workflows as part of one team — never a black box."
+          },
+          "flexibleScaling": {
+            "title": "Flexible Scaling",
+            "description": "Scale the team up or down as your roadmap shifts, with no long hiring or notice cycles."
+          },
+          "fullStack": {
+            "title": "Full-Stack Coverage",
+            "description": "Web, mobile, cloud, data, and AI expertise on tap, matched to exactly what you need."
+          },
+          "ownership": {
+            "title": "Real Ownership",
+            "description": "Engineers who own outcomes and communicate proactively, not just close tickets."
+          },
+          "knowledgeTransfer": {
+            "title": "Knowledge Transfer",
+            "description": "Documentation and pairing so capability stays with your team after we ramp down."
+          }
+        },
+        "process": {
+          "scoping": {
+            "title": "Scoping",
+            "description": "We map your goals, stack, and gaps to define the exact roles you need."
+          },
+          "matching": {
+            "title": "Matching",
+            "description": "You meet hand-picked engineers and approve who joins your team."
+          },
+          "onboarding": {
+            "title": "Onboarding",
+            "description": "We integrate into your tools and rituals and start contributing within days."
+          },
+          "delivery": {
+            "title": "Delivery",
+            "description": "We ship alongside your team, adjusting capacity as priorities evolve."
+          }
+        },
+        "cta": {
+          "title": "Need more hands on deck?",
+          "subtitle": "Tell us where your team needs support and we'll assemble the right engineers.",
+          "button": "Extend your team"
+        }
+      },
       "machineLearning": {
         "label": "AI & Data",
         "title": "Machine Learning Solutions",
@@ -1485,5 +1715,62 @@
         }
       ]
     }
+  },
+  "banners": {
+    "documents": {
+      "titleStart": "How much is manual data entry ",
+      "titleEm": "really",
+      "titleEnd": " costing you?",
+      "text": "Most teams spend 20–30% of their time moving data between documents and systems. We automate that away.",
+      "cta": "Find out in 45 minutes"
+    },
+    "move": {
+      "titleStart": "Tell us your ",
+      "titleEm": "hardest",
+      "titleEnd": " AI problem.",
+      "text": "Fixed-scope discovery, engineering-grade delivery. Book a 30-minute call and we'll map where AI creates real value in your business — no slideware, no obligation.",
+      "cta": "Book a call"
+    }
+  },
+  "useCases": {
+    "label": "Applied AI, in production",
+    "title": "Ambition in action",
+    "items": [
+      {
+        "category": "Document AI",
+        "title": "Invoice data flowing straight into the ERP, no manual entry"
+      },
+      {
+        "category": "Conversational AI",
+        "title": "A support assistant that resolves half of all tickets"
+      },
+      {
+        "category": "Forecasting",
+        "title": "Demand forecasts that keep shelves stocked and waste low"
+      },
+      {
+        "category": "Computer Vision",
+        "title": "Quality inspection that spots defects before customers do"
+      },
+      {
+        "category": "Knowledge AI",
+        "title": "Company knowledge, searchable in plain language"
+      }
+    ]
+  },
+  "reports": {
+    "cta": "Learn more",
+    "items": [
+      {
+        "label": "AI Report",
+        "title": "How companies are putting AI to work",
+        "text": "Explore the latest trends, numbers and practical recommendations for companies that want to turn AI potential into results."
+      },
+      {
+        "label": "Document AI",
+        "title": "The real cost of manual document processing",
+        "text": "Numbers and lessons from dozens of automation projects: where the hours go, what automation really saves, and how to start."
+      }
+    ]
   }
 }

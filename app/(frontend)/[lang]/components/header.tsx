@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { useLenis } from "lenis/react";
 import { Plus, Pill } from "./ui";
-import { Visual } from "./visual";
 import LocaleLink from "./locale-link";
 import { LinkedInIcon, InstagramIcon } from "./icons";
 import { locales, localeNames, type Locale } from "@/lib/i18n/config";
@@ -26,11 +25,12 @@ const servicesLinks = [
   { key: "webDevelopment", href: "/services/web-development" },
   { key: "mobileApps", href: "/services/mobile" },
   { key: "cloudSolutions", href: "/services/cloud" },
+  { key: "teamExtension", href: "/services/team-extension" },
 ] as const;
 
 const socials = [
   { label: "LinkedIn", Icon: LinkedInIcon, href: "https://www.linkedin.com/company/pluscode" },
-  { label: "Instagram", Icon: InstagramIcon, href: "https://instagram.com" },
+  { label: "Instagram", Icon: InstagramIcon, href: "https://www.instagram.com/pluscode" },
 ];
 
 const panelVariants: Variants = {
@@ -53,11 +53,15 @@ function Logo({ onNavigate }: { onNavigate?: () => void }) {
     <LocaleLink
       href="/"
       onClick={onNavigate}
-      aria-label="Pluscode — home"
-      className="flex items-baseline text-xl font-semibold tracking-tight text-ink"
+      aria-label="Pluscode home"
+      className="flex items-center"
     >
-      Pluscode
-      <sup className="ml-0.5 text-[0.7em] font-bold text-lime">+</sup>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/assets/logo/pluscode-logo.svg"
+        alt="Pluscode"
+        className="h-7 w-auto"
+      />
     </LocaleLink>
   );
 }
@@ -69,70 +73,6 @@ function pathWithoutLocale(pathname: string): string {
     "",
   );
   return stripped || "/";
-}
-
-/** Desktop dropdown for a nav category (AI & Data, Services). */
-function NavDropdown({
-  label,
-  items,
-  group,
-  onNavigate,
-}: {
-  label: string;
-  items: readonly { key: string; href: string }[];
-  group: Record<string, { title: string; description: string }>;
-  onNavigate?: () => void;
-}) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div
-      className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-    >
-      <button
-        type="button"
-        aria-haspopup="menu"
-        aria-expanded={open}
-        className="flex items-center gap-1 text-[15px] text-ink/80 transition-colors hover:text-ink"
-      >
-        {label}
-        <svg
-          viewBox="0 0 12 12"
-          aria-hidden
-          className={`size-2.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
-          fill="none"
-        >
-          <path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </button>
-      <div
-        role="menu"
-        className={`absolute left-1/2 top-full z-10 w-72 -translate-x-1/2 pt-3 transition-all duration-200 ${
-          open ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"
-        }`}
-      >
-        <div className="overflow-hidden rounded-2xl border border-cream-line/70 bg-cream/95 p-2 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-          {items.map((item) => (
-            <LocaleLink
-              key={item.href}
-              href={item.href}
-              role="menuitem"
-              onClick={onNavigate}
-              className="group block rounded-xl px-3 py-2.5 transition-colors hover:bg-ink/5"
-            >
-              <span className="block text-sm font-medium text-ink transition-colors group-hover:text-lime-deep">
-                {group[item.key].title}
-              </span>
-              <span className="block text-xs text-ink-soft">
-                {group[item.key].description}
-              </span>
-            </LocaleLink>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
 }
 
 /** Compact language control for the top bar. */
@@ -170,7 +110,7 @@ function LocaleDropdown({
         aria-haspopup="menu"
         aria-expanded={open}
         aria-label={label}
-        className="flex items-center gap-1 rounded-full px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.14em] text-ink/80 transition-colors hover:text-ink"
+        className="flex items-center gap-1 px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.14em] text-bone-soft transition-colors hover:text-bone"
       >
         {localeNames[active]}
         <svg viewBox="0 0 12 12" aria-hidden className={`size-2.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`} fill="none">
@@ -179,7 +119,7 @@ function LocaleDropdown({
       </button>
       <div
         role="menu"
-        className={`absolute right-0 top-full z-10 mt-1.5 min-w-[3.5rem] overflow-hidden rounded-xl border border-cream-line/70 bg-cream/95 p-1 shadow-[0_12px_30px_-12px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-all duration-200 ${
+        className={`absolute right-0 top-full z-10 mt-1.5 min-w-[3.5rem] overflow-hidden rounded-[2px] border border-white/10 bg-night-soft/95 p-1 shadow-[0_12px_30px_-12px_rgba(0,0,0,0.6)] backdrop-blur-xl transition-all duration-200 ${
           open ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"
         }`}
       >
@@ -193,8 +133,8 @@ function LocaleDropdown({
               role="menuitem"
               onClick={() => setOpen(false)}
               aria-current={isActive ? "true" : undefined}
-              className={`block rounded-lg px-2.5 py-1 text-center font-mono text-[11px] uppercase tracking-[0.14em] transition-colors ${
-                isActive ? "bg-ink text-cream" : "text-ink/70 hover:bg-ink/5 hover:text-ink"
+              className={`block rounded-[2px] px-2.5 py-1 text-center font-mono text-[11px] uppercase tracking-[0.14em] transition-colors ${
+                isActive ? "bg-lime text-white" : "text-bone-soft hover:bg-white/5 hover:text-bone"
               }`}
             >
               {localeNames[loc]}
@@ -216,23 +156,17 @@ export default function Header({
   offset?: boolean;
 }) {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const lenis = useLenis();
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
+  // Lock scrolling while the mega menu is open.
   useEffect(() => {
     if (!lenis) return;
     if (open) lenis.stop();
     else lenis.start();
   }, [open, lenis]);
 
+  // Close on Escape.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     window.addEventListener("keydown", onKey);
@@ -240,8 +174,17 @@ export default function Header({
   }, []);
 
   const close = () => setOpen(false);
-  const solid = scrolled || open;
   const basePath = pathWithoutLocale(pathname);
+
+  // Flat top-bar links — categories point at their lead sub-page; the full
+  // breakdown lives in the mega-menu below.
+  const mainLinks = [
+    { label: nav.aiData, href: "/ai-data/consulting" },
+    { label: nav.workshops, href: "/#workshops" },
+    { label: nav.caseStudies, href: "/case-studies" },
+    { label: nav.insights, href: "/insights" },
+    { label: nav.about, href: "/about" },
+  ];
 
   const menuColumns: {
     title: string;
@@ -254,51 +197,53 @@ export default function Header({
 
   const companyLinks = [
     { label: nav.about, href: "/about" },
+    { label: nav.workshops, href: "/#workshops" },
     { label: nav.insights, href: "/insights" },
-    { label: "Case Studies", href: "/case-studies" },
+    { label: nav.caseStudies, href: "/case-studies" },
     { label: nav.getInTouch, href: "/contact" },
   ];
 
   return (
-    <header
-      className={`fixed inset-x-0 z-50 ${offset ? "top-10" : "top-0"}`}
-    >
-      <div
-        className={`relative z-20 transition-colors duration-500 ${
-          solid
-            ? "border-b border-cream-line/60 bg-cream/85 backdrop-blur-xl"
-            : "border-b border-transparent bg-transparent"
-        }`}
-      >
-        <div className="mx-auto grid h-20 max-w-[1500px] grid-cols-[1fr_auto_1fr] items-center px-5 sm:px-8">
+    <header className={`fixed inset-x-0 z-50 ${offset ? "top-10" : "top-0"}`}>
+      <div className="relative z-20 border-b border-white/10 bg-night/90 backdrop-blur-xl">
+        <div className="mx-auto flex h-[72px] max-w-[1240px] items-center justify-between px-5 sm:px-10">
           <Logo onNavigate={close} />
 
-          <nav className="hidden items-center gap-9 md:flex">
-            <NavDropdown label={nav.aiData} items={aiDataLinks} group={nav.aiDataItems} onNavigate={close} />
-            <NavDropdown label={nav.services} items={servicesLinks} group={nav.servicesItems} onNavigate={close} />
-            <LocaleLink href="/insights" onClick={close} className="text-[15px] text-ink/80 transition-colors hover:text-ink">
-              {nav.insights}
-            </LocaleLink>
-            <LocaleLink href="/about" onClick={close} className="text-[15px] text-ink/80 transition-colors hover:text-ink">
-              {nav.about}
-            </LocaleLink>
-          </nav>
+          <div className="flex items-center gap-4 lg:gap-9">
+            <nav className="hidden items-center gap-9 lg:flex">
+              {mainLinks.map((l) => {
+                const active = basePath === l.href;
+                return (
+                  <LocaleLink
+                    key={l.href}
+                    href={l.href}
+                    onClick={close}
+                    className={`text-[14.5px] font-medium transition-colors ${
+                      active ? "text-lime-soft" : "text-bone hover:text-lime-soft"
+                    }`}
+                  >
+                    {l.label}
+                  </LocaleLink>
+                );
+              })}
+              <LocaleLink
+                href="/contact"
+                onClick={close}
+                className="rounded-[2px] bg-lime px-[22px] py-[11px] text-sm font-semibold text-white transition-colors hover:bg-lime-bright"
+              >
+                {nav.getInTouch}
+              </LocaleLink>
+            </nav>
 
-          <div className="flex items-center gap-2 justify-self-end">
             <div className="hidden sm:block">
               <LocaleDropdown active={locale} basePath={basePath} label={nav.language} />
-            </div>
-            <div className="hidden md:block">
-              <Pill variant="lime" href="/contact" withArrow={false} className="px-5 py-2.5 text-[13px]">
-                {nav.getInTouch}
-              </Pill>
             </div>
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
-              className="group relative flex size-11 items-center justify-center rounded-full text-ink transition-colors hover:bg-ink/5 md:hidden"
+              className="group relative flex size-11 items-center justify-center text-bone transition-colors hover:text-lime-soft"
             >
               <span className="relative block h-3 w-6">
                 <span className={`absolute left-0 block h-[2px] w-6 bg-current transition-all duration-300 ${open ? "top-1.5 rotate-45" : "top-0"}`} />
@@ -319,7 +264,7 @@ export default function Header({
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4 }}
               onClick={() => setOpen(false)}
-              className="fixed inset-0 -z-10 bg-ink/40 backdrop-blur-sm"
+              className="fixed inset-0 -z-10 bg-night-deep/60 backdrop-blur-sm"
             />
             <motion.div
               key="panel"
@@ -327,23 +272,23 @@ export default function Header({
               initial="hidden"
               animate="show"
               exit="exit"
-              className="absolute inset-x-0 top-0 z-10 max-h-[92vh] overflow-y-auto rounded-b-[2rem] bg-cream shadow-[0_40px_80px_-20px_rgba(0,0,0,0.35)]"
+              className="absolute inset-x-0 top-0 z-10 max-h-[92vh] overflow-y-auto border-b border-white/10 bg-night text-bone shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)]"
             >
-              <div className="mx-auto max-w-[1500px] px-5 pb-10 pt-28 sm:px-8">
-                <div className="grid gap-10 lg:grid-cols-[repeat(2,minmax(0,1fr))_1fr_1.1fr]">
+              <div className="mx-auto max-w-[1240px] px-5 pb-10 pt-28 sm:px-10">
+                <div className="grid gap-10 lg:grid-cols-[repeat(3,minmax(0,1fr))_1.25fr]">
                   {menuColumns.map((col) => (
                     <motion.div key={col.title} variants={itemVariants}>
-                      <h3 className="mb-6 text-2xl font-medium tracking-tight text-ink">
+                      <h3 className="mb-6 font-serif text-2xl font-medium tracking-[-0.01em] text-bone">
                         {col.title}
                       </h3>
                       <ul className="space-y-5">
                         {col.links.map((link) => (
                           <li key={link.href}>
                             <LocaleLink href={link.href} onClick={close} className="group block">
-                              <span className="text-lg text-ink transition-colors group-hover:text-lime-deep">
+                              <span className="text-lg text-bone transition-colors group-hover:text-lime-soft">
                                 {col.group[link.key].title}
                               </span>
-                              <span className="block text-sm text-ink-soft">
+                              <span className="block text-sm text-bone-dim">
                                 {col.group[link.key].description}
                               </span>
                             </LocaleLink>
@@ -354,13 +299,13 @@ export default function Header({
                   ))}
 
                   <motion.div variants={itemVariants}>
-                    <h3 className="mb-6 text-2xl font-medium tracking-tight text-ink">
+                    <h3 className="mb-6 font-serif text-2xl font-medium tracking-[-0.01em] text-bone">
                       {nav.about}
                     </h3>
                     <ul className="space-y-4">
                       {companyLinks.map((l) => (
                         <li key={l.href}>
-                          <LocaleLink href={l.href} onClick={close} className="text-lg text-ink transition-colors hover:text-lime-deep">
+                          <LocaleLink href={l.href} onClick={close} className="text-lg text-bone transition-colors hover:text-lime-soft">
                             {l.label}
                           </LocaleLink>
                         </li>
@@ -370,10 +315,9 @@ export default function Header({
 
                   {/* Promo card */}
                   <motion.div variants={itemVariants}>
-                    <div className="relative isolate flex h-full min-h-64 flex-col justify-end overflow-hidden rounded-3xl p-8">
-                      <Visual kind="aurora" className="absolute inset-0 -z-10" />
-                      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/80 via-ink/40 to-transparent" />
-                      <p className="max-w-xs text-2xl font-medium leading-tight text-bone">
+                    <div className="blueprint-grid relative isolate flex h-full min-h-64 flex-col justify-end overflow-hidden rounded border border-white/10 bg-night-soft p-8">
+                      <div className="pointer-events-none absolute -right-24 -top-24 -z-10 size-72 rounded-full bg-[radial-gradient(circle,rgba(43,92,255,0.25)_0%,rgba(43,92,255,0)_65%)]" />
+                      <p className="max-w-xs font-serif text-2xl font-medium leading-tight text-bone">
                         {nav.getInTouch}
                       </p>
                       <div className="mt-6">
@@ -388,9 +332,9 @@ export default function Header({
                 {/* Bottom row */}
                 <motion.div
                   variants={itemVariants}
-                  className="mt-10 flex flex-col gap-6 border-t border-cream-line pt-6 sm:flex-row sm:items-center sm:justify-between"
+                  className="mt-10 flex flex-col gap-6 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between"
                 >
-                  <span className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft">
+                  <span className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-bone-dim">
                     <Plus className="size-3" /> {nav.language}
                   </span>
                   <div className="flex items-center gap-4">
@@ -403,8 +347,8 @@ export default function Header({
                             key={loc}
                             href={target}
                             onClick={close}
-                            className={`rounded-full px-2 py-1 font-mono text-[11px] uppercase tracking-[0.14em] transition-colors ${
-                              isActive ? "bg-ink text-cream" : "text-ink/60 hover:text-ink"
+                            className={`rounded-[2px] px-2 py-1 font-mono text-[11px] uppercase tracking-[0.14em] transition-colors ${
+                              isActive ? "bg-lime text-white" : "text-bone-dim hover:text-bone"
                             }`}
                           >
                             {localeNames[loc]}
@@ -412,9 +356,9 @@ export default function Header({
                         );
                       })}
                     </div>
-                    <div className="flex items-center gap-4 text-ink-soft">
+                    <div className="flex items-center gap-4 text-bone-dim">
                       {socials.map(({ label, Icon, href }) => (
-                        <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="transition-colors hover:text-ink">
+                        <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="transition-colors hover:text-bone">
                           <Icon className="size-[18px]" />
                         </a>
                       ))}
