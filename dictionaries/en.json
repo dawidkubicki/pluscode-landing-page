@@ -1772,5 +1772,364 @@
         "text": "Numbers and lessons from dozens of automation projects: where the hours go, what automation really saves, and how to start."
       }
     ]
+  },
+  "workshops": {
+    "index": {
+      "metaTitle": "Workshops & engagements",
+      "metaDescription": "Book an AI workshop, discovery sprint, GenAI proof-of-concept, or a fractional AI team. Clear scope, fixed price, production first.",
+      "eyebrow": "Workshops & engagements",
+      "title": "Start small, prove value, scale what works",
+      "subtitle": "Four productized ways to work with us. Each has a clear scope, timeline, and deliverable. Pick where you are and book in two clicks.",
+      "durationLabel": "Duration",
+      "forLabel": "Best for",
+      "detailsCta": "View details",
+      "bookCta": "Book",
+      "faqTitle": "Questions, answered",
+      "backToAll": "All workshops"
+    },
+    "form": {
+      "name": "Your name",
+      "email": "Work email",
+      "company": "Company (optional)",
+      "teamSize": "Team size (optional)",
+      "format": "Preferred format (optional)",
+      "useCase": "What would you like to explore?",
+      "timeline": "Ideal timeline (optional)",
+      "message": "Anything else? (optional)",
+      "sending": "Sending...",
+      "successTitle": "Thanks. Your request is in.",
+      "successMessage": "It landed with a real engineer. Expect a reply within one business day.",
+      "error": "Something went wrong. Please try again, or email contact@pluscode.io.",
+      "privacyPrefix": "By submitting, you agree to our",
+      "privacyLink": "privacy policy",
+      "privacySuffix": ". No spam, no sales sequence.",
+      "errName": "Please enter your name",
+      "errEmail": "Please enter a valid email",
+      "errUseCase": "Tell us a little about what you need"
+    },
+    "pages": {
+      "ai-opportunity-workshop": {
+        "eyebrow": "Workshop",
+        "title": "Find where AI pays off first",
+        "subtitle": "A half-day session that turns scattered AI ideas into a ranked shortlist and a first pilot.",
+        "meta": {
+          "duration": "Half day",
+          "format": "Remote or on-site",
+          "price": "Fixed fee",
+          "audience": "Founders, execs, product leaders"
+        },
+        "overview": {
+          "title": "What it is",
+          "paragraphs": [
+            "A focused half-day where we put your AI ideas on the table and pressure-test each one against ROI and feasibility.",
+            "You leave with a clear starting point, not a backlog of maybes. No slideware, just a plan you can act on next week."
+          ]
+        },
+        "outcomes": {
+          "title": "What you leave with",
+          "items": [
+            "Prioritized use-case shortlist",
+            "ROI and feasibility scoring per idea",
+            "A recommended first pilot",
+            "Clear next steps to start building"
+          ]
+        },
+        "agenda": {
+          "title": "How the session runs",
+          "steps": [
+            {
+              "num": "01",
+              "title": "Map the ideas",
+              "desc": "We gather your AI ideas and the problems behind them."
+            },
+            {
+              "num": "02",
+              "title": "Score and rank",
+              "desc": "Every idea gets scored on ROI and feasibility."
+            },
+            {
+              "num": "03",
+              "title": "Pick the pilot",
+              "desc": "We agree on the first pilot and how to start."
+            }
+          ]
+        },
+        "audience": {
+          "title": "Who it's for",
+          "items": [
+            "Leaders unsure where to start with AI",
+            "Teams with too many AI ideas",
+            "Companies that want proof, not hype"
+          ]
+        },
+        "faq": [
+          {
+            "q": "How long is the workshop?",
+            "a": "Half a day, remote or on-site. We keep it tight and outcome-focused, so you walk away with real decisions the same day."
+          },
+          {
+            "q": "Do we need to prepare anything?",
+            "a": "Bring your ideas and the people who own the problems. We send a short prep note beforehand so the session starts fast."
+          },
+          {
+            "q": "What if we have no AI ideas yet?",
+            "a": "That is fine. We surface opportunities from your workflows and data, then score them with you on the spot."
+          },
+          {
+            "q": "What happens after the workshop?",
+            "a": "You get the shortlist, scoring, and a recommended pilot. If you want, we can build that pilot with you next."
+          }
+        ],
+        "form": {
+          "title": "Book the workshop",
+          "note": "We reply within one business day.",
+          "cta": "Book the workshop"
+        }
+      },
+      "ai-discovery-sprint": {
+        "eyebrow": "Sprint",
+        "title": "Prove your AI use case in 2 weeks",
+        "subtitle": "Two weeks, one use case, a working prototype and a costed plan to build with confidence.",
+        "meta": {
+          "duration": "2 weeks",
+          "format": "Remote, embedded with your team",
+          "price": "Fixed scope, fixed fee",
+          "audience": "Teams ready to prove one use case"
+        },
+        "overview": {
+          "title": "What the sprint is",
+          "paragraphs": [
+            "Two focused weeks on a single use case. We assess your data, test feasibility, design the architecture, and build a working prototype.",
+            "You end with proof, not a slide deck. Before committing budget to the build, you see it work and know what it costs."
+          ]
+        },
+        "outcomes": {
+          "title": "What you leave with",
+          "items": [
+            "Technical feasibility assessment",
+            "Working prototype on your data",
+            "Costed delivery roadmap",
+            "Clear go or no-go decision"
+          ]
+        },
+        "agenda": {
+          "title": "How the sprint runs",
+          "steps": [
+            {
+              "num": "01",
+              "title": "Data deep-dive",
+              "desc": "We map your data, access, and constraints on day one."
+            },
+            {
+              "num": "02",
+              "title": "Feasibility and architecture",
+              "desc": "We test what works and design the production approach."
+            },
+            {
+              "num": "03",
+              "title": "Build the prototype",
+              "desc": "We ship a working prototype against your real use case."
+            },
+            {
+              "num": "04",
+              "title": "Roadmap and handoff",
+              "desc": "You get a costed build plan and a go/no-go call."
+            }
+          ]
+        },
+        "audience": {
+          "title": "Who it's for",
+          "items": [
+            "You have one use case worth proving.",
+            "You want evidence before funding a build.",
+            "You have data and a stakeholder ready."
+          ]
+        },
+        "faq": [
+          {
+            "q": "What do you need from us to start?",
+            "a": "Access to relevant data, one decision-maker, and a few hours from a domain expert each week. We handle the rest."
+          },
+          {
+            "q": "Is two weeks really enough?",
+            "a": "For one scoped use case, yes. We go deep on a single problem, not broad. The prototype proves feasibility, not the full product."
+          },
+          {
+            "q": "What if the prototype shows it will not work?",
+            "a": "That is a valuable result. You save the build budget and get a clear reason why, plus alternatives worth testing."
+          },
+          {
+            "q": "Do we own the prototype and code?",
+            "a": "Yes. All code, findings, and the roadmap are yours. If you proceed to build, it becomes your starting point."
+          }
+        ],
+        "form": {
+          "title": "Book your Discovery Sprint",
+          "note": "We reply within one business day.",
+          "cta": "Book the sprint"
+        }
+      },
+      "genai-proof-of-concept": {
+        "eyebrow": "Proof of concept",
+        "title": "Prove your AI use case in production.",
+        "subtitle": "A production-grade pilot in your environment, measured against real evals and ready to pitch for rollout.",
+        "meta": {
+          "duration": "4 to 6 weeks",
+          "format": "In your environment",
+          "price": "Fixed scope, single use case",
+          "audience": "Teams with a validated use case"
+        },
+        "overview": {
+          "title": "Built to prove, not to demo",
+          "paragraphs": [
+            "A focused build that turns one validated use case into a working pilot on your data, your stack, your constraints.",
+            "Demos hide the hard parts. We measure the pilot against real evals, so you know it works before you commit to rollout."
+          ]
+        },
+        "outcomes": {
+          "title": "What you leave with",
+          "items": [
+            "Production-ready pilot running in your environment",
+            "Evaluation harness with metrics you trust",
+            "Rollout plan with scope, cost, and risks",
+            "Internal pitch deck to secure buy-in"
+          ]
+        },
+        "agenda": {
+          "title": "How the PoC runs",
+          "steps": [
+            {
+              "num": "01",
+              "title": "Frame",
+              "desc": "Lock the use case, data, and success metrics."
+            },
+            {
+              "num": "02",
+              "title": "Build",
+              "desc": "Ship a pilot on your stack and data."
+            },
+            {
+              "num": "03",
+              "title": "Measure",
+              "desc": "Run evals and tune against real targets."
+            },
+            {
+              "num": "04",
+              "title": "Plan",
+              "desc": "Package results and a rollout plan to pitch."
+            }
+          ]
+        },
+        "audience": {
+          "title": "Who it's for",
+          "items": [
+            "You have a validated use case, not just an idea.",
+            "You need proof before funding a full rollout.",
+            "You want it running on your data, not a demo."
+          ]
+        },
+        "faq": [
+          {
+            "q": "What do we need to start?",
+            "a": "A validated use case, access to representative data, and one decision-maker who can approve rollout. We handle the build, evals, and environment setup."
+          },
+          {
+            "q": "How is this different from a demo?",
+            "a": "A demo is happy-path theatre. We ship in your environment and measure against real evals, so the results hold up when you pitch internally."
+          },
+          {
+            "q": "What if the evals show it does not work?",
+            "a": "That is a valid, valuable outcome. You get clear metrics and honest reasoning, saving you from funding a rollout that would fail."
+          },
+          {
+            "q": "Who owns the code and results?",
+            "a": "You do. The pilot, evaluation harness, and rollout plan are yours to keep and extend, with no lock-in."
+          }
+        ],
+        "form": {
+          "title": "Scope your PoC",
+          "note": "One call to check fit. No obligation.",
+          "cta": "Scope the PoC"
+        }
+      },
+      "fractional-ai-team": {
+        "eyebrow": "Fractional team",
+        "title": "A senior AI team, on tap",
+        "subtitle": "Strategy, engineering, and MLOps embedded in your team, scaling with your roadmap month to month.",
+        "meta": {
+          "duration": "Monthly, ongoing",
+          "format": "Embedded with your team",
+          "price": "Monthly retainer",
+          "audience": "Teams scaling AI"
+        },
+        "overview": {
+          "title": "AI capacity without the headcount",
+          "paragraphs": [
+            "Senior AI engineers, strategists, and MLOps working inside your team. We plug into your stack, your standups, and your roadmap.",
+            "You skip the six-month hire and the black-box vendor. Scale capacity up or down each month as priorities shift."
+          ]
+        },
+        "outcomes": {
+          "title": "What you get",
+          "items": [
+            "Embedded senior AI engineers, day one",
+            "Strategy and roadmap direction on tap",
+            "MLOps that keeps models in production",
+            "Flexible monthly capacity, up or down"
+          ]
+        },
+        "agenda": {
+          "title": "How it works",
+          "steps": [
+            {
+              "num": "01",
+              "title": "Scope",
+              "desc": "We map your roadmap and set the monthly capacity."
+            },
+            {
+              "num": "02",
+              "title": "Embed",
+              "desc": "Our team joins your standups, repos, and tooling."
+            },
+            {
+              "num": "03",
+              "title": "Ship and scale",
+              "desc": "We ship to production and flex with your priorities."
+            }
+          ]
+        },
+        "audience": {
+          "title": "Who it's for",
+          "items": [
+            "You're scaling AI across the org",
+            "Hiring senior AI talent is too slow",
+            "You need production help, not slideware"
+          ]
+        },
+        "faq": [
+          {
+            "q": "How fast can you start?",
+            "a": "Days, not months. We onboard a senior team into your stack and standups in the first week, then ship from there."
+          },
+          {
+            "q": "Can we scale up or down?",
+            "a": "Yes. Adjust monthly capacity as your roadmap shifts. Add engineers for a sprint, dial back when things settle. No long lock-in."
+          },
+          {
+            "q": "How is this different from hiring?",
+            "a": "No six-month search, no ramp-up risk. You get a senior AI team already fluent in production, strategy, and MLOps, available this month."
+          },
+          {
+            "q": "Who owns the code and models?",
+            "a": "You do. Everything lives in your repos and infrastructure. We build inside your stack, so nothing walks out the door when we scale down."
+          }
+        ],
+        "form": {
+          "title": "Book a fit call",
+          "note": "30 minutes with an engineer, no sales deck.",
+          "cta": "Talk to us"
+        }
+      }
+    }
   }
 }

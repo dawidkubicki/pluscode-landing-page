@@ -12,6 +12,9 @@ import { CaseStudies } from "./collections/CaseStudies";
 import { Insights } from "./collections/Insights";
 import { Announcements } from "./collections/Announcements";
 import { Team } from "./collections/Team";
+import { Reports } from "./collections/Reports";
+import { UseCases } from "./collections/UseCases";
+import { Bookings } from "./collections/Bookings";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -24,7 +27,7 @@ export default buildConfig({
       titleSuffix: "· Pluscode CMS",
     },
   },
-  collections: [Users, Media, CaseStudies, Insights, Announcements, Team],
+  collections: [Users, Media, CaseStudies, Insights, Announcements, Team, Reports, UseCases, Bookings],
   // Multilingual content. EN is the default and the fallback, so a freshly
   // created PL document shows English until an editor translates it.
   localization: {

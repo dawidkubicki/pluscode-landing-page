@@ -18,9 +18,17 @@ function Check({ className = "" }: { className?: string }) {
   );
 }
 
+/** Dedicated booking page per offering, index-aligned with `offerings.items`. */
+const SLUGS = [
+  "ai-opportunity-workshop",
+  "ai-discovery-sprint",
+  "genai-proof-of-concept",
+  "fractional-ai-team",
+];
+
 /**
  * Productized engagements — the "how to buy" layer that turns a curious visitor
- * into a booked call. A de-risk ladder (workshop → sprint → PoC → embedded team)
+ * into a booked call. A de-risk ladder (workshop, sprint, PoC, embedded team)
  * on a dark surface; the featured card carries the cobalt accent.
  */
 export default function Offerings({ locale }: { locale: Locale }) {
@@ -54,7 +62,7 @@ export default function Offerings({ locale }: { locale: Locale }) {
         </div>
 
         <Stagger className="mt-14 grid gap-5 sm:grid-cols-2" gap={0.08}>
-          {t.items.map((item) => (
+          {t.items.map((item, i) => (
             <StaggerItem key={item.name} className="h-full">
               <div
                 className={`relative flex h-full flex-col rounded border p-7 transition-colors duration-300 sm:p-8 ${
@@ -105,7 +113,7 @@ export default function Offerings({ locale }: { locale: Locale }) {
 
                 <div className="mt-auto pt-8">
                   <LocaleLink
-                    href="/contact"
+                    href={`/workshops/${SLUGS[i]}`}
                     className={`group inline-flex w-full items-center justify-center gap-2.5 rounded-[2px] px-6 py-3.5 text-[15px] font-semibold transition-colors duration-300 ${
                       item.featured
                         ? "bg-lime text-white hover:bg-lime-bright"

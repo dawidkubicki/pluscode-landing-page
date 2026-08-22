@@ -37,7 +37,7 @@ export default function Footer({ locale }: { locale: Locale }) {
       title: f.columns.company,
       links: [
         { label: nav.about, href: "/about" },
-        { label: nav.workshops, href: "/#workshops" },
+        { label: nav.workshops, href: "/workshops" },
         { label: nav.caseStudies, href: "/case-studies" },
         { label: nav.insights, href: "/insights" },
         { label: f.sitemap, href: "/site-map" },

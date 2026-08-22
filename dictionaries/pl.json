@@ -1772,5 +1772,364 @@
         "text": "Liczby i wnioski z kilkudziesięciu projektów automatyzacji: gdzie uciekają godziny, co realnie oszczędza automatyzacja i jak zacząć."
       }
     ]
+  },
+  "workshops": {
+    "index": {
+      "metaTitle": "Warsztaty i formy współpracy",
+      "metaDescription": "Zarezerwuj warsztat AI, discovery sprint, GenAI proof-of-concept albo fractional AI team. Jasny zakres, stała cena, produkcja przede wszystkim.",
+      "eyebrow": "Warsztaty i formy współpracy",
+      "title": "Zacznij mały, potwierdź wartość, skaluj to, co działa",
+      "subtitle": "Cztery sproduktyzowane formy współpracy. Każda ma jasny zakres, harmonogram i rezultat. Wybierz, gdzie jesteś, i zarezerwuj w dwóch kliknięciach.",
+      "durationLabel": "Czas trwania",
+      "forLabel": "Dla kogo",
+      "detailsCta": "Zobacz szczegóły",
+      "bookCta": "Rezerwuj",
+      "faqTitle": "Odpowiadamy na pytania",
+      "backToAll": "Wszystkie warsztaty"
+    },
+    "form": {
+      "name": "Imię i nazwisko",
+      "email": "Służbowy e-mail",
+      "company": "Firma (opcjonalnie)",
+      "teamSize": "Wielkość zespołu (opcjonalnie)",
+      "format": "Preferowany format (opcjonalnie)",
+      "useCase": "Co chcesz zbadać?",
+      "timeline": "Idealny termin (opcjonalnie)",
+      "message": "Coś jeszcze? (opcjonalnie)",
+      "sending": "Wysyłanie...",
+      "successTitle": "Dziękujemy. Zgłoszenie przyjęte.",
+      "successMessage": "Trafiło do prawdziwego inżyniera. Odpowiedź w ciągu jednego dnia roboczego.",
+      "error": "Coś poszło nie tak. Spróbuj ponownie lub napisz na contact@pluscode.io.",
+      "privacyPrefix": "Wysyłając, akceptujesz naszą",
+      "privacyLink": "politykę prywatności",
+      "privacySuffix": ". Zero spamu i sekwencji sprzedażowych.",
+      "errName": "Podaj imię i nazwisko",
+      "errEmail": "Podaj prawidłowy e-mail",
+      "errUseCase": "Napisz krótko, czego potrzebujesz"
+    },
+    "pages": {
+      "ai-opportunity-workshop": {
+        "eyebrow": "Workshop",
+        "title": "Znajdź, gdzie AI zarabia najpierw",
+        "subtitle": "Półdniowa sesja, która zmienia rozproszone pomysły na AI w gotowy shortlist i pierwszy pilot.",
+        "meta": {
+          "duration": "Pół dnia",
+          "format": "Zdalnie lub on-site",
+          "price": "Stała opłata",
+          "audience": "Founderzy, zarząd, product leaderzy"
+        },
+        "overview": {
+          "title": "Co to jest",
+          "paragraphs": [
+            "Skupiona sesja na pół dnia, w której kładziemy Twoje pomysły na AI na stół i sprawdzamy każdy pod kątem ROI i wykonalności.",
+            "Wychodzisz z jasnym punktem startu, a nie listą 'może kiedyś'. Zero slideware, konkretny plan, który ruszysz w przyszłym tygodniu."
+          ]
+        },
+        "outcomes": {
+          "title": "Co dostajesz",
+          "items": [
+            "Priorytetyzowany shortlist use-case'ów",
+            "Ocena ROI i wykonalności każdego pomysłu",
+            "Rekomendowany pierwszy pilot",
+            "Jasne kolejne kroki, żeby ruszyć"
+          ]
+        },
+        "agenda": {
+          "title": "Jak wygląda sesja",
+          "steps": [
+            {
+              "num": "01",
+              "title": "Mapujemy pomysły",
+              "desc": "Zbieramy Twoje pomysły na AI i problemy pod nimi."
+            },
+            {
+              "num": "02",
+              "title": "Oceniamy i rankujemy",
+              "desc": "Każdy pomysł dostaje ocenę ROI i wykonalności."
+            },
+            {
+              "num": "03",
+              "title": "Wybieramy pilot",
+              "desc": "Ustalamy pierwszy pilot i sposób startu."
+            }
+          ]
+        },
+        "audience": {
+          "title": "Dla kogo to jest",
+          "items": [
+            "Liderzy, którzy nie wiedzą, gdzie zacząć z AI",
+            "Zespoły z nadmiarem pomysłów na AI",
+            "Firmy, które chcą dowodów, nie hype'u"
+          ]
+        },
+        "faq": [
+          {
+            "q": "Ile trwa workshop?",
+            "a": "Pół dnia, zdalnie lub on-site. Trzymamy tempo i skupiamy się na wynikach, więc decyzje masz jeszcze tego samego dnia."
+          },
+          {
+            "q": "Czy musimy się przygotować?",
+            "a": "Weź swoje pomysły i osoby, które znają problemy. Wcześniej wysyłamy krótką notkę, żeby sesja ruszyła od razu."
+          },
+          {
+            "q": "A jeśli nie mamy jeszcze pomysłów na AI?",
+            "a": "Spokojnie. Wyciągamy szanse z Twoich procesów i danych, a potem oceniamy je z Tobą na miejscu."
+          },
+          {
+            "q": "Co dzieje się po workshopie?",
+            "a": "Dostajesz shortlist, scoring i rekomendowany pilot. Jeśli chcesz, zbudujemy ten pilot razem z Tobą."
+          }
+        ],
+        "form": {
+          "title": "Zarezerwuj workshop",
+          "note": "Odpowiadamy w jeden dzień roboczy.",
+          "cta": "Zarezerwuj workshop"
+        }
+      },
+      "ai-discovery-sprint": {
+        "eyebrow": "Sprint",
+        "title": "Udowodnij use case AI w 2 tygodnie",
+        "subtitle": "Dwa tygodnie, jeden use case, działający prototyp i wyceniony plan, żebyś budował z pewnością.",
+        "meta": {
+          "duration": "2 tygodnie",
+          "format": "Zdalnie, wspólnie z Twoim zespołem",
+          "price": "Stały zakres, stała cena",
+          "audience": "Zespoły gotowe sprawdzić jeden use case"
+        },
+        "overview": {
+          "title": "Czym jest sprint",
+          "paragraphs": [
+            "Dwa tygodnie skupione na jednym use case. Sprawdzamy Twoje dane, testujemy feasibility, projektujemy architekturę i budujemy działający prototyp.",
+            "Kończysz z dowodem, nie ze slajdami. Zanim wydasz budżet na build, widzisz, że działa, i wiesz, ile kosztuje."
+          ]
+        },
+        "outcomes": {
+          "title": "Co zabierasz ze sobą",
+          "items": [
+            "Ocena feasibility technicznej",
+            "Działający prototyp na Twoich danych",
+            "Wyceniony roadmap wdrożenia",
+            "Jasna decyzja: go albo no-go"
+          ]
+        },
+        "agenda": {
+          "title": "Jak przebiega sprint",
+          "steps": [
+            {
+              "num": "01",
+              "title": "Głęboki wgląd w dane",
+              "desc": "Pierwszego dnia mapujemy Twoje dane, dostępy i ograniczenia."
+            },
+            {
+              "num": "02",
+              "title": "Feasibility i architektura",
+              "desc": "Testujemy, co działa, i projektujemy podejście produkcyjne."
+            },
+            {
+              "num": "03",
+              "title": "Budowa prototypu",
+              "desc": "Budujemy działający prototyp na Twoim realnym use case."
+            },
+            {
+              "num": "04",
+              "title": "Roadmap i przekazanie",
+              "desc": "Dostajesz wyceniony plan buildu i decyzję go/no-go."
+            }
+          ]
+        },
+        "audience": {
+          "title": "Dla kogo to jest",
+          "items": [
+            "Masz jeden use case wart sprawdzenia.",
+            "Chcesz dowodu, zanim sfinansujesz build.",
+            "Masz dane i gotowego decydenta."
+          ]
+        },
+        "faq": [
+          {
+            "q": "Czego potrzebujecie od nas na start?",
+            "a": "Dostępu do danych, jednego decydenta i kilku godzin eksperta domenowego w tygodniu. Resztą zajmujemy się my."
+          },
+          {
+            "q": "Czy dwa tygodnie naprawdę wystarczą?",
+            "a": "Dla jednego use case tak. Idziemy w głąb jednego problemu, nie wszerz. Prototyp dowodzi feasibility, nie całego produktu."
+          },
+          {
+            "q": "Co jeśli prototyp pokaże, że nie zadziała?",
+            "a": "To cenny wynik. Oszczędzasz budżet na build i dostajesz jasny powód dlaczego, plus alternatywy warte przetestowania."
+          },
+          {
+            "q": "Czy prototyp i kod należą do nas?",
+            "a": "Tak. Cały kod, wnioski i roadmap są Twoje. Jeśli przejdziesz do buildu, to Twój punkt startu."
+          }
+        ],
+        "form": {
+          "title": "Zarezerwuj swój Discovery Sprint",
+          "note": "Odpowiadamy w jeden dzień roboczy.",
+          "cta": "Zarezerwuj sprint"
+        }
+      },
+      "genai-proof-of-concept": {
+        "eyebrow": "Proof of concept",
+        "title": "Udowodnij, że Twoje AI działa na produkcji.",
+        "subtitle": "Pilot klasy produkcyjnej w Twoim środowisku, mierzony realnymi evalami i gotowy, by pchnąć rollout.",
+        "meta": {
+          "duration": "4 do 6 tygodni",
+          "format": "W Twoim środowisku",
+          "price": "Stały zakres, jeden use case",
+          "audience": "Zespoły z potwierdzonym use case"
+        },
+        "overview": {
+          "title": "Zbudowane, by udowodnić, nie pokazać",
+          "paragraphs": [
+            "Skupiony build, który zamienia jeden potwierdzony use case w działający pilot na Twoich danych, Twoim stacku, w Twoich realiach.",
+            "Demo ukrywa trudne rzeczy. My mierzymy pilot realnymi evalami, więc wiesz, że działa, zanim ruszysz z rolloutem."
+          ]
+        },
+        "outcomes": {
+          "title": "Co dostajesz",
+          "items": [
+            "Pilot gotowy na produkcję w Twoim środowisku",
+            "Evaluation harness z metrykami, którym ufasz",
+            "Plan rolloutu z zakresem, kosztem i ryzykiem",
+            "Deck do pitcha, by zdobyć poparcie w firmie"
+          ]
+        },
+        "agenda": {
+          "title": "Jak przebiega PoC",
+          "steps": [
+            {
+              "num": "01",
+              "title": "Ramy",
+              "desc": "Ustalamy use case, dane i metryki sukcesu."
+            },
+            {
+              "num": "02",
+              "title": "Build",
+              "desc": "Wdrażamy pilot na Twoim stacku i danych."
+            },
+            {
+              "num": "03",
+              "title": "Pomiar",
+              "desc": "Odpalamy evals i tuningujemy pod realne cele."
+            },
+            {
+              "num": "04",
+              "title": "Plan",
+              "desc": "Pakujemy wyniki i plan rolloutu do pitcha."
+            }
+          ]
+        },
+        "audience": {
+          "title": "Dla kogo to jest",
+          "items": [
+            "Masz potwierdzony use case, nie tylko pomysł.",
+            "Potrzebujesz dowodu, zanim sfinansujesz pełny rollout.",
+            "Chcesz to na swoich danych, nie w demie."
+          ]
+        },
+        "faq": [
+          {
+            "q": "Czego potrzebujemy na start?",
+            "a": "Potwierdzonego use case, dostępu do reprezentatywnych danych i jednej osoby decyzyjnej, która zatwierdzi rollout. Build, evals i konfigurację środowiska bierzemy na siebie."
+          },
+          {
+            "q": "Czym to się różni od demo?",
+            "a": "Demo to teatr na happy path. My wdrażamy w Twoim środowisku i mierzymy realnymi evalami, więc wyniki bronią się, gdy pitchujesz wewnątrz firmy."
+          },
+          {
+            "q": "Co, jeśli evals pokażą, że nie działa?",
+            "a": "To wartościowy wynik. Dostajesz jasne metryki i uczciwe uzasadnienie, co chroni Cię przed finansowaniem rolloutu, który by poległ."
+          },
+          {
+            "q": "Kto jest właścicielem kodu i wyników?",
+            "a": "Ty. Pilot, evaluation harness i plan rolloutu są Twoje, możesz je rozwijać, bez żadnego lock-inu."
+          }
+        ],
+        "form": {
+          "title": "Zaplanuj swój PoC",
+          "note": "Jedna rozmowa, by sprawdzić dopasowanie. Bez zobowiązań.",
+          "cta": "Zaplanuj PoC"
+        }
+      },
+      "fractional-ai-team": {
+        "eyebrow": "Fractional team",
+        "title": "Senior AI team na żądanie",
+        "subtitle": "Strategia, engineering i MLOps w Twoim zespole, skalowane wraz z Twoją roadmapą miesiąc po miesiącu.",
+        "meta": {
+          "duration": "Miesięcznie, na stałe",
+          "format": "Wbudowani w Twój zespół",
+          "price": "Miesięczny retainer",
+          "audience": "Zespoły skalujące AI"
+        },
+        "overview": {
+          "title": "Moce AI bez etatów",
+          "paragraphs": [
+            "Senior AI engineers, stratedzy i MLOps pracujący w Twoim zespole. Wchodzimy w Twój stack, standupy i roadmap.",
+            "Pomijasz sześciomiesięczną rekrutację i vendora typu black-box. Skalujesz moce w górę lub w dół co miesiąc, gdy zmieniają się priorytety."
+          ]
+        },
+        "outcomes": {
+          "title": "Co dostajesz",
+          "items": [
+            "Senior AI engineers wbudowani od pierwszego dnia",
+            "Strategia i kierunek roadmapy na żądanie",
+            "MLOps utrzymujący modele na produkcji",
+            "Elastyczne miesięczne moce, w górę lub w dół"
+          ]
+        },
+        "agenda": {
+          "title": "Jak to działa",
+          "steps": [
+            {
+              "num": "01",
+              "title": "Zakres",
+              "desc": "Mapujemy Twój roadmap i ustalamy miesięczne moce."
+            },
+            {
+              "num": "02",
+              "title": "Wejście w zespół",
+              "desc": "Nasz team dołącza do standupów, repo i narzędzi."
+            },
+            {
+              "num": "03",
+              "title": "Wdrażamy i skalujemy",
+              "desc": "Wdrażamy na produkcję i flexujemy z Twoimi priorytetami."
+            }
+          ]
+        },
+        "audience": {
+          "title": "Dla kogo to jest",
+          "items": [
+            "Skalujesz AI w całej organizacji",
+            "Rekrutacja seniorów AI trwa za długo",
+            "Potrzebujesz produkcji, nie slideware"
+          ]
+        },
+        "faq": [
+          {
+            "q": "Jak szybko możecie zacząć?",
+            "a": "W dni, nie miesiące. W pierwszym tygodniu wprowadzamy senior team w Twój stack i standupy, a potem wdrażamy."
+          },
+          {
+            "q": "Czy można skalować w górę i w dół?",
+            "a": "Tak. Dostosowujesz miesięczne moce, gdy zmienia się roadmap. Dokładasz inżynierów na sprint, zwalniasz tempo, gdy trzeba. Bez długiego lock-inu."
+          },
+          {
+            "q": "Czym to się różni od rekrutacji?",
+            "a": "Bez sześciomiesięcznych poszukiwań i ryzyka wdrożenia. Dostajesz senior AI team biegły w produkcji, strategii i MLOps, dostępny w tym miesiącu."
+          },
+          {
+            "q": "Do kogo należy kod i modele?",
+            "a": "Do Ciebie. Wszystko zostaje w Twoich repo i infrastrukturze. Budujemy w Twoim stacku, więc nic nie znika, gdy skalujemy w dół."
+          }
+        ],
+        "form": {
+          "title": "Umów rozmowę",
+          "note": "30 minut z inżynierem, bez sprzedażowego decka.",
+          "cta": "Napisz do nas"
+        }
+      }
+    }
   }
 }

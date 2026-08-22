@@ -180,7 +180,7 @@ export default function Header({
   // breakdown lives in the mega-menu below.
   const mainLinks = [
     { label: nav.aiData, href: "/ai-data/consulting" },
-    { label: nav.workshops, href: "/#workshops" },
+    { label: nav.workshops, href: "/workshops" },
     { label: nav.caseStudies, href: "/case-studies" },
     { label: nav.insights, href: "/insights" },
     { label: nav.about, href: "/about" },
@@ -197,7 +197,7 @@ export default function Header({
 
   const companyLinks = [
     { label: nav.about, href: "/about" },
-    { label: nav.workshops, href: "/#workshops" },
+    { label: nav.workshops, href: "/workshops" },
     { label: nav.insights, href: "/insights" },
     { label: nav.caseStudies, href: "/case-studies" },
     { label: nav.getInTouch, href: "/contact" },
