@@ -6,6 +6,7 @@ import SmoothScroll from "./components/smooth-scroll";
 import Header from "./components/header";
 import FloatingContact from "./components/floating-contact";
 import AnnouncementBar from "./components/announcement-bar";
+import AnnouncementScript from "./components/announcement-script";
 import { LocaleProvider } from "./components/locale-context";
 import {
   locales,
@@ -25,6 +26,7 @@ export function generateStaticParams() {
 const ogLocale: Record<Locale, string> = {
   en: "en_GB",
   pl: "pl_PL",
+  de: "de_DE",
 };
 
 export async function generateMetadata({
@@ -100,6 +102,8 @@ export default async function LocaleLayout({
   // inline script sets it before first paint only when the visitor hasn't
   // dismissed this announcement, so a dismissed bar never leaves an empty
   // strip above the header (and there's no flash for returning visitors).
+  // It only runs on the initial document load; after locale switches the
+  // AnnouncementBar layout effect owns the attribute.
   const announcementScript = banner
     ? `try{if(localStorage.getItem(${JSON.stringify(
         announcementStorageKey(banner.text),
@@ -113,9 +117,7 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen bg-cream text-ink">
-        {announcementScript && (
-          <script dangerouslySetInnerHTML={{ __html: announcementScript }} />
-        )}
+        {announcementScript && <AnnouncementScript code={announcementScript} />}
         <LocaleProvider locale={lang}>
           {banner && <AnnouncementBar announcement={banner} />}
           <SmoothScroll>

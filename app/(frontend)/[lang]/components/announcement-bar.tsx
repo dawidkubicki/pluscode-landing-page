@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import LocaleLink from "./locale-link";
 import { Arrow } from "./ui";
 import { announcementStorageKey } from "@/lib/announcement-key";
@@ -13,8 +13,9 @@ type Announcement = {
 
 /**
  * Slim, dismissible banner pinned to the very top (z above the header).
- * Visibility is driven by the `data-announcement` attribute on <html> — set by
- * a pre-hydration script in the layout and cleared here on dismiss — so the
+ * Visibility is driven by the `data-announcement` attribute on <html> — set
+ * pre-paint by a script in the layout on first load, then kept in sync here
+ * (locale switches, dismissal) — so the
  * header offset and page padding always collapse together with the bar and no
  * empty strip is left above the nav.
  */
@@ -26,13 +27,24 @@ export default function AnnouncementBar({
   const key = announcementStorageKey(announcement.text);
   const [open, setOpen] = useState(true);
 
-  useEffect(() => {
+  // Runs before paint, so on soft locale switches (where the pre-hydration
+  // script in the layout doesn't re-run) the attribute still flips together
+  // with the bar for the new locale's banner, with no flash either way.
+  useLayoutEffect(() => {
+    let dismissed = false;
     try {
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- sync dismissed state from localStorage (client-only)
-      if (localStorage.getItem(key) === "dismissed") setOpen(false);
+      dismissed = localStorage.getItem(key) === "dismissed";
     } catch {
       /* ignore */
     }
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- sync dismissed state from localStorage (client-only)
+    setOpen(!dismissed);
+    if (dismissed) {
+      document.documentElement.removeAttribute("data-announcement");
+    } else {
+      document.documentElement.setAttribute("data-announcement", "");
+    }
+    return () => document.documentElement.removeAttribute("data-announcement");
   }, [key]);
 
   if (!open) return null;
