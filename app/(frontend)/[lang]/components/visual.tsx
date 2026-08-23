@@ -19,14 +19,14 @@ export type VisualKind =
 
 const gradients: Record<VisualKind, string> = {
   aurora:
-    "radial-gradient(120% 120% at 20% 10%, #1a3fd9 0%, #0f2237 45%, #0a1929 100%)",
+    "radial-gradient(120% 120% at 20% 10%, #047857 0%, #0f2237 45%, #0a1929 100%)",
   grid: "linear-gradient(180deg, #132c47 0%, #0e2036 55%, #0a1929 100%)",
   nodes:
-    "radial-gradient(120% 100% at 80% 10%, #2b5cff 0%, #0f2237 55%, #0a1929 100%)",
-  mesh: "linear-gradient(135deg, #2b5cff 0%, #1a3fd9 45%, #6f92ff 100%)",
+    "radial-gradient(120% 100% at 80% 10%, #059669 0%, #0f2237 55%, #0a1929 100%)",
+  mesh: "linear-gradient(135deg, #059669 0%, #047857 45%, #34d399 100%)",
   code: "linear-gradient(180deg, #0e2036 0%, #0a1929 100%)",
   portrait:
-    "radial-gradient(120% 120% at 70% 10%, #1a3fd9 0%, #0f2237 50%, #0a1929 100%)",
+    "radial-gradient(120% 120% at 70% 10%, #047857 0%, #0f2237 50%, #0a1929 100%)",
 };
 
 export function Visual({

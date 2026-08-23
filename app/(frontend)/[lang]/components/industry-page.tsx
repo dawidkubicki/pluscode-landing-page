@@ -90,7 +90,7 @@ export default function IndustryPage({
 
       {/* Solutions */}
       <section className="relative isolate overflow-hidden bg-night text-bone">
-        <div className="absolute -left-52 -bottom-64 -z-10 size-[38rem] rounded-full bg-[radial-gradient(circle,rgba(43,92,255,0.18)_0%,rgba(43,92,255,0)_65%)]" />
+        <div className="absolute -left-52 -bottom-64 -z-10 size-[38rem] rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.18)_0%,rgba(16,185,129,0)_65%)]" />
         <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
           <Reveal>
             <div className="mb-4 font-mono text-[13px] uppercase tracking-[0.14em] text-lime-soft">

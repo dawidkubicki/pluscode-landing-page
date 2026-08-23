@@ -57,7 +57,7 @@ const FALLBACK = [
   {
     slug: "ebm" as const,
     logo: null as string | null,
-    gradient: "bg-gradient-to-br from-[#1a3fd9] via-[#2b5cff] to-[#6f92ff]",
+    gradient: "bg-gradient-to-br from-[#047857] via-[#059669] to-[#34d399]",
   },
 ];
 

@@ -127,7 +127,7 @@ export async function POST(request: NextRequest) {
         subject: `New booking: ${label} — ${fullName}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-            <h2 style="color:#0a1929;border-bottom:2px solid #2b5cff;padding-bottom:10px;">
+            <h2 style="color:#0a1929;border-bottom:2px solid #059669;padding-bottom:10px;">
               New ${esc(label)} request
             </h2>
             <div style="margin:16px 0;">

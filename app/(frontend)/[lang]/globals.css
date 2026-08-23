@@ -5,9 +5,9 @@
  *
  *  Editorial blueprint system from the Claude Design "Pluscode landing page
  *  redesign" project: deep-navy dark surfaces, a cool paper-white light
- *  surface, an electric cobalt accent and a serif display voice. Token names
+ *  surface, an emerald green accent and a serif display voice. Token names
  *  are kept stable (`night`, `cream`, `ink`, `bone`, `lime`) so shared
- *  components keep reading the same — `lime` is the cobalt brand accent.
+ *  components keep reading the same — `lime` is the emerald brand accent.
  * ------------------------------------------------------------------ */
 @theme {
   /* Surfaces */
@@ -26,10 +26,10 @@
   --color-bone: #ffffff; /* headings on dark */
   --color-bone-soft: #b9c6d8; /* body copy on dark */
   --color-bone-dim: #8fa3bd; /* muted / metadata on dark */
-  --color-lime: #2b5cff; /* primary accent — electric cobalt */
-  --color-lime-deep: #1a3fd9; /* hover / accent text on light */
-  --color-lime-soft: #6f92ff; /* accent text on dark */
-  --color-lime-bright: #4a73ff; /* primary button hover */
+  --color-lime: #059669; /* primary accent — emerald green */
+  --color-lime-deep: #047857; /* hover / accent text on light */
+  --color-lime-soft: #34d399; /* accent text on dark */
+  --color-lime-bright: #10b981; /* primary button hover */
 
   /* Typography — Figtree across every role (display, body, and the former
      mono label slots), so the whole site is one humanist sans. */
@@ -131,13 +131,13 @@
     line-height: 1.05;
   }
 
-  /* Faint cobalt blueprint grid used on dark hero / contact surfaces */
+  /* Faint emerald blueprint grid used on dark hero / contact surfaces */
   .blueprint-grid {
     background-image: linear-gradient(
-        rgba(43, 92, 255, 0.07) 1px,
+        rgba(16, 185, 129, 0.07) 1px,
         transparent 1px
       ),
-      linear-gradient(90deg, rgba(43, 92, 255, 0.07) 1px, transparent 1px);
+      linear-gradient(90deg, rgba(16, 185, 129, 0.07) 1px, transparent 1px);
     background-size: 56px 56px;
   }
 
