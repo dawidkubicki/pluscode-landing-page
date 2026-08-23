@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import LocaleLink from "./locale-link";
 import { Arrow } from "./ui";
+import { announcementStorageKey } from "@/lib/announcement-key";
 
 type Announcement = {
   text: string;
@@ -10,24 +11,19 @@ type Announcement = {
   linkUrl: string | null;
 };
 
-/** A unique-ish key so dismissing one announcement doesn't hide a future one. */
-function storageKey(text: string) {
-  let hash = 0;
-  for (let i = 0; i < text.length; i++) hash = (hash * 31 + text.charCodeAt(i)) | 0;
-  return `pc-announcement-${hash}`;
-}
-
 /**
- * Slim, dismissible banner pinned to the very top (z above the header). The
- * header reserves space for it via its `offset` prop; once dismissed it simply
- * hides, leaving a harmless transparent gap over the dark hero.
+ * Slim, dismissible banner pinned to the very top (z above the header).
+ * Visibility is driven by the `data-announcement` attribute on <html> — set by
+ * a pre-hydration script in the layout and cleared here on dismiss — so the
+ * header offset and page padding always collapse together with the bar and no
+ * empty strip is left above the nav.
  */
 export default function AnnouncementBar({
   announcement,
 }: {
   announcement: Announcement;
 }) {
-  const key = storageKey(announcement.text);
+  const key = announcementStorageKey(announcement.text);
   const [open, setOpen] = useState(true);
 
   useEffect(() => {
@@ -43,6 +39,7 @@ export default function AnnouncementBar({
 
   const dismiss = () => {
     setOpen(false);
+    document.documentElement.removeAttribute("data-announcement");
     try {
       localStorage.setItem(key, "dismissed");
     } catch {
@@ -53,7 +50,7 @@ export default function AnnouncementBar({
   const { text, linkText, linkUrl } = announcement;
 
   return (
-    <div className="fixed inset-x-0 top-0 z-[60] flex h-10 items-center bg-night text-bone">
+    <div className="fixed inset-x-0 top-0 z-[60] hidden h-10 items-center bg-night text-bone [[data-announcement]_&]:flex">
       <div className="mx-auto flex w-full max-w-[1500px] items-center justify-center gap-3 px-5 sm:px-8">
         <span className="flex items-center gap-2 truncate text-[13px]">
           <span className="hidden size-1.5 shrink-0 rounded-full bg-lime sm:inline-block" />

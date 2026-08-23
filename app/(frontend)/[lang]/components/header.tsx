@@ -149,11 +149,9 @@ function LocaleDropdown({
 export default function Header({
   locale,
   nav,
-  offset = false,
 }: {
   locale: Locale;
   nav: Nav;
-  offset?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -214,7 +212,9 @@ export default function Header({
   ];
 
   return (
-    <header className={`fixed inset-x-0 z-50 ${offset ? "top-10" : "top-0"}`}>
+    // Sits below the announcement bar while <html data-announcement> is set;
+    // snaps back to the very top the moment the bar is dismissed or absent.
+    <header className="fixed inset-x-0 z-50 top-0 [[data-announcement]_&]:top-10">
       <div
         className={`relative z-20 border-b transition-colors duration-300 ${
           scrolled || open

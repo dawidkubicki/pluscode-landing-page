@@ -16,6 +16,7 @@ import {
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { getFeatured, contactLinks } from "@/lib/team";
 import { getActiveAnnouncement } from "@/lib/announcement";
+import { announcementStorageKey } from "@/lib/announcement-key";
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -94,20 +95,32 @@ export default async function LocaleLayout({
         }
       : null);
 
+  // The announcement bar, the header's 40px offset and the matching page
+  // padding are all keyed off a `data-announcement` attribute on <html>. This
+  // inline script sets it before first paint only when the visitor hasn't
+  // dismissed this announcement, so a dismissed bar never leaves an empty
+  // strip above the header (and there's no flash for returning visitors).
+  const announcementScript = banner
+    ? `try{if(localStorage.getItem(${JSON.stringify(
+        announcementStorageKey(banner.text),
+      )})!=="dismissed")document.documentElement.setAttribute("data-announcement","")}catch(e){document.documentElement.setAttribute("data-announcement","")}`
+    : null;
+
   return (
     <html
       lang={lang}
       className={`${figtree.variable} antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-screen bg-cream text-ink">
+        {announcementScript && (
+          <script dangerouslySetInnerHTML={{ __html: announcementScript }} />
+        )}
         <LocaleProvider locale={lang}>
           {banner && <AnnouncementBar announcement={banner} />}
           <SmoothScroll>
-            <Header locale={lang} nav={dict.navigation} offset={!!banner} />
-            {/* When the announcement bar is shown the fixed header sits 40px
-                lower, so push page content down by the same amount to keep the
-                hero clear of the nav. */}
-            <div className={banner ? "pt-10" : undefined}>{children}</div>
+            <Header locale={lang} nav={dict.navigation} />
+            <div className="[[data-announcement]_&]:pt-10">{children}</div>
           </SmoothScroll>
           <FloatingContact
             dict={dict.hero}
