@@ -58,7 +58,7 @@
     "fallbackRole": "CEO & Founder",
     "eyebrow": "AI consulting · product engineering · workshops",
     "headlineEm": "real products",
-    "headlineEnd": ".",
+    "headlineEnd": "",
     "stats": [
       {
         "value": "40+",
@@ -436,55 +436,55 @@
       "machineLearning": {
         "label": "AI & Data",
         "title": "Machine Learning Solutions",
-        "subtitle": "Build intelligent systems that learn from data to automate decisions, predict outcomes, and unlock new business opportunities.",
+        "subtitle": "Models that earn their place in production. We prove the value on your data in weeks, then engineer the pipeline, deployment and monitoring around it.",
         "breadcrumb": "Machine Learning",
         "features": {
           "predictive": {
-            "title": "Predictive Analytics",
-            "description": "Forecast trends, customer behavior, and market changes with advanced predictive models."
+            "title": "Predictive analytics",
+            "description": "Churn, demand, credit risk, next best action: models that score real events instead of describing them on a dashboard. Every model is validated against a baseline, so you know exactly what it adds."
           },
           "nlp": {
-            "title": "Natural Language Processing",
-            "description": "Extract insights from text, automate customer support, and enable conversational AI."
+            "title": "Natural language processing",
+            "description": "Extraction from contracts and invoices, classification of tickets and mail, assistants grounded in your documents. We combine LLMs with classic NLP wherever each is cheaper and measurably better."
           },
           "computerVision": {
-            "title": "Computer Vision",
-            "description": "Automate visual inspection, object detection, and image analysis tasks."
+            "title": "Computer vision",
+            "description": "Defect detection on the line, OCR on messy scans, counting and tracking on video streams. We train on your images and test in the conditions your cameras actually see."
           },
           "deepLearning": {
-            "title": "Deep Learning",
-            "description": "Leverage neural networks for complex pattern recognition and decision-making."
+            "title": "Deep learning",
+            "description": "For when gradient boosting stops being enough: sequence models, embeddings, multimodal networks. We reach for deep learning where the data justifies it, and say so plainly when it does not."
           },
           "mlOps": {
-            "title": "MLOps & Deployment",
-            "description": "Production-ready ML pipelines with monitoring, versioning, and continuous improvement."
+            "title": "MLOps & deployment",
+            "description": "Versioned data, reproducible training, CI for models, drift alerts on live traffic. The unglamorous plumbing that decides whether your model survives month six."
           },
           "customModels": {
-            "title": "Custom Model Development",
-            "description": "Tailor-made models trained on your specific data for maximum accuracy."
+            "title": "Custom model development",
+            "description": "Models trained or fine-tuned on your data, for your metric, owned by you. Weights, code and pipelines are handed over, not rented back to you."
           }
         },
         "process": {
           "discovery": {
             "title": "Discovery",
-            "description": "Understand your business goals and identify ML opportunities with measurable impact."
+            "description": "We start with your business metric, not an algorithm. One or two workshops define the prediction target, the baseline to beat and what a win is worth in money."
           },
           "dataPrep": {
-            "title": "Data Preparation",
-            "description": "Collect, clean, and engineer features from your data for optimal model performance."
+            "title": "Data preparation",
+            "description": "We audit what data you actually have, then build the datasets and features the model will train on. Leakage checks and a clean train/test split happen here, not after the demo."
           },
           "development": {
-            "title": "Model Development",
-            "description": "Train and validate models using state-of-the-art algorithms and techniques."
+            "title": "Model development",
+            "description": "We train simple baselines first, then add complexity only where it pays for itself on the evaluation set. Every experiment is tracked, so results stay reproducible and comparable."
           },
           "deployment": {
-            "title": "Deployment & Monitoring",
-            "description": "Deploy models to production with monitoring and continuous improvement."
+            "title": "Deployment & monitoring",
+            "description": "The model goes live behind an API with monitoring, drift alerts and a rollback path. We watch the first weeks of real traffic with you and tune before handover."
           }
         },
         "cta": {
-          "title": "Ready to leverage AI?",
-          "subtitle": "Let's discuss how machine learning can transform your business operations.",
+          "title": "Ready to put a model in production?",
+          "subtitle": "Book a call with a senior engineer. We will tell you in 30 minutes whether your use case is worth a feasibility study.",
           "button": "Start a conversation"
         },
         "faqTitle": "Questions, answered",
@@ -504,135 +504,1270 @@
           {
             "q": "How do you keep models accurate after launch?",
             "a": "MLOps with monitoring, drift alerts, and eval suites in CI. When quality slips, we retrain or tune fast. Accuracy is a system we maintain, not a launch-day snapshot."
+          },
+          {
+            "q": "We don't think we have enough data. Is ML off the table?",
+            "a": "Usually not. Pretrained models, fine-tuning and augmentation lower the bar, and a feasibility study tells you in two weeks what your data actually supports. Sometimes the answer is to start collecting the right data now, and we will say exactly that."
+          },
+          {
+            "q": "How do you measure success?",
+            "a": "Before we train anything, we agree on the metric, the baseline to beat and the threshold that makes production worthwhile. Every demo reports against that harness. If the numbers are not there, you find out in weeks, not after a year of budget."
           }
-        ]
+        ],
+        "featuresTitle": "What we build",
+        "featuresIntro": "Six capability areas, one standard: every model ships with an evaluation harness, a deployment path and a monitoring plan.",
+        "processTitle": "How we deliver",
+        "stats": [
+          {
+            "value": "2 wks",
+            "label": "from kickoff to a first working prototype, typically"
+          },
+          {
+            "value": "4-6",
+            "label": "weeks to a production-grade pilot, measured on your data"
+          },
+          {
+            "value": "100%",
+            "label": "senior engineers on every engagement"
+          },
+          {
+            "value": "0",
+            "label": "lock-in: code, weights and pipelines are yours"
+          }
+        ],
+        "deliverablesTitle": "What you walk away with",
+        "deliverablesIntro": "Artifacts, not slideware. Every engagement ends in things your team can run without us.",
+        "deliverables": [
+          {
+            "title": "Evaluation harness & metrics report",
+            "description": "A repeatable test suite with the metrics that matter for your case, plus a written report of how the model scores against the baseline."
+          },
+          {
+            "title": "Deployed model behind an API",
+            "description": "A containerized service with authentication, versioned endpoints and load tests for your expected traffic."
+          },
+          {
+            "title": "Training & fine-tuning pipeline",
+            "description": "Scripted, reproducible training from raw data to registered model. Rerun it on new data without reverse-engineering a notebook."
+          },
+          {
+            "title": "Monitoring & drift alerts",
+            "description": "Dashboards for latency, cost and prediction quality, with alerts when input data or model behavior drifts from the baseline."
+          },
+          {
+            "title": "Model cards & documentation",
+            "description": "What the model does, what data it saw, where it fails and where its limits are. Written for engineers, auditors and your future team."
+          },
+          {
+            "title": "Handover & runbooks",
+            "description": "Step-by-step runbooks for retraining, rollback and incident response, plus handover sessions with the engineers who will own the system."
+          }
+        ],
+        "modelsTitle": "Ways to engage",
+        "modelsIntro": "Three shapes of engagement, one rule: fixed scope wherever possible, senior engineers always.",
+        "models": [
+          {
+            "name": "Feasibility study on your data",
+            "duration": "2-3 weeks · fixed scope",
+            "description": "Before you commit budget, we test whether your data supports the model you have in mind. You get numbers, not opinions.",
+            "bullets": [
+              "Data audit: coverage, quality, leakage risks",
+              "Baseline model and honest first metrics",
+              "Go / no-go recommendation with reasoning",
+              "Costed roadmap if the answer is go"
+            ]
+          },
+          {
+            "name": "Production pilot build",
+            "duration": "4-6 weeks",
+            "description": "One use case taken to a production-grade pilot: trained, evaluated, deployed behind an API and measured on live data.",
+            "bullets": [
+              "Training pipeline and evaluation harness",
+              "Deployed model with monitoring and alerts",
+              "Weekly demos on your real data",
+              "Rollout plan for scaling past the pilot"
+            ]
+          },
+          {
+            "name": "Embedded ML team",
+            "duration": "Monthly · ongoing",
+            "description": "Senior ML engineers inside your team: shipping models, building MLOps discipline and raising the level of your own people.",
+            "bullets": [
+              "Hands-on delivery, not slide decks",
+              "MLOps standards your team keeps after we leave",
+              "Pairing and code review with your engineers",
+              "Capacity that scales with your roadmap"
+            ]
+          }
+        ],
+        "toolsTitle": "Tools we work with",
+        "tools": [
+          "PyTorch",
+          "scikit-learn",
+          "Hugging Face",
+          "OpenAI & Anthropic APIs",
+          "LangGraph",
+          "Ray",
+          "ONNX",
+          "Weights & Biases",
+          "MLflow",
+          "Vertex AI",
+          "AWS SageMaker",
+          "Vector databases",
+          "Airflow",
+          "dbt",
+          "FastAPI",
+          "Docker & Kubernetes"
+        ],
+        "whoTitle": "Who this is for",
+        "who": [
+          {
+            "title": "Product teams with a validated use case",
+            "description": "You know what the model should do and roughly what it is worth. We take it from idea to a measured pilot in weeks."
+          },
+          {
+            "title": "Companies with data but no ML team",
+            "description": "Years of operational data, nobody to model it. We bring the team, build the first systems and leave you able to run them."
+          },
+          {
+            "title": "Teams stuck at the notebook stage",
+            "description": "The prototype works on a laptop and dies in review. We turn notebooks into pipelines, tests and deployments that survive production."
+          },
+          {
+            "title": "Scale-ups that need MLOps discipline",
+            "description": "Models are live, but every retrain is manual and nobody trusts the metrics. We install the pipelines, monitoring and process to scale safely."
+          }
+        ],
+        "subTitle": "Go deeper",
+        "subIntro": "Five specializations under machine learning, each with its own playbook.",
+        "sub": {
+          "custom-models": {
+            "name": "Custom models",
+            "teaser": "Bespoke models trained on your data, from first baseline to deployed system. You own the weights."
+          },
+          "nlp-llm": {
+            "name": "NLP & LLM",
+            "teaser": "LLM apps, RAG and extraction with an evaluation harness in front of every release."
+          },
+          "computer-vision": {
+            "name": "Computer vision",
+            "teaser": "Detection, OCR and quality inspection trained on your images and measured in your conditions."
+          },
+          "forecasting": {
+            "name": "Forecasting",
+            "teaser": "Demand, risk and time-series models that beat your current spreadsheet, or we tell you why not."
+          },
+          "mlops": {
+            "name": "MLOps",
+            "teaser": "Pipelines, deployment and monitoring that keep models accurate long after launch day."
+          }
+        },
+        "subpages": {
+          "custom-models": {
+            "label": "Machine Learning",
+            "title": "Custom model development",
+            "subtitle": "Bespoke models trained on your data, delivered as running systems with pipelines, evals and documentation. You own everything.",
+            "breadcrumb": "Custom models",
+            "overviewTitle": "Bespoke models, end to end",
+            "overview": [
+              "Off-the-shelf models solve generic problems. When your edge is your data, a pricing history no competitor has, a defect archive from your own line, a decade of claims, a custom model turns that edge into software. We build these models end to end: problem framing, data work, training, evaluation and deployment in one engagement.",
+              "The engagement starts with a baseline in the first days, because a simple model that works beats a complex one that might. From there, every increment of complexity has to pay for itself on the evaluation set. You see the metrics weekly, on your data, and you can stop at any point with something that already works.",
+              "What changes for you: instead of a notebook and a promise, you get a versioned training pipeline, a deployed model behind an API and the documentation to retrain without us. Weights, code and data pipelines are yours outright, and the handover includes working sessions with the engineers who will own the system."
+            ],
+            "benefitsTitle": "Why build custom",
+            "benefits": [
+              {
+                "title": "Your data becomes the moat",
+                "description": "A model trained on your history does things a generic API cannot, and competitors cannot copy it without your data."
+              },
+              {
+                "title": "Baseline first",
+                "description": "We train the simple model first and publish its score. Complexity is added only when it beats the baseline on your metric."
+              },
+              {
+                "title": "Full ownership",
+                "description": "Weights, training code and pipelines are handed over completely. No per-seat license, no rent on your own model."
+              },
+              {
+                "title": "Production from day one",
+                "description": "Models are built to be deployed: containerized, versioned and tested for latency and load, not just accuracy."
+              },
+              {
+                "title": "Cost under control",
+                "description": "A right-sized custom model at scale often runs at a fraction of per-token API pricing, and we show you that math before you build."
+              }
+            ],
+            "approachTitle": "How the work runs",
+            "approach": [
+              {
+                "title": "Frame the problem",
+                "description": "We define the prediction target, the metric and the baseline to beat, in business terms your CFO would sign off on."
+              },
+              {
+                "title": "Build the dataset",
+                "description": "Audit, clean and label the data, with leakage checks and a frozen test set before any training starts."
+              },
+              {
+                "title": "Train and evaluate",
+                "description": "Baselines first, then stronger architectures while the metric keeps moving. Every run is tracked and reproducible."
+              },
+              {
+                "title": "Deploy and hand over",
+                "description": "The winning model goes live behind an API with monitoring, and your team gets the pipeline, docs and runbooks."
+              }
+            ],
+            "deliverablesTitle": "What you get",
+            "deliverables": [
+              "Trained model with weights and full ownership",
+              "Reproducible training and evaluation pipeline",
+              "Metrics report against an agreed baseline",
+              "Deployed inference API with monitoring",
+              "Model card, documentation and retraining runbook"
+            ],
+            "faqTitle": "Questions, answered",
+            "faq": [
+              {
+                "q": "How much data do we need to train a custom model?",
+                "a": "Less than you think for fine-tuning, more than you hope for training from scratch. A two-week feasibility study on your actual data replaces guessing: you get a baseline score and a clear read on whether more data would move it."
+              },
+              {
+                "q": "Custom model or a fine-tuned foundation model?",
+                "a": "Fine-tuning wins when a pretrained model already roughly understands your domain; training from scratch wins on narrow, structured problems with plenty of labeled data. We benchmark both against your metric and recommend the cheaper path."
+              },
+              {
+                "q": "What does it cost to run after handover?",
+                "a": "We size the model for your traffic and budget before training, and the metrics report includes cost per thousand predictions. Most custom models run on modest infrastructure, and the runbook covers scaling up and down."
+              }
+            ],
+            "cta": {
+              "title": "Have data that could be a model?",
+              "subtitle": "A feasibility study answers the build question in two to three weeks, with numbers.",
+              "button": "Scope a feasibility study"
+            }
+          },
+          "nlp-llm": {
+            "label": "Machine Learning",
+            "title": "NLP & LLM engineering",
+            "subtitle": "RAG systems, document extraction, chat and agents, built evaluation-first so quality is measured before anything reaches users.",
+            "breadcrumb": "NLP & LLM",
+            "overviewTitle": "Language systems that hold up",
+            "overview": [
+              "Most LLM demos take a weekend. Making one reliable enough to face customers or auditors is the real work: grounding answers in your sources, handling the documents that break parsers, and proving quality release after release. We build LLM applications, RAG pipelines, extraction services, chat and agent systems with that bar in mind from day one.",
+              "Delivery is evaluation-first. Before we tune prompts or choose a model, we build a test set from your real documents and questions, with pass criteria you agree to. Every change is scored against it, so hallucination rate, extraction accuracy and latency are numbers on a dashboard, not impressions from a demo.",
+              "You end up with a system your team can change safely: swap the model when a better one ships, edit prompts, extend the corpus, and the eval suite tells you within minutes whether quality held. Costs are tracked per query, so the decision to scale comes with a price tag attached, not a surprise invoice at month end."
+            ],
+            "benefitsTitle": "What evaluation-first buys you",
+            "benefits": [
+              {
+                "title": "Grounded answers",
+                "description": "RAG with citations back to your sources, so every answer can be checked and hallucination rate is measured, not guessed."
+              },
+              {
+                "title": "Evaluation before launch",
+                "description": "A test set built from your real data gates every release. If quality drops, the deploy stops."
+              },
+              {
+                "title": "Model independence",
+                "description": "OpenAI, Anthropic or open weights behind one interface. When a better or cheaper model ships, switching is a config change plus an eval run."
+              },
+              {
+                "title": "Cost per query, known",
+                "description": "Token spend is tracked per feature and per customer, with caching and routing to keep the bill proportional to value."
+              },
+              {
+                "title": "Structured output you can build on",
+                "description": "Extraction returns typed, validated JSON your systems consume directly, with confidence scores for review queues."
+              }
+            ],
+            "approachTitle": "From eval set to production",
+            "approach": [
+              {
+                "title": "Build the eval set",
+                "description": "We collect real documents, questions and edge cases from your domain and define pass criteria with your experts."
+              },
+              {
+                "title": "Prototype against it",
+                "description": "First working pipeline in days: retrieval, prompts and model choice iterated against the eval set, not opinions."
+              },
+              {
+                "title": "Harden for production",
+                "description": "Guardrails, fallbacks, rate limits, structured logging and cost controls around the happy path."
+              },
+              {
+                "title": "Ship and monitor",
+                "description": "Live quality sampling, drift alerts on inputs and a feedback loop that turns user corrections into eval cases."
+              }
+            ],
+            "deliverablesTitle": "What you get",
+            "deliverables": [
+              "Evaluation suite built from your real documents",
+              "RAG or extraction pipeline deployed behind an API",
+              "Prompts and model configuration under version control",
+              "Cost and quality dashboard per query",
+              "Runbook for corpus updates and model swaps"
+            ],
+            "faqTitle": "Questions, answered",
+            "faq": [
+              {
+                "q": "Which model will you use?",
+                "a": "The one that passes your eval set at the lowest cost. We benchmark OpenAI, Anthropic and open-weight models on your actual tasks, and the architecture keeps the choice reversible."
+              },
+              {
+                "q": "How do you handle confidential documents?",
+                "a": "Your data stays in your cloud or on EU-hosted endpoints, with no training on your inputs. Where policy requires it, we deploy open-weight models fully inside your infrastructure."
+              },
+              {
+                "q": "What about hallucinations in front of customers?",
+                "a": "Retrieval grounds answers in your content, citations make them checkable, and guardrails catch off-policy output. We measure hallucination rate on the eval set and gate releases on it."
+              }
+            ],
+            "cta": {
+              "title": "Have documents or conversations to put to work?",
+              "subtitle": "Bring three real examples to a call and we will sketch the pipeline and the eval plan.",
+              "button": "Talk to an engineer"
+            }
+          },
+          "computer-vision": {
+            "label": "Machine Learning",
+            "title": "Computer vision",
+            "subtitle": "Detection, OCR and quality inspection trained on your images, tested in your lighting, deployed on your line or in your cloud.",
+            "breadcrumb": "Computer vision",
+            "overviewTitle": "Vision systems for real conditions",
+            "overview": [
+              "Vision models fail in the gap between the demo dataset and your factory floor: glare, dust, camera angles, the defect that shows up twice a month. We build detection, OCR and quality-inspection systems around that gap, training on your images and evaluating on the hard cases your team collects, not on benchmark photos.",
+              "The engagement starts with your existing footage, or a capture plan if there is none. We label a first dataset, train a baseline and show you precision and recall per defect class within weeks. From there the loop is tight: review the misses together, relabel, retrain, until the numbers clear the bar you set.",
+              "Deployment fits your constraints: edge devices next to the camera when latency or connectivity demands it, cloud when it does not. The system ships with a review UI for borderline cases, so operators correct the model and every correction becomes training data for the next iteration. Retraining on that growing set is a scheduled pipeline, not a new project."
+            ],
+            "benefitsTitle": "What you gain",
+            "benefits": [
+              {
+                "title": "Measured per class",
+                "description": "Precision and recall reported per defect or document type, so you know exactly where the model is strong and where humans stay in the loop."
+              },
+              {
+                "title": "Works in your conditions",
+                "description": "Trained and tested on your cameras, lighting and materials. The eval set is built from your worst cases, not clean samples."
+              },
+              {
+                "title": "Edge or cloud",
+                "description": "ONNX-exported models run on devices at the line or as GPU services in your cloud, chosen by latency and cost."
+              },
+              {
+                "title": "OCR beyond print",
+                "description": "Stamps, handwriting, skewed scans and multi-language documents, with confidence scores routing the doubtful ones to people."
+              },
+              {
+                "title": "A dataset that compounds",
+                "description": "Labeling standards and tooling mean every production correction grows your dataset and your accuracy over time."
+              }
+            ],
+            "approachTitle": "From first images to the line",
+            "approach": [
+              {
+                "title": "Collect and label",
+                "description": "Audit existing images or plan the capture, then label a first dataset with class definitions your operators agree on."
+              },
+              {
+                "title": "Baseline fast",
+                "description": "A first model within weeks, scored per class, so we know early whether data or modeling is the bottleneck."
+              },
+              {
+                "title": "Iterate on the misses",
+                "description": "Review errors with your domain experts, expand the dataset where it hurts and retrain until targets are met."
+              },
+              {
+                "title": "Deploy where it runs",
+                "description": "Optimize and package for edge or cloud, wire in monitoring and the human review loop, then hand over."
+              }
+            ],
+            "deliverablesTitle": "What you get",
+            "deliverables": [
+              "Labeled dataset with documented labeling standards",
+              "Trained detection or OCR model, exported for your target hardware",
+              "Per-class accuracy report on a held-out test set",
+              "Deployed inference service with review UI",
+              "Retraining pipeline and operations runbook"
+            ],
+            "faqTitle": "Questions, answered",
+            "faq": [
+              {
+                "q": "How many images do we need to start?",
+                "a": "With modern pretrained backbones, a few hundred per class is often enough for a first baseline, and augmentation stretches small sets further. The feasibility study answers it precisely: we train on what you have and report where more data would pay off."
+              },
+              {
+                "q": "Rare defects appear a few times a month. Can a model learn them?",
+                "a": "Yes, with the right approach: augmentation, synthetic examples and anomaly detection that flags anything unusual rather than only known classes. Recall on rare cases is reported separately, so the risk stays visible."
+              },
+              {
+                "q": "Does this run without internet on the shop floor?",
+                "a": "Yes. Models export to ONNX and run on industrial PCs or edge devices next to the camera, with updates shipped on your schedule and no cloud dependency at inference time."
+              }
+            ],
+            "cta": {
+              "title": "Have images and a decision to automate?",
+              "subtitle": "Send a sample of your footage and we will tell you what accuracy is realistic before you commit.",
+              "button": "Scope a vision pilot"
+            }
+          },
+          "forecasting": {
+            "label": "Machine Learning",
+            "title": "Forecasting & time series",
+            "subtitle": "Demand, risk and capacity forecasts that beat your current baseline, backtested honestly before anyone plans against them.",
+            "breadcrumb": "Forecasting",
+            "overviewTitle": "Forecasts you can plan against",
+            "overview": [
+              "Every company forecasts, mostly in spreadsheets: last year plus a percentage. The question is not whether ML can forecast, it is whether it beats what you do today by enough to change decisions: stock levels, staffing, cash planning, risk limits. We start every forecasting engagement by measuring your current baseline, because that is the number to beat.",
+              "The work runs on backtesting: models are trained on your history and evaluated as if they had been running for the past year, quarter by quarter, with only the information you had at the time. No leakage, no cherry-picked windows. You see error metrics per product, region or segment before anything touches planning.",
+              "In production, forecasts arrive on schedule through an API or straight into your planning tables, with uncertainty ranges rather than single numbers. Monitoring compares forecasts against actuals as they land and flags degradation early, and retraining is a scheduled pipeline rather than a rescue project."
+            ],
+            "benefitsTitle": "What you gain",
+            "benefits": [
+              {
+                "title": "Baseline first",
+                "description": "We measure your current forecast accuracy before modeling, so improvement is a real number, not a claim."
+              },
+              {
+                "title": "Honest backtesting",
+                "description": "Walk-forward evaluation on your history with strict cutoffs, exactly as the model would have run live."
+              },
+              {
+                "title": "Uncertainty included",
+                "description": "Ranges and quantiles instead of single points, so safety stock and staffing decisions reflect the actual risk."
+              },
+              {
+                "title": "Granular where it matters",
+                "description": "Per-SKU, per-site or per-segment forecasts, with hierarchies reconciled so the pieces sum to the totals."
+              },
+              {
+                "title": "Runs itself",
+                "description": "Scheduled retraining, automated data checks and drift alerts keep the forecast fresh without a data scientist on call."
+              }
+            ],
+            "approachTitle": "From baseline to live forecasts",
+            "approach": [
+              {
+                "title": "Measure the baseline",
+                "description": "Quantify the accuracy and cost of today's forecast, and agree which decisions better numbers would change."
+              },
+              {
+                "title": "Backtest candidates",
+                "description": "Classical statistics, gradient boosting and deep models compete on your history under identical rules."
+              },
+              {
+                "title": "Wire into planning",
+                "description": "Forecasts land where decisions happen: ERP, planning sheets or an API, with uncertainty bands attached."
+              },
+              {
+                "title": "Monitor and retrain",
+                "description": "Accuracy is tracked live against actuals, with alerts and scheduled retraining when the world shifts."
+              }
+            ],
+            "deliverablesTitle": "What you get",
+            "deliverables": [
+              "Backtest report comparing models against your current baseline",
+              "Forecasting pipeline with scheduled retraining",
+              "Forecast API or direct integration into planning tools",
+              "Accuracy monitoring with alerts against actuals",
+              "Documentation and runbook for your team"
+            ],
+            "faqTitle": "Questions, answered",
+            "faq": [
+              {
+                "q": "Our demand is volatile. Can this still work?",
+                "a": "Volatility is why quantile forecasts matter: they price the uncertainty instead of hiding it. The backtest shows honestly what is predictable and what is noise, and even a modest error reduction usually pays for itself in stock or staffing."
+              },
+              {
+                "q": "How much history do we need?",
+                "a": "Two to three years captures seasonality well, but shorter histories work with external signals and cross-learning across products. The feasibility study runs on whatever you have and reports what it supports."
+              },
+              {
+                "q": "ML forecast or the planner's judgment?",
+                "a": "Both. The model handles thousands of series consistently; planners override where they know things the data does not, and overrides are tracked so you learn when each side wins."
+              }
+            ],
+            "cta": {
+              "title": "Planning on spreadsheet forecasts?",
+              "subtitle": "A backtest on your history shows in weeks whether ML beats them, and by how much.",
+              "button": "Scope a backtest"
+            }
+          },
+          "mlops": {
+            "label": "Machine Learning",
+            "title": "MLOps & model operations",
+            "subtitle": "Pipelines, deployment, monitoring and governance that keep models accurate, auditable and cheap to change in production.",
+            "breadcrumb": "MLOps",
+            "overviewTitle": "Models as operated systems",
+            "overview": [
+              "A model in production is a system, not an artifact: data changes underneath it, dependencies age, regulators ask questions and someone has to retrain it at short notice. MLOps is the discipline that makes all of that boring. We build the pipelines, deployment paths, monitoring and governance around your models, whether we trained them or you did.",
+              "Engagements usually start with an audit: how models reach production today, where the manual steps hide and what breaks first under load or drift. From there we install the missing pieces in priority order: versioned data and models, CI that runs evals on every change, deployment with rollback, and monitoring tied to alerts someone actually receives.",
+              "The goal is that shipping a model change becomes as routine as shipping code. Your team ends up with a paved road: a retrain is a pipeline run, a rollback is one command, and an audit question is answered from the model registry instead of from somebody's memory. We stay until your engineers run that road without us."
+            ],
+            "benefitsTitle": "What good MLOps buys you",
+            "benefits": [
+              {
+                "title": "Reproducible by default",
+                "description": "Every model version links to its exact data, code and parameters, so any result can be rebuilt and explained."
+              },
+              {
+                "title": "Evals in CI",
+                "description": "Model changes run the evaluation suite automatically, and releases are gated on quality, latency and cost."
+              },
+              {
+                "title": "Drift caught early",
+                "description": "Input and prediction monitoring with alerts before accuracy decay becomes a business problem."
+              },
+              {
+                "title": "Rollback in minutes",
+                "description": "Versioned deployments with canary releases and one-command rollback when a model misbehaves."
+              },
+              {
+                "title": "Audit-ready governance",
+                "description": "Model registry, approval trails and documentation that satisfy auditors and the EU AI Act without a scramble."
+              }
+            ],
+            "approachTitle": "From audit to paved road",
+            "approach": [
+              {
+                "title": "Audit the path to production",
+                "description": "Map how models ship today, find the manual steps and rank the risks by what fails first."
+              },
+              {
+                "title": "Pave the road",
+                "description": "Versioning, pipelines and CI with evals, built on your stack rather than a new platform to buy."
+              },
+              {
+                "title": "Instrument production",
+                "description": "Monitoring for drift, quality, latency and cost, wired to alerts and dashboards your team owns."
+              },
+              {
+                "title": "Transfer the discipline",
+                "description": "Runbooks, pairing and reviews until routine operations no longer need us."
+              }
+            ],
+            "deliverablesTitle": "What you get",
+            "deliverables": [
+              "MLOps audit with a prioritized gap list",
+              "CI/CD pipelines for models with automated evals",
+              "Model registry with versioned deployments and rollback",
+              "Monitoring and drift alerting in production",
+              "Governance documentation and team runbooks"
+            ],
+            "faqTitle": "Questions, answered",
+            "faq": [
+              {
+                "q": "Do we need a new platform for this?",
+                "a": "Usually not. We build on your existing cloud and CI with open tools like MLflow and Airflow, and recommend a managed platform only when the math favors it. The discipline matters more than the logo."
+              },
+              {
+                "q": "Our models were built by another team. Is that a problem?",
+                "a": "No. MLOps engagements regularly start with inherited models. The audit establishes what exists, and versioning plus evals make them safe to change even without their original authors."
+              },
+              {
+                "q": "What does the EU AI Act mean for our models?",
+                "a": "For higher-risk uses it expects documentation, monitoring, human oversight and traceability, which is what a solid MLOps setup produces anyway. We map your models to risk classes and close the gaps in order."
+              }
+            ],
+            "cta": {
+              "title": "Models in production, discipline pending?",
+              "subtitle": "An MLOps audit gives you a prioritized gap list in about two weeks.",
+              "button": "Book an audit"
+            }
+          }
+        }
       },
       "analytics": {
         "label": "AI & Data",
         "title": "Data Analytics",
-        "subtitle": "Transform raw data into actionable insights that drive strategic decisions and measurable business growth.",
+        "subtitle": "One governed source of truth for your numbers: a modeled warehouse, tested pipelines and dashboards your teams actually use.",
         "breadcrumb": "Data Analytics",
         "features": {
           "businessIntelligence": {
             "title": "Business Intelligence",
-            "description": "Interactive dashboards and reports that provide real-time visibility into your KPIs."
+            "description": "Dashboards and reports built on governed metric definitions, so finance, sales and ops read the same numbers. Real-time visibility into the KPIs that run the business, not another spreadsheet export."
           },
           "dataVisualization": {
             "title": "Data Visualization",
-            "description": "Beautiful, intuitive visualizations that make complex data easy to understand."
+            "description": "Charts that answer a question instead of decorating a slide. We design views around decisions: what changed, why, and what to do next."
           },
           "dataWarehousing": {
             "title": "Data Warehousing",
-            "description": "Centralized data repositories that unify information from multiple sources."
+            "description": "A modeled warehouse on Snowflake, BigQuery or Databricks that unifies your sources into clean, documented layers. Built with dbt, versioned in git and tested on every run."
           },
           "realTimeAnalytics": {
             "title": "Real-Time Analytics",
-            "description": "Stream processing and real-time insights for time-sensitive decisions."
+            "description": "Streaming pipelines on Kafka or CDC feeds when the nightly batch is too late. Operational dashboards and alerts with latency measured in seconds, not hours."
           },
           "predictiveAnalytics": {
             "title": "Predictive Analytics",
-            "description": "Forecast future trends and outcomes using historical data patterns."
+            "description": "Churn, demand and scoring models trained on your warehouse data. Forecasts wired into the tools your teams already work in, not a notebook that never ships."
           },
           "dataGovernance": {
             "title": "Data Governance",
-            "description": "Ensure data quality, security, and compliance across your organization."
+            "description": "Access controls, lineage, metric definitions and audit trails built into the platform from day one. GDPR-ready by design, so compliance is a property of the pipeline, not a project."
           }
         },
         "process": {
           "assessment": {
             "title": "Assessment",
-            "description": "Evaluate your current data landscape and identify opportunities for improvement."
+            "description": "We map your sources, pipelines and reporting, and interview the people who use the numbers. Two to three weeks in, you have an honest picture of what works, what is broken and what it costs."
           },
           "architecture": {
             "title": "Architecture Design",
-            "description": "Design a scalable data architecture that meets your current and future needs."
+            "description": "We design the target platform on your cloud: warehouse, ELT, modeling layers and BI. You review a written architecture with costs and trade-offs before we build anything."
           },
           "implementation": {
             "title": "Implementation",
-            "description": "Build and deploy data pipelines, warehouses, and analytics solutions."
+            "description": "We build in vertical slices, so a first dashboard on live data ships in weeks. Every pipeline lands with tests, alerting and documentation, not as a black box."
           },
           "optimization": {
             "title": "Optimization",
-            "description": "Continuously improve performance and expand analytics capabilities."
+            "description": "Once the platform runs, we tune query performance and warehouse spend, and extend to new domains. Your team takes over gradually, with pairing and handover built into the plan."
           }
         },
         "cta": {
-          "title": "Unlock your data's potential",
-          "subtitle": "Let's build a data-driven foundation for better business decisions.",
-          "button": "Get started"
+          "title": "Make your numbers trustworthy",
+          "subtitle": "Talk to a senior engineer about your data landscape. You will leave the call knowing what to build first.",
+          "button": "Book a discovery call"
         },
         "faqTitle": "Questions, answered",
         "faq": [
           {
             "q": "Do we need this before AI?",
-            "a": "Mostly yes. AI is only as good as the data feeding it. A clean, governed data layer makes models cheaper, faster, and more accurate. We build the foundation AI actually needs."
+            "a": "Mostly yes. AI is only as good as the data feeding it, and a clean, governed data layer makes models cheaper, faster and more accurate. We build the foundation AI actually needs."
           },
           {
-            "q": "How long until we see dashboards?",
-            "a": "First useful dashboards in weeks, not quarters. We ship a working slice early, then extend. You get answers to real questions fast while the wider warehouse grows underneath."
+            "q": "How long until we see value?",
+            "a": "First useful dashboards in weeks, not quarters. We ship a working slice early, then extend it. You get answers to real questions fast while the wider warehouse grows underneath."
+          },
+          {
+            "q": "Our data lives in a dozen systems. Is that a problem?",
+            "a": "It is the normal starting point. Connectors like Fivetran and Airbyte cover most SaaS and database sources, and we build custom ingestion for the rest. Fragmentation is an argument for a warehouse, not against one."
+          },
+          {
+            "q": "Should we buy a tool or build a platform?",
+            "a": "Usually both. We assemble proven components, warehouse, ELT and BI, and write custom code only where your business logic lives. You get the speed of buying with the fit of building, and you own the result."
           },
           {
             "q": "Will it work with our existing stack?",
-            "a": "Yes. We integrate with your warehouse, BI, and cloud, whether that is Snowflake, BigQuery, dbt, or Power BI. We meet your stack where it is, no rip and replace."
+            "a": "Yes. We integrate with your warehouse, BI and cloud, whether that is Snowflake, BigQuery, dbt or Power BI. We meet your stack where it is, no rip and replace."
           },
           {
             "q": "How do you keep data secure and compliant?",
-            "a": "Access controls, encryption, lineage, and audit built in from day one. We design for GDPR and your internal policy. Governance is part of the pipeline, not a bolt-on afterthought."
+            "a": "Access controls, encryption, lineage and audit built in from day one. We design for GDPR and your internal policy. Governance is part of the pipeline, not a bolt-on afterthought."
           }
-        ]
+        ],
+        "featuresTitle": "What we build",
+        "featuresIntro": "Six capabilities, one stack: from raw sources to governed metrics, delivered by senior engineers on the cloud you already run.",
+        "processTitle": "How an engagement runs",
+        "stats": [
+          {
+            "value": "2-4 wks",
+            "label": "From kickoff to a first live dashboard on your data"
+          },
+          {
+            "value": "100%",
+            "label": "Senior engineers, on every data engagement"
+          },
+          {
+            "value": "1",
+            "label": "Accountable partner from architecture to handover"
+          },
+          {
+            "value": "0",
+            "label": "Lock-in: you own the code, the models and the docs"
+          }
+        ],
+        "deliverablesTitle": "What you walk away with",
+        "deliverablesIntro": "Every engagement produces artifacts your team owns and can run without us.",
+        "deliverables": [
+          {
+            "title": "Data platform architecture",
+            "description": "A written target architecture for your cloud: warehouse, ingestion, modeling and BI, with costs and trade-offs made explicit."
+          },
+          {
+            "title": "Modeled warehouse layers",
+            "description": "Staging, core and mart layers built with dbt, versioned in git, documented and tested on every run."
+          },
+          {
+            "title": "Governed metric definitions",
+            "description": "One agreed definition per metric, encoded in the semantic layer, so revenue means the same thing in every report."
+          },
+          {
+            "title": "Self-serve dashboards",
+            "description": "Dashboards in Looker, Power BI or Metabase that answer the questions teams actually ask, without a ticket to the data team."
+          },
+          {
+            "title": "Data quality tests and alerting",
+            "description": "Automated checks on freshness, volume and schema, with alerts that reach the right person before the CFO spots the gap."
+          },
+          {
+            "title": "Documentation and handover",
+            "description": "Runbooks, lineage and onboarding docs, plus pairing sessions so your team operates the platform from the day we leave."
+          }
+        ],
+        "modelsTitle": "Three ways to engage",
+        "modelsIntro": "Fixed scope where it makes sense, embedded capacity where it does not. Every model starts with a free call with a senior engineer.",
+        "models": [
+          {
+            "name": "Data & analytics audit",
+            "duration": "2-3 weeks · fixed fee",
+            "description": "A structured review of your data landscape that ends in a costed, prioritized roadmap. Useful on its own, and the safest first step with us.",
+            "bullets": [
+              "Inventory of sources, pipelines and reports",
+              "Data quality and architecture assessment",
+              "Target architecture for your cloud and stack",
+              "Prioritized roadmap with effort and cost estimates"
+            ]
+          },
+          {
+            "name": "Analytics platform build",
+            "duration": "6-12 weeks · fixed scope",
+            "description": "We design and build the platform end to end: ingestion, warehouse, modeling, dashboards and quality gates, then hand it over documented.",
+            "bullets": [
+              "Warehouse and ELT built on your cloud",
+              "dbt models with tests and CI from day one",
+              "Governed metrics and first self-serve dashboards",
+              "Documentation, runbooks and team handover"
+            ]
+          },
+          {
+            "name": "Embedded data team",
+            "duration": "Monthly · ongoing",
+            "description": "Senior data engineers working inside your team on your backlog. Capacity scales with the roadmap, knowledge stays in your company.",
+            "bullets": [
+              "Senior engineers embedded in your rituals and tools",
+              "Roadmap delivery across platform, BI and ML",
+              "Cost, performance and quality monitoring",
+              "Deliberate knowledge transfer to your own staff"
+            ]
+          }
+        ],
+        "toolsTitle": "Tools we work with",
+        "tools": [
+          "dbt",
+          "Snowflake",
+          "BigQuery",
+          "Databricks",
+          "PostgreSQL",
+          "Airflow",
+          "Fivetran",
+          "Airbyte",
+          "Kafka",
+          "Spark",
+          "Looker",
+          "Power BI",
+          "Metabase",
+          "Great Expectations",
+          "Terraform"
+        ],
+        "whoTitle": "Who this is for",
+        "who": [
+          {
+            "title": "Leadership flying blind",
+            "description": "Board decks assembled from spreadsheets that disagree with each other. You get one governed source of truth and numbers you can defend."
+          },
+          {
+            "title": "Companies with data silos",
+            "description": "After growth or M&A, every system tells a different story. We unify the sources into one warehouse without ripping out the tools that work."
+          },
+          {
+            "title": "Product teams needing event analytics",
+            "description": "You ship features but cannot see activation, retention or funnels. We build event pipelines and product dashboards on your own warehouse."
+          },
+          {
+            "title": "Organizations preparing for AI",
+            "description": "Models are only as good as the data underneath. We build the governed foundation that makes AI projects cheaper, faster and auditable."
+          }
+        ],
+        "subTitle": "Go deeper",
+        "subIntro": "Five specializations under one data practice. Start where it hurts most.",
+        "sub": {
+          "data-platforms": {
+            "name": "Data platforms",
+            "teaser": "Warehouse and lakehouse architecture on Snowflake, BigQuery or Databricks, designed and built for the next five years."
+          },
+          "business-intelligence": {
+            "name": "Business intelligence",
+            "teaser": "Governed metrics and self-serve dashboards, so every team reads the same numbers without filing a ticket."
+          },
+          "real-time-analytics": {
+            "name": "Real-time analytics",
+            "teaser": "Streaming pipelines and operational dashboards for the decisions that cannot wait for the nightly batch."
+          },
+          "data-engineering": {
+            "name": "Data engineering",
+            "teaser": "ELT pipelines, orchestration and automated quality tests that keep every downstream number trustworthy."
+          },
+          "predictive-analytics": {
+            "name": "Predictive analytics",
+            "teaser": "Churn, demand and scoring models on your warehouse data: the bridge from reporting into machine learning."
+          }
+        },
+        "subpages": {
+          "data-platforms": {
+            "label": "Data Analytics",
+            "title": "Data platforms",
+            "subtitle": "Warehouse and lakehouse architecture designed, built and handed over on the cloud you already run.",
+            "breadcrumb": "Data platforms",
+            "overviewTitle": "What we do",
+            "overview": [
+              "A data platform is the layer between your operational systems and every report, dashboard and model you run. We design and build it on Snowflake, BigQuery or Databricks: ingestion, a modeled warehouse, orchestration and a semantic layer, defined as code and deployed on your own cloud account, not ours.",
+              "The engagement starts with an architecture sprint: we map sources, volumes, latency needs and access patterns, then put a written design with costs in front of you before any build. Delivery runs in vertical slices, so the first sources flow into a queryable warehouse within weeks, not at the end of the project.",
+              "What changes: instead of point-to-point exports and one overloaded analyst, you get a single platform your whole company queries. Adding a new source or metric becomes a pull request, not a project. Access is governed per role, warehouse spend is visible from the first invoice, and every table has an owner and documentation."
+            ],
+            "benefitsTitle": "Why it pays off",
+            "benefits": [
+              {
+                "title": "One source of truth",
+                "description": "All sources land in one modeled warehouse, so reports stop contradicting each other."
+              },
+              {
+                "title": "Architecture before invoices",
+                "description": "You approve a written design with cost estimates before the build starts."
+              },
+              {
+                "title": "Everything as code",
+                "description": "Infrastructure in Terraform, models in dbt, all versioned, reviewed and reproducible."
+              },
+              {
+                "title": "Costs under control",
+                "description": "Warehouse spend is monitored per workload from day one, so growth does not surprise finance."
+              },
+              {
+                "title": "Built for handover",
+                "description": "Your engineers pair with ours during the build and run the platform without us afterwards."
+              }
+            ],
+            "approachTitle": "How we work",
+            "approach": [
+              {
+                "title": "Architecture sprint",
+                "description": "We map sources, volumes, latency needs and access patterns, then design the target platform with explicit trade-offs and running costs."
+              },
+              {
+                "title": "Foundation build",
+                "description": "Cloud accounts, networking, warehouse and orchestration set up as code, with CI/CD and environments from the first week."
+              },
+              {
+                "title": "Source onboarding",
+                "description": "Sources connect in priority order, each landing as modeled, tested and documented tables, with a first dashboard proving the slice."
+              },
+              {
+                "title": "Hardening and handover",
+                "description": "Performance and cost tuning, access policies, runbooks and pairing sessions until your team owns the platform."
+              }
+            ],
+            "deliverablesTitle": "Deliverables",
+            "deliverables": [
+              "Written platform architecture with cost model",
+              "Infrastructure as code on your cloud account",
+              "Ingestion pipelines for prioritized sources",
+              "Modeled warehouse with tests and documentation",
+              "Runbooks and handover to your team"
+            ],
+            "faqTitle": "Questions, answered",
+            "faq": [
+              {
+                "q": "Snowflake, BigQuery or Databricks?",
+                "a": "It depends on your cloud, your workloads and your team's skills, and we tell you which one and why in the architecture sprint. We have no reseller deals, so the recommendation is unbiased."
+              },
+              {
+                "q": "Can you migrate our existing warehouse?",
+                "a": "Yes. We migrate incrementally, running old and new in parallel and reconciling numbers before anything is switched off. No big-bang cutover, no reporting blackout."
+              },
+              {
+                "q": "Do we need a data engineer on staff?",
+                "a": "Not on day one. The platform is built so an analyst can operate the daily flow, and we stay available for the heavier changes until you decide to hire."
+              }
+            ],
+            "cta": {
+              "title": "Get an architecture you can defend",
+              "subtitle": "Walk a senior engineer through your stack and get an honest read on the right platform for it.",
+              "button": "Book a discovery call"
+            }
+          },
+          "business-intelligence": {
+            "label": "Data Analytics",
+            "title": "Business intelligence",
+            "subtitle": "Governed metrics, self-serve dashboards and reporting your teams trust enough to stop exporting to Excel.",
+            "breadcrumb": "Business intelligence",
+            "overviewTitle": "What we do",
+            "overview": [
+              "Business intelligence fails when every department computes its own version of revenue. We fix the definitions first: a governed semantic layer where each metric has one owner, one formula and one test, then build the dashboards on top in Looker, Power BI or Metabase. The result is reporting the whole company can argue from, not about.",
+              "We start from the decisions, not the data: which questions does leadership ask weekly, which numbers do teams argue about. The first governed dashboard ships within weeks on live warehouse data, and each following iteration retires another spreadsheet. Every number is validated against the old reports with the people who own them, so trust transfers instead of breaking.",
+              "The change is cultural as much as technical: meetings start from the same dashboard instead of dueling exports. Analysts stop reconciling numbers and start answering why they moved, and new questions are self-served instead of queued behind a ticket. We measure adoption, weekly active viewers per dashboard, and treat it as the success metric of the engagement."
+            ],
+            "benefitsTitle": "Why it pays off",
+            "benefits": [
+              {
+                "title": "Metrics with one definition",
+                "description": "Revenue, churn and margin mean the same thing in every report, enforced in code."
+              },
+              {
+                "title": "Self-serve for real",
+                "description": "Teams answer their own questions from curated data models, without SQL and without tickets."
+              },
+              {
+                "title": "Dashboards people open",
+                "description": "Views designed around decisions, so they get used on Monday morning, not just in the demo."
+              },
+              {
+                "title": "Trust you can audit",
+                "description": "Every number traces back through lineage to its source, so disputes end with evidence."
+              },
+              {
+                "title": "Less analyst toil",
+                "description": "Recurring reports are automated, freeing analysts for the questions that actually need them."
+              }
+            ],
+            "approachTitle": "How we work",
+            "approach": [
+              {
+                "title": "Metric workshop",
+                "description": "We catalogue the numbers that run the business, find where definitions diverge and agree owners and formulas."
+              },
+              {
+                "title": "Semantic layer",
+                "description": "Definitions are encoded in dbt and your BI tool's model, tested and versioned like any other code."
+              },
+              {
+                "title": "Dashboard delivery",
+                "description": "Dashboards ship in priority order, each validated against the old numbers with the people who use them."
+              },
+              {
+                "title": "Adoption and self-serve",
+                "description": "Training, office hours and curated datasets until self-serve is the default and exports are the exception."
+              }
+            ],
+            "deliverablesTitle": "Deliverables",
+            "deliverables": [
+              "Governed metric catalogue with owners",
+              "Semantic layer encoded in dbt and BI",
+              "Self-serve dashboards for priority domains",
+              "Validation against legacy reports",
+              "Training and adoption playbook"
+            ],
+            "faqTitle": "Questions, answered",
+            "faq": [
+              {
+                "q": "Which BI tool do you recommend?",
+                "a": "The one your team will actually use. Looker for a strong semantic layer, Power BI in Microsoft shops, Metabase when speed and cost matter. We work in all three and advise against a switch when yours already fits."
+              },
+              {
+                "q": "Our reports disagree today. Where do you start?",
+                "a": "With the two or three metrics that cause the most arguments. We trace each conflicting report to its source, agree one definition with the owners and encode it in the semantic layer so the fight ends."
+              },
+              {
+                "q": "Can we still use Excel?",
+                "a": "Yes, as a consumer. Analysts can pull governed data into spreadsheets for one-off work. What ends is Excel as the source of record for company numbers."
+              }
+            ],
+            "cta": {
+              "title": "End the spreadsheet arguments",
+              "subtitle": "Show us the two reports that never match and we will show you how to make them agree.",
+              "button": "Book a discovery call"
+            }
+          },
+          "real-time-analytics": {
+            "label": "Data Analytics",
+            "title": "Real-time analytics",
+            "subtitle": "Streaming pipelines and operational dashboards for the decisions that cannot wait for tomorrow's batch.",
+            "breadcrumb": "Real-time analytics",
+            "overviewTitle": "What we do",
+            "overview": [
+              "Some decisions expire in minutes: fraud checks, stock allocation, pricing, incident response. Real-time analytics moves those signals from tomorrow's report into a live pipeline, using Kafka, change data capture and stream processing to bring latency from hours down to seconds. We build that path on your cloud, next to the warehouse you already have.",
+              "We are deliberately conservative about what needs streaming, because real-time infrastructure costs more to run and operate. The engagement starts by pricing the latency requirement per use case; whatever genuinely needs seconds gets a streaming path, the rest stays on cheaper batch. You see that split, with running costs, before we build anything.",
+              "In production this looks like operational dashboards that update live, alerts firing on thresholds and events flowing back into your systems to trigger action. Your batch warehouse and the streaming path share definitions, so the live number and tomorrow's report finally agree. Your team gets runbooks, replay procedures and monitoring, so operating it is routine."
+            ],
+            "benefitsTitle": "Why it pays off",
+            "benefits": [
+              {
+                "title": "Latency in seconds",
+                "description": "Fresh signals for operations, fraud, logistics and pricing while they can still change the outcome."
+              },
+              {
+                "title": "Streaming only where it pays",
+                "description": "Each use case gets the cheapest latency that meets the need. Batch stays batch."
+              },
+              {
+                "title": "One set of definitions",
+                "description": "Streaming metrics reuse the warehouse's governed definitions, so live and daily numbers match."
+              },
+              {
+                "title": "Alerts, not just charts",
+                "description": "Thresholds and anomalies notify the responsible person or trigger an automated response."
+              },
+              {
+                "title": "Operable by your team",
+                "description": "Monitoring, replay and dead-letter handling built in, so incidents are routine, not heroics."
+              }
+            ],
+            "approachTitle": "How we work",
+            "approach": [
+              {
+                "title": "Latency audit",
+                "description": "We list candidate use cases and price the value of seconds versus hours for each of them, honestly."
+              },
+              {
+                "title": "Streaming backbone",
+                "description": "Kafka or managed equivalents plus CDC from your operational databases, deployed as code."
+              },
+              {
+                "title": "First live use case",
+                "description": "One high-value flow goes end to end: events in, processed metrics out, dashboard and alerts live."
+              },
+              {
+                "title": "Scale and operate",
+                "description": "More flows onboard onto the same backbone, with runbooks and on-call handover to your team."
+              }
+            ],
+            "deliverablesTitle": "Deliverables",
+            "deliverables": [
+              "Latency requirements map per use case",
+              "Streaming backbone with CDC ingestion",
+              "Live operational dashboards and alerting",
+              "Reconciliation with batch warehouse numbers",
+              "Runbooks for replay and incident response"
+            ],
+            "faqTitle": "Questions, answered",
+            "faq": [
+              {
+                "q": "Do we actually need real-time?",
+                "a": "Often only for a slice of your analytics. We would rather tell you that batch is enough than sell you a streaming platform, and the latency audit gives an answer per use case in the first weeks."
+              },
+              {
+                "q": "What does streaming infrastructure cost to run?",
+                "a": "More than batch, which is exactly why we scope it narrowly. Managed services like MSK, Pub/Sub or Confluent keep the operational load reasonable, and the architecture document puts monthly figures on your workload."
+              },
+              {
+                "q": "Can it feed actions, not just dashboards?",
+                "a": "Yes. Processed events can flow back into your systems through APIs and webhooks: blocking a transaction, replenishing stock or paging a person. Analytics that triggers action is usually where real-time pays off."
+              }
+            ],
+            "cta": {
+              "title": "Find out what real-time is worth",
+              "subtitle": "Bring your use case and get a straight answer on latency, architecture and running cost.",
+              "button": "Book a discovery call"
+            }
+          },
+          "data-engineering": {
+            "label": "Data Analytics",
+            "title": "Data engineering",
+            "subtitle": "ELT pipelines, orchestration and data quality engineering that keep every downstream number trustworthy.",
+            "breadcrumb": "Data engineering",
+            "overviewTitle": "What we do",
+            "overview": [
+              "Data engineering is the unglamorous layer everything else depends on: ingestion from your systems, transformation into clean models, orchestration that runs on schedule and quality gates that stop bad data before it reaches a dashboard. We build and run it with the same rigor as production software, because for your reporting that is exactly what it is.",
+              "Pipelines are code: dbt for transformation, Airflow or Dagster for orchestration, Fivetran or Airbyte for ingestion, everything in git with CI, tests and review. An engagement typically starts by stabilizing what you have, then extends it source by source, with tests landing alongside each model rather than in a cleanup phase that never comes.",
+              "What changes for your team: mornings stop starting with a broken dashboard and a Slack thread of guesses. Failures alert the right person with lineage attached, incidents have runbooks, and adding a source becomes a routine pull request instead of a fragile side project. Data quality turns from a feeling into a number you can put an SLA on."
+            ],
+            "benefitsTitle": "Why it pays off",
+            "benefits": [
+              {
+                "title": "Pipelines as software",
+                "description": "Version control, code review, CI and environments. No hand-edited jobs on a server."
+              },
+              {
+                "title": "Quality gates built in",
+                "description": "Freshness, volume and schema tests run on every load and block bad data early."
+              },
+              {
+                "title": "Failures that explain themselves",
+                "description": "Alerts carry lineage and context, so the fix takes minutes, not a morning of archaeology."
+              },
+              {
+                "title": "Costs that scale sanely",
+                "description": "Incremental models and right-sized warehouses keep compute bills proportional to value."
+              },
+              {
+                "title": "A stack your team can hold",
+                "description": "Boring, documented, widely adopted tools your future hires will already know."
+              }
+            ],
+            "approachTitle": "How we work",
+            "approach": [
+              {
+                "title": "Stabilize",
+                "description": "We instrument what you have with tests, alerting and lineage, so the ground stops moving."
+              },
+              {
+                "title": "Standardize",
+                "description": "Ingestion, transformations and orchestration converge on one reviewed, documented pattern."
+              },
+              {
+                "title": "Extend",
+                "description": "New sources and models are added in priority order, each with tests and documentation as a merge requirement."
+              },
+              {
+                "title": "Operate and hand over",
+                "description": "On-call, runbooks and dashboards for the pipelines themselves, then a staged handover to your engineers."
+              }
+            ],
+            "deliverablesTitle": "Deliverables",
+            "deliverables": [
+              "ELT pipelines in git with CI",
+              "Orchestration with retries and alerting",
+              "Data quality test suite and SLAs",
+              "Lineage and pipeline documentation",
+              "Incident runbooks and handover"
+            ],
+            "faqTitle": "Questions, answered",
+            "faq": [
+              {
+                "q": "Our pipelines break weekly. Rebuild or repair?",
+                "a": "Usually repair first. Tests and alerting around the existing pipelines stop the bleeding in weeks; rebuilds happen incrementally where the audit shows they pay off. A big-bang rewrite is rarely the answer."
+              },
+              {
+                "q": "Fivetran or custom ingestion?",
+                "a": "Managed connectors for the standard sources, custom code only where APIs are unusual or volumes make per-row pricing hurt. The audit includes that per-source calculation, with numbers rather than preferences."
+              },
+              {
+                "q": "How do you define data quality?",
+                "a": "As tests with owners: freshness, volume, schema, uniqueness and business rules, checked on every run. Quality is a number on a dashboard and an alert with a name on it, not a slogan."
+              }
+            ],
+            "cta": {
+              "title": "Make the pipelines boring",
+              "subtitle": "Tell a senior engineer where it hurts and get a stabilization plan measured in weeks.",
+              "button": "Book a discovery call"
+            }
+          },
+          "predictive-analytics": {
+            "label": "Data Analytics",
+            "title": "Predictive analytics",
+            "subtitle": "Churn, demand and scoring models on your warehouse data: the shortest path from reporting into machine learning.",
+            "breadcrumb": "Predictive analytics",
+            "overviewTitle": "What we do",
+            "overview": [
+              "Predictive analytics answers forward questions with the data you already collect: which customers are likely to churn, what demand next month looks like, which lead or claim deserves attention first. Built on a governed warehouse, these are focused models wired into daily work, not a research program.",
+              "We start from a decision someone makes weekly, then build the simplest model that beats the current guesswork, validated on your history before anyone trusts it live. The first scored output usually lands in weeks, inside the tools your team already uses: CRM, dashboards or a plain API. No platform migration is required if your warehouse is in reasonable shape.",
+              "Every model ships with monitoring for accuracy and drift, a retraining plan and an honest measure of lift over the baseline. If a heuristic beats the model, we say so. This is also the natural bridge into wider ML and AI work, on foundations that are already governed and tested, which is exactly where most AI initiatives stall."
+            ],
+            "benefitsTitle": "Why it pays off",
+            "benefits": [
+              {
+                "title": "Forecasts, not hunches",
+                "description": "Demand, churn and revenue projections with measured accuracy and honest uncertainty ranges."
+              },
+              {
+                "title": "Scores where work happens",
+                "description": "Predictions land in your CRM, ERP or dashboards, not in a notebook nobody opens."
+              },
+              {
+                "title": "Validated before trusted",
+                "description": "Every model is backtested on your history and compared against the current way of deciding."
+              },
+              {
+                "title": "Monitored in production",
+                "description": "Accuracy and drift are tracked live, with retraining planned rather than improvised."
+              },
+              {
+                "title": "A bridge into ML and AI",
+                "description": "The same features, pipelines and governance carry your first models into the wider AI roadmap."
+              }
+            ],
+            "approachTitle": "How we work",
+            "approach": [
+              {
+                "title": "Pick the decision",
+                "description": "We choose one recurring decision where a better prediction has clear, countable value."
+              },
+              {
+                "title": "Baseline and features",
+                "description": "We measure how the decision is made today and build features from your warehouse data."
+              },
+              {
+                "title": "Model and validate",
+                "description": "Simple models first, backtested on history, promoted only when they beat the baseline."
+              },
+              {
+                "title": "Deploy and monitor",
+                "description": "The model ships into your tools with accuracy tracking, drift alerts and a retraining cadence."
+              }
+            ],
+            "deliverablesTitle": "Deliverables",
+            "deliverables": [
+              "Scoped use case with success metric",
+              "Feature pipelines on warehouse data",
+              "Validated model with backtest report",
+              "Integration into CRM, ERP or BI",
+              "Monitoring, drift alerts and retraining plan"
+            ],
+            "faqTitle": "Questions, answered",
+            "faq": [
+              {
+                "q": "How much data do we need?",
+                "a": "Less than the myth says. A few thousand labeled examples often support a useful churn or scoring model, and the feasibility check in week one tells you concretely whether your history is enough."
+              },
+              {
+                "q": "What if the model performs poorly?",
+                "a": "Then you learn that early and cheaply. We validate against your history before production, and if the lift over the current baseline is not worth the complexity, we recommend stopping. That answer costs weeks, not quarters."
+              },
+              {
+                "q": "Is this machine learning? Do we need data scientists?",
+                "a": "It is applied machine learning on tabular warehouse data, and no, you do not need to hire first. We build and hand over models your analysts can monitor, and hiring can follow the proven value."
+              }
+            ],
+            "cta": {
+              "title": "Start predicting instead of reacting",
+              "subtitle": "Pick the decision that hurts most and we will scope a model for it in one call.",
+              "button": "Book a discovery call"
+            }
+          }
+        }
       },
       "consulting": {
         "label": "AI & Data",
         "title": "AI Consulting",
-        "subtitle": "Strategic guidance to help you navigate the AI landscape and implement solutions that deliver real business value.",
+        "subtitle": "Senior engineers who find the AI use cases worth funding, prove them on your data in weeks, and stay until they run in production.",
         "breadcrumb": "AI Consulting",
         "features": {
           "strategy": {
-            "title": "AI Strategy Development",
-            "description": "Create a roadmap for AI adoption aligned with your business objectives."
+            "title": "AI strategy development",
+            "description": "We turn your business goals into a ranked portfolio of AI use cases with owners, budgets and success metrics. The output is a plan your board can fund and your engineers can build."
           },
           "assessment": {
-            "title": "AI Readiness Assessment",
-            "description": "Evaluate your organization's capability to adopt and benefit from AI."
+            "title": "AI readiness assessment",
+            "description": "We audit your data, systems, skills and processes against what your target use cases actually require. You get a scorecard and a gap plan, not a maturity-model poster."
           },
           "implementation": {
-            "title": "Implementation Planning",
-            "description": "Detailed project plans for successful AI initiative execution."
+            "title": "Implementation planning",
+            "description": "We scope each initiative down to architecture, team, timeline and cost before anyone writes code. Decisions fixed up front cut the expensive rework later."
           },
           "training": {
-            "title": "Team Training",
-            "description": "Upskill your team with AI literacy and hands-on technical training."
+            "title": "Team training",
+            "description": "We train your engineers, product managers and leadership on the parts of AI they will actually touch. Hands-on sessions on your stack and your data, not generic slideware."
           },
           "governance": {
-            "title": "AI Governance",
-            "description": "Establish ethical guidelines and governance frameworks for responsible AI."
+            "title": "AI governance",
+            "description": "We set up risk classification, review gates and documentation that satisfy the EU AI Act without stalling delivery. Governance engineers follow because it fits how they work."
           },
           "optimization": {
-            "title": "Performance Optimization",
-            "description": "Improve existing AI systems for better accuracy and efficiency."
+            "title": "Performance optimization",
+            "description": "We measure existing AI systems on accuracy, latency and cost, then fix the weakest link first. Typical work: better retrieval, tighter prompts, cheaper model routing."
           }
         },
         "process": {
           "discovery": {
             "title": "Discovery",
-            "description": "Deep dive into your business challenges and AI opportunities."
+            "description": "We interview your stakeholders and review your data, systems and workflows. Within two weeks you know which AI opportunities are real and which are noise."
           },
           "strategy": {
             "title": "Strategy",
-            "description": "Develop a comprehensive AI strategy with clear goals and milestones."
+            "description": "We rank use cases by value, feasibility and risk, then write the business case for the top ones. You get a roadmap with numbers attached, not a vision statement."
           },
           "execution": {
             "title": "Execution",
-            "description": "Guide implementation with hands-on support and expertise."
+            "description": "We prove the top use case as a working pilot on your data, measured against an agreed baseline. The same engineers then take it to production."
           },
           "support": {
-            "title": "Ongoing Support",
-            "description": "Continuous advisory and optimization as your AI capabilities mature."
+            "title": "Ongoing support",
+            "description": "We stay on as an advisory partner: architecture reviews, evaluations of new models, and a roadmap that stays honest. You scale our involvement up or down as needed."
           }
         },
         "cta": {
-          "title": "Need expert guidance?",
-          "subtitle": "Our AI consultants are ready to help you navigate the path to AI success.",
+          "title": "Not sure where AI fits your business?",
+          "subtitle": "Book a free 30-minute call with a senior engineer. You leave with two or three use cases worth testing, whether or not we work together.",
           "button": "Schedule a consultation"
         },
         "faqTitle": "Questions, answered",
@@ -652,8 +1787,574 @@
           {
             "q": "How is this different from a big consultancy?",
             "a": "Engineers run the engagement, not analysts. We build and deploy, not just advise. Smaller team, senior people, production code you own. Less slideware, more shipped."
+          },
+          {
+            "q": "Our data is a mess. Is that a blocker?",
+            "a": "It rarely is. Most useful AI work starts on imperfect data: documents, tickets, spreadsheets, half-maintained databases. The audit shows which gaps actually block your top use case and which you can ignore. We fix the former, skip the latter, and put data quality on the roadmap only where it earns its cost."
+          },
+          {
+            "q": "How do you price this?",
+            "a": "The audit and the strategy sprint are fixed-fee with a defined scope and deliverables, so you know the number before we start. The advisory retainer is a flat monthly rate you can pause or stop at any time. If the first pilot needs engineering beyond the sprint, we quote it separately before any work begins."
           }
-        ]
+        ],
+        "featuresTitle": "What we cover",
+        "featuresIntro": "One consulting team across strategy, delivery and operations. Every recommendation comes from engineers who will have to make it work.",
+        "processTitle": "How an engagement runs",
+        "stats": [
+          {
+            "value": "2-6",
+            "label": "weeks from kickoff to a validated pilot"
+          },
+          {
+            "value": "100%",
+            "label": "senior engineers, no juniors on your account"
+          },
+          {
+            "value": "1",
+            "label": "engineering partner from strategy to production"
+          },
+          {
+            "value": "3",
+            "label": "engagement models to match your stage"
+          }
+        ],
+        "deliverablesTitle": "What you walk away with",
+        "deliverablesIntro": "Every engagement ends in artifacts your team can act on without us in the room.",
+        "deliverables": [
+          {
+            "title": "AI opportunity map",
+            "description": "Your workflows mapped against AI capability, with each opportunity scored for value, feasibility and risk."
+          },
+          {
+            "title": "Business case per use case",
+            "description": "Expected impact, cost to build, cost to run and payback period for every shortlisted use case."
+          },
+          {
+            "title": "Reference architecture",
+            "description": "A concrete system design for your top use cases: models, data flows, integration points and infrastructure."
+          },
+          {
+            "title": "Governance playbook",
+            "description": "Risk classification, review gates, documentation templates and an EU AI Act compliance checklist mapped to your use cases."
+          },
+          {
+            "title": "Pilot evaluation report",
+            "description": "Measured pilot results against the agreed baseline: quality, latency, cost per request and a clear go or no-go recommendation."
+          },
+          {
+            "title": "Adoption roadmap",
+            "description": "A sequenced plan from pilot to production to scale, with owners, milestones and the skills your team needs at each step."
+          }
+        ],
+        "modelsTitle": "Three ways to engage",
+        "modelsIntro": "Fixed scope where it can be fixed, flexible where your roadmap needs it. Every model starts with a free 30-minute call.",
+        "models": [
+          {
+            "name": "AI opportunity audit",
+            "duration": "2 weeks · fixed fee",
+            "description": "A fixed-scope audit of your workflows, data and systems that ends in a ranked shortlist of AI use cases. The right start when you know AI matters but not where.",
+            "bullets": [
+              "Stakeholder interviews and workflow analysis",
+              "Data and systems review against use-case requirements",
+              "Scored shortlist of use cases with ROI estimates",
+              "Recommendation for your first pilot"
+            ]
+          },
+          {
+            "name": "AI strategy sprint",
+            "duration": "4-6 weeks",
+            "description": "Strategy, architecture and business case for your top use cases, built with your team. Ends with a roadmap you can fund and a pilot ready to start.",
+            "bullets": [
+              "Deep dive on your top two or three use cases",
+              "Reference architecture and build-vs-buy decision",
+              "Business case with cost, impact and payback",
+              "Board-ready roadmap with owners and milestones"
+            ]
+          },
+          {
+            "name": "Advisory retainer",
+            "duration": "Monthly · ongoing",
+            "description": "A senior AI engineer on call for your leadership and delivery teams. Architecture reviews, model evaluations and honest second opinions, month by month.",
+            "bullets": [
+              "Monthly architecture and roadmap reviews",
+              "Evaluation of new models and vendors as they ship",
+              "Hiring support and technical interviews",
+              "Direct line to a senior engineer, no ticket queue"
+            ]
+          }
+        ],
+        "toolsTitle": "Methods and stacks we work with",
+        "tools": [
+          "LLM evaluation harnesses",
+          "RAG architectures",
+          "Agent architectures",
+          "OpenAI & Anthropic APIs",
+          "Azure OpenAI",
+          "AWS Bedrock",
+          "LangGraph",
+          "Vector databases",
+          "Prompt versioning & testing",
+          "Data readiness audits",
+          "MLOps foundations",
+          "EU AI Act compliance",
+          "Cost & latency modeling",
+          "Build-vs-buy analysis"
+        ],
+        "whoTitle": "Who this is for",
+        "who": [
+          {
+            "title": "CEOs and boards",
+            "description": "You need a defensible AI position for investors, customers and your own planning. We give you a strategy grounded in what your data and systems can actually support."
+          },
+          {
+            "title": "Product leaders",
+            "description": "You have a backlog of AI ideas and pressure to ship something. We rank them by value and feasibility and prove the best one on real data before you commit a roadmap."
+          },
+          {
+            "title": "CTOs derisking build vs buy",
+            "description": "Vendors promise everything and the demos all look the same. We benchmark the options on your data and give you an evidence-based decision you can defend."
+          },
+          {
+            "title": "Mid-market companies without in-house ML",
+            "description": "You do not need a data science department to use AI well. We act as your AI team until it makes sense to hire one, then help you build it."
+          }
+        ],
+        "subTitle": "Go deeper",
+        "subIntro": "Each area of the practice, explained in detail.",
+        "sub": {
+          "ai-strategy": {
+            "name": "AI strategy",
+            "teaser": "From business goals to a funded AI roadmap: use cases ranked by value, feasibility and risk."
+          },
+          "ai-readiness-audit": {
+            "name": "AI readiness audit",
+            "teaser": "A two-week audit of your data, systems and team, ending in a scorecard and a concrete gap plan."
+          },
+          "genai-implementation": {
+            "name": "GenAI implementation",
+            "teaser": "RAG, agents and LLM features taken from validated pilot to monitored production."
+          },
+          "ai-governance": {
+            "name": "AI governance",
+            "teaser": "EU AI Act compliance, risk gates and model documentation that do not stall delivery."
+          },
+          "team-enablement": {
+            "name": "Team enablement",
+            "teaser": "Hands-on training on your stack and your data, so your team ships AI without us."
+          }
+        },
+        "subpages": {
+          "ai-strategy": {
+            "label": "AI Consulting",
+            "title": "AI strategy",
+            "subtitle": "A ranked portfolio of AI use cases with business cases attached. A plan your board can fund and your engineers can build.",
+            "breadcrumb": "AI strategy",
+            "overviewTitle": "What it is",
+            "overview": [
+              "An AI strategy engagement turns 'we should do something with AI' into a ranked list of use cases with numbers attached. We map your workflows, score every opportunity for value, feasibility and risk, and write the business case for the ones worth funding. The output is a decision document your board can act on, not a vision deck.",
+              "It runs in four to six weeks. We interview stakeholders across the business, review your data and systems, and pressure-test candidate use cases with the people who run the affected workflows every day. Senior engineers do this work, so feasibility calls are grounded in what your systems can support today, not in vendor promises.",
+              "What changes: leadership stops debating AI in the abstract and starts approving specific initiatives with owners, budgets and success metrics. The first pilot is scoped and ready to start the week the strategy is signed off, and everyone has agreed in advance what result would justify taking it to production and scaling further."
+            ],
+            "benefitsTitle": "Why it works",
+            "benefits": [
+              {
+                "title": "Decisions instead of debates",
+                "description": "Every use case comes with expected impact, cost and payback, so the roadmap discussion is about numbers, not opinions."
+              },
+              {
+                "title": "Feasibility checked by builders",
+                "description": "The engineers who score feasibility are the ones who would build the system. No hand-off gap between strategy and delivery."
+              },
+              {
+                "title": "Quick wins surfaced first",
+                "description": "We sequence the roadmap so a high-value, low-risk pilot lands early and builds the appetite for the harder bets."
+              },
+              {
+                "title": "Build vs buy resolved",
+                "description": "For each use case we compare vendor tools against a custom build on cost, control and fit, and give you a clear recommendation."
+              },
+              {
+                "title": "A roadmap that survives contact",
+                "description": "Milestones, owners and metrics are set with the teams doing the work, so the plan holds up after we leave the room."
+              }
+            ],
+            "approachTitle": "How we run it",
+            "approach": [
+              {
+                "title": "Assess",
+                "description": "Stakeholder interviews, workflow mapping and a review of your data and systems. Two weeks in, the opportunity long-list is on the table."
+              },
+              {
+                "title": "Prioritize",
+                "description": "We score each use case for value, feasibility and risk in a workshop with your team, then cut the list to the two or three worth a business case."
+              },
+              {
+                "title": "Design",
+                "description": "For the shortlist we draft reference architectures, settle build vs buy, and estimate the cost to build and to run."
+              },
+              {
+                "title": "Commit",
+                "description": "We write the roadmap, the business cases and the pilot plan, then present them to your leadership for a funding decision."
+              }
+            ],
+            "deliverablesTitle": "What you get",
+            "deliverables": [
+              "AI opportunity map with scored use cases",
+              "Business case for each shortlisted use case",
+              "Reference architecture for the top use cases",
+              "Sequenced adoption roadmap with owners and milestones",
+              "Scoped plan for the first pilot"
+            ],
+            "faqTitle": "Common questions",
+            "faq": [
+              {
+                "q": "Do we need an AI strategy before running a pilot?",
+                "a": "Not always. If one use case is obviously valuable, a pilot first is fine and we often recommend it. Strategy earns its cost when there are many candidate ideas, several stakeholders and a real budget decision to make."
+              },
+              {
+                "q": "Who from our side needs to be involved?",
+                "a": "A sponsor from leadership, the owners of the affected workflows, and someone who knows your systems and data. Expect a handful of interviews and two workshops: a few hours per person over the whole engagement, not weeks of their time."
+              },
+              {
+                "q": "What if the honest answer is that AI is not worth it yet?",
+                "a": "Then that is the recommendation you get, in writing, with the reasons. Usually there is a prerequisite worth fixing first, like data access or process consistency, and the roadmap says exactly when AI becomes worth revisiting."
+              }
+            ],
+            "cta": {
+              "title": "Get a roadmap worth funding",
+              "subtitle": "Start with a free 30-minute call. We will tell you whether a strategy engagement or a straight pilot is the better first step.",
+              "button": "Book a strategy call"
+            }
+          },
+          "ai-readiness-audit": {
+            "label": "AI Consulting",
+            "title": "AI readiness audit",
+            "subtitle": "A two-week, fixed-fee audit of your data, systems, team and processes. Ends in a scorecard and a plan for the gaps that actually matter.",
+            "breadcrumb": "AI readiness audit",
+            "overviewTitle": "What it is",
+            "overview": [
+              "The readiness audit answers one question: what stands between your organization and a working AI system in production? We review your data quality and access, your integration surface, your security and compliance constraints, and your team's skills, all measured against the use cases you actually want to ship, not a generic checklist.",
+              "It runs in two weeks at a fixed fee. We hold structured interviews with your engineering, data and business leads, inspect the systems involved hands-on where access allows, and test a sample of your data against the requirements of your target use cases. You get findings backed by direct inspection, not questionnaire answers.",
+              "You walk away with a readiness scorecard across data, systems, people and governance, plus a gap plan that separates blockers from nice-to-haves. Most clients find they are closer than they thought: the gaps are usually specific and fixable rather than structural, and they rarely stop a first pilot from starting within the quarter."
+            ],
+            "benefitsTitle": "Why it works",
+            "benefits": [
+              {
+                "title": "A number instead of a feeling",
+                "description": "Readiness scored per dimension against your actual target use cases, so you know exactly where you stand and why."
+              },
+              {
+                "title": "Blockers separated from noise",
+                "description": "Only gaps that block your specific use cases go on the must-fix list. Everything else is ranked, dated and optional."
+              },
+              {
+                "title": "Fixed scope, fixed fee",
+                "description": "Two weeks, a defined deliverable and a price you know up front. No open-ended discovery phase."
+              },
+              {
+                "title": "Evidence for the budget conversation",
+                "description": "The scorecard and gap plan give your leadership a concrete basis for deciding what to fund and in what order."
+              },
+              {
+                "title": "A faster pilot afterwards",
+                "description": "Pilots that follow an audit skip weeks of surprises, because data access, security and integration questions are already answered."
+              }
+            ],
+            "approachTitle": "How we run it",
+            "approach": [
+              {
+                "title": "Scope",
+                "description": "We agree the target use cases and the systems in scope, so the audit measures readiness for something specific."
+              },
+              {
+                "title": "Inspect",
+                "description": "Interviews with your leads plus hands-on review of data samples, system interfaces and existing tooling."
+              },
+              {
+                "title": "Score",
+                "description": "Findings are scored across data, systems, people and governance, each with the evidence attached."
+              },
+              {
+                "title": "Plan",
+                "description": "We present the scorecard and a sequenced gap plan, and recommend the first pilot that fits your current readiness."
+              }
+            ],
+            "deliverablesTitle": "What you get",
+            "deliverables": [
+              "Readiness scorecard across data, systems, people and governance",
+              "Data quality and access assessment for target use cases",
+              "Systems and integration review",
+              "Sequenced gap plan separating blockers from later fixes",
+              "Recommendation for the first pilot"
+            ],
+            "faqTitle": "Common questions",
+            "faq": [
+              {
+                "q": "What access do you need?",
+                "a": "Read access to a sample of relevant data and a conversation with the people who run the systems. Where direct access is not possible, we work from schemas, exports and screen-shares. NDAs and data processing agreements are standard before anything is shared."
+              },
+              {
+                "q": "Do we need this before every project?",
+                "a": "No. One audit typically covers a whole family of use cases. If your first use case is small and self-contained, we may recommend skipping straight to a pilot."
+              },
+              {
+                "q": "What if the result is 'not ready'?",
+                "a": "You get the shortest path to ready: which gaps block your use case, what closing them costs, and in what order. That plan is often worth more than a premature pilot."
+              }
+            ],
+            "cta": {
+              "title": "Find out where you stand",
+              "subtitle": "Two weeks, fixed fee, a scorecard your whole leadership team can read. Book a call to scope the audit.",
+              "button": "Scope the audit"
+            }
+          },
+          "genai-implementation": {
+            "label": "AI Consulting",
+            "title": "GenAI implementation",
+            "subtitle": "RAG systems, agents and LLM features taken from validated idea to monitored production. Built on evals, not vibes.",
+            "breadcrumb": "GenAI implementation",
+            "overviewTitle": "What it is",
+            "overview": [
+              "GenAI implementation is where a validated use case becomes a system your business runs on. We design and build LLM features, retrieval pipelines and agent workflows, integrated with your existing systems and measured by an evaluation harness from day one. Production is the goal, and the pilot is a checkpoint on the way there.",
+              "The work runs in stages: architecture and data pipeline first, then a pilot on your real data measured against an agreed baseline, then production hardening with guardrails, monitoring, cost controls and a rollout plan. You see measured quality numbers at every stage, and a no-go is always an acceptable outcome, agreed before we start.",
+              "What changes for you: an AI feature with known accuracy, latency and cost per request, running inside your infrastructure and your compliance boundaries. Your team gets the evaluation harness, the runbooks and the training to go with them, so they can extend, retrain and operate the system without depending on us for every change."
+            ],
+            "benefitsTitle": "Why it works",
+            "benefits": [
+              {
+                "title": "Evals before opinions",
+                "description": "Every pipeline ships with an evaluation harness and a baseline, so quality claims are measured, not asserted."
+              },
+              {
+                "title": "Production-grade from the pilot",
+                "description": "The pilot is built on the architecture that will go live, so nothing gets thrown away when you scale."
+              },
+              {
+                "title": "Cost and latency by design",
+                "description": "Model routing, caching and prompt budgets are engineered in from the start, not patched on after the first invoice."
+              },
+              {
+                "title": "Guardrails that hold",
+                "description": "Input validation, output filtering and fallbacks for the failure modes LLMs actually have in production."
+              },
+              {
+                "title": "Your team can run it",
+                "description": "Handover includes the eval harness, runbooks and training, so the system is yours in practice, not just on paper."
+              }
+            ],
+            "approachTitle": "How we run it",
+            "approach": [
+              {
+                "title": "Scope and baseline",
+                "description": "We fix the use case, the success metric and the baseline it must beat, then design the architecture and data flow."
+              },
+              {
+                "title": "Build the pilot",
+                "description": "A working system on your real data in four to six weeks, evaluated continuously against the baseline."
+              },
+              {
+                "title": "Harden",
+                "description": "Guardrails, monitoring, load and cost testing, security review, and integration into your deployment pipeline."
+              },
+              {
+                "title": "Roll out and hand over",
+                "description": "Staged rollout with live metrics, then handover with documentation, runbooks and training for your team."
+              }
+            ],
+            "deliverablesTitle": "What you get",
+            "deliverables": [
+              "Production-ready GenAI system in your infrastructure",
+              "Evaluation harness with baseline and quality metrics",
+              "Guardrail and fallback layer for production failure modes",
+              "Monitoring dashboard for quality, latency and cost",
+              "Runbooks and handover training for your team"
+            ],
+            "faqTitle": "Common questions",
+            "faq": [
+              {
+                "q": "Which models do you use?",
+                "a": "The ones that win on your evals. We benchmark OpenAI, Anthropic and open-weight models on your data and pick per task, often routing between a strong model and a cheap one. The architecture keeps you free to swap models as the market moves."
+              },
+              {
+                "q": "Can this run inside our cloud and compliance boundary?",
+                "a": "Yes. We deploy via Azure OpenAI, AWS Bedrock or self-hosted open-weight models when data must stay in your tenancy or region. Compliance constraints go into the architecture up front, not as an afterthought."
+              },
+              {
+                "q": "What happens if the pilot misses the baseline?",
+                "a": "You get the measured results and an honest read on why: data, model or use-case fit. Sometimes the fix is a scope change, sometimes the answer is stop. Both cost far less than scaling a system that does not work."
+              }
+            ],
+            "cta": {
+              "title": "Have a use case that is ready to build?",
+              "subtitle": "Bring it to a free 30-minute call. A senior engineer will tell you what it takes to get it into production.",
+              "button": "Scope the build"
+            }
+          },
+          "ai-governance": {
+            "label": "AI Consulting",
+            "title": "AI governance",
+            "subtitle": "Risk classification, review gates and documentation that satisfy the EU AI Act without stalling your roadmap.",
+            "breadcrumb": "AI governance",
+            "overviewTitle": "What it is",
+            "overview": [
+              "AI governance makes your AI systems auditable, compliant and safe to scale. We classify your use cases under the EU AI Act, set up the risk assessments and documentation each class requires, and define review gates for new AI initiatives. Built by engineers, the whole setup fits the way your teams actually ship software today.",
+              "The engagement starts with an inventory: every AI system, use case and vendor tool in play, classified by risk. From there we write the policies that matter for your exposure: data handling, human oversight, model documentation, incident response. The checks are wired into your existing delivery process, not into a parallel bureaucracy.",
+              "What changes: your compliance and legal teams get evidence they can hand to auditors, and your engineers get clear rules instead of case-by-case escalation. New AI initiatives clear governance in days rather than weeks, because the gates and templates already exist and everyone involved knows exactly how to use them."
+            ],
+            "benefitsTitle": "Why it works",
+            "benefits": [
+              {
+                "title": "EU AI Act, mapped to your systems",
+                "description": "Each use case classified by risk with its concrete obligations listed, so compliance work targets what the law actually requires."
+              },
+              {
+                "title": "Governance inside the pipeline",
+                "description": "Checks live in your delivery workflow, not in a separate committee. Engineers follow the process because it adds no drag."
+              },
+              {
+                "title": "Audit-ready documentation",
+                "description": "Model cards, data lineage and decision logs kept as living artifacts, produced during delivery rather than reconstructed later."
+              },
+              {
+                "title": "Vendor risk covered",
+                "description": "Third-party AI tools and APIs get the same classification and review as in-house systems, closing the most common blind spot."
+              },
+              {
+                "title": "Scales past the first project",
+                "description": "Templates and gates make the tenth AI initiative as well governed as the first, without re-litigating policy each time."
+              }
+            ],
+            "approachTitle": "How we run it",
+            "approach": [
+              {
+                "title": "Inventory",
+                "description": "We catalogue every AI system, use case and vendor tool in play, including the unofficial ones your teams already use."
+              },
+              {
+                "title": "Classify",
+                "description": "Each item is classified under the EU AI Act and your internal risk appetite, with obligations mapped per class."
+              },
+              {
+                "title": "Implement",
+                "description": "Policies, templates and review gates are written and wired into your delivery process, with owners assigned."
+              },
+              {
+                "title": "Operationalize",
+                "description": "We train the people running the gates, run the first reviews together, and hand over a playbook your team maintains."
+              }
+            ],
+            "deliverablesTitle": "What you get",
+            "deliverables": [
+              "AI system inventory with EU AI Act risk classification",
+              "Governance playbook with policies and review gates",
+              "Model documentation and data lineage templates",
+              "Human oversight and incident response procedures",
+              "Compliance evidence pack for audits"
+            ],
+            "faqTitle": "Common questions",
+            "faq": [
+              {
+                "q": "Does the EU AI Act even apply to us?",
+                "a": "If you operate in the EU and use AI in products, hiring, credit, safety or anything customer-facing, parts of it almost certainly do. The inventory and classification give you a definitive answer per use case instead of a general worry."
+              },
+              {
+                "q": "Will governance slow our delivery down?",
+                "a": "Done badly, yes. That is why we wire the gates into your existing workflow and size them by risk. Low-risk uses get a lightweight checklist, and heavy review is reserved for the few systems that genuinely warrant it."
+              },
+              {
+                "q": "We already have a compliance team. Why involve engineers?",
+                "a": "Because the obligations land in code: logging, oversight hooks, documentation, evaluation evidence. We translate legal requirements into technical controls your compliance team can verify, which is the part most policy documents skip."
+              }
+            ],
+            "cta": {
+              "title": "Get compliant without stalling",
+              "subtitle": "Book a call to scope the inventory and classification. It is the fastest way to learn your real exposure.",
+              "button": "Start with the inventory"
+            }
+          },
+          "team-enablement": {
+            "label": "AI Consulting",
+            "title": "Team enablement",
+            "subtitle": "Hands-on training on your stack and your data, so your team ships AI work without waiting for consultants.",
+            "breadcrumb": "Team enablement",
+            "overviewTitle": "What it is",
+            "overview": [
+              "Team enablement makes our involvement temporary by design. We train your engineers, product managers and leadership on the AI skills their roles actually need, working on your codebase and your data rather than toy examples. The goal is a team that scopes, builds and operates AI features without external help, and knows when to ask for it.",
+              "Formats match the audience: hands-on workshops for engineers covering RAG, evals, prompting and agent patterns; use-case and scoping sessions for product teams; briefings for leadership on cost, risk and realistic timelines. Sessions run on your stack, and every exercise leaves working code or a usable artifact behind, not just notes.",
+              "What changes: AI stops being one specialist's domain. Engineers ship LLM features with evals attached, product managers write AI specs that survive contact with reality, and leadership makes fund-or-kill decisions on real numbers. Internal champions carry the practice forward after we leave, which is the point of the whole exercise."
+            ],
+            "benefitsTitle": "Why it works",
+            "benefits": [
+              {
+                "title": "Training on your stack",
+                "description": "Exercises run against your codebase, your data and your cloud, so Monday morning looks like the workshop did."
+              },
+              {
+                "title": "Role-specific tracks",
+                "description": "Engineers, product managers and leadership get different sessions, each scoped to the decisions that role actually makes."
+              },
+              {
+                "title": "Working artifacts, not certificates",
+                "description": "Each session ends with something usable: a prototype, an eval suite, a scoped spec, a decision framework."
+              },
+              {
+                "title": "Champions who carry it on",
+                "description": "We identify and coach the internal people who will own the AI practice after the engagement ends."
+              },
+              {
+                "title": "Pairing on real tickets",
+                "description": "Beyond workshops, we pair with your engineers on live AI work, which is where the skills actually settle."
+              }
+            ],
+            "approachTitle": "How we run it",
+            "approach": [
+              {
+                "title": "Assess skills",
+                "description": "A short skills and tooling assessment per team, so training targets real gaps instead of assumed ones."
+              },
+              {
+                "title": "Design the program",
+                "description": "We build a track per role from our workshop library, adapted to your stack, use cases and schedule."
+              },
+              {
+                "title": "Train and pair",
+                "description": "Workshops first, then pairing on your live AI work while the material is fresh."
+              },
+              {
+                "title": "Embed",
+                "description": "Champions get coaching, playbooks and a direct line to us while they take over the internal practice."
+              }
+            ],
+            "deliverablesTitle": "What you get",
+            "deliverables": [
+              "Role-based training program with materials",
+              "Hands-on workshops run on your stack and data",
+              "Working artifacts from every session",
+              "Playbooks for the internal AI practice",
+              "Coaching plan for internal champions"
+            ],
+            "faqTitle": "Common questions",
+            "faq": [
+              {
+                "q": "How senior does our team need to be?",
+                "a": "Solid software engineers are enough, no ML background required. Modern AI engineering is mostly software engineering with new failure modes, and that is exactly what the training covers."
+              },
+              {
+                "q": "How much time does this take per person?",
+                "a": "Typically a two-day workshop per track plus a few hours of pairing per week for the following month. We fit sessions around delivery schedules, and pairing happens on tickets your team was going to ship anyway."
+              },
+              {
+                "q": "Is this a one-off or ongoing?",
+                "a": "Either. Some clients book a single workshop, most combine one with a month of pairing. If you want continuity, enablement folds into the advisory retainer."
+              }
+            ],
+            "cta": {
+              "title": "Build the capability in-house",
+              "subtitle": "Tell us where your team stands and where it should be. We will propose a program in one call.",
+              "button": "Plan the program"
+            }
+          }
+        }
       },
       "webDevelopment": {
         "label": "Services",
@@ -1824,13 +3525,114 @@
       "detailsCta": "View details",
       "bookCta": "Book",
       "faqTitle": "Questions, answered",
-      "backToAll": "All workshops"
+      "backToAll": "All workshops",
+      "stats": [
+        {
+          "value": "1/2",
+          "label": "Day from scattered ideas to a ranked shortlist"
+        },
+        {
+          "value": "2",
+          "label": "Weeks from one idea to a validated concept"
+        },
+        {
+          "value": "100%",
+          "label": "Senior engineers in every session"
+        },
+        {
+          "value": "0",
+          "label": "Slide decks. Decisions and working code only"
+        }
+      ],
+      "pathTitle": "One path, four stages",
+      "pathIntro": "Each engagement feeds the next. Start where you are, stop when you have what you need, or follow the whole path from first idea to a running AI capability.",
+      "path": [
+        {
+          "step": "01",
+          "name": "AI Opportunity Workshop",
+          "duration": "Half day",
+          "description": "Half a day to turn scattered ideas into a ranked shortlist and one recommended pilot: the input for a Discovery Sprint.",
+          "slug": "ai-opportunity-workshop"
+        },
+        {
+          "step": "02",
+          "name": "AI Discovery Sprint",
+          "duration": "2 weeks",
+          "description": "Two weeks to take the top use case deep: data, feasibility, a working prototype. Ends in a costed plan the proof-of-concept executes.",
+          "slug": "ai-discovery-sprint"
+        },
+        {
+          "step": "03",
+          "name": "GenAI Proof-of-Concept",
+          "duration": "4-6 weeks",
+          "description": "Four to six weeks to turn the validated concept into a production-grade pilot on your data, with evals and a rollout plan.",
+          "slug": "genai-proof-of-concept"
+        },
+        {
+          "step": "04",
+          "name": "Fractional AI Team",
+          "duration": "Monthly, ongoing",
+          "description": "Senior engineers embedded in your team: they run the pilot in production, scale it, and take on the next use cases from your shortlist.",
+          "slug": "fractional-ai-team"
+        }
+      ],
+      "chooserTitle": "Not sure where to start?",
+      "chooserIntro": "Match where you are now to the right engagement. When in doubt, book the workshop: it is the cheapest way to find out what to do next.",
+      "chooser": [
+        {
+          "situation": "You have ideas but no ranking",
+          "recommendation": "AI Opportunity Workshop",
+          "slug": "ai-opportunity-workshop"
+        },
+        {
+          "situation": "You have no ideas yet, just pressure to do something with AI",
+          "recommendation": "AI Opportunity Workshop",
+          "slug": "ai-opportunity-workshop"
+        },
+        {
+          "situation": "One use case, unproven",
+          "recommendation": "AI Discovery Sprint",
+          "slug": "ai-discovery-sprint"
+        },
+        {
+          "situation": "A validated concept that needs production proof",
+          "recommendation": "GenAI Proof-of-Concept",
+          "slug": "genai-proof-of-concept"
+        },
+        {
+          "situation": "AI in production, no team to run it",
+          "recommendation": "Fractional AI Team",
+          "slug": "fractional-ai-team"
+        }
+      ],
+      "faq": [
+        {
+          "q": "How are workshops priced?",
+          "a": "Every engagement has a fixed price agreed before we start. The workshop and the sprint are flat fees, the proof-of-concept is quoted after the sprint, and the fractional team runs at a monthly rate. No day rates, no surprises."
+        },
+        {
+          "q": "Do you run sessions remote or on-site?",
+          "a": "Both. Workshops work well in your office or on a call, sprints and longer engagements run remote with regular checkpoints. We are based in Poznań and come on-site when being in the same room helps."
+        },
+        {
+          "q": "What languages do you run sessions in?",
+          "a": "English, Polish, and German. Materials and deliverables are in English by default, in your language on request."
+        },
+        {
+          "q": "How many people can join a session?",
+          "a": "Workshops work best with 4 to 8 people: the decision-maker plus the people who own the problems day to day. More is possible, but decisions get slower. A sprint needs one decision-maker and a few hours a week from a domain expert."
+        },
+        {
+          "q": "What happens after a session?",
+          "a": "You get every deliverable in writing within days: shortlist, scoring, prototype, or roadmap, depending on the engagement. What you do with it is your call: continue to the next stage, build in-house, or stop. Each is a legitimate outcome."
+        }
+      ]
     },
     "pages": {
       "ai-opportunity-workshop": {
         "eyebrow": "Workshop",
         "title": "Find where AI pays off first",
-        "subtitle": "A half-day session that turns scattered AI ideas into a ranked shortlist and a first pilot.",
+        "subtitle": "A half-day working session that turns scattered AI ideas into a ranked shortlist, honest ROI and feasibility scores, and one pilot worth building first.",
         "meta": {
           "duration": "Half day",
           "format": "Remote or on-site",
@@ -1840,17 +3642,20 @@
         "overview": {
           "title": "What it is",
           "paragraphs": [
-            "A focused half-day where we put your AI ideas on the table and pressure-test each one against ROI and feasibility.",
-            "You leave with a clear starting point, not a backlog of maybes. No slideware, just a plan you can act on next week."
+            "The workshop is a half day of structured decision-making with senior engineers, not a seminar. We put every AI idea in your company on the table, add the ones your workflows and data suggest, and pressure-test each against two questions: what is it worth, and can it actually be built with your data and systems.",
+            "We run it remote or in your office, with the decision-maker and the people who own the problems in the room. The format is fast: map the ideas, score each on ROI and feasibility on a shared board, rank them, then pick one pilot and define what proving it would take. Everything is written down as we go.",
+            "Afterwards the debate about where to start is over. You have a shortlist your team helped rank, scores you can defend to a board, and one concrete pilot with a defined first step. Whether you build with us, in-house, or not at all, you decide from evidence instead of opinions."
           ]
         },
         "outcomes": {
           "title": "What you leave with",
           "items": [
-            "Prioritized use-case shortlist",
-            "ROI and feasibility scoring per idea",
-            "A recommended first pilot",
-            "Clear next steps to start building"
+            "A ranked shortlist of your AI use cases",
+            "ROI and feasibility scores per idea, with the reasoning written down",
+            "One recommended pilot with a defined scope and first step",
+            "A map of the data and system gaps blocking the harder ideas",
+            "A one-page summary you can put in front of your board",
+            "A concrete next step: what proving the pilot would take"
           ]
         },
         "agenda": {
@@ -1858,57 +3663,92 @@
           "steps": [
             {
               "num": "01",
-              "title": "Map the ideas",
-              "desc": "We gather your AI ideas and the problems behind them."
+              "title": "Frame the business",
+              "desc": "We start with how your company makes money and where it loses time. That frame keeps the scoring honest: an idea only ranks high if it moves a number you care about."
             },
             {
               "num": "02",
-              "title": "Score and rank",
-              "desc": "Every idea gets scored on ROI and feasibility."
+              "title": "Map the ideas",
+              "desc": "We collect every AI idea in the room and add the ones your workflows and data suggest. Each is restated as a problem with an owner, not a technology looking for a use."
             },
             {
               "num": "03",
+              "title": "Score and rank",
+              "desc": "Every idea gets scored on ROI and feasibility on a shared board: value if it works, data readiness, integration effort, risk. The ranking emerges in front of everyone."
+            },
+            {
+              "num": "04",
               "title": "Pick the pilot",
-              "desc": "We agree on the first pilot and how to start."
+              "desc": "We take the top of the list and stress it: what would a two-week proof look like, what data does it need, what could kill it. One pilot survives as the recommendation."
+            },
+            {
+              "num": "05",
+              "title": "Write it down",
+              "desc": "We close by fixing the output: the ranked shortlist, the scores and reasoning, the recommended pilot, and the first step. You get the summary within two business days."
             }
           ]
         },
         "audience": {
           "title": "Who it's for",
           "items": [
-            "Leaders unsure where to start with AI",
-            "Teams with too many AI ideas",
-            "Companies that want proof, not hype"
+            "Founders and executives under pressure to have an AI answer",
+            "Product leaders with more AI ideas than budget",
+            "Teams that tried a chatbot demo and stalled there",
+            "Companies that want proof and a plan, not another deck"
           ]
         },
         "faq": [
           {
             "q": "How long is the workshop?",
-            "a": "Half a day, remote or on-site. We keep it tight and outcome-focused, so you walk away with real decisions the same day."
+            "a": "Half a day, remote or on-site. We keep it tight and outcome-focused: you walk out with a ranked list and a decision the same day, not with a date for another meeting."
           },
           {
             "q": "Do we need to prepare anything?",
-            "a": "Bring your ideas and the people who own the problems. We send a short prep note beforehand so the session starts fast."
+            "a": "Bring your ideas and the people who own the problems. We send a short prep note beforehand: four questions, about an hour of work, so the session starts fast."
           },
           {
             "q": "What if we have no AI ideas yet?",
-            "a": "That is fine. We surface opportunities from your workflows and data, then score them with you on the spot."
+            "a": "That is fine, and common. We surface opportunities from your workflows, data, and support load, then score them with you on the spot. The scoring works the same either way."
           },
           {
             "q": "What happens after the workshop?",
-            "a": "You get the shortlist, scoring, and a recommended pilot. If you want, we can build that pilot with you next."
+            "a": "You get the shortlist, scoring, and recommended pilot in writing within days. If you want the pilot proven, the Discovery Sprint is built for exactly that. If you build in-house, the plan is still yours."
+          },
+          {
+            "q": "What does the workshop cost?",
+            "a": "A fixed fee, agreed before you book, the same remote or on-site. No day rates and no follow-on obligation: the shortlist and the pilot recommendation are yours either way."
+          },
+          {
+            "q": "Can we look at our own data live in the session?",
+            "a": "Yes, and it helps. If you can share a sample or screen-share the real system, we sanity-check data readiness on the spot instead of guessing. An NDA before the session is standard if you need one."
           }
         ],
         "form": {
           "title": "Book the workshop",
           "note": "We reply within one business day.",
           "cta": "Book the workshop"
+        },
+        "prep": {
+          "title": "How to prepare",
+          "intro": "The session works best when the right people show up with a little homework done.",
+          "items": [
+            "The decision-maker who can say yes to a pilot",
+            "The people who own the problems day to day",
+            "Answers to our four-question prep note",
+            "Any AI ideas already floating around, however rough"
+          ]
+        },
+        "next": {
+          "title": "Where this leads",
+          "text": "The workshop ends with one recommended pilot. The Discovery Sprint takes exactly that pilot and proves it in two weeks: your data, a working prototype, a costed plan.",
+          "linkLabel": "AI Discovery Sprint",
+          "slug": "ai-discovery-sprint"
         }
       },
       "ai-discovery-sprint": {
         "eyebrow": "Sprint",
         "title": "Prove your AI use case in 2 weeks",
-        "subtitle": "Two weeks, one use case, a working prototype and a costed plan to build with confidence.",
+        "subtitle": "Two weeks on one use case with your real data: feasibility tested, a working prototype, and a costed roadmap. You commit budget to evidence, not to a pitch.",
         "meta": {
           "duration": "2 weeks",
           "format": "Remote, embedded with your team",
@@ -1918,17 +3758,20 @@
         "overview": {
           "title": "What the sprint is",
           "paragraphs": [
-            "Two focused weeks on a single use case. We assess your data, test feasibility, design the architecture, and build a working prototype.",
-            "You end with proof, not a slide deck. Before committing budget to the build, you see it work and know what it costs."
+            "The sprint takes one use case and answers the only question that matters before you fund a build: will this work on our data, and what will it cost in production? Senior engineers work on it full-time for two weeks, from data audit to working prototype, with a few hours a week from your domain expert.",
+            "Week one is evidence: we map your data, access, and constraints, test the risky assumptions first, and design the production architecture. Week two is the prototype: built on your real data against agreed success criteria, demoed as it grows rather than revealed at the end. You see progress midway, not just at the finish.",
+            "You end the sprint with a decision, not a feeling. Go means a prototype that already works, an architecture, and a costed roadmap the next phase executes. No-go means you saved the build budget and know exactly why: which data, constraint, or accuracy bar failed, and what would have to change."
           ]
         },
         "outcomes": {
           "title": "What you leave with",
           "items": [
-            "Technical feasibility assessment",
-            "Working prototype on your data",
-            "Costed delivery roadmap",
-            "Clear go or no-go decision"
+            "A technical feasibility assessment grounded in your data, not in benchmarks",
+            "A working prototype on your real data, demoed and in your repo",
+            "Agreed success criteria and how the prototype scored against them",
+            "A production architecture proposal with model and hosting choices",
+            "A costed delivery roadmap for the build phase",
+            "A clear go or no-go recommendation with the reasoning"
           ]
         },
         "agenda": {
@@ -1936,62 +3779,92 @@
           "steps": [
             {
               "num": "01",
-              "title": "Data deep-dive",
-              "desc": "We map your data, access, and constraints on day one."
+              "title": "Scope and success criteria",
+              "desc": "Day one fixes the scope: one use case, the data it needs, and what 'it works' means in numbers. Everything in the sprint is measured against that definition."
             },
             {
               "num": "02",
-              "title": "Feasibility and architecture",
-              "desc": "We test what works and design the production approach."
+              "title": "Data deep-dive",
+              "desc": "We map your data sources, access paths, quality, and constraints, including privacy and compliance. Most AI projects die here, so we go here first."
             },
             {
               "num": "03",
-              "title": "Build the prototype",
-              "desc": "We ship a working prototype against your real use case."
+              "title": "Kill the risks",
+              "desc": "We test the riskiest assumptions before building anything polished: retrieval quality, model accuracy on your edge cases, latency, cost per query. Cheap experiments first."
             },
             {
               "num": "04",
-              "title": "Roadmap and handoff",
-              "desc": "You get a costed build plan and a go/no-go call."
+              "title": "Build the prototype",
+              "desc": "We build a working prototype on your real data against the agreed criteria, and demo it during the sprint so course corrections happen early, not after the fact."
+            },
+            {
+              "num": "05",
+              "title": "Decision and roadmap",
+              "desc": "We close with the evidence: how the prototype scored, the production architecture, a costed roadmap, and a clear go or no-go recommendation you can take to your board."
             }
           ]
         },
         "audience": {
           "title": "Who it's for",
           "items": [
-            "You have one use case worth proving.",
-            "You want evidence before funding a build.",
-            "You have data and a stakeholder ready."
+            "You have one use case worth proving, ideally from a workshop shortlist",
+            "You want evidence before funding a production build",
+            "You have data and can grant access within days",
+            "You have a decision-maker who will act on the result"
           ]
         },
         "faq": [
           {
             "q": "What do you need from us to start?",
-            "a": "Access to relevant data, one decision-maker, and a few hours from a domain expert each week. We handle the rest."
+            "a": "Access to the relevant data, one decision-maker, and a few hours a week from a domain expert. We handle infrastructure, tooling, and the build. An NDA and a data-processing agreement are standard before day one."
           },
           {
             "q": "Is two weeks really enough?",
-            "a": "For one scoped use case, yes. We go deep on a single problem, not broad. The prototype proves feasibility, not the full product."
+            "a": "For one scoped use case, yes. We go deep on a single problem, not broad across many. The prototype proves feasibility and cost, not the full product: that is what the build phase is for."
           },
           {
             "q": "What if the prototype shows it will not work?",
-            "a": "That is a valuable result. You save the build budget and get a clear reason why, plus alternatives worth testing."
+            "a": "That is a valuable result, and the cheapest possible way to learn it. You keep the analysis, know exactly which constraint failed, and get alternatives worth testing. The build budget stays in your pocket."
           },
           {
             "q": "Do we own the prototype and code?",
-            "a": "Yes. All code, findings, and the roadmap are yours. If you proceed to build, it becomes your starting point."
+            "a": "Yes. All code, findings, evaluation results, and the roadmap are yours, in your repositories. If you proceed to build, with us or in-house, it is your starting point."
+          },
+          {
+            "q": "What does the sprint cost?",
+            "a": "A fixed fee for a fixed scope, agreed before we start. No day rates and no running meter. The proof-of-concept phase, if you go there, is quoted in the roadmap, so you see the full cost picture before committing."
+          },
+          {
+            "q": "Do you have an incentive to recommend go?",
+            "a": "The recommendation comes with the evidence attached: eval scores, costs, failure cases. You can check it yourself. A no-go costs us a build project, a wrong go would cost us the relationship, and the second is worth more."
           }
         ],
         "form": {
           "title": "Book your Discovery Sprint",
           "note": "We reply within one business day.",
           "cta": "Book the sprint"
+        },
+        "prep": {
+          "title": "How to prepare",
+          "intro": "The sprint starts fast when access and people are lined up before day one.",
+          "items": [
+            "Read access to the relevant data before day one",
+            "One decision-maker for scope calls and the final decision",
+            "A domain expert for a few hours each week",
+            "NDA and data-processing agreement signed, if you need them"
+          ]
+        },
+        "next": {
+          "title": "Where this leads",
+          "text": "A go decision deserves production proof. The GenAI proof-of-concept turns the prototype into a production-grade pilot on your data, measured on real evals, ready for rollout.",
+          "linkLabel": "GenAI Proof-of-Concept",
+          "slug": "genai-proof-of-concept"
         }
       },
       "genai-proof-of-concept": {
         "eyebrow": "Proof of concept",
         "title": "Prove your AI use case in production.",
-        "subtitle": "A production-grade pilot in your environment, measured against real evals and ready to pitch for rollout.",
+        "subtitle": "One validated use case, built into a working pilot on your data and your stack in 4 to 6 weeks, measured against evals you trust, and closed with a clear rollout decision.",
         "meta": {
           "duration": "4 to 6 weeks",
           "format": "In your environment",
@@ -2001,17 +3874,20 @@
         "overview": {
           "title": "Built to prove, not to demo",
           "paragraphs": [
-            "A focused build that turns one validated use case into a working pilot on your data, your stack, your constraints.",
-            "Demos hide the hard parts. We measure the pilot against real evals, so you know it works before you commit to rollout."
+            "The proof of concept takes one validated use case and turns it into a working pilot in your environment: your data, your stack, your security constraints. It is not a demo built on cherry-picked examples. Everything we ship runs against representative data and is measured with an evaluation harness we design together in week one.",
+            "The engagement runs 4 to 6 weeks with a fixed scope. We start by locking the use case and defining the evals, then wire up the data, build against the harness, and harden the pilot for real traffic. You get a short written update every week and a working system you can inspect at any point, not a reveal at the end.",
+            "After the PoC you know, with numbers, whether the use case is worth rolling out. If it is, you have a pilot ready to extend, an eval harness to keep it honest, and a rollout plan with scope, cost, and risks. If it is not, you have saved a quarter of budget and learned exactly why, in writing."
           ]
         },
         "outcomes": {
           "title": "What you leave with",
           "items": [
-            "Production-ready pilot running in your environment",
-            "Evaluation harness with metrics you trust",
-            "Rollout plan with scope, cost, and risks",
-            "Internal pitch deck to secure buy-in"
+            "A working pilot deployed in your environment, on your data",
+            "An evaluation harness with metrics your team agreed on",
+            "Documented eval results against the targets set in week one",
+            "A rollout plan covering scope, cost, risks, and operations",
+            "An internal pitch deck to secure budget and buy-in",
+            "Full ownership of code, prompts, and evals, no lock-in"
           ]
         },
         "agenda": {
@@ -2019,23 +3895,28 @@
           "steps": [
             {
               "num": "01",
-              "title": "Frame",
-              "desc": "Lock the use case, data, and success metrics."
+              "title": "Scope and eval design",
+              "desc": "We lock the use case, define what success means in numbers, and build the evaluation harness first. If we cannot measure it, we do not build it."
             },
             {
               "num": "02",
-              "title": "Build",
-              "desc": "Ship a pilot on your stack and data."
+              "title": "Data plumbing",
+              "desc": "We wire the pilot into your real data sources, handle access, privacy, and formats, and assemble the representative test set the evals will run against."
             },
             {
               "num": "03",
-              "title": "Measure",
-              "desc": "Run evals and tune against real targets."
+              "title": "Build against the harness",
+              "desc": "We build the pilot iteratively, running every change through the eval harness. Scores decide what ships, not vibes. You see the results move every week."
             },
             {
               "num": "04",
-              "title": "Plan",
-              "desc": "Package results and a rollout plan to pitch."
+              "title": "Harden",
+              "desc": "We stress the pilot with edge cases, adversarial inputs, and failure modes, then add the guardrails, fallbacks, and monitoring that production will demand."
+            },
+            {
+              "num": "05",
+              "title": "Rollout decision",
+              "desc": "We put the eval results next to the targets from week one and hand over a rollout plan, or a clear, documented reason to stop. Your call, made on real numbers."
             }
           ]
         },
@@ -2043,38 +3924,63 @@
           "title": "Who it's for",
           "items": [
             "You have a validated use case, not just an idea.",
-            "You need proof before funding a full rollout.",
-            "You want it running on your data, not a demo."
+            "You need hard proof before funding a full rollout.",
+            "You want it running on your data and your stack, not in a vendor demo.",
+            "You have a decision-maker ready to act on the results."
           ]
         },
         "faq": [
           {
             "q": "What do we need to start?",
-            "a": "A validated use case, access to representative data, and one decision-maker who can approve rollout. We handle the build, evals, and environment setup."
+            "a": "A validated use case, access to representative data, and one decision-maker who can act on the results. We handle the build, the evals, and the environment setup."
           },
           {
             "q": "How is this different from a demo?",
-            "a": "A demo is happy-path theatre. We ship in your environment and measure against real evals, so the results hold up when you pitch internally."
+            "a": "A demo is happy-path theatre. We build in your environment and measure against real evals, so the results hold up when you pitch them internally."
           },
           {
             "q": "What if the evals show it does not work?",
-            "a": "That is a valid, valuable outcome. You get clear metrics and honest reasoning, saving you from funding a rollout that would fail."
+            "a": "That is a valid, valuable outcome. You get clear metrics and an honest written reasoning, which saves you from funding a rollout that would have failed."
           },
           {
-            "q": "Who owns the code and results?",
-            "a": "You do. The pilot, evaluation harness, and rollout plan are yours to keep and extend, with no lock-in."
+            "q": "Who owns the code and the model?",
+            "a": "You do. The pilot, prompts, evaluation harness, and rollout plan live in your repos and your accounts. Fine-tuned models and their weights are yours as well. No lock-in."
+          },
+          {
+            "q": "What if our data is messy or unlabeled?",
+            "a": "Expected. Part of the first two weeks is data plumbing: access, cleaning, and a representative test set. If the data genuinely cannot support the use case, you will know early, not in week six."
+          },
+          {
+            "q": "What happens after the six weeks?",
+            "a": "Three options: your team takes the pilot forward with our rollout plan, we harden it into production together, or a fractional AI team runs it month to month. All three start from code you already own."
           }
         ],
         "form": {
           "title": "Scope your PoC",
           "note": "One call to check fit. No obligation.",
           "cta": "Scope the PoC"
+        },
+        "prep": {
+          "title": "How to prepare",
+          "intro": "You do not need much, but the right people and access on day one make the weeks count.",
+          "items": [
+            "A named product owner who can make scope calls within a day",
+            "Read access to representative data, agreed before kickoff",
+            "An engineer who knows the systems the pilot must touch",
+            "Security or compliance sign-off started, not necessarily finished"
+          ]
+        },
+        "next": {
+          "title": "Where this leads",
+          "text": "A pilot that passes its evals deserves a team that takes it to production and keeps it there. That is what the fractional AI team does.",
+          "linkLabel": "Explore the fractional AI team",
+          "slug": "fractional-ai-team"
         }
       },
       "fractional-ai-team": {
         "eyebrow": "Fractional team",
         "title": "A senior AI team, on tap",
-        "subtitle": "Strategy, engineering, and MLOps embedded in your team, scaling with your roadmap month to month.",
+        "subtitle": "Senior AI engineers, strategy, and MLOps embedded in your team on a monthly retainer, shipping your roadmap to production and scaling up or down as it shifts.",
         "meta": {
           "duration": "Monthly, ongoing",
           "format": "Embedded with your team",
@@ -2084,17 +3990,20 @@
         "overview": {
           "title": "AI capacity without the headcount",
           "paragraphs": [
-            "Senior AI engineers, strategists, and MLOps working inside your team. We plug into your stack, your standups, and your roadmap.",
-            "You skip the six-month hire and the black-box vendor. Scale capacity up or down each month as priorities shift."
+            "The fractional AI team is senior capacity without the hiring cycle: engineers, an architect, and MLOps working inside your team on a monthly retainer. We join your standups, commit to your repos, and follow your review process. From the outside it looks like your team got bigger, because it did.",
+            "The first weeks are onboarding and an audit of what you already have: models, pipelines, evals, infrastructure. From there we take ownership of an agreed slice of the roadmap and ship in your normal cadence. Capacity is set each month, so you can add engineers for a push and dial back once things settle.",
+            "Over time the point is to make ourselves less necessary. We build the MLOps and quality gates that keep models in production without heroics, document as we go, and pair with your engineers so the knowledge lands in your team. When you hire your own people, they inherit a working system, not a mystery."
           ]
         },
         "outcomes": {
           "title": "What you get",
           "items": [
-            "Embedded senior AI engineers, day one",
-            "Strategy and roadmap direction on tap",
-            "MLOps that keeps models in production",
-            "Flexible monthly capacity, up or down"
+            "Senior AI engineers shipping in your repos from week one",
+            "An honest audit of your models, pipelines, and infrastructure",
+            "A slice of the roadmap owned end to end, from design to production",
+            "MLOps, monitoring, and quality gates that outlast the engagement",
+            "Monthly capacity you can scale up or down as priorities shift",
+            "Documentation and pairing that grow your own team's skills"
           ]
         },
         "agenda": {
@@ -2102,51 +4011,86 @@
           "steps": [
             {
               "num": "01",
-              "title": "Scope",
-              "desc": "We map your roadmap and set the monthly capacity."
+              "title": "Onboard and audit",
+              "desc": "We get access, join your standups, and audit what exists: models, data pipelines, evals, and infrastructure. You get a written picture of where things stand."
             },
             {
               "num": "02",
-              "title": "Embed",
-              "desc": "Our team joins your standups, repos, and tooling."
+              "title": "Own the roadmap",
+              "desc": "We agree which slice of the AI roadmap we own, with clear interfaces to your team. Priorities are set together each month, in your planning, not in a vendor portal."
             },
             {
               "num": "03",
-              "title": "Ship and scale",
-              "desc": "We ship to production and flex with your priorities."
+              "title": "Ship in cadence",
+              "desc": "We deliver in your sprint rhythm: design, build, review, release. Work lands in your repos through your review process, with a demo of shipped work every cycle."
+            },
+            {
+              "num": "04",
+              "title": "MLOps and quality gates",
+              "desc": "We build the plumbing that keeps AI in production: evals in CI, monitoring, rollback paths, and cost tracking. The quality gates hold whether we are in the room or not."
+            },
+            {
+              "num": "05",
+              "title": "Review and hand over",
+              "desc": "Every quarter we review outcomes against the roadmap and adjust capacity. As your own team grows, we pair, document, and hand over ownership piece by piece."
             }
           ]
         },
         "audience": {
           "title": "Who it's for",
           "items": [
-            "You're scaling AI across the org",
-            "Hiring senior AI talent is too slow",
-            "You need production help, not slideware"
+            "You are scaling AI past the first use case and need senior hands.",
+            "Hiring senior AI engineers is taking quarters, not weeks.",
+            "You need production systems built and maintained, not slideware.",
+            "You want capacity that flexes with the roadmap, month to month."
           ]
         },
         "faq": [
           {
             "q": "How fast can you start?",
-            "a": "Days, not months. We onboard a senior team into your stack and standups in the first week, then ship from there."
+            "a": "Days, not months. We onboard into your stack and standups in the first week and ship from there."
           },
           {
             "q": "Can we scale up or down?",
-            "a": "Yes. Adjust monthly capacity as your roadmap shifts. Add engineers for a sprint, dial back when things settle. No long lock-in."
+            "a": "Yes. Adjust monthly capacity as your roadmap shifts: add engineers for a push, dial back when things settle. No long lock-in."
           },
           {
             "q": "How is this different from hiring?",
-            "a": "No six-month search, no ramp-up risk. You get a senior AI team already fluent in production, strategy, and MLOps, available this month."
+            "a": "No six-month search, no ramp-up risk. You get a senior team already fluent in production AI, strategy, and MLOps, available this month."
           },
           {
             "q": "Who owns the code and models?",
-            "a": "You do. Everything lives in your repos and infrastructure. We build inside your stack, so nothing walks out the door when we scale down."
+            "a": "You do. Everything lives in your repos and your infrastructure. We build inside your stack, so nothing walks out the door when we scale down."
+          },
+          {
+            "q": "How is this different from hiring contractors?",
+            "a": "Contractors give you individual hours you have to manage. We come as a coordinated team with an architect, engineers, and MLOps, own outcomes rather than tickets, and bring our own delivery standards, evals, and review discipline."
+          },
+          {
+            "q": "What is the minimum commitment?",
+            "a": "Long enough to judge us on shipped results: we suggest a first quarter for onboarding, the audit, and the first outcomes in production. After that it runs month to month, and you scale down or stop with a month's notice."
           }
         ],
         "form": {
           "title": "Book a fit call",
           "note": "30 minutes with an engineer, no sales deck.",
           "cta": "Talk to us"
+        },
+        "prep": {
+          "title": "How to prepare",
+          "intro": "The engagement starts fastest when access and ownership are clear on day one.",
+          "items": [
+            "A technical counterpart who owns the AI roadmap internally",
+            "Access to repos, cloud, and data agreed before we start",
+            "A view of what is already running, even if it is rough",
+            "Time reserved in your planning and standups for the team"
+          ]
+        },
+        "next": {
+          "title": "Talk it through",
+          "text": "Every retainer starts with one call: your roadmap, your stack, and whether we are the right team for it. Thirty minutes with an engineer, no sales deck.",
+          "linkLabel": "Book a call",
+          "slug": null
         }
       }
     }
@@ -2172,12 +4116,30 @@
     "hearAbout": "How did you hear about us?",
     "hearAboutPlaceholder": "Select an option",
     "hearAboutOptions": [
-      { "value": "search", "label": "Search engine" },
-      { "value": "recommendation", "label": "Recommendation or referral" },
-      { "value": "social", "label": "Social media" },
-      { "value": "event", "label": "Event or conference" },
-      { "value": "content", "label": "Blog, article, or newsletter" },
-      { "value": "other", "label": "Other" }
+      {
+        "value": "search",
+        "label": "Search engine"
+      },
+      {
+        "value": "recommendation",
+        "label": "Recommendation or referral"
+      },
+      {
+        "value": "social",
+        "label": "Social media"
+      },
+      {
+        "value": "event",
+        "label": "Event or conference"
+      },
+      {
+        "value": "content",
+        "label": "Blog, article, or newsletter"
+      },
+      {
+        "value": "other",
+        "label": "Other"
+      }
     ],
     "message": "Tell us more about your project",
     "consentTermsPrefix": "I agree to the",

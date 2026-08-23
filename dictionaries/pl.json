@@ -58,7 +58,7 @@
     "fallbackRole": "CEO i Założyciel",
     "eyebrow": "Konsulting AI · wdrożenia · warsztaty",
     "headlineEm": "realne produkty",
-    "headlineEnd": ".",
+    "headlineEnd": "",
     "stats": [
       {
         "value": "40+",
@@ -436,62 +436,62 @@
       "machineLearning": {
         "label": "AI i Dane",
         "title": "Rozwiązania Machine Learning",
-        "subtitle": "Buduj inteligentne systemy, które uczą się z danych, automatyzują decyzje, przewidują wyniki i otwierają nowe możliwości biznesowe.",
+        "subtitle": "Modele, które zarabiają na swoje miejsce na produkcji. Najpierw udowadniamy wartość na Twoich danych, potem budujemy wokół nich pipeline, wdrożenie i monitoring.",
         "breadcrumb": "Machine Learning",
         "features": {
           "predictive": {
-            "title": "Analityka Predykcyjna",
-            "description": "Prognozuj trendy, zachowania klientów i zmiany rynkowe za pomocą zaawansowanych modeli predykcyjnych."
+            "title": "Analityka predykcyjna",
+            "description": "Churn, popyt, ryzyko kredytowe, next best action: modele, które scorują realne zdarzenia, zamiast opisywać je na dashboardzie. Każdy model walidujemy względem baseline'u, więc wiesz dokładnie, co wnosi."
           },
           "nlp": {
-            "title": "Przetwarzanie Języka Naturalnego",
-            "description": "Wydobywaj wiedzę z tekstu, automatyzuj obsługę klienta i włącz AI konwersacyjne."
+            "title": "Przetwarzanie języka naturalnego",
+            "description": "Ekstrakcja z umów i faktur, klasyfikacja zgłoszeń i maili, asystenci osadzeni w Twoich dokumentach. Łączymy LLM-y z klasycznym NLP tam, gdzie każde z nich jest tańsze i mierzalnie lepsze."
           },
           "computerVision": {
-            "title": "Wizja Komputerowa",
-            "description": "Automatyzuj inspekcję wizualną, wykrywanie obiektów i zadania analizy obrazu."
+            "title": "Wizja komputerowa",
+            "description": "Wykrywanie wad na linii, OCR na trudnych skanach, zliczanie i śledzenie na wideo. Trenujemy na Twoich zdjęciach i testujemy w warunkach, które naprawdę widzą Twoje kamery."
           },
           "deepLearning": {
-            "title": "Deep Learning",
-            "description": "Wykorzystaj sieci neuronowe do złożonego rozpoznawania wzorców i podejmowania decyzji."
+            "title": "Deep learning",
+            "description": "Na moment, gdy gradient boosting przestaje wystarczać: modele sekwencyjne, embeddingi, sieci multimodalne. Sięgamy po deep learning tam, gdzie dane to uzasadniają, i mówimy wprost, gdy nie uzasadniają."
           },
           "mlOps": {
-            "title": "MLOps i Wdrożenia",
-            "description": "Gotowe do produkcji pipeline'y ML z monitoringiem, wersjonowaniem i ciągłym doskonaleniem."
+            "title": "MLOps i wdrożenia",
+            "description": "Wersjonowane dane, powtarzalny trening, CI dla modeli, alerty o dryfcie na żywym ruchu. Mało efektowna hydraulika, która decyduje, czy Twój model przeżyje szósty miesiąc."
           },
           "customModels": {
-            "title": "Rozwój Modeli Niestandardowych",
-            "description": "Modele szyte na miarę, trenowane na Twoich danych dla maksymalnej dokładności."
+            "title": "Modele szyte na miarę",
+            "description": "Modele trenowane lub dostrajane na Twoich danych, pod Twoją metrykę, należące do Ciebie. Wagi, kod i pipeline'y przekazujemy, a nie wynajmujemy Ci z powrotem."
           }
         },
         "process": {
           "discovery": {
             "title": "Discovery",
-            "description": "Zrozum cele biznesowe i zidentyfikuj możliwości ML z mierzalnym wpływem."
+            "description": "Zaczynamy od Twojej metryki biznesowej, nie od algorytmu. Jeden lub dwa warsztaty definiują cel predykcji, baseline do pobicia i to, ile wygrana jest warta w pieniądzu."
           },
           "dataPrep": {
-            "title": "Przygotowanie Danych",
-            "description": "Zbierz, oczyść i przygotuj cechy z Twoich danych dla optymalnej wydajności modelu."
+            "title": "Przygotowanie danych",
+            "description": "Audytujemy, jakie dane naprawdę masz, i budujemy z nich zbiory oraz cechy, na których model będzie się uczył. Kontrola wycieków i czysty podział train/test dzieją się tutaj, nie po demo."
           },
           "development": {
-            "title": "Rozwój Modelu",
-            "description": "Trenuj i waliduj modele przy użyciu najnowocześniejszych algorytmów i technik."
+            "title": "Rozwój modelu",
+            "description": "Najpierw trenujemy proste baseline'y, a złożoność dokładamy tylko tam, gdzie opłaca się na zbiorze ewaluacyjnym. Każdy eksperyment jest śledzony, więc wyniki są powtarzalne i porównywalne."
           },
           "deployment": {
-            "title": "Wdrożenie i Monitoring",
-            "description": "Wdróż modele na produkcję z monitoringiem i ciągłym doskonaleniem."
+            "title": "Wdrożenie i monitoring",
+            "description": "Model idzie na produkcję za API, z monitoringiem, alertami o dryfcie i ścieżką rollbacku. Pierwsze tygodnie realnego ruchu obserwujemy razem z Tobą i stroimy przed przekazaniem."
           }
         },
         "cta": {
-          "title": "Gotowy wykorzystać AI?",
-          "subtitle": "Porozmawiajmy o tym, jak machine learning może zmienić Twoje operacje biznesowe.",
+          "title": "Gotowy postawić model na produkcji?",
+          "subtitle": "Umów rozmowę z senior engineerem. W 30 minut powiemy Ci, czy Twój przypadek jest wart studium wykonalności.",
           "button": "Rozpocznij rozmowę"
         },
         "faqTitle": "Odpowiadamy na pytania",
         "faq": [
           {
             "q": "Budować własny model czy kupić gotowy?",
-            "a": "Kupuj, gdy ogólny model wystarcza, buduj, gdy przewagą są Twoje dane lub domena. Testujemy oba i wskazujemy tańszą drogę do celu jakościowego. Bez dogmatów."
+            "a": "Kupuj, gdy ogólny model wystarcza, buduj, gdy przewagą są Twoje dane lub domena. Testujemy oba podejścia i wskazujemy tańszą drogę do celu jakościowego. Bez dogmatów."
           },
           {
             "q": "Jak eliminujecie halucynacje?",
@@ -504,72 +504,648 @@
           {
             "q": "Jak utrzymujecie dokładność modeli po wdrożeniu?",
             "a": "MLOps z monitoringiem, alertami o dryfcie i evalami w CI. Gdy jakość spada, szybko dostrajamy lub trenujemy od nowa. Dokładność to utrzymywany system, nie zdjęcie z dnia startu."
+          },
+          {
+            "q": "Wydaje nam się, że mamy za mało danych. Czy ML odpada?",
+            "a": "Zwykle nie. Modele pretrenowane, fine-tuning i augmentacja obniżają próg wejścia, a studium wykonalności w dwa tygodnie pokazuje, co Twoje dane realnie udźwigną. Czasem odpowiedź brzmi: zacznij już teraz zbierać właściwe dane. Wtedy mówimy dokładnie to."
+          },
+          {
+            "q": "Jak mierzycie sukces?",
+            "a": "Zanim cokolwiek wytrenujemy, ustalamy metrykę, baseline do pobicia i próg, od którego produkcja ma sens. Każde demo raportuje wynik na tym harnessie. Jeśli liczb nie ma, dowiadujesz się w tygodnie, a nie po roku palenia budżetu."
           }
-        ]
+        ],
+        "featuresTitle": "Co budujemy",
+        "featuresIntro": "Sześć obszarów kompetencji, jeden standard: każdy model dostaje harness ewaluacyjny, ścieżkę wdrożenia i plan monitoringu.",
+        "processTitle": "Jak dowozimy",
+        "stats": [
+          {
+            "value": "2 tyg.",
+            "label": "od startu do pierwszego działającego prototypu, typowo"
+          },
+          {
+            "value": "4-6",
+            "label": "tygodni do pilota klasy produkcyjnej, mierzonego na Twoich danych"
+          },
+          {
+            "value": "100%",
+            "label": "senior engineerów w każdym projekcie"
+          },
+          {
+            "value": "0",
+            "label": "lock-inu: kod, wagi i pipeline'y są Twoje"
+          }
+        ],
+        "deliverablesTitle": "Z czym wychodzisz",
+        "deliverablesIntro": "Artefakty, nie slajdy. Każdy projekt kończy się rzeczami, które Twój zespół uruchomi bez nas.",
+        "deliverables": [
+          {
+            "title": "Harness ewaluacyjny i raport metryk",
+            "description": "Powtarzalny zestaw testów z metrykami istotnymi dla Twojego przypadku oraz pisemny raport, jak model wypada względem baseline'u."
+          },
+          {
+            "title": "Wdrożony model za API",
+            "description": "Skonteneryzowany serwis z uwierzytelnianiem, wersjonowanymi endpointami i testami obciążeniowymi pod Twój spodziewany ruch."
+          },
+          {
+            "title": "Pipeline treningu i fine-tuningu",
+            "description": "Oskryptowany, powtarzalny trening od surowych danych po zarejestrowany model. Uruchomisz go na nowych danych bez odtwarzania notebooka."
+          },
+          {
+            "title": "Monitoring i alerty o dryfcie",
+            "description": "Dashboardy latencji, kosztów i jakości predykcji oraz alerty, gdy dane wejściowe lub zachowanie modelu odjeżdżają od baseline'u."
+          },
+          {
+            "title": "Model cards i dokumentacja",
+            "description": "Co model robi, jakie dane widział, gdzie się myli i gdzie leżą jego granice. Napisane dla inżynierów, audytorów i Twojego przyszłego zespołu."
+          },
+          {
+            "title": "Przekazanie i runbooki",
+            "description": "Runbooki krok po kroku dla retrainingu, rollbacku i reakcji na incydenty, plus sesje przekazania z inżynierami, którzy przejmą system."
+          }
+        ],
+        "modelsTitle": "Modele współpracy",
+        "modelsIntro": "Trzy formy współpracy, jedna zasada: stały zakres tam, gdzie się da, seniorzy zawsze.",
+        "models": [
+          {
+            "name": "Studium wykonalności na Twoich danych",
+            "duration": "2-3 tygodnie · stały zakres",
+            "description": "Zanim zaangażujesz budżet, sprawdzamy, czy Twoje dane udźwigną model, o którym myślisz. Dostajesz liczby, nie opinie.",
+            "bullets": [
+              "Audyt danych: pokrycie, jakość, ryzyka wycieków",
+              "Model bazowy i uczciwe pierwsze metryki",
+              "Rekomendacja go / no-go z uzasadnieniem",
+              "Wyceniona roadmapa, jeśli odpowiedź brzmi go"
+            ]
+          },
+          {
+            "name": "Budowa pilota produkcyjnego",
+            "duration": "4-6 tygodni",
+            "description": "Jeden przypadek użycia doprowadzony do pilota klasy produkcyjnej: wytrenowany, zewaluowany, wdrożony za API i mierzony na żywych danych.",
+            "bullets": [
+              "Pipeline treningowy i harness ewaluacyjny",
+              "Wdrożony model z monitoringiem i alertami",
+              "Cotygodniowe demo na Twoich prawdziwych danych",
+              "Plan rolloutu wykraczający poza pilota"
+            ]
+          },
+          {
+            "name": "Zespół ML w Twojej strukturze",
+            "duration": "Miesięcznie · ciągła współpraca",
+            "description": "Seniorzy ML wewnątrz Twojego zespołu: dowożą modele, budują dyscyplinę MLOps i podnoszą poziom Twoich ludzi.",
+            "bullets": [
+              "Praca na kodzie, nie na slajdach",
+              "Standardy MLOps, które zostają po naszym wyjściu",
+              "Pairing i code review z Twoimi inżynierami",
+              "Moce przerobowe skalowane z Twoją roadmapą"
+            ]
+          }
+        ],
+        "toolsTitle": "Narzędzia, z którymi pracujemy",
+        "tools": [
+          "PyTorch",
+          "scikit-learn",
+          "Hugging Face",
+          "OpenAI i Anthropic API",
+          "LangGraph",
+          "Ray",
+          "ONNX",
+          "Weights & Biases",
+          "MLflow",
+          "Vertex AI",
+          "AWS SageMaker",
+          "Bazy wektorowe",
+          "Airflow",
+          "dbt",
+          "FastAPI",
+          "Docker i Kubernetes"
+        ],
+        "whoTitle": "Dla kogo to jest",
+        "who": [
+          {
+            "title": "Zespoły produktowe ze zwalidowanym use casem",
+            "description": "Wiesz, co model ma robić i mniej więcej ile to jest warte. My prowadzimy to od pomysłu do zmierzonego pilota w tygodnie."
+          },
+          {
+            "title": "Firmy z danymi, ale bez zespołu ML",
+            "description": "Lata danych operacyjnych i nikogo, kto by je zamodelował. Przychodzimy z zespołem, budujemy pierwsze systemy i zostawiamy je tak, żebyś prowadził je sam."
+          },
+          {
+            "title": "Zespoły, które utknęły na etapie notebooka",
+            "description": "Prototyp działa na laptopie i umiera na review. Zamieniamy notebooki w pipeline'y, testy i wdrożenia, które przeżywają produkcję."
+          },
+          {
+            "title": "Scale-upy, które potrzebują dyscypliny MLOps",
+            "description": "Modele działają, ale każdy retraining jest ręczny i nikt nie ufa metrykom. Instalujemy pipeline'y, monitoring i proces, żeby skalować bezpiecznie."
+          }
+        ],
+        "subTitle": "Wejdź głębiej",
+        "subIntro": "Pięć specjalizacji w ramach machine learningu, każda z własnym playbookiem.",
+        "sub": {
+          "custom-models": {
+            "name": "Modele szyte na miarę",
+            "teaser": "Modele trenowane na Twoich danych, od pierwszego baseline'u po wdrożony system. Wagi należą do Ciebie."
+          },
+          "nlp-llm": {
+            "name": "NLP i LLM",
+            "teaser": "Aplikacje LLM, RAG i ekstrakcja z harnessem ewaluacyjnym przed każdym wydaniem."
+          },
+          "computer-vision": {
+            "name": "Wizja komputerowa",
+            "teaser": "Detekcja, OCR i kontrola jakości trenowane na Twoich zdjęciach i mierzone w Twoich warunkach."
+          },
+          "forecasting": {
+            "name": "Prognozowanie",
+            "teaser": "Modele popytu, ryzyka i szeregów czasowych, które biją Twój obecny arkusz, albo mówimy dlaczego nie."
+          },
+          "mlops": {
+            "name": "MLOps",
+            "teaser": "Pipeline'y, wdrożenia i monitoring, które utrzymują dokładność modeli długo po starcie."
+          }
+        },
+        "subpages": {
+          "custom-models": {
+            "label": "Machine Learning",
+            "title": "Modele szyte na miarę",
+            "subtitle": "Modele trenowane na Twoich danych, dostarczane jako działające systemy z pipeline'ami, evalami i dokumentacją. Wszystko należy do Ciebie.",
+            "breadcrumb": "Modele szyte na miarę",
+            "overviewTitle": "Modele na miarę, od początku do końca",
+            "overview": [
+              "Gotowe modele rozwiązują generyczne problemy. Gdy Twoją przewagą są dane, historia cen, której nie ma konkurencja, archiwum wad z własnej linii, dekada szkód, model szyty na miarę zamienia tę przewagę w software. Budujemy takie modele od początku do końca: sformułowanie problemu, praca na danych, trening, ewaluacja i wdrożenie w jednym projekcie.",
+              "Projekt zaczyna się od baseline'u w pierwszych dniach, bo prosty model, który działa, bije złożony, który może zadziała. Od tego momentu każdy przyrost złożoności musi się opłacić na zbiorze ewaluacyjnym. Metryki widzisz co tydzień, na swoich danych, i w każdej chwili możesz się zatrzymać z czymś, co już działa.",
+              "Co się zmienia dla Ciebie: zamiast notebooka i obietnicy dostajesz wersjonowany pipeline treningowy, model wdrożony za API i dokumentację pozwalającą na retraining bez nas. Wagi, kod i pipeline'y danych są w całości Twoje, bez licencji i bez lock-inu, a przekazanie obejmuje sesje robocze z inżynierami, którzy przejmą system."
+            ],
+            "benefitsTitle": "Po co budować na miarę",
+            "benefits": [
+              {
+                "title": "Twoje dane stają się przewagą",
+                "description": "Model wytrenowany na Twojej historii robi rzeczy, których generyczne API nie potrafi, a konkurencja nie skopiuje go bez Twoich danych."
+              },
+              {
+                "title": "Najpierw baseline",
+                "description": "Najpierw trenujemy prosty model i publikujemy jego wynik. Złożoność dokładamy tylko wtedy, gdy bije baseline na Twojej metryce."
+              },
+              {
+                "title": "Pełna własność",
+                "description": "Wagi, kod treningowy i pipeline'y przekazujemy w całości. Bez licencji per stanowisko, bez czynszu za własny model."
+              },
+              {
+                "title": "Produkcja od pierwszego dnia",
+                "description": "Modele budujemy pod wdrożenie: skonteneryzowane, wersjonowane i testowane pod kątem latencji i obciążenia, nie tylko dokładności."
+              },
+              {
+                "title": "Koszty pod kontrolą",
+                "description": "Dobrze dobrany model własny przy skali często kosztuje ułamek cen API liczonych per token, a tę matematykę pokazujemy przed budową."
+              }
+            ],
+            "approachTitle": "Jak przebiega praca",
+            "approach": [
+              {
+                "title": "Sformułowanie problemu",
+                "description": "Definiujemy cel predykcji, metrykę i baseline do pobicia, w języku biznesowym, pod którym podpisze się Twój CFO."
+              },
+              {
+                "title": "Budowa zbioru danych",
+                "description": "Audyt, czyszczenie i etykietowanie danych, z kontrolą wycieków i zamrożonym zbiorem testowym przed startem treningu."
+              },
+              {
+                "title": "Trening i ewaluacja",
+                "description": "Najpierw baseline'y, potem mocniejsze architektury, dopóki metryka rośnie. Każdy run jest śledzony i powtarzalny."
+              },
+              {
+                "title": "Wdrożenie i przekazanie",
+                "description": "Zwycięski model idzie na produkcję za API z monitoringiem, a Twój zespół dostaje pipeline, dokumentację i runbooki."
+              }
+            ],
+            "deliverablesTitle": "Co dostajesz",
+            "deliverables": [
+              "Wytrenowany model z wagami i pełną własnością",
+              "Powtarzalny pipeline treningu i ewaluacji",
+              "Raport metryk względem uzgodnionego baseline'u",
+              "Wdrożone API inferencyjne z monitoringiem",
+              "Model card, dokumentacja i runbook retrainingu"
+            ],
+            "faqTitle": "Odpowiadamy na pytania",
+            "faq": [
+              {
+                "q": "Ile danych potrzebujemy, żeby wytrenować własny model?",
+                "a": "Mniej, niż myślisz, przy fine-tuningu, i więcej, niż byś chciał, przy treningu od zera. Dwutygodniowe studium wykonalności na Twoich danych zastępuje zgadywanie: dostajesz wynik baseline'u i jasną odpowiedź, czy więcej danych by go ruszyło."
+              },
+              {
+                "q": "Model od zera czy fine-tuning modelu fundacyjnego?",
+                "a": "Fine-tuning wygrywa, gdy pretrenowany model z grubsza rozumie Twoją domenę; trening od zera wygrywa na wąskich, ustrukturyzowanych problemach z dużą liczbą etykiet. Benchmarkujemy oba podejścia na Twojej metryce i wskazujemy tańszą drogę."
+              },
+              {
+                "q": "Ile to kosztuje w utrzymaniu po przekazaniu?",
+                "a": "Rozmiar modelu dobieramy do Twojego ruchu i budżetu przed treningiem, a raport metryk zawiera koszt na tysiąc predykcji. Większość modeli własnych działa na skromnej infrastrukturze, a runbook opisuje skalowanie w górę i w dół."
+              }
+            ],
+            "cta": {
+              "title": "Masz dane, które mogą być modelem?",
+              "subtitle": "Studium wykonalności odpowiada na pytanie o budowę w dwa-trzy tygodnie, liczbami.",
+              "button": "Zaplanuj studium wykonalności"
+            }
+          },
+          "nlp-llm": {
+            "label": "Machine Learning",
+            "title": "Inżynieria NLP i LLM",
+            "subtitle": "Systemy RAG, ekstrakcja z dokumentów, czat i agenci, budowane w podejściu evaluation-first: jakość mierzymy, zanim cokolwiek trafi do użytkowników.",
+            "breadcrumb": "NLP i LLM",
+            "overviewTitle": "Systemy językowe, które wytrzymują produkcję",
+            "overview": [
+              "Większość dem LLM powstaje w weekend. Prawdziwa praca to doprowadzenie ich do niezawodności wobec klientów i audytorów: osadzenie odpowiedzi w Twoich źródłach, obsługa dokumentów, które psują parsery, i dowodzenie jakości wydanie po wydaniu. Aplikacje LLM, pipeline'y RAG, ekstrakcję, czat i systemy agentowe budujemy z tą poprzeczką od pierwszego dnia.",
+              "Dostarczamy w podejściu evaluation-first. Zanim zaczniemy stroić prompty czy wybierać model, budujemy zbiór testowy z Twoich prawdziwych dokumentów i pytań, z kryteriami zaliczenia, które akceptujesz. Każda zmiana jest na nim punktowana, więc poziom halucynacji, dokładność ekstrakcji i latencja to liczby na dashboardzie, a nie wrażenia z demo.",
+              "Kończysz z systemem, który Twój zespół może bezpiecznie zmieniać: podmienić model, gdy pojawi się lepszy, edytować prompty, rozszerzyć korpus, a zestaw evali w kilka minut powie, czy jakość się utrzymała. Koszty są liczone per zapytanie, więc decyzja o skalowaniu przychodzi z metką cenową, a nie z zaskakującą fakturą na koniec miesiąca."
+            ],
+            "benefitsTitle": "Co daje evaluation-first",
+            "benefits": [
+              {
+                "title": "Odpowiedzi z pokryciem w źródłach",
+                "description": "RAG z cytowaniami do Twoich źródeł, więc każdą odpowiedź da się sprawdzić, a poziom halucynacji jest mierzony, nie zgadywany."
+              },
+              {
+                "title": "Ewaluacja przed startem",
+                "description": "Zbiór testowy z Twoich prawdziwych danych bramkuje każde wydanie. Gdy jakość spada, deploy się zatrzymuje."
+              },
+              {
+                "title": "Niezależność od modelu",
+                "description": "OpenAI, Anthropic albo otwarte wagi za jednym interfejsem. Gdy pojawia się lepszy lub tańszy model, zmiana to konfiguracja plus przebieg evali."
+              },
+              {
+                "title": "Znany koszt zapytania",
+                "description": "Wydatki na tokeny liczone per funkcja i per klient, z cache'owaniem i routingiem, żeby rachunek był proporcjonalny do wartości."
+              },
+              {
+                "title": "Ustrukturyzowany wynik do dalszej budowy",
+                "description": "Ekstrakcja zwraca typowany, zwalidowany JSON, który Twoje systemy konsumują bezpośrednio, ze score'ami pewności dla kolejek review."
+              }
+            ],
+            "approachTitle": "Od zbioru evali do produkcji",
+            "approach": [
+              {
+                "title": "Budowa zbioru evali",
+                "description": "Zbieramy prawdziwe dokumenty, pytania i przypadki brzegowe z Twojej domeny i z Twoimi ekspertami ustalamy kryteria zaliczenia."
+              },
+              {
+                "title": "Prototyp przeciwko evalom",
+                "description": "Pierwszy działający pipeline w kilka dni: retrieval, prompty i wybór modelu iterowane na zbiorze evali, nie na opiniach."
+              },
+              {
+                "title": "Utwardzenie pod produkcję",
+                "description": "Guardrails, fallbacki, limity, ustrukturyzowane logi i kontrola kosztów wokół szczęśliwej ścieżki."
+              },
+              {
+                "title": "Wydanie i monitoring",
+                "description": "Próbkowanie jakości na żywo, alerty o dryfcie wejść i pętla zwrotna zamieniająca poprawki użytkowników w przypadki testowe."
+              }
+            ],
+            "deliverablesTitle": "Co dostajesz",
+            "deliverables": [
+              "Zestaw evali zbudowany z Twoich prawdziwych dokumentów",
+              "Pipeline RAG lub ekstrakcji wdrożony za API",
+              "Prompty i konfiguracja modeli pod kontrolą wersji",
+              "Dashboard kosztów i jakości per zapytanie",
+              "Runbook aktualizacji korpusu i podmiany modeli"
+            ],
+            "faqTitle": "Odpowiadamy na pytania",
+            "faq": [
+              {
+                "q": "Jakiego modelu użyjecie?",
+                "a": "Tego, który przejdzie Twój zbiór evali najniższym kosztem. Benchmarkujemy OpenAI, Anthropic i modele o otwartych wagach na Twoich zadaniach, a architektura pozwala tę decyzję odwrócić."
+              },
+              {
+                "q": "Jak traktujecie poufne dokumenty?",
+                "a": "Twoje dane zostają w Twojej chmurze albo na endpointach hostowanych w UE, bez trenowania na Twoich wejściach. Tam, gdzie wymaga tego polityka, wdrażamy modele o otwartych wagach w całości w Twojej infrastrukturze."
+              },
+              {
+                "q": "Co z halucynacjami przed klientem?",
+                "a": "Retrieval osadza odpowiedzi w Twoich treściach, cytowania czynią je sprawdzalnymi, a guardrails wyłapują odpowiedzi poza polityką. Poziom halucynacji mierzymy na zbiorze evali i bramkujemy nim wydania."
+              }
+            ],
+            "cta": {
+              "title": "Masz dokumenty albo rozmowy do zaprzęgnięcia do pracy?",
+              "subtitle": "Przynieś trzy prawdziwe przykłady na rozmowę, a naszkicujemy pipeline i plan ewaluacji.",
+              "button": "Porozmawiaj z inżynierem"
+            }
+          },
+          "computer-vision": {
+            "label": "Machine Learning",
+            "title": "Wizja komputerowa",
+            "subtitle": "Detekcja, OCR i kontrola jakości trenowane na Twoich zdjęciach, testowane w Twoim oświetleniu, wdrażane na linii albo w Twojej chmurze.",
+            "breadcrumb": "Wizja komputerowa",
+            "overviewTitle": "Systemy wizyjne na realne warunki",
+            "overview": [
+              "Modele wizyjne zawodzą w szczelinie między zbiorem z demo a Twoją halą: odblaski, pył, kąty kamer, wada, która pojawia się dwa razy w miesiącu. Systemy detekcji, OCR i kontroli jakości budujemy wokół tej szczeliny, trenując na Twoich obrazach i ewaluując na trudnych przypadkach zebranych przez Twój zespół, nie na zdjęciach z benchmarków.",
+              "Projekt zaczyna się od Twojego istniejącego materiału albo planu akwizycji, jeśli go brakuje. Etykietujemy pierwszy zbiór, trenujemy baseline i w kilka tygodni pokazujemy precyzję i czułość per klasa wady. Dalej pętla jest ciasna: razem przeglądamy pomyłki, poprawiamy etykiety, dotrenowujemy, aż liczby przekroczą poprzeczkę, którą ustawiasz.",
+              "Wdrożenie dopasowujemy do Twoich ograniczeń: urządzenia edge przy kamerze, gdy wymaga tego latencja lub łączność, chmura, gdy nie wymaga. System dostarczamy z interfejsem review dla przypadków granicznych, więc operatorzy poprawiają model, a każda poprawka staje się danymi treningowymi dla kolejnej iteracji."
+            ],
+            "benefitsTitle": "Co zyskujesz",
+            "benefits": [
+              {
+                "title": "Mierzone per klasa",
+                "description": "Precyzja i czułość raportowane per wada lub typ dokumentu, więc dokładnie wiesz, gdzie model jest mocny, a gdzie człowiek zostaje w pętli."
+              },
+              {
+                "title": "Działa w Twoich warunkach",
+                "description": "Trening i testy na Twoich kamerach, oświetleniu i materiałach. Zbiór ewaluacyjny budujemy z Twoich najgorszych przypadków, nie z czystych próbek."
+              },
+              {
+                "title": "Edge albo chmura",
+                "description": "Modele wyeksportowane do ONNX działają na urządzeniach przy linii albo jako serwisy GPU w Twojej chmurze, zależnie od latencji i kosztów."
+              },
+              {
+                "title": "OCR ponad druk",
+                "description": "Pieczątki, pismo odręczne, przekrzywione skany i dokumenty wielojęzyczne, ze score'ami pewności kierującymi wątpliwe przypadki do ludzi."
+              },
+              {
+                "title": "Zbiór danych, który procentuje",
+                "description": "Standardy etykietowania i narzędzia sprawiają, że każda produkcyjna poprawka powiększa Twój zbiór i podnosi dokładność w czasie."
+              }
+            ],
+            "approachTitle": "Od pierwszych zdjęć do linii",
+            "approach": [
+              {
+                "title": "Zbieranie i etykietowanie",
+                "description": "Audyt istniejących obrazów albo plan akwizycji, potem pierwszy zbiór z jasnymi definicjami klas, na które zgadzają się operatorzy."
+              },
+              {
+                "title": "Szybki baseline",
+                "description": "Pierwszy model w kilka tygodni, punktowany per klasa, żeby wcześnie wiedzieć, czy wąskim gardłem są dane, czy modelowanie."
+              },
+              {
+                "title": "Iteracja na pomyłkach",
+                "description": "Przegląd błędów z Twoimi ekspertami, rozbudowa zbioru tam, gdzie boli, i dotrenowanie aż do osiągnięcia celów."
+              },
+              {
+                "title": "Wdrożenie tam, gdzie działa",
+                "description": "Optymalizacja i pakowanie pod edge lub chmurę, podpięcie monitoringu i pętli review, potem przekazanie."
+              }
+            ],
+            "deliverablesTitle": "Co dostajesz",
+            "deliverables": [
+              "Zetykietowany zbiór danych z udokumentowanymi standardami",
+              "Wytrenowany model detekcji lub OCR, wyeksportowany pod Twój sprzęt",
+              "Raport dokładności per klasa na odłożonym zbiorze testowym",
+              "Wdrożony serwis inferencyjny z interfejsem review",
+              "Pipeline retrainingu i runbook operacyjny"
+            ],
+            "faqTitle": "Odpowiadamy na pytania",
+            "faq": [
+              {
+                "q": "Ilu obrazów potrzebujemy na start?",
+                "a": "Przy nowoczesnych pretrenowanych backbone'ach kilkaset na klasę często wystarcza na pierwszy baseline, a augmentacja rozciąga małe zbiory dalej. Studium wykonalności odpowiada precyzyjnie: trenujemy na tym, co masz, i raportujemy, gdzie więcej danych się opłaci."
+              },
+              {
+                "q": "Rzadkie wady pojawiają się kilka razy w miesiącu. Czy model się ich nauczy?",
+                "a": "Tak, przy właściwym podejściu: augmentacja, przykłady syntetyczne i detekcja anomalii, która flaguje wszystko nietypowe, a nie tylko znane klasy. Czułość na rzadkie przypadki raportujemy osobno, żeby ryzyko było widoczne."
+              },
+              {
+                "q": "Czy to działa bez internetu na hali?",
+                "a": "Tak. Modele eksportujemy do ONNX i uruchamiamy na komputerach przemysłowych albo urządzeniach edge przy kamerze, z aktualizacjami w Twoim rytmie i bez zależności od chmury w czasie inferencji."
+              }
+            ],
+            "cta": {
+              "title": "Masz obrazy i decyzję do zautomatyzowania?",
+              "subtitle": "Prześlij próbkę materiału, a powiemy, jaka dokładność jest realna, zanim się zdecydujesz.",
+              "button": "Zaplanuj pilota wizyjnego"
+            }
+          },
+          "forecasting": {
+            "label": "Machine Learning",
+            "title": "Prognozowanie i szeregi czasowe",
+            "subtitle": "Prognozy popytu, ryzyka i obciążenia, które biją Twój obecny baseline, uczciwie backtestowane, zanim ktokolwiek zacznie na nich planować.",
+            "breadcrumb": "Prognozowanie",
+            "overviewTitle": "Prognozy, na których można planować",
+            "overview": [
+              "Każda firma prognozuje, najczęściej w arkuszu: zeszły rok plus procent. Pytanie nie brzmi, czy ML umie prognozować, tylko czy bije to, co robisz dziś, na tyle, żeby zmienić decyzje: stany magazynowe, grafiki, planowanie gotówki, limity ryzyka. Każdy projekt prognostyczny zaczynamy od zmierzenia Twojego obecnego baseline'u, bo to jest liczba do pobicia.",
+              "Praca opiera się na backtestach: modele trenujemy na Twojej historii i oceniamy tak, jakby działały przez ostatni rok, kwartał po kwartale, wyłącznie z wiedzą dostępną w tamtym momencie. Bez wycieków, bez wybierania wygodnych okien. Metryki błędu widzisz per produkt, region czy segment, zanim cokolwiek dotknie planowania.",
+              "Na produkcji prognozy przychodzą zgodnie z harmonogramem, przez API albo prosto do tabel planistycznych, z przedziałami niepewności zamiast pojedynczych liczb. Monitoring porównuje prognozy z realizacją na bieżąco i wcześnie flaguje pogorszenie, a retraining to zaplanowany pipeline, nie akcja ratunkowa."
+            ],
+            "benefitsTitle": "Co zyskujesz",
+            "benefits": [
+              {
+                "title": "Najpierw baseline",
+                "description": "Mierzymy dokładność Twojej obecnej prognozy przed modelowaniem, więc poprawa jest konkretną liczbą, nie deklaracją."
+              },
+              {
+                "title": "Uczciwy backtesting",
+                "description": "Ewaluacja walk-forward na Twojej historii, z twardymi punktami odcięcia, dokładnie tak, jak model działałby na żywo."
+              },
+              {
+                "title": "Niepewność w zestawie",
+                "description": "Przedziały i kwantyle zamiast pojedynczych punktów, więc decyzje o zapasie bezpieczeństwa i obsadzie odzwierciedlają realne ryzyko."
+              },
+              {
+                "title": "Szczegółowość tam, gdzie trzeba",
+                "description": "Prognozy per SKU, per lokalizacja albo per segment, z uzgodnioną hierarchią, żeby części sumowały się do całości."
+              },
+              {
+                "title": "Działa samo",
+                "description": "Zaplanowany retraining, automatyczne kontrole danych i alerty o dryfcie utrzymują świeżość prognozy bez dyżurującego data scientista."
+              }
+            ],
+            "approachTitle": "Od baseline'u do prognoz na żywo",
+            "approach": [
+              {
+                "title": "Pomiar baseline'u",
+                "description": "Kwantyfikujemy dokładność i koszt dzisiejszej prognozy i ustalamy, które decyzje zmieniłyby lepsze liczby."
+              },
+              {
+                "title": "Backtest kandydatów",
+                "description": "Klasyczna statystyka, gradient boosting i modele głębokie rywalizują na Twojej historii na identycznych zasadach."
+              },
+              {
+                "title": "Wpięcie w planowanie",
+                "description": "Prognozy trafiają tam, gdzie zapadają decyzje: ERP, arkusze planistyczne albo API, z dołączonymi przedziałami niepewności."
+              },
+              {
+                "title": "Monitoring i retraining",
+                "description": "Dokładność śledzimy na żywo względem realizacji, z alertami i zaplanowanym retrainingiem, gdy świat się zmienia."
+              }
+            ],
+            "deliverablesTitle": "Co dostajesz",
+            "deliverables": [
+              "Raport z backtestu porównujący modele z Twoim obecnym baseline'em",
+              "Pipeline prognostyczny z zaplanowanym retrainingiem",
+              "API prognoz albo integracja wprost z narzędziami planistycznymi",
+              "Monitoring dokładności z alertami względem realizacji",
+              "Dokumentacja i runbook dla Twojego zespołu"
+            ],
+            "faqTitle": "Odpowiadamy na pytania",
+            "faq": [
+              {
+                "q": "Nasz popyt jest zmienny. Czy to w ogóle zadziała?",
+                "a": "Zmienność to powód, dla którego liczą się prognozy kwantylowe: wyceniają niepewność, zamiast ją ukrywać. Backtest uczciwie pokazuje, co jest przewidywalne, a co jest szumem, a nawet umiarkowana redukcja błędu zwykle zwraca się w zapasach albo grafikach."
+              },
+              {
+                "q": "Ile historii potrzebujemy?",
+                "a": "Dwa-trzy lata dobrze łapią sezonowość, ale krótsze historie działają z sygnałami zewnętrznymi i uczeniem krzyżowym między produktami. Studium wykonalności działa na tym, co masz, i raportuje, na co to pozwala."
+              },
+              {
+                "q": "Prognoza ML czy osąd planisty?",
+                "a": "Jedno i drugie. Model obsługuje tysiące szeregów konsekwentnie; planiści nadpisują tam, gdzie wiedzą rzeczy, których nie ma w danych, a nadpisania są śledzone, więc uczysz się, kiedy która strona wygrywa."
+              }
+            ],
+            "cta": {
+              "title": "Planujesz na prognozach z arkusza?",
+              "subtitle": "Backtest na Twojej historii w kilka tygodni pokaże, czy ML je bije i o ile.",
+              "button": "Zaplanuj backtest"
+            }
+          },
+          "mlops": {
+            "label": "Machine Learning",
+            "title": "MLOps i operacje modeli",
+            "subtitle": "Pipeline'y, wdrożenia, monitoring i governance, które utrzymują modele dokładne, audytowalne i tanie w zmianie na produkcji.",
+            "breadcrumb": "MLOps",
+            "overviewTitle": "Modele jako działające systemy",
+            "overview": [
+              "Model na produkcji to system, nie artefakt: dane się pod nim zmieniają, zależności się starzeją, regulator zadaje pytania, a ktoś musi zrobić retraining w środku nocy. MLOps to dyscyplina, która czyni to wszystko nudnym. Budujemy pipeline'y, ścieżki wdrożeń, monitoring i governance wokół Twoich modeli, niezależnie od tego, czy trenowaliśmy je my, czy Ty.",
+              "Zwykle zaczynamy od audytu: jak modele trafiają dziś na produkcję, gdzie kryją się ręczne kroki i co pierwsze pęka pod obciążeniem albo dryfem. Potem instalujemy brakujące elementy w kolejności priorytetów: wersjonowane dane i modele, CI z evalami przy każdej zmianie, wdrożenia z rollbackiem i monitoring spięty z alertami, które ktoś naprawdę odbiera.",
+              "Cel: wydanie zmiany w modelu ma być tak rutynowe jak wydanie kodu. Twój zespół kończy z utwardzoną drogą: retraining to przebieg pipeline'u, rollback to jedna komenda, a na pytanie audytora odpowiada rejestr modeli, nie czyjaś pamięć. Zostajemy tak długo, aż Twoi inżynierowie jeżdżą tą drogą sprawnie i całkiem bez nas."
+            ],
+            "benefitsTitle": "Co daje porządny MLOps",
+            "benefits": [
+              {
+                "title": "Powtarzalność domyślnie",
+                "description": "Każda wersja modelu wskazuje dokładne dane, kod i parametry, więc każdy wynik da się odtworzyć i wyjaśnić."
+              },
+              {
+                "title": "Evale w CI",
+                "description": "Zmiany modeli automatycznie uruchamiają zestaw ewaluacyjny, a wydania są bramkowane jakością, latencją i kosztem."
+              },
+              {
+                "title": "Dryf łapany wcześnie",
+                "description": "Monitoring wejść i predykcji z alertami, zanim spadek dokładności stanie się problemem biznesowym."
+              },
+              {
+                "title": "Rollback w minuty",
+                "description": "Wersjonowane wdrożenia z canary release'ami i rollbackiem jedną komendą, gdy model zaczyna błądzić."
+              },
+              {
+                "title": "Governance gotowe na audyt",
+                "description": "Rejestr modeli, ścieżki zatwierdzeń i dokumentacja, które zadowalają audytorów i EU AI Act bez gaszenia pożarów."
+              }
+            ],
+            "approachTitle": "Od audytu do utwardzonej drogi",
+            "approach": [
+              {
+                "title": "Audyt drogi na produkcję",
+                "description": "Mapujemy, jak modele są dziś wydawane, znajdujemy ręczne kroki i szeregujemy ryzyka według tego, co pęka pierwsze."
+              },
+              {
+                "title": "Utwardzenie drogi",
+                "description": "Wersjonowanie, pipeline'y i CI z evalami, zbudowane na Twoim stacku, a nie na kolejnej platformie do kupienia."
+              },
+              {
+                "title": "Oprzyrządowanie produkcji",
+                "description": "Monitoring dryfu, jakości, latencji i kosztów, spięty z alertami i dashboardami, które należą do Twojego zespołu."
+              },
+              {
+                "title": "Transfer dyscypliny",
+                "description": "Runbooki, pairing i review, aż rutynowe operacje przestaną nas potrzebować."
+              }
+            ],
+            "deliverablesTitle": "Co dostajesz",
+            "deliverables": [
+              "Audyt MLOps z priorytetyzowaną listą luk",
+              "Pipeline'y CI/CD dla modeli z automatycznymi evalami",
+              "Rejestr modeli z wersjonowanymi wdrożeniami i rollbackiem",
+              "Monitoring i alerty o dryfcie na produkcji",
+              "Dokumentacja governance i runbooki zespołu"
+            ],
+            "faqTitle": "Odpowiadamy na pytania",
+            "faq": [
+              {
+                "q": "Czy potrzebujemy do tego nowej platformy?",
+                "a": "Zwykle nie. Budujemy na Twojej chmurze i CI, z otwartymi narzędziami jak MLflow i Airflow, a platformę zarządzaną rekomendujemy tylko wtedy, gdy rachunek za nią przemawia. Dyscyplina znaczy więcej niż logo."
+              },
+              {
+                "q": "Nasze modele budował inny zespół. Czy to problem?",
+                "a": "Nie. Projekty MLOps regularnie zaczynają się od odziedziczonych modeli. Audyt ustala, co istnieje, a wersjonowanie i evale sprawiają, że można je bezpiecznie zmieniać nawet bez ich autorów."
+              },
+              {
+                "q": "Co EU AI Act oznacza dla naszych modeli?",
+                "a": "Dla zastosowań wyższego ryzyka oczekuje dokumentacji, monitoringu, nadzoru człowieka i śledzenia zmian, czyli tego, co porządny MLOps i tak wytwarza. Mapujemy Twoje modele na klasy ryzyka i domykamy luki po kolei."
+              }
+            ],
+            "cta": {
+              "title": "Modele na produkcji, dyscyplina w drodze?",
+              "subtitle": "Audyt MLOps daje Ci priorytetyzowaną listę luk w około dwa tygodnie.",
+              "button": "Umów audyt"
+            }
+          }
+        }
       },
       "analytics": {
         "label": "AI i Dane",
         "title": "Analityka Danych",
-        "subtitle": "Przekształć surowe dane w praktyczne wnioski, które napędzają strategiczne decyzje i mierzalny wzrost biznesowy.",
+        "subtitle": "Jedno zarządzane źródło prawdy dla Twoich liczb: zamodelowana hurtownia, testowane pipeline'y i dashboardy, z których zespoły naprawdę korzystają.",
         "breadcrumb": "Analityka Danych",
         "features": {
           "businessIntelligence": {
             "title": "Business Intelligence",
-            "description": "Interaktywne dashboardy i raporty zapewniające widoczność KPI w czasie rzeczywistym."
+            "description": "Dashboardy i raporty oparte na zarządzanych definicjach metryk, dzięki którym finanse, sprzedaż i operacje patrzą na te same liczby. Widoczność KPI w czasie rzeczywistym zamiast kolejnego eksportu do arkusza."
           },
           "dataVisualization": {
             "title": "Wizualizacja Danych",
-            "description": "Piękne, intuicyjne wizualizacje, które czynią złożone dane łatwymi do zrozumienia."
+            "description": "Wykresy, które odpowiadają na pytanie, a nie zdobią slajd. Projektujemy widoki wokół decyzji: co się zmieniło, dlaczego i co z tym zrobić."
           },
           "dataWarehousing": {
             "title": "Hurtownie Danych",
-            "description": "Scentralizowane repozytoria danych łączące informacje z wielu źródeł."
+            "description": "Zamodelowana hurtownia na Snowflake, BigQuery lub Databricks, która łączy Twoje źródła w czyste, udokumentowane warstwy. Budowana w dbt, wersjonowana w gicie i testowana przy każdym uruchomieniu."
           },
           "realTimeAnalytics": {
             "title": "Analityka Real-Time",
-            "description": "Przetwarzanie strumieniowe i wnioski w czasie rzeczywistym dla decyzji wrażliwych na czas."
+            "description": "Pipeline'y strumieniowe na Kafce lub CDC, gdy nocny batch to za późno. Operacyjne dashboardy i alerty z opóźnieniem liczonym w sekundach, nie godzinach."
           },
           "predictiveAnalytics": {
             "title": "Analityka Predykcyjna",
-            "description": "Prognozuj przyszłe trendy i wyniki na podstawie historycznych wzorców danych."
+            "description": "Modele churnu, popytu i scoringu trenowane na danych z Twojej hurtowni. Prognozy wpięte w narzędzia, w których Twoje zespoły już pracują, a nie notebook, który nigdy nie trafia na produkcję."
           },
           "dataGovernance": {
             "title": "Data Governance",
-            "description": "Zapewnij jakość, bezpieczeństwo i zgodność danych w całej organizacji."
+            "description": "Kontrola dostępu, lineage, definicje metryk i ślad audytowy wbudowane w platformę od pierwszego dnia. Zgodność z RODO z założenia, więc compliance jest cechą pipeline'u, a nie osobnym projektem."
           }
         },
         "process": {
           "assessment": {
             "title": "Ocena",
-            "description": "Oceń aktualny krajobraz danych i zidentyfikuj możliwości poprawy."
+            "description": "Mapujemy Twoje źródła, pipeline'y i raportowanie oraz rozmawiamy z ludźmi, którzy korzystają z liczb. Po dwóch, trzech tygodniach masz uczciwy obraz tego, co działa, co jest zepsute i ile to kosztuje."
           },
           "architecture": {
             "title": "Projektowanie Architektury",
-            "description": "Zaprojektuj skalowalną architekturę danych spełniającą obecne i przyszłe potrzeby."
+            "description": "Projektujemy docelową platformę w Twojej chmurze: hurtownię, ELT, warstwy modelowania i BI. Zanim cokolwiek zbudujemy, dostajesz do przeglądu pisemną architekturę z kosztami i kompromisami."
           },
           "implementation": {
             "title": "Implementacja",
-            "description": "Zbuduj i wdróż pipeline'y danych, hurtownie i rozwiązania analityczne."
+            "description": "Budujemy pionowymi wycinkami, więc pierwszy dashboard na żywych danych powstaje w tygodnie. Każdy pipeline trafia na produkcję z testami, alertami i dokumentacją, a nie jako czarna skrzynka."
           },
           "optimization": {
             "title": "Optymalizacja",
-            "description": "Ciągle ulepszaj wydajność i rozszerzaj możliwości analityczne."
+            "description": "Gdy platforma działa, stroimy wydajność zapytań i koszty hurtowni oraz rozszerzamy ją na kolejne obszary. Twój zespół przejmuje ją stopniowo, z pracą w parach i przekazaniem wpisanym w plan."
           }
         },
         "cta": {
-          "title": "Odblokuj potencjał swoich danych",
-          "subtitle": "Zbudujmy fundamenty oparte na danych dla lepszych decyzji biznesowych.",
-          "button": "Zacznij teraz"
+          "title": "Liczby, którym możesz ufać",
+          "subtitle": "Porozmawiaj z senior inżynierem o swoich danych. Po rozmowie będziesz wiedzieć, co zbudować najpierw.",
+          "button": "Umów rozmowę"
         },
         "faqTitle": "Odpowiadamy na pytania",
         "faq": [
           {
             "q": "Czy potrzebujemy tego przed AI?",
-            "a": "Zwykle tak. AI jest tak dobre jak dane, które je zasilają. Uporządkowana, zarządzana warstwa danych czyni modele tańszymi, szybszymi i dokładniejszymi. Budujemy fundament, którego AI naprawdę potrzebuje."
+            "a": "Zwykle tak. AI jest tak dobre jak dane, które je zasilają, a uporządkowana, zarządzana warstwa danych czyni modele tańszymi, szybszymi i dokładniejszymi. Budujemy fundament, którego AI naprawdę potrzebuje."
           },
           {
-            "q": "Jak szybko zobaczymy dashboardy?",
-            "a": "Pierwsze użyteczne dashboardy w tygodnie, nie kwartały. Wdrażamy działający wycinek wcześnie, potem rozbudowujemy. Szybko dostajesz odpowiedzi na realne pytania, a hurtownia rośnie pod spodem."
+            "q": "Jak szybko zobaczymy wartość?",
+            "a": "Pierwsze użyteczne dashboardy w tygodnie, nie kwartały. Wdrażamy działający wycinek wcześnie, potem go rozbudowujemy. Szybko dostajesz odpowiedzi na realne pytania, a hurtownia rośnie pod spodem."
+          },
+          {
+            "q": "Nasze dane żyją w kilkunastu systemach. Czy to problem?",
+            "a": "To normalny punkt startu. Konektory jak Fivetran czy Airbyte pokrywają większość źródeł SaaS i baz danych, a dla reszty budujemy własną ingestię. Rozproszenie to argument za hurtownią, nie przeciw niej."
+          },
+          {
+            "q": "Kupić narzędzie czy budować platformę?",
+            "a": "Zwykle jedno i drugie. Składamy sprawdzone komponenty, hurtownię, ELT i BI, a własny kod piszemy tylko tam, gdzie żyje Twoja logika biznesowa. Masz tempo kupowania i dopasowanie budowania, a wynik należy do Ciebie."
           },
           {
             "q": "Czy zadziała z naszym obecnym stackiem?",
@@ -579,60 +1155,619 @@
             "q": "Jak dbacie o bezpieczeństwo i zgodność danych?",
             "a": "Kontrola dostępu, szyfrowanie, lineage i audyt od pierwszego dnia. Projektujemy pod RODO i Twoją politykę wewnętrzną. Zarządzanie jest częścią pipeline'u, nie dodatkiem na koniec."
           }
-        ]
+        ],
+        "featuresTitle": "Co budujemy",
+        "featuresIntro": "Sześć kompetencji, jeden stack: od surowych źródeł po zarządzane metryki, dostarczane przez senior inżynierów w chmurze, którą już masz.",
+        "processTitle": "Jak przebiega współpraca",
+        "stats": [
+          {
+            "value": "2-4 tyg.",
+            "label": "Od startu do pierwszego dashboardu na żywych danych"
+          },
+          {
+            "value": "100%",
+            "label": "Senior inżynierowie w każdym projekcie danych"
+          },
+          {
+            "value": "1",
+            "label": "Odpowiedzialny partner od architektury po przekazanie"
+          },
+          {
+            "value": "0",
+            "label": "Lock-in: kod, modele i dokumentacja należą do Ciebie"
+          }
+        ],
+        "deliverablesTitle": "Z czym wychodzisz",
+        "deliverablesIntro": "Każda współpraca kończy się artefaktami, które należą do Twojego zespołu i działają bez nas.",
+        "deliverables": [
+          {
+            "title": "Architektura platformy danych",
+            "description": "Pisemna architektura docelowa dla Twojej chmury: hurtownia, ingestia, modelowanie i BI, z jawnie opisanymi kosztami i kompromisami."
+          },
+          {
+            "title": "Zamodelowane warstwy hurtowni",
+            "description": "Warstwy staging, core i mart zbudowane w dbt, wersjonowane w gicie, udokumentowane i testowane przy każdym uruchomieniu."
+          },
+          {
+            "title": "Zarządzane definicje metryk",
+            "description": "Jedna uzgodniona definicja na metrykę, zapisana w warstwie semantycznej, więc przychód znaczy to samo w każdym raporcie."
+          },
+          {
+            "title": "Dashboardy self-service",
+            "description": "Dashboardy w Lookerze, Power BI lub Metabase, które odpowiadają na pytania zespołów bez ticketu do zespołu danych."
+          },
+          {
+            "title": "Testy jakości danych i alerty",
+            "description": "Automatyczne kontrole świeżości, wolumenu i schematu, z alertami, które trafiają do właściwej osoby, zanim CFO zauważy lukę."
+          },
+          {
+            "title": "Dokumentacja i przekazanie",
+            "description": "Runbooki, lineage i dokumentacja wdrożeniowa plus sesje w parach, żeby Twój zespół prowadził platformę od pierwszego dnia po naszym wyjściu."
+          }
+        ],
+        "modelsTitle": "Trzy modele współpracy",
+        "modelsIntro": "Stały zakres tam, gdzie ma to sens, zespół w Twojej strukturze tam, gdzie nie ma. Każdy model zaczyna się od bezpłatnej rozmowy z senior inżynierem.",
+        "models": [
+          {
+            "name": "Audyt danych i analityki",
+            "duration": "2-3 tygodnie · stała cena",
+            "description": "Ustrukturyzowany przegląd Twojego krajobrazu danych zakończony wycenioną, spriorytetyzowaną roadmapą. Wartościowy sam w sobie i najbezpieczniejszy pierwszy krok z nami.",
+            "bullets": [
+              "Inwentaryzacja źródeł, pipeline'ów i raportów",
+              "Ocena jakości danych i architektury",
+              "Docelowa architektura dla Twojej chmury i stacku",
+              "Spriorytetyzowana roadmapa z estymacją nakładu i kosztów"
+            ]
+          },
+          {
+            "name": "Budowa platformy analitycznej",
+            "duration": "6-12 tygodni · stały zakres",
+            "description": "Projektujemy i budujemy platformę od początku do końca: ingestia, hurtownia, modelowanie, dashboardy i bramki jakości, a potem przekazujemy ją z dokumentacją.",
+            "bullets": [
+              "Hurtownia i ELT zbudowane w Twojej chmurze",
+              "Modele dbt z testami i CI od pierwszego dnia",
+              "Zarządzane metryki i pierwsze dashboardy self-service",
+              "Dokumentacja, runbooki i przekazanie zespołowi"
+            ]
+          },
+          {
+            "name": "Zespół danych w Twojej strukturze",
+            "duration": "Miesięcznie · ciągła współpraca",
+            "description": "Senior data engineerowie pracujący w Twoim zespole nad Twoim backlogiem. Moce przerobowe skalują się z roadmapą, wiedza zostaje w firmie.",
+            "bullets": [
+              "Senior inżynierowie w Twoich rytuałach i narzędziach",
+              "Realizacja roadmapy: platforma, BI i ML",
+              "Monitoring kosztów, wydajności i jakości",
+              "Świadomy transfer wiedzy do Twoich ludzi"
+            ]
+          }
+        ],
+        "toolsTitle": "Narzędzia, z którymi pracujemy",
+        "tools": [
+          "dbt",
+          "Snowflake",
+          "BigQuery",
+          "Databricks",
+          "PostgreSQL",
+          "Airflow",
+          "Fivetran",
+          "Airbyte",
+          "Kafka",
+          "Spark",
+          "Looker",
+          "Power BI",
+          "Metabase",
+          "Great Expectations",
+          "Terraform"
+        ],
+        "whoTitle": "Dla kogo to jest",
+        "who": [
+          {
+            "title": "Zarząd lecący na ślepo",
+            "description": "Prezentacje dla zarządu sklejane z arkuszy, które się nie zgadzają. Dostajesz jedno zarządzane źródło prawdy i liczby, których możesz bronić."
+          },
+          {
+            "title": "Firmy z silosami danych",
+            "description": "Po wzroście lub przejęciu każdy system opowiada inną historię. Łączymy źródła w jedną hurtownię bez wyrzucania narzędzi, które działają."
+          },
+          {
+            "title": "Zespoły produktowe i analityka zdarzeń",
+            "description": "Wypuszczasz funkcje, ale nie widzisz aktywacji, retencji ani lejków. Budujemy pipeline'y zdarzeń i dashboardy produktowe na Twojej własnej hurtowni."
+          },
+          {
+            "title": "Organizacje szykujące się na AI",
+            "description": "Modele są tak dobre jak dane pod spodem. Budujemy zarządzany fundament, dzięki któremu projekty AI są tańsze, szybsze i audytowalne."
+          }
+        ],
+        "subTitle": "Wejdź głębiej",
+        "subIntro": "Pięć specjalizacji w jednej praktyce danych. Zacznij tam, gdzie boli najbardziej.",
+        "sub": {
+          "data-platforms": {
+            "name": "Platformy danych",
+            "teaser": "Architektura hurtowni i lakehouse na Snowflake, BigQuery lub Databricks, zaprojektowana i zbudowana na kolejne lata."
+          },
+          "business-intelligence": {
+            "name": "Business intelligence",
+            "teaser": "Zarządzane metryki i dashboardy self-service, żeby każdy zespół patrzył na te same liczby bez zakładania ticketów."
+          },
+          "real-time-analytics": {
+            "name": "Analityka real-time",
+            "teaser": "Pipeline'y strumieniowe i operacyjne dashboardy dla decyzji, które nie mogą czekać na nocny batch."
+          },
+          "data-engineering": {
+            "name": "Inżynieria danych",
+            "teaser": "Pipeline'y ELT, orkiestracja i automatyczne testy jakości, dzięki którym każdej liczbie niżej można ufać."
+          },
+          "predictive-analytics": {
+            "name": "Analityka predykcyjna",
+            "teaser": "Modele churnu, popytu i scoringu na danych z hurtowni: pomost od raportowania do machine learningu."
+          }
+        },
+        "subpages": {
+          "data-platforms": {
+            "label": "Analityka Danych",
+            "title": "Platformy danych",
+            "subtitle": "Architektura hurtowni i lakehouse zaprojektowana, zbudowana i przekazana w chmurze, którą już masz.",
+            "breadcrumb": "Platformy danych",
+            "overviewTitle": "Czym się zajmujemy",
+            "overview": [
+              "Platforma danych to warstwa między Twoimi systemami operacyjnymi a każdym raportem, dashboardem i modelem, który uruchamiasz. Projektujemy i budujemy ją na Snowflake, BigQuery lub Databricks: ingestia, zamodelowana hurtownia, orkiestracja i warstwa semantyczna, zdefiniowane jako kod i wdrożone na Twoim koncie chmurowym, nie naszym.",
+              "Współpraca zaczyna się od sprintu architektonicznego: mapujemy źródła, wolumeny, wymagania latencji i wzorce dostępu, a potem kładziemy przed Tobą pisemny projekt z kosztami, zanim cokolwiek powstanie. Dostarczamy pionowymi wycinkami, więc pierwsze źródła płyną do odpytywalnej hurtowni w kilka tygodni, a nie na końcu projektu.",
+              "Co się zmienia: zamiast eksportów punkt-punkt i jednego przeciążonego analityka masz jedną platformę, którą odpytuje cała firma. Dodanie nowego źródła czy metryki staje się pull requestem, a nie projektem. Dostęp jest zarządzany per rola, koszty hurtowni widać od pierwszej faktury, a każda tabela ma właściciela i dokumentację."
+            ],
+            "benefitsTitle": "Dlaczego się opłaca",
+            "benefits": [
+              {
+                "title": "Jedno źródło prawdy",
+                "description": "Wszystkie źródła lądują w jednej zamodelowanej hurtowni, więc raporty przestają sobie przeczyć."
+              },
+              {
+                "title": "Architektura przed fakturami",
+                "description": "Zatwierdzasz pisemny projekt z estymacją kosztów, zanim zacznie się budowa."
+              },
+              {
+                "title": "Wszystko jako kod",
+                "description": "Infrastruktura w Terraformie, modele w dbt, całość wersjonowana, poddawana review i odtwarzalna."
+              },
+              {
+                "title": "Koszty pod kontrolą",
+                "description": "Wydatki na hurtownię są monitorowane per workload od pierwszego dnia, więc wzrost nie zaskakuje finansów."
+              },
+              {
+                "title": "Zbudowane pod przekazanie",
+                "description": "Twoi inżynierowie pracują z nami w parach podczas budowy, a potem prowadzą platformę bez nas."
+              }
+            ],
+            "approachTitle": "Jak pracujemy",
+            "approach": [
+              {
+                "title": "Sprint architektoniczny",
+                "description": "Mapujemy źródła, wolumeny, wymagania latencji i wzorce dostępu, a potem projektujemy platformę z jawnymi kompromisami i kosztami działania."
+              },
+              {
+                "title": "Budowa fundamentu",
+                "description": "Konta chmurowe, sieć, hurtownia i orkiestracja stawiane jako kod, z CI/CD i środowiskami od pierwszego tygodnia."
+              },
+              {
+                "title": "Podłączanie źródeł",
+                "description": "Źródła wchodzą w kolejności priorytetów, każde jako zamodelowane, przetestowane i udokumentowane tabele, z pierwszym dashboardem jako dowodem."
+              },
+              {
+                "title": "Hardening i przekazanie",
+                "description": "Strojenie wydajności i kosztów, polityki dostępu, runbooki i sesje w parach, aż Twój zespół w pełni przejmie platformę."
+              }
+            ],
+            "deliverablesTitle": "Co dostarczamy",
+            "deliverables": [
+              "Pisemna architektura platformy z modelem kosztów",
+              "Infrastruktura jako kod na Twoim koncie chmurowym",
+              "Pipeline'y ingestii dla priorytetowych źródeł",
+              "Zamodelowana hurtownia z testami i dokumentacją",
+              "Runbooki i przekazanie zespołowi"
+            ],
+            "faqTitle": "Odpowiadamy na pytania",
+            "faq": [
+              {
+                "q": "Snowflake, BigQuery czy Databricks?",
+                "a": "Zależy od Twojej chmury, obciążeń i kompetencji zespołu; w sprincie architektonicznym mówimy, które i dlaczego. Nie mamy umów resellerskich, więc rekomendacja jest bezstronna."
+              },
+              {
+                "q": "Zmigrujecie naszą obecną hurtownię?",
+                "a": "Tak. Migrujemy przyrostowo, prowadząc starą i nową równolegle i uzgadniając liczby, zanim cokolwiek wyłączymy. Bez wielkiego przełączenia i bez przerwy w raportowaniu."
+              },
+              {
+                "q": "Czy potrzebujemy własnego data engineera?",
+                "a": "Nie od pierwszego dnia. Platforma jest zbudowana tak, żeby analityk ogarnął codzienny ruch, a my zostajemy pod ręką przy cięższych zmianach, aż zdecydujesz się na rekrutację."
+              }
+            ],
+            "cta": {
+              "title": "Architektura, której można bronić",
+              "subtitle": "Przejdź z senior inżynierem przez swój stack i uzyskaj uczciwą ocenę właściwej platformy.",
+              "button": "Umów rozmowę"
+            }
+          },
+          "business-intelligence": {
+            "label": "Analityka Danych",
+            "title": "Business intelligence",
+            "subtitle": "Zarządzane metryki, dashboardy self-service i raportowanie, któremu zespoły ufają na tyle, żeby przestać eksportować do Excela.",
+            "breadcrumb": "Business intelligence",
+            "overviewTitle": "Czym się zajmujemy",
+            "overview": [
+              "Business intelligence sypie się, gdy każdy dział liczy własną wersję przychodu. Najpierw naprawiamy definicje: zarządzana warstwa semantyczna, w której każda metryka ma jednego właściciela, jeden wzór i jeden test, a dopiero na tym budujemy dashboardy w Lookerze, Power BI lub Metabase. Efekt: raportowanie, na którym cała firma może się opierać, zamiast o nie spierać.",
+              "Zaczynamy od decyzji, nie od danych: jakie pytania zarząd zadaje co tydzień, o które liczby kłócą się zespoły. Pierwszy zarządzany dashboard powstaje w kilka tygodni na żywych danych z hurtowni, a każda kolejna iteracja wyłącza z obiegu kolejny arkusz. Równolegle walidujemy każdą liczbę ze starymi raportami razem z ich właścicielami, żeby zaufanie się przeniosło, a nie pękło.",
+              "Zmiana jest tyleż kulturowa, co techniczna: spotkania zaczynają się od wspólnego dashboardu, a nie od pojedynku eksportów. Analitycy przestają uzgadniać liczby i zaczynają tłumaczyć, dlaczego się zmieniły, a nowe pytania obsługują się same zamiast czekać w kolejce ticketów. Mierzymy adopcję, tygodniowych aktywnych użytkowników per dashboard, i traktujemy ją jako metrykę sukcesu."
+            ],
+            "benefitsTitle": "Dlaczego się opłaca",
+            "benefits": [
+              {
+                "title": "Metryki z jedną definicją",
+                "description": "Przychód, churn i marża znaczą to samo w każdym raporcie, wymuszone w kodzie."
+              },
+              {
+                "title": "Self-service naprawdę",
+                "description": "Zespoły same odpowiadają na swoje pytania na dopracowanych modelach danych, bez SQL-a i bez ticketów."
+              },
+              {
+                "title": "Dashboardy, które ludzie otwierają",
+                "description": "Widoki projektowane wokół decyzji, więc są używane w poniedziałek rano, nie tylko na demo."
+              },
+              {
+                "title": "Zaufanie z audytem",
+                "description": "Każda liczba prowadzi przez lineage do źródła, więc spory kończą się dowodem."
+              },
+              {
+                "title": "Mniej mozołu analityków",
+                "description": "Powtarzalne raporty są zautomatyzowane, a analitycy wracają do pytań, które naprawdę ich potrzebują."
+              }
+            ],
+            "approachTitle": "Jak pracujemy",
+            "approach": [
+              {
+                "title": "Warsztat metryk",
+                "description": "Katalogujemy liczby, które prowadzą firmę, znajdujemy rozjazdy definicji i uzgadniamy właścicieli oraz wzory."
+              },
+              {
+                "title": "Warstwa semantyczna",
+                "description": "Definicje zapisujemy w dbt i modelu Twojego narzędzia BI, testowane i wersjonowane jak każdy inny kod."
+              },
+              {
+                "title": "Dostarczanie dashboardów",
+                "description": "Dashboardy wychodzą w kolejności priorytetów, każdy walidowany ze starymi liczbami razem z ludźmi, którzy z nich korzystają."
+              },
+              {
+                "title": "Adopcja i self-service",
+                "description": "Szkolenia, dyżury i dopracowane zbiory danych, aż self-service stanie się domyślny, a eksport wyjątkiem."
+              }
+            ],
+            "deliverablesTitle": "Co dostarczamy",
+            "deliverables": [
+              "Katalog zarządzanych metryk z właścicielami",
+              "Warstwa semantyczna w dbt i BI",
+              "Dashboardy self-service dla kluczowych obszarów",
+              "Walidacja względem dotychczasowych raportów",
+              "Szkolenia i playbook adopcji"
+            ],
+            "faqTitle": "Odpowiadamy na pytania",
+            "faq": [
+              {
+                "q": "Które narzędzie BI polecacie?",
+                "a": "To, którego Twój zespół będzie naprawdę używać. Looker dla mocnej warstwy semantycznej, Power BI w firmach na Microsofcie, Metabase, gdy liczy się tempo i koszt. Pracujemy we wszystkich trzech i odradzamy zmianę, gdy Twoje już pasuje."
+              },
+              {
+                "q": "Nasze raporty się nie zgadzają. Od czego zaczynacie?",
+                "a": "Od dwóch, trzech metryk, o które jest najwięcej sporów. Śledzimy każdy sprzeczny raport do źródła, uzgadniamy jedną definicję z właścicielami i zapisujemy ją w warstwie semantycznej, żeby zakończyć kłótnię."
+              },
+              {
+                "q": "Czy nadal możemy używać Excela?",
+                "a": "Tak, jako odbiorca danych. Analitycy mogą zaciągać zarządzane dane do arkuszy do pracy ad hoc. Kończy się Excel jako źródło prawdy dla liczb firmy."
+              }
+            ],
+            "cta": {
+              "title": "Zakończ spory o arkusze",
+              "subtitle": "Pokaż nam dwa raporty, które nigdy się nie zgadzają, a pokażemy Ci, jak je uzgodnić.",
+              "button": "Umów rozmowę"
+            }
+          },
+          "real-time-analytics": {
+            "label": "Analityka Danych",
+            "title": "Analityka real-time",
+            "subtitle": "Pipeline'y strumieniowe i operacyjne dashboardy dla decyzji, które nie mogą czekać na jutrzejszy batch.",
+            "breadcrumb": "Analityka real-time",
+            "overviewTitle": "Czym się zajmujemy",
+            "overview": [
+              "Niektóre decyzje wygasają w minuty: kontrola fraudu, alokacja stocku, pricing, reakcja na incydent. Analityka real-time przenosi te sygnały z jutrzejszego raportu do żywego pipeline'u, używając Kafki, change data capture i przetwarzania strumieniowego, żeby zbić opóźnienie z godzin do sekund. Budujemy tę ścieżkę w Twojej chmurze, obok hurtowni, którą już masz.",
+              "Jesteśmy celowo ostrożni w ocenie, co naprawdę wymaga streamingu, bo infrastruktura real-time kosztuje więcej w utrzymaniu. Zaczynamy od wyceny wymagań latencji per przypadek użycia; to, co rzeczywiście potrzebuje sekund, dostaje ścieżkę strumieniową, reszta zostaje na tańszym batchu. Ten podział, razem z kosztami działania, widzisz, zanim cokolwiek zbudujemy.",
+              "Na produkcji wygląda to tak: operacyjne dashboardy odświeżane na żywo, alerty na progach i zdarzenia wracające do Twoich systemów, żeby uruchomić działanie. Hurtownia batchowa i ścieżka strumieniowa dzielą definicje, więc liczba na żywo i jutrzejszy raport wreszcie się zgadzają. Twój zespół dostaje runbooki, procedury replay i monitoring, więc utrzymanie to rutyna."
+            ],
+            "benefitsTitle": "Dlaczego się opłaca",
+            "benefits": [
+              {
+                "title": "Latencja w sekundach",
+                "description": "Świeże sygnały dla operacji, fraudu, logistyki i pricingu, póki jeszcze mogą zmienić wynik."
+              },
+              {
+                "title": "Streaming tylko tam, gdzie się opłaca",
+                "description": "Każdy przypadek dostaje najtańszą latencję, która spełnia potrzebę. Batch zostaje batchem."
+              },
+              {
+                "title": "Jeden zestaw definicji",
+                "description": "Metryki strumieniowe używają zarządzanych definicji z hurtowni, więc liczby na żywo i dzienne się zgadzają."
+              },
+              {
+                "title": "Alerty, nie tylko wykresy",
+                "description": "Progi i anomalie powiadamiają odpowiedzialną osobę albo uruchamiają automatyczną reakcję."
+              },
+              {
+                "title": "Do prowadzenia przez Twój zespół",
+                "description": "Monitoring, replay i obsługa dead-letter wbudowane, więc incydenty to rutyna, nie heroizm."
+              }
+            ],
+            "approachTitle": "Jak pracujemy",
+            "approach": [
+              {
+                "title": "Audyt latencji",
+                "description": "Spisujemy kandydatów i uczciwie wyceniamy wartość sekund kontra godzin dla każdego z nich."
+              },
+              {
+                "title": "Szkielet strumieniowy",
+                "description": "Kafka lub zarządzane odpowiedniki plus CDC z Twoich baz operacyjnych, wdrożone jako kod."
+              },
+              {
+                "title": "Pierwszy przypadek na żywo",
+                "description": "Jeden wartościowy przepływ przechodzi od końca do końca: zdarzenia na wejściu, przetworzone metryki, dashboard i alerty na żywo."
+              },
+              {
+                "title": "Skalowanie i utrzymanie",
+                "description": "Kolejne przepływy wchodzą na ten sam szkielet, z runbookami i przekazaniem dyżurów Twojemu zespołowi."
+              }
+            ],
+            "deliverablesTitle": "Co dostarczamy",
+            "deliverables": [
+              "Mapa wymagań latencji per przypadek użycia",
+              "Szkielet strumieniowy z ingestią CDC",
+              "Operacyjne dashboardy i alerty na żywo",
+              "Uzgodnienie z liczbami hurtowni batchowej",
+              "Runbooki na replay i obsługę incydentów"
+            ],
+            "faqTitle": "Odpowiadamy na pytania",
+            "faq": [
+              {
+                "q": "Czy naprawdę potrzebujemy real-time?",
+                "a": "Często tylko dla wycinka analityki. Wolimy powiedzieć, że batch wystarczy, niż sprzedać Ci platformę streamingową, a audyt latencji daje odpowiedź per przypadek w pierwszych tygodniach."
+              },
+              {
+                "q": "Ile kosztuje utrzymanie infrastruktury streamingowej?",
+                "a": "Więcej niż batch i właśnie dlatego tniemy zakres wąsko. Usługi zarządzane jak MSK, Pub/Sub czy Confluent trzymają koszt operacyjny w ryzach, a dokument architektury podaje miesięczne kwoty dla Twojego obciążenia."
+              },
+              {
+                "q": "Czy może uruchamiać akcje, nie tylko dashboardy?",
+                "a": "Tak. Przetworzone zdarzenia mogą wracać do Twoich systemów przez API i webhooki: blokować transakcję, uzupełniać stock albo wzywać człowieka. Analityka, która uruchamia działanie, to zwykle miejsce, gdzie real-time się zwraca."
+              }
+            ],
+            "cta": {
+              "title": "Sprawdź, ile jest wart real-time",
+              "subtitle": "Przynieś swój przypadek użycia i dostań prostą odpowiedź o latencji, architekturze i kosztach działania.",
+              "button": "Umów rozmowę"
+            }
+          },
+          "data-engineering": {
+            "label": "Analityka Danych",
+            "title": "Inżynieria danych",
+            "subtitle": "Pipeline'y ELT, orkiestracja i inżynieria jakości danych, dzięki którym każdej liczbie niżej można ufać.",
+            "breadcrumb": "Inżynieria danych",
+            "overviewTitle": "Czym się zajmujemy",
+            "overview": [
+              "Inżynieria danych to mało efektowna warstwa, od której zależy wszystko inne: ingestia z Twoich systemów, transformacja do czystych modeli, orkiestracja działająca według harmonogramu i bramki jakości, które zatrzymują złe dane przed dashboardem. Budujemy i prowadzimy ją z rygorem produkcyjnego oprogramowania, bo dla Twojego raportowania dokładnie tym jest.",
+              "Pipeline'y to kod: dbt do transformacji, Airflow lub Dagster do orkiestracji, Fivetran lub Airbyte do ingestii, wszystko w gicie z CI, testami i review. Współpraca zwykle zaczyna się od ustabilizowania tego, co masz, a potem rozszerzamy źródło po źródle, z testami dokładanymi przy każdym modelu, a nie w fazie sprzątania, która nigdy nie nadchodzi.",
+              "Co zmienia się dla zespołu: poranki przestają zaczynać się od zepsutego dashboardu i wątku na Slacku pełnego zgadywania. Awarie alarmują właściwą osobę z podpiętym lineage, incydenty mają runbooki, a dodanie źródła staje się rutynowym pull requestem zamiast kruchego projektu na boku. Jakość danych zmienia się z odczucia w liczbę, na którą można nałożyć SLA."
+            ],
+            "benefitsTitle": "Dlaczego się opłaca",
+            "benefits": [
+              {
+                "title": "Pipeline'y jak software",
+                "description": "Kontrola wersji, code review, CI i środowiska. Zero ręcznie edytowanych jobów na serwerze."
+              },
+              {
+                "title": "Bramki jakości w standardzie",
+                "description": "Testy świeżości, wolumenu i schematu odpalają się przy każdym ładowaniu i wcześnie blokują złe dane."
+              },
+              {
+                "title": "Awarie, które się tłumaczą",
+                "description": "Alerty niosą lineage i kontekst, więc naprawa zajmuje minuty, a nie poranek archeologii."
+              },
+              {
+                "title": "Koszty rosnące zdrowo",
+                "description": "Modele przyrostowe i dobrze dobrane hurtownie trzymają rachunki proporcjonalne do wartości."
+              },
+              {
+                "title": "Stack, który zespół utrzyma",
+                "description": "Nudne, udokumentowane, szeroko przyjęte narzędzia, które Twoi przyszli pracownicy już znają."
+              }
+            ],
+            "approachTitle": "Jak pracujemy",
+            "approach": [
+              {
+                "title": "Stabilizacja",
+                "description": "Obudowujemy istniejące pipeline'y testami, alertami i lineage, żeby grunt przestał się ruszać."
+              },
+              {
+                "title": "Standaryzacja",
+                "description": "Ingestia, transformacje i orkiestracja schodzą do jednego przejrzanego, udokumentowanego wzorca."
+              },
+              {
+                "title": "Rozbudowa",
+                "description": "Nowe źródła i modele wchodzą w kolejności priorytetów, każde z testami i dokumentacją jako warunkiem merge'a."
+              },
+              {
+                "title": "Utrzymanie i przekazanie",
+                "description": "Dyżury, runbooki i dashboardy dla samych pipeline'ów, potem etapowe przekazanie Twoim inżynierom."
+              }
+            ],
+            "deliverablesTitle": "Co dostarczamy",
+            "deliverables": [
+              "Pipeline'y ELT w gicie z CI",
+              "Orkiestracja z retry i alertami",
+              "Zestaw testów jakości danych i SLA",
+              "Lineage i dokumentacja pipeline'ów",
+              "Runbooki incydentów i przekazanie"
+            ],
+            "faqTitle": "Odpowiadamy na pytania",
+            "faq": [
+              {
+                "q": "Nasze pipeline'y psują się co tydzień. Przebudować czy naprawiać?",
+                "a": "Zwykle najpierw naprawiać. Testy i alerty wokół istniejących pipeline'ów tamują krwawienie w tygodnie; przebudowy robimy przyrostowo tam, gdzie audyt pokaże, że się zwracają. Wielki rewrite rzadko jest odpowiedzią."
+              },
+              {
+                "q": "Fivetran czy własna ingestia?",
+                "a": "Zarządzane konektory dla standardowych źródeł, własny kod tylko tam, gdzie API są nietypowe albo wolumeny sprawiają, że wycena per wiersz boli. Audyt zawiera tę kalkulację per źródło, z liczbami, nie preferencjami."
+              },
+              {
+                "q": "Jak definiujecie jakość danych?",
+                "a": "Jako testy z właścicielami: świeżość, wolumen, schemat, unikalność i reguły biznesowe, sprawdzane przy każdym uruchomieniu. Jakość to liczba na dashboardzie i alert z nazwiskiem, nie slogan."
+              }
+            ],
+            "cta": {
+              "title": "Niech pipeline'y będą nudne",
+              "subtitle": "Powiedz senior inżynierowi, gdzie boli, i dostań plan stabilizacji liczony w tygodniach.",
+              "button": "Umów rozmowę"
+            }
+          },
+          "predictive-analytics": {
+            "label": "Analityka Danych",
+            "title": "Analityka predykcyjna",
+            "subtitle": "Modele churnu, popytu i scoringu na danych z Twojej hurtowni: najkrótsza droga od raportowania do machine learningu.",
+            "breadcrumb": "Analityka predykcyjna",
+            "overviewTitle": "Czym się zajmujemy",
+            "overview": [
+              "Analityka predykcyjna odpowiada na pytania o przyszłość danymi, które już zbierasz: którzy klienci prawdopodobnie odejdą, jak wygląda popyt w przyszłym miesiącu, który lead albo wniosek zasługuje na uwagę najpierw. Zbudowana na zarządzanej hurtowni to wyspecjalizowane modele wpięte w codzienną pracę, a nie program badawczy.",
+              "Zaczynamy od decyzji, którą ktoś podejmuje co tydzień, i budujemy najprostszy model, który bije obecne zgadywanie, zwalidowany na Twojej historii, zanim ktokolwiek zaufa mu na żywo. Pierwszy scoring trafia zwykle w kilka tygodni do narzędzi, w których zespół już pracuje: do CRM, dashboardów albo zwykłego API.",
+              "Każdy model wychodzi z monitoringiem trafności i dryfu, planem retrenowania i uczciwą miarą zysku nad baseline'em. Jeśli heurystyka bije model, mówimy o tym wprost. To też naturalny pomost do szerszych prac ML i AI, oparty na fundamentach, które są już zarządzane i przetestowane, czyli dokładnie w miejscu, w którym większość inicjatyw AI grzęźnie."
+            ],
+            "benefitsTitle": "Dlaczego się opłaca",
+            "benefits": [
+              {
+                "title": "Prognozy zamiast przeczuć",
+                "description": "Projekcje popytu, churnu i przychodu ze zmierzoną trafnością i uczciwymi przedziałami niepewności."
+              },
+              {
+                "title": "Scoring tam, gdzie praca",
+                "description": "Predykcje lądują w Twoim CRM, ERP albo dashboardach, nie w notebooku, którego nikt nie otwiera."
+              },
+              {
+                "title": "Zwalidowane przed zaufaniem",
+                "description": "Każdy model jest backtestowany na Twojej historii i porównany z obecnym sposobem decydowania."
+              },
+              {
+                "title": "Monitorowane na produkcji",
+                "description": "Trafność i dryf są śledzone na żywo, a retrenowanie jest zaplanowane, nie improwizowane."
+              },
+              {
+                "title": "Pomost do ML i AI",
+                "description": "Te same cechy, pipeline'y i governance niosą pierwsze modele w szerszą roadmapę AI."
+              }
+            ],
+            "approachTitle": "Jak pracujemy",
+            "approach": [
+              {
+                "title": "Wybór decyzji",
+                "description": "Wybieramy jedną powtarzalną decyzję, w której lepsza predykcja ma jasną, policzalną wartość."
+              },
+              {
+                "title": "Baseline i cechy",
+                "description": "Mierzymy, jak decyzja zapada dziś, i budujemy cechy z danych w Twojej hurtowni."
+              },
+              {
+                "title": "Model i walidacja",
+                "description": "Najpierw proste modele, backtestowane na historii, promowane tylko wtedy, gdy biją baseline."
+              },
+              {
+                "title": "Wdrożenie i monitoring",
+                "description": "Model trafia do Twoich narzędzi ze śledzeniem trafności, alertami dryfu i rytmem retrenowania."
+              }
+            ],
+            "deliverablesTitle": "Co dostarczamy",
+            "deliverables": [
+              "Zawężony przypadek użycia z metryką sukcesu",
+              "Pipeline'y cech na danych z hurtowni",
+              "Zwalidowany model z raportem backtestu",
+              "Integracja z CRM, ERP lub BI",
+              "Monitoring, alerty dryfu i plan retrenowania"
+            ],
+            "faqTitle": "Odpowiadamy na pytania",
+            "faq": [
+              {
+                "q": "Ile danych potrzebujemy?",
+                "a": "Mniej, niż głosi mit. Kilka tysięcy oznaczonych przykładów często wystarcza na użyteczny model churnu czy scoringu, a sprawdzenie wykonalności w pierwszym tygodniu mówi konkretnie, czy Twoja historia wystarczy."
+              },
+              {
+                "q": "Co, jeśli model wypadnie słabo?",
+                "a": "Wtedy dowiadujesz się tego wcześnie i tanio. Walidujemy na Twojej historii przed produkcją, a jeśli zysk nad obecnym baseline'em nie jest wart złożoności, rekomendujemy stop. Ta odpowiedź kosztuje tygodnie, nie kwartały."
+              },
+              {
+                "q": "Czy to machine learning? Potrzebujemy data scientistów?",
+                "a": "To stosowany machine learning na tabelarycznych danych z hurtowni i nie, nie musisz najpierw rekrutować. Budujemy i przekazujemy modele, które Twoi analitycy potrafią monitorować, a zatrudnianie może pójść za udowodnioną wartością."
+              }
+            ],
+            "cta": {
+              "title": "Przewiduj zamiast reagować",
+              "subtitle": "Wybierz decyzję, która boli najbardziej, a zakres modelu ustalimy na jednej rozmowie.",
+              "button": "Umów rozmowę"
+            }
+          }
+        }
       },
       "consulting": {
         "label": "AI i Dane",
         "title": "Konsulting AI",
-        "subtitle": "Strategiczne doradztwo, które pomoże Ci nawigować po świecie AI i wdrożyć rozwiązania przynoszące realną wartość biznesową.",
+        "subtitle": "Doradztwo od inżynierów, którzy znajdują zastosowania AI warte budżetu, dowodzą ich wartości na Twoich danych w kilka tygodni i zostają aż do wdrożenia na produkcję.",
         "breadcrumb": "Konsulting AI",
         "features": {
           "strategy": {
-            "title": "Rozwój Strategii AI",
-            "description": "Stwórz mapę drogową adopcji AI zgodną z celami biznesowymi."
+            "title": "Rozwój strategii AI",
+            "description": "Przekładamy Twoje cele biznesowe na uporządkowany portfel zastosowań AI z właścicielami, budżetami i miernikami sukcesu. Efekt to plan, który zarząd może sfinansować, a inżynierowie zbudować."
           },
           "assessment": {
-            "title": "Ocena Gotowości AI",
-            "description": "Oceń zdolność organizacji do adopcji i czerpania korzyści z AI."
+            "title": "Ocena gotowości AI",
+            "description": "Audytujemy dane, systemy, kompetencje i procesy pod kątem tego, czego naprawdę wymagają Twoje docelowe zastosowania. Dostajesz scorecard i plan domknięcia luk, nie plakat z modelem dojrzałości."
           },
           "implementation": {
-            "title": "Planowanie Wdrożenia",
-            "description": "Szczegółowe plany projektów dla udanej realizacji inicjatyw AI."
+            "title": "Planowanie wdrożenia",
+            "description": "Każdą inicjatywę rozpisujemy na architekturę, zespół, harmonogram i koszty, zanim powstanie pierwsza linia kodu. Decyzje podjęte na starcie ograniczają kosztowne poprawki później."
           },
           "training": {
-            "title": "Szkolenie Zespołu",
-            "description": "Podnieś kompetencje zespołu w zakresie AI i praktyczne szkolenia techniczne."
+            "title": "Szkolenie zespołu",
+            "description": "Szkolimy inżynierów, product managerów i zarząd z tych obszarów AI, z którymi faktycznie będą pracować. Warsztaty na Twoim stacku i Twoich danych, nie ogólne slajdy."
           },
           "governance": {
             "title": "Governance AI",
-            "description": "Ustal etyczne wytyczne i ramy governance dla odpowiedzialnego AI."
+            "description": "Ustawiamy klasyfikację ryzyka, bramki przeglądowe i dokumentację zgodne z EU AI Act, które nie zatrzymują dowożenia. Governance, którego inżynierowie przestrzegają, bo pasuje do ich sposobu pracy."
           },
           "optimization": {
-            "title": "Optymalizacja Wydajności",
-            "description": "Ulepszaj istniejące systemy AI dla lepszej dokładności i efektywności."
+            "title": "Optymalizacja wydajności",
+            "description": "Mierzymy istniejące systemy AI pod kątem trafności, opóźnień i kosztów, a potem naprawiamy najsłabsze ogniwo. Typowe prace: lepszy retrieval, precyzyjniejsze prompty, tańszy routing modeli."
           }
         },
         "process": {
           "discovery": {
             "title": "Discovery",
-            "description": "Głębokie zanurzenie w wyzwania biznesowe i możliwości AI."
+            "description": "Rozmawiamy z interesariuszami i analizujemy Twoje dane, systemy i procesy. Po dwóch tygodniach wiesz, które szanse na AI są realne, a które to szum."
           },
           "strategy": {
             "title": "Strategia",
-            "description": "Opracuj kompleksową strategię AI z jasnymi celami i kamieniami milowymi."
+            "description": "Szeregujemy zastosowania według wartości, wykonalności i ryzyka, a dla najlepszych piszemy business case. Dostajesz roadmapę z liczbami, nie deklarację wizji."
           },
           "execution": {
             "title": "Realizacja",
-            "description": "Prowadź wdrożenie z praktycznym wsparciem i ekspertyzą."
+            "description": "Najlepsze zastosowanie dowodzimy działającym pilotażem na Twoich danych, mierzonym względem uzgodnionej linii bazowej. Ci sami inżynierowie prowadzą je potem na produkcję."
           },
           "support": {
-            "title": "Ciągłe Wsparcie",
-            "description": "Stałe doradztwo i optymalizacja w miarę dojrzewania możliwości AI."
+            "title": "Stałe wsparcie",
+            "description": "Zostajemy jako partner doradczy: przeglądy architektury, ocena nowych modeli i roadmapa, która trzyma się faktów. Nasze zaangażowanie skalujesz w górę lub w dół."
           }
         },
         "cta": {
-          "title": "Potrzebujesz eksperckiego doradztwa?",
-          "subtitle": "Nasi konsultanci AI są gotowi pomóc Ci na drodze do sukcesu z AI.",
+          "title": "Nie wiesz, gdzie AI pasuje do Twojego biznesu?",
+          "subtitle": "Umów bezpłatną 30-minutową rozmowę z senior engineerem. Wyjdziesz z dwoma, trzema zastosowaniami wartymi sprawdzenia, niezależnie od tego, czy będziemy współpracować.",
           "button": "Umów konsultację"
         },
         "faqTitle": "Odpowiadamy na pytania",
@@ -647,13 +1782,579 @@
           },
           {
             "q": "Czy najpierw potrzebujemy czystych danych?",
-            "a": "Nie. Zaczynamy od tego, co masz, i porządkujemy dane tylko tam, gdzie wymaga tego konkretny przypadek. Idealne dane nie istnieją. Robimy niezbędne minimum, żeby wdrożyć."
+            "a": "Nie. Zaczynamy od tego, co masz, i porządkujemy dane tylko tam, gdzie wymaga tego konkretne zastosowanie. Idealne dane nie istnieją. Robimy niezbędne minimum, żeby wdrożyć."
           },
           {
             "q": "Czym różnicie się od dużej firmy doradczej?",
             "a": "Projekt prowadzą inżynierowie, nie analitycy. Budujemy i wdrażamy, nie tylko doradzamy. Mniejszy zespół, seniorzy, kod produkcyjny, który jest Twój. Mniej slajdów, więcej wdrożeń."
+          },
+          {
+            "q": "Nasze dane to bałagan. Czy to blokuje start?",
+            "a": "Rzadko. Większość sensownych projektów AI zaczyna się na niedoskonałych danych: dokumentach, ticketach, arkuszach, bazach utrzymywanych połowicznie. Audyt pokazuje, które braki naprawdę blokują Twoje najlepsze zastosowanie, a które można pominąć. Naprawiamy pierwsze, odpuszczamy drugie, a jakość danych trafia na roadmapę tylko tam, gdzie się opłaca."
+          },
+          {
+            "q": "Jak wyceniacie taką współpracę?",
+            "a": "Audyt i sprint strategiczny mają stałą cenę i zdefiniowany zakres, więc znasz kwotę przed startem. Retainer doradczy to stała stawka miesięczna, którą możesz wstrzymać lub zakończyć w każdej chwili. Jeśli pierwszy pilotaż wymaga prac inżynieryjnych poza sprintem, wyceniamy je osobno, zanim cokolwiek ruszy."
           }
-        ]
+        ],
+        "featuresTitle": "Czym się zajmujemy",
+        "featuresIntro": "Jeden zespół doradczy od strategii, przez wdrożenie, po utrzymanie. Każda rekomendacja pochodzi od inżynierów, którzy potem muszą ją zrealizować.",
+        "processTitle": "Jak przebiega współpraca",
+        "stats": [
+          {
+            "value": "2-6",
+            "label": "tygodni od startu do zwalidowanego pilotażu"
+          },
+          {
+            "value": "100%",
+            "label": "seniorów w zespole, żadnych juniorów na Twoim projekcie"
+          },
+          {
+            "value": "1",
+            "label": "partner inżynieryjny od strategii po produkcję"
+          },
+          {
+            "value": "3",
+            "label": "modele współpracy dopasowane do Twojego etapu"
+          }
+        ],
+        "deliverablesTitle": "Z czym wychodzisz",
+        "deliverablesIntro": "Każda współpraca kończy się artefaktami, na których Twój zespół może działać bez nas.",
+        "deliverables": [
+          {
+            "title": "Mapa szans AI",
+            "description": "Twoje procesy zestawione z możliwościami AI, każda szansa oceniona pod kątem wartości, wykonalności i ryzyka."
+          },
+          {
+            "title": "Business case dla każdego zastosowania",
+            "description": "Oczekiwany efekt, koszt budowy, koszt utrzymania i okres zwrotu dla każdej pozycji z krótkiej listy."
+          },
+          {
+            "title": "Architektura referencyjna",
+            "description": "Konkretny projekt systemu dla najważniejszych zastosowań: modele, przepływy danych, punkty integracji i infrastruktura."
+          },
+          {
+            "title": "Playbook governance",
+            "description": "Klasyfikacja ryzyka, bramki przeglądowe, szablony dokumentacji i checklista zgodności z EU AI Act dopasowane do Twoich zastosowań."
+          },
+          {
+            "title": "Raport z ewaluacji pilotażu",
+            "description": "Zmierzone wyniki pilotażu względem uzgodnionej linii bazowej: jakość, opóźnienia, koszt zapytania i jasna rekomendacja go albo no-go."
+          },
+          {
+            "title": "Roadmapa adopcji",
+            "description": "Plan krok po kroku od pilotażu, przez produkcję, po skalowanie, z właścicielami, kamieniami milowymi i kompetencjami potrzebnymi na każdym etapie."
+          }
+        ],
+        "modelsTitle": "Trzy modele współpracy",
+        "modelsIntro": "Stały zakres tam, gdzie da się go ustalić, elastyczność tam, gdzie wymaga jej Twoja roadmapa. Każdy model zaczyna się od bezpłatnej 30-minutowej rozmowy.",
+        "models": [
+          {
+            "name": "Audyt szans AI",
+            "duration": "2 tygodnie · stała cena",
+            "description": "Audyt o stałym zakresie: procesy, dane i systemy, a na końcu uporządkowana krótka lista zastosowań AI. Właściwy start, gdy wiesz, że AI ma znaczenie, ale nie wiesz gdzie.",
+            "bullets": [
+              "Wywiady z interesariuszami i analiza procesów",
+              "Przegląd danych i systemów pod wymagania zastosowań",
+              "Punktowana lista zastosowań z szacunkiem ROI",
+              "Rekomendacja pierwszego pilotażu"
+            ]
+          },
+          {
+            "name": "Sprint strategiczny AI",
+            "duration": "4-6 tygodni",
+            "description": "Strategia, architektura i business case dla najważniejszych zastosowań, wypracowane z Twoim zespołem. Kończy się roadmapą do sfinansowania i pilotażem gotowym do startu.",
+            "bullets": [
+              "Głęboka analiza dwóch, trzech najlepszych zastosowań",
+              "Architektura referencyjna i decyzja build vs buy",
+              "Business case z kosztami, efektem i okresem zwrotu",
+              "Roadmapa dla zarządu z właścicielami i kamieniami milowymi"
+            ]
+          },
+          {
+            "name": "Retainer doradczy",
+            "duration": "Miesięcznie · ciągła współpraca",
+            "description": "Senior AI engineer dostępny dla Twojego zarządu i zespołów deweloperskich. Przeglądy architektury, ewaluacje modeli i szczere drugie opinie, miesiąc po miesiącu.",
+            "bullets": [
+              "Comiesięczne przeglądy architektury i roadmapy",
+              "Ocena nowych modeli i dostawców na bieżąco",
+              "Wsparcie w rekrutacji i rozmowy techniczne",
+              "Bezpośredni kontakt z seniorem, bez kolejki ticketów"
+            ]
+          }
+        ],
+        "toolsTitle": "Metody i technologie, z którymi pracujemy",
+        "tools": [
+          "Harnessy ewaluacyjne LLM",
+          "Architektury RAG",
+          "Architektury agentowe",
+          "API OpenAI i Anthropic",
+          "Azure OpenAI",
+          "AWS Bedrock",
+          "LangGraph",
+          "Bazy wektorowe",
+          "Wersjonowanie i testowanie promptów",
+          "Audyty gotowości danych",
+          "Fundamenty MLOps",
+          "Zgodność z EU AI Act",
+          "Modelowanie kosztów i opóźnień",
+          "Analiza build vs buy"
+        ],
+        "whoTitle": "Dla kogo to jest",
+        "who": [
+          {
+            "title": "CEO i zarządy",
+            "description": "Potrzebujesz wiarygodnego stanowiska w sprawie AI dla inwestorów, klientów i własnego planowania. Dajemy Ci strategię opartą na tym, co Twoje dane i systemy naprawdę udźwigną."
+          },
+          {
+            "title": "Liderzy produktu",
+            "description": "Masz backlog pomysłów na AI i presję, żeby coś dowieźć. Szeregujemy je według wartości i wykonalności, a najlepszy sprawdzamy na prawdziwych danych, zanim zapiszesz roadmapę."
+          },
+          {
+            "title": "CTO ważący build vs buy",
+            "description": "Dostawcy obiecują wszystko, a dema wyglądają tak samo. Benchmarkujemy opcje na Twoich danych i dajemy decyzję opartą na dowodach, którą łatwo obronić."
+          },
+          {
+            "title": "Firmy średniej wielkości bez własnego ML",
+            "description": "Nie potrzebujesz działu data science, żeby dobrze korzystać z AI. Działamy jako Twój zespół AI, aż zatrudnienie własnego zacznie mieć sens, a potem pomagamy go zbudować."
+          }
+        ],
+        "subTitle": "Wejdź głębiej",
+        "subIntro": "Każdy obszar praktyki opisany szczegółowo.",
+        "sub": {
+          "ai-strategy": {
+            "name": "Strategia AI",
+            "teaser": "Od celów biznesowych do sfinansowanej roadmapy AI: zastosowania uszeregowane według wartości, wykonalności i ryzyka."
+          },
+          "ai-readiness-audit": {
+            "name": "Audyt gotowości AI",
+            "teaser": "Dwutygodniowy audyt danych, systemów i zespołu, zakończony scorecardem i konkretnym planem domknięcia luk."
+          },
+          "genai-implementation": {
+            "name": "Wdrożenia GenAI",
+            "teaser": "RAG, agenci i funkcje LLM prowadzone od zwalidowanego pilotażu do monitorowanej produkcji."
+          },
+          "ai-governance": {
+            "name": "Governance AI",
+            "teaser": "Zgodność z EU AI Act, bramki ryzyka i dokumentacja modeli, które nie zatrzymują dowożenia."
+          },
+          "team-enablement": {
+            "name": "Rozwój kompetencji zespołu",
+            "teaser": "Praktyczne szkolenia na Twoim stacku i danych, żeby zespół dowoził AI bez nas."
+          }
+        },
+        "subpages": {
+          "ai-strategy": {
+            "label": "Konsulting AI",
+            "title": "Strategia AI",
+            "subtitle": "Uporządkowany portfel zastosowań AI z business case'ami. Plan, który zarząd może sfinansować, a inżynierowie zbudować.",
+            "breadcrumb": "Strategia AI",
+            "overviewTitle": "Na czym to polega",
+            "overview": [
+              "Projekt strategiczny zamienia hasło 'powinniśmy coś zrobić z AI' w uporządkowaną listę zastosowań z liczbami. Mapujemy Twoje procesy, oceniamy każdą szansę pod kątem wartości, wykonalności i ryzyka, a dla tych wartych budżetu piszemy business case. Efektem jest dokument decyzyjny dla zarządu, nie prezentacja z wizją.",
+              "Praca trwa od czterech do sześciu tygodni. Rozmawiamy z interesariuszami w całej firmie, przeglądamy dane i systemy, a kandydujące zastosowania konfrontujemy z ludźmi, którzy prowadzą te procesy na co dzień. Robią to senior engineers, więc oceny wykonalności opierają się na tym, co Twoje systemy udźwigną dziś, a nie na obietnicach dostawców.",
+              "Co się zmienia: zarząd przestaje dyskutować o AI abstrakcyjnie i zaczyna zatwierdzać konkretne inicjatywy z właścicielami, budżetami i miernikami sukcesu. Pierwszy pilotaż jest zwymiarowany i gotowy do startu w tygodniu zatwierdzenia strategii, a wszyscy z góry wiedzą, jaki wynik uzasadni produkcję i dalsze skalowanie."
+            ],
+            "benefitsTitle": "Dlaczego to działa",
+            "benefits": [
+              {
+                "title": "Decyzje zamiast dyskusji",
+                "description": "Każde zastosowanie ma oczekiwany efekt, koszt i okres zwrotu, więc rozmowa o roadmapie dotyczy liczb, nie opinii."
+              },
+              {
+                "title": "Wykonalność oceniana przez budujących",
+                "description": "Wykonalność oceniają inżynierowie, którzy zbudowaliby ten system. Zero luki między strategią a realizacją."
+              },
+              {
+                "title": "Szybkie wygrane na początku",
+                "description": "Układamy roadmapę tak, żeby pilotaż o wysokiej wartości i niskim ryzyku wylądował wcześnie i zbudował apetyt na trudniejsze zakłady."
+              },
+              {
+                "title": "Rozstrzygnięte build vs buy",
+                "description": "Dla każdego zastosowania porównujemy narzędzia dostawców z własnym buildem pod kątem kosztów, kontroli i dopasowania, z jasną rekomendacją."
+              },
+              {
+                "title": "Roadmapa odporna na rzeczywistość",
+                "description": "Kamienie milowe, właścicieli i mierniki ustalamy z zespołami, które wykonają pracę, więc plan trzyma się także po naszym wyjściu."
+              }
+            ],
+            "approachTitle": "Jak to prowadzimy",
+            "approach": [
+              {
+                "title": "Analiza",
+                "description": "Wywiady z interesariuszami, mapowanie procesów i przegląd danych oraz systemów. Po dwóch tygodniach długa lista szans leży na stole."
+              },
+              {
+                "title": "Priorytetyzacja",
+                "description": "Na warsztacie z Twoim zespołem punktujemy każde zastosowanie za wartość, wykonalność i ryzyko, po czym tniemy listę do dwóch, trzech wartych business case'u."
+              },
+              {
+                "title": "Projekt",
+                "description": "Dla krótkiej listy szkicujemy architektury referencyjne, rozstrzygamy build vs buy i szacujemy koszty budowy oraz utrzymania."
+              },
+              {
+                "title": "Decyzja",
+                "description": "Piszemy roadmapę, business case'y i plan pilotażu, a potem prezentujemy je zarządowi do decyzji o finansowaniu."
+              }
+            ],
+            "deliverablesTitle": "Co dostajesz",
+            "deliverables": [
+              "Mapa szans AI z punktowanymi zastosowaniami",
+              "Business case dla każdej pozycji z krótkiej listy",
+              "Architektura referencyjna dla najważniejszych zastosowań",
+              "Roadmapa adopcji z właścicielami i kamieniami milowymi",
+              "Zwymiarowany plan pierwszego pilotażu"
+            ],
+            "faqTitle": "Częste pytania",
+            "faq": [
+              {
+                "q": "Czy przed pilotażem potrzebujemy strategii AI?",
+                "a": "Nie zawsze. Jeśli jedno zastosowanie jest ewidentnie wartościowe, pilotaż na początek jest w porządku i często sami go rekomendujemy. Strategia zwraca się wtedy, gdy pomysłów jest wiele, interesariuszy kilku, a decyzja budżetowa realna."
+              },
+              {
+                "q": "Kto z naszej strony musi być zaangażowany?",
+                "a": "Sponsor z zarządu, właściciele procesów, których dotyczy projekt, i ktoś, kto zna Wasze systemy i dane. Licz się z kilkoma wywiadami i dwoma warsztatami: po kilka godzin na osobę w całym projekcie, nie tygodnie."
+              },
+              {
+                "q": "A jeśli szczera odpowiedź brzmi: AI jeszcze się nie opłaca?",
+                "a": "Wtedy dokładnie taką rekomendację dostajesz, na piśmie, z uzasadnieniem. Zwykle jest warunek wstępny wart naprawy, na przykład dostęp do danych albo spójność procesu, a roadmapa mówi, kiedy wrócić do tematu AI."
+              }
+            ],
+            "cta": {
+              "title": "Zdobądź roadmapę wartą finansowania",
+              "subtitle": "Zacznij od bezpłatnej 30-minutowej rozmowy. Powiemy Ci, czy lepszym pierwszym krokiem jest strategia, czy od razu pilotaż.",
+              "button": "Umów rozmowę o strategii"
+            }
+          },
+          "ai-readiness-audit": {
+            "label": "Konsulting AI",
+            "title": "Audyt gotowości AI",
+            "subtitle": "Dwutygodniowy audyt danych, systemów, zespołu i procesów w stałej cenie. Kończy się scorecardem i planem domknięcia luk, które naprawdę mają znaczenie.",
+            "breadcrumb": "Audyt gotowości AI",
+            "overviewTitle": "Na czym to polega",
+            "overview": [
+              "Audyt gotowości odpowiada na jedno pytanie: co dzieli Twoją organizację od działającego systemu AI na produkcji? Sprawdzamy jakość i dostępność danych, powierzchnię integracji, ograniczenia bezpieczeństwa i zgodności oraz kompetencje zespołu, wszystko mierzone względem zastosowań, które faktycznie chcesz wdrożyć, a nie ogólnej checklisty.",
+              "Trwa dwa tygodnie i ma stałą cenę. Prowadzimy ustrukturyzowane wywiady z liderami inżynierii, danych i biznesu, oglądamy zaangażowane systemy od środka tam, gdzie pozwala na to dostęp, i testujemy próbkę danych względem wymagań docelowych zastosowań. Dostajesz wnioski poparte bezpośrednią inspekcją, nie odpowiedziami z ankiety.",
+              "Wychodzisz ze scorecardem gotowości w obszarach danych, systemów, ludzi i governance oraz planem, który oddziela blokery od rzeczy opcjonalnych. Większość klientów odkrywa, że jest bliżej celu, niż sądziła: luki są zwykle konkretne i naprawialne, a nie strukturalne, i rzadko opóźniają start pierwszego pilotażu o więcej niż kwartał."
+            ],
+            "benefitsTitle": "Dlaczego to działa",
+            "benefits": [
+              {
+                "title": "Liczba zamiast przeczucia",
+                "description": "Gotowość punktowana w każdym wymiarze względem Twoich docelowych zastosowań, więc wiesz dokładnie, gdzie stoisz i dlaczego."
+              },
+              {
+                "title": "Blokery oddzielone od szumu",
+                "description": "Na listę must-fix trafiają tylko luki blokujące Twoje konkretne zastosowania. Reszta jest uszeregowana, zaplanowana i opcjonalna."
+              },
+              {
+                "title": "Stały zakres, stała cena",
+                "description": "Dwa tygodnie, zdefiniowany rezultat i kwota znana z góry. Żadnej otwartej fazy discovery."
+              },
+              {
+                "title": "Dowody do rozmowy o budżecie",
+                "description": "Scorecard i plan luk dają zarządowi konkretną podstawę do decyzji, co finansować i w jakiej kolejności."
+              },
+              {
+                "title": "Szybszy pilotaż po audycie",
+                "description": "Pilotaże po audycie omijają tygodnie niespodzianek, bo pytania o dostęp do danych, bezpieczeństwo i integracje są już rozstrzygnięte."
+              }
+            ],
+            "approachTitle": "Jak to prowadzimy",
+            "approach": [
+              {
+                "title": "Zakres",
+                "description": "Uzgadniamy docelowe zastosowania i systemy objęte audytem, żeby mierzyć gotowość do czegoś konkretnego."
+              },
+              {
+                "title": "Inspekcja",
+                "description": "Wywiady z liderami plus przegląd próbek danych, interfejsów systemów i istniejących narzędzi."
+              },
+              {
+                "title": "Ocena",
+                "description": "Ustalenia punktujemy w obszarach danych, systemów, ludzi i governance, każde z dowodem."
+              },
+              {
+                "title": "Plan",
+                "description": "Prezentujemy scorecard i uszeregowany plan domknięcia luk oraz rekomendujemy pierwszy pilotaż pasujący do Twojej obecnej gotowości."
+              }
+            ],
+            "deliverablesTitle": "Co dostajesz",
+            "deliverables": [
+              "Scorecard gotowości: dane, systemy, ludzie, governance",
+              "Ocena jakości i dostępności danych pod docelowe zastosowania",
+              "Przegląd systemów i integracji",
+              "Uszeregowany plan luk oddzielający blokery od późniejszych poprawek",
+              "Rekomendacja pierwszego pilotażu"
+            ],
+            "faqTitle": "Częste pytania",
+            "faq": [
+              {
+                "q": "Jakiego dostępu potrzebujecie?",
+                "a": "Odczytu próbki istotnych danych i rozmowy z osobami prowadzącymi systemy. Tam, gdzie bezpośredni dostęp nie wchodzi w grę, pracujemy na schematach, eksportach i screen-share'ach. NDA i umowy powierzenia danych to standard, zanim cokolwiek zostanie udostępnione."
+              },
+              {
+                "q": "Czy audyt jest potrzebny przed każdym projektem?",
+                "a": "Nie. Jeden audyt zwykle pokrywa całą rodzinę zastosowań. Jeśli pierwsze zastosowanie jest małe i samodzielne, możemy zarekomendować przejście od razu do pilotażu."
+              },
+              {
+                "q": "A jeśli wynik brzmi 'nie jesteście gotowi'?",
+                "a": "Dostajesz najkrótszą drogę do gotowości: które luki blokują Twoje zastosowanie, ile kosztuje ich domknięcie i w jakiej kolejności. Taki plan bywa wart więcej niż przedwczesny pilotaż."
+              }
+            ],
+            "cta": {
+              "title": "Sprawdź, gdzie jesteś",
+              "subtitle": "Dwa tygodnie, stała cena, scorecard czytelny dla całego zarządu. Umów rozmowę, żeby ustalić zakres audytu.",
+              "button": "Ustal zakres audytu"
+            }
+          },
+          "genai-implementation": {
+            "label": "Konsulting AI",
+            "title": "Wdrożenia GenAI",
+            "subtitle": "Systemy RAG, agenci i funkcje LLM prowadzone od zwalidowanego pomysłu do monitorowanej produkcji. Budowane na ewaluacjach, nie na wrażeniach.",
+            "breadcrumb": "Wdrożenia GenAI",
+            "overviewTitle": "Na czym to polega",
+            "overview": [
+              "Wdrożenie GenAI to moment, w którym zwalidowane zastosowanie staje się systemem, na którym działa Twój biznes. Projektujemy i budujemy funkcje oparte na LLM, pipeline'y retrieval i workflow agentowe, zintegrowane z Twoimi systemami i od pierwszego dnia mierzone harnessem ewaluacyjnym. Celem jest produkcja, a pilotaż to punkt kontrolny po drodze.",
+              "Praca idzie etapami: najpierw architektura i pipeline danych, potem pilotaż na prawdziwych danych mierzony względem uzgodnionej linii bazowej, na końcu hartowanie produkcyjne: guardraile, monitoring, kontrola kosztów i plan rolloutu. Na każdym etapie widzisz zmierzone liczby, a decyzja no-go zawsze jest akceptowalnym wynikiem, uzgodnionym przed startem.",
+              "Co się zmienia u Ciebie: funkcja AI o znanej trafności, opóźnieniach i koszcie zapytania, działająca w Twojej infrastrukturze i w Twoich granicach zgodności. Twój zespół dostaje harness ewaluacyjny, runbooki i szkolenie, więc może rozwijać, dostrajać i utrzymywać system bez zależności od nas przy każdej zmianie."
+            ],
+            "benefitsTitle": "Dlaczego to działa",
+            "benefits": [
+              {
+                "title": "Ewaluacje przed opiniami",
+                "description": "Każdy pipeline ma harness ewaluacyjny i linię bazową, więc twierdzenia o jakości są zmierzone, a nie deklarowane."
+              },
+              {
+                "title": "Jakość produkcyjna od pilotażu",
+                "description": "Pilotaż powstaje na architekturze, która pójdzie na produkcję, więc przy skalowaniu nic nie ląduje w koszu."
+              },
+              {
+                "title": "Koszt i opóźnienia w projekcie",
+                "description": "Routing modeli, cache i budżety promptów są zaprojektowane od początku, a nie łatane po pierwszej fakturze."
+              },
+              {
+                "title": "Guardraile, które trzymają",
+                "description": "Walidacja wejść, filtrowanie wyjść i fallbacki na te tryby awarii, które LLM-y naprawdę mają na produkcji."
+              },
+              {
+                "title": "Twój zespół to utrzyma",
+                "description": "Przekazanie obejmuje harness, runbooki i szkolenie, więc system jest Twój w praktyce, nie tylko na papierze."
+              }
+            ],
+            "approachTitle": "Jak to prowadzimy",
+            "approach": [
+              {
+                "title": "Zakres i linia bazowa",
+                "description": "Ustalamy zastosowanie, miernik sukcesu i linię bazową do pobicia, potem projektujemy architekturę i przepływ danych."
+              },
+              {
+                "title": "Budowa pilotażu",
+                "description": "Działający system na Twoich prawdziwych danych w cztery do sześciu tygodni, oceniany na bieżąco względem linii bazowej."
+              },
+              {
+                "title": "Hartowanie",
+                "description": "Guardraile, monitoring, testy obciążeniowe i kosztowe, przegląd bezpieczeństwa i integracja z Twoim pipeline'em wdrożeń."
+              },
+              {
+                "title": "Rollout i przekazanie",
+                "description": "Stopniowy rollout z metrykami na żywo, potem przekazanie z dokumentacją, runbookami i szkoleniem zespołu."
+              }
+            ],
+            "deliverablesTitle": "Co dostajesz",
+            "deliverables": [
+              "Gotowy produkcyjnie system GenAI w Twojej infrastrukturze",
+              "Harness ewaluacyjny z linią bazową i metrykami jakości",
+              "Warstwa guardraili i fallbacków na produkcyjne tryby awarii",
+              "Dashboard monitoringu jakości, opóźnień i kosztów",
+              "Runbooki i szkolenie przekazujące dla zespołu"
+            ],
+            "faqTitle": "Częste pytania",
+            "faq": [
+              {
+                "q": "Z jakich modeli korzystacie?",
+                "a": "Z tych, które wygrywają na Twoich ewaluacjach. Benchmarkujemy OpenAI, Anthropic i modele open-weight na Twoich danych i dobieramy per zadanie, często routując między mocnym a tanim modelem. Architektura pozwala wymieniać modele, gdy rynek się zmienia."
+              },
+              {
+                "q": "Czy to może działać w naszej chmurze i granicach compliance?",
+                "a": "Tak. Wdrażamy przez Azure OpenAI, AWS Bedrock albo self-hosted modele open-weight, gdy dane muszą zostać w Twoim tenancie lub regionie. Ograniczenia zgodności trafiają do architektury na starcie, nie po fakcie."
+              },
+              {
+                "q": "Co, jeśli pilotaż nie pobije linii bazowej?",
+                "a": "Dostajesz zmierzone wyniki i szczerą diagnozę: dane, model czy dopasowanie zastosowania. Czasem rozwiązaniem jest zmiana zakresu, czasem odpowiedzią jest stop. Oba kosztują dużo mniej niż skalowanie systemu, który nie działa."
+              }
+            ],
+            "cta": {
+              "title": "Masz zastosowanie gotowe do budowy?",
+              "subtitle": "Przynieś je na bezpłatną 30-minutową rozmowę. Senior engineer powie Ci, czego potrzeba, żeby doprowadzić je na produkcję.",
+              "button": "Ustal zakres wdrożenia"
+            }
+          },
+          "ai-governance": {
+            "label": "Konsulting AI",
+            "title": "Governance AI",
+            "subtitle": "Klasyfikacja ryzyka, bramki przeglądowe i dokumentacja zgodne z EU AI Act, które nie zatrzymują Twojej roadmapy.",
+            "breadcrumb": "Governance AI",
+            "overviewTitle": "Na czym to polega",
+            "overview": [
+              "Governance AI sprawia, że Twoje systemy AI są audytowalne, zgodne z przepisami i bezpieczne w skalowaniu. Klasyfikujemy zastosowania według EU AI Act, przygotowujemy oceny ryzyka i dokumentację wymagane w każdej klasie oraz definiujemy bramki przeglądowe dla nowych inicjatyw AI. Robią to inżynierowie, więc całość pasuje do tego, jak Twoje zespoły naprawdę dowożą software.",
+              "Zaczynamy od inwentaryzacji: każdy system AI, zastosowanie i narzędzie dostawcy w użyciu, sklasyfikowane według ryzyka. Potem piszemy polityki istotne dla Twojej ekspozycji: obsługa danych, nadzór człowieka, dokumentacja modeli, reagowanie na incydenty. Kontrole wpinamy w Twój istniejący proces wytwórczy, a nie w równoległą biurokrację.",
+              "Co się zmienia: zespoły compliance i prawny dostają dowody do przekazania audytorom, a inżynierowie jasne reguły zamiast eskalacji od przypadku do przypadku. Nowe inicjatywy AI przechodzą governance w dni, a nie tygodnie, bo bramki i szablony już istnieją i wszyscy zaangażowani wiedzą dokładnie, jak z nich korzystać."
+            ],
+            "benefitsTitle": "Dlaczego to działa",
+            "benefits": [
+              {
+                "title": "EU AI Act zmapowany na Twoje systemy",
+                "description": "Każde zastosowanie sklasyfikowane według ryzyka z listą konkretnych obowiązków, więc praca nad zgodnością celuje w to, czego prawo naprawdę wymaga."
+              },
+              {
+                "title": "Governance w pipeline, nie w komitecie",
+                "description": "Kontrole żyją w Twoim procesie wytwórczym, nie w osobnym gremium. Inżynierowie ich przestrzegają, bo nie dokładają tarcia."
+              },
+              {
+                "title": "Dokumentacja gotowa na audyt",
+                "description": "Karty modeli, pochodzenie danych i logi decyzji prowadzone jako żywe artefakty, powstające w trakcie developmentu, a nie odtwarzane po fakcie."
+              },
+              {
+                "title": "Ryzyko dostawców pod kontrolą",
+                "description": "Zewnętrzne narzędzia i API AI przechodzą tę samą klasyfikację i przegląd co systemy własne, co domyka najczęstszy martwy punkt."
+              },
+              {
+                "title": "Skaluje się poza pierwszy projekt",
+                "description": "Dzięki szablonom i bramkom dziesiąta inicjatywa AI jest objęta governance tak samo jak pierwsza, bez negocjowania polityk od nowa."
+              }
+            ],
+            "approachTitle": "Jak to prowadzimy",
+            "approach": [
+              {
+                "title": "Inwentaryzacja",
+                "description": "Katalogujemy każdy system AI, zastosowanie i narzędzie dostawcy w użyciu, łącznie z tymi nieoficjalnymi, z których Twoje zespoły już korzystają."
+              },
+              {
+                "title": "Klasyfikacja",
+                "description": "Każdą pozycję klasyfikujemy według EU AI Act i Twojego apetytu na ryzyko, z obowiązkami przypisanymi do klasy."
+              },
+              {
+                "title": "Wdrożenie",
+                "description": "Piszemy polityki, szablony i bramki przeglądowe i wpinamy je w Twój proces wytwórczy, z przypisanymi właścicielami."
+              },
+              {
+                "title": "Operacjonalizacja",
+                "description": "Szkolimy osoby prowadzące bramki, pierwsze przeglądy robimy razem i przekazujemy playbook, który utrzymuje Twój zespół."
+              }
+            ],
+            "deliverablesTitle": "Co dostajesz",
+            "deliverables": [
+              "Inwentarz systemów AI z klasyfikacją ryzyka EU AI Act",
+              "Playbook governance z politykami i bramkami przeglądowymi",
+              "Szablony dokumentacji modeli i pochodzenia danych",
+              "Procedury nadzoru człowieka i reagowania na incydenty",
+              "Pakiet dowodów zgodności na audyty"
+            ],
+            "faqTitle": "Częste pytania",
+            "faq": [
+              {
+                "q": "Czy EU AI Act w ogóle nas dotyczy?",
+                "a": "Jeśli działasz w UE i używasz AI w produktach, rekrutacji, kredytach, bezpieczeństwie albo czymkolwiek widocznym dla klienta, prawie na pewno częściowo tak. Inwentaryzacja i klasyfikacja dają jednoznaczną odpowiedź dla każdego zastosowania zamiast ogólnego niepokoju."
+              },
+              {
+                "q": "Czy governance nie spowolni naszego dowożenia?",
+                "a": "Zrobione źle, tak. Dlatego wpinamy bramki w Twój istniejący workflow i skalujemy je według ryzyka. Zastosowania niskiego ryzyka dostają lekką checklistę, a ciężki przegląd rezerwujemy dla nielicznych systemów, które naprawdę go wymagają."
+              },
+              {
+                "q": "Mamy już zespół compliance. Po co inżynierowie?",
+                "a": "Bo obowiązki lądują w kodzie: logowanie, mechanizmy nadzoru, dokumentacja, dowody z ewaluacji. Tłumaczymy wymagania prawne na kontrole techniczne, które Twój zespół compliance może zweryfikować, a to jest część, którą większość dokumentów polityk pomija."
+              }
+            ],
+            "cta": {
+              "title": "Zgodność bez zatrzymywania roadmapy",
+              "subtitle": "Umów rozmowę, żeby ustalić zakres inwentaryzacji i klasyfikacji. To najszybsza droga, by poznać realną ekspozycję.",
+              "button": "Zacznij od inwentaryzacji"
+            }
+          },
+          "team-enablement": {
+            "label": "Konsulting AI",
+            "title": "Rozwój kompetencji zespołu",
+            "subtitle": "Praktyczne szkolenia na Twoim stacku i Twoich danych, żeby zespół dowoził projekty AI bez czekania na konsultantów.",
+            "breadcrumb": "Rozwój kompetencji zespołu",
+            "overviewTitle": "Na czym to polega",
+            "overview": [
+              "Rozwój kompetencji z założenia czyni nasz udział tymczasowym. Szkolimy inżynierów, product managerów i kadrę zarządzającą z tych umiejętności AI, których ich role naprawdę potrzebują, pracując na Twoim kodzie i Twoich danych, a nie na przykładach z podręcznika. Cel: zespół, który sam wymiaruje, buduje i utrzymuje funkcje AI.",
+              "Formaty dobieramy do odbiorców: praktyczne warsztaty dla inżynierów z RAG, ewaluacji, promptowania i wzorców agentowych; sesje wymiarowania zastosowań dla zespołów produktowych; briefy dla zarządu o kosztach, ryzyku i realnych terminach. Sesje idą na Twoim stacku, a każde ćwiczenie zostawia działający kod albo użyteczny artefakt, nie same notatki.",
+              "Co się zmienia: AI przestaje być domeną jednego specjalisty. Inżynierowie dowożą funkcje LLM z ewaluacjami, product managerowie piszą specyfikacje AI, które wytrzymują zderzenie z rzeczywistością, a zarząd decyduje o finansowaniu albo zamknięciu na prawdziwych liczbach. Wewnętrzni liderzy prowadzą praktykę dalej po naszym wyjściu."
+            ],
+            "benefitsTitle": "Dlaczego to działa",
+            "benefits": [
+              {
+                "title": "Szkolenie na Twoim stacku",
+                "description": "Ćwiczenia idą na Twoim kodzie, danych i chmurze, więc poniedziałkowy poranek wygląda jak warsztat."
+              },
+              {
+                "title": "Ścieżki pod konkretne role",
+                "description": "Inżynierowie, product managerowie i zarząd dostają osobne sesje, każdą skrojoną pod decyzje, które ta rola faktycznie podejmuje."
+              },
+              {
+                "title": "Działające artefakty, nie certyfikaty",
+                "description": "Każda sesja kończy się czymś użytecznym: prototypem, zestawem ewaluacji, zwymiarowaną specyfikacją, frameworkiem decyzyjnym."
+              },
+              {
+                "title": "Liderzy, którzy pociągną temat",
+                "description": "Znajdujemy i coachujemy osoby, które przejmą wewnętrzną praktykę AI po zakończeniu współpracy."
+              },
+              {
+                "title": "Pairing na prawdziwych ticketach",
+                "description": "Poza warsztatami pracujemy w parach z Twoimi inżynierami przy realnych zadaniach AI, bo tam umiejętności naprawdę się utrwalają."
+              }
+            ],
+            "approachTitle": "Jak to prowadzimy",
+            "approach": [
+              {
+                "title": "Ocena kompetencji",
+                "description": "Krótka ocena umiejętności i narzędzi per zespół, żeby szkolenie celowało w realne braki, a nie zakładane."
+              },
+              {
+                "title": "Projekt programu",
+                "description": "Budujemy ścieżkę per rola z naszej biblioteki warsztatów, dopasowaną do Twojego stacku, zastosowań i kalendarza."
+              },
+              {
+                "title": "Szkolenie i pairing",
+                "description": "Najpierw warsztaty, potem pairing przy Twoich bieżących zadaniach AI, póki materiał jest świeży."
+              },
+              {
+                "title": "Zakorzenienie",
+                "description": "Liderzy dostają coaching, playbooki i bezpośredni kontakt z nami, przejmując wewnętrzną praktykę."
+              }
+            ],
+            "deliverablesTitle": "Co dostajesz",
+            "deliverables": [
+              "Program szkoleniowy per rola z materiałami",
+              "Praktyczne warsztaty na Twoim stacku i danych",
+              "Działające artefakty z każdej sesji",
+              "Playbooki wewnętrznej praktyki AI",
+              "Plan coachingu wewnętrznych liderów"
+            ],
+            "faqTitle": "Częste pytania",
+            "faq": [
+              {
+                "q": "Jak doświadczony musi być nasz zespół?",
+                "a": "Solidni inżynierowie oprogramowania wystarczą, background w ML nie jest wymagany. Współczesny AI engineering to głównie inżynieria oprogramowania z nowymi trybami awarii i dokładnie to obejmuje szkolenie."
+              },
+              {
+                "q": "Ile czasu to zajmuje na osobę?",
+                "a": "Zwykle dwudniowy warsztat na ścieżkę plus kilka godzin pairingu tygodniowo przez kolejny miesiąc. Sesje układamy wokół harmonogramu dowożenia, a pairing dzieje się na zadaniach, które zespół i tak miał zrobić."
+              },
+              {
+                "q": "To jednorazowe szkolenie czy proces?",
+                "a": "Jedno i drugie działa. Część klientów bierze pojedynczy warsztat, większość łączy go z miesiącem pairingu. Jeśli chcesz ciągłości, rozwój kompetencji wchodzi w skład retainera doradczego."
+              }
+            ],
+            "cta": {
+              "title": "Zbuduj kompetencje u siebie",
+              "subtitle": "Powiedz nam, gdzie jest Twój zespół i gdzie powinien być. Zaproponujemy program w jednej rozmowie.",
+              "button": "Zaplanuj program"
+            }
+          }
+        }
       },
       "webDevelopment": {
         "label": "Usługi",
@@ -1824,13 +3525,114 @@
       "detailsCta": "Zobacz szczegóły",
       "bookCta": "Rezerwuj",
       "faqTitle": "Odpowiadamy na pytania",
-      "backToAll": "Wszystkie warsztaty"
+      "backToAll": "Wszystkie warsztaty",
+      "stats": [
+        {
+          "value": "1/2",
+          "label": "Dnia od luźnych pomysłów do gotowego rankingu"
+        },
+        {
+          "value": "2",
+          "label": "Tygodnie od jednego pomysłu do zwalidowanego konceptu"
+        },
+        {
+          "value": "100%",
+          "label": "Seniorskich inżynierów w każdej sesji"
+        },
+        {
+          "value": "0",
+          "label": "Slajdów. Tylko decyzje i działający kod"
+        }
+      ],
+      "pathTitle": "Jedna ścieżka, cztery etapy",
+      "pathIntro": "Każdy etap zasila kolejny. Zacznij tam, gdzie jesteś, zatrzymaj się, kiedy masz to, czego potrzebujesz, albo przejdź całą drogę od pierwszego pomysłu do działającego AI.",
+      "path": [
+        {
+          "step": "01",
+          "name": "Warsztat AI Opportunity",
+          "duration": "Pół dnia",
+          "description": "Pół dnia, które zmienia luźne pomysły w ranking i jeden rekomendowany pilot: gotowy punkt startu dla sprintu discovery.",
+          "slug": "ai-opportunity-workshop"
+        },
+        {
+          "step": "02",
+          "name": "Sprint discovery AI",
+          "duration": "2 tygodnie",
+          "description": "Dwa tygodnie w głąb najlepszego use case'a: dane, feasibility, działający prototyp. Kończy się wycenionym planem, który realizuje proof-of-concept.",
+          "slug": "ai-discovery-sprint"
+        },
+        {
+          "step": "03",
+          "name": "Proof-of-Concept GenAI",
+          "duration": "4-6 tygodni",
+          "description": "Cztery do sześciu tygodni, żeby zamienić zwalidowany koncept w produkcyjny pilot na Twoich danych, z evalami i planem wdrożenia.",
+          "slug": "genai-proof-of-concept"
+        },
+        {
+          "step": "04",
+          "name": "Zespół AI na część etatu",
+          "duration": "Miesięcznie, na stałe",
+          "description": "Seniorscy inżynierowie w Twoim zespole: utrzymują pilot na produkcji, skalują go i biorą na warsztat kolejne use case'y z Twojego rankingu.",
+          "slug": "fractional-ai-team"
+        }
+      ],
+      "chooserTitle": "Nie wiesz, od czego zacząć?",
+      "chooserIntro": "Dopasuj swoją obecną sytuację do właściwej formy współpracy. W razie wątpliwości wybierz warsztat: to najtańszy sposób, żeby dowiedzieć się, co dalej.",
+      "chooser": [
+        {
+          "situation": "Masz pomysły, ale nie masz rankingu",
+          "recommendation": "Warsztat AI Opportunity",
+          "slug": "ai-opportunity-workshop"
+        },
+        {
+          "situation": "Nie masz jeszcze pomysłów, tylko presję, żeby coś zrobić z AI",
+          "recommendation": "Warsztat AI Opportunity",
+          "slug": "ai-opportunity-workshop"
+        },
+        {
+          "situation": "Jeden use case, jeszcze niesprawdzony",
+          "recommendation": "Sprint discovery AI",
+          "slug": "ai-discovery-sprint"
+        },
+        {
+          "situation": "Zwalidowany koncept, który potrzebuje dowodu na produkcji",
+          "recommendation": "Proof-of-Concept GenAI",
+          "slug": "genai-proof-of-concept"
+        },
+        {
+          "situation": "AI działa na produkcji, ale nie ma go kto utrzymywać",
+          "recommendation": "Zespół AI na część etatu",
+          "slug": "fractional-ai-team"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Jak wyceniacie warsztaty?",
+          "a": "Każda forma współpracy ma stałą cenę ustaloną przed startem. Warsztat i sprint to stałe stawki, proof-of-concept wyceniamy po sprincie, a zespół na część etatu rozliczamy miesięcznie. Bez stawek dziennych, bez niespodzianek."
+        },
+        {
+          "q": "Prowadzicie sesje zdalnie czy on-site?",
+          "a": "I tak, i tak. Warsztat działa dobrze u Ciebie w biurze albo na callu, sprinty i dłuższe współprace prowadzimy zdalnie z regularnymi checkpointami. Jesteśmy z Poznania i przyjeżdżamy na miejsce, kiedy wspólny pokój robi różnicę."
+        },
+        {
+          "q": "W jakich językach prowadzicie sesje?",
+          "a": "Po angielsku, po polsku i po niemiecku. Materiały i rezultaty przygotowujemy domyślnie po angielsku, na życzenie w Twoim języku."
+        },
+        {
+          "q": "Ile osób może wziąć udział w sesji?",
+          "a": "Warsztat działa najlepiej w 4-8 osób: decydent plus ludzie, którzy znają problemy z codziennej pracy. Więcej się da, ale decyzje zapadają wolniej. W sprincie wystarczy jeden decydent i kilka godzin eksperta domenowego w tygodniu."
+        },
+        {
+          "q": "Co dzieje się po sesji?",
+          "a": "Wszystkie rezultaty dostajesz na piśmie w kilka dni: shortlist, scoring, prototyp albo roadmap, zależnie od formatu. Co z nimi zrobisz, to Twoja decyzja: idziesz do kolejnego etapu, budujesz in-house albo się zatrzymujesz. Każda z tych opcji jest w porządku."
+        }
+      ]
     },
     "pages": {
       "ai-opportunity-workshop": {
         "eyebrow": "Workshop",
         "title": "Znajdź, gdzie AI zarabia najpierw",
-        "subtitle": "Półdniowa sesja, która zmienia rozproszone pomysły na AI w gotowy shortlist i pierwszy pilot.",
+        "subtitle": "Półdniowa sesja robocza, która zmienia rozproszone pomysły na AI w ranking, uczciwe oceny ROI i wykonalności oraz jeden pilot, który warto zbudować jako pierwszy.",
         "meta": {
           "duration": "Pół dnia",
           "format": "Zdalnie lub on-site",
@@ -1840,17 +3642,20 @@
         "overview": {
           "title": "Co to jest",
           "paragraphs": [
-            "Skupiona sesja na pół dnia, w której kładziemy Twoje pomysły na AI na stół i sprawdzamy każdy pod kątem ROI i wykonalności.",
-            "Wychodzisz z jasnym punktem startu, a nie listą 'może kiedyś'. Zero slideware, konkretny plan, który ruszysz w przyszłym tygodniu."
+            "Warsztat to pół dnia ustrukturyzowanego podejmowania decyzji z seniorskimi inżynierami, a nie seminarium. Kładziemy na stół każdy pomysł na AI w Twojej firmie, dodajemy te, które podpowiadają Twoje procesy i dane, i sprawdzamy każdy dwoma pytaniami: ile jest wart i czy naprawdę da się go zbudować na Twoich danych i systemach.",
+            "Prowadzimy go zdalnie albo u Ciebie w biurze, z decydentem i ludźmi, którzy znają problemy z codziennej pracy. Format jest szybki: mapujemy pomysły, oceniamy każdy pod kątem ROI i wykonalności na wspólnej tablicy, rankujemy, wybieramy jeden pilot i ustalamy, czego wymaga jego udowodnienie. Wszystko zapisujemy na bieżąco.",
+            "Po sesji dyskusja o tym, od czego zacząć, jest zamknięta. Masz ranking, który Twój zespół sam współtworzył, oceny, które obronisz przed zarządem, i jeden konkretny pilot z ustalonym pierwszym krokiem. Czy budujesz z nami, in-house, czy wcale, decydujesz na podstawie dowodów, a nie opinii."
           ]
         },
         "outcomes": {
           "title": "Co dostajesz",
           "items": [
-            "Priorytetyzowany shortlist use-case'ów",
-            "Ocena ROI i wykonalności każdego pomysłu",
-            "Rekomendowany pierwszy pilot",
-            "Jasne kolejne kroki, żeby ruszyć"
+            "Ranking Twoich use case'ów AI",
+            "Oceny ROI i wykonalności każdego pomysłu, z zapisanym uzasadnieniem",
+            "Jeden rekomendowany pilot z ustalonym zakresem i pierwszym krokiem",
+            "Mapa luk w danych i systemach, które blokują trudniejsze pomysły",
+            "Jednostronicowe podsumowanie, które położysz przed zarządem",
+            "Konkretny następny krok: czego wymaga udowodnienie pilota"
           ]
         },
         "agenda": {
@@ -1858,57 +3663,92 @@
           "steps": [
             {
               "num": "01",
-              "title": "Mapujemy pomysły",
-              "desc": "Zbieramy Twoje pomysły na AI i problemy pod nimi."
+              "title": "Ramy biznesowe",
+              "desc": "Zaczynamy od tego, jak Twoja firma zarabia i gdzie traci czas. Ta rama trzyma scoring w ryzach: pomysł wygrywa tylko wtedy, gdy rusza liczbę, na której Ci zależy."
             },
             {
               "num": "02",
-              "title": "Oceniamy i rankujemy",
-              "desc": "Każdy pomysł dostaje ocenę ROI i wykonalności."
+              "title": "Mapujemy pomysły",
+              "desc": "Zbieramy każdy pomysł na AI w pokoju i dodajemy te, które podpowiadają Twoje procesy i dane. Każdy przepisujemy na problem z właścicielem, a nie technologię szukającą zastosowania."
             },
             {
               "num": "03",
+              "title": "Oceniamy i rankujemy",
+              "desc": "Każdy pomysł dostaje ocenę ROI i wykonalności na wspólnej tablicy: wartość, gotowość danych, koszt integracji, ryzyko. Ranking powstaje na oczach wszystkich."
+            },
+            {
+              "num": "04",
               "title": "Wybieramy pilot",
-              "desc": "Ustalamy pierwszy pilot i sposób startu."
+              "desc": "Bierzemy górę listy i przeciskamy ją przez sito: jak wyglądałby dwutygodniowy dowód, jakich danych potrzebuje, co może go zabić. Jeden pilot przechodzi jako rekomendacja."
+            },
+            {
+              "num": "05",
+              "title": "Zapisujemy wynik",
+              "desc": "Zamykamy sesję utrwaleniem wyniku: ranking, oceny z uzasadnieniem, rekomendowany pilot i pierwszy krok. Podsumowanie dostajesz w dwa dni robocze."
             }
           ]
         },
         "audience": {
           "title": "Dla kogo to jest",
           "items": [
-            "Liderzy, którzy nie wiedzą, gdzie zacząć z AI",
-            "Zespoły z nadmiarem pomysłów na AI",
-            "Firmy, które chcą dowodów, nie hype'u"
+            "Founderzy i zarządy pod presją, żeby mieć odpowiedź na AI",
+            "Product leaderzy z większą liczbą pomysłów niż budżetu",
+            "Zespoły, które utknęły na demo chatbota",
+            "Firmy, które chcą dowodu i planu, a nie kolejnej prezentacji"
           ]
         },
         "faq": [
           {
-            "q": "Ile trwa workshop?",
-            "a": "Pół dnia, zdalnie lub on-site. Trzymamy tempo i skupiamy się na wynikach, więc decyzje masz jeszcze tego samego dnia."
+            "q": "Ile trwa warsztat?",
+            "a": "Pół dnia, zdalnie lub on-site. Trzymamy tempo i skupiamy się na wyniku: wychodzisz z rankingiem i decyzją tego samego dnia, a nie z terminem kolejnego spotkania."
           },
           {
             "q": "Czy musimy się przygotować?",
-            "a": "Weź swoje pomysły i osoby, które znają problemy. Wcześniej wysyłamy krótką notkę, żeby sesja ruszyła od razu."
+            "a": "Weź swoje pomysły i osoby, które znają problemy. Wcześniej wysyłamy krótką notkę: cztery pytania, około godziny pracy, dzięki którym sesja rusza od razu."
           },
           {
             "q": "A jeśli nie mamy jeszcze pomysłów na AI?",
-            "a": "Spokojnie. Wyciągamy szanse z Twoich procesów i danych, a potem oceniamy je z Tobą na miejscu."
+            "a": "Spokojnie, to częsta sytuacja. Wyciągamy szanse z Twoich procesów, danych i obciążenia supportu, a potem oceniamy je z Tobą na miejscu. Scoring działa tak samo w obie strony."
           },
           {
-            "q": "Co dzieje się po workshopie?",
-            "a": "Dostajesz shortlist, scoring i rekomendowany pilot. Jeśli chcesz, zbudujemy ten pilot razem z Tobą."
+            "q": "Co dzieje się po warsztacie?",
+            "a": "Dostajesz shortlist, scoring i rekomendowany pilot na piśmie w kilka dni. Jeśli chcesz ten pilot udowodnić, sprint discovery jest dokładnie do tego. Jeśli budujesz in-house, plan i tak jest Twój."
+          },
+          {
+            "q": "Ile kosztuje warsztat?",
+            "a": "Stała opłata, ustalona przed rezerwacją, taka sama zdalnie i on-site. Bez stawek dziennych i bez zobowiązania do dalszej współpracy: shortlist i rekomendacja pilota są Twoje tak czy inaczej."
+          },
+          {
+            "q": "Możemy spojrzeć na nasze dane na żywo w trakcie sesji?",
+            "a": "Tak, i to pomaga. Jeśli możesz udostępnić próbkę albo pokazać realny system na ekranie, sprawdzamy gotowość danych od razu, zamiast zgadywać. Jeśli potrzebujesz NDA, standardowo podpisujemy je przed sesją."
           }
         ],
         "form": {
           "title": "Zarezerwuj workshop",
           "note": "Odpowiadamy w jeden dzień roboczy.",
           "cta": "Zarezerwuj workshop"
+        },
+        "prep": {
+          "title": "Jak się przygotować",
+          "intro": "Sesja działa najlepiej, kiedy przychodzą właściwe osoby z odrobiną pracy domowej.",
+          "items": [
+            "Decydent, który może powiedzieć pilotowi tak",
+            "Osoby, które znają problemy z codziennej pracy",
+            "Odpowiedzi na naszą notkę z czterema pytaniami",
+            "Pomysły na AI, które już krążą po firmie, choćby surowe"
+          ]
+        },
+        "next": {
+          "title": "Co dalej",
+          "text": "Warsztat kończy się jednym rekomendowanym pilotem. Sprint discovery bierze dokładnie ten pilot i udowadnia go w dwa tygodnie: Twoje dane, działający prototyp, wyceniony plan.",
+          "linkLabel": "Sprint discovery AI",
+          "slug": "ai-discovery-sprint"
         }
       },
       "ai-discovery-sprint": {
         "eyebrow": "Sprint",
         "title": "Udowodnij use case AI w 2 tygodnie",
-        "subtitle": "Dwa tygodnie, jeden use case, działający prototyp i wyceniony plan, żebyś budował z pewnością.",
+        "subtitle": "Dwa tygodnie na jednym use case z Twoimi realnymi danymi: przetestowane feasibility, działający prototyp i wyceniony roadmap. Budżet zatwierdzasz na podstawie dowodów, nie pitcha.",
         "meta": {
           "duration": "2 tygodnie",
           "format": "Zdalnie, wspólnie z Twoim zespołem",
@@ -1918,17 +3758,20 @@
         "overview": {
           "title": "Czym jest sprint",
           "paragraphs": [
-            "Dwa tygodnie skupione na jednym use case. Sprawdzamy Twoje dane, testujemy feasibility, projektujemy architekturę i budujemy działający prototyp.",
-            "Kończysz z dowodem, nie ze slajdami. Zanim wydasz budżet na build, widzisz, że działa, i wiesz, ile kosztuje."
+            "Sprint bierze jeden use case i odpowiada na jedyne pytanie, które liczy się przed sfinansowaniem buildu: czy to zadziała na naszych danych i ile będzie kosztować na produkcji? Seniorscy inżynierowie pracują nad tym na pełen etat przez dwa tygodnie, od audytu danych po działający prototyp, z kilkoma godzinami Twojego eksperta w tygodniu.",
+            "Pierwszy tydzień to dowody: mapujemy dane, dostępy i ograniczenia, testujemy najpierw ryzykowne założenia i projektujemy architekturę produkcyjną. Drugi tydzień to prototyp: budowany na Twoich realnych danych pod uzgodnione kryteria sukcesu, pokazywany w trakcie, a nie odsłaniany na końcu. Postęp widzisz w połowie, nie dopiero na mecie.",
+            "Kończysz sprint z decyzją, a nie z przeczuciem. Go oznacza prototyp, który już działa, architekturę i wyceniony roadmap, który realizuje kolejny etap. No-go oznacza, że budżet na build zostaje w firmie i dokładnie wiesz dlaczego: które dane, ograniczenie albo próg jakości zawiodły i co musiałoby się zmienić."
           ]
         },
         "outcomes": {
           "title": "Co zabierasz ze sobą",
           "items": [
-            "Ocena feasibility technicznej",
-            "Działający prototyp na Twoich danych",
-            "Wyceniony roadmap wdrożenia",
-            "Jasna decyzja: go albo no-go"
+            "Ocena feasibility technicznej oparta na Twoich danych, nie na benchmarkach",
+            "Działający prototyp na Twoich realnych danych, pokazany na demo i w Twoim repo",
+            "Uzgodnione kryteria sukcesu i wynik prototypu wobec nich",
+            "Propozycja architektury produkcyjnej z wyborem modeli i hostingu",
+            "Wyceniony roadmap wdrożenia dla fazy buildu",
+            "Jasna rekomendacja go albo no-go z uzasadnieniem"
           ]
         },
         "agenda": {
@@ -1936,62 +3779,92 @@
           "steps": [
             {
               "num": "01",
-              "title": "Głęboki wgląd w dane",
-              "desc": "Pierwszego dnia mapujemy Twoje dane, dostępy i ograniczenia."
+              "title": "Zakres i kryteria sukcesu",
+              "desc": "Pierwszy dzień ustala zakres: jeden use case, potrzebne dane i to, co 'działa' znaczy w liczbach. Wszystko w sprincie mierzymy wobec tej definicji."
             },
             {
               "num": "02",
-              "title": "Feasibility i architektura",
-              "desc": "Testujemy, co działa, i projektujemy podejście produkcyjne."
+              "title": "Głęboki wgląd w dane",
+              "desc": "Mapujemy źródła danych, dostępy, jakość i ograniczenia, w tym prywatność i compliance. Większość projektów AI umiera właśnie tutaj, więc tutaj idziemy najpierw."
             },
             {
               "num": "03",
-              "title": "Budowa prototypu",
-              "desc": "Budujemy działający prototyp na Twoim realnym use case."
+              "title": "Zabijamy ryzyka",
+              "desc": "Najbardziej ryzykowne założenia testujemy, zanim zbudujemy cokolwiek dopracowanego: jakość retrievalu, trafność modelu na Twoich edge case'ach, latencję, koszt zapytania. Najpierw tanie eksperymenty."
             },
             {
               "num": "04",
-              "title": "Roadmap i przekazanie",
-              "desc": "Dostajesz wyceniony plan buildu i decyzję go/no-go."
+              "title": "Budujemy prototyp",
+              "desc": "Budujemy działający prototyp na Twoich realnych danych pod uzgodnione kryteria i pokazujemy go w trakcie sprintu, żeby korekty kursu działy się wcześnie, a nie po fakcie."
+            },
+            {
+              "num": "05",
+              "title": "Decyzja i roadmap",
+              "desc": "Zamykamy dowodami: wynik prototypu wobec kryteriów, architektura produkcyjna, wyceniony roadmap i jasna rekomendacja go albo no-go, którą zaniesiesz do zarządu."
             }
           ]
         },
         "audience": {
           "title": "Dla kogo to jest",
           "items": [
-            "Masz jeden use case wart sprawdzenia.",
-            "Chcesz dowodu, zanim sfinansujesz build.",
-            "Masz dane i gotowego decydenta."
+            "Masz jeden use case wart sprawdzenia, najlepiej z rankingu po warsztacie",
+            "Chcesz dowodów, zanim sfinansujesz produkcyjny build",
+            "Masz dane i możesz dać do nich dostęp w kilka dni",
+            "Masz decydenta, który zadziała na podstawie wyniku"
           ]
         },
         "faq": [
           {
             "q": "Czego potrzebujecie od nas na start?",
-            "a": "Dostępu do danych, jednego decydenta i kilku godzin eksperta domenowego w tygodniu. Resztą zajmujemy się my."
+            "a": "Dostępu do właściwych danych, jednego decydenta i kilku godzin eksperta domenowego w tygodniu. Infrastrukturą, narzędziami i budową zajmujemy się my. NDA i umowa powierzenia danych to standard przed pierwszym dniem."
           },
           {
             "q": "Czy dwa tygodnie naprawdę wystarczą?",
-            "a": "Dla jednego use case tak. Idziemy w głąb jednego problemu, nie wszerz. Prototyp dowodzi feasibility, nie całego produktu."
+            "a": "Dla jednego, dobrze zakreślonego use case'a tak. Idziemy w głąb jednego problemu, a nie wszerz wielu. Prototyp dowodzi feasibility i kosztów, nie całego produktu: od tego jest faza buildu."
           },
           {
-            "q": "Co jeśli prototyp pokaże, że nie zadziała?",
-            "a": "To cenny wynik. Oszczędzasz budżet na build i dostajesz jasny powód dlaczego, plus alternatywy warte przetestowania."
+            "q": "Co jeśli prototyp pokaże, że to nie zadziała?",
+            "a": "To cenny wynik i najtańszy możliwy sposób, żeby się o tym dowiedzieć. Zostaje Ci analiza, wiesz dokładnie, które ograniczenie zawiodło, i dostajesz alternatywy warte przetestowania. Budżet na build zostaje w firmie."
           },
           {
             "q": "Czy prototyp i kod należą do nas?",
-            "a": "Tak. Cały kod, wnioski i roadmap są Twoje. Jeśli przejdziesz do buildu, to Twój punkt startu."
+            "a": "Tak. Cały kod, wnioski, wyniki ewaluacji i roadmap są Twoje, w Twoich repozytoriach. Jeśli idziesz w build, z nami albo in-house, to Twój punkt startu."
+          },
+          {
+            "q": "Ile kosztuje sprint?",
+            "a": "Stała cena za stały zakres, ustalona przed startem. Bez stawek dziennych i bez włączonego licznika. Fazę proof-of-concept, jeśli się na nią zdecydujesz, wyceniamy w roadmapie, więc pełny obraz kosztów masz przed decyzją."
+          },
+          {
+            "q": "Czy nie opłaca Wam się rekomendować go?",
+            "a": "Rekomendacja przychodzi z dowodami: wyniki evali, koszty, przypadki błędów. Możesz je sprawdzić samodzielnie. No-go kosztuje nas projekt buildu, błędne go kosztowałoby nas relację, a ta jest warta więcej."
           }
         ],
         "form": {
           "title": "Zarezerwuj swój Discovery Sprint",
           "note": "Odpowiadamy w jeden dzień roboczy.",
           "cta": "Zarezerwuj sprint"
+        },
+        "prep": {
+          "title": "Jak się przygotować",
+          "intro": "Sprint rusza szybko, kiedy dostępy i ludzie są ustawieni przed pierwszym dniem.",
+          "items": [
+            "Dostęp do odczytu właściwych danych przed pierwszym dniem",
+            "Jeden decydent do decyzji o zakresie i decyzji końcowej",
+            "Ekspert domenowy na kilka godzin w tygodniu",
+            "Podpisane NDA i umowa powierzenia danych, jeśli ich potrzebujesz"
+          ]
+        },
+        "next": {
+          "title": "Co dalej",
+          "text": "Decyzja go zasługuje na dowód produkcyjny. Proof-of-concept GenAI zamienia prototyp w produkcyjny pilot na Twoich danych, mierzony realnymi evalami i gotowy do wdrożenia.",
+          "linkLabel": "Proof-of-Concept GenAI",
+          "slug": "genai-proof-of-concept"
         }
       },
       "genai-proof-of-concept": {
         "eyebrow": "Proof of concept",
         "title": "Udowodnij, że Twoje AI działa na produkcji.",
-        "subtitle": "Pilot klasy produkcyjnej w Twoim środowisku, mierzony realnymi evalami i gotowy, by pchnąć rollout.",
+        "subtitle": "Jeden potwierdzony use case, w 4 do 6 tygodni zamieniony w działający pilot na Twoich danych i Twoim stacku, mierzony evalami i zamknięty jasną decyzją o rollout.",
         "meta": {
           "duration": "4 do 6 tygodni",
           "format": "W Twoim środowisku",
@@ -2001,17 +3874,20 @@
         "overview": {
           "title": "Zbudowane, by udowodnić, nie pokazać",
           "paragraphs": [
-            "Skupiony build, który zamienia jeden potwierdzony use case w działający pilot na Twoich danych, Twoim stacku, w Twoich realiach.",
-            "Demo ukrywa trudne rzeczy. My mierzymy pilot realnymi evalami, więc wiesz, że działa, zanim ruszysz z rolloutem."
+            "Proof of concept bierze jeden potwierdzony use case i zamienia go w działający pilot w Twoim środowisku: na Twoich danych, Twoim stacku, z Twoimi wymogami bezpieczeństwa. To nie demo na wybranych przykładach. Wszystko, co wdrażamy, działa na reprezentatywnych danych i jest mierzone evaluation harnessem, który projektujemy razem w pierwszym tygodniu.",
+            "Projekt trwa 4 do 6 tygodni i ma stały zakres. Najpierw ustalamy use case i definiujemy evals, potem podpinamy dane, budujemy pod harness i utwardzamy pilot pod realny ruch. Co tydzień dostajesz krótkie pisemne podsumowanie i działający system, do którego możesz zajrzeć w każdej chwili. Bez wielkiego finału na końcu.",
+            "Po PoC wiesz, z liczbami w ręku, czy use case jest wart rolloutu. Jeśli tak, masz pilot gotowy do rozwoju, eval harness, który trzyma go w ryzach, i plan rolloutu z zakresem, kosztem i ryzykiem. Jeśli nie, oszczędzasz kwartał budżetu i wiesz dokładnie dlaczego, na piśmie."
           ]
         },
         "outcomes": {
           "title": "Co dostajesz",
           "items": [
-            "Pilot gotowy na produkcję w Twoim środowisku",
-            "Evaluation harness z metrykami, którym ufasz",
-            "Plan rolloutu z zakresem, kosztem i ryzykiem",
-            "Deck do pitcha, by zdobyć poparcie w firmie"
+            "Działający pilot wdrożony w Twoim środowisku, na Twoich danych",
+            "Evaluation harness z metrykami, które uzgodnił Twój zespół",
+            "Udokumentowane wyniki evali wobec celów z pierwszego tygodnia",
+            "Plan rolloutu: zakres, koszt, ryzyka i utrzymanie",
+            "Deck do wewnętrznego pitcha, by zdobyć budżet i poparcie",
+            "Pełna własność kodu, promptów i evali, bez lock-inu"
           ]
         },
         "agenda": {
@@ -2019,23 +3895,28 @@
           "steps": [
             {
               "num": "01",
-              "title": "Ramy",
-              "desc": "Ustalamy use case, dane i metryki sukcesu."
+              "title": "Zakres i projekt evali",
+              "desc": "Ustalamy use case, definiujemy sukces w liczbach i jako pierwszy budujemy evaluation harness. Jeśli czegoś nie da się zmierzyć, tego nie budujemy."
             },
             {
               "num": "02",
-              "title": "Build",
-              "desc": "Wdrażamy pilot na Twoim stacku i danych."
+              "title": "Podpięcie danych",
+              "desc": "Podpinamy pilot pod Twoje realne źródła danych, ogarniamy dostępy, prywatność i formaty, i składamy reprezentatywny zbiór testowy, na którym będą działać evals."
             },
             {
               "num": "03",
-              "title": "Pomiar",
-              "desc": "Odpalamy evals i tuningujemy pod realne cele."
+              "title": "Build pod harness",
+              "desc": "Budujemy pilot iteracyjnie, każdą zmianę przepuszczając przez eval harness. O tym, co wchodzi, decydują wyniki, nie wrażenia. Postęp widzisz co tydzień."
             },
             {
               "num": "04",
-              "title": "Plan",
-              "desc": "Pakujemy wyniki i plan rolloutu do pitcha."
+              "title": "Utwardzanie",
+              "desc": "Testujemy pilot na edge case'ach, złośliwych wejściach i trybach awarii, potem dokładamy guardraile, fallbacki i monitoring, których wymaga produkcja."
+            },
+            {
+              "num": "05",
+              "title": "Decyzja o rollout",
+              "desc": "Zestawiamy wyniki evali z celami z pierwszego tygodnia i przekazujemy plan rolloutu albo jasno udokumentowany powód, by się zatrzymać. Decyzja jest Twoja, oparta na realnych liczbach."
             }
           ]
         },
@@ -2043,38 +3924,63 @@
           "title": "Dla kogo to jest",
           "items": [
             "Masz potwierdzony use case, nie tylko pomysł.",
-            "Potrzebujesz dowodu, zanim sfinansujesz pełny rollout.",
-            "Chcesz to na swoich danych, nie w demie."
+            "Potrzebujesz twardego dowodu, zanim sfinansujesz pełny rollout.",
+            "Chcesz to na swoich danych i swoim stacku, nie w vendorowym demie.",
+            "Masz osobę decyzyjną gotową działać na podstawie wyników."
           ]
         },
         "faq": [
           {
             "q": "Czego potrzebujemy na start?",
-            "a": "Potwierdzonego use case, dostępu do reprezentatywnych danych i jednej osoby decyzyjnej, która zatwierdzi rollout. Build, evals i konfigurację środowiska bierzemy na siebie."
+            "a": "Potwierdzonego use case, dostępu do reprezentatywnych danych i jednej osoby decyzyjnej, która podejmie działanie na podstawie wyników. Build, evals i konfigurację środowiska bierzemy na siebie."
           },
           {
             "q": "Czym to się różni od demo?",
-            "a": "Demo to teatr na happy path. My wdrażamy w Twoim środowisku i mierzymy realnymi evalami, więc wyniki bronią się, gdy pitchujesz wewnątrz firmy."
+            "a": "Demo to teatr na happy path. My budujemy w Twoim środowisku i mierzymy realnymi evalami, więc wyniki bronią się, gdy pitchujesz je wewnątrz firmy."
           },
           {
             "q": "Co, jeśli evals pokażą, że nie działa?",
-            "a": "To wartościowy wynik. Dostajesz jasne metryki i uczciwe uzasadnienie, co chroni Cię przed finansowaniem rolloutu, który by poległ."
+            "a": "To wartościowy wynik. Dostajesz jasne metryki i uczciwe pisemne uzasadnienie, co chroni Cię przed finansowaniem rolloutu, który by poległ."
           },
           {
-            "q": "Kto jest właścicielem kodu i wyników?",
-            "a": "Ty. Pilot, evaluation harness i plan rolloutu są Twoje, możesz je rozwijać, bez żadnego lock-inu."
+            "q": "Kto jest właścicielem kodu i modelu?",
+            "a": "Ty. Pilot, prompty, evaluation harness i plan rolloutu żyją w Twoich repo i na Twoich kontach. Dotrenowane modele i ich wagi też są Twoje. Bez lock-inu."
+          },
+          {
+            "q": "Co, jeśli nasze dane są nieuporządkowane albo bez etykiet?",
+            "a": "Tego się spodziewamy. Część pierwszych dwóch tygodni to praca na danych: dostępy, czyszczenie i reprezentatywny zbiór testowy. Jeśli dane naprawdę nie udźwigną use case'u, dowiesz się wcześnie, nie w szóstym tygodniu."
+          },
+          {
+            "q": "Co się dzieje po sześciu tygodniach?",
+            "a": "Trzy opcje: Twój zespół rozwija pilot według naszego planu rolloutu, razem doprowadzamy go do produkcji albo fractional AI team prowadzi go miesiąc po miesiącu. Każda zaczyna się od kodu, który już jest Twój."
           }
         ],
         "form": {
           "title": "Zaplanuj swój PoC",
           "note": "Jedna rozmowa, by sprawdzić dopasowanie. Bez zobowiązań.",
           "cta": "Zaplanuj PoC"
+        },
+        "prep": {
+          "title": "Jak się przygotować",
+          "intro": "Nie potrzeba wiele, ale właściwi ludzie i dostępy od pierwszego dnia sprawiają, że te tygodnie naprawdę pracują.",
+          "items": [
+            "Product owner, który decyzje o zakresie podejmuje w ciągu dnia",
+            "Dostęp do odczytu reprezentatywnych danych, uzgodniony przed startem",
+            "Inżynier, który zna systemy, z którymi pilot musi się zintegrować",
+            "Rozpoczęty proces zgód security lub compliance, niekoniecznie skończony"
+          ]
+        },
+        "next": {
+          "title": "Co dalej",
+          "text": "Pilot, który przechodzi evale, zasługuje na zespół, który doprowadzi go do produkcji i tam utrzyma. Dokładnie to robi fractional AI team.",
+          "linkLabel": "Poznaj fractional AI team",
+          "slug": "fractional-ai-team"
         }
       },
       "fractional-ai-team": {
         "eyebrow": "Fractional team",
         "title": "Senior AI team na żądanie",
-        "subtitle": "Strategia, engineering i MLOps w Twoim zespole, skalowane wraz z Twoją roadmapą miesiąc po miesiącu.",
+        "subtitle": "Senior AI engineers, strategia i MLOps wbudowani w Twój zespół na miesięcznym retainerze. Wdrażają Twoją roadmapę na produkcję i skalują się razem z nią.",
         "meta": {
           "duration": "Miesięcznie, na stałe",
           "format": "Wbudowani w Twój zespół",
@@ -2084,17 +3990,20 @@
         "overview": {
           "title": "Moce AI bez etatów",
           "paragraphs": [
-            "Senior AI engineers, stratedzy i MLOps pracujący w Twoim zespole. Wchodzimy w Twój stack, standupy i roadmap.",
-            "Pomijasz sześciomiesięczną rekrutację i vendora typu black-box. Skalujesz moce w górę lub w dół co miesiąc, gdy zmieniają się priorytety."
+            "Fractional AI team to seniorskie moce bez cyklu rekrutacji: inżynierowie, architekt i MLOps pracujący wewnątrz Twojego zespołu na miesięcznym retainerze. Dołączamy do Twoich standupów, commitujemy do Twoich repo i trzymamy się Twojego code review. Z zewnątrz wygląda to tak, jakby Twój zespół urósł, bo urósł.",
+            "Pierwsze tygodnie to onboarding i audyt tego, co już masz: modele, pipeline'y, evals, infrastruktura. Potem bierzemy odpowiedzialność za uzgodniony wycinek roadmapy i wdrażamy w Twoim normalnym rytmie. Moce ustalamy co miesiąc, więc możesz dołożyć inżynierów na sprint i zwolnić, gdy się uspokoi.",
+            "Z czasem chodzi o to, byśmy byli coraz mniej potrzebni. Budujemy MLOps i quality gates, które trzymają modele na produkcji bez heroizmu, dokumentujemy na bieżąco i pracujemy w parach z Twoimi inżynierami, żeby wiedza zostawała w zespole. Gdy zatrudnisz swoich ludzi, przejmą działający system, nie zagadkę."
           ]
         },
         "outcomes": {
           "title": "Co dostajesz",
           "items": [
-            "Senior AI engineers wbudowani od pierwszego dnia",
-            "Strategia i kierunek roadmapy na żądanie",
-            "MLOps utrzymujący modele na produkcji",
-            "Elastyczne miesięczne moce, w górę lub w dół"
+            "Senior AI engineers wdrażający w Twoich repo od pierwszego tygodnia",
+            "Uczciwy audyt Twoich modeli, pipeline'ów i infrastruktury",
+            "Wycinek roadmapy prowadzony end to end, od designu po produkcję",
+            "MLOps, monitoring i quality gates, które przetrwają współpracę",
+            "Miesięczne moce skalowane w górę i w dół wraz z priorytetami",
+            "Dokumentacja i praca w parach, które budują kompetencje Twojego zespołu"
           ]
         },
         "agenda": {
@@ -2102,51 +4011,86 @@
           "steps": [
             {
               "num": "01",
-              "title": "Zakres",
-              "desc": "Mapujemy Twój roadmap i ustalamy miesięczne moce."
+              "title": "Onboarding i audyt",
+              "desc": "Dostajemy dostępy, dołączamy do standupów i audytujemy to, co jest: modele, pipeline'y danych, evals i infrastrukturę. Dostajesz pisemny obraz sytuacji."
             },
             {
               "num": "02",
-              "title": "Wejście w zespół",
-              "desc": "Nasz team dołącza do standupów, repo i narzędzi."
+              "title": "Własność roadmapy",
+              "desc": "Uzgadniamy, który wycinek AI roadmapy prowadzimy, z jasnymi granicami wobec Twojego zespołu. Priorytety ustalamy razem co miesiąc, w Twoim planningu, nie w portalu vendora."
             },
             {
               "num": "03",
-              "title": "Wdrażamy i skalujemy",
-              "desc": "Wdrażamy na produkcję i flexujemy z Twoimi priorytetami."
+              "title": "Rytm dostarczania",
+              "desc": "Dostarczamy w Twoim rytmie sprintów: design, build, review, release. Praca ląduje w Twoich repo przez Twoje code review, z demo wdrożonych rzeczy w każdym cyklu."
+            },
+            {
+              "num": "04",
+              "title": "MLOps i quality gates",
+              "desc": "Budujemy hydraulikę, która trzyma AI na produkcji: evals w CI, monitoring, ścieżki rollbacku i kontrolę kosztów. Quality gates działają niezależnie od tego, czy jesteśmy w pokoju."
+            },
+            {
+              "num": "05",
+              "title": "Przegląd i przekazanie",
+              "desc": "Co kwartał przeglądamy wyniki wobec roadmapy i korygujemy moce. Gdy Twój zespół rośnie, pracujemy w parach, dokumentujemy i oddajemy własność kawałek po kawałku."
             }
           ]
         },
         "audience": {
           "title": "Dla kogo to jest",
           "items": [
-            "Skalujesz AI w całej organizacji",
-            "Rekrutacja seniorów AI trwa za długo",
-            "Potrzebujesz produkcji, nie slideware"
+            "Skalujesz AI poza pierwszy use case i potrzebujesz seniorskich rąk.",
+            "Rekrutacja senior AI engineers zajmuje kwartały, nie tygodnie.",
+            "Potrzebujesz zbudowanych i utrzymanych systemów produkcyjnych, nie slideware.",
+            "Chcesz mocy, które idą za roadmapą, miesiąc po miesiącu."
           ]
         },
         "faq": [
           {
             "q": "Jak szybko możecie zacząć?",
-            "a": "W dni, nie miesiące. W pierwszym tygodniu wprowadzamy senior team w Twój stack i standupy, a potem wdrażamy."
+            "a": "W dni, nie miesiące. W pierwszym tygodniu wchodzimy w Twój stack i standupy, a potem wdrażamy."
           },
           {
             "q": "Czy można skalować w górę i w dół?",
-            "a": "Tak. Dostosowujesz miesięczne moce, gdy zmienia się roadmap. Dokładasz inżynierów na sprint, zwalniasz tempo, gdy trzeba. Bez długiego lock-inu."
+            "a": "Tak. Dostosowujesz miesięczne moce, gdy zmienia się roadmapa: dokładasz inżynierów na sprint, zwalniasz tempo, gdy się uspokoi. Bez długiego lock-inu."
           },
           {
             "q": "Czym to się różni od rekrutacji?",
-            "a": "Bez sześciomiesięcznych poszukiwań i ryzyka wdrożenia. Dostajesz senior AI team biegły w produkcji, strategii i MLOps, dostępny w tym miesiącu."
+            "a": "Bez sześciomiesięcznych poszukiwań i ryzyka wdrożenia. Dostajesz senior team biegły w produkcyjnym AI, strategii i MLOps, dostępny w tym miesiącu."
           },
           {
             "q": "Do kogo należy kod i modele?",
-            "a": "Do Ciebie. Wszystko zostaje w Twoich repo i infrastrukturze. Budujemy w Twoim stacku, więc nic nie znika, gdy skalujemy w dół."
+            "a": "Do Ciebie. Wszystko żyje w Twoich repo i Twojej infrastrukturze. Budujemy w Twoim stacku, więc nic nie znika, gdy skalujemy w dół."
+          },
+          {
+            "q": "Czym to się różni od kontraktorów?",
+            "a": "Kontraktorzy dają Ci pojedyncze godziny, którymi musisz zarządzać. My przychodzimy jako zgrany zespół z architektem, inżynierami i MLOps, odpowiadamy za wyniki, nie za tickety, i przynosimy własne standardy dostarczania, evals i dyscyplinę code review."
+          },
+          {
+            "q": "Jakie jest minimalne zobowiązanie?",
+            "a": "Tyle, by ocenić nas po wdrożonych wynikach: sugerujemy pierwszy kwartał na onboarding, audyt i pierwsze rzeczy na produkcji. Potem retainer działa miesiąc po miesiącu, a skalujesz w dół albo kończysz z miesięcznym wypowiedzeniem."
           }
         ],
         "form": {
           "title": "Umów rozmowę",
           "note": "30 minut z inżynierem, bez sprzedażowego decka.",
           "cta": "Napisz do nas"
+        },
+        "prep": {
+          "title": "Jak się przygotować",
+          "intro": "Współpraca rusza najszybciej, gdy dostępy i odpowiedzialność są jasne od pierwszego dnia.",
+          "items": [
+            "Techniczny partner, który wewnętrznie odpowiada za AI roadmapę",
+            "Dostępy do repo, chmury i danych uzgodnione przed startem",
+            "Obraz tego, co już działa, nawet jeśli jest surowy",
+            "Zarezerwowany czas w Twoim planningu i standupach dla zespołu"
+          ]
+        },
+        "next": {
+          "title": "Porozmawiajmy",
+          "text": "Każdy retainer zaczyna się od jednej rozmowy: Twoja roadmapa, Twój stack i to, czy jesteśmy do tego właściwym zespołem. Trzydzieści minut z inżynierem, bez sprzedażowego decka.",
+          "linkLabel": "Umów rozmowę",
+          "slug": null
         }
       }
     }
@@ -2172,12 +4116,30 @@
     "hearAbout": "Skąd o nas wiesz?",
     "hearAboutPlaceholder": "Wybierz opcję",
     "hearAboutOptions": [
-      { "value": "search", "label": "Wyszukiwarka" },
-      { "value": "recommendation", "label": "Polecenie" },
-      { "value": "social", "label": "Media społecznościowe" },
-      { "value": "event", "label": "Wydarzenie lub konferencja" },
-      { "value": "content", "label": "Blog, artykuł lub newsletter" },
-      { "value": "other", "label": "Inne" }
+      {
+        "value": "search",
+        "label": "Wyszukiwarka"
+      },
+      {
+        "value": "recommendation",
+        "label": "Polecenie"
+      },
+      {
+        "value": "social",
+        "label": "Media społecznościowe"
+      },
+      {
+        "value": "event",
+        "label": "Wydarzenie lub konferencja"
+      },
+      {
+        "value": "content",
+        "label": "Blog, artykuł lub newsletter"
+      },
+      {
+        "value": "other",
+        "label": "Inne"
+      }
     ],
     "message": "Opowiedz nam więcej o swoim projekcie",
     "consentTermsPrefix": "Akceptuję",

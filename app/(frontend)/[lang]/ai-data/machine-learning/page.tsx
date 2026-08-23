@@ -19,5 +19,5 @@ export default async function Page({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  return <ServicePage locale={resolve(lang)} service="machineLearning" visual="nodes" />;
+  return <ServicePage locale={resolve(lang)} service="machineLearning" visual="nodes" hrefBase="/ai-data/machine-learning" />;
 }

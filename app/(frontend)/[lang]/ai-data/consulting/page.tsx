@@ -19,5 +19,5 @@ export default async function Page({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  return <ServicePage locale={resolve(lang)} service="consulting" visual="aurora" />;
+  return <ServicePage locale={resolve(lang)} service="consulting" visual="aurora" hrefBase="/ai-data/consulting" />;
 }
