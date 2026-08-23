@@ -10,10 +10,10 @@ import Portfolio from "./components/portfolio";
 import Reports from "./components/reports";
 import Testimonial from "./components/testimonial";
 import Insights from "./components/insights";
-import Contact from "./components/contact";
 import Footer from "./components/footer";
 import { isLocale, defaultLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
+import { getTrustLogos } from "@/lib/trust";
 
 // Revalidate so CMS-managed content (case studies, insights, reports,
 // use cases) refreshes periodically.
@@ -27,23 +27,23 @@ export default async function Home({
   const { lang } = await params;
   const locale: Locale = isLocale(lang) ? lang : defaultLocale;
   const dict = getDictionary(locale);
+  const trustLogos = await getTrustLogos();
 
   return (
     <main>
-      <Hero dict={dict.hero} trust={dict.trust} />
+      <Hero dict={dict.hero} trust={dict.trust} logos={trustLogos} />
       <Services locale={locale} />
       <Metrics locale={locale} />
       <Offerings locale={locale} />
       <Process locale={locale} />
       <UseCases locale={locale} />
-      <Banner dict={dict.banners.documents} />
       <Industries locale={locale} />
+      <Banner dict={dict.banners.documents} />
       <Portfolio locale={locale} />
       <Reports locale={locale} />
       <Testimonial locale={locale} />
       <Insights locale={locale} />
-      <Banner dict={dict.banners.move} className="border-t border-night" />
-      <Contact locale={locale} />
+      <Banner dict={dict.banners.move} className="border-t border-night-line" />
       <Footer locale={locale} />
     </main>
   );

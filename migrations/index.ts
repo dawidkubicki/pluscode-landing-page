@@ -3,6 +3,7 @@ import * as migration_20260722_144604_add_reports_use_cases from './20260722_144
 import * as migration_20260822_120000_add_bookings from './20260822_120000_add_bookings';
 import * as migration_20260823_090000_lead_form_fields from './20260823_090000_lead_form_fields';
 import * as migration_20260823_110000_add_de_locale from './20260823_110000_add_de_locale';
+import * as migration_20260823_184017_add_trust_logos from './20260823_184017_add_trust_logos';
 
 export const migrations = [
   {
@@ -29,5 +30,10 @@ export const migrations = [
     up: migration_20260823_110000_add_de_locale.up,
     down: migration_20260823_110000_add_de_locale.down,
     name: '20260823_110000_add_de_locale',
+  },
+  {
+    up: migration_20260823_184017_add_trust_logos.up,
+    down: migration_20260823_184017_add_trust_logos.down,
+    name: '20260823_184017_add_trust_logos'
   },
 ];

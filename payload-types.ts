@@ -76,6 +76,7 @@ export interface Config {
     reports: Report;
     'use-cases': UseCase;
     bookings: Booking;
+    'trust-logos': TrustLogo;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -92,6 +93,7 @@ export interface Config {
     reports: ReportsSelect<false> | ReportsSelect<true>;
     'use-cases': UseCasesSelect<false> | UseCasesSelect<true>;
     bookings: BookingsSelect<false> | BookingsSelect<true>;
+    'trust-logos': TrustLogosSelect<false> | TrustLogosSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -100,10 +102,10 @@ export interface Config {
   db: {
     defaultIDType: number;
   };
-  fallbackLocale: ('false' | 'none' | 'null') | false | null | ('en' | 'pl') | ('en' | 'pl')[];
+  fallbackLocale: ('false' | 'none' | 'null') | false | null | ('en' | 'pl' | 'de') | ('en' | 'pl' | 'de')[];
   globals: {};
   globalsSelect: {};
-  locale: 'en' | 'pl';
+  locale: 'en' | 'pl' | 'de';
   widgets: {
     collections: CollectionsWidget;
   };
@@ -543,6 +545,30 @@ export interface Booking {
   createdAt: string;
 }
 /**
+ * Client logos for the hero's "Trusted by" strip. Active logos show in Order; when none are active the strip falls back to the dictionary text names.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "trust-logos".
+ */
+export interface TrustLogo {
+  id: number;
+  /**
+   * Client name — also the logo's alt text.
+   */
+  name: string;
+  /**
+   * Logo file — ideally SVG or PNG with a transparent background. It is recolored to white on the dark hero, so any logo color works.
+   */
+  logo: number | Media;
+  /**
+   * Lower numbers show first.
+   */
+  order?: number | null;
+  isActive?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -601,6 +627,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'bookings';
         value: number | Booking;
+      } | null)
+    | ({
+        relationTo: 'trust-logos';
+        value: number | TrustLogo;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -850,6 +880,18 @@ export interface BookingsSelect<T extends boolean = true> {
   consentMarketing?: T;
   locale?: T;
   source?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "trust-logos_select".
+ */
+export interface TrustLogosSelect<T extends boolean = true> {
+  name?: T;
+  logo?: T;
+  order?: T;
+  isActive?: T;
   updatedAt?: T;
   createdAt?: T;
 }
