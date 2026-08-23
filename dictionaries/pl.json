@@ -340,30 +340,7 @@
       "email": "Napisz do nas",
       "location": "Siedziba"
     },
-    "form": {
-      "name": "Twoje imię i nazwisko",
-      "email": "Służbowy e-mail",
-      "company": "Firma",
-      "message": "Co chcesz zbadać?",
-      "submit": "Umów moją rozmowę",
-      "sending": "Wysyłanie...",
-      "privacyPrefix": "Wysyłając formularz, akceptujesz naszą",
-      "privacyLink": "politykę prywatności",
-      "privacySuffix": "."
-    },
-    "validation": {
-      "nameRequired": "Imię jest wymagane",
-      "nameMinLength": "Imię musi mieć co najmniej 2 znaki",
-      "emailRequired": "Email jest wymagany",
-      "emailInvalid": "Podaj prawidłowy adres email",
-      "messageRequired": "Wiadomość jest wymagana",
-      "messageMinLength": "Wiadomość musi mieć co najmniej 10 znaków",
-      "captchaRequired": "Proszę potwierdzić, że nie jesteś robotem"
-    },
-    "success": {
-      "title": "Wiadomość wysłana.",
-      "message": "Odpowiemy w jeden dzień roboczy."
-    },
+    "submit": "Umów moją rozmowę",
     "formTitle": "Umów rozmowę"
   },
   "footer": {
@@ -1849,26 +1826,6 @@
       "faqTitle": "Odpowiadamy na pytania",
       "backToAll": "Wszystkie warsztaty"
     },
-    "form": {
-      "name": "Imię i nazwisko",
-      "email": "Służbowy e-mail",
-      "company": "Firma",
-      "teamSize": "Wielkość zespołu",
-      "format": "Preferowany format",
-      "useCase": "Co chcesz zbadać?",
-      "timeline": "Termin",
-      "message": "Coś jeszcze?",
-      "sending": "Wysyłanie...",
-      "successTitle": "Zgłoszenie przyjęte.",
-      "successMessage": "Odpowiemy w jeden dzień roboczy.",
-      "error": "Coś poszło nie tak. Spróbuj ponownie lub napisz na contact@pluscode.io.",
-      "privacyPrefix": "Wysyłając, akceptujesz naszą",
-      "privacyLink": "politykę prywatności",
-      "privacySuffix": ".",
-      "errName": "Podaj imię i nazwisko",
-      "errEmail": "Podaj prawidłowy e-mail",
-      "errUseCase": "Napisz krótko, czego potrzebujesz"
-    },
     "pages": {
       "ai-opportunity-workshop": {
         "eyebrow": "Workshop",
@@ -2206,6 +2163,37 @@
     "emailPrefix": "Albo napisz na",
     "trustTitle": "Zaufali nam",
     "summaryTitle": "Co rezerwujesz"
+  },
+  "form": {
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "email": "Służbowy e-mail",
+    "phone": "Numer telefonu",
+    "hearAbout": "Skąd o nas wiesz?",
+    "hearAboutPlaceholder": "Wybierz opcję",
+    "hearAboutOptions": [
+      { "value": "search", "label": "Wyszukiwarka" },
+      { "value": "recommendation", "label": "Polecenie" },
+      { "value": "social", "label": "Media społecznościowe" },
+      { "value": "event", "label": "Wydarzenie lub konferencja" },
+      { "value": "content", "label": "Blog, artykuł lub newsletter" },
+      { "value": "other", "label": "Inne" }
+    ],
+    "message": "Opowiedz nam więcej o swoim projekcie",
+    "consentTermsPrefix": "Akceptuję",
+    "consentTermsLink": "regulamin",
+    "consentTermsMiddle": "oraz",
+    "consentPrivacyLink": "politykę prywatności",
+    "consentTermsSuffix": ".",
+    "consentMarketing": "Wyrażam zgodę na otrzymywanie informacji marketingowych od Pluscode.",
+    "consentDetailsLabel": "Kliknij po szczegóły",
+    "consentDetailsText": "Twoje dane wykorzystujemy wyłącznie do wysyłki okazjonalnych informacji o naszej pracy z AI i nie przekazujemy ich podmiotom trzecim. Zgodę możesz wycofać w każdej chwili, pisząc na contact@pluscode.io lub klikając link rezygnacji w wiadomości.",
+    "sending": "Wysyłanie...",
+    "successTitle": "Zgłoszenie przyjęte.",
+    "successMessage": "Odpowiemy w jeden dzień roboczy.",
+    "error": "Coś poszło nie tak. Spróbuj ponownie lub napisz na contact@pluscode.io.",
+    "errRequired": "To pole jest wymagane.",
+    "errEmail": "Podaj prawidłowy adres e-mail."
   },
   "consultation": {
     "metaTitle": "Umów rozmowę",

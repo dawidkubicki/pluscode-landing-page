@@ -20,16 +20,35 @@ const OFFERING_LABELS: Record<string, string> = {
   general: "General enquiry",
 };
 
+/** Must stay in sync with `hearAboutOptions` in the dictionaries. */
+const HEAR_ABOUT = new Set([
+  "search",
+  "recommendation",
+  "social",
+  "event",
+  "content",
+  "other",
+]);
+
+const HEAR_ABOUT_LABELS: Record<string, string> = {
+  search: "Search engine",
+  recommendation: "Recommendation or referral",
+  social: "Social media",
+  event: "Event or conference",
+  content: "Blog, article, or newsletter",
+  other: "Other",
+};
+
 interface BookingBody {
-  name?: string;
+  firstName?: string;
+  lastName?: string;
   email?: string;
-  company?: string;
-  offering?: string;
-  format?: string;
-  teamSize?: string;
-  useCase?: string;
-  timeline?: string;
+  phone?: string;
+  hearAbout?: string;
   message?: string;
+  consentTerms?: boolean;
+  consentMarketing?: boolean;
+  offering?: string;
   locale?: string;
   source?: string;
 }
@@ -43,27 +62,42 @@ const row = (label: string, value?: string) =>
 export async function POST(request: NextRequest) {
   try {
     const body: BookingBody = await request.json();
-    const name = body.name?.trim();
+    const firstName = body.firstName?.trim();
+    const lastName = body.lastName?.trim();
     const email = body.email?.trim();
+    const message = body.message?.trim();
+    const hearAbout = body.hearAbout?.trim();
     const offering = OFFERINGS.has(body.offering ?? "") ? body.offering! : "general";
 
-    if (!name || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    // Consent is a legal record, not a preference: refuse the submission rather
+    // than storing personal data the visitor did not agree to us holding.
+    if (
+      !firstName ||
+      !lastName ||
+      !message ||
+      !hearAbout ||
+      !HEAR_ABOUT.has(hearAbout) ||
+      !email ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
+      body.consentTerms !== true
+    ) {
       return NextResponse.json({ error: "Missing or invalid fields" }, { status: 400 });
     }
 
     const data = {
-      name,
+      firstName,
+      lastName,
       email,
       offering,
-      company: body.company?.trim() || undefined,
-      format: body.format?.trim() || undefined,
-      teamSize: body.teamSize?.trim() || undefined,
-      useCase: body.useCase?.trim() || undefined,
-      timeline: body.timeline?.trim() || undefined,
-      message: body.message?.trim() || undefined,
+      hearAbout,
+      message,
+      consentTerms: true,
+      consentMarketing: body.consentMarketing === true,
+      phone: body.phone?.trim() || undefined,
       locale: body.locale?.trim() || undefined,
       source: body.source?.trim() || undefined,
     };
+    const fullName = `${firstName} ${lastName}`;
 
     // 1) Persist to Payload so submissions are counted in the CMS. Degrade
     //    gracefully: if the DB is unreachable we still email and succeed.
@@ -90,38 +124,25 @@ export async function POST(request: NextRequest) {
         from: "Pluscode Bookings <noreply@pluscode.io>",
         to: [toEmail],
         replyTo: email,
-        subject: `New booking: ${label} — ${name}`,
+        subject: `New booking: ${label} — ${fullName}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
             <h2 style="color:#0a1929;border-bottom:2px solid #2b5cff;padding-bottom:10px;">
               New ${esc(label)} request
             </h2>
             <div style="margin:16px 0;">
-              ${row("Name", name)}
+              ${row("Name", fullName)}
               ${row("Email", email)}
-              ${row("Company", data.company)}
-              ${row("Team size", data.teamSize)}
-              ${row("Preferred format", data.format)}
-              ${row("Timeline", data.timeline)}
+              ${row("Phone", data.phone)}
+              ${row("Heard about us via", HEAR_ABOUT_LABELS[hearAbout])}
               ${row("Language", data.locale)}
               ${row("Page", data.source)}
+              ${row("Marketing consent", data.consentMarketing ? "yes" : "no")}
             </div>
-            ${
-              data.useCase
-                ? `<div style="background:#f7f8fa;padding:16px;border-radius:8px;margin:16px 0;">
-                     <h3 style="color:#0a1929;margin:0 0 8px;">Use case</h3>
-                     <p style="white-space:pre-wrap;color:#333;margin:0;">${esc(data.useCase)}</p>
-                   </div>`
-                : ""
-            }
-            ${
-              data.message
-                ? `<div style="background:#f7f8fa;padding:16px;border-radius:8px;margin:16px 0;">
-                     <h3 style="color:#0a1929;margin:0 0 8px;">Message</h3>
-                     <p style="white-space:pre-wrap;color:#333;margin:0;">${esc(data.message)}</p>
-                   </div>`
-                : ""
-            }
+            <div style="background:#f7f8fa;padding:16px;border-radius:8px;margin:16px 0;">
+              <h3 style="color:#0a1929;margin:0 0 8px;">About the project</h3>
+              <p style="white-space:pre-wrap;color:#333;margin:0;">${esc(message)}</p>
+            </div>
             <p style="color:#888;font-size:12px;">Stored in CMS: ${stored ? "yes" : "no (DB unavailable, this email is the record)"}.</p>
           </div>`,
         });

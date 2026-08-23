@@ -1,13 +1,13 @@
 import type { ReactNode } from "react";
 import Footer from "./footer";
 import { Reveal } from "./motion";
-import BookingForm, { type BookingField } from "./booking-form";
+import LeadForm from "./lead-form";
 import LocaleLink from "./locale-link";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import type { Locale } from "@/lib/i18n/config";
 
 type BookingChrome = Dictionary["booking"];
-type FormDict = Dictionary["workshops"]["form"];
+type FormDict = Dictionary["form"];
 
 /** Compact "what you're booking" card, shown beside the form on offering pages. */
 export type BookingSummary = {
@@ -47,7 +47,6 @@ export function BookingScreen({
   title,
   intro,
   offering,
-  fields,
   submitLabel,
   source,
   summary,
@@ -62,7 +61,6 @@ export function BookingScreen({
   title: ReactNode;
   intro?: ReactNode;
   offering: string;
-  fields: BookingField[];
   submitLabel: string;
   source?: string;
   /** Optional "what you're booking" card (offering pages). */
@@ -115,10 +113,9 @@ export function BookingScreen({
           {/* Form + support column */}
           <div className="mt-14 grid items-start gap-10 lg:mt-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,380px)] lg:gap-16">
             <Reveal delay={0.1}>
-              <BookingForm
+              <LeadForm
                 t={form}
                 offering={offering}
-                fields={fields}
                 submitLabel={submitLabel}
                 source={source}
               />

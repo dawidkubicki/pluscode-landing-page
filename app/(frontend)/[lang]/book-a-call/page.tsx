@@ -32,14 +32,13 @@ export default async function BookACallPage({
   return (
     <BookingScreen
       locale={locale}
-      form={dict.workshops.form}
+      form={dict.form}
       booking={dict.booking}
       clients={dict.trust.clients}
       eyebrow={c.eyebrow}
       title={c.title}
       intro={c.subtitle}
       offering="general"
-      fields={["company", "useCase", "timeline", "message"]}
       submitLabel={c.submit}
       source="/book-a-call"
       back={{ href: "/", label: c.backLabel }}

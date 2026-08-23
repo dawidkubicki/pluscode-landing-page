@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BookingScreen } from "../../components/booking-screen";
-import { type BookingField } from "../../components/booking-form";
 import { isLocale, defaultLocale, locales, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 
@@ -18,13 +17,13 @@ type WorkshopPage = {
   form: { title: string; note: string; cta: string };
 };
 
-/** Extra fields to collect per offering (name + email are always shown). */
-const FIELDS: Record<string, BookingField[]> = {
-  "ai-opportunity-workshop": ["company", "teamSize", "format", "useCase", "message"],
-  "ai-discovery-sprint": ["company", "teamSize", "useCase", "timeline", "message"],
-  "genai-proof-of-concept": ["company", "useCase", "timeline", "message"],
-  "fractional-ai-team": ["company", "teamSize", "useCase", "timeline", "message"],
-};
+/** Bookable offerings. Must match the `offering` options the API accepts. */
+const SLUGS = [
+  "ai-opportunity-workshop",
+  "ai-discovery-sprint",
+  "genai-proof-of-concept",
+  "fractional-ai-team",
+] as const;
 
 const resolve = (lang: string): Locale => (isLocale(lang) ? lang : defaultLocale);
 
@@ -38,7 +37,7 @@ function getPage(locale: Locale, slug: string): WorkshopPage | null {
 
 export function generateStaticParams() {
   return locales.flatMap((lang) =>
-    Object.keys(FIELDS).map((slug) => ({ lang, slug })),
+    SLUGS.map((slug) => ({ lang, slug })),
   );
 }
 
@@ -61,8 +60,7 @@ export default async function WorkshopBookingPage({
   const { lang, slug } = await params;
   const locale = resolve(lang);
   const wp = getPage(locale, slug);
-  const fields = FIELDS[slug];
-  if (!wp || !fields) notFound();
+  if (!wp || !SLUGS.includes(slug as (typeof SLUGS)[number])) notFound();
 
   const dict = getDictionary(locale);
   const idx = dict.workshops.index;
@@ -70,14 +68,13 @@ export default async function WorkshopBookingPage({
   return (
     <BookingScreen
       locale={locale}
-      form={dict.workshops.form}
+      form={dict.form}
       booking={dict.booking}
       clients={dict.trust.clients}
       eyebrow={wp.eyebrow}
       title={wp.title}
       intro={wp.subtitle}
       offering={slug}
-      fields={fields}
       submitLabel={wp.form.cta}
       source={`/workshops/${slug}`}
       summary={{

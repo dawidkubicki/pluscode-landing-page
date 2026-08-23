@@ -340,30 +340,7 @@
       "email": "Email us at",
       "location": "Based in"
     },
-    "form": {
-      "name": "Your name",
-      "email": "Work email",
-      "company": "Company",
-      "message": "What would you like to explore?",
-      "submit": "Book my call",
-      "sending": "Sending...",
-      "privacyPrefix": "By submitting, you agree to our",
-      "privacyLink": "privacy policy",
-      "privacySuffix": "."
-    },
-    "validation": {
-      "nameRequired": "Name is required",
-      "nameMinLength": "Name must be at least 2 characters",
-      "emailRequired": "Email is required",
-      "emailInvalid": "Please enter a valid email address",
-      "messageRequired": "Message is required",
-      "messageMinLength": "Message must be at least 10 characters",
-      "captchaRequired": "Please complete the captcha verification"
-    },
-    "success": {
-      "title": "Message sent.",
-      "message": "We'll reply within one business day."
-    },
+    "submit": "Book my call",
     "formTitle": "Book a call"
   },
   "footer": {
@@ -1849,26 +1826,6 @@
       "faqTitle": "Questions, answered",
       "backToAll": "All workshops"
     },
-    "form": {
-      "name": "Your name",
-      "email": "Work email",
-      "company": "Company",
-      "teamSize": "Team size",
-      "format": "Preferred format",
-      "useCase": "What would you like to explore?",
-      "timeline": "Timeline",
-      "message": "Anything else?",
-      "sending": "Sending...",
-      "successTitle": "Request received.",
-      "successMessage": "We'll reply within one business day.",
-      "error": "Something went wrong. Please try again, or email contact@pluscode.io.",
-      "privacyPrefix": "By submitting, you agree to our",
-      "privacyLink": "privacy policy",
-      "privacySuffix": ".",
-      "errName": "Please enter your name",
-      "errEmail": "Please enter a valid email",
-      "errUseCase": "Tell us a little about what you need"
-    },
     "pages": {
       "ai-opportunity-workshop": {
         "eyebrow": "Workshop",
@@ -2206,6 +2163,37 @@
     "emailPrefix": "Or email",
     "trustTitle": "Trusted by",
     "summaryTitle": "What you're booking"
+  },
+  "form": {
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Business email",
+    "phone": "Phone number",
+    "hearAbout": "How did you hear about us?",
+    "hearAboutPlaceholder": "Select an option",
+    "hearAboutOptions": [
+      { "value": "search", "label": "Search engine" },
+      { "value": "recommendation", "label": "Recommendation or referral" },
+      { "value": "social", "label": "Social media" },
+      { "value": "event", "label": "Event or conference" },
+      { "value": "content", "label": "Blog, article, or newsletter" },
+      { "value": "other", "label": "Other" }
+    ],
+    "message": "Tell us more about your project",
+    "consentTermsPrefix": "I agree to the",
+    "consentTermsLink": "terms of use",
+    "consentTermsMiddle": "and the",
+    "consentPrivacyLink": "privacy policy",
+    "consentTermsSuffix": ".",
+    "consentMarketing": "I agree to receive email marketing communications from Pluscode.",
+    "consentDetailsLabel": "Click for the details",
+    "consentDetailsText": "We use your details only to send occasional updates about our AI work, and we never pass them to third parties. You can withdraw this consent at any time by emailing contact@pluscode.io or using the unsubscribe link in any message.",
+    "sending": "Sending...",
+    "successTitle": "Request received.",
+    "successMessage": "We'll reply within one business day.",
+    "error": "Something went wrong. Please try again, or email contact@pluscode.io.",
+    "errRequired": "Please complete this required field.",
+    "errEmail": "Please enter a valid email address."
   },
   "consultation": {
     "metaTitle": "Book a call",

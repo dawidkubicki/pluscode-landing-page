@@ -511,9 +511,10 @@ export interface UseCase {
  */
 export interface Booking {
   id: number;
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  company?: string | null;
+  phone?: string | null;
   /**
    * Which page the request came from.
    */
@@ -524,22 +525,12 @@ export interface Booking {
     | 'fractional-ai-team'
     | 'general';
   /**
-   * Preferred format, e.g. Remote / On-site / Either.
+   * How they found us.
    */
-  format?: string | null;
-  /**
-   * Team / company size.
-   */
-  teamSize?: string | null;
-  /**
-   * The use case or problem they want to explore.
-   */
-  useCase?: string | null;
-  /**
-   * Desired timeline.
-   */
-  timeline?: string | null;
-  message?: string | null;
+  hearAbout: 'search' | 'recommendation' | 'social' | 'event' | 'content' | 'other';
+  message: string;
+  consentTerms: boolean;
+  consentMarketing?: boolean | null;
   /**
    * Site language at submission.
    */
@@ -848,15 +839,15 @@ export interface UseCasesSelect<T extends boolean = true> {
  * via the `definition` "bookings_select".
  */
 export interface BookingsSelect<T extends boolean = true> {
-  name?: T;
+  firstName?: T;
+  lastName?: T;
   email?: T;
-  company?: T;
+  phone?: T;
   offering?: T;
-  format?: T;
-  teamSize?: T;
-  useCase?: T;
-  timeline?: T;
+  hearAbout?: T;
   message?: T;
+  consentTerms?: T;
+  consentMarketing?: T;
   locale?: T;
   source?: T;
   updatedAt?: T;

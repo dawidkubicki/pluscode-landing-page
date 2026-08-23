@@ -1,17 +1,20 @@
 import type { CollectionConfig } from "payload";
 
 /**
- * Form submissions from the "Book a workshop / sprint / PoC / team" pages and
- * the general contact form. Not localized (a submission is a single record).
- * Public create (so the site can submit), admin-only read so PII stays private.
- * The admin list makes it easy to see how many people signed up per offering.
+ * Form submissions from the "Book a workshop / sprint / PoC / team" pages, the
+ * /book-a-call page and the contact section — every lead form on the site posts
+ * the same shape here. Not localized (a submission is a single record). Public
+ * create (so the site can submit), admin-only read so PII stays private.
+ *
+ * `consentTerms` / `consentMarketing` are the record of what the visitor agreed
+ * to at submission time, so keep them alongside the contact details.
  */
 export const Bookings: CollectionConfig = {
   slug: "bookings",
   labels: { singular: "Booking", plural: "Bookings" },
   admin: {
-    useAsTitle: "name",
-    defaultColumns: ["name", "email", "offering", "company", "createdAt"],
+    useAsTitle: "email",
+    defaultColumns: ["firstName", "lastName", "email", "offering", "createdAt"],
     group: "Submissions",
     description:
       "Workshop / engagement booking requests and contact submissions.",
@@ -23,9 +26,10 @@ export const Bookings: CollectionConfig = {
     delete: ({ req }) => Boolean(req.user),
   },
   fields: [
-    { name: "name", type: "text", required: true },
+    { name: "firstName", type: "text", required: true },
+    { name: "lastName", type: "text", required: true },
     { name: "email", type: "email", required: true },
-    { name: "company", type: "text" },
+    { name: "phone", type: "text" },
     {
       name: "offering",
       type: "select",
@@ -41,18 +45,33 @@ export const Bookings: CollectionConfig = {
       admin: { description: "Which page the request came from." },
     },
     {
-      name: "format",
-      type: "text",
-      admin: { description: "Preferred format, e.g. Remote / On-site / Either." },
+      name: "hearAbout",
+      type: "select",
+      required: true,
+      options: [
+        { label: "Search engine", value: "search" },
+        { label: "Recommendation or referral", value: "recommendation" },
+        { label: "Social media", value: "social" },
+        { label: "Event or conference", value: "event" },
+        { label: "Blog, article, or newsletter", value: "content" },
+        { label: "Other", value: "other" },
+      ],
+      admin: { description: "How they found us." },
     },
-    { name: "teamSize", type: "text", admin: { description: "Team / company size." } },
+    { name: "message", type: "textarea", required: true },
     {
-      name: "useCase",
-      type: "textarea",
-      admin: { description: "The use case or problem they want to explore." },
+      name: "consentTerms",
+      type: "checkbox",
+      required: true,
+      label: "Accepted terms of use and privacy policy",
+      admin: { position: "sidebar" },
     },
-    { name: "timeline", type: "text", admin: { description: "Desired timeline." } },
-    { name: "message", type: "textarea" },
+    {
+      name: "consentMarketing",
+      type: "checkbox",
+      label: "Opted in to email marketing",
+      admin: { position: "sidebar" },
+    },
     {
       name: "locale",
       type: "text",

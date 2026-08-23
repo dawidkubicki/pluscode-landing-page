@@ -1,5 +1,5 @@
 import { Reveal } from "./motion";
-import ContactForm from "./contact-form";
+import LeadForm from "./lead-form";
 import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 
@@ -20,7 +20,8 @@ export default function Contact({
   locale: Locale;
   showIntro?: boolean;
 }) {
-  const t = getDictionary(locale).contact;
+  const dict = getDictionary(locale);
+  const t = dict.contact;
 
   return (
     <section id="contact" className="relative isolate overflow-hidden bg-night text-bone">
@@ -69,7 +70,13 @@ export default function Contact({
         </div>
 
         <Reveal delay={0.1}>
-          <ContactForm t={t} />
+          <LeadForm
+            t={dict.form}
+            offering="general"
+            submitLabel={t.submit}
+            source="/contact"
+            title={t.formTitle}
+          />
         </Reveal>
       </div>
     </section>
