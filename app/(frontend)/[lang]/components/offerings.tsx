@@ -29,7 +29,7 @@ const SLUGS = [
 /**
  * Productized engagements — the "how to buy" layer that turns a curious visitor
  * into a booked call. A de-risk ladder (workshop, sprint, PoC, embedded team)
- * on a dark surface; the featured card carries the cobalt accent.
+ * on a dark surface; the featured card carries the emerald accent.
  */
 export default function Offerings({ locale }: { locale: Locale }) {
   const t = getDictionary(locale).offerings;
@@ -39,7 +39,7 @@ export default function Offerings({ locale }: { locale: Locale }) {
       id="workshops"
       className="relative isolate scroll-mt-24 overflow-hidden bg-night text-bone"
     >
-      <div className="pointer-events-none absolute -left-40 top-20 -z-10 size-[34rem] rounded-full bg-[radial-gradient(circle,rgba(43,92,255,0.16)_0%,rgba(43,92,255,0)_65%)]" />
+      <div className="pointer-events-none absolute -left-40 top-20 -z-10 size-[34rem] rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.16)_0%,rgba(16,185,129,0)_65%)]" />
 
       <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.875rem]">
         <div className="max-w-[760px]">
@@ -66,12 +66,12 @@ export default function Offerings({ locale }: { locale: Locale }) {
               <div
                 className={`relative flex h-full flex-col rounded border p-7 transition-colors duration-300 sm:p-8 ${
                   item.featured
-                    ? "border-lime bg-night-soft shadow-[0_30px_60px_-30px_rgba(43,92,255,0.55)]"
+                    ? "border-lime bg-night-soft shadow-[0_30px_60px_-30px_rgba(16,185,129,0.55)]"
                     : "border-white/10 bg-night-soft/60 hover:border-white/25"
                 }`}
               >
                 {item.featured && (
-                  <span className="absolute -top-3 left-8 rounded-[2px] bg-lime px-3 py-1 font-mono text-[10.5px] font-semibold uppercase tracking-[0.12em] text-white">
+                  <span className="absolute -top-3 left-8 rounded-[2px] bg-lime px-3 py-1 font-mono text-[10.5px] font-semibold uppercase tracking-[0.12em] text-night">
                     {t.featuredLabel}
                   </span>
                 )}
@@ -115,8 +115,8 @@ export default function Offerings({ locale }: { locale: Locale }) {
                     href={`/workshops/${SLUGS[i]}`}
                     className={`group inline-flex w-full items-center justify-center gap-2.5 rounded-[2px] px-6 py-3.5 text-[15px] font-semibold transition-colors duration-300 ${
                       item.featured
-                        ? "bg-lime text-white hover:bg-lime-bright"
-                        : "border border-white/25 text-bone hover:border-lime hover:bg-lime hover:text-white"
+                        ? "bg-lime text-night hover:bg-lime-bright"
+                        : "border border-white/25 text-bone hover:border-lime hover:bg-lime hover:text-night"
                     }`}
                   >
                     {item.cta}

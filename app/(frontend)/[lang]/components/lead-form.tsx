@@ -149,7 +149,7 @@ export default function LeadForm({
   if (sent) {
     return (
       <div className="flex min-h-72 flex-col items-start justify-center rounded border border-white/10 bg-night-soft p-8 sm:p-10">
-        <span className="flex size-12 items-center justify-center rounded-full bg-lime text-white">
+        <span className="flex size-12 items-center justify-center rounded-full bg-lime text-night">
           <svg viewBox="0 0 24 24" className="size-6" fill="none" aria-hidden>
             <path d="m5 13 4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -357,7 +357,7 @@ export default function LeadForm({
         <button
           type="submit"
           disabled={submitting}
-          className="rounded-[2px] bg-lime p-4 text-[15.5px] font-semibold text-white transition-colors duration-300 hover:bg-lime-bright disabled:opacity-60"
+          className="rounded-[2px] bg-lime p-4 text-[15.5px] font-semibold text-night transition-colors duration-300 hover:bg-lime-bright disabled:opacity-60"
         >
           {submitting ? t.sending : submitLabel}
         </button>

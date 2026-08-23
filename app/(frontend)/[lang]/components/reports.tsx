@@ -5,7 +5,7 @@ import type { Locale } from "@/lib/i18n/config";
 import { getReports, type ReportCard } from "@/lib/reports";
 
 const ctaCls =
-  "inline-block rounded-[2px] border border-white/60 px-7 py-3.5 text-[15px] font-semibold text-bone transition-colors duration-300 hover:border-lime hover:bg-lime hover:text-white";
+  "inline-block rounded-[2px] border border-white/60 px-7 py-3.5 text-[15px] font-semibold text-bone transition-colors duration-300 hover:border-lime hover:bg-lime hover:text-night";
 
 const fallbackVisuals: VisualKind[] = ["aurora", "mesh", "nodes", "grid"];
 

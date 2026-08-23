@@ -40,7 +40,7 @@ export function PageHero({
         </>
       )}
       {grid && <div className="blueprint-grid absolute inset-0 -z-10" />}
-      <div className="absolute -right-44 -top-44 -z-10 size-[34rem] rounded-full bg-[radial-gradient(circle,rgba(43,92,255,0.2)_0%,rgba(43,92,255,0)_65%)]" />
+      <div className="absolute -right-44 -top-44 -z-10 size-[34rem] rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.2)_0%,rgba(16,185,129,0)_65%)]" />
 
       <div className="mx-auto max-w-[1240px] px-5 pb-16 pt-40 sm:px-10 sm:pb-20 sm:pt-[11rem]">
         <Reveal>
@@ -68,7 +68,7 @@ export function PageHero({
             <div className="mt-10">
               <LocaleLink
                 href={cta.href}
-                className="group inline-flex items-center gap-3 rounded-[2px] bg-lime px-[30px] py-4 text-[15.5px] font-semibold text-white transition-colors hover:bg-lime-bright"
+                className="group inline-flex items-center gap-3 rounded-[2px] bg-lime px-[30px] py-4 text-[15.5px] font-semibold text-night transition-colors hover:bg-lime-bright"
               >
                 {cta.label}
                 <Arrow className="size-[18px] transition-transform duration-300 group-hover:translate-x-1" />
@@ -81,7 +81,7 @@ export function PageHero({
   );
 }
 
-/** Closing cobalt call-to-action band pointing subpages back to /contact. */
+/** Closing emerald call-to-action band pointing subpages back to /contact. */
 export function CtaBand({
   locale,
   title,

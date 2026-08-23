@@ -83,8 +83,8 @@ type PillProps = {
 };
 
 const pillVariants: Record<NonNullable<PillProps["variant"]>, string> = {
-  lime: "bg-lime text-white hover:bg-lime-bright",
-  dark: "bg-night text-white hover:bg-lime",
+  lime: "bg-lime text-night hover:bg-lime-bright",
+  dark: "bg-night text-white hover:bg-lime hover:text-night",
   light: "bg-white text-ink hover:bg-night hover:text-white",
   outline:
     "border border-current/25 text-current hover:bg-current/5",

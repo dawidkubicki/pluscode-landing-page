@@ -73,7 +73,7 @@ export function BookingScreen({
   return (
     <main>
       <section className="relative isolate overflow-hidden bg-night text-bone">
-        <div className="pointer-events-none absolute -right-44 -top-44 -z-10 size-[34rem] rounded-full bg-[radial-gradient(circle,rgba(43,92,255,0.18)_0%,rgba(43,92,255,0)_65%)]" />
+        <div className="pointer-events-none absolute -right-44 -top-44 -z-10 size-[34rem] rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.18)_0%,rgba(16,185,129,0)_65%)]" />
 
         <div className="mx-auto max-w-[1240px] px-5 pb-20 pt-36 sm:px-10 sm:pb-28 sm:pt-40">
           {/* Header */}
@@ -160,7 +160,7 @@ export function BookingScreen({
                 {/* Point of contact */}
                 <div className="border-t border-white/10 pt-6">
                   <div className="flex items-center gap-3.5">
-                    <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-lime font-mono text-[13px] font-semibold text-white">
+                    <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-lime font-mono text-[13px] font-semibold text-night">
                       {initials(booking.contactName)}
                     </span>
                     <div>

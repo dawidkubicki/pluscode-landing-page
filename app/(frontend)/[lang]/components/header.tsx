@@ -110,7 +110,7 @@ function LocaleDropdown({
         aria-haspopup="menu"
         aria-expanded={open}
         aria-label={label}
-        className="flex items-center gap-1 px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.14em] text-bone-soft transition-colors hover:text-bone"
+        className="flex items-center gap-1 px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.14em] text-bone transition-colors hover:text-lime-soft"
       >
         {localeNames[active]}
         <svg viewBox="0 0 12 12" aria-hidden className={`size-2.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`} fill="none">
@@ -134,7 +134,7 @@ function LocaleDropdown({
               onClick={() => setOpen(false)}
               aria-current={isActive ? "true" : undefined}
               className={`block rounded-[2px] px-2.5 py-1 text-center font-mono text-[11px] uppercase tracking-[0.14em] transition-colors ${
-                isActive ? "bg-lime text-white" : "text-bone-soft hover:bg-white/5 hover:text-bone"
+                isActive ? "bg-lime text-night" : "text-bone-soft hover:bg-white/5 hover:text-bone"
               }`}
             >
               {localeNames[loc]}
@@ -235,7 +235,9 @@ export default function Header({
                     href={l.href}
                     onClick={close}
                     className={`text-[14.5px] font-medium transition-colors ${
-                      active ? "text-lime-soft" : "text-bone hover:text-lime-soft"
+                      active
+                        ? "text-bone underline decoration-lime-soft decoration-[1.5px] underline-offset-8"
+                        : "text-bone hover:text-lime-soft"
                     }`}
                   >
                     {l.label}
@@ -245,7 +247,11 @@ export default function Header({
               <LocaleLink
                 href="/book-a-call"
                 onClick={close}
-                className="rounded-[2px] bg-lime px-[22px] py-[11px] text-sm font-semibold text-white transition-colors hover:bg-lime-bright"
+                className={`rounded-[2px] border-[1.5px] px-[22px] py-[11px] text-sm font-semibold transition-colors ${
+                  scrolled || open
+                    ? "border-lime bg-lime text-night hover:border-lime-bright hover:bg-lime-bright"
+                    : "border-white/60 text-bone hover:border-lime hover:bg-lime hover:text-night"
+                }`}
               >
                 {nav.getInTouch}
               </LocaleLink>
@@ -332,7 +338,7 @@ export default function Header({
                   {/* Promo card */}
                   <motion.div variants={itemVariants}>
                     <div className="blueprint-grid relative isolate flex h-full min-h-64 flex-col justify-end overflow-hidden rounded border border-white/10 bg-night-soft p-8">
-                      <div className="pointer-events-none absolute -right-24 -top-24 -z-10 size-72 rounded-full bg-[radial-gradient(circle,rgba(43,92,255,0.25)_0%,rgba(43,92,255,0)_65%)]" />
+                      <div className="pointer-events-none absolute -right-24 -top-24 -z-10 size-72 rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.25)_0%,rgba(16,185,129,0)_65%)]" />
                       <p className="max-w-xs font-serif text-2xl font-medium leading-tight text-bone">
                         {nav.getInTouch}
                       </p>
@@ -364,7 +370,7 @@ export default function Header({
                             href={target}
                             onClick={close}
                             className={`rounded-[2px] px-2 py-1 font-mono text-[11px] uppercase tracking-[0.14em] transition-colors ${
-                              isActive ? "bg-lime text-white" : "text-bone-dim hover:text-bone"
+                              isActive ? "bg-lime text-night" : "text-bone-dim hover:text-bone"
                             }`}
                           >
                             {localeNames[loc]}

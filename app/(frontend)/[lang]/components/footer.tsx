@@ -91,7 +91,7 @@ export default function Footer({ locale }: { locale: Locale }) {
             </span>
             <LocaleLink
               href="/book-a-call"
-              className="mt-2 rounded-[2px] bg-lime px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-lime-bright"
+              className="mt-2 rounded-[2px] bg-lime px-6 py-3 text-sm font-semibold text-night transition-colors hover:bg-lime-bright"
             >
               {nav.getInTouch}
             </LocaleLink>

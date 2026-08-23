@@ -67,7 +67,7 @@ export default async function Insights({ locale }: { locale: Locale }) {
           <div className="mt-14 text-center">
             <LocaleLink
               href="/insights"
-              className="inline-block rounded-[2px] bg-white px-[34px] py-[15px] text-[15px] font-semibold text-ink transition-colors duration-300 hover:bg-lime hover:text-white"
+              className="inline-block rounded-[2px] bg-white px-[34px] py-[15px] text-[15px] font-semibold text-ink transition-colors duration-300 hover:bg-lime"
             >
               {t.viewAll}
             </LocaleLink>
