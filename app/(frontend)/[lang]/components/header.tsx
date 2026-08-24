@@ -21,12 +21,17 @@ const aiDataLinks = [
   { key: "aiConsulting", href: "/ai-data/consulting" },
 ] as const;
 
+// Engineering is split across two mega-menu columns so the panel fits a
+// laptop viewport without scrolling.
 const servicesLinks = [
   { key: "softwareDevelopment", href: "/services/software-development" },
   { key: "webDevelopment", href: "/services/web-development" },
   { key: "mobileApps", href: "/services/mobile" },
   { key: "mvpDevelopment", href: "/services/mvp-development" },
   { key: "apiDevelopment", href: "/services/api-development" },
+] as const;
+
+const platformLinks = [
   { key: "cloudSolutions", href: "/services/cloud" },
   { key: "teamExtension", href: "/services/team-extension" },
   { key: "technologies", href: "/services/technologies" },
@@ -205,6 +210,7 @@ export default function Header({
   }[] = [
     { title: nav.aiData, links: aiDataLinks, group: nav.aiDataItems },
     { title: nav.services, links: servicesLinks, group: nav.servicesItems },
+    { title: nav.platformTeam, links: platformLinks, group: nav.servicesItems },
   ];
 
   const companyLinks = [
@@ -315,14 +321,14 @@ export default function Header({
               data-lenis-prevent
               className="absolute inset-x-0 top-0 z-10 max-h-[92vh] overflow-y-auto overscroll-contain border-b border-white/10 bg-night text-bone shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] supports-[height:100dvh]:max-h-[88dvh]"
             >
-              <div className="mx-auto max-w-[1240px] px-5 pb-10 pt-28 sm:px-10">
+              <div className="mx-auto max-w-[1240px] px-5 pb-8 pt-24 sm:px-10">
                 <div className="grid gap-10 lg:grid-cols-[repeat(3,minmax(0,1fr))_1.25fr]">
                   {menuColumns.map((col) => (
                     <motion.div key={col.title} variants={itemVariants}>
-                      <h3 className="mb-6 font-serif text-2xl font-medium tracking-[-0.01em] text-bone">
+                      <h3 className="mb-4 font-serif text-2xl font-medium tracking-[-0.01em] text-bone">
                         {col.title}
                       </h3>
-                      <ul className="space-y-5">
+                      <ul className="space-y-3">
                         {col.links.map((link) => (
                           <li key={link.href}>
                             <LocaleLink href={link.href} onClick={close} className="group block">
@@ -339,11 +345,13 @@ export default function Header({
                     </motion.div>
                   ))}
 
+                  {/* Company links + a fixed-height promo card share the last
+                      column so no column outgrows the viewport. */}
                   <motion.div variants={itemVariants}>
-                    <h3 className="mb-6 font-serif text-2xl font-medium tracking-[-0.01em] text-bone">
+                    <h3 className="mb-4 font-serif text-2xl font-medium tracking-[-0.01em] text-bone">
                       {nav.about}
                     </h3>
-                    <ul className="space-y-4">
+                    <ul className="space-y-3">
                       {companyLinks.map((l) => (
                         <li key={l.href}>
                           <LocaleLink href={l.href} onClick={close} className="text-lg text-bone transition-colors hover:text-lime-soft">
@@ -352,11 +360,8 @@ export default function Header({
                         </li>
                       ))}
                     </ul>
-                  </motion.div>
 
-                  {/* Promo card */}
-                  <motion.div variants={itemVariants}>
-                    <div className="blueprint-grid relative isolate flex h-full min-h-64 flex-col justify-end overflow-hidden rounded border border-white/10 bg-night-soft p-8">
+                    <div className="blueprint-grid relative isolate mt-6 flex h-48 flex-col justify-end overflow-hidden rounded border border-white/10 bg-night-soft p-8">
                       <div className="pointer-events-none absolute -right-24 -top-24 -z-10 size-72 rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.25)_0%,rgba(16,185,129,0)_65%)]" />
                       <p className="max-w-xs font-serif text-2xl font-medium leading-tight text-bone">
                         {nav.getInTouch}
@@ -373,7 +378,7 @@ export default function Header({
                 {/* Bottom row */}
                 <motion.div
                   variants={itemVariants}
-                  className="mt-10 flex flex-col gap-6 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between"
+                  className="mt-6 flex flex-col gap-6 border-t border-white/10 pt-5 sm:flex-row sm:items-center sm:justify-between"
                 >
                   <span className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-bone-dim">
                     <Plus className="size-3" /> {nav.language}
