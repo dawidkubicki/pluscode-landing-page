@@ -17,8 +17,11 @@
     "migrate:create": "payload migrate:create",
     "migrate:status": "payload migrate:status",
     "generate:og": "node --import tsx scripts/generate-og.tsx",
+    "generate:covers": "node --import tsx scripts/generate-insight-covers.tsx",
     "seed": "node --env-file=.env --import tsx scripts/seed.ts",
-    "seed:prod": "node --import tsx scripts/seed.ts"
+    "seed:prod": "node --import tsx scripts/seed.ts",
+    "seed:insights": "node --env-file=.env --import tsx scripts/seed-insights.ts",
+    "seed:insights:prod": "node --import tsx scripts/seed-insights.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "3.85.0",
