@@ -16,6 +16,7 @@
     "migrate": "payload migrate",
     "migrate:create": "payload migrate:create",
     "migrate:status": "payload migrate:status",
+    "generate:og": "node --import tsx scripts/generate-og.tsx",
     "seed": "node --env-file=.env --import tsx scripts/seed.ts",
     "seed:prod": "node --import tsx scripts/seed.ts"
   },

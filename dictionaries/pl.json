@@ -1,4 +1,12 @@
 {
+  "meta": {
+    "title": "Pluscode | Software i rozwiązania AI",
+    "description": "Pluscode to software house i firma konsultingowa AI. Od innowacji opartych na AI po dedykowane aplikacje — dostarczamy oprogramowanie, które przynosi mierzalne efekty biznesowe.",
+    "ogTitle": "Pluscode | Konsulting AI, który dowozi realne produkty",
+    "ogDescription": "Nie prosimy o wiarę na słowo. Potwierdzamy AI na Twoich danych w kilka tygodni, a potem wdrażamy ją na produkcję.",
+    "ogImageAlt": "Pluscode — konsulting AI, który dowozi realne produkty",
+    "keywords": ["software house", "rozwiązania AI", "konsulting AI", "uczenie maszynowe", "chmura", "analityka danych", "Pluscode", "Poznań"]
+  },
   "announcement": {
     "text": "Nowość: Warsztaty AI Opportunity. Od pomysłu do planu z policzonym ROI w jednej sesji.",
     "linkText": "Umów warsztat",

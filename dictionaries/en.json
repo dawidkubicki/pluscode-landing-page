@@ -1,4 +1,12 @@
 {
+  "meta": {
+    "title": "Pluscode | Software Development & AI Solutions",
+    "description": "Pluscode is a software house and AI consultancy. From AI-driven innovation to custom applications, we deliver expert software development that drives measurable business impact.",
+    "ogTitle": "Pluscode | AI consulting that ships real products",
+    "ogDescription": "We don't ask for a leap of faith. We prove AI on your real data in weeks, then engineer it into production.",
+    "ogImageAlt": "Pluscode — AI consulting that ships real products",
+    "keywords": ["software development", "AI solutions", "AI consulting", "machine learning", "cloud", "data analytics", "Pluscode", "Poznań"]
+  },
   "announcement": {
     "text": "New: AI Opportunity Workshops. From use case to an ROI-backed plan in one session.",
     "linkText": "Book a workshop",
