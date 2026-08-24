@@ -43,6 +43,35 @@ export async function findDocs<T = unknown>(
   }
 }
 
+/**
+ * Reads a Payload global, degrading gracefully.
+ *
+ * Returns `null` (rather than throwing) when Payload/the database is
+ * unreachable or the global's table doesn't exist yet, so sections can fall
+ * back to static content and keep rendering before the CMS is provisioned.
+ */
+export async function findGlobal<T = unknown>(
+  slug: string,
+  options: { depth?: number; locale?: Locale } = {},
+): Promise<T | null> {
+  try {
+    const payload = await getPayloadClient();
+    const result = await payload.findGlobal({
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      slug: slug as any,
+      depth: options.depth ?? 1,
+      locale: options.locale,
+    });
+    return result as T;
+  } catch (err) {
+    console.warn(
+      `[cms] could not load global "${slug}":`,
+      err instanceof Error ? err.message : err,
+    );
+    return null;
+  }
+}
+
 /** Convenience wrapper for fetching a single doc by an exact field match. */
 export async function findOne<T = unknown>(
   collection: string,

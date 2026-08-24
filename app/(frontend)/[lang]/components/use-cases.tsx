@@ -3,8 +3,7 @@ import { Reveal, Stagger, StaggerItem } from "./motion";
 import { Visual, type VisualKind } from "./visual";
 import LocaleLink from "./locale-link";
 import type { Locale } from "@/lib/i18n/config";
-import { getDictionary } from "@/lib/i18n/dictionaries";
-import { getUseCases, type UseCaseCard } from "@/lib/use-cases";
+import { getUseCases, getUseCasesSection, type UseCaseCard } from "@/lib/use-cases";
 
 /** Placeholder art shown until real imagery is uploaded in Payload. */
 const fallbackVisuals: VisualKind[] = ["mesh", "nodes", "aurora", "grid", "portrait"];
@@ -69,8 +68,10 @@ function Card({
 }
 
 export default async function UseCases({ locale }: { locale: Locale }) {
-  const t = getDictionary(locale).useCases;
-  const cases = await getUseCases(locale, 5);
+  const [t, cases] = await Promise.all([
+    getUseCasesSection(locale),
+    getUseCases(locale, 5),
+  ]);
   if (cases.length === 0) return null;
 
   const [featured, ...rest] = cases;

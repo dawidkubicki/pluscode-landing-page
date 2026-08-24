@@ -1,7 +1,32 @@
-import { findDocs } from "./cms";
+import { findDocs, findGlobal } from "./cms";
 import type { Locale } from "./i18n/config";
 import { getDictionary } from "./i18n/dictionaries";
 import { img, type Img } from "./team";
+
+export type UseCasesSectionContent = {
+  label: string;
+  title: string;
+};
+
+/**
+ * Heading copy for the use-cases section, merging the `useCasesSection` CMS
+ * global over the dictionary per field: a filled-in value wins, an empty one
+ * keeps the static default. Degrades fully to the dictionary when the CMS is
+ * unreachable.
+ */
+export async function getUseCasesSection(
+  locale: Locale,
+): Promise<UseCasesSectionContent> {
+  const t = getDictionary(locale).useCases;
+  const g = await findGlobal<{ label?: string | null; title?: string | null }>(
+    "useCasesSection",
+    { locale },
+  );
+  return {
+    label: g?.label || t.label,
+    title: g?.title || t.title,
+  };
+}
 
 export type UseCaseCard = {
   id: string;

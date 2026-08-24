@@ -103,8 +103,12 @@ export interface Config {
     defaultIDType: number;
   };
   fallbackLocale: ('false' | 'none' | 'null') | false | null | ('en' | 'pl' | 'de') | ('en' | 'pl' | 'de')[];
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    useCasesSection: UseCasesSection;
+  };
+  globalsSelect: {
+    useCasesSection: UseCasesSectionSelect<false> | UseCasesSectionSelect<true>;
+  };
   locale: 'en' | 'pl' | 'de';
   widgets: {
     collections: CollectionsWidget;
@@ -934,6 +938,34 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "useCasesSection".
+ */
+export interface UseCasesSection {
+  id: number;
+  /**
+   * Small eyebrow above the title, e.g. "Zastosowane AI, na produkcji".
+   */
+  label?: string | null;
+  /**
+   * Section heading, e.g. "Ambicja w działaniu".
+   */
+  title?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "useCasesSection_select".
+ */
+export interface UseCasesSectionSelect<T extends boolean = true> {
+  label?: T;
+  title?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
