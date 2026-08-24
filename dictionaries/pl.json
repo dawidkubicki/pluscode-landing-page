@@ -134,7 +134,7 @@
     "label": "Formy współpracy",
     "title": "Zacznij od warsztatu, rozwiń w system",
     "subtitle": "Jasny zakres, harmonogram i rezultat. Stała cena, bez niespodzianek. Zacznij mały, potwierdź wartość, skaluj to, co działa.",
-    "note": "Każda współpraca zaczyna się od bezpłatnej 30-minutowej rozmowy. Rozmawiasz z doświadczonym inżynierem, nie z handlowcem.",
+    "note": "Każda współpraca zaczyna się od bezpłatnej 30-minutowej rozmowy.",
     "forLabel": "Dla kogo",
     "deliverablesLabel": "Wychodzisz z",
     "featuredLabel": "Najczęściej wybierane",
@@ -2602,9 +2602,11 @@
         }
       },
       "cta": {
-        "title": "Chcesz dołączyć do naszego zespołu?",
-        "subtitle": "Zawsze szukamy utalentowanych ludzi, którzy podzielają naszą pasję do świetnego oprogramowania.",
-        "button": "Skontaktuj się"
+        "titleStart": "Chcesz dołączyć do ",
+        "titleEm": "naszego zespołu",
+        "titleEnd": "?",
+        "text": "Zawsze szukamy utalentowanych ludzi, którzy podzielają naszą pasję do świetnego oprogramowania.",
+        "cta": "Skontaktuj się"
       }
     },
     "caseStudies": {

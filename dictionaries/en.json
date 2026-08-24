@@ -2602,9 +2602,11 @@
         }
       },
       "cta": {
-        "title": "Want to join our team?",
-        "subtitle": "We're always looking for talented people who share our passion for great software.",
-        "button": "Get in touch"
+        "titleStart": "Want to join ",
+        "titleEm": "our team",
+        "titleEnd": "?",
+        "text": "We're always looking for talented people who share our passion for great software.",
+        "cta": "Get in touch"
       }
     },
     "caseStudies": {

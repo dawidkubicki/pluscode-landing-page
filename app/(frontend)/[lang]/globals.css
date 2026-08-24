@@ -86,6 +86,12 @@
     font-family: var(--font-sans);
   }
 
+  /* Tailwind v4 preflight leaves buttons with the default cursor */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
   ::selection {
     background-color: var(--color-lime);
     color: #fff;

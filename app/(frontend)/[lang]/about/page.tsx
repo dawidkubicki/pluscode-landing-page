@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { PageHero, CtaBand } from "../components/page-hero";
+import { PageHero } from "../components/page-hero";
+import Banner from "../components/banner";
 import Stats from "../components/stats";
 import Footer from "../components/footer";
 import { Reveal, Stagger, StaggerItem } from "../components/motion";
@@ -56,7 +57,7 @@ export default async function AboutPage({
         title={t.title}
         intro={t.subtitle}
         visual="aurora"
-        cta={{ label: t.cta.button, href: "/contact" }}
+        cta={{ label: t.cta.cta, href: "/contact" }}
       />
 
       {/* Story */}
@@ -179,12 +180,7 @@ export default async function AboutPage({
         </div>
       </section>
 
-      <CtaBand
-        locale={locale}
-        title={t.cta.title}
-        text={t.cta.subtitle}
-        cta={{ label: t.cta.button, href: "/contact" }}
-      />
+      <Banner dict={t.cta} />
       <Footer locale={locale} />
     </main>
   );

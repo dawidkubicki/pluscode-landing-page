@@ -2602,9 +2602,11 @@
         }
       },
       "cta": {
-        "title": "Lust, Teil unseres Teams zu werden?",
-        "subtitle": "Wir suchen immer talentierte Menschen, die unsere Leidenschaft für gute Software teilen.",
-        "button": "Kontakt aufnehmen"
+        "titleStart": "Lust, Teil ",
+        "titleEm": "unseres Teams",
+        "titleEnd": " zu werden?",
+        "text": "Wir suchen immer talentierte Menschen, die unsere Leidenschaft für gute Software teilen.",
+        "cta": "Kontakt aufnehmen"
       }
     },
     "caseStudies": {

@@ -188,6 +188,7 @@ export default function GradientCanvas({ className }: { className?: string }) {
     let lastFrameAt: number | null = null;
     let inView = true;
     let contextLost = false;
+    let wantRestore = false;
     let disposed = false;
 
     const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -318,14 +319,28 @@ export default function GradientCanvas({ className }: { className?: string }) {
       if (reducedMotion && !contextLost && program) draw(STATIC_TIME);
     };
 
-    if (!build()) {
+    // A remount can reuse a canvas whose context a previous cleanup lost
+    // (React StrictMode does exactly this): getContext() then returns the
+    // same, still-lost context and every GL call is a silent no-op, leaving
+    // an opaque white canvas over the hero. Detect that and drive a restore;
+    // onContextRestored rebuilds the pipeline once the browser re-enables it.
+    if (gl.isContextLost()) {
+      contextLost = true;
+      wantRestore = true;
+      setTimeout(() => {
+        if (!disposed && wantRestore && gl.isContextLost()) {
+          wantRestore = false;
+          gl.getExtension("WEBGL_lose_context")?.restoreContext();
+        }
+      }, 50);
+    } else if (build()) {
+      resize();
+      draw(reducedMotion ? STATIC_TIME : 0);
+    } else {
       destroyProgram();
       gl.getExtension("WEBGL_lose_context")?.loseContext();
       return;
     }
-
-    resize();
-    draw(reducedMotion ? STATIC_TIME : 0);
 
     const resizeObserver = new ResizeObserver(() => {
       resize();
@@ -367,6 +382,18 @@ export default function GradientCanvas({ className }: { className?: string }) {
       buffer = null;
       uTime = null;
       uResolution = null;
+      // If we are waiting to recover from a loss inherited at mount, the
+      // event has now been delivered (and defaulted-prevented), so a restore
+      // request is legal from this point.
+      if (wantRestore) {
+        wantRestore = false;
+        // Restore must be requested outside the contextlost handler.
+        setTimeout(() => {
+          if (!disposed && gl.isContextLost()) {
+            gl.getExtension("WEBGL_lose_context")?.restoreContext();
+          }
+        }, 0);
+      }
     };
     const onContextRestored = () => {
       contextLost = false;
@@ -393,7 +420,9 @@ export default function GradientCanvas({ className }: { className?: string }) {
       canvas.removeEventListener("webglcontextlost", onContextLost);
       canvas.removeEventListener("webglcontextrestored", onContextRestored);
       if (!gl.isContextLost()) destroyProgram();
-      gl.getExtension("WEBGL_lose_context")?.loseContext();
+      // Deliberately no loseContext() here: the same canvas (and context
+      // object) can be handed to a next mount, which would then be stuck on a
+      // dead context. The browser reclaims it with the canvas element.
     };
   }, []);
 
