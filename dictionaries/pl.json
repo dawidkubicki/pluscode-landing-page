@@ -403,6 +403,10 @@
     "learnMore": "Dowiedz się więcej"
   },
   "pages": {
+    "announcements": {
+      "eyebrow": "Ogłoszenie",
+      "back": "Wróć na stronę główną"
+    },
     "services": {
       "index": {
         "metaTitle": "Usługi",

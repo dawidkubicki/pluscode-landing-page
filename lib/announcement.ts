@@ -1,4 +1,4 @@
-import { findDocs } from "./cms";
+import { findDocs, findOne } from "./cms";
 import type { Locale } from "./i18n/config";
 
 export type Announcement = {
@@ -34,5 +34,39 @@ export async function getActiveAnnouncement(
     text: doc.text,
     linkText: doc.linkText ?? null,
     linkUrl: doc.linkUrl ?? null,
+  };
+}
+
+export type AnnouncementPage = {
+  /** Page heading: the dedicated title, or the banner message. */
+  title: string;
+  /** The banner message, used as the meta description. */
+  bannerText: string;
+  body: unknown | null;
+  publishedAt: string | null;
+};
+
+type AnnouncementPageDoc = AnnouncementDoc & {
+  pageTitle?: string | null;
+  body?: unknown;
+  publishedAt?: string | null;
+};
+
+/**
+ * One announcement's own page ("/announcements/<slug>"), or null when no
+ * announcement carries that slug. Kept independent of `isActive` so the
+ * permalink outlives the banner.
+ */
+export async function getAnnouncementPage(
+  slug: string,
+  locale: Locale,
+): Promise<AnnouncementPage | null> {
+  const doc = await findOne<AnnouncementPageDoc>("announcements", "slug", slug, locale);
+  if (!doc || !doc.text) return null;
+  return {
+    title: doc.pageTitle || doc.text,
+    bannerText: doc.text,
+    body: doc.body ?? null,
+    publishedAt: doc.publishedAt ?? null,
   };
 }

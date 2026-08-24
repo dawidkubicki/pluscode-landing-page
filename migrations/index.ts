@@ -6,6 +6,8 @@ import * as migration_20260823_110000_add_de_locale from './20260823_110000_add_
 import * as migration_20260823_184017_add_trust_logos from './20260823_184017_add_trust_logos';
 import * as migration_20260824_120000_use_cases_section from './20260824_120000_use_cases_section';
 import * as migration_20260824_121000_seed_home_use_cases from './20260824_121000_seed_home_use_cases';
+import * as migration_20260824_130000_announcement_pages from './20260824_130000_announcement_pages';
+import * as migration_20260824_131000_seed_startup_consultations_announcement from './20260824_131000_seed_startup_consultations_announcement';
 
 export const migrations = [
   {
@@ -47,5 +49,15 @@ export const migrations = [
     up: migration_20260824_121000_seed_home_use_cases.up,
     down: migration_20260824_121000_seed_home_use_cases.down,
     name: '20260824_121000_seed_home_use_cases',
+  },
+  {
+    up: migration_20260824_130000_announcement_pages.up,
+    down: migration_20260824_130000_announcement_pages.down,
+    name: '20260824_130000_announcement_pages',
+  },
+  {
+    up: migration_20260824_131000_seed_startup_consultations_announcement.up,
+    down: migration_20260824_131000_seed_startup_consultations_announcement.down,
+    name: '20260824_131000_seed_startup_consultations_announcement',
   },
 ];

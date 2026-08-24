@@ -378,7 +378,7 @@ export interface Insight {
   _status?: ('draft' | 'published') | null;
 }
 /**
- * The top banner. The most recently updated active announcement is shown.
+ * The top banner. The most recently updated active announcement is shown. An announcement with a slug also gets its own page at "/announcements/<slug>".
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "announcements".
@@ -401,6 +401,33 @@ export interface Announcement {
    * Optional link, e.g. "/contact".
    */
   linkUrl?: string | null;
+  /**
+   * Heading of the announcement's own page. Falls back to the banner message.
+   */
+  pageTitle?: string | null;
+  /**
+   * Full content of the announcement page at "/announcements/<slug>".
+   */
+  body?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * URL of the announcement page, e.g. "free-ai-consultations-for-startups". Leave empty for banner-only announcements.
+   */
+  slug?: string | null;
+  publishedAt?: string | null;
   /**
    * Only active announcements can be shown.
    */
@@ -817,6 +844,10 @@ export interface AnnouncementsSelect<T extends boolean = true> {
   text?: T;
   linkText?: T;
   linkUrl?: T;
+  pageTitle?: T;
+  body?: T;
+  slug?: T;
+  publishedAt?: T;
   isActive?: T;
   updatedAt?: T;
   createdAt?: T;

@@ -403,6 +403,10 @@
     "learnMore": "Learn more"
   },
   "pages": {
+    "announcements": {
+      "eyebrow": "Announcement",
+      "back": "Back to home"
+    },
     "services": {
       "index": {
         "metaTitle": "Services",
