@@ -22,10 +22,14 @@ const aiDataLinks = [
 ] as const;
 
 const servicesLinks = [
+  { key: "softwareDevelopment", href: "/services/software-development" },
   { key: "webDevelopment", href: "/services/web-development" },
   { key: "mobileApps", href: "/services/mobile" },
+  { key: "mvpDevelopment", href: "/services/mvp-development" },
+  { key: "apiDevelopment", href: "/services/api-development" },
   { key: "cloudSolutions", href: "/services/cloud" },
   { key: "teamExtension", href: "/services/team-extension" },
+  { key: "technologies", href: "/services/technologies" },
 ] as const;
 
 const socials = [

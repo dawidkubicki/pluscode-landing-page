@@ -5,7 +5,16 @@
     "ogTitle": "Pluscode | Konsulting AI, który dowozi realne produkty",
     "ogDescription": "Nie prosimy o wiarę na słowo. Potwierdzamy AI na Twoich danych w kilka tygodni, a potem wdrażamy ją na produkcję.",
     "ogImageAlt": "Pluscode: konsulting AI, który dowozi realne produkty",
-    "keywords": ["software house", "rozwiązania AI", "konsulting AI", "uczenie maszynowe", "chmura", "analityka danych", "Pluscode", "Poznań"]
+    "keywords": [
+      "software house",
+      "rozwiązania AI",
+      "konsulting AI",
+      "uczenie maszynowe",
+      "chmura",
+      "analityka danych",
+      "Pluscode",
+      "Poznań"
+    ]
   },
   "announcement": {
     "text": "Nowość: Warsztaty AI Opportunity. Od pomysłu do planu z policzonym ROI w jednej sesji.",
@@ -51,6 +60,22 @@
       "teamExtension": {
         "title": "Rozszerzenie zespołu",
         "description": "Doświadczeni inżynierowie w Twoim zespole"
+      },
+      "softwareDevelopment": {
+        "title": "Tworzenie Oprogramowania",
+        "description": "Dedykowane systemy budowane od A do Z"
+      },
+      "mvpDevelopment": {
+        "title": "Budowa MVP",
+        "description": "Od pomysłu do wdrożonego produktu w kilka tygodni"
+      },
+      "apiDevelopment": {
+        "title": "Rozwój API",
+        "description": "Integracje i backendy, które skalują się z biznesem"
+      },
+      "technologies": {
+        "title": "Technologie",
+        "description": "Stack, w którym budujemy i wdrażamy"
       }
     }
   },
@@ -2365,113 +2390,391 @@
         }
       },
       "webDevelopment": {
-        "label": "Usługi",
-        "title": "Tworzenie Aplikacji Webowych",
-        "subtitle": "Buduj potężne, skalowalne aplikacje webowe, które dostarczają wyjątkowe doświadczenia użytkownika i napędzają wzrost biznesowy.",
-        "breadcrumb": "Aplikacje Webowe",
+        "label": "Inżynieria",
+        "title": "Tworzenie Stron",
+        "subtitle": "Aplikacje internetowe w Next.js i React, budowane przez doświadczonych inżynierów: szybkie, dostępne, gotowe pod SEO i zaprojektowane tak, by udźwignąć funkcje AI na produkcji.",
+        "breadcrumb": "Tworzenie Stron",
+        "featuresTitle": "Co budujemy",
+        "featuresIntro": "Jeden zespół inżynierski od architektury po wdrożenie. Każdą decyzję mierzymy szybkością działania, kosztem utrzymania i tym, czego wymaga kolejny etap Twojej roadmapy.",
         "features": {
           "frontend": {
-            "title": "Rozwój Frontend",
-            "description": "Nowoczesne, responsywne interfejsy zbudowane z React, Next.js i najnowocześniejszych technologii."
+            "title": "Nowoczesne frontendy aplikacji",
+            "description": "Interfejsy produktowe w Next.js i React, a tam, gdzie wymaga tego Twój stack, w Vue lub Angularze. Komponentowe, w pełni typowane i gotowe na kolejne funkcje, nie tylko na premierę."
           },
-          "backend": {
-            "title": "Rozwój Backend",
-            "description": "Solidne rozwiązania serwerowe z Node.js, Python i architekturami cloud-native."
-          },
-          "ecommerce": {
-            "title": "Rozwiązania E-Commerce",
-            "description": "Sklepy online o wysokiej konwersji z płynnym procesem płatności."
-          },
-          "cms": {
-            "title": "Rozwój CMS",
-            "description": "Niestandardowe systemy zarządzania treścią umożliwiające zespołowi zarządzanie contentem."
-          },
-          "api": {
-            "title": "Rozwój API",
-            "description": "API RESTful i GraphQL zasilające Twoje aplikacje i integracje."
+          "architecture": {
+            "title": "Architektura gotowa pod SEO",
+            "description": "Renderowanie po stronie serwera, czysty semantyczny kod, dane strukturalne i szybkie odpowiedzi, wbudowane od pierwszego commita. Produkt pozycjonuje się dzięki architekturze, a nie wbrew niej."
           },
           "performance": {
-            "title": "Optymalizacja Wydajności",
-            "description": "Szybko ładujące się aplikacje zoptymalizowane pod Core Web Vitals i SEO."
+            "title": "Wydajność i Core Web Vitals",
+            "description": "Budżety wydajności ustalamy na starcie i egzekwujemy w CI. Zielone Core Web Vitals to warunek wydania wersji, a nie porządki po premierze."
+          },
+          "accessibility": {
+            "title": "Dostępność w standardzie",
+            "description": "Budujemy zgodnie z WCAG 2.2 AA: obsługa klawiatury, wsparcie czytników ekranu, właściwe kontrasty i zarządzanie fokusem. Testowane na prawdziwych technologiach asystujących, nie tylko automatem."
+          },
+          "cms": {
+            "title": "Headless CMS i composable commerce",
+            "description": "Treści i sprzedaż na architekturze composable: Payload, Sanity albo platforma, której już używasz. Twój zespół edytuje treści i produkty bez zgłoszenia do działu IT."
+          },
+          "ai": {
+            "title": "Funkcje AI w produktach webowych",
+            "description": "Wyszukiwarka rozumiejąca intencję, asystenci osadzeni w Twoich treściach, personalizacja szanująca Twoje dane. Wdrażamy AI tam, gdzie mierzalnie poprawia produkt, z ewaluacją i kontrolą kosztów od początku."
           }
         },
+        "processTitle": "Jak przebiega projekt",
         "process": {
           "discovery": {
-            "title": "Discovery",
-            "description": "Zrozum wymagania, użytkowników i cele biznesowe."
+            "title": "Discovery i zakres",
+            "description": "Mapujemy użytkowników, procesy i integracje, po czym tniemy zakres do wydania, które udowodni wartość produktu. Dostajesz konkretny plan z architekturą, harmonogramem i kosztem, zanim powstanie kod."
           },
           "design": {
-            "title": "Projektowanie",
-            "description": "Twórz intuicyjne interfejsy z nowoczesnymi zasadami UX/UI."
+            "title": "Architektura i design system",
+            "description": "Ustalamy stack, model danych i środowisko wdrożenia oraz budujemy design system, dzięki któremu każdy kolejny ekran powstaje taniej. Decyzje są spisane i przeglądane razem z Twoim zespołem."
           },
-          "development": {
-            "title": "Rozwój",
-            "description": "Buduj z czystym kodem, najlepszymi praktykami i rygorystycznymi testami."
+          "build": {
+            "title": "Iteracyjne dostarczanie",
+            "description": "Działające oprogramowanie co tydzień na środowisku staging, które możesz przeklikać. Testy automatyczne, code review i CI przy każdej zmianie; priorytety korygujemy z wydania na wydanie, bez renegocjacji umowy."
           },
           "launch": {
-            "title": "Uruchomienie i Wsparcie",
-            "description": "Wdrażaj z pewnością i zapewnij bieżące utrzymanie."
+            "title": "Wdrożenie i utrzymanie",
+            "description": "Utwardzamy system, przeprowadzamy testy obciążeniowe i wdrażamy, a potem utrzymujemy produkt z monitoringiem, śledzeniem błędów i jasną ścieżką reakcji. Przekazanie Twojemu zespołowi w dowolnym momencie, z dokumentacją, która naprawdę działa."
           }
         },
+        "stats": [
+          {
+            "value": "90+",
+            "label": "wynik Lighthouse jako warunek wydania, weryfikowany w CI"
+          },
+          {
+            "value": "2-4",
+            "label": "tygodnie od startu do klikalnej wersji na stagingu"
+          },
+          {
+            "value": "100%",
+            "label": "doświadczonych inżynierów, bez juniorów w Twoim projekcie"
+          },
+          {
+            "value": "AA",
+            "label": "poziom WCAG 2.2, do którego budujemy domyślnie"
+          }
+        ],
+        "deliverablesTitle": "Z czym wychodzisz",
+        "deliverablesIntro": "Wszystko należy do Ciebie: kod, pipeline'y, dokumentacja. Żadnego uzależnienia od nas ani od narzędzi, których nie wybrał Twój zespół.",
+        "deliverables": [
+          {
+            "title": "Produkcyjny kod, którego jesteś właścicielem",
+            "description": "Typowany, przetestowany kod po code review, w Twoim repozytorium od pierwszego dnia, z pełną historią zmian i bez haczyków licencyjnych."
+          },
+          {
+            "title": "Design system i biblioteka komponentów",
+            "description": "Udokumentowane komponenty wielokrotnego użytku, dzięki którym nowe ekrany powstają szybciej, a produkt pozostaje spójny w miarę rozwoju."
+          },
+          {
+            "title": "Pipeline'y CI/CD i środowiska",
+            "description": "Automatyczne testy, wdrożenia preview i wydania jednym kliknięciem na staging i produkcję, odtwarzalne wprost z repozytorium."
+          },
+          {
+            "title": "Raport wydajności i dostępności",
+            "description": "Zmierzone Core Web Vitals, wyniki testów obciążeniowych i audyt WCAG na premierę, plus budżety wpięte w CI, które pilnują, żeby nic się nie cofnęło."
+          },
+          {
+            "title": "Runbook i dokumentacja przekazania",
+            "description": "Decyzje architektoniczne, procedury operacyjne i materiały onboardingowe, dzięki którym Twój zespół rozwija produkt bez nas."
+          }
+        ],
+        "modelsTitle": "Trzy modele współpracy",
+        "modelsIntro": "Stały zakres tam, gdzie da się go ustalić, stały zespół tam, gdzie wymaga tego roadmapa. Każdy model zaczyna się od bezpłatnej 30-minutowej rozmowy.",
+        "models": [
+          {
+            "name": "Budowa produktu",
+            "duration": "6-12 tygodni · stały zakres",
+            "description": "Nowa aplikacja internetowa albo pełna migracja platformy, poprowadzona od zakresu po produkcję przez jeden doświadczony zespół. Właściwy wybór, gdy potrzebujesz działającego produktu, a nie proof of concept.",
+            "bullets": [
+              "Zakres, harmonogram i cena ustalone z góry",
+              "Architektura, design system i delivery w rękach jednego zespołu",
+              "Cotygodniowe wydania na staging do Twojej oceny",
+              "Wsparcie przy premierze i uporządkowane przekazanie"
+            ]
+          },
+          {
+            "name": "Dedykowany zespół webowy",
+            "duration": "Miesięcznie · ciągła współpraca",
+            "description": "Doświadczeni inżynierowie osadzeni w Twojej roadmapie, dostarczający ramię w ramię z Twoim zespołem, miesiąc po miesiącu. Zespół skalujesz w górę lub w dół razem z planami.",
+            "bullets": [
+              "Od 2 do 5 senior inżynierów dobranych do Twojego stacku",
+              "Twój proces i narzędzia albo nasze, jeśli wolisz",
+              "Comiesięczne planowanie pod priorytety produktu",
+              "Zmiana wielkości zespołu lub zakończenie z 30-dniowym wyprzedzeniem"
+            ]
+          },
+          {
+            "name": "Audyt wydajności i frontendu",
+            "duration": "2-3 tygodnie · stała cena",
+            "description": "Audyt istniejącej aplikacji o ustalonym zakresie: Core Web Vitals, architektura SEO, dostępność i jakość kodu, zakończony priorytetową listą poprawek. Wdrażamy je my albo przekazujemy listę Twojemu zespołowi.",
+            "bullets": [
+              "Dane polowe i laboratoryjne, nie tylko wyniki Lighthouse",
+              "Przegląd SEO, dostępności i zależności",
+              "Priorytetowa lista poprawek z szacunkiem nakładu pracy",
+              "Opcjonalny sprint naprawczy ze zmierzonym przed i po"
+            ]
+          }
+        ],
+        "toolsTitle": "Stack, w którym pracujemy",
+        "tools": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Node.js",
+          "Vue",
+          "Angular",
+          "Tailwind CSS",
+          "Payload CMS",
+          "Sanity",
+          "PostgreSQL",
+          "Playwright",
+          "Vercel"
+        ],
+        "whoTitle": "Dla kogo to jest",
+        "who": [
+          {
+            "title": "Founderzy budujący pierwszy produkt",
+            "description": "Potrzebujesz MVP, które przetrwa prawdziwych użytkowników i kolejną rundę finansowania. Budujemy wersję, która udowodni biznes, na fundamentach, których nie trzeba będzie wyrzucać."
+          },
+          {
+            "title": "Zespoły produktowe wymieniające legacy frontend",
+            "description": "Stary stack spowalnia każde wydanie i nikt nie chce go dotykać. Migrujemy przyrostowo, więc biznes działa dalej, podczas gdy frontend powstaje na nowo."
+          },
+          {
+            "title": "Liderzy marketingu i e-commerce",
+            "description": "Twoja strona to witryna sklepu, a jest wolna, trudna w edycji albo niewidoczna w wyszukiwarce. Przebudowujemy ją na stacku headless i pokazujemy różnicę w liczbach."
+          },
+          {
+            "title": "Zespoły dodające AI do istniejącego produktu",
+            "description": "Masz produkt i użytkowników; potrzebujesz funkcji AI, które udźwigną produkcję. Integrujemy je z Twoim istniejącym kodem, z ewaluacją i kontrolą kosztów od pierwszego dnia."
+          }
+        ],
+        "faqTitle": "Pytania i odpowiedzi",
+        "faq": [
+          {
+            "q": "Czy budujecie tylko w Next.js?",
+            "a": "To nasz domyślny wybór, bo na niego zasłużył: renderowanie serwerowe, routing i narzędzia wydajnościowe w jednym frameworku. Ale stack wynika z kontekstu. Pracujemy w Vue i Angularze tam, gdzie wymaga tego Twój zespół lub systemy, i mówimy wprost, kiedy nudny wybór jest tym właściwym."
+          },
+          {
+            "q": "Jak dbacie o szybkość po premierze?",
+            "a": "Budżety wydajności są wpięte w CI, więc zbyt ciężki bundle albo obraz zatrzymuje build, zanim trafi na produkcję. Na premierę dostajesz budżety, dashboardy i alerty, a jeśli utrzymujemy produkt, pilnujemy ich w ramach stałej opieki."
+          },
+          {
+            "q": "Przejmiecie istniejący kod?",
+            "a": "Tak, robimy to regularnie. Zaczynamy od krótkiego audytu, który mapuje ryzyka, a potem poprawiamy kod przy okazji dostarczania funkcji, zamiast żądać przepisania od zera. Pełną przebudowę rekomendujemy tylko wtedy, gdy potwierdzają ją liczby."
+          },
+          {
+            "q": "Kto jest właścicielem kodu i infrastruktury?",
+            "a": "Ty, od pierwszego commita. Wszędzie tam, gdzie to możliwe, pracujemy w Twoich repozytoriach i na Twoich kontach chmurowych, więc odejście od nas zawsze pozostaje realną opcją. Dzięki temu współpraca opiera się na wynikach, nie na uzależnieniu."
+          },
+          {
+            "q": "Jak wyceniacie projekty webowe?",
+            "a": "Budowa produktu i audyty mają stałą cenę za spisany zakres, więc kwotę znasz przed startem. Dedykowany zespół to stała miesięczna stawka za inżyniera. Zmiany zakresu wyceniamy i uzgadniamy, zanim wejdą do planu; nigdy nie pojawiają się jako niespodzianka na fakturze."
+          }
+        ],
         "cta": {
-          "title": "Gotowy zbudować swoją aplikację webową?",
-          "subtitle": "Stwórzmy doświadczenie webowe, które wyróżni Cię na tle konkurencji.",
-          "button": "Rozpocznij projekt"
+          "title": "Masz produkt webowy do zbudowania?",
+          "subtitle": "Umów bezpłatną 30-minutową rozmowę z doświadczonym inżynierem. Wyjdziesz z niej ze szkicem architektury i uczciwą wyceną, niezależnie od tego, czy będziemy współpracować.",
+          "button": "Umów konsultację"
         }
       },
       "mobile": {
-        "label": "Usługi",
-        "title": "Tworzenie Aplikacji Mobilnych",
-        "subtitle": "Twórz natywne i wieloplatformowe doświadczenia mobilne, które użytkownicy kochają i do których wracają.",
+        "label": "Inżynieria",
+        "title": "Aplikacje Mobilne",
+        "subtitle": "Doświadczeni inżynierowie, którzy rozstrzygają dylemat natywnie kontra cross-platform na podstawie danych, budują aplikacje, które zostają na ekranie głównym, i prowadzą wydania w obu sklepach bez niespodzianek.",
         "breadcrumb": "Aplikacje Mobilne",
+        "featuresTitle": "Czym się zajmujemy",
+        "featuresIntro": "Jeden zespół od iOS, Androida i cross-platform. Stack rekomendują ci sami inżynierowie, którzy potem go budują i wydają.",
         "features": {
           "ios": {
-            "title": "Rozwój iOS",
-            "description": "Natywne aplikacje iOS zbudowane w Swift dla optymalnej wydajności i integracji z ekosystemem Apple."
+            "title": "Natywny iOS",
+            "description": "Aplikacje w Swift i SwiftUI, które na iPhonie czują się jak u siebie: konwencje platformy, płynne animacje, widgety i integracje systemowe tam, gdzie faktycznie wnoszą wartość, a nie dlatego, że wypada je mieć."
           },
           "android": {
-            "title": "Rozwój Android",
-            "description": "Natywne aplikacje Android z Kotlin dla płynnej wydajności na wszystkich urządzeniach."
+            "title": "Natywny Android",
+            "description": "Kotlin i Jetpack Compose zbudowane pod prawdziwą różnorodność ekosystemu Androida. Testujemy na sprzęcie, którego naprawdę używają Twoi użytkownicy, nie tylko na tegorocznych flagowcach."
           },
           "crossPlatform": {
-            "title": "Aplikacje Wieloplatformowe",
-            "description": "Rozwiązania React Native i Flutter dla efektywnego rozwoju na wielu platformach."
+            "title": "Rozwiązania cross-platform",
+            "description": "React Native, Flutter i Kotlin Multiplatform, gdy jeden kod to właściwy kompromis. Rekomendujemy cross-platform tam, gdzie oszczędza budżet, a natywnie tam, gdzie ratuje produkt, i pokazujemy liczby stojące za tą decyzją."
           },
-          "ui": {
-            "title": "Projektowanie UI/UX",
-            "description": "Piękne, intuicyjne interfejsy zgodne z wytycznymi platform."
+          "releases": {
+            "title": "Wydania i obecność w sklepach",
+            "description": "Karty produktu, zgłoszenia do recenzji, stopniowe rollouty i ścieżki hotfixów w App Store i Google Play. Wydania idą według harmonogramu, na którym można oprzeć roadmapę, a nie według nadziei."
           },
-          "backend": {
-            "title": "Backend i API",
-            "description": "Skalowalna infrastruktura backendowa zasilająca Twoje aplikacje mobilne."
+          "offline": {
+            "title": "Offline-first i wydajność",
+            "description": "Dane lokalne z niezawodną synchronizacją, zimny start poniżej sekundy i interfejs, który nie zwalnia na sprzęcie ze średniej półki. Jakość mobilną mierzy się na najsłabszym łączu Twoich użytkowników i właśnie pod nie budujemy."
           },
-          "maintenance": {
-            "title": "Utrzymanie Aplikacji",
-            "description": "Bieżące aktualizacje, poprawki błędów i rozwój nowych funkcji."
+          "ai": {
+            "title": "Funkcje AI: na urządzeniu i przez API",
+            "description": "Mowa, rozpoznawanie obrazu, podsumowania i asystenci w Twojej aplikacji: modele on-device tam, gdzie liczą się prywatność i opóźnienia, hostowane API tam, gdzie wygrywają możliwości. Podział projektujemy świadomie i mierzymy koszt na użytkownika, zanim zaczniesz skalować."
           }
         },
+        "processTitle": "Jak przebiega projekt",
         "process": {
-          "concept": {
-            "title": "Koncepcja",
-            "description": "Zdefiniuj wizję aplikacji, funkcje i grupę docelową."
+          "scope": {
+            "title": "Zakres i decyzja o stacku",
+            "description": "Definiujemy produkt, audytujemy istniejący kod i rozstrzygamy dylemat natywnie kontra cross-platform pisemną rekomendacją: koszty, ryzyka i konsekwencje dla zespołu. Stack jest wybrany na podstawie dowodów, zanim ruszy pierwszy sprint."
           },
           "design": {
-            "title": "Projektowanie",
-            "description": "Twórz wireframe'y i high-fidelity projekty wszystkich ekranów."
+            "title": "Architektura i projekt",
+            "description": "Architektura aplikacji, kontrakty API, strategia offline i design system, uzgodnione z Twoim zespołem. Szkielet aplikacji trafia do testerów wewnętrznych już w pierwszym sprincie."
           },
-          "development": {
-            "title": "Rozwój",
-            "description": "Buduj aplikację z iteracyjnymi sprintami i ciągłym feedbackiem."
+          "build": {
+            "title": "Budowa w tygodniowych przyrostach",
+            "description": "Sprinty kończą się instalowalnymi buildami na prawdziwych urządzeniach, nie zrzutami ekranu. Testujesz co tydzień przez TestFlight i wewnętrzne ścieżki Google Play, więc korekta kursu kosztuje dni, nie miesiące."
           },
           "release": {
-            "title": "Wydanie",
-            "description": "Publikuj w sklepach z aplikacjami z optymalizacją i wsparciem marketingowym."
+            "title": "Wydanie i utrzymanie",
+            "description": "Zgłoszenie do sklepów, stopniowy rollout, monitoring crashy i wydajności oraz rytm wydań, na którym można polegać. Zostajemy na dalszy rozwój albo przekazujemy wszystko Twojemu zespołowi razem z pipeline'em."
           }
         },
+        "stats": [
+          {
+            "value": "6-12",
+            "label": "tygodni od startu do wersji 1.0 w sklepach"
+          },
+          {
+            "value": "2",
+            "label": "sklepy z aplikacjami, jeden proces wydawniczy"
+          },
+          {
+            "value": "100%",
+            "label": "doświadczonych inżynierów, zero juniorów w projekcie"
+          },
+          {
+            "value": "1",
+            "label": "partner od pierwszego commita po wydanie w sklepie"
+          }
+        ],
+        "deliverablesTitle": "Z czym wychodzisz",
+        "deliverablesIntro": "Działające oprogramowanie i cała maszyneria do kolejnych wydań, w Twoich repozytoriach i na Twoich kontach.",
+        "deliverables": [
+          {
+            "title": "Rekomendacja platformy",
+            "description": "Natywnie czy cross-platform dla Twojego produktu: argumenty oparte na koszcie budowy, kompetencjach zespołu, wymaganiach wydajnościowych i utrzymaniu, rozstrzygnięte przed startem developmentu."
+          },
+          {
+            "title": "Produkcyjna aplikacja w obu sklepach",
+            "description": "Gotowy produkt: zrecenzowany, wydany i działający na urządzeniach Twoich użytkowników, z kodem źródłowym i kontami sklepowymi należącymi do Ciebie od pierwszego dnia."
+          },
+          {
+            "title": "Pipeline CI/CD",
+            "description": "Automatyczne buildy, testy, podpisywanie kodu i dystrybucja do TestFlight oraz ścieżek Google Play. Każdy merge kończy się buildem, który zespół może zainstalować i sprawdzić."
+          },
+          {
+            "title": "Playbook wydawniczy",
+            "description": "Wersjonowanie, stopniowe rollouty, obsługa odrzuceń w recenzji i procedura hotfixów, spisane tak, żeby wydania nigdy nie zależały od jednej osoby."
+          },
+          {
+            "title": "Monitoring i analityka",
+            "description": "Raportowanie crashy, śledzenie wydajności i analityka produktowa podpięte od pierwszego wydania, żeby decyzje po starcie opierały się na danych."
+          }
+        ],
+        "modelsTitle": "Trzy modele współpracy",
+        "modelsIntro": "Dedykowany zespół do konkretnej budowy, seniorzy w Twojej organizacji na dłużej albo skoncentrowany ratunek istniejącej aplikacji. Każdy model zaczyna się od bezpłatnej 30-minutowej rozmowy.",
+        "models": [
+          {
+            "name": "Budowa aplikacji od zera do sklepu",
+            "duration": "8-16 tygodni",
+            "description": "Dedykowany zespół prowadzi Twój produkt od zakresu do wydanej wersji 1.0 na iOS i Androida. Stały skład, cotygodniowe buildy i wydanie w sklepie jako definicja ukończenia.",
+            "bullets": [
+              "Zakres, architektura i decyzja o platformie w pierwszych dwóch tygodniach",
+              "Cotygodniowe buildy przez TestFlight i ścieżki Google Play",
+              "Zgłoszenie do sklepów, rollout i monitoring startu w cenie",
+              "Przekazanie z CI/CD, dokumentacją i wdrożonym zespołem"
+            ]
+          },
+          {
+            "name": "Zespół mobilny w Twojej organizacji",
+            "duration": "Miesięcznie · ciągła współpraca",
+            "description": "Doświadczeni inżynierowie mobilni w Twojej organizacji produktowej: od pojedynczego specjalisty po pełny zespół produktowy. Twój proces i backlog, nasze tempo dostarczania.",
+            "bullets": [
+              "Seniorzy od iOS, Androida i cross-platform, dobrani do Twojego stacku",
+              "Produktywni w Twoim kodzie już w pierwszym sprincie",
+              "Pełny udział w code review i rytuałach zespołu",
+              "Skalowanie składu w górę i w dół z miesięcznym wyprzedzeniem"
+            ]
+          },
+          {
+            "name": "Ratunek i modernizacja aplikacji",
+            "duration": "4-8 tygodni",
+            "description": "Dla istniejącej aplikacji, która crashuje, tnie albo nie daje się wydać: audytujemy, naprawiamy ścieżkę krytyczną i odblokowujemy wydania, zostawiając zespołowi zdrowszy kod.",
+            "bullets": [
+              "Audyt crashy, wydajności i blokerów wydań",
+              "Poprawki priorytetyzowane wpływem na użytkowników, wydawane co tydzień",
+              "CI/CD i proces wydawniczy postawione lub naprawione",
+              "Spriorytetyzowany backlog tego, co zostało"
+            ]
+          }
+        ],
+        "toolsTitle": "Technologie, z którymi pracujemy",
+        "tools": [
+          "Swift & SwiftUI",
+          "Kotlin & Jetpack Compose",
+          "React Native",
+          "Flutter",
+          "Kotlin Multiplatform",
+          "Fastlane",
+          "GitHub Actions & Bitrise",
+          "Firebase",
+          "GraphQL & REST",
+          "SQLite & Realm",
+          "App Store Connect & Play Console",
+          "Core ML & on-device LLMs"
+        ],
+        "whoTitle": "Dla kogo to jest",
+        "who": [
+          {
+            "title": "Founderzy z pierwszą aplikacją",
+            "description": "Potrzebujesz wersji 1.0 w rękach użytkowników, zanim zatrudnisz zespół mobilny. Prowadzimy projekt od zakresu do sklepu i przekazujemy całość, gdy będziesz gotów budować in-house."
+          },
+          {
+            "title": "Liderzy produktu rozszerzający web na mobile",
+            "description": "Twój produkt webowy działa, a klienci pytają o aplikację. Wykorzystujemy Twoje API i język designu, dobieramy stack pod Twój zespół i wydajemy bez spowalniania roadmapy webowej."
+          },
+          {
+            "title": "Firmy z aplikacją, która nie domaga",
+            "description": "Crashe, oceny na jedną gwiazdkę albo wydania ciągnące się tygodniami. Znajdujemy prawdziwą przyczynę, naprawiamy według wpływu na użytkowników i przywracamy rytm wydań."
+          },
+          {
+            "title": "CTO rozstrzygający natywnie kontra cross-platform",
+            "description": "Internet oferuje dogmaty z obu obozów. My dajemy rekomendację dla Twojego produktu, popartą liczbami o kosztach, wydajności i rekrutacji, od inżynierów, którzy wydają w obu podejściach."
+          }
+        ],
+        "faqTitle": "Pytania i odpowiedzi",
+        "faq": [
+          {
+            "q": "Natywnie czy cross-platform: jak decydujecie?",
+            "a": "Na podstawie Twojego produktu, nie naszych preferencji. Głęboka integracja z platformą, wymagająca grafika czy ostre budżety wydajnościowe przemawiają za podejściem natywnym. Produkty oparte na treści i formularzach zwykle uzasadniają jeden kod cross-platform. Rekomendację spisujemy z kosztami i ryzykami, a że budujemy w obu podejściach, nie mamy stacku do sprzedania."
+          },
+          {
+            "q": "Przejmiecie aplikację zbudowaną przez inny zespół?",
+            "a": "Tak, to duża część naszej pracy. Zaczynamy od audytu kodu, danych o crashach i pipeline'u wydawniczego, potem ustalamy, co naprawić, co zostawić, a co przepisać. Pełne przepisanie to ostateczność; większość aplikacji wraca do formy po celowanych poprawkach."
+          },
+          {
+            "q": "Jak radzicie sobie z recenzją w sklepach i odrzuceniami?",
+            "a": "Budujemy zgodnie z wytycznymi recenzji od początku, więc większość zgłoszeń przechodzi za pierwszym razem. Gdy zdarzy się odrzucenie, sami prowadzimy odpowiedź, poprawki i ponowne zgłoszenie. Stopniowe rollouty i feature flagi sprawiają, że wstrzymane wydanie rzadko blokuje roadmapę."
+          },
+          {
+            "q": "Dodacie funkcje AI do istniejącej aplikacji?",
+            "a": "Tak. Najpierw prototypujemy funkcję na Twoich prawdziwych danych, potem wybieramy między modelami on-device a hostowanym API na podstawie prywatności, opóźnień i kosztu na użytkownika. Przed pełnym wdrożeniem widzisz zmierzoną jakość i konkretny koszt jednostkowy."
+          },
+          {
+            "q": "Kto jest właścicielem kodu i kont w sklepach?",
+            "a": "Ty, od pierwszego commita. Pracujemy w Twoich repozytoriach i na Twoich kontach App Store oraz Google Play, albo zakładamy je na Ciebie. Nic w tej współpracy nie wiąże Cię z nami; pakiet przekazania to standard, nie dodatkowa usługa."
+          }
+        ],
         "cta": {
-          "title": "Masz pomysł na aplikację mobilną?",
-          "subtitle": "Zamieńmy Twoją wizję w mobilne doświadczenie, które użytkownicy pokochają.",
-          "button": "Porozmawiaj o aplikacji"
+          "title": "Masz aplikację do wydania?",
+          "subtitle": "Umów bezpłatną 30-minutową rozmowę z doświadczonym inżynierem mobile. Wyjdziesz z rekomendacją stacku i realistyczną ścieżką do startu, niezależnie od tego, czy budujemy ją my.",
+          "button": "Porozmawiaj z inżynierem"
         }
       },
       "cloud": {
@@ -2527,6 +2830,1859 @@
           "title": "Gotowy na chmurę?",
           "subtitle": "Zbudujmy infrastrukturę chmurową, która skaluje się z Twoim biznesem.",
           "button": "Zaplanuj migrację"
+        }
+      },
+      "softwareDevelopment": {
+        "label": "Inżynieria",
+        "title": "Tworzenie Oprogramowania",
+        "subtitle": "Dedykowane systemy i platformy budowane przez seniorskie zespoły full-stack: jakość wpisana w proces od pierwszego commita i dostarczanie przyspieszone przez AI, liczone w tygodniach, nie kwartałach.",
+        "breadcrumb": "Tworzenie Oprogramowania",
+        "featuresTitle": "Co budujemy",
+        "featuresIntro": "Jeden zespół inżynierski od architektury po utrzymanie. Projektujemy systemy, które sami będziemy potem utrzymywać, więc budujemy na lata po wdrożeniu, nie pod efekt na demo.",
+        "features": {
+          "custom": {
+            "title": "Systemy i platformy szyte na miarę",
+            "description": "Oprogramowanie zbudowane wokół Twoich procesów: platformy wewnętrzne, portale klienckie, produkty B2B. Dostajesz system, na którym naprawdę działa Twój biznes, a nie szablon naginany do granic możliwości."
+          },
+          "fullstack": {
+            "title": "Zespoły produktowe full-stack",
+            "description": "Backend, frontend, infrastruktura i QA w jednym zespole. Zero narzutu na koordynację między dostawcami; inżynier, który projektuje API, widzi też, jak korzystają z niego użytkownicy."
+          },
+          "quality": {
+            "title": "Jakość wbudowana w proces",
+            "description": "Testy automatyczne, code review i CI/CD od pierwszego commita. Jakość nie jest etapem na końcu projektu; jest sposobem, w jaki powstaje kod."
+          },
+          "modernization": {
+            "title": "Modernizacja systemów legacy",
+            "description": "Przejmujemy systemy, których autorów dawno nie ma w firmie, zabezpieczamy je testami i wymieniamy kawałek po kawałku, podczas gdy biznes działa bez przerwy. Bez wielkiego przepisywania, bez przestojów."
+          },
+          "scale": {
+            "title": "Skalowanie i wydajność",
+            "description": "Kiedy produkt wyrasta ze swojej architektury, szukamy wąskiego gardła pomiarem, nie zgadywaniem: testy obciążeniowe, profilowanie i przebudowa architektury tylko tam, gdzie się to zwraca."
+          },
+          "ai": {
+            "title": "Inżynieria przyspieszona przez AI",
+            "description": "Nasi inżynierowie pracują z narzędziami AI w rygorze code review: każda linia przechodzi przegląd seniora, zanim trafi na produkcję. Tempo liczone w tygodniach, jakość, która przejdzie audyt."
+          }
+        },
+        "processTitle": "Jak przebiega projekt",
+        "process": {
+          "discovery": {
+            "title": "Analiza i zakres",
+            "description": "Mapujemy procesy, użytkowników i ograniczenia, po czym tniemy zakres do najmniejszego systemu, który daje efekt biznesowy. Architekturę, harmonogram i budżet znasz przed startem prac."
+          },
+          "architecture": {
+            "title": "Architektura",
+            "description": "Projektujemy pod realne obciążenia, integracje i zespół, którym dysponujesz, a nie pod diagram z konferencji. Kluczowe decyzje spisujemy jako ADR-y, więc za dwa lata nadal wiadomo, dlaczego system wygląda tak, a nie inaczej."
+          },
+          "delivery": {
+            "title": "Iteracyjne dostarczanie",
+            "description": "Działające oprogramowanie co tydzień lub dwa, z demo na środowisku zbliżonym do produkcyjnego. Priorytety ustawiasz między iteracjami; nic nie znika w półrocznym tunelu."
+          },
+          "operate": {
+            "title": "Wdrożenie i utrzymanie",
+            "description": "Wdrażamy na produkcję wcześnie i często, z monitoringiem i alertami od pierwszego dnia. Potem przekazujemy system Twojemu zespołowi albo utrzymujemy go dalej: dokumentacja, runbooki i przeszkoleni ludzie w obu wariantach."
+          }
+        },
+        "stats": [
+          {
+            "value": "1-2",
+            "label": "tygodnie na iterację, każda kończy się działającym oprogramowaniem"
+          },
+          {
+            "value": "100%",
+            "label": "kodu przechodzi review seniora przed merge'em, także kod pisany z AI"
+          },
+          {
+            "value": "2-3x",
+            "label": "szybsze dostarczanie dzięki inżynierii wspieranej przez AI, mierzone względem naszych projektów sprzed ery AI"
+          },
+          {
+            "value": "0",
+            "label": "przekazań między zespołami: jeden zespół od pierwszego warsztatu po produkcję"
+          }
+        ],
+        "deliverablesTitle": "Z czym wychodzisz",
+        "deliverablesIntro": "Każdy projekt kończy się systemem, który Twój zespół może utrzymywać, rozwijać i audytować bez nas na sali.",
+        "deliverables": [
+          {
+            "title": "System produkcyjny, który należy do Ciebie",
+            "description": "Kod źródłowy, infrastruktura i wszystkie konta od pierwszego dnia na Twoją firmę. Zero vendor lock-inu, zero opłat licencyjnych za własny produkt."
+          },
+          {
+            "title": "Dokumentacja architektury",
+            "description": "Projekt systemu, przepływy danych, kontrakty integracyjne i uzasadnienie kluczowych decyzji, aktualizowane w miarę rozwoju systemu."
+          },
+          {
+            "title": "Testy automatyczne i CI/CD",
+            "description": "Testy pokrywające ścieżki, od których zależy Twój biznes, spięte z pipeline'em, który wdraża po zielonym buildzie. Refaktoryzacja pozostaje bezpieczna także po naszym odejściu."
+          },
+          {
+            "title": "Runbook operacyjny",
+            "description": "Monitoring, alerty, backupy i procedury incydentowe, spisane dla zespołu, który faktycznie będzie pełnił dyżury."
+          },
+          {
+            "title": "Przekazanie i szkolenia",
+            "description": "Sesje robocze z Twoimi inżynierami, aż przejmą kod w praktyce, a nie tylko na papierze."
+          }
+        ],
+        "modelsTitle": "Trzy modele współpracy",
+        "modelsIntro": "Stały zakres tam, gdzie problem jest znany; dedykowany zespół tam, gdzie roadmapa wciąż się zmienia. Każdy model zaczyna się od bezpłatnej, 30-minutowej rozmowy.",
+        "models": [
+          {
+            "name": "Budowa produktu",
+            "duration": "6-12 tygodni · stały zakres",
+            "description": "Zdefiniowany system dostarczony od A do Z przez jeden seniorski zespół: zakres, architektura, budowa, wdrożenie. Dobry wybór dla wersji 1.0, platformy wewnętrznej albo wymiany systemu o jasnych granicach.",
+            "bullets": [
+              "Zakres, harmonogram i cena ustalone przed startem",
+              "Demo działającego oprogramowania co tydzień lub dwa",
+              "Wdrożenie produkcyjne z monitoringiem i runbookiem",
+              "30 dni wsparcia po starcie w cenie"
+            ]
+          },
+          {
+            "name": "Dedykowany zespół produktowy",
+            "duration": "Miesięcznie · ciągła współpraca",
+            "description": "Seniorski zespół full-stack, który miesiąc po miesiącu realizuje Twoją roadmapę i odpowiada za wynik, nie tylko za tickety. Skalowalny z 30-dniowym wyprzedzeniem.",
+            "bullets": [
+              "Backend, frontend, infrastruktura i QA w jednym zespole",
+              "Roadmapa planowana z Tobą co miesiąc",
+              "Bezpośredni kontakt z inżynierami, bez warstwy pośredników",
+              "Zespół większy lub mniejszy z 30-dniowym wyprzedzeniem"
+            ]
+          },
+          {
+            "name": "Modernizacja legacy",
+            "duration": "3-9 miesięcy · etapami",
+            "description": "System legacy wymieniany kawałek po kawałku, bez zatrzymywania biznesu. Każdy etap samodzielnie dowozi wartość i kończy się punktem decyzyjnym: kontynuujemy, pauzujemy albo zamykamy.",
+            "bullets": [
+              "Najpierw audyt i mapa ryzyk istniejącego systemu",
+              "Migracja wzorcem strangler, bez wielkiego przełączenia",
+              "Biznes działa nieprzerwanie przez wszystkie etapy",
+              "Mierzalne kryteria zakończenia każdego etapu"
+            ]
+          }
+        ],
+        "toolsTitle": "Technologie, w których dostarczamy",
+        "tools": [
+          "TypeScript",
+          "React & Next.js",
+          "Node.js",
+          "Python",
+          "PostgreSQL",
+          "AWS",
+          "Google Cloud",
+          "Docker",
+          "Kubernetes",
+          "Terraform",
+          "GitHub Actions",
+          "Claude & OpenAI APIs"
+        ],
+        "whoTitle": "Dla kogo to jest",
+        "who": [
+          {
+            "title": "Firmy w trakcie cyfrowej transformacji",
+            "description": "Procesy żyją w arkuszach, mailach i zlepku narzędzi. Budujemy system, który ten zlepek zastępuje, jeden proces po drugim."
+          },
+          {
+            "title": "Firmy produktowe pod ścianą skalowania",
+            "description": "Produkt się sprzedaje, ale architektura, zespół albo jedno i drugie nie nadążają. Naprawiamy to wąskie gardło, które faktycznie Cię ogranicza: zmierzone, nie wywróżone."
+          },
+          {
+            "title": "Przedsiębiorstwa z systemami legacy",
+            "description": "System działa, ale ryzyko rośnie: autorzy odeszli, wsparcie producenta się kończy, każda zmiana trwa tygodniami. Modernizujemy bez zatrzymywania firmy."
+          },
+          {
+            "title": "Founderzy i scale-upy budujące wersję 1.0",
+            "description": "Potrzebujesz produktu u klientów w tym kwartale, zbudowanego na tyle dobrze, żeby przetrwał własny sukces. Seniorski zespół, tempo AI, bez przepisywania w drugim roku."
+          }
+        ],
+        "faqTitle": "Pytania i odpowiedzi",
+        "faq": [
+          {
+            "q": "Co w praktyce oznacza dostarczanie przyspieszone przez AI?",
+            "a": "Nasi inżynierowie używają narzędzi AI do mechanicznej części pracy: boilerplate'u, testów, migracji, refaktoryzacji. Każda zmiana przechodzi review seniora według tych samych standardów co kod pisany ręcznie, zanim trafi do merge'a. Efekt: tempo dużo większego zespołu przy odpowiedzialności małego."
+          },
+          {
+            "q": "Do kogo należy kod i infrastruktura?",
+            "a": "Do Ciebie, od pierwszego commita. Repozytoria, konta chmurowe i licencje są na Twoją firmę; my pracujemy w ich obrębie. Gdybyśmy jutro zakończyli współpracę, tracisz wyłącznie nasz czas."
+          },
+          {
+            "q": "Przejmiecie istniejący kod?",
+            "a": "Tak, robimy to regularnie. Zaczynamy od audytu: testy, architektura, bezpieczeństwo, wdrażalność. Dostajesz szczery raport: co jest w porządku, co jest ryzykowne i co naprawilibyśmy najpierw. Najpierw stabilizujemy, potem rozbudowujemy."
+          },
+          {
+            "q": "Jak wyceniacie projekty?",
+            "a": "Stała cena za stały zakres: budowy produktów i etapy modernizacji wyceniamy przed startem prac. Dedykowane zespoły rozliczamy stałą stawką miesięczną za rolę, z możliwością zmiany z 30-dniowym wyprzedzeniem. Bez teatru estymacji: gdy zakres się zmienia, nowa wycena trafia do Ciebie na piśmie, zanim wydamy Twoje pieniądze."
+          },
+          {
+            "q": "Jak pracujecie z naszym wewnętrznym zespołem?",
+            "a": "Jak jeden zespół: wspólne repozytorium, wspólne standupy, wspólne standardy. Dokumentację, pair programming i review ustawiamy tak, żeby Twoi inżynierowie mogli przejąć każdy fragment, który zbudowaliśmy. Miarą naszego sukcesu jest też to, jak mało jesteśmy potem potrzebni."
+          }
+        ],
+        "cta": {
+          "title": "Masz system do zbudowania?",
+          "subtitle": "Umów bezpłatną, 30-minutową rozmowę z seniorskim inżynierem. Wyjdziesz z rzetelną oceną zakresu, terminu i kosztów, niezależnie od tego, czy to my go zbudujemy.",
+          "button": "Porozmawiaj z inżynierem"
+        }
+      },
+      "mvpDevelopment": {
+        "label": "Inżynieria",
+        "title": "Budowa MVP",
+        "subtitle": "Od pomysłu do produktu w rękach prawdziwych użytkowników w kilka tygodni, nie miesięcy. Tniemy zakres do najbardziej ryzykownego założenia, budujemy w tempie AI z seniorskim review, a architektura wytrzymuje pivot bez pisania od nowa.",
+        "breadcrumb": "Budowa MVP",
+        "featuresTitle": "Co obejmuje usługa",
+        "featuresIntro": "Jeden seniorski zespół od zakresu po premierę. Wszystko na tej stronie służy jednemu celowi: jak najszybciej uzyskać od prawdziwych użytkowników odpowiedź na najbardziej ryzykowne pytanie.",
+        "features": {
+          "scoping": {
+            "title": "Bezlitosne cięcie zakresu",
+            "description": "Sprowadzamy pomysł do jednego założenia, które musi być prawdziwe, żeby biznes zadziałał, i planujemy najmniejszy produkt, który je sprawdzi. Funkcje, które nie służą temu testowi, poczekają."
+          },
+          "design": {
+            "title": "Prototyp zamiast prezentacji",
+            "description": "Od makiet do klikalnego prototypu w kilka dni, nie tygodni. Najpierw projektujemy i testujemy kluczową ścieżkę z prawdziwymi użytkownikami; drugorzędne ekrany celowo zostają proste."
+          },
+          "engineering": {
+            "title": "Budowa przyspieszona przez AI",
+            "description": "Rozwój wspierany narzędziami AI, w którym każda linia kodu przechodzi przez seniorskie review. Dostajesz startupowe tempo bez prototypowego kodu, który wykłada się przy pierwszych prawdziwych klientach."
+          },
+          "architecture": {
+            "title": "Architektura gotowa na pivot",
+            "description": "Sprawdzony, przewidywalny stack i czyste granice modułów: zmiana kierunku produktu nie oznacza pisania go od nowa. Nasze MVP przechodzą przez product-market fit bez przebudowy od zera."
+          },
+          "validation": {
+            "title": "Walidacja z prawdziwymi użytkownikami",
+            "description": "Analityka, pętle feedbacku i dane o lejku wpięte od pierwszego dnia. Premiera otwiera naukę, a każde kolejne wydanie odpowiada na konkretne pytanie."
+          },
+          "launch": {
+            "title": "Premiera i iteracje",
+            "description": "Sklepy z aplikacjami, hosting, CI/CD, monitoring: bierzemy na siebie mało efektowną stronę wdrażania. Po premierze iterujemy w krótkich cyklach w oparciu o to, co użytkownicy faktycznie robią."
+          }
+        },
+        "processTitle": "Jak dochodzimy do premiery",
+        "process": {
+          "scoping": {
+            "title": "Sprint zakresu",
+            "description": "W pierwszym tygodniu definiujemy najbardziej ryzykowne założenie, wycinamy wszystko, co nie służy jego sprawdzeniu, i spisujemy zakres, cenę oraz datę premiery."
+          },
+          "prototype": {
+            "title": "Projekt i prototyp",
+            "description": "Klikalny prototyp kluczowej ścieżki, przetestowany z docelowymi użytkownikami, zanim zaczniemy budować. To najtańszy moment na zmianę zdania."
+          },
+          "build": {
+            "title": "Budowa",
+            "description": "Sprinty o stałym zakresie i demo co tydzień. Rozwój przyspieszony przez AI, seniorskie review każdej zmiany, działający software od pierwszego sprintu."
+          },
+          "launch": {
+            "title": "Premiera i nauka",
+            "description": "Oddajemy produkt prawdziwym użytkownikom, wpinamy analitykę i przechodzimy z Tobą pierwsze cykle iteracji. Zostajesz z danymi, a nie opiniami, o tym, co budować dalej."
+          }
+        },
+        "stats": [
+          {
+            "value": "4-8",
+            "label": "tygodni od startu prac do MVP na produkcji"
+          },
+          {
+            "value": "1",
+            "label": "stała cena, ustalona przed pierwszym sprintem budowy"
+          },
+          {
+            "value": "100%",
+            "label": "kodu po seniorskim review, także tego pisanego z AI"
+          },
+          {
+            "value": "0",
+            "label": "przepisywań, gdy produkt zmienia kierunek"
+          }
+        ],
+        "deliverablesTitle": "Z czym wychodzisz",
+        "deliverablesIntro": "Wdrożony produkt i wszystko, czego Twój zespół potrzebuje, żeby rozwijać go dalej bez nas.",
+        "deliverables": [
+          {
+            "title": "Produkt na produkcji",
+            "description": "Działające MVP w rękach prawdziwych użytkowników: web, mobile albo jedno i drugie, na infrastrukturze, która należy do Ciebie."
+          },
+          {
+            "title": "Kod, który jest Twój",
+            "description": "Czysty, udokumentowany kod w Twoim repozytorium od pierwszego dnia, z testami i CI/CD, gotowy na Twój przyszły zespół."
+          },
+          {
+            "title": "Raport z walidacji",
+            "description": "Dane o lejku i użyciu zestawione z założeniami, które mieliśmy sprawdzić, z jasnym wnioskiem, co mówią liczby."
+          },
+          {
+            "title": "Backlog produktowy",
+            "description": "Spriorytetyzowany backlog na następny kwartał, oparty na zachowaniach użytkowników, nie na burzy mózgów."
+          },
+          {
+            "title": "Liczby pod rozmowy z inwestorami",
+            "description": "Aktywacja, retencja i zaangażowanie w formacie, o który pytają fundusze."
+          }
+        ],
+        "modelsTitle": "Trzy sposoby na start",
+        "modelsIntro": "Stały zakres i stała cena wszędzie tam, gdzie praca na to pozwala. Każdy model zaczyna się od bezpłatnej konsultacji AI dla startupów.",
+        "models": [
+          {
+            "name": "Sprint walidacyjny",
+            "duration": "2 tygodnie · stała cena",
+            "description": "Na moment, gdy pomysł potrzebuje zderzenia z rzeczywistością, zanim ruszy pełna budowa. Klikalny prototyp i testy z użytkownikami, zakończone jasną rekomendacją: budować czy poprawić założenia.",
+            "bullets": [
+              "Warsztat mapowania najbardziej ryzykownych założeń",
+              "Klikalny prototyp kluczowej ścieżki",
+              "Testy z użytkownikami z grupy docelowej",
+              "Uzasadniona rekomendacja: budować albo nie"
+            ]
+          },
+          {
+            "name": "Sprint MVP",
+            "duration": "4-8 tygodni · stały zakres, stała cena",
+            "description": "Od pomysłu do produktu na produkcji. Zakres zdefiniowany w pierwszym tygodniu, cena ustalona przed budową, demo co tydzień.",
+            "bullets": [
+              "Sprint zakresu, który znajduje najbardziej ryzykowne założenie",
+              "Prototyp przetestowany z użytkownikami przed pierwszym commitem",
+              "Budowa o stałym zakresie z cotygodniowym demo",
+              "Premiera, analityka i pierwszy cykl iteracji"
+            ]
+          },
+          {
+            "name": "Iteracje po premierze",
+            "duration": "Miesięcznie · wstrzymasz w każdej chwili",
+            "description": "Zespół, który zbudował Twoje MVP, zostaje na pokładzie i wydaje w krótkich cyklach sterowanych tym, co robią użytkownicy.",
+            "bullets": [
+              "Krótkie cykle wydań oparte na danych o użyciu",
+              "Priorytety według liczb z lejka, nie przeczucia",
+              "Bezpośredni kontakt z inżynierami, którzy zbudowali produkt",
+              "Skalowanie zaangażowania w górę i w dół z miesiąca na miesiąc"
+            ]
+          }
+        ],
+        "toolsTitle": "Stack, na którym budujemy",
+        "tools": [
+          "Next.js",
+          "React Native",
+          "Expo",
+          "TypeScript",
+          "Node.js",
+          "PostgreSQL",
+          "Supabase",
+          "Vercel",
+          "AWS",
+          "Stripe",
+          "OpenAI & Anthropic APIs",
+          "GitHub Actions"
+        ],
+        "whoTitle": "Dla kogo to jest",
+        "who": [
+          {
+            "title": "Founderzy bez technicznego co-foundera",
+            "description": "Masz pomysł i znasz branżę, my wnosimy zespół, który buduje. Stała cena i cotygodniowe demo dają Ci kontrolę, nawet bez CTO na pokładzie."
+          },
+          {
+            "title": "Startupy po rundzie, przed produktem",
+            "description": "Runway topnieje z każdym miesiącem. W kilka tygodni stawiamy przed użytkownikami produkt, który da się testować, żeby następny update dla inwestorów pokazywał trakcję, a nie plany."
+          },
+          {
+            "title": "Firmy uruchamiające nowy biznes",
+            "description": "Corporate venture albo wewnętrzny spin-off, który potrzebuje startupowego tempa bez łamania firmowych reguł. Wdrażamy szybko i przekazujemy czysto."
+          },
+          {
+            "title": "Founderzy po nieudanym pierwszym podejściu",
+            "description": "Agencja albo freelancer zostawili Cię z wolnym, kruchym kodem. Uczciwie oceniamy, czy taniej naprawiać, czy zacząć od nowa, i robimy to, co w dłuższej perspektywie kosztuje mniej."
+          }
+        ],
+        "faqTitle": "Pytania i odpowiedzi",
+        "faq": [
+          {
+            "q": "Jak szybko możemy wystartować?",
+            "a": "Większość MVP startuje cztery do ośmiu tygodni od rozpoczęcia prac. Sprint zakresu w pierwszym tygodniu wyznacza datę, a stały zakres sprawia, że ta data się trzyma. Jeśli Twój pomysł da się przetestować mniejszym produktem, powiemy o tym wprost i wystartujemy jeszcze wcześniej."
+          },
+          {
+            "q": "Ile kosztuje MVP?",
+            "a": "Stała cena, ustalona po sprincie zakresu i przed startem budowy. Większość projektów kosztuje tyle, co jeden do trzech miesięcy pracy jednego doświadczonego inżyniera. Sam start nic nie kosztuje: prowadzimy bezpłatne konsultacje AI dla startupów, więc pomysł zweryfikujesz, zanim wydasz złotówkę."
+          },
+          {
+            "q": "Czy po znalezieniu product-market fit czeka nas przepisywanie?",
+            "a": "Nie, właśnie po to jest ta architektura. Sprawdzony stack, czyste granice modułów, testy i CI/CD od pierwszego dnia. Nasze MVP znoszą pivoty jako zmiany funkcji, nie przebudowę, i wytrzymują pierwszy prawdziwy ruch bez dramatów."
+          },
+          {
+            "q": "Jak w praktyce wygląda budowa przyspieszona przez AI?",
+            "a": "Nasi inżynierowie używają narzędzi AI do mechanicznej części pracy: boilerplate'u, testów, migracji, pierwszych szkiców. Każdą zmianę przed scaleniem przegląda senior. Dostajesz mniej więcej dwukrotnie wyższe tempo w jakości software house'u, a nie prototypowy kod wypuszczany bez czytania."
+          },
+          {
+            "q": "A jeśli jeszcze nie wiemy dokładnie, co budować?",
+            "a": "To normalny punkt wyjścia. Sprint zakresu istnieje po to, żeby znaleźć najbardziej ryzykowne założenie i zaprojektować najmniejszy produkt, który je sprawdzi. Jeśli dwutygodniowy prototyp odpowie na pytanie taniej niż pełne MVP, dokładnie to zarekomendujemy. Umów bezpłatną konsultację AI, a powiemy Ci, od czego zacząć."
+          }
+        ],
+        "cta": {
+          "title": "Masz pomysł wart przetestowania?",
+          "subtitle": "Zacznij od bezpłatnej konsultacji AI dla startupów: 30 minut z doświadczonym inżynierem. Wychodzisz z ostrzejszym zakresem i uczciwą oceną wykonalności, niezależnie od tego, czy zbudujemy to razem.",
+          "button": "Umów bezpłatną konsultację"
+        }
+      },
+      "apiDevelopment": {
+        "label": "Inżynieria",
+        "title": "Rozwój API",
+        "subtitle": "Projektowane od kontraktu API REST i GraphQL, które łączą systemy napędzające Twój biznes, wytrzymują ruch produkcyjny i na których inne zespoły budują bez tarć.",
+        "breadcrumb": "Rozwój API",
+        "featuresTitle": "Co budujemy",
+        "featuresIntro": "Jeden zespół backendowy od projektu, przez integracje, po utrzymanie. Każde API oddajemy z dokumentacją, testami i monitoringiem, dzięki którym działa bez nas.",
+        "features": {
+          "design": {
+            "title": "API REST i GraphQL",
+            "description": "Projektujemy od kontraktu: specyfikacja OpenAPI lub schema GraphQL jest uzgodniona, zanim ruszy implementacja. Frontend i backend pracują równolegle, a zmiany łamiące kompatybilność wyłapujemy w review, nie na produkcji."
+          },
+          "integrations": {
+            "title": "Integracje z systemami zewnętrznymi",
+            "description": "Płatności, CRM-y, ERP-y, logistyka, księgowość: łączymy systemy, na których opiera się Twój biznes. Retry, idempotencja i uzgadnianie danych są wbudowane od początku, bo zewnętrzne API zawodzą, a Twoje nie powinno."
+          },
+          "events": {
+            "title": "Systemy zdarzeniowe",
+            "description": "Kolejki, strumienie i webhooki do zadań, które nie powinny blokować requestu: powiadomienia, synchronizacje, długie procesy. Budujemy na Kafce, RabbitMQ lub odpowiednikach chmurowych, z obsługą dead letter queue i możliwością odtworzenia zdarzeń."
+          },
+          "security": {
+            "title": "Uwierzytelnianie i bezpieczeństwo",
+            "description": "OAuth 2.0, OIDC, klucze API, rate limiting i logi audytowe, dobrane do Twojego profilu ryzyka. Bezpieczeństwo projektujemy od pierwszego endpointu, zamiast łatać je tuż przed pentestem."
+          },
+          "dx": {
+            "title": "Wersjonowanie i developer experience",
+            "description": "Dokumentacja OpenAPI, generowane SDK, środowiska sandbox i polityka wersjonowania, która pozwala rozwijać API bez psucia ani jednego klienta."
+          },
+          "ai": {
+            "title": "Możliwości AI jako API",
+            "description": "Modele, pipeline'y RAG i agentów zamykamy w stabilnych, monitorowanych endpointach z kontrolą kosztów i mechanizmami fallback. Twoje funkcje AI stają się produktem, na którym mogą budować inne zespoły."
+          }
+        },
+        "processTitle": "Jak przebiega projekt",
+        "process": {
+          "design": {
+            "title": "Projekt",
+            "description": "Mapujemy konsumentów API, przepływy danych i oczekiwane obciążenie, po czym piszemy kontrakt. Przeglądasz realne przykłady requestów i odpowiedzi, zanim powstanie pierwsza linia implementacji."
+          },
+          "build": {
+            "title": "Budowa",
+            "description": "Implementujemy w krótkich iteracjach zgodnie z uzgodnionym kontraktem, z testami integracyjnymi i CI od pierwszego dnia. Działające endpointy lądują na stagingu już w pierwszych tygodniach, nie na końcu."
+          },
+          "harden": {
+            "title": "Hartowanie",
+            "description": "Testy obciążeniowe, przegląd bezpieczeństwa, rate limity, monitoring i alerty. Latencję p95 i budżety błędów mierzymy względem uzgodnionych celów, zanim cokolwiek uznamy za skończone."
+          },
+          "operate": {
+            "title": "Wdrożenie i utrzymanie",
+            "description": "Wdrażamy przez CI/CD, przekazujemy dokumentację i runbooki, i zostajemy tak długo, jak nas potrzebujesz: nowe endpointy, nowe integracje, praca nad wydajnością."
+          }
+        },
+        "stats": [
+          {
+            "value": "1-2",
+            "label": "tygodnie od startu do zrecenzowanego kontraktu API"
+          },
+          {
+            "value": "100%",
+            "label": "endpointów udokumentowanych w OpenAPI, bez wyjątków"
+          },
+          {
+            "value": "24/7",
+            "label": "monitoring i alerty w każdym API, które oddajemy"
+          },
+          {
+            "value": "0",
+            "label": "vendor lock-in: kod i infrastruktura należą do Ciebie"
+          }
+        ],
+        "deliverablesTitle": "Z czym wychodzisz",
+        "deliverablesIntro": "Wszystko, czego zespół potrzebuje, by utrzymywać i rozwijać API bez dzwonienia do nas.",
+        "deliverables": [
+          {
+            "title": "Kontrakt API",
+            "description": "Kompletna specyfikacja OpenAPI lub GraphQL: endpointy, schematy, przepływy uwierzytelniania i semantyka błędów, przejrzana z Twoim zespołem."
+          },
+          {
+            "title": "Wdrożenie produkcyjne",
+            "description": "API działające na Twojej infrastrukturze, z pipeline'ami CI/CD, infrastrukturą jako kod i przetestowaną ścieżką rollbacku."
+          },
+          {
+            "title": "Dokumentacja i SDK",
+            "description": "Portal deweloperski z dokumentacją referencyjną, przewodnikami i generowanymi SDK, dzięki którym integracja zajmuje dni, nie tygodnie."
+          },
+          {
+            "title": "Observability",
+            "description": "Dashboardy, alerty i logowanie strukturalne dla latencji, błędów i kosztów, plus runbook na incydenty, które prędzej czy później nadejdą."
+          },
+          {
+            "title": "Raport z testów i bezpieczeństwa",
+            "description": "Wyniki testów obciążeniowych względem uzgodnionych celów oraz przegląd bezpieczeństwa: uwierzytelnianie, walidacja wejścia, rate limiting."
+          }
+        ],
+        "modelsTitle": "Trzy modele współpracy",
+        "modelsIntro": "Stały zakres tam, gdzie da się go ustalić, elastyczność tam, gdzie wymaga jej Twoja roadmapa. Każdy model zaczyna się od bezpłatnej 30-minutowej rozmowy.",
+        "models": [
+          {
+            "name": "Audyt API",
+            "duration": "2 tygodnie · stała cena",
+            "description": "Przegląd istniejącego API o ustalonym zakresie: bezpieczeństwo, wydajność, wersjonowanie, dokumentacja i stan integracji. Kończy się listą poprawek z priorytetami, którą Twój zespół może wykonać samodzielnie.",
+            "bullets": [
+              "Przegląd bezpieczeństwa: uwierzytelnianie, walidacja wejścia, rate limiting",
+              "Analiza wydajności oparta na testach obciążeniowych",
+              "Ocena dokumentacji i developer experience",
+              "Lista rekomendacji z priorytetami i szacunkiem nakładu"
+            ]
+          },
+          {
+            "name": "Budowa API",
+            "duration": "6-12 tygodni",
+            "description": "Nowe API lub warstwa integracyjna zaprojektowana, zbudowana i wdrożona od początku do końca: od kontraktu po monitoring produkcyjny.",
+            "bullets": [
+              "Projekt od kontraktu, przejrzany z Twoim zespołem",
+              "Implementacja z testami i CI/CD",
+              "Hartowanie bezpieczeństwa i testy obciążeniowe",
+              "Dokumentacja, SDK i przekazanie"
+            ]
+          },
+          {
+            "name": "Retainer platformowy",
+            "duration": "Miesięcznie · ciągła współpraca",
+            "description": "Seniorski zespół backendowy, który utrzymuje tempo rozwoju Twojej platformy API: nowe endpointy, nowe integracje, aktualizacje i praca nad wydajnością, miesiąc po miesiącu.",
+            "bullets": [
+              "Gwarantowana miesięczna pula godzin inżynierskich",
+              "Nowe endpointy i integracje w rytmie Twojej roadmapy",
+              "Monitoring, wsparcie przy incydentach i aktualizacje zależności",
+              "Skalowanie w górę lub w dół z 30-dniowym wyprzedzeniem"
+            ]
+          }
+        ],
+        "toolsTitle": "Technologie, z którymi pracujemy",
+        "tools": [
+          "TypeScript & Node.js",
+          "Python & FastAPI",
+          "NestJS",
+          "GraphQL & Apollo",
+          "PostgreSQL",
+          "Redis",
+          "Kafka & RabbitMQ",
+          "OpenAPI & Swagger",
+          "OAuth 2.0 & OIDC",
+          "AWS & GCP",
+          "Docker & Kubernetes",
+          "Grafana & Prometheus"
+        ],
+        "whoTitle": "Dla kogo to jest",
+        "who": [
+          {
+            "title": "CTO wymieniający kruche integracje",
+            "description": "Twoje systemy rozmawiają przez eksporty, crony i kopiuj-wklej. Zastępujemy to warstwą integracyjną, która jest monitorowana, udokumentowana i testowalna."
+          },
+          {
+            "title": "Zespoły produktowe otwierające publiczne API",
+            "description": "Klienci i partnerzy chcą budować na Twoim produkcie. Projektujemy API, uwierzytelnianie, dokumentację i rate limity tak, żeby strategia platformy naprawdę zadziałała."
+          },
+          {
+            "title": "Firmy wdrażające funkcje AI",
+            "description": "Model działa w notebooku; teraz ma obsługiwać klientów. Zamykamy Twoje AI w stabilnych endpointach z kontrolą kosztów, na których może polegać reszta firmy."
+          },
+          {
+            "title": "Scale-upy wyrastające z monolitu",
+            "description": "Ruch i zespół przerosły pierwotną architekturę. Wydzielamy serwisy i kolejki tam, gdzie to się opłaca, bez rewolucji i przepisywania wszystkiego od zera."
+          }
+        ],
+        "faqTitle": "Pytania i odpowiedzi",
+        "faq": [
+          {
+            "q": "Pracujecie z naszym istniejącym kodem?",
+            "a": "Tak, i tak wygląda większość projektów. Rozbudowujemy, refaktoryzujemy lub opakowujemy to, co masz; przepisanie od zera to ostateczność i uczciwie powiemy, jeśli akurat ma sens. Audyt to najszybszy sposób, by sprawdzić, na czym stoi Twoje API."
+          },
+          {
+            "q": "REST czy GraphQL?",
+            "a": "To zależy od konsumentów. REST jest domyślnym wyborem dla API publicznych i ruchu między serwisami; GraphQL broni swojej złożoności, gdy wielu klientów potrzebuje różnych widoków tych samych danych. Rekomendujemy jedno rozwiązanie, na piśmie, z uzasadnieniem, a budujemy oba."
+          },
+          {
+            "q": "Jak dbacie o bezpieczeństwo API?",
+            "a": "OAuth 2.0 lub OIDC dla tożsamości, tokeny o ograniczonym zakresie, rate limiting, walidacja wejścia i logi audytowe w standardzie. Bezpieczeństwo przeglądamy już na etapie projektu i testujemy przed startem, a z Waszym dostawcą pentestów współpracujemy bez tarć."
+          },
+          {
+            "q": "Kto utrzymuje API po wdrożeniu?",
+            "a": "Twój zespół, nasz albo oba. Przekazanie obejmuje dokumentację, runbooki i warsztat wdrożeniowy, więc Twoi inżynierowie mogą przejąć całość. Jeśli wolisz nas zatrzymać, retainer obejmuje monitoring, incydenty i nowe endpointy."
+          },
+          {
+            "q": "Jak to wyceniacie?",
+            "a": "Audyt ma stałą cenę, zdefiniowany zakres i konkretne rezultaty. Budowę wyceniamy po fazie projektowej, gdy zakres jest na tyle konkretny, że liczba jest uczciwa. Retainer to stała miesięczna stawka, którą zmienisz z 30-dniowym wyprzedzeniem."
+          }
+        ],
+        "cta": {
+          "title": "Systemy, które powinny ze sobą rozmawiać, a nie rozmawiają?",
+          "subtitle": "Umów bezpłatną 30-minutową rozmowę. Po drugiej stronie siedzi doświadczony inżynier, nie handlowiec. Wychodzisz ze szkicem architektury i szczerą oceną nakładu, niezależnie od tego, czy podejmiemy współpracę.",
+          "button": "Umów rozmowę o architekturze"
+        }
+      },
+      "technologies": {
+        "label": "Inżynieria",
+        "title": "Technologie",
+        "subtitle": "Trzynaście technologii, jedna poprzeczka: doświadczeni inżynierowie, wdrożenia produkcyjne i stack dobrany pod Twój produkt, nie pod nasze przyzwyczajenia.",
+        "breadcrumb": "Technologie",
+        "featuresTitle": "Co obejmuje nasz stack",
+        "featuresIntro": "Cztery frameworki frontendowe, cztery platformy backendowe, pięć technologii mobilnych. Lista jest krótka celowo: na tyle krótka, żeby w każdej pozycji być seniorem.",
+        "features": {
+          "frontend": {
+            "title": "Inżynieria frontendu",
+            "description": "React, Next.js, Vue i Angular, dobierane pod projekt, nie z przyzwyczajenia. Optymalizujemy pod Core Web Vitals, dostępność i kod, który Twój zespół rozwinie po przekazaniu."
+          },
+          "backend": {
+            "title": "Inżynieria backendu",
+            "description": "API i usługi w Pythonie, Node.js, Ruby on Rails i Javie. Typowane kontrakty, testy w CI i observability od pierwszego wdrożenia, bo to tam wygrywa się produkcyjne incydenty."
+          },
+          "mobile": {
+            "title": "Aplikacje mobilne",
+            "description": "Natywny Swift i Kotlin, gdy liczy się platforma; React Native, Flutter lub Kotlin Multiplatform, gdy jeden kod ma obsłużyć oba sklepy. Tę decyzję pomagamy podjąć na liczbach."
+          },
+          "ai": {
+            "title": "Integracja AI",
+            "description": "Każdy stack z tej strony projektujemy z myślą o AI: funkcje LLM za typowanym API, pipeline'y RAG, testy jakości modeli i kontrola kosztów. AI-first znaczy wbudowane, nie doklejone."
+          },
+          "selection": {
+            "title": "Jak dobieramy stack",
+            "description": "Kandydatów oceniamy względem Twojego produktu: kompetencje zespołu, rynek rekrutacji, dojrzałość ekosystemu, koszty hostingu i koszt wyjścia. Porównanie dostajesz na piśmie przed pierwszym commitem."
+          },
+          "standards": {
+            "title": "Standardy inżynierskie",
+            "description": "Code review każdej zmiany, CI/CD od pierwszego tygodnia, testy automatyczne jako część definicji ukończenia i dokumentacja, która przetrwa przekazanie projektu. Ta sama poprzeczka we wszystkich trzynastu technologiach."
+          }
+        },
+        "processTitle": "Jak technologia trafia na tę listę",
+        "process": {
+          "scan": {
+            "title": "Obserwacja",
+            "description": "Śledzimy wydania, roadmapy i kondycję społeczności w ekosystemach, w których pracujemy. Większość nowości kończy na tym etapie; kryterium nie jest szum, tylko gotowość produkcyjna."
+          },
+          "evaluate": {
+            "title": "Ocena",
+            "description": "Kandydaci przechodzą ustrukturyzowany test na realnym projekcie wewnętrznym: developer experience, wydajność, koszt utrzymania i długoterminowe ryzyko. Mierzymy, nie zgadujemy."
+          },
+          "pilot": {
+            "title": "Pilotaż",
+            "description": "Pierwsze użycie u klienta ma wąski zakres i nadzór seniora. Technologię kierujemy do projektu klienta dopiero wtedy, gdy przetrwała nasz własny."
+          },
+          "review": {
+            "title": "Przegląd",
+            "description": "Każdy stack z tej strony co roku wraca do przeglądu. Technologia, która przestaje się bronić, dostaje udokumentowaną ścieżkę migracji, a nie cichą degradację."
+          }
+        },
+        "stats": [
+          {
+            "value": "13",
+            "label": "technologii, które wdrażamy produkcyjnie, ani jednej więcej"
+          },
+          {
+            "value": "100%",
+            "label": "projektów z code review i CI od pierwszego dnia"
+          },
+          {
+            "value": "1",
+            "label": "poprzeczka inżynierska dla webu, mobile i AI"
+          },
+          {
+            "value": "4",
+            "label": "etapy oceny, zanim technologia trafi do projektu klienta"
+          }
+        ],
+        "toolsTitle": "Trzynaście technologii",
+        "tools": [
+          "React",
+          "Next.js",
+          "Vue",
+          "Angular",
+          "Python",
+          "Ruby on Rails",
+          "Node.js",
+          "Java",
+          "iOS (Swift)",
+          "Android (Kotlin)",
+          "React Native",
+          "Flutter",
+          "Kotlin Multiplatform"
+        ],
+        "whoTitle": "Dla kogo jest ta strona",
+        "who": [
+          {
+            "title": "CTO przed wyborem stacku",
+            "description": "Potrzebujesz decyzji technologicznej, którą obronisz przed zarządem i zespołem. Dostajesz pisemne porównanie ocenione względem Twoich ograniczeń, nie naszych preferencji."
+          },
+          {
+            "title": "Founderzy bez technicznego cofoundera",
+            "description": "Ktoś musi podjąć decyzję o stacku i wziąć za nią odpowiedzialność. Wybieramy nudne tam, gdzie nudne wygrywa, nowoczesne tam, gdzie się zwraca, i tłumaczymy jedno i drugie po ludzku."
+          },
+          {
+            "title": "Zespoły na starszym stacku",
+            "description": "Twój Rails, Java czy Angular wciąż zarabia. Modernizujemy przyrostowo i mówimy wprost, kiedy przepisanie od zera to zły pomysł."
+          },
+          {
+            "title": "Liderzy produktu dodający AI",
+            "description": "Roadmapa mówi AI, a stack nie był pod to budowany. Integrujemy funkcje LLM z istniejącymi systemami bez przebudowy całości."
+          }
+        ],
+        "faqTitle": "Pytania i odpowiedzi",
+        "faq": [
+          {
+            "q": "Dlaczego tylko trzynaście technologii?",
+            "a": "Bo senior w kilku technologiach wygrywa z powierzchowną znajomością wszystkich. Każda pozycja na tej liście ma za sobą realne projekty klienckie i coroczny przegląd. Jeśli Twój produkt wymaga czegoś spoza listy, mówimy to wprost i pomagamy znaleźć właściwego partnera."
+          },
+          {
+            "q": "Jaki stack polecicie dla naszego projektu?",
+            "a": "Ten, który wypadnie najlepiej względem Twoich ograniczeń: zespołu, rynku rekrutacji, terminu, budżetu na hosting i systemów do integracji. Porównanie dostajesz na piśmie przed pierwszym commitem, więc decyzja jest Twoja i udokumentowana."
+          },
+          {
+            "q": "Natywnie czy cross-platform?",
+            "a": "To zależy od rzeczy mierzalnych: potrzebnych funkcji platformy, zespołu, budżetu i czasu dotarcia do obu sklepów. Cross-platform wygrywa częściej, niż przyznają puryści; natywnie wygrywa, gdy produktem jest sprzęt, wydajność lub platformowy UX. Ten kompromis pokazujemy na liczbach."
+          },
+          {
+            "q": "Pracujecie z istniejącym kodem?",
+            "a": "Tak, to większość naszej pracy. Zaczynamy od audytu, obudowujemy testami to, czego dotykamy, i poprawiamy przyrostowo. Przepisanie od zera to ostateczność, a my uczciwie powiemy, czy naprawdę jej potrzebujesz."
+          },
+          {
+            "q": "Czy AI-first znaczy, że wciskacie AI wszędzie?",
+            "a": "Nie. Znaczy, że każda architektura zostawia miejsce na późniejsze funkcje AI: czyste API, strumienie zdarzeń, uporządkowane dane. Tam, gdzie funkcja LLM broni się kosztowo, budujemy ją; tam, gdzie nie, mówimy to wprost."
+          }
+        ],
+        "cta": {
+          "title": "Nie wiesz, który stack pasuje do Twojego produktu?",
+          "subtitle": "Umów bezpłatną, 30-minutową rozmowę z doświadczonym inżynierem. Wyjdziesz z krótką listą i uzasadnieniem, niezależnie od tego, czy zbudujemy to my.",
+          "button": "Porozmawiaj z inżynierem"
+        },
+        "subTitle": "Poznaj szczegóły",
+        "subIntro": "Każda technologia na osobnej stronie: co na niej budujemy i kiedy wygrywa.",
+        "sub": {
+          "react": {
+            "name": "React",
+            "teaser": "Interaktywne aplikacje webowe i design systemy w ekosystemie, który zna Twój następny pracownik."
+          },
+          "nextjs": {
+            "name": "Next.js",
+            "teaser": "Szybkie, mocne w SEO produkty webowe z renderowaniem po stronie serwera: od stron marketingowych po pełne platformy SaaS."
+          },
+          "vue": {
+            "name": "Vue",
+            "teaser": "Przystępne i wydajne frontendy oraz dashboardy we frameworku, którego zespoły uczą się najszybciej."
+          },
+          "angular": {
+            "name": "Angular",
+            "teaser": "Duże aplikacje enterprise o ścisłej strukturze, typowane od końca do końca i budowane na lata utrzymania."
+          },
+          "python": {
+            "name": "Python",
+            "teaser": "API, pipeline'y danych i backendy AI: język, w którym nasza praca z uczeniem maszynowym spotyka się z produkcją."
+          },
+          "ruby-on-rails": {
+            "name": "Ruby on Rails",
+            "teaser": "Kompletne produkty w kilka tygodni: Rails wciąż jest najszybszą uczciwą drogą od pomysłu do płacących klientów."
+          },
+          "nodejs": {
+            "name": "Node.js",
+            "teaser": "Usługi czasu rzeczywistego i API w TypeScripcie, z jednym językiem w całym stacku webowym."
+          },
+          "java": {
+            "name": "Java",
+            "teaser": "Backendy dla środowisk regulowanych i wysokiego obciążenia: bankowa niezawodność na nowoczesnym stacku Spring."
+          },
+          "ios-swift": {
+            "name": "iOS (Swift)",
+            "teaser": "Natywne aplikacje na iPhone'a i iPada, które w pełni wykorzystują platformę: od widgetów po AI na urządzeniu."
+          },
+          "android-kotlin": {
+            "name": "Android (Kotlin)",
+            "teaser": "Natywne aplikacje Android w Kotlinie i Jetpack Compose, dopasowane do urządzeń, które naprawdę mają Twoi użytkownicy."
+          },
+          "react-native": {
+            "name": "React Native",
+            "teaser": "Jeden kod na oba sklepy, wrażenia bliskie natywnym i Reactowe kompetencje Twojego zespołu webowego w akcji."
+          },
+          "flutter": {
+            "name": "Flutter",
+            "teaser": "Spójne co do piksela aplikacje na iOS i Androida z jednej bazy kodu, mocny wybór dla produktów stawiających na design."
+          },
+          "kotlin-multiplatform": {
+            "name": "Kotlin Multiplatform",
+            "teaser": "Wspólna logika biznesowa na iOS i Androidzie przy w pełni natywnych interfejsach na każdej platformie."
+          }
+        },
+        "subpages": {
+          "react": {
+            "label": "Technologie",
+            "title": "React",
+            "subtitle": "Złożone, wieloletnie interfejsy webowe budowane przez doświadczonych inżynierów: development przyspieszony AI, ścisły TypeScript i wydajność traktowana jak wymaganie.",
+            "breadcrumb": "React",
+            "overviewTitle": "Co budujemy w React",
+            "overview": [
+              "React to nasz domyślny wybór tam, gdzie złożoność siedzi w samym interfejsie: produkty SaaS, dashboardy pełne danych, narzędzia wewnętrzne z setkami ekranów i design systemy współdzielone między produktami. Budujemy je jako kod w ścisłym TypeScript, z biblioteką komponentów, którą Wasz zespół rozwija dalej bez nas.",
+              "Mówimy wprost, kiedy React się opłaca. Ma sens, gdy interfejs jest stanowy, interaktywny i ma żyć latami; ekosystem i rynek specjalistów są bezkonkurencyjne, a kod przeżywa zmiany w zespole. Dla stron opartych na treści, gdzie liczą się SEO i czas pierwszego ładowania, zwykle rekomendujemy Next.js, a dla prostej strony wizytówkowej React to przerost formy nad treścią. Powiemy to, zanim wydacie na niego budżet.",
+              "Pracujemy z akceleracją AI: inżynierowie używają narzędzi takich jak Claude Code, żeby szybciej stawiać szkielet, testy i refaktoryzacje, a każdy merge przechodzi review seniora. Tempo daje tooling; jakości pilnują code review, zestaw testów i budżety wydajnościowe egzekwowane w CI."
+            ],
+            "benefitsTitle": "Dlaczego React z pluscode",
+            "benefits": [
+              {
+                "title": "Ekosystem, który przeżyje mody",
+                "description": "React ma największy rynek specjalistów i bibliotek we frontendzie. Kod pisany według standardów pozostaje utrzymywalny po przekazaniu i po zmianach w Waszym zespole."
+              },
+              {
+                "title": "Uczciwa ocena dopasowania",
+                "description": "Projekt wycenia ten sam zespół, który miałby go budować. Jeśli React to złe narzędzie do Waszego przypadku, usłyszycie to na pierwszej rozmowie, nie po fakturze."
+              },
+              {
+                "title": "Szybkość AI, osąd seniora",
+                "description": "Narzędzia AI przyspieszają pracę mechaniczną; architekturę, review każdego merge'a i testy biorą na siebie doświadczeni inżynierowie. Tempo nie zamienia się w dług techniczny."
+              },
+              {
+                "title": "Wydajność jako wymaganie",
+                "description": "Budżety rozmiaru bundle'a, code splitting i profilowanie renderów są częścią definition of done, a nie projektem ratunkowym po starcie."
+              }
+            ],
+            "approachTitle": "Jak pracujemy z React",
+            "approach": [
+              {
+                "title": "Zakres i architektura",
+                "description": "Mapujemy ekrany, stany i przepływy danych, a potem domykamy decyzje, które później kosztują najwięcej: zarządzanie stanem, routing, kontrakty API i model komponentów."
+              },
+              {
+                "title": "Budowa pionowymi wycinkami",
+                "description": "Każdy sprint dostarcza działającą funkcję end-to-end, nie warstwę. Realny produkt widzicie na środowisku preview od pierwszego tygodnia i korygujecie kurs, póki to tanie."
+              },
+              {
+                "title": "Review, testy, pomiar",
+                "description": "Każdy pull request przechodzi review seniora, testy automatyczne (jednostkowe, komponentowe, end-to-end w Playwright) i budżet wydajnościowy przed merge'em. Bez wyjątków pod presją terminu."
+              },
+              {
+                "title": "Utwardzenie i przekazanie",
+                "description": "Przed startem profilujemy rendery, audytujemy dostępność, domykamy dokumentację i przeprowadzamy Wasz zespół przez kod, aż będzie w stanie rozwijać go bez nas."
+              }
+            ],
+            "deliverablesTitle": "Co otrzymujecie",
+            "deliverables": [
+              "Produkcyjna aplikacja React w ścisłym TypeScript",
+              "Biblioteka komponentów udokumentowana w Storybooku",
+              "Zestaw testów automatycznych: jednostkowe, komponentowe i end-to-end",
+              "Pipeline CI/CD z wdrożeniami preview dla każdego pull requesta",
+              "Audyt wydajności i dostępności wraz z wdrożonymi poprawkami",
+              "Rejestr decyzji architektonicznych i dokumentacja przekazania"
+            ],
+            "faqTitle": "Częste pytania",
+            "faq": [
+              {
+                "q": "Czy React to dobry wybór dla naszego projektu?",
+                "a": "Zależy, gdzie siedzi złożoność. Stanowe, interaktywne UI produktu: tak. Strony oparte na treści, gdzie rządzą SEO i czas ładowania: zwykle Next.js. Pięciostronicowa wizytówka: ani jedno, ani drugie, lżejszy stack będzie tańszy w utrzymaniu. Taką ocenę dostajecie na pierwszej rozmowie, bezpłatnie."
+              },
+              {
+                "q": "Czy kod generowany przez AI nie obniża jakości?",
+                "a": "Nie w naszym procesie. AI przygotowuje powtarzalne fragmenty; każdą linię przed merge'em przegląda senior, a nic nie wchodzi na produkcję bez testów i budżetu wydajnościowego. Dostajecie tempo bez niesprawdzonego kodu."
+              },
+              {
+                "q": "Przejmiecie istniejący kod w React?",
+                "a": "Tak, robimy to regularnie. Zaczynamy od krótkiego audytu: kondycja zależności, pokrycie testami, wydajność renderowania i sposób zarządzania stanem. Dostajecie spriorytetyzowaną listę poprawek, a potem albo ją realizujemy, albo przekazujemy Waszemu zespołowi."
+              },
+              {
+                "q": "React czy Next.js?",
+                "a": "React to biblioteka, Next.js to framework na niej zbudowany. Jeśli potrzebujecie renderowania po stronie serwera, SEO albo strony z treścią i produktu w jednym repozytorium: Next.js. Czysta aplikacja za loginem: często prościej w React z Vite. Używamy obu i wybieramy pod projekt."
+              }
+            ],
+            "cta": {
+              "title": "Zbudujmy Wasz następny interfejs w React",
+              "subtitle": "Umów bezpłatną 30-minutową rozmowę z doświadczonym inżynierem. Wyjdziesz z oceną dopasowania i wstępnym zakresem, niezależnie od tego, czy będziemy współpracować.",
+              "button": "Porozmawiaj z inżynierem"
+            }
+          },
+          "nextjs": {
+            "label": "Technologie",
+            "title": "Next.js",
+            "subtitle": "Strona marketingowa i produkt w jednym kodzie: renderowanie na serwerze, szybkość domyślnie i Core Web Vitals mierzone w CI.",
+            "breadcrumb": "Next.js",
+            "overviewTitle": "Co budujemy w Next.js",
+            "overview": [
+              "Po Next.js sięgamy, gdy projekt ma być widoczny w wyszukiwarce, ładować się szybko i dalej zachowywać jak produkt: strony marketingowe na headless CMS, aplikacje SaaS, sklepy e-commerce i aplikacje full-stack na server components i API routes. Nasza własna strona działa na Next.js i headless CMS, więc dowozimy na stacku, który sami sprzedajemy.",
+              "To właściwy wybór, gdy liczą się SEO i pierwsze ładowanie, gdy treść i aplikacja dzielą jedno repozytorium albo gdy sposób renderowania ma być decyzją per strona: statycznie, gdzie się da, serwerowo, gdzie trzeba, po stronie klienta, gdzie to się opłaca. To zły wybór dla czysto wewnętrznego narzędzia za loginem, gdzie React z Vite jest prostszy w budowie i tańszy w utrzymaniu; powiemy Wam, po której stronie tej granicy jesteście.",
+              "Development przyspieszamy AI z bramką senior review: inżynierowie używają narzędzi AI do szkieletu, migracji i pokrycia testami, a każda zmiana przed merge'em przechodzi review, testy automatyczne i budżet Core Web Vitals w CI. Wdrażamy na Vercel albo na Waszej infrastrukturze w kontenerach; kod nie przywiązuje Was do hostingu."
+            ],
+            "benefitsTitle": "Dlaczego Next.js z pluscode",
+            "benefits": [
+              {
+                "title": "SEO i szybkość bez drugiego stacku",
+                "description": "Renderowanie serwerowe i generowanie statyczne pochodzą z tego samego kodu co produkt. Bez osobnej strony marketingowej, która rozjeżdża się z resztą."
+              },
+              {
+                "title": "Renderowanie per strona",
+                "description": "Statycznie, serwerowo albo po stronie klienta, zależnie od tego, co się opłaca. Nie płacicie za serwer przy stronach, które się nie zmieniają, ani nie wysyłacie JavaScriptu, którego nikt nie potrzebuje."
+              },
+              {
+                "title": "Bez uzależnienia od hostingu",
+                "description": "Budujemy Next.js tak, żeby działał na Vercelu albo w kontenerach w Waszej chmurze. Decyzja o wdrożeniu pozostaje odwracalna."
+              },
+              {
+                "title": "Web Vitals egzekwowane w CI",
+                "description": "Budżety wydajnościowe zatrzymują build, nie projekt. Regresje łapiemy w pull requeście, nie w spadku pozycji w wyszukiwarce."
+              }
+            ],
+            "approachTitle": "Jak pracujemy z Next.js",
+            "approach": [
+              {
+                "title": "Architektura i mapa renderowania",
+                "description": "Inwentaryzujemy strony i funkcje, ustalamy tryb renderowania per ścieżka, strategię cache i model treści w CMS, zanim powstanie kod funkcjonalności."
+              },
+              {
+                "title": "Budowa z preview",
+                "description": "Każdy pull request dostaje wdrożenie preview, które Wasz zespół może przeklikać. Redaktorzy pracują w CMS równolegle od wczesnego etapu."
+              },
+              {
+                "title": "Bramki jakości",
+                "description": "Senior review, testy end-to-end w Playwright i budżety Lighthouse działają w CI przy każdej zmianie. AI przyspiesza pisanie; bramki pozostają nienegocjowalne."
+              },
+              {
+                "title": "Start i pomiar",
+                "description": "Startujemy z przekierowaniami, sitemapami, danymi strukturalnymi i analityką, a potem weryfikujemy Core Web Vitals na realnym ruchu i poprawiamy to, co podważą dane z pola."
+              }
+            ],
+            "deliverablesTitle": "Co otrzymujecie",
+            "deliverables": [
+              "Produkcyjna aplikacja Next.js wdrożona na Vercel albo Waszej infrastrukturze",
+              "Integracja z headless CMS wraz z procesem redakcyjnym",
+              "Techniczne SEO: metadane, sitemapy, przekierowania i dane strukturalne",
+              "Pipeline CI/CD z wdrożeniami preview i budżetami Core Web Vitals",
+              "Zestaw testów automatycznych z pokryciem end-to-end w Playwright",
+              "Dokumentacja przekazania dla developerów i redaktorów treści"
+            ],
+            "faqTitle": "Częste pytania",
+            "faq": [
+              {
+                "q": "Czy Next.js wymaga Vercela?",
+                "a": "Nie. Vercel to najgładsza ścieżka i często słuszna, ale regularnie wdrażamy Next.js w kontenerach Docker na AWS i w innych chmurach. Liczymy koszt hostingu w obu wariantach i decydują liczby."
+              },
+              {
+                "q": "Przeniesiecie naszą obecną stronę na Next.js?",
+                "a": "Tak, przyrostowo: najpierw inwentaryzacja URL-i i mapa przekierowań, potem sekcje przechodzą pojedynczo za proxy, więc pozycje i ruch się zachowują. Przepisywanie wszystkiego naraz jest prawie nigdy konieczne."
+              },
+              {
+                "q": "Next.js czy czysty React?",
+                "a": "Jeśli liczą się SEO, treść albo renderowanie serwerowe: Next.js. Aplikacja wewnętrzna za loginem: zwykle React z Vite. Używamy obu; wybór robimy pod projekt i uzasadniamy na piśmie."
+              },
+              {
+                "q": "Z jakim CMS go łączycie?",
+                "a": "Najczęściej z Payload, na którym działa nasza własna strona, albo z headless CMS, który Wasz zespół już zna. Kryteria: proces redakcyjny, wymóg self-hostingu i koszty licencji; rekomendację dajemy po obejrzeniu Waszego modelu treści."
+              }
+            ],
+            "cta": {
+              "title": "Strona, która się pozycjonuje, produkt, który skaluje",
+              "subtitle": "Umów bezpłatną 30-minutową rozmowę. Powiemy, czy Next.js pasuje do Waszego przypadku i ile z grubsza zajmie budowa lub migracja.",
+              "button": "Umów rozmowę"
+            }
+          },
+          "vue": {
+            "label": "Technologie",
+            "title": "Vue",
+            "subtitle": "Pragmatyczne frontendy w Vue 3 i Nuxt: przystępne dla zespołu, rygorystyczne w typach, testach i wydajności.",
+            "breadcrumb": "Vue",
+            "overviewTitle": "Co budujemy w Vue",
+            "overview": [
+              "W Vue budujemy aplikacje single-page, panele administracyjne, strony na Nuxt oraz interaktywne komponenty osadzane w istniejących aplikacjach serwerowych na Laravelu, Railsach czy .NET. Prowadzimy też migracje z Vue 2 do Vue 3 dla zespołów, których kod przeżył wersję frameworka, na której powstał.",
+              "Vue to dobry wybór, gdy Wasz zespół już na nim pracuje, gdy chcecie jednego spójnego frameworka z oficjalnym routingiem, stanem i toolingiem zamiast składania ekosystemu na własną rękę, albo gdy dodajecie bogatą interaktywność do aplikacji serwerowej bez jej przepisywania. Będzie słabszym wyborem, jeśli potrzebujecie współdzielenia kodu z React Native albo Wasz lokalny rynek pracy jest zdominowany przez React; powiemy uczciwie, który przypadek Was dotyczy.",
+              "Pracujemy w Vue 3 z Composition API i ścisłym TypeScript: Pinia do stanu, Vitest i Playwright do testów, Nuxt tam, gdzie liczą się renderowanie serwerowe i SEO. Development przyspieszamy AI, a każdy merge przechodzi review doświadczonego inżyniera; praca w Vue przechodzi u nas te same bramki review, testów i wydajności co praca w React."
+            ],
+            "benefitsTitle": "Dlaczego Vue z pluscode",
+            "benefits": [
+              {
+                "title": "Jeden spójny stack, oficjalnie utrzymywany",
+                "description": "Router, Pinia i Vite są first-party. Mniej decyzji integracyjnych, mniej porzuconych zależności, szybsze wdrożenie nowych inżynierów."
+              },
+              {
+                "title": "Dobrze współgra z tym, co macie",
+                "description": "Vue czysto montuje się w istniejących stronach renderowanych serwerowo, więc aplikację na Laravelu czy Railsach modernizujecie ekran po ekranie, zamiast stawiać wszystko na przepisanie."
+              },
+              {
+                "title": "Czyste wyjście z Vue 2",
+                "description": "Vue 2 nie jest już wspierane. Migrujemy do Vue 3 przyrostowo, z buildem kompatybilności i siatką testów, więc produkt dalej dowozi w trakcie migracji."
+              },
+              {
+                "title": "Ta sama poprzeczka inżynierska",
+                "description": "Ścisły TypeScript, review seniora przy każdym merge'u, testy automatyczne i budżety wydajnościowe. Wybór frameworka nigdy nie obniża standardu."
+              }
+            ],
+            "approachTitle": "Jak pracujemy z Vue",
+            "approach": [
+              {
+                "title": "Ocena",
+                "description": "Greenfield czy istniejący kod, zaczynamy od mapy modelu stanu, granic komponentów, a przy migracjach: wszystkiego, co przypięte do API Vue 2."
+              },
+              {
+                "title": "Architektura",
+                "description": "Domykamy decyzje, które później bolą najbardziej: projekt store'ów Pinia, routing, poziom rygoru TypeScript i to, czy Nuxt w Waszym przypadku się broni."
+              },
+              {
+                "title": "Budowa i review",
+                "description": "Narzędzia AI przyspieszają komponenty, testy i refaktoryzacje; każdy pull request przegląda senior przed merge'em. Działający soft ląduje na preview co sprint."
+              },
+              {
+                "title": "Stabilizacja i przekazanie",
+                "description": "Domykamy pokrycie testami, profilujemy wydajność, dokumentujemy architekturę i przeprowadzamy Wasz zespół przez kod, aż poczuje się jego właścicielem."
+              }
+            ],
+            "deliverablesTitle": "Co otrzymujecie",
+            "deliverables": [
+              "Produkcyjna aplikacja Vue 3 w ścisłym TypeScript",
+              "Typowane store'y Pinia i udokumentowana biblioteka komponentów",
+              "Plan migracji z Vue 2 do Vue 3 i jej realizacja, jeśli dotyczy",
+              "Zestaw testów: jednostkowe w Vitest i end-to-end w Playwright",
+              "Pipeline CI/CD z wdrożeniami preview",
+              "Dokumentacja architektury i sesje przekazania"
+            ],
+            "faqTitle": "Częste pytania",
+            "faq": [
+              {
+                "q": "Czy Vue to bezpieczny wybór na lata?",
+                "a": "Tak. Vue 3 jest aktywnie rozwijane, ma stabilny core team i działa na dużą skalę w Europie i Azji. Realnym ryzykiem jest pozostanie na Vue 2, które nie ma już wsparcia; jeśli to Wy, migrację planujemy w pierwszej kolejności."
+              },
+              {
+                "q": "Jesteśmy na Vue 2. Przepisywać czy migrować?",
+                "a": "Prawie zawsze migrować. Build migracyjny pozwala iść przyrostowo, a siatka testów łapie regresje po drodze. Zakres ustalamy krótkim audytem: większość kodu to tygodnie, nie miesiące, a produkt w tym czasie dalej dowozi."
+              },
+              {
+                "q": "Vue czy React?",
+                "a": "Jeśli zespół zna Vue albo rozbudowujecie aplikację serwerową: Vue. Jeśli liczy się największy rynek specjalistów albo współdzielenie kodu z React Native: React. Oba przechodzą naszą poprzeczkę jakości; decyzja zależy od Waszego zespołu i ograniczeń, a rekomendację dostajecie na piśmie."
+              },
+              {
+                "q": "Kiedy dokładacie Nuxt?",
+                "a": "Gdy renderowanie serwerowe, SEO albo routing plikowy na stronie pełnej treści realnie się opłacają. Dla czystego SPA za loginem prostsze pozostaje Vue z Vite."
+              }
+            ],
+            "cta": {
+              "title": "Zaprzęgnij Vue do swojego produktu",
+              "subtitle": "Umów bezpłatną 30-minutową rozmowę z doświadczonym inżynierem. Przyjdź z pomysłem greenfield albo kodem na Vue 2; wyjdziesz z konkretnym następnym krokiem.",
+              "button": "Porozmawiaj z inżynierem"
+            }
+          },
+          "angular": {
+            "label": "Technologie",
+            "title": "Angular",
+            "subtitle": "Frontendy klasy enterprise, utrzymywalne przez dekadę: ścisłe typowanie, egzekwowane konwencje i aktualizacje, które nie kończą się przepisywaniem.",
+            "breadcrumb": "Angular",
+            "overviewTitle": "Co budujemy w Angularze",
+            "overview": [
+              "W Angularze budujemy aplikacje, na których firmy opierają swoje operacje: duże platformy wewnętrzne, systemy biznesowe pełne formularzy, frontendy dla branż regulowanych i kod wielu zespołów zorganizowany w monorepo Nx. Modernizujemy też starzejące się systemy: od pozostałości po AngularJS po aplikacje kilka wersji głównych za bieżącą.",
+              "Angular to właściwy wybór, gdy kilka zespołów dzieli jeden kod przez wiele lat i chcecie, żeby strukturę egzekwował framework, a nie folklor zespołowy: dependency injection, kompletny router i formularze oraz ścieżka aktualizacji zarządzana przez Google. To zły wybór dla stron marketingowych, projektów pod SEO i szybkich MVP, gdzie Next.js albo lżejszy stack dowiezie szybciej; jeśli to Wasz przypadek, wskażemy właśnie tę drogę.",
+              "Budujemy nowoczesny Angular: standalone components, signals, ścisły TypeScript i OnPush jako domyślne, nie aspiracyjne. Development przyspieszamy AI z bramką review seniora na każdym merge'u, testami w Vitest lub Jest plus Playwright oraz budżetami na rozmiar bundle'a i koszt change detection egzekwowanymi w CI."
+            ],
+            "benefitsTitle": "Dlaczego Angular z pluscode",
+            "benefits": [
+              {
+                "title": "Struktura, która skaluje się na zespoły",
+                "description": "Konwencje Angulara i dependency injection sprawiają, że dziesięć zespołów w jednym monorepo pisze kod wyglądający tak samo. Mniej sporów o styl, tańszy onboarding, łatwiejsze audyty."
+              },
+              {
+                "title": "Nowoczesny Angular, nie ten z 2016 roku",
+                "description": "Signals, standalone components i typowane formularze zmieniły framework. Budujemy na bieżącym Angularze i sprzątamy stare wzorce z istniejącego kodu."
+              },
+              {
+                "title": "Aktualizacje jako rutyna, nie wydarzenie",
+                "description": "Utrzymujemy aplikacje najwyżej jedną wersję główną za bieżącą, korzystając z narzędzi update i schematics. Nudne, planowe aktualizacje biją wymuszone przepisanie w piątym roku."
+              },
+              {
+                "title": "Złożone formularze pod kontrolą",
+                "description": "Typowane formularze reaktywne, logika walidacji i przepływy RxJS pisane pod testy jednostkowe, więc procesy z 200 polami dają się zmieniać po latach."
+              }
+            ],
+            "approachTitle": "Jak pracujemy z Angularem",
+            "approach": [
+              {
+                "title": "Audyt albo projekt",
+                "description": "Dla istniejących systemów audytujemy wersje, wzorce i pokrycie testami; dla nowych rozrysowujemy workspace Nx, granice modułów i przepływ danych, zanim ruszą funkcjonalności."
+              },
+              {
+                "title": "Modernizacja przyrostowa",
+                "description": "Aktualizacje i refaktoryzacje wychodzą małymi, wydawalnymi krokami równolegle z dowożeniem funkcji. Aplikacja działa każdego dnia współpracy."
+              },
+              {
+                "title": "Budowa z bramkami",
+                "description": "Narzędzia AI przyspieszają komponenty, migracje i testy; każdy merge przechodzi review seniora, testy i budżety w CI. Dyscypliny frameworka pilnują maszyny, nie okólniki."
+              },
+              {
+                "title": "Przekazanie modelu działania",
+                "description": "Dostajecie dokumentację, rejestr decyzji architektonicznych i kalendarz aktualizacji, plus sesje pair programming, żeby zespół utrzymał standard po naszym wyjściu."
+              }
+            ],
+            "deliverablesTitle": "Co otrzymujecie",
+            "deliverables": [
+              "Produkcyjna aplikacja Angular na bieżącej wersji głównej",
+              "Workspace Nx z egzekwowanymi granicami modułów, gdy uzasadnia to skala zespołu",
+              "Mapa modernizacji i przeprowadzone aktualizacje dla istniejących systemów",
+              "Zestaw testów: jednostkowe, komponentowe i end-to-end w Playwright",
+              "Pipeline CI/CD z budżetami wydajności i rozmiaru bundle'a",
+              "Rejestr decyzji architektonicznych i playbook aktualizacji"
+            ],
+            "faqTitle": "Częste pytania",
+            "faq": [
+              {
+                "q": "Czy Angular to wciąż dobry wybór?",
+                "a": "W swojej niszy: tak. Google rozwija go aktywnie, wydaje w przewidywalnym rytmie, a signals i standalone components mocno go unowocześniły. Dla dużych, wieloletnich, wielozespołowych aplikacji pozostaje jedną z najmocniejszych opcji; dla stron z treścią i MVP rekomendujemy inne stacki."
+              },
+              {
+                "q": "Jesteśmy kilka wersji do tyłu. Przepisywać czy aktualizować?",
+                "a": "Prawie zawsze aktualizować. Narzędzia Angulara automatyzują sporą część każdego kroku między wersjami, a my robimy je przyrostowo, gdy Wasza roadmapa biegnie dalej. Przepisanie wchodzi w grę tylko dla kodu na AngularJS (1.x), a i tam zwykle migrujemy ekran po ekranie."
+              },
+              {
+                "q": "Angular czy React?",
+                "a": "Angular kupuje egzekwowaną spójność dla dużych lub rotujących zespołów przy systemach na dekadę; React elastyczność i większy rynek specjalistów. Budujemy w obu, a rekomendacja wynika ze struktury Waszego zespołu i horyzontu czasowego, na piśmie."
+              },
+              {
+                "q": "Czy development przyspieszany AI działa z Angularem?",
+                "a": "Wyjątkowo dobrze. Mocne konwencje Angulara czynią wynik pracy AI przewidywalnym, a ścisłe typowanie sprawia, że odstępstwa zatrzymują build. Najbardziej przyspiesza praca powtarzalna: testy, szkielety formularzy, migracje wersji. Bramką pozostaje review seniora na każdym merge'u."
+              }
+            ],
+            "cta": {
+              "title": "Zmodernizuj lub zbuduj platformę w Angularze",
+              "subtitle": "Umów bezpłatną 30-minutową rozmowę z doświadczonym inżynierem. Przyjdź z numerem wersji i listą bolączek; wyjdziesz z uczciwą oceną: aktualizacja czy przebudowa.",
+              "button": "Porozmawiaj z inżynierem"
+            }
+          },
+          "python": {
+            "label": "Technologie",
+            "title": "Python",
+            "subtitle": "Serwisy AI, pipeline'y danych i produkcyjne API. Język, w którym dowozimy naszą pracę z AI, pisany przez senior engineerów i przeglądany jak kod, który ma działać latami.",
+            "breadcrumb": "Python",
+            "overviewTitle": "Co budujemy w Pythonie",
+            "overview": [
+              "Python to język, w którym powstaje większość naszych projektów AI i data engineeringu. Budujemy aplikacje LLM i systemy RAG, infrastrukturę do servingu i ewaluacji modeli, pipeline'y danych, które je zasilają, oraz serwisy w FastAPI lub Django, które wystawiają to wszystko reszcie Twojego stacku. Jeśli projekt dotyka uczenia maszynowego, jego rdzeń niemal na pewno będzie w Pythonie.",
+              "To właściwy wybór, gdy projekt obejmuje AI, przetwarzanie danych albo szybko rozwijane API produktowe: ekosystem (PyTorch, LangGraph, pandas, Airflow) nie ma konkurencji, a doświadczonych inżynierów Pythona łatwo zrekrutować. To zły wybór dla ścieżek krytycznych obciążających CPU przy ostrych budżetach latencji oraz dla zespołów ustandaryzowanych na JVM; w takich przypadkach mówimy to wprost i rekomendujemy Javę, Node.js albo architekturę mieszaną.",
+              "Pracujemy z akceleracją AI: inżynierowie używają narzędzi AI, żeby działać szybko, a każda linia kodu i tak przechodzi review seniora przed merge'em. Typowanie i mypy w całym kodzie, testy w CI od pierwszego dnia, a tracing, metryki i logi strukturalne gotowe przed startem produkcyjnym. Szybkość bierze się z narzędzi, niezawodność z dyscypliny."
+            ],
+            "benefitsTitle": "Dlaczego Python",
+            "benefits": [
+              {
+                "title": "Domyślny język AI",
+                "description": "Każdy model, framework i baza wektorowa dostaje bindingi Pythona jako pierwsze. Budowanie AI w Pythonie oznacza używanie narzędzi tak, jak zaprojektowali je autorzy, a nie przez wrapper drugiej kategorii."
+              },
+              {
+                "title": "Od pomysłu do API w dni",
+                "description": "FastAPI i ekosystem Pythona zamieniają dobrze opisaną funkcję w udokumentowany, przetestowany endpoint w krótkim czasie. Zespół produktowy iteruje co tydzień, nie co kwartał."
+              },
+              {
+                "title": "Jeden język na całej ścieżce danych",
+                "description": "Pobieranie danych, transformacje, trening, serving i API przed nimi mogą dzielić jeden język, jeden zestaw testów i jeden proces wdrożeń. Mniej przekazań, mniej błędów na stykach."
+              },
+              {
+                "title": "Uczciwy profil wydajności",
+                "description": "Python wystarcza dla zdecydowanej większości obciążeń API i potwierdzamy to testami obciążeniowymi. Tam, gdzie nie wystarcza, izolujemy gorącą ścieżkę i przenosimy ją, zamiast udawać, że problemu nie ma."
+              }
+            ],
+            "approachTitle": "Jak pracujemy",
+            "approach": [
+              {
+                "title": "Zakres i architektura",
+                "description": "Zanim powstanie kod, ustalamy, co serwis ma robić, przy jakiej latencji i jakim wolumenie. Decyzje architektoniczne (framework, bazy danych, async czy nie) zapisujemy razem z uzasadnieniem."
+              },
+              {
+                "title": "Budowa z akceleracją AI",
+                "description": "Inżynierowie używają narzędzi AI do mechanicznej części pracy, a własnego osądu tam, gdzie ma on znaczenie. Każdy pull request przechodzi review senior engineera przed merge'em, bez wyjątków."
+              },
+              {
+                "title": "Testy i typy jako bariery ochronne",
+                "description": "Kontrola typów i testy działają w CI przy każdym commicie. Pipeline'y danych dostają testy kontraktowe, kod stykający się z modelami dostaje runy ewaluacyjne; regresje łapiemy przed wdrożeniem, nie po."
+              },
+              {
+                "title": "Observability i przekazanie",
+                "description": "Logi strukturalne, metryki i tracing wchodzą razem z serwisem, nie po nim. Przekazujemy runbooki i przeprowadzamy Twój zespół przez kod, żebyście nie byli od nas zależni."
+              }
+            ],
+            "deliverablesTitle": "Co dostajesz",
+            "deliverables": [
+              "Produkcyjne serwisy w FastAPI lub Django, typowane i po review seniorów",
+              "Pipeline'y danych z orkiestracją, monitoringiem i alertami",
+              "Zestaw testów i pipeline CI/CD, które bramkują każdą zmianę",
+              "Dokumentacja OpenAPI, na której mogą budować Twoje zespoły",
+              "Dashboardy, tracing i logi strukturalne od pierwszego dnia",
+              "Runbooki i nagrane przekazanie dla Twoich inżynierów"
+            ],
+            "faqTitle": "Najczęstsze pytania",
+            "faq": [
+              {
+                "q": "Czy Python jest wystarczająco szybki dla produkcyjnych API?",
+                "a": "Dla większości obciążeń tak, i weryfikujemy to testami obciążeniowymi na Twoim realnym profilu ruchu, a nie benchmarkami z internetu. Asynchroniczne FastAPI obsługuje tysiące żądań na sekundę na skromnym sprzęcie. Gdy konkretna ścieżka faktycznie obciąża CPU, izolujemy ją i przenosimy tylko ten fragment, nie cały system."
+              },
+              {
+                "q": "FastAPI czy Django?",
+                "a": "FastAPI dla serwisów API-first i wszystkiego, co dotyka ML; Django, gdy potrzebujesz kompletu: admina, uwierzytelniania, ORM i sprawdzonych latami wzorców dla produktów opartych na treści. Wybieramy per projekt i uzasadniamy wybór na piśmie. Obie opcje są nudne i dobrze wspierane, czyli dokładnie takie, jakich chcesz."
+              },
+              {
+                "q": "Przejmiecie istniejący kod w Pythonie?",
+                "a": "Tak. Zaczynamy od krótkiego audytu: stan zależności, pokrycie testami, typowanie, wdrożenia. Dostajesz spriorytetyzowaną listę ryzyk, zanim zobowiążemy się do roadmapy. Większość kodu wymaga mniej przepisywania, niż obawiają się właściciele; naprawiamy to, co blokuje dowożenie, resztę zostawiamy."
+              },
+              {
+                "q": "Czy kod generowany przez AI obniża poprzeczkę jakości?",
+                "a": "Nie, bo poprzeczkę wymusza proces, a nie to, kto napisał kod. Wszystko przechodzi review seniora, kontrolę typów i testy przed merge'em. Narzędzia AI zmieniają tempo, w jakim powstaje propozycja zmiany; nie zmieniają niczego w tym, co akceptujemy."
+              }
+            ],
+            "cta": {
+              "title": "Planujesz projekt w Pythonie?",
+              "subtitle": "Umów bezpłatną 30-minutową rozmowę z senior engineerem. Wyjdziesz z niej z uczciwą oceną, czy Python pasuje, i z propozycją pierwszego kamienia milowego.",
+              "button": "Porozmawiaj z inżynierem"
+            }
+          },
+          "ruby-on-rails": {
+            "label": "Technologie",
+            "title": "Ruby on Rails",
+            "subtitle": "Najszybsza droga od pomysłu na produkt do płacących klientów. Jeden framework, jeden mały senioralny zespół, działający software w kilka tygodni.",
+            "breadcrumb": "Ruby on Rails",
+            "overviewTitle": "Co budujemy w Ruby on Rails",
+            "overview": [
+              "Rails to nasze narzędzie do szybkiego budowania produktów: SaaS-y, marketplace'y, platformy wewnętrzne i portale klienckie, które muszą powstać w tygodnie, nie kwartały. Jeden framework obejmuje bazę danych, logikę biznesową, zadania w tle i, dzięki Hotwire, większość frontendu, więc mały senioralny zespół dowozi cały produkt.",
+              "To właściwy wybór, gdy o wyniku decyduje czas wejścia na rynek: MVP, które ma spotkać prawdziwych użytkowników w tym kwartale, produkt wciąż szukający swojego kształtu, narzędzie B2B oparte na CRUD. To zły wybór dla obciążeń obliczeniowych, rdzeni ML i zespołów potrzebujących typowanego języka na dużą skalę; tam sięgamy po Pythona, Node.js albo Javę i mówimy o tym wcześnie.",
+              "Pracujemy z akceleracją AI: narzędzia AI przejmują boilerplate, który Rails i tak minimalizuje, a senior engineerowie robią review każdej zmiany przed merge'em. Pełen zestaw testów w RSpec, CI/CD od pierwszego tygodnia, monitoring i śledzenie błędów działające, zanim cokolwiek zauważy pierwszy użytkownik. Szybkość zbudowała reputację Railsów; utrzymuje ją dyscyplina."
+            ],
+            "benefitsTitle": "Dlaczego Ruby on Rails",
+            "benefits": [
+              {
+                "title": "Tygodnie do pierwszych użytkowników",
+                "description": "Konwencja ponad konfiguracją oznacza zero czasu traconego na decyzje bez znaczenia. Uwierzytelnianie, płatności, admin i zadania w tle to problemy rozwiązane; uwaga idzie w logikę Twojego produktu."
+              },
+              {
+                "title": "Kod, który utrzyma jeden zespół",
+                "description": "Rails trzyma cały produkt w jednym repozytorium, jednym języku i jednym modelu myślowym. Mały senioralny zespół pozostaje produktywny tam, gdzie stack mikroserwisowy potrzebuje plutonu."
+              },
+              {
+                "title": "Sprawdzony na prawdziwej skali",
+                "description": "Shopify, GitHub i Basecamp działają na Railsach. Sufit skalowania jest daleko powyżej punktu, w którym większość produktów wygrywa albo przegrywa, a droga do niego jest dobrze udokumentowana."
+              },
+              {
+                "title": "Tani w zmianie",
+                "description": "Wczesne produkty pivotują. W Railsach zmiany schematu, nowe przepływy i przebudowane ekrany to rutyna, więc koszt uczenia się od użytkowników pozostaje niski."
+              }
+            ],
+            "approachTitle": "Jak pracujemy",
+            "approach": [
+              {
+                "title": "Zakres pierwszego wydania",
+                "description": "Tniemy pomysł do najmniejszego produktu, który może spotkać prawdziwych użytkowników, i definiujemy, co ma udowodnić. Pierwsze dwa tygodnie kończą się działającym softwarem, nie dokumentami."
+              },
+              {
+                "title": "Budowa z AI, review seniorów",
+                "description": "Narzędzia AI przyspieszają rutynową pracę; każdy pull request i tak przechodzi review senior engineera przed merge'em. Tempo jest prawdziwe i jakość kodu też."
+              },
+              {
+                "title": "Testy tam, gdzie się liczą",
+                "description": "Testy systemowe i modelowe w RSpec pokrywają przepływy, od których zależy Twój przychód. CI uruchamia wszystko przy każdym pushu; zepsute buildy nie trafiają na produkcję."
+              },
+              {
+                "title": "Start i iteracja",
+                "description": "Wdrożenia, monitoring i śledzenie błędów są gotowe przed startem. Po starcie wydajemy w cyklach tygodniowych, kierując się tym, co pokazuje realne użycie."
+              }
+            ],
+            "deliverablesTitle": "Co dostajesz",
+            "deliverables": [
+              "Produkcyjna aplikacja Rails, wdrożona i monitorowana",
+              "Frontend w Hotwire, bez osobnego SPA do utrzymania",
+              "Zestaw testów RSpec pokrywający krytyczne przepływy",
+              "Pipeline CI/CD z wdrożeniem jedną komendą",
+              "Panel administracyjny i narzędzia operacyjne dla Twojego zespołu",
+              "Dokumentacja i przekazanie, od którego dowolny zespół Rails może kontynuować"
+            ],
+            "faqTitle": "Najczęstsze pytania",
+            "faq": [
+              {
+                "q": "Czy Rails to wciąż bezpieczny wybór w 2026?",
+                "a": "Tak. Rails 8 rozwija się aktywnie, na tym frameworku działają jedne z największych przychodowych kodobaz w sieci, a rekrutacja doświadczonych inżynierów Rails jest łatwiejsza, niż sugeruje szum. Frameworki umierają z porzucenia, nie ze starości; Rails nie ma żadnego z tych problemów."
+              },
+              {
+                "q": "Czy to się wyskaluje, jeśli produkt wystrzeli?",
+                "a": "Rails skaluje się dalej, niż większość produktów kiedykolwiek potrzebuje: Shopify obsługuje na nim szczyty wyprzedaży. Praca nad skalą jest realna, ale przetarta: cache, kolejki zadań, repliki do odczytu, wydzielanie gorących serwisów, gdy liczby to uzasadnią. Projektujemy tak, żeby pierwsze wąskie gardło było daleko i dało się je zmierzyć."
+              },
+              {
+                "q": "Czy do produktu na Railsach można dodać funkcje AI?",
+                "a": "Tak, robimy to stale. Produkt żyje w Railsach; części mocno oparte na AI działają jako serwisy w Pythonie za wewnętrznym API albo wołają dostawców modeli bezpośrednio, gdy to wystarcza. Dostajesz railsową szybkość dla produktu i właściwe narzędzie dla AI, bez kompromisu po żadnej stronie."
+              },
+              {
+                "q": "Ile naprawdę kosztuje MVP?",
+                "a": "Większość dobrze zakresowanych MVP mieści się w sześciu do dwunastu tygodniach pracy dwu- lub trzyosobowego senioralnego zespołu. Po rozmowie zakresowej dostajesz stałą wycenę z kamieniami milowymi, a nie stawkę godzinową bez sufitu. Jeśli zakres jest na to za duży, mówimy, co wyciąć i dlaczego."
+              }
+            ],
+            "cta": {
+              "title": "Masz produkt, który musi powstać szybko?",
+              "subtitle": "Umów bezpłatną 30-minutową rozmowę. Powiemy, jak mogłoby wyglądać pierwsze wydanie, ile by zajęło i czy Rails to właściwy pojazd.",
+              "button": "Zaplanuj swoje MVP"
+            }
+          },
+          "nodejs": {
+            "label": "Technologie",
+            "title": "Node.js",
+            "subtitle": "API czasu rzeczywistego i full-stack w TypeScript. Jeden język od przeglądarki po backend, zbudowany pod tysiące równoczesnych połączeń.",
+            "breadcrumb": "Node.js",
+            "overviewTitle": "Co budujemy w Node.js",
+            "overview": [
+              "Node.js wykorzystujemy do systemów czasu rzeczywistego i produktów full-stack w TypeScript: backendy WebSocket dla czatu, współpracy i dashboardów na żywo, API sterowane zdarzeniami, warstwy backend-for-frontend oraz produkty, w których Next.js na froncie i NestJS lub Fastify na backendzie dzielą jeden język i jeden system typów.",
+              "To właściwy wybór, gdy obciążenie jest mocno oparte na I/O i współbieżne (dużo połączeń, dużo wywołań API, mało obliczeń na żądanie), gdy Twój zespół już żyje w TypeScripcie albo gdy liczy się ekonomia serverless. To zły wybór dla ciężkiego przetwarzania na CPU i obciążeń ML; tam łączymy go z serwisami w Pythonie lub Javie, a Node robi to, w czym jest najlepszy.",
+              "Pracujemy z akceleracją AI i review seniora przy każdym merge'u. Strict TypeScript w całym kodzie, testy kontraktowe między frontendem a backendem, testy obciążeniowe na ścieżkach czasu rzeczywistego oraz tracing, metryki i logi strukturalne przed startem. Event loop jest szybki; nasz proces dba o to, żeby system był też poprawny."
+            ],
+            "benefitsTitle": "Dlaczego Node.js",
+            "benefits": [
+              {
+                "title": "Jeden język, jeden zespół",
+                "description": "Wspólne typy między klientem a serwerem eliminują całą klasę błędów integracyjnych i pozwalają jednemu zespołowi odpowiadać za funkcję od końca do końca. Bez przekazań między gildią frontendu i backendu."
+              },
+              {
+                "title": "Stworzony do współbieżnego I/O",
+                "description": "Event loop utrzymuje dziesiątki tysięcy otwartych połączeń na jednym węźle. Dla czatu, aktualizacji na żywo i agregacji API to dokładnie kształt problemu."
+              },
+              {
+                "title": "Największy ekosystem, jaki istnieje",
+                "description": "npm ma utrzymywaną bibliotekę do niemal wszystkiego, a rekrutacja inżynierów TypeScript jest najprostsza z możliwych. Twoje przyszłe opcje zespołowe zostają otwarte."
+              },
+              {
+                "title": "Natywny dla serverless i edge",
+                "description": "Szybkie zimne starty czynią Node domyślnym runtime'em każdej dużej platformy serverless i edge. Płacisz za użycie zamiast za bezczynne serwery, tam gdzie obciążenie na to pozwala."
+              }
+            ],
+            "approachTitle": "Jak pracujemy",
+            "approach": [
+              {
+                "title": "Najpierw kontrakty",
+                "description": "Kontrakty API i zdarzeń definiujemy na początku, jako typy TypeScript współdzielone między serwisami. Architekturę (REST, WebSockety, kolejki) dobieramy do Twoich liczb latencji i wolumenu, nie do przyzwyczajeń."
+              },
+              {
+                "title": "Budowa z AI, review seniora",
+                "description": "Narzędzia AI szybko generują rutynowe fragmenty; senior engineerowie robią review każdego pull requesta i podejmują trudne decyzje. Tryb strict kompilatora nie podlega negocjacjom."
+              },
+              {
+                "title": "Testy tam, gdzie może pęknąć",
+                "description": "Testy jednostkowe i integracyjne w CI, testy kontraktowe na granicach serwisów, testy obciążeniowe na ścieżkach czasu rzeczywistego, które niosą Twój ruch. Każdy merge jest bramkowany."
+              },
+              {
+                "title": "Wdrożenie z observability",
+                "description": "Tracing, metryki, logi strukturalne i alerty są podpięte przed startem, do tego runbooki i przekazanie dla Twojego zespołu. Widzisz, co robi produkcja, od pierwszego dnia."
+              }
+            ],
+            "deliverablesTitle": "Co dostajesz",
+            "deliverables": [
+              "Produkcyjne serwisy TypeScript w NestJS lub Fastify",
+              "Warstwa czasu rzeczywistego (WebSockety lub server-sent events) przetestowana obciążeniowo na docelowej współbieżności",
+              "Współdzielone pakiety typów używane przez frontend i backend",
+              "Pipeline CI/CD z testami bramkującymi każdy merge",
+              "Dokumentacja OpenAPI lub schematów zdarzeń",
+              "Dashboardy, tracing i alerty skonfigurowane pod produkcję"
+            ],
+            "faqTitle": "Najczęstsze pytania",
+            "faq": [
+              {
+                "q": "JavaScript czy TypeScript?",
+                "a": "TypeScript, w trybie strict, bez wyjątków. Przy czymkolwiek większym niż prototyp system typów zwraca się w tygodnie: szybszy review i regresje, które nigdy nie powstały. Backendy w czystym JavaScripcie traktujemy jak legacy i migrujemy przyrostowo."
+              },
+              {
+                "q": "Czy Node.js jest wystarczająco szybki na nasz backend?",
+                "a": "Dla obciążeń opartych na I/O Node jest znakomity: tysiące równoczesnych żądań na węzeł przy niskiej latencji. To złe narzędzie do ciężkich obliczeń per żądanie; jeśli profilowanie pokaże rdzeń związany z CPU, przenosimy ten fragment do workera, kolejki albo innego runtime'u i mówimy o tym, zanim się zobowiążesz."
+              },
+              {
+                "q": "Jakiego frameworka używacie?",
+                "a": "NestJS, gdy duża kodobaza potrzebuje struktury, za którą podąży zespół; Fastify, gdy liczy się surowa przepustowość i mały narzut; API routes w Next.js tylko dla małych backendów żyjących wewnątrz samej aplikacji. Rekomendujemy per projekt, na piśmie, z uzasadnieniem."
+              },
+              {
+                "q": "Wpasujecie się w nasz istniejący stack?",
+                "a": "Tak. Większość naszej pracy w Node ląduje w istniejącym produkcie: warstwa czasu rzeczywistego obok REST API, BFF przed serwisami legacy, wydzielony serwis tam, gdzie monolit boli. Zaczynamy od audytu stanu obecnego i tam, gdzie się da, integrujemy zamiast przepisywać."
+              }
+            ],
+            "cta": {
+              "title": "Budujesz coś real-time albo full-stack?",
+              "subtitle": "Umów bezpłatną 30-minutową rozmowę z senior engineerem. Wyjdziesz z niej wiedząc, czy Node.js pasuje do Twojego obciążenia i jaki powinien być pierwszy kamień milowy.",
+              "button": "Porozmawiaj z inżynierem"
+            }
+          },
+          "java": {
+            "label": "Technologie",
+            "title": "Java",
+            "subtitle": "Backendy klasy enterprise, które działają dekadę. Serwisy Spring Boot, systemy transakcyjne o dużym wolumenie i integracje, na których polegają regulowane biznesy.",
+            "breadcrumb": "Java",
+            "overviewTitle": "Co budujemy w Javie",
+            "overview": [
+              "Javę stosujemy tam, gdzie niezawodność jest wymaganiem, a nie preferencją: backendy transakcyjne dla finansów, logistyki i ubezpieczeń, serwisy Spring Boot w dużych krajobrazach systemowych, przetwarzanie zdarzeń na Kafce oraz integracje z systemami, na których przedsiębiorstwa naprawdę działają, od SAP po dwudziestoletnie usługi SOAP.",
+              "To właściwy wybór dla systemów o długim życiu, środowisk o ostrych wymogach compliance, stałej wysokiej przepustowości i organizacji już zainwestowanych w JVM. To zły wybór dla dwuosobowego startupu ścigającego się do pierwszego wydania; tam Rails albo Node.js doprowadzi Cię na rynek szybciej i powiemy Ci to na pierwszej rozmowie.",
+              "Pracujemy z akceleracją AI i review seniora przy każdym merge'u, co wycina większość ceremonii, o którą obwinia się Javę. Nowoczesna Java (21 i nowsze, rekordy, wirtualne wątki), testy automatyczne na każdym poziomie i observability z OpenTelemetry jako część definicji ukończenia. Efekt czyta się jak Java pisana przez ludzi, którzy lubią ten język."
+            ],
+            "benefitsTitle": "Dlaczego Java",
+            "benefits": [
+              {
+                "title": "Dla systemów, które nie mogą zawieść",
+                "description": "Statyczne typowanie, dojrzały toolchain i trzydzieści lat hartowania na produkcji łapią całe klasy błędów przed wdrożeniem. Przy przepływach pieniędzy i umowach ten margines ma znaczenie."
+              },
+              {
+                "title": "Wydajność pod stałym obciążeniem",
+                "description": "JIT w JVM i wirtualne wątki niosą długotrwałe obciążenia o wysokiej przepustowości z przewidywalną latencją. To nie jest najszybszy język do prototypu; w dwunastym miesiącu pod obciążeniem bardzo trudno go pobić."
+              },
+              {
+                "title": "U siebie w enterprise",
+                "description": "Standardy bezpieczeństwa, ślady audytowe, SSO, kolejki komunikatów i protokoły legacy to w ekosystemie Javy problemy rozwiązane. Twój zespół compliance nie zobaczy ich pierwszy raz."
+              },
+              {
+                "title": "Pula talentów na lata",
+                "description": "Inżynierowie Javy są na każdym rynku i na każdym poziomie doświadczenia. System, który przekażemy, znajdzie opiekunów na kolejne piętnaście lat, czego nie można powiedzieć o każdym stacku."
+              }
+            ],
+            "approachTitle": "Jak pracujemy",
+            "approach": [
+              {
+                "title": "Zrozumieć krajobraz",
+                "description": "Systemy enterprise psują się na granicach, więc tam zaczynamy: systemy do integracji, kontrakty, ograniczenia compliance, profil obciążenia. Architekturę dokumentujemy i bronimy jej, zanim powstanie kod."
+              },
+              {
+                "title": "Budowa z AI, review seniora",
+                "description": "Narzędzia AI eliminują koszt boilerplate'u Javy; senior engineerowie robią review każdego merge'a i odpowiadają za każdą decyzję projektową. Tempo bez typowego enterprise'owego oporu."
+              },
+              {
+                "title": "Testy na każdym poziomie",
+                "description": "Testy jednostkowe, integracyjne i kontraktowe plus testy obciążeniowe względem uzgodnionych celów przepustowości, wszystkie bramkują CI. W systemach zdarzeniowych testujemy tryby awarii, nie tylko szczęśliwe ścieżki."
+              },
+              {
+                "title": "Operowanie i przekazanie",
+                "description": "Metryki, tracing i alerty przez OpenTelemetry, runbooki dla Twojego zespołu operacyjnego i ustrukturyzowane przekazanie. Zostajemy na pierwsze produkcyjne tygodnie, potem zostawiamy Was niezależnych."
+              }
+            ],
+            "deliverablesTitle": "Co dostajesz",
+            "deliverables": [
+              "Produkcyjne serwisy Spring Boot z udokumentowanymi API",
+              "Przetwarzanie zdarzeń na Kafce tam, gdzie wymaga tego architektura",
+              "Adaptery integracyjne do Twojego istniejącego krajobrazu systemów",
+              "Piramida testów wpięta w CI/CD, łącznie z testami obciążeniowymi",
+              "Observability oparta na OpenTelemetry z dashboardami i alertami",
+              "Zapisy decyzji architektonicznych i runbooki, z których Twoje zespoły mogą operować"
+            ],
+            "faqTitle": "Najczęstsze pytania",
+            "faq": [
+              {
+                "q": "Czy w Javie nie rozwija się wolno?",
+                "a": "Ta reputacja pochodzi z Javy 6 i ciężkich procesów, nie z dzisiejszego języka. Rekordy, wirtualne wątki i Spring Boot usunęły większość ceremonii, a rozwój z akceleracją AI usuwa większość tego, co zostało. Nasze tempo dowożenia w Javie zaskakuje zespoły, które ostatnio widziały ten język dekadę temu."
+              },
+              {
+                "q": "Spring Boot czy coś nowszego?",
+                "a": "Domyślnie Spring Boot: to ekosystem, który znają Twoi przyszli pracownicy i z którym integrują się Twoje systemy. Quarkus albo czysta Java tam, gdzie zimne starty lub footprint naprawdę mają znaczenie, na przykład w serverless. Wybieramy pod obciążenie i wpisujemy uzasadnienie do zapisu architektury."
+              },
+              {
+                "q": "Zmodernizujecie nasz system legacy w Javie?",
+                "a": "Tak, przyrostowo. Najpierw audyt, potem modernizacja plastrami: aktualizacja runtime'u, testy wokół krytycznych ścieżek, wydzielanie serwisów tylko tam, gdzie wspierają to dowody. Przepisywanie działających systemów enterprise od zera zawodzi na tyle często, że go nie rekomendujemy."
+              },
+              {
+                "q": "Java czy Kotlin?",
+                "a": "Oba działają na JVM i czysto ze sobą współpracują, więc to pytanie bardziej o zespół niż o technologię. Nowoczesna Java domknęła sporą część różnicy. Domyślnie wybieramy Javę ze względu na szerszą pulę rekrutacyjną; jeśli Twoja kodobaza albo zespół już żyje w Kotlinie, pracujemy w Kotlinie."
+              }
+            ],
+            "cta": {
+              "title": "Planujesz albo ratujesz backend enterprise?",
+              "subtitle": "Umów bezpłatną 30-minutową rozmowę z senior engineerem. Dostaniesz uczciwą ocenę architektury i pierwszy kamień milowy wart sfinansowania.",
+              "button": "Porozmawiaj z inżynierem"
+            }
+          },
+          "ios-swift": {
+            "label": "Technologie",
+            "title": "iOS (Swift)",
+            "subtitle": "Natywne aplikacje iOS w Swifcie i SwiftUI: szybkie, wierne konwencjom platformy i zbudowane tak, by przejść recenzję App Store za pierwszym razem.",
+            "breadcrumb": "iOS (Swift)",
+            "overviewTitle": "Na czym to polega",
+            "overview": [
+              "Projektujemy i budujemy natywne aplikacje iOS w Swifcie, ze SwiftUI jako domyślnym frameworkiem interfejsu i UIKit tam, gdzie wymaga tego konkretny ekran. Natywnie znaczy z pełnym dostępem do wszystkiego, co daje platforma: nowe API od dnia premiery, pełna wydajność układów Apple Silicon i wzorce interfejsu, które użytkownicy znają z każdej innej aplikacji w swoim telefonie.",
+              "Ekonomia liczy się tak samo jak inżynieria. Natywny iOS to właściwy wybór, gdy aplikacja jest rdzeniem biznesu, gdy wydajność i dopracowanie napędzają retencję albo gdy potrzebna jest głęboka integracja z platformą: tor kamery, Bluetooth, HealthKit, widżety, Live Activities, App Intents czy uczenie maszynowe bezpośrednio na urządzeniu. Jeśli lepiej sprawdzi się rozwiązanie cross-platform, mówimy to na pierwszej rozmowie; budujemy też w React Native i Flutterze, więc ta rekomendacja nie jest interesowna.",
+              "Dostarczenie obejmuje etap, który większość zespołów lekceważy: przejście recenzji App Store. Od pierwszego sprintu budujemy zgodnie z wytycznymi Apple, co tydzień wysyłamy buildy TestFlight do Twoich interesariuszy, przygotowujemy stronę aplikacji i etykiety prywatności, a potem prowadzimy zgłoszenie, pytania recenzenta i stopniowe wdrożenie. Większość naszych zgłoszeń przechodzi za pierwszym podejściem, bo powody odrzuceń eliminujemy na etapie inżynierii, zamiast łatać je na końcu."
+            ],
+            "benefitsTitle": "Dlaczego natywny iOS",
+            "benefits": [
+              {
+                "title": "UX zgodny z platformą",
+                "description": "SwiftUI i wytyczne Human Interface Guidelines dają aplikacje, które zachowują się tak, jak oczekują użytkownicy iPhone'a: nawigacja, gesty, haptyka, Dynamic Type i tryb ciemny są poprawne z konstrukcji, a nie przybliżone przez warstwę renderującą."
+              },
+              {
+                "title": "Wydajność, którą czuć",
+                "description": "Kompilowany Swift, brak mostka JavaScript, pełne wykorzystanie Apple Silicon. Profilujemy w Instruments, ustalamy budżety na zimny start, płynność przewijania w 120 Hz i pamięć, i trzymamy każde wydanie w tych granicach."
+              },
+              {
+                "title": "AI na urządzeniu, bez rundy do serwera",
+                "description": "Core ML i Neural Engine uruchamiają modele bezpośrednio na telefonie: ekstrakcja tekstu, klasyfikacja obrazów, mowa, modele własne. Funkcje działają offline, odpowiadają w milisekundach i nie wysyłają danych użytkownika poza urządzenie, co upraszcza zarówno RODO, jak i etykietę prywatności."
+              },
+              {
+                "title": "Nowe funkcje systemu od pierwszego dnia",
+                "description": "Widżety, Live Activities, App Intents i coroczne nowości z WWDC są dostępne dla aplikacji natywnych od razu. Twoja aplikacja może z nich korzystać w dniu premiery systemu, a nie wtedy, gdy nadgoni je wtyczka."
+              }
+            ],
+            "approachTitle": "Jak pracujemy",
+            "approach": [
+              {
+                "title": "Zakres i architektura",
+                "description": "Definiujemy zakres funkcji, dobieramy minimalną wersję iOS na podstawie rzeczywistych urządzeń Twoich użytkowników i projektujemy architekturę: SwiftUI, async/await, modułowa struktura, którą później rozwiną Twoi inżynierowie."
+              },
+              {
+                "title": "Projekt pod platformę",
+                "description": "Ekrany projektujemy według Human Interface Guidelines od pierwszego szkicu, a nie przenosimy z layoutu webowego. Każdy przepływ prototypujemy i sprawdzamy na fizycznych urządzeniach."
+              },
+              {
+                "title": "Budowa w tygodniowych przyrostach",
+                "description": "Cotygodniowe buildy TestFlight od pierwszego sprintu: postęp widzisz na własnym telefonie, a uwagi trafiają do kolejnego builda. CI uruchamia pełny zestaw testów XCTest i analizę statyczną przy każdym merge'u."
+              },
+              {
+                "title": "Wydanie i stabilizacja",
+                "description": "Przygotowujemy stronę w App Store, etykiety prywatności i notatki dla recenzenta, prowadzimy zgłoszenie i ewentualne pytania recenzji, a potem wdrażamy etapami, obserwując wskaźniki awarii i wydajności, zanim przejdziemy do 100 procent."
+              }
+            ],
+            "deliverablesTitle": "Co otrzymujesz",
+            "deliverables": [
+              "Kod w Swifcie i SwiftUI, w pełni Twoja własność, przygotowany do przejęcia",
+              "Pipeline CI/CD z automatycznymi testami i dystrybucją przez TestFlight",
+              "Zgłoszenie do App Store poprowadzone od początku do końca, razem z odpowiedziami dla recenzenta",
+              "Bazowe pomiary wydajności: zimny start, płynność i pamięć na fizycznych urządzeniach",
+              "Raportowanie awarii i analityka podpięte od pierwszego wydania",
+              "Dokumentacja techniczna i sesja przekazania dla Twojego zespołu"
+            ],
+            "faqTitle": "Częste pytania",
+            "faq": [
+              {
+                "q": "Kiedy natywna aplikacja wygrywa z cross-platform?",
+                "a": "Gdy aplikacja jest centralna dla biznesu, gdy wydajność i platformowy charakter napędzają retencję albo gdy potrzebna jest głęboka integracja ze sprzętem i systemem: kamera, Bluetooth, HealthKit, widżety, ML na urządzeniu. Dla aplikacji contentowej albo MVP testującego popyt na obu platformach cross-platform bywa lepszą inwestycją; na pierwszej rozmowie powiemy, który przypadek dotyczy Ciebie."
+              },
+              {
+                "q": "Jak radzicie sobie z recenzją App Store i odrzuceniami?",
+                "a": "Budujemy według wytycznych recenzji od pierwszego sprintu: żadnych API z szarej strefy, poprawne przepływy zakupów, etykiety prywatności zgodne z kodem. Piszemy notatki dla recenzenta, zgłaszamy aplikację i odpowiadamy recenzentowi bezpośrednio. Jeśli zdarzy się odrzucenie, poprawka jest po naszej stronie; większość naszych zgłoszeń przechodzi za pierwszym razem."
+              },
+              {
+                "q": "Przejmiecie istniejącą aplikację iOS?",
+                "a": "Tak. Zaczynamy od audytu kodu: architektura, pokrycie testami, wskaźnik awarii, stan zależności. Dostajesz pisemną ocenę i plan. Typowe przejęcie modernizuje aplikację przyrostowo, z Objective-C do Swifta i z UIKit do SwiftUI ekran po ekranie, cały czas dowożąc funkcje, zamiast przepisywania od zera, które zamraża roadmapę."
+              },
+              {
+                "q": "Co realnie potrafi dziś AI na urządzeniu?",
+                "a": "Sporo: rozpoznawanie tekstu, klasyfikacja obrazów i dokumentów, transkrypcja mowy, wyszukiwanie semantyczne i własne modele Core ML. Działa offline, nie kosztuje nic za zapytanie i nie wyprowadza danych z telefonu. Przy funkcjach generatywnych łączymy modele na urządzeniu z LLM po stronie serwera, kierując ruch według zadania, kosztu i prywatności."
+              }
+            ],
+            "cta": {
+              "title": "Planujesz aplikację na iOS?",
+              "subtitle": "Umów bezpłatną 30-minutową rozmowę z senior inżynierem iOS. Wyjdziesz z uczciwą oceną, natywnie czy cross-platform, i wstępnym zakresem.",
+              "button": "Porozmawiaj z inżynierem iOS"
+            }
+          },
+          "android-kotlin": {
+            "label": "Technologie",
+            "title": "Android (Kotlin)",
+            "subtitle": "Natywne aplikacje na Androida w Kotlinie i Jetpack Compose: szybkie na każdej półce sprzętowej, poprawne na każdym ekranie i przeprowadzone przez recenzję Google Play ze stopniowym wdrożeniem.",
+            "breadcrumb": "Android (Kotlin)",
+            "overviewTitle": "Na czym to polega",
+            "overview": [
+              "Budujemy natywne aplikacje na Androida w Kotlinie, z Jetpack Compose jako domyślnym zestawem UI. Natywnie znaczy z pełnym dostępem do platformy: Material 3 zrobiony porządnie, nowe API Androida od dnia premiery i zapas wydajności, dzięki któremu aplikacja działa dobrze zarówno na flagowcach, jak i na urządzeniach ze średniej półki, z których realnie korzysta większość rynku.",
+              "Cechą definiującą Androida jest różnorodność urządzeń: tysiące modeli, szeroki rozrzut układów i pamięci oraz ekrany od kompaktowych telefonów po składane urządzenia i tablety. Traktujemy to jako wymaganie inżynierskie od pierwszego dnia: adaptacyjne layouty w Compose, baseline profiles dla szybkiego startu, optymalizacja R8 i testy na macierzy urządzeń zbudowanej z realnej analityki Twoich użytkowników, a nie z tego, co akurat leży na biurku. Jeśli lepszym wyborem będzie cross-platform, mówimy to wcześnie; budujemy też w React Native i Flutterze, więc ta rada nie jest interesowna.",
+              "Wydanie prowadzimy przez Google Play tak, jak przewidział to Google: wewnętrzne i zamknięte ścieżki testowe od pierwszego sprintu, raporty przedpremierowe na fizycznych urządzeniach, rzetelna deklaracja bezpieczeństwa danych i wdrożenie etapami, które rośnie od kilku procent do pełnego wydania tylko wtedy, gdy wskaźniki awarii i ANR się trzymają. Po premierze pilnujemy zgodności z politykami, łącznie z terminami docelowego poziomu API, żeby aplikacja nie zniknęła ze sklepu rok później."
+            ],
+            "benefitsTitle": "Dlaczego natywny Android",
+            "benefits": [
+              {
+                "title": "UX zgodny z platformą dzięki Compose",
+                "description": "Jetpack Compose i Material 3 dają interfejsy, które zachowują się tak, jak oczekują użytkownicy Androida: predykcyjny gest wstecz, dynamiczne kolory, poprawne powiadomienia i adaptacyjne layouty dla składanych urządzeń i tabletów, poprawne z konstrukcji, a nie w przybliżeniu."
+              },
+              {
+                "title": "Wydajność na całym spektrum urządzeń",
+                "description": "Kotlin kompilowany z wyprzedzeniem, baseline profiles, optymalizacja R8 i budżety czasu startu, weryfikowane Macrobenchmarkiem także na słabszym sprzęcie, nie tylko na flagowcach. Płynnie na telefonach, które Twoi użytkownicy naprawdę mają."
+              },
+              {
+                "title": "AI na urządzeniu w Androidzie",
+                "description": "ML Kit od ręki obsługuje rozpoznawanie tekstu, kody kreskowe, tłumaczenia i wykrywanie twarzy; LiteRT uruchamia Twoje własne modele; Gemini Nano dodaje generatywne AI na wspieranym sprzęcie. Funkcje działają offline, odpowiadają szybko i nie wysyłają danych z telefonu."
+              },
+              {
+                "title": "Nowe funkcje platformy od pierwszego dnia",
+                "description": "Widżety, skróty aplikacji, poprawnie zrobione usługi pierwszoplanowe i API każdej nowej wersji Androida dostępne natychmiast, bez czekania, aż wystawi je framework cross-platform."
+              }
+            ],
+            "approachTitle": "Jak pracujemy",
+            "approach": [
+              {
+                "title": "Zakres i architektura",
+                "description": "Minimalny SDK ustalamy na podstawie realnych danych o urządzeniach Twoich użytkowników, potem projektujemy architekturę: Kotlin, Compose, korutyny i Flow oraz modułowy układ Gradle, który rozwiną Twoi inżynierowie."
+              },
+              {
+                "title": "Projekt pod platformę",
+                "description": "Ekrany od pierwszego szkicu trzymają się Material 3 i konwencji Androida, z adaptacyjnymi layoutami dla telefonów, składanych urządzeń i tabletów określonymi z góry, a nie dorabianymi później."
+              },
+              {
+                "title": "Budowa w tygodniowych przyrostach",
+                "description": "Cotygodniowe buildy na zamkniętej ścieżce Google Play od pierwszego sprintu: postęp oceniasz na własnym urządzeniu, a uwagi trafiają do kolejnego builda. CI uruchamia testy jednostkowe i instrumentowane oraz analizę statyczną przy każdym merge'u."
+              },
+              {
+                "title": "Wydanie i stabilizacja",
+                "description": "Przygotowujemy stronę w sklepie i formularz bezpieczeństwa danych, przechodzimy raporty przedpremierowe na macierzy urządzeń, a potem wydajemy etapami, sprawdzając wskaźniki awarii i ANR na każdym kroku, zanim przejdziemy do 100 procent."
+              }
+            ],
+            "deliverablesTitle": "Co otrzymujesz",
+            "deliverables": [
+              "Kod w Kotlinie i Jetpack Compose, w pełni Twoja własność, przygotowany do przejęcia",
+              "Pipeline CI/CD z automatycznymi testami i dystrybucją przez ścieżki testowe Google Play",
+              "Zgłoszenie do Google Play i zgodność z politykami poprowadzone od początku do końca",
+              "Bazowe pomiary wydajności: czas startu, płynność i wskaźnik ANR na reprezentatywnych urządzeniach",
+              "Raportowanie awarii i analityka podpięte od pierwszego wydania",
+              "Dokumentacja techniczna i sesja przekazania dla Twojego zespołu"
+            ],
+            "faqTitle": "Częste pytania",
+            "faq": [
+              {
+                "q": "Kiedy natywny Android wygrywa z cross-platform?",
+                "a": "Gdy aplikacja jest rdzeniem biznesu, gdy o retencji decyduje wydajność na średniej półce sprzętowej albo gdy potrzebna jest głęboka integracja z platformą: praca w tle, Bluetooth, tor kamery, widżety, ML na urządzeniu. Dla aplikacji contentowej albo MVP testującego popyt na obu platformach cross-platform bywa lepszą inwestycją; na pierwszej rozmowie powiemy, który przypadek dotyczy Ciebie."
+              },
+              {
+                "q": "Jak radzicie sobie z fragmentacją urządzeń?",
+                "a": "Danymi, nie zgadywaniem. Z Twojej analityki (albo z danych rynkowych dla Twojego regionu, jeśli jeszcze jej nie masz) wyciągamy rozkład urządzeń i wersji systemu, definiujemy macierz testową, która go pokrywa, i ustawiamy minimalny SDK tam, gdzie utrata użytkowników jest pomijalna. Resztę robią adaptacyjne layouty, baseline profiles i raporty przedpremierowe na fizycznym sprzęcie."
+              },
+              {
+                "q": "Jak wygląda recenzja i wdrożenie w Google Play?",
+                "a": "Recenzja w Google Play jest zwykle szybsza niż u Apple, ale egzekwowanie zasad trwa ciągle: terminy docelowego poziomu API, rzetelność deklaracji bezpieczeństwa danych i kontrole polityk przy każdej aktualizacji. Utrzymujemy zgodność, wydajemy najpierw przez ścieżki wewnętrzne i zamknięte, potem etapami, rozszerzając zasięg tylko wtedy, gdy wskaźniki awarii i ANR się trzymają. Jeśli pojawi się flaga polityki, odwołanie i poprawka są po naszej stronie."
+              },
+              {
+                "q": "Co dziś potrafi AI na urządzeniu z Androidem?",
+                "a": "Rozpoznawanie tekstu, skanowanie kodów i dokumentów, tłumaczenia, inteligentne odpowiedzi i własne modele LiteRT działają praktycznie na wszystkich urządzeniach; Gemini Nano dodaje generatywne AI na wspieranym sprzęcie. Działa offline, nie kosztuje nic za zapytanie i nie wyprowadza danych z telefonu. Cięższe funkcje generatywne kierujemy do LLM po stronie serwera i łączymy oba podejścia."
+              }
+            ],
+            "cta": {
+              "title": "Planujesz aplikację na Androida?",
+              "subtitle": "Umów bezpłatną 30-minutową rozmowę z senior inżynierem Androida. Wyjdziesz z uczciwą oceną, natywnie czy cross-platform, i wstępnym zakresem.",
+              "button": "Porozmawiaj z inżynierem Androida"
+            }
+          },
+          "react-native": {
+            "label": "Technologie",
+            "title": "React Native",
+            "subtitle": "Jedna baza kodu w TypeScript na iOS i Androida, budowana przez inżynierów, którzy dokładnie wiedzą, gdzie kończy się framework, a zaczyna kod natywny.",
+            "breadcrumb": "React Native",
+            "overviewTitle": "Co to jest",
+            "overview": [
+              "React Native pozwala jednemu zespołowi wydawać aplikacje na iOS i Androida z jednej bazy kodu w TypeScript; w typowej aplikacji biznesowej współdzielone jest 85 do 95 procent kodu. Cała ekonomia w jednym zdaniu: jeden backlog, jeden cykl wydań, a każda funkcja trafia do obu sklepów jednocześnie, zamiast być budowana dwa razy i stopniowo się rozjeżdżać.",
+              "Najczęściej wygrywa wtedy, gdy masz już Reacta w webie. Twoi inżynierowie od pierwszego dnia znają model komponentów, wzorce zarządzania stanem i narzędzia, a design system i logika biznesowa zbudowane dla przeglądarki przenoszą się na mobile. Żaden inny stack cross-platform nie zamienia istniejącego zespołu webowego w zespół mobilny tak tanio, a pula programistów Reacta jest największa na rynku, gdy przyjdzie czas na rekrutację.",
+              "To nie jest kod natywny i nie udajemy, że jest. Kamera, Bluetooth, widgety i wymagająca grafika czasu rzeczywistego nadal oznaczają moduły w Swifcie i Kotlinie, a każda aktualizacja React Native kosztuje realny czas inżynierski. Tę granicę wyznaczamy przed startem projektu, uczciwie budżetujemy utrzymanie i mówimy wprost, kiedy Twojej aplikacji lepiej posłuży Flutter albo dwie natywne bazy kodu."
+            ],
+            "benefitsTitle": "Dlaczego to działa",
+            "benefits": [
+              {
+                "title": "Jedna baza kodu, dwa sklepy",
+                "description": "Typowa aplikacja biznesowa współdzieli 85 do 95 procent kodu. Finansujesz jeden zespół i jeden backlog, a iOS i Android dostają te same funkcje tego samego dnia."
+              },
+              {
+                "title": "Twój zespół webowy jest Twoim zespołem mobilnym",
+                "description": "React Native to React z natywnymi klockami. Inżynierowie rozwijający Twoją aplikację webową są produktywni w kodzie mobilnym w kilka dni, nie miesięcy."
+              },
+              {
+                "title": "Poprawki bez kolejki w sklepie",
+                "description": "Aktualizacje over-the-air dostarczają poprawki na poziomie JavaScriptu prosto do użytkowników, w granicach regulaminów sklepów. Zła wersja przestaje oznaczać dwa dni czekania na review."
+              },
+              {
+                "title": "Natywnie tam, gdzie to się opłaca",
+                "description": "Tam, gdzie framework się kończy, piszemy Swift i Kotlin: płatności, kamera, Bluetooth, zadania w tle. Zaplanowane jako moduły natywne z góry, a nie odkrywane w trzecim miesiącu."
+              }
+            ],
+            "approachTitle": "Jak z nim pracujemy",
+            "approach": [
+              {
+                "title": "Wyznaczamy granicę natywną",
+                "description": "Zanim cokolwiek wycenimy, spisujemy każdą funkcję wymagającą kodu natywnego: sensory, płatności, praca w tle. Ta lista decyduje o architekturze i czyni wycenę uczciwą."
+              },
+              {
+                "title": "Fundamenty w pierwszym tygodniu",
+                "description": "Expo albo bare workflow, nawigacja, zarządzanie stanem, design tokens i CI z dostarczaniem do sklepów: wszystko ustalone i działające w pierwszym tygodniu. Powolne fundamenty to miejsce, w którym umierają projekty cross-platform."
+              },
+              {
+                "title": "Bety od drugiego tygodnia",
+                "description": "Aplikacja trafia wcześnie na TestFlight i wewnętrzną ścieżkę Google Play, a każdy sprint kończy się nową wersją. Interesariusze oceniają działające buildy na własnych telefonach, nie zrzuty ekranu."
+              },
+              {
+                "title": "Aktualizacje jako rutyna, nie kryzys",
+                "description": "Trzymamy aplikację najwyżej jedno wydanie za stabilnym React Native, jawnie budżetujemy pracę przy aktualizacjach i zostawiamy plan utrzymania z konkretnymi liczbami zamiast niespodzianki."
+              }
+            ],
+            "deliverablesTitle": "Co otrzymujesz",
+            "deliverables": [
+              "Produkcyjne aplikacje iOS i Android z jednej bazy kodu w TypeScript",
+              "Pipeline CI/CD z automatycznym dostarczaniem do obu sklepów",
+              "Natywne moduły w Swifcie i Kotlinie tam, gdzie są potrzebne, wraz z dokumentacją",
+              "Współdzielony design system, spójny z Twoją aplikacją webową, jeśli ją masz",
+              "Zautomatyzowane testy: jednostkowe, integracyjne i end-to-end",
+              "Plan utrzymania i aktualizacji z estymacjami nakładu pracy"
+            ],
+            "faqTitle": "Częste pytania",
+            "faq": [
+              {
+                "q": "Czy React Native jest wystarczająco szybki dla naszej aplikacji?",
+                "a": "Dla większości aplikacji biznesowych tak: nowa architektura działa na JSI z silnikiem Hermes, a listy, formularze i dashboardy są dla użytkownika nieodróżnialne od natywnych. Uczciwe wyjątki to wymagająca grafika czasu rzeczywistego, przetwarzanie wideo i gry. Jeśli Twoja aplikacja tam żyje, powiemy to wprost i wskażemy Fluttera albo kod natywny."
+              },
+              {
+                "q": "Ile kodu naprawdę jest współdzielone między iOS a Androidem?",
+                "a": "W aplikacjach, które wydajemy: 85 do 95 procent. Reszta to moduły natywne, konfiguracja platform i drobne poprawki UI pod konkretny system. Udział spada, gdy aplikacja mocno korzysta ze sprzętu, i dokładnie to badamy, zanim podejmiesz decyzję."
+              },
+              {
+                "q": "Ile naprawdę kosztuje utrzymanie?",
+                "a": "Załóż cykl aktualizacji React Native i zależności dwa do trzech razy w roku, po kilka inżynierodni, jeśli robione terminowo. Rok zaległości zamienia te dni w tygodnie, dlatego nasze plany utrzymania pilnują rytmu. Expo znacząco obniżyło ten koszt w ostatnich latach."
+              },
+              {
+                "q": "React Native czy Flutter?",
+                "a": "Jeśli masz zespół Reactowy w webie albo współdzielisz logikę z produktem webowym, React Native wykorzystuje to, co już posiadasz. Jeśli produkt jest prowadzony designem, z mocno niestandardowym UI i animacjami, lepiej sprawdzi się własny renderer Fluttera. Budujemy w obu, a rekomendację dostajesz na piśmie, z powodami."
+              }
+            ],
+            "cta": {
+              "title": "Wydawaj do obu sklepów z jednej bazy kodu",
+              "subtitle": "Bezpłatna 30-minutowa rozmowa z doświadczonym inżynierem mobile. Wyjdziesz z niej wiedząc, czy React Native pasuje do Twojej aplikacji i ile kosztuje sprawdzenie tego na pewno.",
+              "button": "Porozmawiaj z inżynierem mobile"
+            }
+          },
+          "flutter": {
+            "label": "Technologie",
+            "title": "Flutter",
+            "subtitle": "Twój design renderowany co do piksela na iOS i Androidzie z jednej bazy kodu w Darcie. Dla produktów, w których interfejs jest produktem.",
+            "breadcrumb": "Flutter",
+            "overviewTitle": "Co to jest",
+            "overview": [
+              "Flutter wydaje aplikacje na iOS i Androida z jednej bazy kodu w Darcie, ale jego prawdziwa różnica leży w sposobie rysowania: framework renderuje każdy piksel samodzielnie przez silnik Impeller, zamiast mapować interfejs na kontrolki systemowe. Twój interfejs wygląda i zachowuje się identycznie na trzyletnim Androidzie i najnowszym iPhonie, a jeden zespół prowadzi jeden backlog dla obu sklepów.",
+              "Wygrywa tam, gdzie interfejs jest produktem: konsumenckie aplikacje mocno oparte na marce, doświadczenia pełne animacji, niestandardowe design systemy, których dwukrotne budowanie byłoby drogie. Ponieważ Flutter kompiluje Darta do natywnego kodu maszynowego i kontroluje cały pipeline renderowania, wydajność jest przewidywalna, a 60 czy 120 klatek na sekundę to budżet inżynierski, nie nadzieja. Ta sama baza kodu sięga desktopu i urządzeń embedded, gdy ma to znaczenie.",
+              "Kompromisy są realne i nazywamy je po imieniu. Dart to osobna umiejętność, więc istniejący zespół Reactowy przenosi mniej niż przy React Native. Aplikacje są większe niż natywne, funkcje platformowe przechodzą przez platform channels do Swifta i Kotlina, a systemowy wygląd wymaga świadomej pracy. Mówimy przed projektem, nie w jego trakcie, czy te koszty są warte tego, co Flutter daje w zamian."
+            ],
+            "benefitsTitle": "Dlaczego to działa",
+            "benefits": [
+              {
+                "title": "Design przeżywa obie platformy",
+                "description": "Flutter rysuje interfejs samodzielnie, więc produkt wychodzi taki, jak go zaprojektowano: bez rozjazdów między platformami, bez niespodzianek od kontrolek OEM, z jednym przejściem QA wizualnego zamiast dwóch."
+              },
+              {
+                "title": "Wydajność jako budżet, nie nadzieja",
+                "description": "Dart kompiluje się z wyprzedzeniem do kodu maszynowego, a Impeller renderuje bez zacięć shaderów. Budżety czasu klatki i startu ustawiamy w CI i ich pilnujemy."
+              },
+              {
+                "title": "Jeden zespół, jeden backlog",
+                "description": "Typowe produkty współdzielą wyraźnie ponad 90 procent kodu między platformami. Funkcje trafiają do obu sklepów tego samego dnia, a błąd naprawia się raz."
+              },
+              {
+                "title": "Miejsce na wzrost poza telefony",
+                "description": "Ta sama baza kodu celuje w desktop i ekrany embedded. Jeśli kiosk, tablet albo ekran w samochodzie jest na Twojej roadmapie, Flutter tam dotrze bez przepisywania."
+              }
+            ],
+            "approachTitle": "Jak z nim pracujemy",
+            "approach": [
+              {
+                "title": "Najtrudniejszy ekran na początek",
+                "description": "Najbardziej ryzykowny interfejs, firmową animację albo gęsty dashboard, budujemy jako spike w pierwszych dniach. Na nim opiera się ekonomia całego projektu, więc idzie pierwszy."
+              },
+              {
+                "title": "Design system jako kod",
+                "description": "Tokeny marki, typografia i komponenty stają się pakietem Fluttera z żywą galerią. Projektanci recenzują realnie wyrenderowane widżety, nie przybliżenia."
+              },
+              {
+                "title": "Pionowe wycinki do obu sklepów",
+                "description": "TestFlight i wewnętrzna ścieżka Google Play od pierwszych sprintów, za każdym razem pełny wycinek produktu. Postęp mierzymy instalowalnymi buildami."
+              },
+              {
+                "title": "Najpierw pomiar, potem optymalizacja",
+                "description": "Czasy klatek, start i rozmiar aplikacji śledzimy w CI od pierwszego tygodnia. Gdy liczba wychodzi poza budżet, naprawiamy ją w tym samym sprincie, nie przed premierą."
+              }
+            ],
+            "deliverablesTitle": "Co otrzymujesz",
+            "deliverables": [
+              "Produkcyjne aplikacje iOS i Android z jednej bazy kodu w Darcie",
+              "Twój design system jako udokumentowany pakiet Fluttera",
+              "Integracje platform channels w Swifcie i Kotlinie, z dokumentacją",
+              "Pipeline CI/CD z automatycznym dostarczaniem do obu sklepów",
+              "Zestaw testów: jednostkowe, widżetowe i integracyjne",
+              "Raport wydajności: czas startu, budżety klatek i rozmiar aplikacji"
+            ],
+            "faqTitle": "Częste pytania",
+            "faq": [
+              {
+                "q": "Czy aplikacja we Flutterze będzie się czuła natywnie?",
+                "a": "Będzie się czuła jak Twój produkt i o to właśnie chodzi w aplikacjach prowadzonych designem. Flutter ma wierne zestawy widżetów Material i Cupertino, a my dostosowujemy gesty nawigacji, fizykę przewijania i haptykę pod każdą platformę. Jeśli aplikacja ma przede wszystkim wyglądać jak systemowa aplikacja Apple, uczciwą rekomendacją jest kod natywny albo Kotlin Multiplatform."
+              },
+              {
+                "q": "Czy o programistów Darta jest trudno?",
+                "a": "Pula jest mniejsza niż w JavaScripcie, ale Dart to mały, typowany język, który inżynier znający TypeScript, Kotlina czy Swifta opanowuje w kilka dni. Zespoły, którym przekazujemy projekty, obsadzają role flutterowe mocnymi inżynierami mobile lub backendu, zamiast szukać słowa kluczowego w CV."
+              },
+              {
+                "q": "Flutter czy React Native?",
+                "a": "Jeśli produkt jest prowadzony designem, pełen animacji albo musi renderować się identycznie wszędzie: Flutter. Jeśli masz zespół Reactowy w webie, którego kod i ludzi chcesz wykorzystać: React Native. Budujemy w obu, a rekomendację dostajesz na piśmie, z powodami, nie z preferencją."
+              },
+              {
+                "q": "Jak duże i szybkie są te aplikacje naprawdę?",
+                "a": "Minimalny build produkcyjny to około 10 MB na platformę przed assetami: więcej niż natywnie, ale rzadko o czymkolwiek decyduje. W działaniu to skompilowany kod maszynowy z renderowaniem na GPU; na średniej półce Androida start i przewijanie to miejsca, w których Flutter regularnie wygrywa ze stackami interpretowanymi. Jeśli w Twojej dystrybucji liczy się każdy megabajt, policzymy, ile oszczędziłby kod natywny."
+              }
+            ],
+            "cta": {
+              "title": "Ten sam design na każdym ekranie, bez zmian",
+              "subtitle": "Bezpłatna 30-minutowa rozmowa z doświadczonym inżynierem Fluttera. Przynieś swój najbardziej ryzykowny projekt ekranu; wyjdziesz wiedząc, czy Flutter utrzyma go w 60 klatkach na sekundę.",
+              "button": "Porozmawiaj z inżynierem Fluttera"
+            }
+          },
+          "kotlin-multiplatform": {
+            "label": "Technologie",
+            "title": "Kotlin Multiplatform",
+            "subtitle": "Logika biznesowa napisana raz w Kotlinie, UI w pełni natywne: SwiftUI na iOS, Jetpack Compose na Androidzie. Start bez przepisywania aplikacji.",
+            "breadcrumb": "Kotlin Multiplatform",
+            "overviewTitle": "Co to jest",
+            "overview": [
+              "Kotlin Multiplatform współdzieli kod tam, gdzie żyje większość błędów: sieć, modele danych, walidacja, synchronizacja, reguły biznesowe. Każda platforma zachowuje w pełni natywny interfejs w SwiftUI i Jetpack Compose, więc wygląd i zachowanie aplikacji nie idą na żaden kompromis. Typowe produkty współdzielą 40 do 70 procent kodu, a każda współdzielona linia jest pisana, testowana i naprawiana raz.",
+              "Wygrywa tam, gdzie React Native i Flutter nie pasują: masz już dwie natywne aplikacje i zespoły, natywny charakter platformy jest nienegocjowalny albo logika domenowa jest na tyle złożona, że jej duplikacja to Twój prawdziwy koszt. Adopcja jest przyrostowa: pierwszy współdzielony moduł trafia do istniejących aplikacji w kilka tygodni, bez przepisywania i bez wielkiej migracji, a zatrzymać się można w dowolnym momencie z działającym oprogramowaniem.",
+              "Uczciwe kompromisy: nadal budujesz dwa interfejsy, więc KMP oszczędza mniej na pojedynczej funkcji niż frameworki ze współdzielonym UI; integracja z buildami iOS wymaga pracy narzędziowej; ekosystem bibliotek jest młodszy niż przy React Native czy Flutterze. Odkąd JetBrains ogłosił stabilność pod koniec 2023 roku, a Google uczynił KMP rekomendowaną ścieżką współdzielenia logiki, produkcyjnie używają go zespoły Netfliksa, Forbesa i McDonald's. Powiemy wprost, czy Twoja baza kodu się do tego nadaje."
+            ],
+            "benefitsTitle": "Dlaczego to działa",
+            "benefits": [
+              {
+                "title": "Natywne UI bez podwójnej logiki",
+                "description": "SwiftUI i Compose zostają dokładnie takie, jak zbudowały je Twoje zespoły platformowe. Znika druga implementacja każdej reguły biznesowej, klienta API i przypadku brzegowego."
+              },
+              {
+                "title": "Adopcja bez przepisywania",
+                "description": "KMP kompiluje się do XCFrameworka, który aplikacja iOS konsumuje jak każdą inną zależność. Pierwszy moduł ląduje w wydawanych aplikacjach w kilka tygodni, a każdy kolejny to osobna decyzja."
+              },
+              {
+                "title": "Jedno źródło prawdy dla trudnych części",
+                "description": "Reguły cenowe, synchronizacja offline, walidacja: napisane raz, przetestowane raz, naprawione raz. Klasa błędów, w której iOS i Android się nie zgadzają, po prostu znika."
+              },
+              {
+                "title": "Zakład z instytucjonalnym zapleczem",
+                "description": "Kotlin Multiplatform jest stabilny, utrzymywany przez JetBrains i rekomendowany przez Google do współdzielenia logiki biznesowej. Buduje na języku, w którym Twój zespół Androida już pisze."
+              }
+            ],
+            "approachTitle": "Jak go wprowadzamy",
+            "approach": [
+              {
+                "title": "Audyt duplikacji",
+                "description": "Mapujemy obie bazy kodu i wyceniamy część wspólną: która logika istnieje dwa razy, jak często się zmienia, gdzie platformy już dziś się różnią. To jest business case, w liczbach."
+              },
+              {
+                "title": "Najpierw prawdziwy moduł",
+                "description": "Pierwszy współdzielony moduł to kod produkcyjny w Twoich działających aplikacjach, klient API albo silnik synchronizacji, nie demo. Za jednym razem dowodzi pipeline'u builda, interopu z iOS i sposobu pracy zespołów."
+              },
+              {
+                "title": "Rozszerzanie wzdłuż szwów",
+                "description": "Moduł po module przenosimy logikę domenową do wspólnego rdzenia, w kolejności ustalonej audytem. Każdy krok wydawany jest niezależnie, a pauza zawsze zostawia działającą całość."
+              },
+              {
+                "title": "Obydwa zespoły jako właściciele",
+                "description": "Inżynierowie iOS uczą się konsumować współdzielony kod, a potem go współtworzyć; inżynierowie Androida uczą się projektować API, które dobrze wyglądają w Swifcie. Odchodzimy, gdy pipeline i nawyki należą do Was."
+              }
+            ],
+            "deliverablesTitle": "Co otrzymujesz",
+            "deliverables": [
+              "Współdzielone moduły Kotlin działające w Twoich produkcyjnych aplikacjach iOS i Android",
+              "Blueprint architektury: co jest współdzielone, co zostaje natywne i dlaczego",
+              "Pipeline budowania i publikacji: XCFramework, Swift Package lub CocoaPods, Maven",
+              "Zestaw testów wspólnego rdzenia uruchamiany na obu platformach w CI",
+              "Uporządkowana roadmapa migracji pozostałej zduplikowanej logiki",
+              "Wdrożenie obu zespołów platformowych: dokumentacja i sesje warsztatowe"
+            ],
+            "faqTitle": "Częste pytania",
+            "faq": [
+              {
+                "q": "Ile kodu realnie da się współdzielić?",
+                "a": "Zwykle 40 do 70 procent, zależnie od proporcji logiki domenowej do interfejsu. To mniej, niż obiecują React Native czy Flutter, ale to ta połowa, w której żyją drogie błędy, i dostajesz ją bez rezygnacji z natywnego UI. Audyt daje liczbę dla Twojej bazy kodu, zanim się zdecydujesz."
+              },
+              {
+                "q": "Czy nasi programiści iOS muszą pisać w Kotlinie?",
+                "a": "Nie. Współdzielony kod przychodzi jako standardowy framework z API przyjaznym Swiftowi, a jego użycie wygląda jak korzystanie z dowolnej biblioteki zewnętrznej. W praktyce większość zespołów iOS po kilku miesiącach zaczyna współtworzyć wspólny moduł, bo alternatywą jest czekanie; to jednak wybór, nie wymóg."
+              },
+              {
+                "q": "Czy Kotlin Multiplatform jest gotowy na produkcję?",
+                "a": "Tak. JetBrains ogłosił stabilność w listopadzie 2023, Google rekomenduje KMP do współdzielenia logiki między Androidem a iOS, a Netflix, Forbes, McDonald's i Cash App używają go produkcyjnie. Młodszą częścią jest Compose Multiplatform do współdzielonego UI; oceniamy go osobno i rekomendujemy tylko tam, gdzie jest gotowy."
+              },
+              {
+                "q": "KMP, React Native czy Flutter?",
+                "a": "Nowa aplikacja, mały zespół, standardowe UI: na całkowitym koszcie zwykle wygrywa React Native albo Flutter. Dwie istniejące aplikacje natywne, mocne zespoły platformowe, złożona logika domenowa: wygrywa KMP, bo usuwa duplikację bez wyrzucania tego, co już zbudowano. Porównanie dla Twojego przypadku dostajesz na piśmie."
+              }
+            ],
+            "cta": {
+              "title": "Przestań budować każdą funkcję dwa razy",
+              "subtitle": "Bezpłatna 30-minutowa rozmowa z doświadczonym architektem mobile. Przyjdź z dwiema bazami kodu; wyjdziesz z pierwszą estymacją tego, co warto współdzielić.",
+              "button": "Porozmawiaj z architektem mobile"
+            }
+          }
         }
       }
     },
@@ -2909,9 +5065,13 @@
         "services": {
           "title": "Usługi",
           "links": {
+            "softwareDevelopment": "Tworzenie Oprogramowania",
             "webDevelopment": "Aplikacje Webowe",
             "mobile": "Aplikacje Mobilne",
-            "cloud": "Rozwiązania Chmurowe"
+            "mvpDevelopment": "Budowa MVP",
+            "apiDevelopment": "Rozwój API",
+            "cloud": "Rozwiązania Chmurowe",
+            "technologies": "Technologie"
           }
         },
         "industries": {

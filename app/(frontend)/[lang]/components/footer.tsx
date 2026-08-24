@@ -27,10 +27,14 @@ export default function Footer({ locale }: { locale: Locale }) {
     {
       title: nav.services,
       links: [
+        { label: nav.servicesItems.softwareDevelopment.title, href: "/services/software-development" },
         { label: nav.servicesItems.webDevelopment.title, href: "/services/web-development" },
         { label: nav.servicesItems.mobileApps.title, href: "/services/mobile" },
+        { label: nav.servicesItems.mvpDevelopment.title, href: "/services/mvp-development" },
+        { label: nav.servicesItems.apiDevelopment.title, href: "/services/api-development" },
         { label: nav.servicesItems.cloudSolutions.title, href: "/services/cloud" },
         { label: nav.servicesItems.teamExtension.title, href: "/services/team-extension" },
+        { label: nav.servicesItems.technologies.title, href: "/services/technologies" },
       ],
     },
     {

@@ -15,14 +15,26 @@ const resolve = (lang: string): Locale => (isLocale(lang) ? lang : defaultLocale
 
 /** The Services-category offerings, in display order. */
 const cards: {
-  key: "webDevelopment" | "mobileApps" | "cloudSolutions" | "teamExtension";
+  key:
+    | "softwareDevelopment"
+    | "webDevelopment"
+    | "mobileApps"
+    | "mvpDevelopment"
+    | "apiDevelopment"
+    | "cloudSolutions"
+    | "teamExtension"
+    | "technologies";
   href: string;
   visual: VisualKind;
 }[] = [
+  { key: "softwareDevelopment", href: "/services/software-development", visual: "code" },
   { key: "webDevelopment", href: "/services/web-development", visual: "code" },
   { key: "mobileApps", href: "/services/mobile", visual: "grid" },
+  { key: "mvpDevelopment", href: "/services/mvp-development", visual: "aurora" },
+  { key: "apiDevelopment", href: "/services/api-development", visual: "nodes" },
   { key: "cloudSolutions", href: "/services/cloud", visual: "mesh" },
   { key: "teamExtension", href: "/services/team-extension", visual: "aurora" },
+  { key: "technologies", href: "/services/technologies", visual: "grid" },
 ];
 
 export async function generateMetadata({

@@ -12,8 +12,12 @@ export type ServiceKey =
   | "machineLearning"
   | "analytics"
   | "consulting"
+  | "softwareDevelopment"
   | "webDevelopment"
   | "mobile"
+  | "mvpDevelopment"
+  | "apiDevelopment"
+  | "technologies"
   | "cloud"
   | "teamExtension";
 
