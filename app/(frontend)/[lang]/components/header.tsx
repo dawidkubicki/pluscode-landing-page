@@ -294,7 +294,12 @@ export default function Header({
               initial="hidden"
               animate="show"
               exit="exit"
-              className="absolute inset-x-0 top-0 z-10 max-h-[92vh] overflow-y-auto border-b border-white/10 bg-night text-bone shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)]"
+              // data-lenis-prevent: Lenis is stopped while the menu is open and
+              // would otherwise swallow touch/wheel events over the panel.
+              // dvh (with vh fallback): in-app browsers report vh as the large
+              // viewport, which pushed the panel below the fold unscrollably.
+              data-lenis-prevent
+              className="absolute inset-x-0 top-0 z-10 max-h-[92vh] overflow-y-auto overscroll-contain border-b border-white/10 bg-night text-bone shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] supports-[height:100dvh]:max-h-[88dvh]"
             >
               <div className="mx-auto max-w-[1240px] px-5 pb-10 pt-28 sm:px-10">
                 <div className="grid gap-10 lg:grid-cols-[repeat(3,minmax(0,1fr))_1.25fr]">
