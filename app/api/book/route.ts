@@ -2,7 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { getPayloadClient } from "@/lib/getPayload";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy: `new Resend(undefined)` throws, and this module is evaluated during
+// `next build` (page-data collection) where no runtime env exists.
+let resendClient: Resend | null = null;
+function getResend(): Resend {
+  return (resendClient ??= new Resend(process.env.RESEND_API_KEY));
+}
 
 const OFFERINGS = new Set([
   "ai-opportunity-workshop",
@@ -120,7 +125,7 @@ export async function POST(request: NextRequest) {
       try {
         const toEmail = process.env.CONTACT_EMAIL || "contact@pluscode.io";
         const label = OFFERING_LABELS[offering];
-        const { error } = await resend.emails.send({
+        const { error } = await getResend().emails.send({
         from: "Pluscode Bookings <noreply@pluscode.io>",
         to: [toEmail],
         replyTo: email,
