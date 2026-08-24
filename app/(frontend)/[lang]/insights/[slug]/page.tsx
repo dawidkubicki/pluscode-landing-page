@@ -14,6 +14,7 @@ import {
 } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { getInsight, getRelatedInsights } from "@/lib/insights";
+import { buildOpenGraph } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
@@ -25,9 +26,21 @@ export async function generateMetadata({
   params: Promise<{ lang: string; slug: string }>;
 }): Promise<Metadata> {
   const { lang, slug } = await params;
-  const data = await getInsight(slug, resolve(lang));
+  const locale = resolve(lang);
+  const data = await getInsight(slug, locale);
   if (!data) return {};
-  return { title: data.card.title, description: data.card.excerpt };
+  return {
+    title: data.card.title,
+    description: data.card.excerpt,
+    alternates: { canonical: `/${locale}/insights/${slug}` },
+    openGraph: buildOpenGraph(locale, {
+      title: data.card.title,
+      description: data.card.excerpt,
+      path: `/insights/${slug}`,
+      type: "article",
+      image: data.card.image,
+    }),
+  };
 }
 
 /* eslint-disable @typescript-eslint/no-explicit-any */

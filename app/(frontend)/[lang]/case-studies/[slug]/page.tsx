@@ -8,6 +8,7 @@ import LocaleLink from "../../components/locale-link";
 import { isLocale, defaultLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { getCaseStudy } from "@/lib/case-studies";
+import { buildOpenGraph } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
@@ -19,9 +20,21 @@ export async function generateMetadata({
   params: Promise<{ lang: string; slug: string }>;
 }): Promise<Metadata> {
   const { lang, slug } = await params;
-  const data = await getCaseStudy(slug, resolve(lang));
+  const locale = resolve(lang);
+  const data = await getCaseStudy(slug, locale);
   if (!data) return {};
-  return { title: data.card.title, description: data.card.excerpt };
+  return {
+    title: data.card.title,
+    description: data.card.excerpt,
+    alternates: { canonical: `/${locale}/case-studies/${slug}` },
+    openGraph: buildOpenGraph(locale, {
+      title: data.card.title,
+      description: data.card.excerpt,
+      path: `/case-studies/${slug}`,
+      type: "article",
+      image: data.card.image,
+    }),
+  };
 }
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
