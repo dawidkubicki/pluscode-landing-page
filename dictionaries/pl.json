@@ -23,6 +23,7 @@
   },
   "navigation": {
     "aiData": "Usługi AI",
+    "allServices": "Usługi",
     "services": "Inżynieria",
     "workshops": "Warsztaty",
     "insights": "Insights",

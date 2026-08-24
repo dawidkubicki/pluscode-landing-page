@@ -189,13 +189,13 @@ export default function Header({
   const close = () => setOpen(false);
   const basePath = pathWithoutLocale(pathname);
 
-  // Flat top-bar links — categories point at their lead sub-page; the full
-  // breakdown lives in the mega-menu below.
+  // Flat top-bar links — the Services entry opens the mega-menu on hover
+  // (desktop); the hamburger stays as the mobile entry point.
   const mainLinks = [
-    { label: nav.aiData, href: "/ai-data/consulting" },
-    { label: nav.workshops, href: "/workshops" },
-    { label: nav.insights, href: "/insights" },
-    { label: nav.about, href: "/about" },
+    { label: nav.allServices, href: "/services", mega: true },
+    { label: nav.workshops, href: "/workshops", mega: false },
+    { label: nav.insights, href: "/insights", mega: false },
+    { label: nav.about, href: "/about", mega: false },
   ];
 
   const menuColumns: {
@@ -218,7 +218,10 @@ export default function Header({
   return (
     // Sits below the announcement bar while <html data-announcement> is set;
     // snaps back to the very top the moment the bar is dismissed or absent.
-    <header className="fixed inset-x-0 z-50 top-0 [[data-announcement]_&]:top-10">
+    <header
+      className="fixed inset-x-0 z-50 top-0 [[data-announcement]_&]:top-10"
+      onMouseLeave={() => open && setOpen(false)}
+    >
       <div
         className={`relative z-20 border-b transition-colors duration-300 ${
           scrolled || open
@@ -238,6 +241,9 @@ export default function Header({
                     key={l.href}
                     href={l.href}
                     onClick={close}
+                    // Hovering the Services entry opens the mega-menu; leaving
+                    // the header (bar + panel) closes it again.
+                    onMouseEnter={l.mega ? () => setOpen(true) : undefined}
                     className={`text-[14.5px] font-medium transition-colors ${
                       active
                         ? "text-bone underline decoration-lime-soft decoration-[1.5px] underline-offset-8"
@@ -269,7 +275,7 @@ export default function Header({
               onClick={() => setOpen((v) => !v)}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
-              className="group relative flex size-11 items-center justify-center text-bone transition-colors hover:text-lime-soft"
+              className="group relative flex size-11 items-center justify-center text-bone transition-colors hover:text-lime-soft lg:hidden"
             >
               <span className="relative block h-3 w-6">
                 <span className={`absolute left-0 block h-[2px] w-6 bg-current transition-all duration-300 ${open ? "top-1.5 rotate-45" : "top-0"}`} />
@@ -290,6 +296,10 @@ export default function Header({
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4 }}
               onClick={() => setOpen(false)}
+              // The backdrop is a header child, so `onMouseLeave` on <header>
+              // never fires while it covers the viewport; entering it means
+              // the pointer left the bar/panel, which closes the hover menu.
+              onMouseEnter={() => setOpen(false)}
               className="fixed inset-0 -z-10 bg-night-deep/60 backdrop-blur-sm"
             />
             <motion.div

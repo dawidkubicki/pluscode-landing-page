@@ -23,6 +23,7 @@
   },
   "navigation": {
     "aiData": "KI-Services",
+    "allServices": "Leistungen",
     "services": "Engineering",
     "workshops": "Workshops",
     "insights": "Insights",
