@@ -5783,250 +5783,472 @@
   "useCaseFlows": {
     "label": "Poziom niżej",
     "title": "Prześledź dane, krok po kroku",
-    "subtitle": "Wybierz zastosowanie i zobacz całą ścieżkę: co wchodzi, których Twoich systemów dotyka każdy krok, gdzie proces decyduje sam, a gdzie zatrzymuje się i czeka na człowieka.",
+    "subtitle": "Wybierz zastosowanie. Zobacz, co wchodzi, co się dzieje i gdzie proces zatrzymuje się na człowieku.",
     "legend": {
-      "in": "Dane wejściowe",
+      "in": "Wchodzi",
       "run": "Co się dzieje",
-      "out": "Dane wyjściowe",
+      "out": "Wychodzi",
       "tools": "Systemy",
       "decision": "Punkt decyzyjny",
       "pass": "Idzie dalej",
-      "fail": "Trafia do człowieka",
+      "fail": "Do człowieka",
       "human": "Gdzie zostaje człowiek"
     },
     "items": [
       {
         "id": "invoices",
         "tab": "Faktury",
-        "title": "Od faktury od dostawcy do zaksięgowanego dokumentu",
+        "icon": "doc",
+        "title": "Od faktury do zaksięgowanego dokumentu",
         "in": [
-          "Faktura od dostawcy, PDF albo skan, która wpada na wspólną skrzynkę",
-          "Odpowiadające jej zamówienie i przyjęcie towaru z ERP",
-          "Dane dostawcy: NIP, numer konta, terminy płatności"
+          {
+            "icon": "mail",
+            "label": "Faktura na wspólnej skrzynce"
+          },
+          {
+            "icon": "box",
+            "label": "Zamówienie i przyjęcie z ERP"
+          },
+          {
+            "icon": "db",
+            "label": "Dane dostawcy i NIP"
+          }
         ],
         "steps": [
           {
+            "icon": "scan",
             "title": "Odczyt",
-            "desc": "Wyciąga dostawcę, daty, NIP, kwoty i każdą pozycję z dokumentu, niezależnie od tego, jak jest zbudowany.",
+            "desc": "Dostawca, daty, kwoty, każda pozycja.",
             "tools": [
-              "Wspólna skrzynka",
-              "Model dokumentowy"
+              {
+                "icon": "mail",
+                "label": "Wspólna skrzynka"
+              },
+              {
+                "icon": "sparkle",
+                "label": "Model dokumentowy"
+              }
             ]
           },
           {
+            "icon": "match",
             "title": "Zestawienie",
-            "desc": "Zestawia fakturę z zamówieniem i dostawą i zaznacza każdą różnicę w cenie, ilości i stawce VAT.",
+            "desc": "Faktura kontra zamówienie i dostawa.",
             "tools": [
-              "ERP: SAP, Comarch, Dynamics",
-              "Baza dostawców"
+              {
+                "brand": "sap",
+                "label": "SAP"
+              },
+              {
+                "icon": "box",
+                "label": "Comarch"
+              },
+              {
+                "icon": "box",
+                "label": "Dynamics 365"
+              },
+              {
+                "icon": "db",
+                "label": "Baza dostawców"
+              }
             ]
           },
           {
+            "icon": "ledger",
             "title": "Księgowanie",
-            "desc": "Księguje to, co się zgadza, podpina plik źródłowy pod dekret, a resztę przekazuje z już zaznaczoną różnicą.",
+            "desc": "Księguje zgodne, resztę odkłada.",
             "tools": [
-              "API ERP",
-              "Archiwum dokumentów"
+              {
+                "icon": "plug",
+                "label": "API ERP"
+              },
+              {
+                "icon": "folder",
+                "label": "Archiwum dokumentów"
+              }
             ]
           }
         ],
         "decision": {
-          "question": "Czy faktura, zamówienie i dostawa się zgadzają i czy każde pole zostało odczytane z wysoką pewnością?",
-          "pass": "Księguje się w ERP automatycznie, z podpiętym plikiem, i wchodzi do najbliższej paczki płatności.",
-          "fail": "Trafia do kolejki księgowej z wypisaną różnicą: zamówienie mówi 1200 zł, faktura mówi 1320 zł."
+          "question": "Faktura, zamówienie i dostawa się zgadzają?",
+          "pass": "Księguje się w ERP, z podpiętym plikiem.",
+          "fail": "Do kolejki: zamówienie 1200 zł, faktura 1320 zł."
         },
         "out": [
-          "Zaksięgowany dokument w ERP, gotowy do zapłaty",
-          "Kolejka wyjątków, w której są tylko faktury naprawdę wymagające człowieka",
-          "Ślad każdego pola: skąd na stronie zostało odczytane i jak pewny był model"
+          {
+            "icon": "check",
+            "label": "Zaksięgowany dokument w ERP"
+          },
+          {
+            "icon": "alert",
+            "label": "Kolejka z samymi realnymi wyjątkami"
+          },
+          {
+            "icon": "search",
+            "label": "Ślad przy każdym odczytanym polu"
+          }
         ],
-        "human": "Księgowa czyści kolejkę wyjątków i akceptuje wszystko powyżej swojego limitu. Nic nie księguje się za jej plecami."
+        "human": "Księgowa czyści wyjątki i akceptuje wszystko powyżej swojego limitu."
       },
       {
         "id": "support",
         "tab": "Obsługa klienta",
+        "icon": "chat",
         "title": "Od pytania klienta do wysłanej odpowiedzi",
         "in": [
-          "Przychodząca wiadomość z maila, czatu albo formularza kontaktowego",
-          "Aktualny status zamówienia, dostawy i faktury z Twoich systemów",
-          "Odpowiedzi, które już masz: baza wiedzy, regulaminy, zamknięte zgłoszenia"
+          {
+            "icon": "mail",
+            "label": "Mail, czat albo formularz"
+          },
+          {
+            "icon": "truck",
+            "label": "Status zamówienia i dostawy"
+          },
+          {
+            "icon": "book",
+            "label": "Baza wiedzy i regulaminy"
+          }
         ],
         "steps": [
           {
+            "icon": "search",
             "title": "Zrozumienie",
-            "desc": "Ustala, o co klient naprawdę pyta i którego zamówienia albo konta dotyczy sprawa.",
+            "desc": "O co pyta i którego zamówienia dotyczy.",
             "tools": [
-              "Helpdesk: Zendesk, Freshdesk, Jira"
+              {
+                "brand": "zendesk",
+                "label": "Zendesk"
+              },
+              {
+                "brand": "jira",
+                "label": "Jira"
+              },
+              {
+                "icon": "chat",
+                "label": "Freshdesk"
+              }
             ]
           },
           {
+            "icon": "db",
             "title": "Sprawdzenie",
-            "desc": "Pobiera fakty: gdzie jest paczka, co zostało zafakturowane, na co pozwala regulamin w tym przypadku.",
+            "desc": "Gdzie jest paczka, co zostało zafakturowane.",
             "tools": [
-              "API zamówień i dostaw",
-              "ERP / WMS"
+              {
+                "icon": "plug",
+                "label": "API zamówień"
+              },
+              {
+                "icon": "box",
+                "label": "ERP / WMS"
+              }
             ]
           },
           {
+            "icon": "pen",
             "title": "Redakcja",
-            "desc": "Pisze odpowiedź Twoim tonem, w języku, w którym napisał klient, z podpiętym źródłem.",
+            "desc": "Twoim tonem, w języku klienta, ze źródłem.",
             "tools": [
-              "Baza odpowiedzi",
-              "Historia zgłoszeń"
+              {
+                "icon": "book",
+                "label": "Baza odpowiedzi"
+              },
+              {
+                "icon": "clock",
+                "label": "Historia zgłoszeń"
+              }
             ]
           }
         ],
         "decision": {
-          "question": "Czy sprawa jest typowa i czy każde zdanie odpowiedzi ma pokrycie w źródle?",
-          "pass": "Wysyłka w kilka sekund, zgłoszenie otagowane i zamknięte, z linkiem do śledzenia przesyłki.",
-          "fail": "Trafia do konsultanta razem z projektem odpowiedzi, faktami i jednym zdaniem, dlaczego się zatrzymało."
+          "question": "Sprawa typowa i każde zdanie ma pokrycie w źródle?",
+          "pass": "Wysyłka w kilka sekund, zgłoszenie otagowane i zamknięte.",
+          "fail": "Do konsultanta z projektem odpowiedzi i faktami."
         },
         "out": [
-          "Odpowiedź w skrzynce klienta, w języku, w którym napisał",
-          "Zgłoszenie skategoryzowane, otagowane i zamknięte w helpdesku",
-          "Cotygodniowa lista tego, o co ludzie pytają w kółko, i gdzie zawodzi Twój proces"
+          {
+            "icon": "mail",
+            "label": "Odpowiedź w języku klienta"
+          },
+          {
+            "icon": "tag",
+            "label": "Zgłoszenie otagowane i zamknięte"
+          },
+          {
+            "icon": "list",
+            "label": "Lista tego, o co pytają w kółko"
+          }
         ],
-        "human": "Konsultanci biorą eskalacje i poprawiają projekty, z którymi się nie zgadzają. Każda poprawka to lepsza odpowiedź dla kolejnego klienta."
+        "human": "Konsultanci biorą eskalacje i poprawiają każdy projekt, z którym się nie zgadzają."
       },
       {
         "id": "demand",
         "tab": "Popyt i zapasy",
+        "icon": "chart",
         "title": "Od historii sprzedaży do propozycji zamówienia",
         "in": [
-          "Dwa, trzy lata sprzedaży, w rozbiciu na produkt i lokalizację",
-          "Ceny, promocje i kalendarz kampanii",
-          "Stany magazynowe, zamówienia w drodze i czasy dostaw",
-          "Lokalny kontekst: święta, ferie, pogoda"
+          {
+            "icon": "chart",
+            "label": "Trzy lata sprzedaży"
+          },
+          {
+            "icon": "tag",
+            "label": "Ceny i promocje"
+          },
+          {
+            "icon": "box",
+            "label": "Stany i czasy dostaw"
+          },
+          {
+            "icon": "calendar",
+            "label": "Święta, ferie, pogoda"
+          }
         ],
         "steps": [
           {
+            "icon": "chart",
             "title": "Prognoza",
-            "desc": "Szacuje popyt na produkt i lokalizację na najbliższy tydzień i na kwartał, jako przedział, a nie jedną liczbę.",
+            "desc": "Popyt na produkt i sklep, jako przedział.",
             "tools": [
-              "Historia sprzedaży",
-              "Modele prognostyczne"
+              {
+                "icon": "db",
+                "label": "Historia sprzedaży"
+              },
+              {
+                "icon": "sparkle",
+                "label": "Modele prognostyczne"
+              }
             ]
           },
           {
+            "icon": "cart",
             "title": "Przełożenie",
-            "desc": "Zamienia prognozę na konkretną propozycję: ile zamówić, u kogo i którego dnia.",
+            "desc": "Ile zamówić, u kogo, którego dnia.",
             "tools": [
-              "ERP / WMS",
-              "Warunki dostawców"
+              {
+                "icon": "box",
+                "label": "ERP / WMS"
+              },
+              {
+                "icon": "doc",
+                "label": "Warunki dostawców"
+              }
             ]
           },
           {
+            "icon": "gauge",
             "title": "Kontrola",
-            "desc": "Co tydzień zestawia prognozę z faktyczną sprzedażą, żeby odchylenie było widać, zanim zacznie kosztować.",
+            "desc": "Prognoza kontra sprzedaż, co tydzień.",
             "tools": [
-              "Dashboard BI"
+              {
+                "icon": "gauge",
+                "label": "Dashboard BI"
+              }
             ]
           }
         ],
         "decision": {
-          "question": "Czy propozycja mieści się w limitach kupca: budżet, termin przydatności, minimum logistyczne?",
-          "pass": "Ląduje w ERP jako projekt zamówienia, gotowy do wysłania jednym kliknięciem.",
-          "fail": "Idzie do kupca z flagą, powodem i najbliższą propozycją, która w limity wchodzi."
+          "question": "Mieści się w limitach kupca: budżet, termin, minimum?",
+          "pass": "Projekt zamówienia w ERP, do wysłania jednym kliknięciem.",
+          "fail": "Do kupca z powodem i najbliższą propozycją, która wchodzi w limity."
         },
         "out": [
-          "Cotygodniowe propozycje zamówień dla każdej lokalizacji",
-          "Uszeregowana lista ryzyk braków i nadstanów",
-          "Prognoza kontra wykonanie, śledzone tydzień po tygodniu i widoczne dla wszystkich"
+          {
+            "icon": "cart",
+            "label": "Cotygodniowe propozycje na sklep"
+          },
+          {
+            "icon": "alert",
+            "label": "Ryzyka braków i nadstanów"
+          },
+          {
+            "icon": "gauge",
+            "label": "Prognoza kontra wykonanie"
+          }
         ],
-        "human": "Kupiec ustawia limity i ma ostatnie słowo. System liczy za niego tysiące indeksów, a nie podejmuje decyzji ocennych."
+        "human": "Kupiec ustawia limity i ma ostatnie słowo. System liczy tysiące indeksów za niego."
       },
       {
         "id": "quality",
         "tab": "Kontrola jakości",
+        "icon": "camera",
         "title": "Od klatki z kamery do decyzji OK albo NOK",
         "in": [
-          "Klatki z kamery na linii, wyzwalane przez sterownik",
-          "Wzorzec: rysunek, tolerancje, uzgodniony zestaw próbek dobrych i wadliwych",
-          "Kontekst partii, zmiany i maszyny z systemu produkcyjnego"
+          {
+            "icon": "camera",
+            "label": "Klatki z kamery na linii"
+          },
+          {
+            "icon": "doc",
+            "label": "Wzorzec i tolerancje"
+          },
+          {
+            "icon": "factory",
+            "label": "Partia, zmiana, maszyna"
+          }
         ],
         "steps": [
           {
+            "icon": "camera",
             "title": "Zdjęcie",
-            "desc": "Fotografuje każdą sztukę pod tym samym kątem i w tym samym świetle, w rytmie linii.",
+            "desc": "Ten sam kąt i światło, w rytmie linii.",
             "tools": [
-              "Kamera na linii",
-              "Wyzwalanie z PLC"
+              {
+                "icon": "camera",
+                "label": "Kamera na linii"
+              },
+              {
+                "icon": "cpu",
+                "label": "Wyzwalanie z PLC"
+              }
             ]
           },
           {
+            "icon": "match",
             "title": "Porównanie",
-            "desc": "Porównuje sztukę ze wzorcem i wskazuje wadę: rysę, szczelinę, błąd nadruku, brakujący element.",
+            "desc": "Rysa, szczelina, brak elementu.",
             "tools": [
-              "Model wizyjny",
-              "Urządzenie brzegowe przy linii"
+              {
+                "icon": "sparkle",
+                "label": "Model wizyjny"
+              },
+              {
+                "icon": "cpu",
+                "label": "Urządzenie przy linii"
+              }
             ]
           },
           {
+            "icon": "list",
             "title": "Zapis",
-            "desc": "Zapisuje werdykt razem ze zdjęciem, partią i zmianą, żeby widać było, skąd te wady się biorą.",
+            "desc": "Werdykt, zdjęcie, partia, zmiana.",
             "tools": [
-              "MES",
-              "Raport jakości"
+              {
+                "icon": "factory",
+                "label": "MES"
+              },
+              {
+                "icon": "chart",
+                "label": "Raport jakości"
+              }
             ]
           }
         ],
         "decision": {
-          "question": "Czy werdykt jest jednoznaczny, czy model nie jest pewny tej konkretnej sztuki?",
-          "pass": "Sygnał NOK do sterownika w czasie cyklu. Sztuka schodzi z linii, a w karcie partii jest powód.",
-          "fail": "Zdjęcie ląduje na ekranie operatora. Decyduje jego werdykt i zostaje zapisany jako nowy przykład."
+          "question": "Werdykt jest jednoznaczny, czy model nie jest pewny?",
+          "pass": "Sygnał NOK do sterownika w czasie cyklu.",
+          "fail": "Zdjęcie na ekran operatora. Jego werdykt decyduje."
         },
         "out": [
-          "Decyzja OK albo NOK dla każdej sztuki, w czasie cyklu",
-          "Zdjęcia wad pogrupowane według typu, zmiany i maszyny",
-          "Rosnący zbiór przykładów, coraz celniejszy z każdym werdyktem operatora"
+          {
+            "icon": "check",
+            "label": "OK albo NOK dla każdej sztuki"
+          },
+          {
+            "icon": "image",
+            "label": "Wady pogrupowane po zmianie i maszynie"
+          },
+          {
+            "icon": "sparkle",
+            "label": "Zbiór przykładów, coraz celniejszy"
+          }
         ],
-        "human": "Operatorzy rozstrzygają przypadki niepewne, a jakość ustawia progi. Linia nigdy nie staje na podstawie samej opinii maszyny."
+        "human": "Operatorzy rozstrzygają przypadki niepewne, a jakość ustawia progi."
       },
       {
         "id": "knowledge",
         "tab": "Wiedza firmowa",
+        "icon": "book",
         "title": "Od pytania do odpowiedzi z podanym źródłem",
         "in": [
-          "Dokumenty tam, gdzie już są: SharePoint, Drive, Confluence, dyski sieciowe",
-          "Umowy, procedury, oferty i dokumentacja techniczna",
-          "Twoje istniejące uprawnienia: kto ma prawo co widzieć"
+          {
+            "icon": "folder",
+            "label": "SharePoint, Drive, Confluence"
+          },
+          {
+            "icon": "doc",
+            "label": "Umowy, procedury, oferty"
+          },
+          {
+            "icon": "lock",
+            "label": "Twoje istniejące uprawnienia"
+          }
         ],
         "steps": [
           {
+            "icon": "db",
             "title": "Indeks",
-            "desc": "Czyta dokumenty i przy każdym zachowuje jego uprawnienia, żeby nic nie wypłynęło do kogoś, kto nie mógłby otworzyć pliku.",
+            "desc": "Czyta dokumenty i pilnuje uprawnień.",
             "tools": [
-              "SharePoint, Drive, Confluence",
-              "Twój dostawca tożsamości"
+              {
+                "icon": "folder",
+                "label": "SharePoint"
+              },
+              {
+                "brand": "drive",
+                "label": "Google Drive"
+              },
+              {
+                "brand": "confluence",
+                "label": "Confluence"
+              },
+              {
+                "icon": "lock",
+                "label": "Dostawca tożsamości"
+              }
             ]
           },
           {
+            "icon": "chat",
             "title": "Odpowiedź",
-            "desc": "Odpowiada w języku pytania, cytując fragment i linkując dokument, z którego pochodzi.",
+            "desc": "W języku pytania, z cytatem i linkiem.",
             "tools": [
-              "Wyszukiwanie po Twoich dokumentach",
-              "Teams, Slack albo intranet"
+              {
+                "icon": "search",
+                "label": "Wyszukiwarka"
+              },
+              {
+                "icon": "chat",
+                "label": "Teams"
+              },
+              {
+                "icon": "chat",
+                "label": "Slack"
+              }
             ]
           },
           {
+            "icon": "list",
             "title": "Rejestr",
-            "desc": "Zapisuje każde pytanie, na które nie ma udokumentowanej odpowiedzi, żeby luki przestały być niewidoczne.",
+            "desc": "Zapisuje pytania bez udokumentowanej odpowiedzi.",
             "tools": [
-              "Rejestr pytań"
+              {
+                "icon": "list",
+                "label": "Rejestr pytań"
+              }
             ]
           }
         ],
         "decision": {
-          "question": "Czy odpowiedź jest gdzieś udokumentowana i czy ta osoba ma prawo ją zobaczyć?",
-          "pass": "Odpowiedź z linkiem do konkretnej strony albo paragrafu, z którego pochodzi.",
-          "fail": "Mówi wprost, że nic nie jest udokumentowane, i wskazuje osobę odpowiedzialną za ten obszar, zamiast coś zmyślać."
+          "question": "Odpowiedź jest udokumentowana i ta osoba ma do niej prawo?",
+          "pass": "Odpowiedź z linkiem do konkretnego paragrafu.",
+          "fail": "Mówi wprost, że nic nie ma, i wskazuje właściciela obszaru."
         },
         "out": [
-          "Odpowiedź w kilka sekund zamiast pytania trzech osób",
-          "Każda odpowiedź do prześledzenia aż do dokumentu źródłowego",
-          "Lista pytań, których jeszcze nikt nie opisał"
+          {
+            "icon": "clock",
+            "label": "Odpowiedź w kilka sekund"
+          },
+          {
+            "icon": "link",
+            "label": "Każda odpowiedź do prześledzenia"
+          },
+          {
+            "icon": "alert",
+            "label": "Lista luk w dokumentacji"
+          }
         ],
-        "human": "Właściciel każdego obszaru domyka luki, które pokazuje rejestr. Asystent je uwidacznia, a nie zamiata pod dywan."
+        "human": "Właściciel obszaru domyka luki, które pokazuje rejestr."
       }
     ]
   },

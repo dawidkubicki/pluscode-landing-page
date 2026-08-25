@@ -5783,250 +5783,472 @@
   "useCaseFlows": {
     "label": "One level deeper",
     "title": "Follow the data, step by step",
-    "subtitle": "Pick a use case and see the whole path: what comes in, which of your systems each step touches, where the process decides on its own, and where it stops and waits for a person.",
+    "subtitle": "Pick a use case. See what comes in, what runs, and where the process stops for a person.",
     "legend": {
-      "in": "Data in",
+      "in": "Comes in",
       "run": "What runs",
-      "out": "Data out",
+      "out": "Comes out",
       "tools": "Systems",
       "decision": "Decision point",
       "pass": "Goes through",
-      "fail": "Stops for a person",
+      "fail": "To a person",
       "human": "Where a person stays in the loop"
     },
     "items": [
       {
         "id": "invoices",
         "tab": "Invoices",
+        "icon": "doc",
         "title": "Supplier invoice to posted entry",
         "in": [
-          "Supplier invoice, PDF or scan, landing in a shared mailbox",
-          "The matching purchase order and goods receipt from the ERP",
-          "Supplier master data: tax ID, bank account, payment terms"
+          {
+            "icon": "mail",
+            "label": "Invoice in a shared mailbox"
+          },
+          {
+            "icon": "box",
+            "label": "Order and goods receipt from the ERP"
+          },
+          {
+            "icon": "db",
+            "label": "Supplier data and tax ID"
+          }
         ],
         "steps": [
           {
+            "icon": "scan",
             "title": "Read",
-            "desc": "Pull the supplier, dates, tax ID, totals and every line item out of the document, whatever layout it arrives in.",
+            "desc": "Supplier, dates, totals, every line.",
             "tools": [
-              "Shared mailbox",
-              "Document model"
+              {
+                "icon": "mail",
+                "label": "Shared mailbox"
+              },
+              {
+                "icon": "sparkle",
+                "label": "Document model"
+              }
             ]
           },
           {
+            "icon": "match",
             "title": "Match",
-            "desc": "Set the invoice against the order and the delivery, and mark every difference in price, quantity and VAT rate.",
+            "desc": "Invoice against order and delivery.",
             "tools": [
-              "ERP: SAP, Comarch, Dynamics",
-              "Supplier register"
+              {
+                "brand": "sap",
+                "label": "SAP"
+              },
+              {
+                "icon": "box",
+                "label": "Comarch"
+              },
+              {
+                "icon": "box",
+                "label": "Dynamics 365"
+              },
+              {
+                "icon": "db",
+                "label": "Supplier register"
+              }
             ]
           },
           {
+            "icon": "ledger",
             "title": "Post",
-            "desc": "Book what agrees, attach the source file to the entry, and hand the rest over with the difference already marked.",
+            "desc": "Books what agrees, parks the rest.",
             "tools": [
-              "ERP API",
-              "Document archive"
+              {
+                "icon": "plug",
+                "label": "ERP API"
+              },
+              {
+                "icon": "folder",
+                "label": "Document archive"
+              }
             ]
           }
         ],
         "decision": {
-          "question": "Do the invoice, the order and the delivery agree, and was every field read with high confidence?",
-          "pass": "Booked into the ERP automatically, source file attached, into the next payment run.",
-          "fail": "Into the accountant's queue with the difference spelled out: the order says 1,200, the invoice says 1,320."
+          "question": "Do the invoice, the order and the delivery agree?",
+          "pass": "Booked into the ERP, source file attached.",
+          "fail": "Into the queue: the order says 1,200, the invoice says 1,320."
         },
         "out": [
-          "A posted entry in the ERP, ready for payment",
-          "An exception queue holding only the invoices a person really needs to see",
-          "A record of every field: where on the page it was read and how sure the model was"
+          {
+            "icon": "check",
+            "label": "A posted entry in the ERP"
+          },
+          {
+            "icon": "alert",
+            "label": "A queue of real exceptions only"
+          },
+          {
+            "icon": "search",
+            "label": "A trace behind every field read"
+          }
         ],
-        "human": "An accountant clears the exception queue and approves anything above their limit. Nothing books itself around them."
+        "human": "An accountant clears the exceptions and approves anything above their limit."
       },
       {
         "id": "support",
         "tab": "Customer support",
+        "icon": "chat",
         "title": "Customer question to a sent reply",
         "in": [
-          "The incoming message, from email, chat or the contact form",
-          "Live order, delivery and invoice status out of your systems",
-          "Answers you already have: help centre, policies, resolved tickets"
+          {
+            "icon": "mail",
+            "label": "Email, chat or contact form"
+          },
+          {
+            "icon": "truck",
+            "label": "Order and delivery status"
+          },
+          {
+            "icon": "book",
+            "label": "Help centre and policies"
+          }
         ],
         "steps": [
           {
+            "icon": "search",
             "title": "Understand",
-            "desc": "Work out what the customer is actually asking and which order or account it concerns.",
+            "desc": "What is asked, and about which order.",
             "tools": [
-              "Helpdesk: Zendesk, Freshdesk, Jira"
+              {
+                "brand": "zendesk",
+                "label": "Zendesk"
+              },
+              {
+                "brand": "jira",
+                "label": "Jira"
+              },
+              {
+                "icon": "chat",
+                "label": "Freshdesk"
+              }
             ]
           },
           {
+            "icon": "db",
             "title": "Look up",
-            "desc": "Fetch the facts: where the parcel is, what was invoiced, what the policy allows in this case.",
+            "desc": "Where the parcel is, what was invoiced.",
             "tools": [
-              "Order and delivery API",
-              "ERP / WMS"
+              {
+                "icon": "plug",
+                "label": "Order API"
+              },
+              {
+                "icon": "box",
+                "label": "ERP / WMS"
+              }
             ]
           },
           {
+            "icon": "pen",
             "title": "Draft",
-            "desc": "Write the reply in your tone of voice, in the language the customer wrote in, with the source it used attached.",
+            "desc": "Your tone, their language, source attached.",
             "tools": [
-              "Answer library",
-              "Ticket history"
+              {
+                "icon": "book",
+                "label": "Answer library"
+              },
+              {
+                "icon": "clock",
+                "label": "Ticket history"
+              }
             ]
           }
         ],
         "decision": {
-          "question": "Is this a routine case, and is every claim in the answer backed by a source?",
-          "pass": "Sent in seconds, ticket tagged and closed, tracking link included.",
-          "fail": "Handed to an agent with the draft, the facts behind it and one line on why it stopped."
+          "question": "Routine case, and every claim backed by a source?",
+          "pass": "Sent in seconds, ticket tagged and closed.",
+          "fail": "To an agent with the draft and the facts behind it."
         },
         "out": [
-          "An answer in the customer's inbox, in the language they wrote in",
-          "A ticket categorised, tagged and closed in the helpdesk",
-          "A weekly list of what people keep asking about, and where your process keeps failing them"
+          {
+            "icon": "mail",
+            "label": "A reply in the customer's language"
+          },
+          {
+            "icon": "tag",
+            "label": "A ticket tagged and closed"
+          },
+          {
+            "icon": "list",
+            "label": "What people keep asking about"
+          }
         ],
-        "human": "Agents take the escalations and edit any draft they disagree with. Every edit becomes a better answer for the next customer."
+        "human": "Agents take the escalations and edit any draft they disagree with."
       },
       {
         "id": "demand",
         "tab": "Demand and stock",
+        "icon": "chart",
         "title": "Sales history to an order proposal",
         "in": [
-          "Two or three years of sales, per product and per location",
-          "Prices, promotions and the campaign calendar",
-          "Stock on hand, open orders and supplier lead times",
-          "Local context: holidays, school terms, weather"
+          {
+            "icon": "chart",
+            "label": "Three years of sales"
+          },
+          {
+            "icon": "tag",
+            "label": "Prices and promotions"
+          },
+          {
+            "icon": "box",
+            "label": "Stock and lead times"
+          },
+          {
+            "icon": "calendar",
+            "label": "Holidays, school terms, weather"
+          }
         ],
         "steps": [
           {
+            "icon": "chart",
             "title": "Forecast",
-            "desc": "Estimate demand per product and location for next week and the next quarter, as a range rather than one number.",
+            "desc": "Demand per product and store, as a range.",
             "tools": [
-              "Sales history",
-              "Forecasting models"
+              {
+                "icon": "db",
+                "label": "Sales history"
+              },
+              {
+                "icon": "sparkle",
+                "label": "Forecasting models"
+              }
             ]
           },
           {
+            "icon": "cart",
             "title": "Translate",
-            "desc": "Turn the forecast into a concrete proposal: how much to order, from which supplier, on which day.",
+            "desc": "How much, from whom, on which day.",
             "tools": [
-              "ERP / WMS",
-              "Supplier terms"
+              {
+                "icon": "box",
+                "label": "ERP / WMS"
+              },
+              {
+                "icon": "doc",
+                "label": "Supplier terms"
+              }
             ]
           },
           {
+            "icon": "gauge",
             "title": "Track",
-            "desc": "Hold the forecast against what actually sold, every week, so drift shows up before it costs money.",
+            "desc": "Forecast against actual, every week.",
             "tools": [
-              "BI dashboard"
+              {
+                "icon": "gauge",
+                "label": "BI dashboard"
+              }
             ]
           }
         ],
         "decision": {
-          "question": "Does the proposal fit the buyer's limits on budget, shelf life and minimum order quantity?",
-          "pass": "Lands in the ERP as a draft order, ready to release in one click.",
-          "fail": "Goes to the buyer flagged, with the reason and the nearest proposal that does fit."
+          "question": "Within the buyer's limits: budget, shelf life, minimum order?",
+          "pass": "A draft order in the ERP, one click to release.",
+          "fail": "To the buyer with the reason and the nearest proposal that fits."
         },
         "out": [
-          "Weekly order proposals per location",
-          "A ranked list of stock-out and overstock risks",
-          "Forecast against actual, tracked week by week and visible to everyone"
+          {
+            "icon": "cart",
+            "label": "Weekly proposals per location"
+          },
+          {
+            "icon": "alert",
+            "label": "Stock-out and overstock risks"
+          },
+          {
+            "icon": "gauge",
+            "label": "Forecast against actual"
+          }
         ],
-        "human": "The buyer sets the limits and keeps the last word. The system does the arithmetic across thousands of products, not the judgement calls."
+        "human": "The buyer sets the limits and keeps the last word. The system does the arithmetic."
       },
       {
         "id": "quality",
         "tab": "Quality control",
-        "title": "Camera frame to pass or fail",
+        "icon": "camera",
+        "title": "Camera frame to a pass or fail",
         "in": [
-          "Frames from the line camera, triggered by the controller",
-          "The reference: drawing, tolerances, an agreed set of good and bad samples",
-          "Batch, shift and machine context from the production system"
+          {
+            "icon": "camera",
+            "label": "Frames from the line camera"
+          },
+          {
+            "icon": "doc",
+            "label": "Drawing and tolerances"
+          },
+          {
+            "icon": "factory",
+            "label": "Batch, shift, machine"
+          }
         ],
         "steps": [
           {
+            "icon": "camera",
             "title": "Capture",
-            "desc": "Photograph every part at the same angle and the same light, in step with the line.",
+            "desc": "Same angle, same light, in step with the line.",
             "tools": [
-              "Line camera",
-              "PLC trigger"
+              {
+                "icon": "camera",
+                "label": "Line camera"
+              },
+              {
+                "icon": "cpu",
+                "label": "PLC trigger"
+              }
             ]
           },
           {
+            "icon": "match",
             "title": "Compare",
-            "desc": "Check the part against the reference and locate the defect: a scratch, a gap, a misprint, a missing component.",
+            "desc": "Scratch, gap, misprint, missing part.",
             "tools": [
-              "Vision model",
-              "Edge device on the line"
+              {
+                "icon": "sparkle",
+                "label": "Vision model"
+              },
+              {
+                "icon": "cpu",
+                "label": "Edge device on the line"
+              }
             ]
           },
           {
+            "icon": "list",
             "title": "Record",
-            "desc": "Log the verdict with the photo, the batch and the shift, so the pattern behind the defects becomes visible.",
+            "desc": "Verdict, photo, batch, shift.",
             "tools": [
-              "MES",
-              "Quality report"
+              {
+                "icon": "factory",
+                "label": "MES"
+              },
+              {
+                "icon": "chart",
+                "label": "Quality report"
+              }
             ]
           }
         ],
         "decision": {
-          "question": "Is the verdict clear, or is the model unsure about this particular part?",
-          "pass": "A fail signal to the controller inside the cycle time. The part leaves the line and the batch record says why.",
-          "fail": "The photo goes to the operator's screen. Their verdict decides, and it is kept as a new example."
+          "question": "Is the verdict clear, or is the model unsure?",
+          "pass": "A fail signal to the controller inside cycle time.",
+          "fail": "The photo goes to the operator. Their verdict decides."
         },
         "out": [
-          "A pass or fail per part, inside the cycle time",
-          "Defect photos grouped by type, shift and machine",
-          "A growing set of examples that gets sharper with every operator verdict"
+          {
+            "icon": "check",
+            "label": "A pass or fail per part"
+          },
+          {
+            "icon": "image",
+            "label": "Defects grouped by shift and machine"
+          },
+          {
+            "icon": "sparkle",
+            "label": "An example set that keeps sharpening"
+          }
         ],
-        "human": "Operators rule on the uncertain parts and quality sets the thresholds. The line never stops on a machine's opinion alone."
+        "human": "Operators rule on the uncertain parts and quality sets the thresholds."
       },
       {
         "id": "knowledge",
         "tab": "Company knowledge",
+        "icon": "book",
         "title": "A question to a sourced answer",
         "in": [
-          "Documents where they already live: SharePoint, Drive, Confluence, network shares",
-          "Contracts, procedures, offers and technical documentation",
-          "Your existing permissions: who is allowed to see what"
+          {
+            "icon": "folder",
+            "label": "SharePoint, Drive, Confluence"
+          },
+          {
+            "icon": "doc",
+            "label": "Contracts, procedures, offers"
+          },
+          {
+            "icon": "lock",
+            "label": "Your existing permissions"
+          }
         ],
         "steps": [
           {
+            "icon": "db",
             "title": "Index",
-            "desc": "Read the documents and keep each one's permissions attached, so nothing surfaces to someone who could not open the file.",
+            "desc": "Reads the documents, keeps the permissions.",
             "tools": [
-              "SharePoint, Drive, Confluence",
-              "Your identity provider"
+              {
+                "icon": "folder",
+                "label": "SharePoint"
+              },
+              {
+                "brand": "drive",
+                "label": "Google Drive"
+              },
+              {
+                "brand": "confluence",
+                "label": "Confluence"
+              },
+              {
+                "icon": "lock",
+                "label": "Identity provider"
+              }
             ]
           },
           {
+            "icon": "chat",
             "title": "Answer",
-            "desc": "Answer in the language the question was asked, quoting the passage and linking the document it came from.",
+            "desc": "In the language asked, quoted and linked.",
             "tools": [
-              "Search across your documents",
-              "Teams, Slack or the intranet"
+              {
+                "icon": "search",
+                "label": "Document search"
+              },
+              {
+                "icon": "chat",
+                "label": "Teams"
+              },
+              {
+                "icon": "chat",
+                "label": "Slack"
+              }
             ]
           },
           {
+            "icon": "list",
             "title": "Log",
-            "desc": "Record every question that had no documented answer, so the gaps stop being invisible.",
+            "desc": "Records every question with no documented answer.",
             "tools": [
-              "Question log"
+              {
+                "icon": "list",
+                "label": "Question log"
+              }
             ]
           }
         ],
         "decision": {
-          "question": "Is there a documented answer, and is this person allowed to see it?",
-          "pass": "The answer, with a link to the exact page or clause it came from.",
-          "fail": "It says plainly that nothing is documented and names the person who owns that area, instead of inventing something."
+          "question": "Is it documented, and is this person allowed to see it?",
+          "pass": "The answer, linked to the exact page or clause.",
+          "fail": "Says plainly that nothing is documented and names who owns the area."
         },
         "out": [
-          "An answer in seconds instead of asking three colleagues",
-          "Every answer traceable back to a source document",
-          "A list of the questions nobody has documented yet"
+          {
+            "icon": "clock",
+            "label": "An answer in seconds"
+          },
+          {
+            "icon": "link",
+            "label": "Every answer traceable to a source"
+          },
+          {
+            "icon": "alert",
+            "label": "A list of the gaps in your documentation"
+          }
         ],
-        "human": "The owner of each area closes the gaps the log exposes. The assistant makes them visible, it does not paper over them."
+        "human": "The owner of each area closes the gaps the log exposes."
       }
     ]
   },
