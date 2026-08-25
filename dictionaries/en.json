@@ -127,49 +127,49 @@
   },
   "services": {
     "label": "Capabilities",
-    "title": "From mapping how the work runs today to systems in production",
-    "subtitle": "Senior engineers, not slide decks. We start by watching how the work actually happens, then automate the parts that cost you hours.",
+    "title": "From process map to system in production",
+    "subtitle": "Engineers, not slide decks. We automate what costs you hours.",
     "items": [
       {
         "num": "01",
         "title": "Process mapping & AI roadmap",
-        "desc": "We follow the paperwork through your business, count where the hours actually go, and rank the fixes by what each one saves.",
+        "desc": "We follow the paperwork and count where the hours go.",
         "tags": "process mapping · readiness audit · costed roadmap"
       },
       {
         "num": "02",
         "title": "Assistants that answer from your own documents",
-        "desc": "An assistant that reads your contracts, procedures and tickets, and answers with a link back to the source. We measure how often it is right before anyone relies on it.",
+        "desc": "Answers from your own documents, source attached.",
         "tags": "answers from your own sources · quoted sources · measured accuracy"
       },
       {
         "num": "03",
         "title": "Automation with a person in the loop",
-        "desc": "Software that runs the repetitive steps end to end and stops for a person at the decisions that carry real risk.",
+        "desc": "Runs the repetitive steps, stops where risk starts.",
         "tags": "step-by-step automation · approval points · full audit trail"
       },
       {
         "num": "04",
         "title": "Document & paperwork automation",
-        "desc": "Our flagship. Invoices, delivery notes, customs forms and contracts read, checked and written into the systems you already run. Nobody retypes anything.",
+        "desc": "Invoices, delivery notes, customs and contracts, straight into your systems.",
         "tags": "scanning + reading · automatic checks · straight into your ERP"
       },
       {
         "num": "05",
         "title": "Data foundations & forecasting",
-        "desc": "Getting your numbers into one place you can trust, then the models that predict demand, delays and risk from them.",
+        "desc": "Your numbers in one place, then models that predict.",
         "tags": "data pipelines · forecasting models · keeping them accurate"
       },
       {
         "num": "06",
         "title": "Data governance, risk & privacy",
-        "desc": "Who owns which data, who may see it, how long you keep it, and what the GDPR and the EU AI Act require of each use. Written by the engineers who build the controls.",
+        "desc": "Data ownership, risk, GDPR and the EU AI Act.",
         "tags": "data ownership · risk classification · GDPR & EU AI Act"
       },
       {
         "num": "07",
         "title": "Technical hiring & competency checks",
-        "desc": "Hiring for a skill nobody on your team has yet? Our senior engineers design and run the technical screening, and hand you a scored report you can defend.",
+        "desc": "Technical screening and a scored report you can defend.",
         "tags": "competency verification · technical interviews · scorecards"
       }
     ]
@@ -5783,7 +5783,7 @@
   "useCaseFlows": {
     "label": "One level deeper",
     "title": "Follow the data, step by step",
-    "subtitle": "Pick a use case. See what comes in, what runs, and where the process stops for a person.",
+    "subtitle": "Pick a use case and follow the data.",
     "legend": {
       "in": "Comes in",
       "run": "What runs",
@@ -5818,7 +5818,6 @@
           {
             "icon": "scan",
             "title": "Read",
-            "desc": "Supplier, dates, totals, every line.",
             "tools": [
               {
                 "icon": "mail",
@@ -5833,7 +5832,6 @@
           {
             "icon": "match",
             "title": "Match",
-            "desc": "Invoice against order and delivery.",
             "tools": [
               {
                 "brand": "sap",
@@ -5856,7 +5854,6 @@
           {
             "icon": "ledger",
             "title": "Post",
-            "desc": "Books what agrees, parks the rest.",
             "tools": [
               {
                 "icon": "plug",
@@ -5871,8 +5868,8 @@
         ],
         "decision": {
           "question": "Do the invoice, the order and the delivery agree?",
-          "pass": "Booked into the ERP, source file attached.",
-          "fail": "Into the queue: the order says 1,200, the invoice says 1,320."
+          "pass": "Booked into the ERP, file attached.",
+          "fail": "Into the queue: 1,200 vs 1,320."
         },
         "out": [
           {
@@ -5888,7 +5885,7 @@
             "label": "A trace behind every field read"
           }
         ],
-        "human": "An accountant clears the exceptions and approves anything above their limit."
+        "human": "Accountant: exceptions and approvals."
       },
       {
         "id": "support",
@@ -5913,7 +5910,6 @@
           {
             "icon": "search",
             "title": "Understand",
-            "desc": "What is asked, and about which order.",
             "tools": [
               {
                 "brand": "zendesk",
@@ -5932,7 +5928,6 @@
           {
             "icon": "db",
             "title": "Look up",
-            "desc": "Where the parcel is, what was invoiced.",
             "tools": [
               {
                 "icon": "plug",
@@ -5947,7 +5942,6 @@
           {
             "icon": "pen",
             "title": "Draft",
-            "desc": "Your tone, their language, source attached.",
             "tools": [
               {
                 "icon": "book",
@@ -5962,8 +5956,8 @@
         ],
         "decision": {
           "question": "Routine case, and every claim backed by a source?",
-          "pass": "Sent in seconds, ticket tagged and closed.",
-          "fail": "To an agent with the draft and the facts behind it."
+          "pass": "Sent in seconds, ticket closed.",
+          "fail": "To an agent with the draft."
         },
         "out": [
           {
@@ -5979,7 +5973,7 @@
             "label": "What people keep asking about"
           }
         ],
-        "human": "Agents take the escalations and edit any draft they disagree with."
+        "human": "Agent: escalations."
       },
       {
         "id": "demand",
@@ -6008,7 +6002,6 @@
           {
             "icon": "chart",
             "title": "Forecast",
-            "desc": "Demand per product and store, as a range.",
             "tools": [
               {
                 "icon": "db",
@@ -6023,7 +6016,6 @@
           {
             "icon": "cart",
             "title": "Translate",
-            "desc": "How much, from whom, on which day.",
             "tools": [
               {
                 "icon": "box",
@@ -6038,7 +6030,6 @@
           {
             "icon": "gauge",
             "title": "Track",
-            "desc": "Forecast against actual, every week.",
             "tools": [
               {
                 "icon": "gauge",
@@ -6049,8 +6040,8 @@
         ],
         "decision": {
           "question": "Within the buyer's limits: budget, shelf life, minimum order?",
-          "pass": "A draft order in the ERP, one click to release.",
-          "fail": "To the buyer with the reason and the nearest proposal that fits."
+          "pass": "A draft order in the ERP.",
+          "fail": "To the buyer with the reason."
         },
         "out": [
           {
@@ -6066,7 +6057,7 @@
             "label": "Forecast against actual"
           }
         ],
-        "human": "The buyer sets the limits and keeps the last word. The system does the arithmetic."
+        "human": "Buyer: limits and the last word."
       },
       {
         "id": "quality",
@@ -6091,7 +6082,6 @@
           {
             "icon": "camera",
             "title": "Capture",
-            "desc": "Same angle, same light, in step with the line.",
             "tools": [
               {
                 "icon": "camera",
@@ -6106,7 +6096,6 @@
           {
             "icon": "match",
             "title": "Compare",
-            "desc": "Scratch, gap, misprint, missing part.",
             "tools": [
               {
                 "icon": "sparkle",
@@ -6121,7 +6110,6 @@
           {
             "icon": "list",
             "title": "Record",
-            "desc": "Verdict, photo, batch, shift.",
             "tools": [
               {
                 "icon": "factory",
@@ -6136,8 +6124,8 @@
         ],
         "decision": {
           "question": "Is the verdict clear, or is the model unsure?",
-          "pass": "A fail signal to the controller inside cycle time.",
-          "fail": "The photo goes to the operator. Their verdict decides."
+          "pass": "Fail signal inside cycle time.",
+          "fail": "Photo to the operator."
         },
         "out": [
           {
@@ -6153,7 +6141,7 @@
             "label": "An example set that keeps sharpening"
           }
         ],
-        "human": "Operators rule on the uncertain parts and quality sets the thresholds."
+        "human": "Operator: the uncertain parts."
       },
       {
         "id": "knowledge",
@@ -6178,7 +6166,6 @@
           {
             "icon": "db",
             "title": "Index",
-            "desc": "Reads the documents, keeps the permissions.",
             "tools": [
               {
                 "icon": "folder",
@@ -6201,7 +6188,6 @@
           {
             "icon": "chat",
             "title": "Answer",
-            "desc": "In the language asked, quoted and linked.",
             "tools": [
               {
                 "icon": "search",
@@ -6220,7 +6206,6 @@
           {
             "icon": "list",
             "title": "Log",
-            "desc": "Records every question with no documented answer.",
             "tools": [
               {
                 "icon": "list",
@@ -6231,8 +6216,8 @@
         ],
         "decision": {
           "question": "Is it documented, and is this person allowed to see it?",
-          "pass": "The answer, linked to the exact page or clause.",
-          "fail": "Says plainly that nothing is documented and names who owns the area."
+          "pass": "Answer linked to the exact clause.",
+          "fail": "Names who owns the area."
         },
         "out": [
           {
@@ -6248,7 +6233,7 @@
             "label": "A list of the gaps in your documentation"
           }
         ],
-        "human": "The owner of each area closes the gaps the log exposes."
+        "human": "Area owner: closes the gaps."
       }
     ]
   },

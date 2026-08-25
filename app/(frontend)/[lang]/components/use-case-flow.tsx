@@ -23,7 +23,6 @@ export type FlowNode = {
 export type FlowStep = {
   icon: string;
   title: string;
-  desc: string;
   tools: readonly FlowNode[];
 };
 
@@ -493,7 +492,6 @@ function FlowCanvas({ flow, legend }: { flow: Flow; legend: FlowLegend }) {
                 tone="step"
                 index={i + 1}
                 label={s.title}
-                sub={s.desc}
                 place="above"
               />
               {s.tools.map((t, j) => (
@@ -718,34 +716,44 @@ export default function UseCaseFlow({
           <FlowCanvas flow={flow} legend={legend} />
         </div>
 
-        {/* The two sentences the canvas cannot carry, kept beside it as notes. */}
-        <div className="mx-auto mt-6 grid max-w-[900px] gap-3 sm:grid-cols-2">
-          <div className="rounded border border-lime/35 bg-lime/[0.06] p-4">
-            <div className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.09em] text-lime-soft">
-              <FlowIcon name="check" className="size-4" />
-              {legend.pass}
-            </div>
-            <p className="mt-2 text-[13.5px] leading-[1.55] text-bone-soft">
-              {flow.decision.pass}
-            </p>
-          </div>
-          <div className="rounded border border-white/15 bg-white/[0.03] p-4">
-            <div className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.09em] text-bone">
-              <FlowIcon name="user" className="size-4" />
-              {legend.fail}
-            </div>
-            <p className="mt-2 text-[13.5px] leading-[1.55] text-bone-soft">
-              {flow.decision.fail}
-            </p>
-          </div>
+        {/* The three things the wiring cannot draw, as chips rather than prose. */}
+        <div className="mx-auto mt-7 grid max-w-[900px] gap-2.5 sm:grid-cols-3">
+          {[
+            { key: "pass", icon: "check", label: legend.pass, text: flow.decision.pass },
+            { key: "fail", icon: "alert", label: legend.fail, text: flow.decision.fail },
+            { key: "human", icon: "user", label: legend.human, text: flow.human },
+          ].map((note) => {
+            const accent = note.key === "pass";
+            return (
+              <div
+                key={note.key}
+                className={`flex items-start gap-3 rounded border p-3.5 ${
+                  accent
+                    ? "border-lime/35 bg-lime/[0.06]"
+                    : "border-white/12 bg-white/[0.03]"
+                }`}
+              >
+                <span
+                  className={`mt-px flex size-7 shrink-0 items-center justify-center rounded-full ${
+                    accent
+                      ? "bg-lime/15 text-lime-soft"
+                      : "bg-white/[0.06] text-bone-dim"
+                  }`}
+                >
+                  <FlowIcon name={note.icon} className="size-4" />
+                </span>
+                <span className="block">
+                  <span className="block font-mono text-[10.5px] uppercase tracking-[0.12em] text-bone-dim">
+                    {note.label}
+                  </span>
+                  <span className="mt-1 block text-[13px] leading-[1.45] text-bone-soft">
+                    {note.text}
+                  </span>
+                </span>
+              </div>
+            );
+          })}
         </div>
-
-        <p className="mx-auto mt-4 max-w-[900px] text-center text-[14px] leading-[1.6] text-bone-dim">
-          <span className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-lime-soft">
-            {legend.human}:{" "}
-          </span>
-          {flow.human}
-        </p>
       </motion.div>
     </div>
   );

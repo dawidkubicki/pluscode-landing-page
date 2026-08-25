@@ -127,49 +127,49 @@
   },
   "services": {
     "label": "Kompetencje",
-    "title": "Od zmapowania, jak ta praca wygląda dziś, po systemy na produkcji",
-    "subtitle": "Doświadczeni inżynierowie, nie prezentacje. Zaczynamy od tego, jak ta praca wygląda naprawdę, a potem automatyzujemy to, co kosztuje Cię godziny.",
+    "title": "Od mapy procesu do systemu na produkcji",
+    "subtitle": "Inżynierowie, nie prezentacje. Automatyzujemy to, co kosztuje Cię godziny.",
     "items": [
       {
         "num": "01",
         "title": "Mapowanie procesów i roadmapa AI",
-        "desc": "Idziemy za papierologią przez Twoją firmę, liczymy, gdzie naprawdę uciekają godziny, i układamy usprawnienia według realnej oszczędności.",
+        "desc": "Idziemy za papierologią i liczymy, gdzie uciekają godziny.",
         "tags": "mapowanie procesów · audyt gotowości · wyceniona roadmapa"
       },
       {
         "num": "02",
         "title": "Asystenci, którzy odpowiadają z Twoich dokumentów",
-        "desc": "Asystent, który czyta Twoje umowy, procedury i zgłoszenia i odpowiada z odnośnikiem do źródła. Mierzymy, jak często ma rację, zanim ktokolwiek zacznie na nim polegać.",
+        "desc": "Odpowiada z Twoich dokumentów i podaje źródło.",
         "tags": "odpowiedzi z Twoich źródeł · cytowane źródła · mierzona trafność"
       },
       {
         "num": "03",
         "title": "Automatyzacja z człowiekiem w pętli",
-        "desc": "Oprogramowanie, które wykonuje powtarzalne kroki od początku do końca i zatrzymuje się na człowieku przy decyzjach niosących realne ryzyko.",
+        "desc": "Robi powtarzalne kroki, zatrzymuje się przy ryzyku.",
         "tags": "automatyzacja krok po kroku · punkty akceptacji · pełna ścieżka audytu"
       },
       {
         "num": "04",
         "title": "Automatyzacja dokumentów i papierologii",
-        "desc": "Nasza flagowa specjalizacja. Faktury, listy przewozowe, dokumenty celne i umowy odczytane, sprawdzone i zapisane w systemach, których już używasz. Nikt niczego nie przepisuje.",
+        "desc": "Faktury, WZ, cło i umowy prosto do Twoich systemów.",
         "tags": "skan + odczyt · automatyczna weryfikacja · prosto do Twojego ERP"
       },
       {
         "num": "05",
         "title": "Fundamenty danych i prognozowanie",
-        "desc": "Zebranie Twoich liczb w jednym miejscu, któremu można ufać, a potem modele, które przewidują z nich popyt, opóźnienia i ryzyko.",
+        "desc": "Twoje liczby w jednym miejscu, potem prognozy.",
         "tags": "przepływy danych · modele prognostyczne · utrzymanie trafności"
       },
       {
         "num": "06",
         "title": "Ład danych, ryzyko i prywatność",
-        "desc": "Kto jest właścicielem których danych, kto może je widzieć, jak długo je trzymasz i czego RODO oraz AI Act wymagają od każdego zastosowania. Pisane przez inżynierów, którzy budują te zabezpieczenia.",
+        "desc": "Własność danych, ryzyko, RODO i AI Act.",
         "tags": "własność danych · klasyfikacja ryzyka · RODO i AI Act"
       },
       {
         "num": "07",
         "title": "Rekrutacja techniczna i weryfikacja kompetencji",
-        "desc": "Rekrutujesz na kompetencję, której nikt u Ciebie jeszcze nie ma? Nasi doświadczeni inżynierowie projektują i prowadzą weryfikację techniczną i przekazują punktowany raport, który da się obronić.",
+        "desc": "Weryfikacja techniczna i punktowany raport.",
         "tags": "weryfikacja kompetencji · rozmowy techniczne · karty oceny"
       }
     ]
@@ -5783,7 +5783,7 @@
   "useCaseFlows": {
     "label": "Poziom niżej",
     "title": "Prześledź dane, krok po kroku",
-    "subtitle": "Wybierz zastosowanie. Zobacz, co wchodzi, co się dzieje i gdzie proces zatrzymuje się na człowieku.",
+    "subtitle": "Wybierz zastosowanie i prześledź drogę danych.",
     "legend": {
       "in": "Wchodzi",
       "run": "Co się dzieje",
@@ -5818,7 +5818,6 @@
           {
             "icon": "scan",
             "title": "Odczyt",
-            "desc": "Dostawca, daty, kwoty, każda pozycja.",
             "tools": [
               {
                 "icon": "mail",
@@ -5833,7 +5832,6 @@
           {
             "icon": "match",
             "title": "Zestawienie",
-            "desc": "Faktura kontra zamówienie i dostawa.",
             "tools": [
               {
                 "brand": "sap",
@@ -5856,7 +5854,6 @@
           {
             "icon": "ledger",
             "title": "Księgowanie",
-            "desc": "Księguje zgodne, resztę odkłada.",
             "tools": [
               {
                 "icon": "plug",
@@ -5871,8 +5868,8 @@
         ],
         "decision": {
           "question": "Faktura, zamówienie i dostawa się zgadzają?",
-          "pass": "Księguje się w ERP, z podpiętym plikiem.",
-          "fail": "Do kolejki: zamówienie 1200 zł, faktura 1320 zł."
+          "pass": "Księguje się w ERP, z plikiem.",
+          "fail": "Do kolejki: 1200 zł vs 1320 zł."
         },
         "out": [
           {
@@ -5888,7 +5885,7 @@
             "label": "Ślad przy każdym odczytanym polu"
           }
         ],
-        "human": "Księgowa czyści wyjątki i akceptuje wszystko powyżej swojego limitu."
+        "human": "Księgowa: wyjątki i akcepty."
       },
       {
         "id": "support",
@@ -5913,7 +5910,6 @@
           {
             "icon": "search",
             "title": "Zrozumienie",
-            "desc": "O co pyta i którego zamówienia dotyczy.",
             "tools": [
               {
                 "brand": "zendesk",
@@ -5932,7 +5928,6 @@
           {
             "icon": "db",
             "title": "Sprawdzenie",
-            "desc": "Gdzie jest paczka, co zostało zafakturowane.",
             "tools": [
               {
                 "icon": "plug",
@@ -5947,7 +5942,6 @@
           {
             "icon": "pen",
             "title": "Redakcja",
-            "desc": "Twoim tonem, w języku klienta, ze źródłem.",
             "tools": [
               {
                 "icon": "book",
@@ -5962,8 +5956,8 @@
         ],
         "decision": {
           "question": "Sprawa typowa i każde zdanie ma pokrycie w źródle?",
-          "pass": "Wysyłka w kilka sekund, zgłoszenie otagowane i zamknięte.",
-          "fail": "Do konsultanta z projektem odpowiedzi i faktami."
+          "pass": "Wysyłka w kilka sekund.",
+          "fail": "Do konsultanta z projektem."
         },
         "out": [
           {
@@ -5979,7 +5973,7 @@
             "label": "Lista tego, o co pytają w kółko"
           }
         ],
-        "human": "Konsultanci biorą eskalacje i poprawiają każdy projekt, z którym się nie zgadzają."
+        "human": "Konsultant: eskalacje."
       },
       {
         "id": "demand",
@@ -6008,7 +6002,6 @@
           {
             "icon": "chart",
             "title": "Prognoza",
-            "desc": "Popyt na produkt i sklep, jako przedział.",
             "tools": [
               {
                 "icon": "db",
@@ -6023,7 +6016,6 @@
           {
             "icon": "cart",
             "title": "Przełożenie",
-            "desc": "Ile zamówić, u kogo, którego dnia.",
             "tools": [
               {
                 "icon": "box",
@@ -6038,7 +6030,6 @@
           {
             "icon": "gauge",
             "title": "Kontrola",
-            "desc": "Prognoza kontra sprzedaż, co tydzień.",
             "tools": [
               {
                 "icon": "gauge",
@@ -6049,8 +6040,8 @@
         ],
         "decision": {
           "question": "Mieści się w limitach kupca: budżet, termin, minimum?",
-          "pass": "Projekt zamówienia w ERP, do wysłania jednym kliknięciem.",
-          "fail": "Do kupca z powodem i najbliższą propozycją, która wchodzi w limity."
+          "pass": "Projekt zamówienia w ERP.",
+          "fail": "Do kupca z powodem."
         },
         "out": [
           {
@@ -6066,7 +6057,7 @@
             "label": "Prognoza kontra wykonanie"
           }
         ],
-        "human": "Kupiec ustawia limity i ma ostatnie słowo. System liczy tysiące indeksów za niego."
+        "human": "Kupiec: limity i ostatnie słowo."
       },
       {
         "id": "quality",
@@ -6091,7 +6082,6 @@
           {
             "icon": "camera",
             "title": "Zdjęcie",
-            "desc": "Ten sam kąt i światło, w rytmie linii.",
             "tools": [
               {
                 "icon": "camera",
@@ -6106,7 +6096,6 @@
           {
             "icon": "match",
             "title": "Porównanie",
-            "desc": "Rysa, szczelina, brak elementu.",
             "tools": [
               {
                 "icon": "sparkle",
@@ -6121,7 +6110,6 @@
           {
             "icon": "list",
             "title": "Zapis",
-            "desc": "Werdykt, zdjęcie, partia, zmiana.",
             "tools": [
               {
                 "icon": "factory",
@@ -6136,8 +6124,8 @@
         ],
         "decision": {
           "question": "Werdykt jest jednoznaczny, czy model nie jest pewny?",
-          "pass": "Sygnał NOK do sterownika w czasie cyklu.",
-          "fail": "Zdjęcie na ekran operatora. Jego werdykt decyduje."
+          "pass": "Sygnał NOK do sterownika.",
+          "fail": "Zdjęcie na ekran operatora."
         },
         "out": [
           {
@@ -6153,7 +6141,7 @@
             "label": "Zbiór przykładów, coraz celniejszy"
           }
         ],
-        "human": "Operatorzy rozstrzygają przypadki niepewne, a jakość ustawia progi."
+        "human": "Operator: przypadki niepewne."
       },
       {
         "id": "knowledge",
@@ -6178,7 +6166,6 @@
           {
             "icon": "db",
             "title": "Indeks",
-            "desc": "Czyta dokumenty i pilnuje uprawnień.",
             "tools": [
               {
                 "icon": "folder",
@@ -6201,7 +6188,6 @@
           {
             "icon": "chat",
             "title": "Odpowiedź",
-            "desc": "W języku pytania, z cytatem i linkiem.",
             "tools": [
               {
                 "icon": "search",
@@ -6220,7 +6206,6 @@
           {
             "icon": "list",
             "title": "Rejestr",
-            "desc": "Zapisuje pytania bez udokumentowanej odpowiedzi.",
             "tools": [
               {
                 "icon": "list",
@@ -6231,8 +6216,8 @@
         ],
         "decision": {
           "question": "Odpowiedź jest udokumentowana i ta osoba ma do niej prawo?",
-          "pass": "Odpowiedź z linkiem do konkretnego paragrafu.",
-          "fail": "Mówi wprost, że nic nie ma, i wskazuje właściciela obszaru."
+          "pass": "Odpowiedź z linkiem do paragrafu.",
+          "fail": "Wskazuje właściciela obszaru."
         },
         "out": [
           {
@@ -6248,7 +6233,7 @@
             "label": "Lista luk w dokumentacji"
           }
         ],
-        "human": "Właściciel obszaru domyka luki, które pokazuje rejestr."
+        "human": "Właściciel: domyka luki."
       }
     ]
   },

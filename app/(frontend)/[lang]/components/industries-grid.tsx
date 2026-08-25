@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Visual, type VisualKind } from "./visual";
+import { IndustryScene, type SceneKind } from "./industry-scene";
 import LocaleLink from "./locale-link";
 
 type IndustryItem = { num: string; name: string; note: string };
@@ -19,16 +19,16 @@ const slugs: (string | null)[] = [
   "manufacturing",
 ];
 
-/** Art-directed hover backgrounds until per-industry imagery lands in the CMS. */
-const visuals: VisualKind[] = [
-  "grid",
-  "mesh",
-  "nodes",
-  "aurora",
-  "portrait",
-  "code",
-  "mesh",
-  "nodes",
+/** The scene each cell lights up with, in the same order as `slugs`. */
+const scenes: SceneKind[] = [
+  "finance",
+  "healthcare",
+  "retail",
+  "hr",
+  "logistics",
+  "legal",
+  "saas",
+  "manufacturing",
 ];
 
 /**
@@ -84,8 +84,15 @@ export default function IndustriesGrid({ items }: { items: IndustryItem[] }) {
               isActive ? "opacity-100" : "opacity-0"
             }`}
           >
-            <Visual kind={visuals[i]} className="absolute inset-0" />
-            <span className="absolute inset-0 bg-gradient-to-t from-night/85 via-night/35 to-night/10" />
+            <IndustryScene kind={scenes[i]} className="absolute inset-0" />
+            {/* Scrim: heavy where the name sits, barely there over the scene. */}
+            <span
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to top, rgba(10,25,41,0.96) 0%, rgba(10,25,41,0.88) 26%, rgba(10,25,41,0.34) 56%, rgba(10,25,41,0.06) 100%)",
+              }}
+            />
           </span>
         );
 

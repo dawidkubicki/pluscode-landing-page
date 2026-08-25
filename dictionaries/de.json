@@ -127,49 +127,49 @@
   },
   "services": {
     "label": "Kompetenzen",
-    "title": "Von der Aufnahme, wie die Arbeit heute läuft, bis zum System in Produktion",
-    "subtitle": "Senior Engineers statt Foliensätze. Wir schauen zuerst, wie die Arbeit tatsächlich abläuft, und automatisieren dann, was Sie Stunden kostet.",
+    "title": "Von der Prozesskarte zum System in Produktion",
+    "subtitle": "Ingenieure statt Foliensätze. Wir automatisieren, was Sie Stunden kostet.",
     "items": [
       {
         "num": "01",
         "title": "Prozess-Mapping & KI-Roadmap",
-        "desc": "Wir folgen dem Papierkram durch Ihr Unternehmen, zählen, wohin die Stunden wirklich gehen, und sortieren die Maßnahmen nach echter Ersparnis.",
+        "desc": "Wir folgen dem Papierkram und zählen, wohin die Stunden gehen.",
         "tags": "Prozess-Mapping · Readiness-Audit · kalkulierte Roadmap"
       },
       {
         "num": "02",
         "title": "Assistenten, die aus Ihren eigenen Dokumenten antworten",
-        "desc": "Ein Assistent, der Ihre Verträge, Verfahren und Tickets liest und mit Verweis auf die Quelle antwortet. Wir messen, wie oft er richtig liegt, bevor sich jemand darauf verlässt.",
+        "desc": "Antwortet aus Ihren Dokumenten, mit Quelle.",
         "tags": "Antworten aus Ihren Quellen · zitierte Quellen · gemessene Genauigkeit"
       },
       {
         "num": "03",
         "title": "Automatisierung mit einem Menschen in der Schleife",
-        "desc": "Software, die die repetitiven Schritte durchgängig erledigt und dort für einen Menschen anhält, wo Entscheidungen echtes Risiko tragen.",
+        "desc": "Erledigt die repetitiven Schritte, hält beim Risiko an.",
         "tags": "Schritt-für-Schritt-Automatisierung · Freigabepunkte · lückenlose Nachvollziehbarkeit"
       },
       {
         "num": "04",
         "title": "Dokumenten- und Papierkram-Automatisierung",
-        "desc": "Unser Aushängeschild. Rechnungen, Lieferscheine, Zollformulare und Verträge werden gelesen, geprüft und in Ihre bestehenden Systeme geschrieben. Niemand tippt etwas ab.",
+        "desc": "Rechnungen, Lieferscheine, Zoll und Verträge direkt in Ihre Systeme.",
         "tags": "Scan + Auslesen · automatische Prüfung · direkt in Ihr ERP"
       },
       {
         "num": "05",
         "title": "Datenfundament & Prognosen",
-        "desc": "Ihre Zahlen an einem verlässlichen Ort zusammenführen und daraus Modelle bauen, die Bedarf, Verzögerungen und Risiken vorhersagen.",
+        "desc": "Ihre Zahlen an einem Ort, dann Prognosen.",
         "tags": "Datenpipelines · Prognosemodelle · dauerhafte Genauigkeit"
       },
       {
         "num": "06",
         "title": "Daten-Governance, Risiko & Datenschutz",
-        "desc": "Wer welche Daten verantwortet, wer sie sehen darf, wie lange Sie sie aufbewahren und was DSGVO und EU AI Act für jeden Einsatz verlangen. Geschrieben von den Engineers, die die Kontrollen bauen.",
+        "desc": "Datenverantwortung, Risiko, DSGVO und EU AI Act.",
         "tags": "Datenverantwortung · Risikoklassifizierung · DSGVO & EU AI Act"
       },
       {
         "num": "07",
         "title": "Technisches Recruiting & Kompetenzprüfung",
-        "desc": "Sie besetzen eine Rolle, deren Kompetenz im Team noch niemand beurteilen kann? Unsere Senior Engineers konzipieren und führen die fachliche Prüfung durch und liefern einen belastbaren, bewerteten Bericht.",
+        "desc": "Fachliche Prüfung und ein belastbarer, bewerteter Bericht.",
         "tags": "Kompetenzprüfung · Fachinterviews · Bewertungsbögen"
       }
     ]
@@ -5783,7 +5783,7 @@
   "useCaseFlows": {
     "label": "Eine Ebene tiefer",
     "title": "Den Daten folgen, Schritt für Schritt",
-    "subtitle": "Wählen Sie einen Anwendungsfall. Sehen Sie, was hereinkommt, was läuft und wo der Prozess auf einen Menschen wartet.",
+    "subtitle": "Wählen Sie einen Anwendungsfall und folgen Sie den Daten.",
     "legend": {
       "in": "Kommt rein",
       "run": "Was läuft",
@@ -5818,7 +5818,6 @@
           {
             "icon": "scan",
             "title": "Lesen",
-            "desc": "Lieferant, Daten, Beträge, jede Position.",
             "tools": [
               {
                 "icon": "mail",
@@ -5833,7 +5832,6 @@
           {
             "icon": "match",
             "title": "Abgleichen",
-            "desc": "Rechnung gegen Bestellung und Lieferung.",
             "tools": [
               {
                 "brand": "sap",
@@ -5856,7 +5854,6 @@
           {
             "icon": "ledger",
             "title": "Buchen",
-            "desc": "Bucht, was stimmt, legt den Rest zur Seite.",
             "tools": [
               {
                 "icon": "plug",
@@ -5871,8 +5868,8 @@
         ],
         "decision": {
           "question": "Stimmen Rechnung, Bestellung und Lieferung überein?",
-          "pass": "Wird im ERP gebucht, mit angehängter Quelldatei.",
-          "fail": "In die Klärungsliste: Bestellung 1.200, Rechnung 1.320."
+          "pass": "Im ERP gebucht, Datei angehängt.",
+          "fail": "In die Klärung: 1.200 vs 1.320."
         },
         "out": [
           {
@@ -5888,7 +5885,7 @@
             "label": "Ein Nachweis zu jedem Feld"
           }
         ],
-        "human": "Die Buchhaltung klärt die Ausnahmen und gibt alles über ihrem Limit frei."
+        "human": "Buchhaltung: Ausnahmen und Freigaben."
       },
       {
         "id": "support",
@@ -5913,7 +5910,6 @@
           {
             "icon": "search",
             "title": "Verstehen",
-            "desc": "Was gefragt ist und zu welchem Auftrag.",
             "tools": [
               {
                 "brand": "zendesk",
@@ -5932,7 +5928,6 @@
           {
             "icon": "db",
             "title": "Nachschlagen",
-            "desc": "Wo das Paket ist, was berechnet wurde.",
             "tools": [
               {
                 "icon": "plug",
@@ -5947,7 +5942,6 @@
           {
             "icon": "pen",
             "title": "Entwerfen",
-            "desc": "Ihre Tonalität, die Sprache der Anfrage.",
             "tools": [
               {
                 "icon": "book",
@@ -5962,8 +5956,8 @@
         ],
         "decision": {
           "question": "Routinefall, und jede Aussage durch eine Quelle gedeckt?",
-          "pass": "Geht in Sekunden raus, Ticket getaggt und geschlossen.",
-          "fail": "An den Service, mit Entwurf und den Fakten dahinter."
+          "pass": "Geht in Sekunden raus.",
+          "fail": "An den Service, mit Entwurf."
         },
         "out": [
           {
@@ -5979,7 +5973,7 @@
             "label": "Was immer wieder gefragt wird"
           }
         ],
-        "human": "Der Service übernimmt die Eskalationen und korrigiert jeden Entwurf."
+        "human": "Service: Eskalationen."
       },
       {
         "id": "demand",
@@ -6008,7 +6002,6 @@
           {
             "icon": "chart",
             "title": "Prognose",
-            "desc": "Bedarf je Artikel und Standort, als Spanne.",
             "tools": [
               {
                 "icon": "db",
@@ -6023,7 +6016,6 @@
           {
             "icon": "cart",
             "title": "Übersetzen",
-            "desc": "Wie viel, bei wem, an welchem Tag.",
             "tools": [
               {
                 "icon": "box",
@@ -6038,7 +6030,6 @@
           {
             "icon": "gauge",
             "title": "Nachhalten",
-            "desc": "Prognose gegen Ist, jede Woche.",
             "tools": [
               {
                 "icon": "gauge",
@@ -6049,8 +6040,8 @@
         ],
         "decision": {
           "question": "Passt es in die Grenzen: Budget, Haltbarkeit, Mindestmenge?",
-          "pass": "Bestellentwurf im ERP, mit einem Klick freizugeben.",
-          "fail": "An den Einkauf, mit Begründung und dem passenden Vorschlag."
+          "pass": "Bestellentwurf im ERP.",
+          "fail": "An den Einkauf, mit Begründung."
         },
         "out": [
           {
@@ -6066,7 +6057,7 @@
             "label": "Prognose gegen Ist"
           }
         ],
-        "human": "Der Einkauf setzt die Grenzen und behält das letzte Wort. Das System rechnet."
+        "human": "Einkauf: Grenzen und letztes Wort."
       },
       {
         "id": "quality",
@@ -6091,7 +6082,6 @@
           {
             "icon": "camera",
             "title": "Aufnehmen",
-            "desc": "Gleicher Winkel, gleiches Licht, im Takt.",
             "tools": [
               {
                 "icon": "camera",
@@ -6106,7 +6096,6 @@
           {
             "icon": "match",
             "title": "Vergleichen",
-            "desc": "Kratzer, Spalt, Druckfehler, fehlendes Teil.",
             "tools": [
               {
                 "icon": "sparkle",
@@ -6121,7 +6110,6 @@
           {
             "icon": "list",
             "title": "Festhalten",
-            "desc": "Urteil, Foto, Charge, Schicht.",
             "tools": [
               {
                 "icon": "factory",
@@ -6136,8 +6124,8 @@
         ],
         "decision": {
           "question": "Ist das Urteil eindeutig, oder ist das Modell unsicher?",
-          "pass": "Ein n.i.O.-Signal an die Steuerung, in der Taktzeit.",
-          "fail": "Das Foto geht an die Bedienung. Ihr Urteil entscheidet."
+          "pass": "n.i.O.-Signal in der Taktzeit.",
+          "fail": "Foto an die Bedienung."
         },
         "out": [
           {
@@ -6153,7 +6141,7 @@
             "label": "Ein Beispielsatz, der schärfer wird"
           }
         ],
-        "human": "Die Bedienung entscheidet die unsicheren Teile, die Qualitätssicherung setzt die Schwellen."
+        "human": "Bedienung: unsichere Teile."
       },
       {
         "id": "knowledge",
@@ -6178,7 +6166,6 @@
           {
             "icon": "db",
             "title": "Indizieren",
-            "desc": "Liest die Dokumente, behält die Rechte bei.",
             "tools": [
               {
                 "icon": "folder",
@@ -6201,7 +6188,6 @@
           {
             "icon": "chat",
             "title": "Antworten",
-            "desc": "In der Sprache der Frage, zitiert und verlinkt.",
             "tools": [
               {
                 "icon": "search",
@@ -6220,7 +6206,6 @@
           {
             "icon": "list",
             "title": "Protokollieren",
-            "desc": "Hält jede Frage ohne dokumentierte Antwort fest.",
             "tools": [
               {
                 "icon": "list",
@@ -6231,8 +6216,8 @@
         ],
         "decision": {
           "question": "Ist es dokumentiert, und darf diese Person es sehen?",
-          "pass": "Die Antwort, verlinkt auf genau die Seite oder Klausel.",
-          "fail": "Sagt klar, dass nichts dokumentiert ist, und nennt die zuständige Person."
+          "pass": "Antwort mit Link auf die Klausel.",
+          "fail": "Nennt die zuständige Person."
         },
         "out": [
           {
@@ -6248,7 +6233,7 @@
             "label": "Eine Liste der Lücken in Ihrer Dokumentation"
           }
         ],
-        "human": "Die zuständige Person schließt die Lücken, die das Protokoll zeigt."
+        "human": "Zuständige Person: schließt Lücken."
       }
     ]
   },
