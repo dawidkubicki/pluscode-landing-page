@@ -1,10 +1,10 @@
 {
   "meta": {
     "title": "Pluscode | Software i rozwiązania AI",
-    "description": "Pluscode to software house i firma konsultingowa AI. Dostarczamy oprogramowanie, które przynosi mierzalne efekty biznesowe: od innowacji opartych na AI po dedykowane aplikacje.",
-    "ogTitle": "Pluscode | Konsulting AI, który dowozi realne produkty",
-    "ogDescription": "Nie prosimy o wiarę na słowo. Potwierdzamy AI na Twoich danych w kilka tygodni, a potem wdrażamy ją na produkcję.",
-    "ogImageAlt": "Pluscode: konsulting AI, który dowozi realne produkty",
+    "description": "Pluscode to firma doradcza AI i software house. Mapujemy, jak naprawdę działa Twoja praca, wdrażamy AI tam, gdzie zdejmuje realną papierologię i ręczne kroki, i utrzymujemy ją na produkcji. Ład danych, prywatność i przepisy unijne prowadzą inżynierowie, którzy budują te zabezpieczenia.",
+    "ogTitle": "Pluscode | Doradztwo AI, które zaprzęga sztuczną inteligencję do pracy. Naprawdę.",
+    "ogDescription": "Mniej papierologii, mniej systemów, które ze sobą nie rozmawiają, mniej godzin na przepisywanie danych. Mapujemy proces, wdrażamy AI tam, gdzie realnie oszczędza czas, i utrzymujemy ją na produkcji.",
+    "ogImageAlt": "Pluscode: doradztwo AI, które zaprzęga sztuczną inteligencję do pracy. Naprawdę.",
     "keywords": [
       "software house",
       "rozwiązania AI",
@@ -13,7 +13,10 @@
       "chmura",
       "analityka danych",
       "Pluscode",
-      "Poznań"
+      "Poznań",
+      "ład danych",
+      "automatyzacja procesów",
+      "AI Act"
     ]
   },
   "announcement": {
@@ -35,7 +38,7 @@
     "aiDataItems": {
       "machineLearning": {
         "title": "Generatywne AI i LLM",
-        "description": "Copiloty, RAG i agenci oparci na Twoich danych"
+        "description": "Asystenci i automatyzacja działające na Twoich danych"
       },
       "dataAnalytics": {
         "title": "ML i fundamenty danych",
@@ -43,7 +46,7 @@
       },
       "aiConsulting": {
         "title": "Strategia i doradztwo AI",
-        "description": "Mapy drogowe, audyty gotowości i governance"
+        "description": "Mapowanie procesów, roadmapy i ład danych"
       }
     },
     "servicesItems": {
@@ -82,8 +85,8 @@
     }
   },
   "hero": {
-    "headlineStart": "Konsulting AI, który dowozi",
-    "subtext": "Nie prosimy o wiarę na słowo. Potwierdzamy AI na Twoich danych w kilka tygodni, a potem wdrażamy ją na produkcję.",
+    "headlineStart": "Doradztwo AI, które zaprzęga sztuczną inteligencję do pracy.",
+    "subtext": "Nie potrzebujesz kolejnego produktu cyfrowego. Potrzebujesz mniej papierologii, mniej systemów, które ze sobą nie rozmawiają, i mniej godzin traconych na przepisywanie danych. Tym się zajmujemy.",
     "ctaPrimary": "Umów rozmowę wstępną",
     "ctaSecondary": "Zobacz nasze realizacje",
     "online": "Online",
@@ -91,8 +94,8 @@
     "call": "Zadzwoń",
     "fallbackName": "Dawid Kubicki",
     "fallbackRole": "CEO i Założyciel",
-    "eyebrow": "Konsulting AI · wdrożenia · warsztaty",
-    "headlineEm": "realne produkty",
+    "eyebrow": "Doradztwo AI · automatyzacja procesów · ład danych",
+    "headlineEm": "Naprawdę.",
     "headlineEnd": "",
     "stats": [
       {
@@ -124,52 +127,58 @@
   },
   "services": {
     "label": "Kompetencje",
-    "title": "Od strategii AI po systemy na produkcji",
-    "subtitle": "Od strategii do produkcji. Realizują to doświadczeni inżynierowie, nie prezentacje.",
+    "title": "Od zmapowania, jak ta praca wygląda dziś, po systemy na produkcji",
+    "subtitle": "Doświadczeni inżynierowie, nie prezentacje. Zaczynamy od tego, jak ta praca wygląda naprawdę, a potem automatyzujemy to, co kosztuje Cię godziny.",
     "items": [
       {
         "num": "01",
-        "title": "Strategia i roadmapa AI",
-        "desc": "Uczciwy audyt gotowości i mapa drogowa do przypadków użycia z realnym ROI.",
-        "tags": "audyt gotowości · odkrywanie use case'ów · roadmapping"
+        "title": "Mapowanie procesów i roadmapa AI",
+        "desc": "Idziemy za papierologią przez Twoją firmę, liczymy, gdzie naprawdę uciekają godziny, i układamy usprawnienia według realnej oszczędności.",
+        "tags": "mapowanie procesów · audyt gotowości · wyceniona roadmapa"
       },
       {
         "num": "02",
-        "title": "Generatywne AI i aplikacje LLM",
-        "desc": "Copiloty i RAG oparte na Twoich danych. Trafne, z cytowaniami, poparte realnymi ewaluacjami.",
-        "tags": "RAG · copiloty · ewaluacje · guardrails"
+        "title": "Asystenci, którzy odpowiadają z Twoich dokumentów",
+        "desc": "Asystent, który czyta Twoje umowy, procedury i zgłoszenia i odpowiada z odnośnikiem do źródła. Mierzymy, jak często ma rację, zanim ktokolwiek zacznie na nim polegać.",
+        "tags": "odpowiedzi z Twoich źródeł · cytowane źródła · mierzona trafność"
       },
       {
         "num": "03",
-        "title": "Agenci AI i automatyzacja",
-        "desc": "Agenci, którzy zdejmują realną pracę z Twojego zespołu, z człowiekiem w pętli tam, gdzie to istotne.",
-        "tags": "agentowe workflow · orkiestracja · human-in-the-loop"
+        "title": "Automatyzacja z człowiekiem w pętli",
+        "desc": "Oprogramowanie, które wykonuje powtarzalne kroki od początku do końca i zatrzymuje się na człowieku przy decyzjach niosących realne ryzyko.",
+        "tags": "automatyzacja krok po kroku · punkty akceptacji · pełna ścieżka audytu"
       },
       {
         "num": "04",
-        "title": "Inteligentne przetwarzanie dokumentów",
-        "desc": "Nasza flagowa specjalizacja. Pipeline'y LLM, które czytają, klasyfikują i walidują dokumenty. Audytowalnie, nie ręcznie.",
-        "tags": "OCR + LLM · ekstrakcja · straight-through"
+        "title": "Automatyzacja dokumentów i papierologii",
+        "desc": "Nasza flagowa specjalizacja. Faktury, listy przewozowe, dokumenty celne i umowy odczytane, sprawdzone i zapisane w systemach, których już używasz. Nikt niczego nie przepisuje.",
+        "tags": "skan + odczyt · automatyczna weryfikacja · prosto do Twojego ERP"
       },
       {
         "num": "05",
-        "title": "ML i fundamenty danych",
-        "desc": "Pipeline'y danych, wdrożone modele i MLOps, który utrzymuje ich trafność po starcie.",
-        "tags": "modele ML · infrastruktura danych · MLOps"
+        "title": "Fundamenty danych i prognozowanie",
+        "desc": "Zebranie Twoich liczb w jednym miejscu, któremu można ufać, a potem modele, które przewidują z nich popyt, opóźnienia i ryzyko.",
+        "tags": "przepływy danych · modele prognostyczne · utrzymanie trafności"
       },
       {
         "num": "06",
-        "title": "Enablement i governance AI",
-        "desc": "Podnosimy kompetencje zespołu i ustawiamy guardrails, aby kompetencja została w firmie.",
-        "tags": "szkolenia · governance · adopcja"
+        "title": "Ład danych, ryzyko i prywatność",
+        "desc": "Kto jest właścicielem których danych, kto może je widzieć, jak długo je trzymasz i czego RODO oraz AI Act wymagają od każdego zastosowania. Pisane przez inżynierów, którzy budują te zabezpieczenia.",
+        "tags": "własność danych · klasyfikacja ryzyka · RODO i AI Act"
+      },
+      {
+        "num": "07",
+        "title": "Rekrutacja techniczna i weryfikacja kompetencji",
+        "desc": "Rekrutujesz na kompetencję, której nikt u Ciebie jeszcze nie ma? Nasi doświadczeni inżynierowie projektują i prowadzą weryfikację techniczną i przekazują punktowany raport, który da się obronić.",
+        "tags": "weryfikacja kompetencji · rozmowy techniczne · karty oceny"
       }
     ]
   },
   "offerings": {
     "label": "Formy współpracy",
-    "title": "Zacznij od warsztatu, rozwiń w system",
-    "subtitle": "Jasny zakres, harmonogram i rezultat. Stała cena, bez niespodzianek. Zacznij mały, potwierdź wartość, skaluj to, co działa.",
-    "note": "Każda współpraca zaczyna się od bezpłatnej 30-minutowej rozmowy.",
+    "title": "Zacznij od jednego procesu, nie od programu transformacji",
+    "subtitle": "Ci sami doświadczeni inżynierowie, czy jesteś 15-osobową spedycją, czy działem w korporacji. Stały zakres, stała cena, a to, co dostaniesz na końcu, wiesz przed startem.",
+    "note": "Każda współpraca zaczyna się od bezpłatnej 30-minutowej rozmowy. Rozmawiasz z inżynierem, który wykonałby tę pracę, i dostajesz prostą odpowiedź, czy w ogóle warto.",
     "forLabel": "Dla kogo",
     "deliverablesLabel": "Wychodzisz z",
     "featuredLabel": "Najczęściej wybierane",
@@ -177,7 +186,7 @@
       {
         "name": "Warsztat AI Opportunity",
         "meta": "Pół dnia · stała cena",
-        "for": "Liderów szukających punktu startu",
+        "for": "Właściciele i szefowie operacji, od 10 do 500 osób",
         "desc": "Przetestuj swoje pomysły na AI pod kątem ROI i wykonalności. Wyjdź z jasnym pierwszym krokiem.",
         "deliverables": [
           "Priorytetyzowana lista przypadków użycia",
@@ -185,12 +194,13 @@
           "Rekomendowany pierwszy pilotaż"
         ],
         "cta": "Umów warsztat",
-        "featured": false
+        "featured": false,
+        "example": "Pół dnia z osobą, która naprawdę prowadzi operacje. Przechodzimy przez tydzień realnej papierologii, liczymy, gdzie uciekają godziny, i zostawiamy dwa pomysły warte pieniędzy oraz listę tych, które nie są."
       },
       {
         "name": "Sprint discovery AI",
         "meta": "2 tygodnie · stały zakres",
-        "for": "Zespoły gotowe potwierdzić use case",
+        "for": "Jeden zespół z jednym bolesnym procesem",
         "desc": "Jeden przypadek użycia w głąb: dane, wykonalność i działający prototyp. Zdecyduj z pewnością.",
         "deliverables": [
           "Ocena wykonalności technicznej",
@@ -198,12 +208,13 @@
           "Wyceniona mapa wdrożenia"
         ],
         "cta": "Umów sprint",
-        "featured": true
+        "featured": true,
+        "example": "Dwa tygodnie na jednym procesie. Na przykład dokumenty dostawy przychodzące jako PDF-y, zdjęcia z telefonu i załączniki do maili: przepuszczamy Twoje prawdziwe przez działający prototyp i pokazujemy, jak często trafia."
       },
       {
         "name": "Proof-of-Concept GenAI",
         "meta": "4-6 tygodni",
-        "for": "Potwierdzony use case, który wymaga dowodu",
+        "for": "Dział, który musi pokazać wynik zarządowi",
         "desc": "Pilotaż klasy produkcyjnej na Twoich danych, mierzony realnymi ewaluacjami i gotowy do prezentacji przed wdrożeniem.",
         "deliverables": [
           "Pilotaż gotowy do produkcji",
@@ -211,12 +222,13 @@
           "Plan wdrożenia"
         ],
         "cta": "Zaplanuj pilotaż",
-        "featured": false
+        "featured": false,
+        "example": "Cztery do sześciu tygodni, żeby z prototypu zrobić narzędzie, które zespół otwiera każdego ranka: podpięte do systemów, z których już korzystasz, z kontrolami, logami i zasadami dostępu, o które zapyta audytor."
       },
       {
         "name": "Zespół AI na część etatu",
         "meta": "Miesięcznie · na stałe",
-        "for": "Skalowanie AI w całej organizacji",
+        "for": "Firmy, które nie mają własnych ludzi od AI",
         "desc": "Doświadczony zespół AI wbudowany w Twój: strategia, inżynieria i MLOps, skalowane wraz z Twoją mapą drogową.",
         "deliverables": [
           "Wbudowani doświadczeni inżynierowie AI",
@@ -224,9 +236,11 @@
           "Elastyczna miesięczna moc przerobowa"
         ],
         "cta": "Porozmawiajmy",
-        "featured": false
+        "featured": false,
+        "example": "Kilka dni pracy doświadczonego inżyniera w tygodniu, na Twojej tablicy i na Twoich standupach. Taniej niż etat, a zakończyć możesz na koniec dowolnego miesiąca."
       }
-    ]
+    ],
+    "exampleLabel": "Jak to wygląda w praktyce"
   },
   "process": {
     "label": "Jak pracujemy",
@@ -280,7 +294,7 @@
       {
         "num": "04",
         "name": "HR i rekrutacja",
-        "note": "Parsowanie CV, dopasowywanie kandydatów na dużą skalę"
+        "note": "Głosowy pre-screening, weryfikacja kompetencji"
       },
       {
         "num": "05",
@@ -534,7 +548,7 @@
           },
           {
             "q": "Jak eliminujecie halucynacje?",
-            "a": "RAG osadza odpowiedzi w Twoich źródłach, do tego guardrails, cytowania i automatyczne evals przy każdym wydaniu. Mierzymy poziom halucynacji i blokujemy wdrożenie, gdy rośnie. Zaufanie z testów, nie z nadziei."
+            "a": "Asystent odpowiada wyłącznie z Twoich źródeł i je cytuje, więc każdą odpowiedź da się sprawdzić. Na tym siedzą ograniczenia tego, co wolno mu powiedzieć, oraz automatyczny test trafności przy każdym wydaniu. Mierzymy, jak często coś zmyśla, i blokujemy wydanie, gdy ta liczba idzie w złą stronę. Zaufanie z testów, nie z nadziei."
           },
           {
             "q": "Czy modele i IP zostają nasze?",
@@ -686,7 +700,7 @@
           },
           "nlp-llm": {
             "name": "NLP i LLM",
-            "teaser": "Aplikacje LLM, RAG i ekstrakcja z harnessem ewaluacyjnym przed każdym wydaniem."
+            "teaser": "Asystenci odpowiadający z Twoich dokumentów i procesy wyciągające z nich dane, z testem trafności przed każdym wydaniem."
           },
           "computer-vision": {
             "name": "Wizja komputerowa",
@@ -787,11 +801,11 @@
           "nlp-llm": {
             "label": "Machine Learning",
             "title": "Inżynieria NLP i LLM",
-            "subtitle": "Systemy RAG, ekstrakcja z dokumentów, czat i agenci, budowane w podejściu evaluation-first: jakość mierzymy, zanim cokolwiek trafi do użytkowników.",
+            "subtitle": "Asystenci odpowiadający z Twoich dokumentów, ekstrakcja danych, czat i automatyzacja, budowane tak, by jakość była zmierzona, zanim cokolwiek trafi do użytkowników.",
             "breadcrumb": "NLP i LLM",
             "overviewTitle": "Systemy językowe, które wytrzymują produkcję",
             "overview": [
-              "Większość dem LLM powstaje w weekend. Prawdziwa praca to doprowadzenie ich do niezawodności wobec klientów i audytorów: osadzenie odpowiedzi w Twoich źródłach, obsługa dokumentów, które psują parsery, i dowodzenie jakości wydanie po wydaniu. Aplikacje LLM, pipeline'y RAG, ekstrakcję, czat i systemy agentowe budujemy z tą poprzeczką od pierwszego dnia.",
+              "Większość dem z modelami językowymi powstaje w weekend. Prawdziwa praca to doprowadzenie ich do niezawodności wobec klientów i audytorów: dopilnowanie, żeby każda odpowiedź pochodziła z Twoich źródeł, a nie z wyobraźni modelu, obsługa dokumentów, które psują parsery, i dowodzenie jakości wydanie po wydaniu. Asystentów, procesy odpowiadania z Twoich źródeł (wzorzec nazywany zwykle RAG), ekstrakcję, czat i automatyzację budujemy z tą poprzeczką od pierwszego dnia.",
               "Dostarczamy w podejściu evaluation-first. Zanim zaczniemy stroić prompty czy wybierać model, budujemy zbiór testowy z Twoich prawdziwych dokumentów i pytań, z kryteriami zaliczenia, które akceptujesz. Każda zmiana jest na nim punktowana, więc poziom halucynacji, dokładność ekstrakcji i latencja to liczby na dashboardzie, a nie wrażenia z demo.",
               "Kończysz z systemem, który Twój zespół może bezpiecznie zmieniać: podmienić model, gdy pojawi się lepszy, edytować prompty, rozszerzyć korpus, a zestaw evali w kilka minut powie, czy jakość się utrzymała. Koszty są liczone per zapytanie, więc decyzja o skalowaniu przychodzi z metką cenową, a nie z zaskakującą fakturą na koniec miesiąca."
             ],
@@ -799,7 +813,7 @@
             "benefits": [
               {
                 "title": "Odpowiedzi z pokryciem w źródłach",
-                "description": "RAG z cytowaniami do Twoich źródeł, więc każdą odpowiedź da się sprawdzić, a poziom halucynacji jest mierzony, nie zgadywany."
+                "description": "Odpowiedzi wzięte z Twoich źródeł, z odnośnikiem do każdego z nich, więc każdą da się sprawdzić, a odsetek zmyślonych odpowiedzi jest mierzony, nie zgadywany."
               },
               {
                 "title": "Ewaluacja przed startem",
@@ -830,7 +844,7 @@
               },
               {
                 "title": "Utwardzenie pod produkcję",
-                "description": "Guardrails, fallbacki, limity, ustrukturyzowane logi i kontrola kosztów wokół szczęśliwej ścieżki."
+                "description": "Ograniczenia tego, co system może wypuścić, mechanizmy zapasowe, limity, ustrukturyzowane logi i kontrola kosztów wokół szczęśliwej ścieżki."
               },
               {
                 "title": "Wydanie i monitoring",
@@ -840,7 +854,7 @@
             "deliverablesTitle": "Co dostajesz",
             "deliverables": [
               "Zestaw evali zbudowany z Twoich prawdziwych dokumentów",
-              "Pipeline RAG lub ekstrakcji wdrożony za API",
+              "Proces odpowiadania lub ekstrakcji wdrożony za API",
               "Prompty i konfiguracja modeli pod kontrolą wersji",
               "Dashboard kosztów i jakości per zapytanie",
               "Runbook aktualizacji korpusu i podmiany modeli"
@@ -857,7 +871,7 @@
               },
               {
                 "q": "Co z halucynacjami przed klientem?",
-                "a": "Retrieval osadza odpowiedzi w Twoich treściach, cytowania czynią je sprawdzalnymi, a guardrails wyłapują odpowiedzi poza polityką. Poziom halucynacji mierzymy na zbiorze evali i bramkujemy nim wydania."
+                "a": "Odpowiedzi pochodzą z Twoich treści, a nie z pamięci modelu, cytowania czynią je sprawdzalnymi, a warstwa ograniczeń wyłapuje odpowiedzi łamiące Twoje zasady. Mierzymy, jak często system coś zmyśla, na stałym zbiorze testowym i bramkujemy tą liczbą wydania."
               }
             ],
             "cta": {
@@ -1758,16 +1772,16 @@
       "consulting": {
         "label": "AI i Dane",
         "title": "Konsulting AI",
-        "subtitle": "Doradztwo od inżynierów, którzy znajdują zastosowania AI warte budżetu, dowodzą ich wartości na Twoich danych w kilka tygodni i zostają aż do wdrożenia na produkcję.",
+        "subtitle": "Doświadczeni inżynierowie, którzy mapują, jak dziś działa Twoja praca, znajdują zastosowania AI warte budżetu, dowodzą ich na Twoich danych w kilka tygodni i zostają aż do wdrożenia na produkcję.",
         "breadcrumb": "Konsulting AI",
         "features": {
           "strategy": {
-            "title": "Rozwój strategii AI",
-            "description": "Przekładamy Twoje cele biznesowe na uporządkowany portfel zastosowań AI z właścicielami, budżetami i miernikami sukcesu. Efekt to plan, który zarząd może sfinansować, a inżynierowie zbudować."
+            "title": "Mapowanie procesów i strategia AI",
+            "description": "Mapujemy, jak ta praca naprawdę dziś działa, krok po kroku i system po systemie, a potem przekładamy to na uporządkowany portfel zastosowań AI z właścicielami, budżetami i miernikami sukcesu. Zwykle to właśnie mapy klientom brakowało."
           },
           "assessment": {
-            "title": "Ocena gotowości AI",
-            "description": "Audytujemy dane, systemy, kompetencje i procesy pod kątem tego, czego naprawdę wymagają Twoje docelowe zastosowania. Dostajesz scorecard i plan domknięcia luk, nie plakat z modelem dojrzałości."
+            "title": "Audyt gotowości danych i AI",
+            "description": "Audytujemy dane, systemy, kompetencje i procesy pod kątem tego, czego naprawdę wymagają Twoje docelowe zastosowania, łącznie z tym, skąd te dane pochodzą, kto jest ich właścicielem i kto może je widzieć. Dostajesz scorecard i plan domknięcia luk, nie plakat z modelem dojrzałości."
           },
           "implementation": {
             "title": "Planowanie wdrożenia",
@@ -1778,8 +1792,8 @@
             "description": "Szkolimy inżynierów, product managerów i zarząd z tych obszarów AI, z którymi faktycznie będą pracować. Warsztaty na Twoim stacku i Twoich danych, nie ogólne slajdy."
           },
           "governance": {
-            "title": "Governance AI",
-            "description": "Ustawiamy klasyfikację ryzyka, bramki przeglądowe i dokumentację zgodne z EU AI Act, które nie zatrzymują dowożenia. Governance, którego inżynierowie przestrzegają, bo pasuje do ich sposobu pracy."
+            "title": "Ład danych, ryzyko i prywatność",
+            "description": "Własność danych, retencja, dostęp i pochodzenie, do tego klasyfikacja ryzyka i bramki przeglądowe zgodne z RODO i AI Act, które nie zatrzymują dowożenia. Governance, którego inżynierowie przestrzegają, bo pasuje do ich sposobu pracy."
           },
           "optimization": {
             "title": "Optymalizacja wydajności",
@@ -1789,7 +1803,7 @@
         "process": {
           "discovery": {
             "title": "Discovery",
-            "description": "Rozmawiamy z interesariuszami i analizujemy Twoje dane, systemy i procesy. Po dwóch tygodniach wiesz, które szanse na AI są realne, a które to szum."
+            "description": "Rozmawiamy z interesariuszami i mapujemy Twoje dane, systemy i procesy tak, jak naprawdę działają. Po dwóch tygodniach wiesz, które szanse na AI są realne, a które to szum."
           },
           "strategy": {
             "title": "Strategia",
@@ -1873,8 +1887,8 @@
             "description": "Konkretny projekt systemu dla najważniejszych zastosowań: modele, przepływy danych, punkty integracji i infrastruktura."
           },
           {
-            "title": "Playbook governance",
-            "description": "Klasyfikacja ryzyka, bramki przeglądowe, szablony dokumentacji i checklista zgodności z EU AI Act dopasowane do Twoich zastosowań."
+            "title": "Playbook ładu danych i zgodności",
+            "description": "Zasady własności i retencji danych, klasyfikacja ryzyka, bramki przeglądowe, szablony dokumentacji oraz checklista zgodności z RODO i AI Act dopasowana do Twoich zastosowań."
           },
           {
             "title": "Raport z ewaluacji pilotażu",
@@ -1893,8 +1907,8 @@
             "duration": "2 tygodnie · stała cena",
             "description": "Audyt o stałym zakresie: procesy, dane i systemy, a na końcu uporządkowana krótka lista zastosowań AI. Właściwy start, gdy wiesz, że AI ma znaczenie, ale nie wiesz gdzie.",
             "bullets": [
-              "Wywiady z interesariuszami i analiza procesów",
-              "Przegląd danych i systemów pod wymagania zastosowań",
+              "Wywiady z interesariuszami i pisemna mapa procesów objętych zakresem",
+              "Przegląd danych i systemów pod wymagania zastosowań, łącznie z własnością i dostępem",
               "Punktowana lista zastosowań z szacunkiem ROI",
               "Rekomendacja pierwszego pilotażu"
             ]
@@ -1917,15 +1931,15 @@
             "bullets": [
               "Comiesięczne przeglądy architektury i roadmapy",
               "Ocena nowych modeli i dostawców na bieżąco",
-              "Wsparcie w rekrutacji i rozmowy techniczne",
+              "Weryfikacja kompetencji i rozmowy techniczne dla ról, na które rekrutujesz",
               "Bezpośredni kontakt z seniorem, bez kolejki ticketów"
             ]
           }
         ],
         "toolsTitle": "Metody i technologie, z którymi pracujemy",
         "tools": [
-          "Harnessy ewaluacyjne LLM",
-          "Architektury RAG",
+          "Zestawy testów trafności dla LLM",
+          "Odpowiadanie z Twoich źródeł (RAG)",
           "Architektury agentowe",
           "API OpenAI i Anthropic",
           "Azure OpenAI",
@@ -1937,7 +1951,10 @@
           "Fundamenty MLOps",
           "Zgodność z EU AI Act",
           "Modelowanie kosztów i opóźnień",
-          "Analiza build vs buy"
+          "Analiza build vs buy",
+          "Mapowanie procesów (BPMN)",
+          "Frameworki ładu danych",
+          "RODO i privacy by design"
         ],
         "whoTitle": "Dla kogo to jest",
         "who": [
@@ -1971,11 +1988,11 @@
           },
           "genai-implementation": {
             "name": "Wdrożenia GenAI",
-            "teaser": "RAG, agenci i funkcje LLM prowadzone od zwalidowanego pilotażu do monitorowanej produkcji."
+            "teaser": "Asystenci, automatyzacja i funkcje oparte na modelach językowych prowadzone od zwalidowanego pilotażu do monitorowanej produkcji."
           },
           "ai-governance": {
-            "name": "Governance AI",
-            "teaser": "Zgodność z EU AI Act, bramki ryzyka i dokumentacja modeli, które nie zatrzymują dowożenia."
+            "name": "Ład danych i AI",
+            "teaser": "Własność, retencja i dostęp do danych, do tego zgodność z RODO i AI Act, która nie zatrzymuje dowożenia."
           },
           "team-enablement": {
             "name": "Rozwój kompetencji zespołu",
@@ -2150,12 +2167,12 @@
           "genai-implementation": {
             "label": "Konsulting AI",
             "title": "Wdrożenia GenAI",
-            "subtitle": "Systemy RAG, agenci i funkcje LLM prowadzone od zwalidowanego pomysłu do monitorowanej produkcji. Budowane na ewaluacjach, nie na wrażeniach.",
+            "subtitle": "Asystenci odpowiadający z Twoich dokumentów, automatyzacja i funkcje oparte na modelach językowych, prowadzone od zwalidowanego pomysłu do monitorowanej produkcji. Budowane na pomiarach, nie na wrażeniach.",
             "breadcrumb": "Wdrożenia GenAI",
             "overviewTitle": "Na czym to polega",
             "overview": [
               "Wdrożenie GenAI to moment, w którym zwalidowane zastosowanie staje się systemem, na którym działa Twój biznes. Projektujemy i budujemy funkcje oparte na LLM, pipeline'y retrieval i workflow agentowe, zintegrowane z Twoimi systemami i od pierwszego dnia mierzone harnessem ewaluacyjnym. Celem jest produkcja, a pilotaż to punkt kontrolny po drodze.",
-              "Praca idzie etapami: najpierw architektura i pipeline danych, potem pilotaż na prawdziwych danych mierzony względem uzgodnionej linii bazowej, na końcu hartowanie produkcyjne: guardraile, monitoring, kontrola kosztów i plan rolloutu. Na każdym etapie widzisz zmierzone liczby, a decyzja no-go zawsze jest akceptowalnym wynikiem, uzgodnionym przed startem.",
+              "Praca idzie etapami: najpierw architektura i przepływ danych, potem pilotaż na prawdziwych danych mierzony względem uzgodnionej linii bazowej, na końcu hartowanie produkcyjne: ograniczenia tego, co system może zrobić, monitoring, kontrola kosztów i plan wdrożenia. Na każdym etapie widzisz zmierzone liczby, a decyzja no-go zawsze jest akceptowalnym wynikiem, uzgodnionym przed startem.",
               "Co się zmienia u Ciebie: funkcja AI o znanej trafności, opóźnieniach i koszcie zapytania, działająca w Twojej infrastrukturze i w Twoich granicach zgodności. Twój zespół dostaje harness ewaluacyjny, runbooki i szkolenie, więc może rozwijać, dostrajać i utrzymywać system bez zależności od nas przy każdej zmianie."
             ],
             "benefitsTitle": "Dlaczego to działa",
@@ -2173,7 +2190,7 @@
                 "description": "Routing modeli, cache i budżety promptów są zaprojektowane od początku, a nie łatane po pierwszej fakturze."
               },
               {
-                "title": "Guardraile, które trzymają",
+                "title": "Ograniczenia, które trzymają",
                 "description": "Walidacja wejść, filtrowanie wyjść i fallbacki na te tryby awarii, które LLM-y naprawdę mają na produkcji."
               },
               {
@@ -2193,7 +2210,7 @@
               },
               {
                 "title": "Hartowanie",
-                "description": "Guardraile, monitoring, testy obciążeniowe i kosztowe, przegląd bezpieczeństwa i integracja z Twoim pipeline'em wdrożeń."
+                "description": "Ograniczenia odpowiedzi, monitoring, testy obciążeniowe i kosztowe, przegląd bezpieczeństwa i integracja z Twoim procesem wdrożeń."
               },
               {
                 "title": "Rollout i przekazanie",
@@ -2204,7 +2221,7 @@
             "deliverables": [
               "Gotowy produkcyjnie system GenAI w Twojej infrastrukturze",
               "Harness ewaluacyjny z linią bazową i metrykami jakości",
-              "Warstwa guardraili i fallbacków na produkcyjne tryby awarii",
+              "Warstwa ograniczeń i mechanizmów zapasowych na produkcyjne tryby awarii",
               "Dashboard monitoringu jakości, opóźnień i kosztów",
               "Runbooki i szkolenie przekazujące dla zespołu"
             ],
@@ -2231,24 +2248,24 @@
           },
           "ai-governance": {
             "label": "Konsulting AI",
-            "title": "Governance AI",
-            "subtitle": "Klasyfikacja ryzyka, bramki przeglądowe i dokumentacja zgodne z EU AI Act, które nie zatrzymują Twojej roadmapy.",
-            "breadcrumb": "Governance AI",
+            "title": "Ład danych i AI",
+            "subtitle": "Kto jest właścicielem których danych, kto może je widzieć, jak długo je trzymasz i czego RODO oraz AI Act wymagają od każdego zastosowania AI. Ustawione tak, żeby nie zatrzymywało roadmapy.",
+            "breadcrumb": "Ład danych i AI",
             "overviewTitle": "Na czym to polega",
             "overview": [
-              "Governance AI sprawia, że Twoje systemy AI są audytowalne, zgodne z przepisami i bezpieczne w skalowaniu. Klasyfikujemy zastosowania według EU AI Act, przygotowujemy oceny ryzyka i dokumentację wymagane w każdej klasie oraz definiujemy bramki przeglądowe dla nowych inicjatyw AI. Robią to inżynierowie, więc całość pasuje do tego, jak Twoje zespoły naprawdę dowożą software.",
-              "Zaczynamy od inwentaryzacji: każdy system AI, zastosowanie i narzędzie dostawcy w użyciu, sklasyfikowane według ryzyka. Potem piszemy polityki istotne dla Twojej ekspozycji: obsługa danych, nadzór człowieka, dokumentacja modeli, reagowanie na incydenty. Kontrole wpinamy w Twój istniejący proces wytwórczy, a nie w równoległą biurokrację.",
-              "Co się zmienia: zespoły compliance i prawny dostają dowody do przekazania audytorom, a inżynierowie jasne reguły zamiast eskalacji od przypadku do przypadku. Nowe inicjatywy AI przechodzą governance w dni, a nie tygodnie, bo bramki i szablony już istnieją i wszyscy zaangażowani wiedzą dokładnie, jak z nich korzystać."
+              "Ład zaczyna się od danych, nie od modelu. Mapujemy, skąd pochodzi każdy zbiór, kto jest jego właścicielem, kto może go widzieć, jak długo wolno go trzymać i gdzie płynie dalej. Większość firm odkrywa tu, że ten sam rekord klienta żyje w czterech systemach pod trzema różnymi zasadami retencji, i to właśnie to odkrycie umożliwia całą resztę pracy.",
+              "Na tym budujemy klasyfikację zastosowań AI według AI Act, oceny ryzyka i dokumentację wymagane w każdej klasie oraz polityki istotne dla Twojej ekspozycji: przetwarzanie danych osobowych i podstawa prawna z RODO, nadzór człowieka, dokumentacja modeli, reagowanie na incydenty. Zaczynamy od inwentaryzacji każdego systemu AI, zastosowania i narzędzia dostawcy w użyciu, łącznie z tymi nieoficjalnymi, z których Twoje zespoły już korzystają. Kontrole wpinamy w Twój istniejący proces wytwórczy, a nie w równoległą biurokrację.",
+              "Co się zmienia: zespoły compliance i prawny dostają dowody do przekazania audytorom albo organowi ochrony danych, a inżynierowie jasne reguły zamiast eskalacji od przypadku do przypadku. Nowe inicjatywy AI przechodzą governance w dni, a nie tygodnie, bo bramki, mapa danych i szablony już istnieją i wszyscy wiedzą, jak z nich korzystać."
             ],
             "benefitsTitle": "Dlaczego to działa",
             "benefits": [
               {
-                "title": "EU AI Act zmapowany na Twoje systemy",
-                "description": "Każde zastosowanie sklasyfikowane według ryzyka z listą konkretnych obowiązków, więc praca nad zgodnością celuje w to, czego prawo naprawdę wymaga."
+                "title": "Mapa Twoich danych, nie segregator polityk",
+                "description": "Każdy zbiór danych sprowadzony do źródła, właściciela, okresu retencji i systemów, do których płynie. Ta mapa sprawia, że każde późniejsze pytanie o zgodność da się rozstrzygnąć w minuty."
               },
               {
-                "title": "Governance w pipeline, nie w komitecie",
-                "description": "Kontrole żyją w Twoim procesie wytwórczym, nie w osobnym gremium. Inżynierowie ich przestrzegają, bo nie dokładają tarcia."
+                "title": "RODO i AI Act w jednym przebiegu",
+                "description": "Obowiązki wobec danych osobowych i klasyfikacja ryzyka AI robione razem, dla każdego zastosowania, bo w praktyce lądują na tych samych systemach i tych samych zespołach."
               },
               {
                 "title": "Dokumentacja gotowa na audyt",
@@ -2266,8 +2283,8 @@
             "approachTitle": "Jak to prowadzimy",
             "approach": [
               {
-                "title": "Inwentaryzacja",
-                "description": "Katalogujemy każdy system AI, zastosowanie i narzędzie dostawcy w użyciu, łącznie z tymi nieoficjalnymi, z których Twoje zespoły już korzystają."
+                "title": "Zmapuj dane",
+                "description": "Skąd pochodzi każdy zbiór, kto jest właścicielem, kto ma dostęp, jak długo jest przechowywany i do jakich systemów płynie, łącznie z arkuszami, do których nikt się nie przyznaje."
               },
               {
                 "title": "Klasyfikacja",
@@ -2284,8 +2301,10 @@
             ],
             "deliverablesTitle": "Co dostajesz",
             "deliverables": [
-              "Inwentarz systemów AI z klasyfikacją ryzyka EU AI Act",
+              "Mapa danych: źródła, właściciele, dostęp, retencja i przepływy dalej",
+              "Inwentarz systemów AI z klasyfikacją ryzyka AI Act",
               "Playbook governance z politykami i bramkami przeglądowymi",
+              "Rejestr czynności przetwarzania RODO i oceny skutków dla ochrony danych dla zastosowań AI",
               "Szablony dokumentacji modeli i pochodzenia danych",
               "Procedury nadzoru człowieka i reagowania na incydenty",
               "Pakiet dowodów zgodności na audyty"
@@ -2303,12 +2322,16 @@
               {
                 "q": "Mamy już zespół compliance. Po co inżynierowie?",
                 "a": "Bo obowiązki lądują w kodzie: logowanie, mechanizmy nadzoru, dokumentacja, dowody z ewaluacji. Tłumaczymy wymagania prawne na kontrole techniczne, które Twój zespół compliance może zweryfikować, a to jest część, którą większość dokumentów polityk pomija."
+              },
+              {
+                "q": "To jest o AI Act czy o RODO?",
+                "a": "O obu, a rozdzielanie tego marnuje czas. Zastosowanie AI prawie zawsze przetwarza dane osobowe, więc potrzebuje podstawy prawnej, zasady retencji i modelu dostępu z RODO oraz klasyfikacji ryzyka z dokumentacją z AI Act. Przechodzimy przez jedno i drugie razem, dla każdego zastosowania, a Ty kończysz z jednym zestawem dowodów zamiast dwóch projektów, które sobie przeczą."
               }
             ],
             "cta": {
-              "title": "Zgodność bez zatrzymywania roadmapy",
-              "subtitle": "Umów rozmowę, żeby ustalić zakres inwentaryzacji i klasyfikacji. To najszybsza droga, by poznać realną ekspozycję.",
-              "button": "Zacznij od inwentaryzacji"
+              "title": "Zacznij od mapy danych",
+              "subtitle": "Umów rozmowę, żeby ustalić zakres mapy danych i inwentaryzacji AI. To najszybsza droga, by poznać realną ekspozycję wobec RODO i AI Act.",
+              "button": "Ustal zakres mapy danych"
             }
           },
           "team-enablement": {
@@ -2319,7 +2342,7 @@
             "overviewTitle": "Na czym to polega",
             "overview": [
               "Rozwój kompetencji z założenia czyni nasz udział tymczasowym. Szkolimy inżynierów, product managerów i kadrę zarządzającą z tych umiejętności AI, których ich role naprawdę potrzebują, pracując na Twoim kodzie i Twoich danych, a nie na przykładach z podręcznika. Cel: zespół, który sam wymiaruje, buduje i utrzymuje funkcje AI.",
-              "Formaty dobieramy do odbiorców: praktyczne warsztaty dla inżynierów z RAG, ewaluacji, promptowania i wzorców agentowych; sesje wymiarowania zastosowań dla zespołów produktowych; briefy dla zarządu o kosztach, ryzyku i realnych terminach. Sesje idą na Twoim stacku, a każde ćwiczenie zostawia działający kod albo użyteczny artefakt, nie same notatki.",
+              "Formaty dobieramy do odbiorców: praktyczne warsztaty dla inżynierów o odpowiadaniu z własnych źródeł (RAG), testowaniu trafności, promptowaniu i wzorcach automatyzacji; sesje wymiarowania zastosowań dla zespołów produktowych; briefy dla zarządu o kosztach, ryzyku i realnych terminach. Sesje idą na Twoim stacku, a każde ćwiczenie zostawia działający kod albo użyteczny artefakt, nie same notatki.",
               "Co się zmienia: AI przestaje być domeną jednego specjalisty. Inżynierowie dowożą funkcje LLM z ewaluacjami, product managerowie piszą specyfikacje AI, które wytrzymują zderzenie z rzeczywistością, a zarząd decyduje o finansowaniu albo zamknięciu na prawdziwych liczbach. Wewnętrzni liderzy prowadzą praktykę dalej po naszym wyjściu."
             ],
             "benefitsTitle": "Dlaczego to działa",
@@ -3256,7 +3279,7 @@
           },
           "ai": {
             "title": "Możliwości AI jako API",
-            "description": "Modele, pipeline'y RAG i agentów zamykamy w stabilnych, monitorowanych endpointach z kontrolą kosztów i mechanizmami fallback. Twoje funkcje AI stają się produktem, na którym mogą budować inne zespoły."
+            "description": "Modele, procesy odpowiadania z własnych źródeł i automatyzację zamykamy w stabilnych, monitorowanych endpointach z kontrolą kosztów i mechanizmami zapasowymi. Twoje funkcje AI stają się produktem, na którym mogą budować inne zespoły."
           }
         },
         "processTitle": "Jak przebiega projekt",
@@ -5300,62 +5323,62 @@
       },
       "hr": {
         "label": "HR i Rekrutacja",
-        "title": "Rewolucja w Zarządzaniu Zasobami Ludzkimi",
-        "subtitle": "Budujemy inteligentne rozwiązania HR, które usprawniają rekrutację, zwiększają doświadczenie pracowników i dostarczają praktycznych wniosków o sile roboczej.",
+        "title": "Pre-screening, weryfikacja i papierologia wokół rekrutacji",
+        "subtitle": "Twój ATS już parsuje CV i dopasowuje kandydatów. My zajmujemy się tym, czego nie potrafi: pierwszą rozmową przesiewową, weryfikacją kompetencji, których nikt u Ciebie nie oceni, i utrzymaniem danych kandydatów po właściwej stronie RODO.",
         "challenges": {
           "challenge1": {
-            "title": "Pozyskiwanie Talentów",
-            "description": "Znajdowanie i przyciąganie wykwalifikowanych kandydatów na konkurencyjnym rynku przy jednoczesnym skracaniu czasu rekrutacji."
+            "title": "Pierwszy telefon to wąskie gardło",
+            "description": "Rekruterzy tracą tydzień na rozmowy przesiewowe, które w większości kończą się odmową. W tym czasie mocni kandydaci czekają na oddzwonienie i przyjmują inną ofertę."
           },
           "challenge2": {
-            "title": "Zaangażowanie Pracowników",
-            "description": "Utrzymanie motywacji zespołu i zmniejszanie rotacji w erze pracy zdalnej i hybrydowej."
+            "title": "Rekrutacja na kompetencje, których nie umiesz ocenić",
+            "description": "Pierwszy inżynier danych, pierwsza osoba od ML, pierwszy lider bezpieczeństwa. Nikt w firmie nie odróżni mocnej odpowiedzi od pewnie brzmiącej."
           },
           "challenge3": {
-            "title": "Obciążenie Administracyjne",
-            "description": "Ręczne procesy HR pochłaniają cenny czas, który mógłby być poświęcony na inicjatywy strategiczne."
+            "title": "Twój ATS już robi tę łatwą część",
+            "description": "Parsowanie CV i dopasowywanie kandydatów ma dziś każdy nowoczesny ATS. Kupienie drugiego nic nie zmieni, bo czas ucieka gdzie indziej."
           },
           "challenge4": {
-            "title": "HR Oparty na Danych",
-            "description": "Przekształcanie danych HR w wnioski dla lepszego planowania siły roboczej i podejmowania decyzji."
+            "title": "Dane kandydatów to dane regulowane",
+            "description": "Zgody, okresy przechowywania i zasady dotyczące automatycznych decyzji w rekrutacji. Zgodnie z AI Act rekrutacyjne AI jest wysokiego ryzyka, a to niesie konkretne obowiązki."
           }
         },
         "solutions": {
           "ai": {
-            "title": "AI i Machine Learning",
-            "description": "Dopasowywanie kandydatów oparte na AI, screening CV, analiza nastrojów pracowników i przewidywanie odejść."
+            "title": "Głosowy pre-screening",
+            "description": "Dzwoniący asystent AI, który prowadzi pierwszą rozmowę, brzmi jak człowiek i przekazuje rekruterowi transkrypcję, podsumowanie i rekomendację."
           },
           "web": {
-            "title": "Platformy HR",
-            "description": "Kompleksowe systemy HRIS, śledzenie kandydatów i portale samoobsługi pracowników."
+            "title": "Weryfikacja kompetencji",
+            "description": "Nasi doświadczeni inżynierowie projektują zadanie, prowadzą rozmowę techniczną i oceniają ją, dla ról, których Twój zespół jeszcze nie oceni."
           },
           "mobile": {
-            "title": "Aplikacje Mobilne HR",
-            "description": "Mobilny dostęp do rejestracji czasu, wniosków urlopowych, komunikacji zespołowej i e-learningu."
+            "title": "Papierologia rekrutacyjna",
+            "description": "Umowy, dokumenty uprawniające do pracy i formularze onboardingowe odczytane, sprawdzone i wpięte do systemu HR bez przepisywania."
           },
           "cloud": {
-            "title": "Bezpieczna Chmura HR",
-            "description": "Skalowalna infrastruktura dla danych HR z kontrolą dostępu opartą na rolach i funkcjami zgodności."
+            "title": "Ład danych kandydatów",
+            "description": "Ewidencja zgód, zasady retencji, kontrola dostępu i dokumentacja AI Act, której wymaga dziś rekrutacyjne AI."
           }
         },
         "useCases": {
           "case1": {
-            "title": "Inteligentna Platforma Rekrutacyjna",
-            "description": "Kompleksowy ATS ze screeningiem kandydatów opartym na AI, planowaniem rozmów i współpracą w procesie rekrutacji."
+            "title": "Rozmowa przesiewowa, która nie brzmi jak robot",
+            "description": "Asystent dzwoni kilka minut po aplikacji, zadaje Twoje pięć pytań kwalifikujących, dopytuje i umawia rozmowę, gdy odpowiedzi się bronią. Każda rozmowa jest transkrybowana, a każdy kandydat dostaje te same pytania."
           },
           "case2": {
-            "title": "Centrum Doświadczenia Pracownika",
-            "description": "Ujednolicona platforma do onboardingu, szkoleń, zarządzania wydajnością i komunikacji wewnętrznej."
+            "title": "Weryfikacja kompetencji przy pierwszej takiej rekrutacji",
+            "description": "Rekrutujesz pierwszego inżyniera danych i nikt wewnątrz nie oceni odpowiedzi. Piszemy zadanie, siedzimy na rozmowie technicznej i przekazujemy punktowany raport z uzasadnieniem, żeby decyzja została Twoja i dała się obronić."
           },
           "case3": {
-            "title": "Panel Analityki Siły Roboczej",
-            "description": "Wgląd w czasie rzeczywistym w zatrudnienie, rotację, wyniki zaangażowania i benchmarking wynagrodzeń."
+            "title": "Dane kandydatów, które pokażesz audytorowi",
+            "description": "Jeden rekord na kandydata z datami zgody i retencji, logowanym dostępem i pisemną klasyfikacją każdego automatycznego kroku Twojego procesu rekrutacji względem AI Act."
           }
         },
         "cta": {
-          "title": "Gotowy przekształcić operacje HR?",
-          "subtitle": "Zbudujmy rozwiązania, które pomogą przyciągać, utrzymywać i rozwijać najlepsze talenty.",
-          "button": "Zacznij teraz"
+          "title": "Chcesz zdjąć pierwszą rozmowę z głowy rekruterów?",
+          "subtitle": "Umów 30 minut. Powiedz, jak dziś wygląda Twoja pierwsza rozmowa, a powiemy, czy jej automatyzacja jest warta pieniędzy.",
+          "button": "Umów rozmowę"
         }
       },
       "logistics": {
@@ -6087,7 +6110,7 @@
             {
               "num": "04",
               "title": "Utwardzanie",
-              "desc": "Testujemy pilot na edge case'ach, złośliwych wejściach i trybach awarii, potem dokładamy guardraile, fallbacki i monitoring, których wymaga produkcja."
+              "desc": "Testujemy pilot na przypadkach brzegowych, złośliwych wejściach i trybach awarii, potem dokładamy ograniczenia odpowiedzi, mechanizmy zapasowe i monitoring, których wymaga produkcja."
             },
             {
               "num": "05",

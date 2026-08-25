@@ -1,10 +1,10 @@
 {
   "meta": {
     "title": "Pluscode | Softwareentwicklung & KI-Lösungen",
-    "description": "Pluscode ist ein Softwarehaus und eine KI-Beratung. Von KI-getriebener Innovation bis zu individuellen Anwendungen liefern wir Software, die messbaren Geschäftserfolg bringt.",
-    "ogTitle": "Pluscode | KI-Beratung, die liefert: echte Produkte",
-    "ogDescription": "Wir verlangen keinen Vertrauensvorschuss. Wir belegen den Nutzen von KI in wenigen Wochen auf Ihren echten Daten und bringen sie dann in die Produktion.",
-    "ogImageAlt": "Pluscode: KI-Beratung, die echte Produkte liefert",
+    "description": "Pluscode ist eine KI-Beratung und ein Softwarehaus. Wir bilden ab, wie Ihre Arbeit wirklich läuft, setzen KI dort ein, wo sie echten Papierkram und manuelle Schritte entfernt, und betreiben sie in Produktion. Daten-Governance, Datenschutz und EU-Regulatorik von den Engineers, die die Kontrollen bauen.",
+    "ogTitle": "Pluscode | KI-Beratung, die künstliche Intelligenz an die Arbeit bringt. Ganz real.",
+    "ogDescription": "Weniger Papierkram, weniger Systeme, die nicht miteinander reden, weniger Stunden fürs Abtippen. Wir bilden den Prozess ab, setzen KI dort ein, wo sie echte Stunden spart, und betreiben sie in Produktion.",
+    "ogImageAlt": "Pluscode: KI-Beratung, die künstliche Intelligenz an die Arbeit bringt. Ganz real.",
     "keywords": [
       "Softwareentwicklung",
       "KI-Lösungen",
@@ -13,7 +13,10 @@
       "Cloud",
       "Datenanalyse",
       "Pluscode",
-      "Poznań"
+      "Poznań",
+      "Daten-Governance",
+      "Prozessautomatisierung",
+      "EU AI Act"
     ]
   },
   "announcement": {
@@ -35,7 +38,7 @@
     "aiDataItems": {
       "machineLearning": {
         "title": "Generative KI & LLMs",
-        "description": "Copilots, RAG und Agenten auf Basis Ihrer Daten"
+        "description": "Assistenten und Automatisierung auf Basis Ihrer eigenen Daten"
       },
       "dataAnalytics": {
         "title": "ML & Data Foundations",
@@ -43,7 +46,7 @@
       },
       "aiConsulting": {
         "title": "KI-Strategie & Consulting",
-        "description": "Roadmaps, Readiness-Audits und Governance"
+        "description": "Prozess-Mapping, Roadmaps und Daten-Governance"
       }
     },
     "servicesItems": {
@@ -82,8 +85,8 @@
     }
   },
   "hero": {
-    "headlineStart": "KI-Beratung, die liefert:",
-    "subtext": "Wir verlangen keinen Vertrauensvorschuss. Wir belegen den Nutzen von KI in wenigen Wochen auf Ihren echten Daten und bringen sie dann in die Produktion.",
+    "headlineStart": "KI-Beratung, die künstliche Intelligenz an die Arbeit bringt.",
+    "subtext": "Sie brauchen kein weiteres digitales Produkt. Sie brauchen weniger Papierkram, weniger Systeme, die nicht miteinander reden, und weniger Stunden fürs Abtippen von Daten. Genau das übernehmen wir.",
     "ctaPrimary": "Erstgespräch buchen",
     "ctaSecondary": "Referenzen ansehen",
     "online": "Online",
@@ -91,8 +94,8 @@
     "call": "Anrufen",
     "fallbackName": "Dawid Kubicki",
     "fallbackRole": "CEO & Gründer",
-    "eyebrow": "KI-Beratung · Produktentwicklung · Workshops",
-    "headlineEm": "echte Produkte",
+    "eyebrow": "KI-Beratung · Prozessautomatisierung · Daten-Governance",
+    "headlineEm": "Ganz real.",
     "headlineEnd": "",
     "stats": [
       {
@@ -124,52 +127,58 @@
   },
   "services": {
     "label": "Kompetenzen",
-    "title": "Von der KI-Strategie zum System in Produktion",
-    "subtitle": "Von der Strategie bis in die Produktion. Besetzt mit Senior Engineers, nicht mit Foliensätzen.",
+    "title": "Von der Aufnahme, wie die Arbeit heute läuft, bis zum System in Produktion",
+    "subtitle": "Senior Engineers statt Foliensätze. Wir schauen zuerst, wie die Arbeit tatsächlich abläuft, und automatisieren dann, was Sie Stunden kostet.",
     "items": [
       {
         "num": "01",
-        "title": "KI-Strategie & Roadmap",
-        "desc": "Ein ehrlicher Readiness-Check und eine Roadmap zu den Use Cases mit echtem ROI.",
-        "tags": "Readiness-Audit · Use-Case-Discovery · Roadmapping"
+        "title": "Prozess-Mapping & KI-Roadmap",
+        "desc": "Wir folgen dem Papierkram durch Ihr Unternehmen, zählen, wohin die Stunden wirklich gehen, und sortieren die Maßnahmen nach echter Ersparnis.",
+        "tags": "Prozess-Mapping · Readiness-Audit · kalkulierte Roadmap"
       },
       {
         "num": "02",
-        "title": "Generative KI & LLM-Apps",
-        "desc": "Copilots und RAG auf Basis Ihrer Daten. Präzise, mit Quellenangaben und durch echte Evals abgesichert.",
-        "tags": "RAG · Copilots · Evals · Guardrails"
+        "title": "Assistenten, die aus Ihren eigenen Dokumenten antworten",
+        "desc": "Ein Assistent, der Ihre Verträge, Verfahren und Tickets liest und mit Verweis auf die Quelle antwortet. Wir messen, wie oft er richtig liegt, bevor sich jemand darauf verlässt.",
+        "tags": "Antworten aus Ihren Quellen · zitierte Quellen · gemessene Genauigkeit"
       },
       {
         "num": "03",
-        "title": "KI-Agenten & Automatisierung",
-        "desc": "Agenten, die Ihrem Team echte Arbeit abnehmen, mit Human-in-the-Loop, wo es darauf ankommt.",
-        "tags": "Agentische Workflows · Orchestrierung · Human-in-the-Loop"
+        "title": "Automatisierung mit einem Menschen in der Schleife",
+        "desc": "Software, die die repetitiven Schritte durchgängig erledigt und dort für einen Menschen anhält, wo Entscheidungen echtes Risiko tragen.",
+        "tags": "Schritt-für-Schritt-Automatisierung · Freigabepunkte · lückenlose Nachvollziehbarkeit"
       },
       {
         "num": "04",
-        "title": "Intelligent Document Processing",
-        "desc": "Unser Aushängeschild. LLM-Pipelines, die Dokumente lesen, klassifizieren und validieren. Auditierbar statt manuell.",
-        "tags": "OCR + LLM · Extraktion · Straight-Through"
+        "title": "Dokumenten- und Papierkram-Automatisierung",
+        "desc": "Unser Aushängeschild. Rechnungen, Lieferscheine, Zollformulare und Verträge werden gelesen, geprüft und in Ihre bestehenden Systeme geschrieben. Niemand tippt etwas ab.",
+        "tags": "Scan + Auslesen · automatische Prüfung · direkt in Ihr ERP"
       },
       {
         "num": "05",
-        "title": "ML & Data Foundations",
-        "desc": "Datenpipelines, produktive Modelle und das MLOps, das sie auch nach dem Launch präzise hält.",
-        "tags": "ML-Modelle · Dateninfrastruktur · MLOps"
+        "title": "Datenfundament & Prognosen",
+        "desc": "Ihre Zahlen an einem verlässlichen Ort zusammenführen und daraus Modelle bauen, die Bedarf, Verzögerungen und Risiken vorhersagen.",
+        "tags": "Datenpipelines · Prognosemodelle · dauerhafte Genauigkeit"
       },
       {
         "num": "06",
-        "title": "KI-Enablement & Governance",
-        "desc": "Wir befähigen Ihr Team und setzen die Leitplanken, damit das Know-how im Haus bleibt.",
-        "tags": "Training · Governance · Adoption"
+        "title": "Daten-Governance, Risiko & Datenschutz",
+        "desc": "Wer welche Daten verantwortet, wer sie sehen darf, wie lange Sie sie aufbewahren und was DSGVO und EU AI Act für jeden Einsatz verlangen. Geschrieben von den Engineers, die die Kontrollen bauen.",
+        "tags": "Datenverantwortung · Risikoklassifizierung · DSGVO & EU AI Act"
+      },
+      {
+        "num": "07",
+        "title": "Technisches Recruiting & Kompetenzprüfung",
+        "desc": "Sie besetzen eine Rolle, deren Kompetenz im Team noch niemand beurteilen kann? Unsere Senior Engineers konzipieren und führen die fachliche Prüfung durch und liefern einen belastbaren, bewerteten Bericht.",
+        "tags": "Kompetenzprüfung · Fachinterviews · Bewertungsbögen"
       }
     ]
   },
   "offerings": {
     "label": "Modelle der Zusammenarbeit",
-    "title": "Mit einem Workshop starten, zum System skalieren",
-    "subtitle": "Klarer Scope, klare Timeline, klares Ergebnis. Festpreis ohne Überraschungen. Klein starten, Nutzen belegen, skalieren, was funktioniert.",
-    "note": "Jede Zusammenarbeit beginnt mit einem kostenlosen 30-minütigen Gespräch. Sie sprechen mit einem Senior Engineer, nicht mit dem Vertrieb.",
+    "title": "Mit einem Prozess starten, nicht mit einem Transformationsprogramm",
+    "subtitle": "Dieselben Senior Engineers, ob 15-Personen-Spedition oder Konzernabteilung. Fester Scope, Festpreis, und Sie wissen vor dem Start, was am Ende herauskommt.",
+    "note": "Jede Zusammenarbeit beginnt mit einem kostenlosen 30-Minuten-Gespräch. Sie sprechen mit dem Engineer, der die Arbeit machen würde, und bekommen eine klare Antwort, ob sie sich überhaupt lohnt.",
     "forLabel": "Ideal für",
     "deliverablesLabel": "Das nehmen Sie mit",
     "featuredLabel": "Am beliebtesten",
@@ -177,7 +186,7 @@
       {
         "name": "AI Opportunity Workshop",
         "meta": "Halber Tag · Festpreis",
-        "for": "Entscheider, die den richtigen Einstieg suchen",
+        "for": "Inhaber und Betriebsleitung, 10 bis 500 Mitarbeitende",
         "desc": "Ihre KI-Ideen im Härtetest auf ROI und Machbarkeit. Am Ende steht ein klarer erster Schritt.",
         "deliverables": [
           "Priorisierte Use-Case-Shortlist",
@@ -185,12 +194,13 @@
           "Ihr empfohlenes erstes Pilotprojekt"
         ],
         "cta": "Workshop buchen",
-        "featured": false
+        "featured": false,
+        "example": "Ein halber Tag mit der Person, die den Betrieb wirklich führt. Wir gehen eine Woche echten Papierkram durch, zählen, wohin die Stunden fließen, und hinterlassen zwei Ideen, die sich lohnen, plus die Liste derer, die es nicht tun."
       },
       {
         "name": "AI Discovery Sprint",
         "meta": "2 Wochen · fester Scope",
-        "for": "Teams, die einen Use Case belegen wollen",
+        "for": "Ein Team mit einem schmerzhaften Prozess",
         "desc": "Ein Use Case in der Tiefe: Daten, Machbarkeit und ein funktionierender Prototyp. Damit Sie mit Sicherheit entscheiden.",
         "deliverables": [
           "Technische Machbarkeitsanalyse",
@@ -198,12 +208,13 @@
           "Kalkulierte Delivery-Roadmap"
         ],
         "cta": "Sprint buchen",
-        "featured": true
+        "featured": true,
+        "example": "Zwei Wochen auf einem einzigen Prozess. Etwa Lieferscheine, die als PDF, Handyfoto und E-Mail-Anhang eintreffen: Wir schicken Ihre echten durch einen funktionierenden Prototyp und zeigen, wie oft er richtig liegt."
       },
       {
         "name": "GenAI Proof-of-Concept",
         "meta": "4 bis 6 Wochen",
-        "for": "Ein validierter Use Case, der den Beweis braucht",
+        "for": "Eine Abteilung, die nach oben ein Ergebnis zeigen muss",
         "desc": "Ein produktionsreifer Pilot auf Ihren Daten, gemessen an echten Evals und bereit für den Rollout-Pitch.",
         "deliverables": [
           "Produktionsreifer Pilot",
@@ -211,12 +222,13 @@
           "Rollout-Plan"
         ],
         "cta": "Pilotprojekt abstecken",
-        "featured": false
+        "featured": false,
+        "example": "Vier bis sechs Wochen, um aus dem Prototyp etwas zu machen, das Ihr Team jeden Morgen öffnet: eingebunden in Ihre bestehenden Systeme, mit den Prüfungen, Logs und Zugriffsregeln, nach denen ein Auditor fragt."
       },
       {
         "name": "Fractional AI Team",
         "meta": "Monatlich · fortlaufend",
-        "for": "KI im gesamten Unternehmen skalieren",
+        "for": "Unternehmen ohne eigenes KI-Team",
         "desc": "Ein Senior-KI-Team, eingebettet in Ihres: Strategie, Engineering und MLOps, skalierend mit Ihrer Roadmap.",
         "deliverables": [
           "Eingebettete Senior-KI-Engineers",
@@ -224,9 +236,11 @@
           "Flexible monatliche Kapazität"
         ],
         "cta": "Sprechen Sie mit uns",
-        "featured": false
+        "featured": false,
+        "example": "Ein paar Tage Senior Engineering pro Woche, auf Ihrem Board und in Ihren Standups. Günstiger als eine Festanstellung, und zum Monatsende jederzeit kündbar."
       }
-    ]
+    ],
+    "exampleLabel": "So sieht das aus"
   },
   "process": {
     "label": "So arbeiten wir",
@@ -280,7 +294,7 @@
       {
         "num": "04",
         "name": "HR & Recruiting",
-        "note": "CV-Parsing, Kandidaten-Matching in großem Maßstab"
+        "note": "Telefonisches Voice-Screening, Kompetenzprüfung"
       },
       {
         "num": "05",
@@ -534,7 +548,7 @@
           },
           {
             "q": "Wie verhindern Sie Halluzinationen?",
-            "a": "RAG verankert Antworten in Ihren Quellen, abgesichert durch Guardrails, Quellenangaben und automatisierte Evals bei jedem Release. Wir messen die Halluzinationsrate und machen sie zum Freigabekriterium für jedes Deployment. Vertrauen entsteht durch Tests, nicht durch Hoffnung."
+            "a": "Der Assistent antwortet ausschließlich aus Ihren eigenen Quellen und zitiert sie, sodass jede Antwort prüfbar ist. Darauf sitzen Grenzen dessen, was er sagen darf, sowie ein automatisierter Genauigkeitstest bei jedem Release. Wir messen, wie oft er etwas erfindet, und blockieren das Release, wenn diese Zahl in die falsche Richtung läuft. Vertrauen entsteht durch Tests, nicht durch Hoffnung."
           },
           {
             "q": "Behalten wir die IP und die Modelle?",
@@ -686,7 +700,7 @@
           },
           "nlp-llm": {
             "name": "NLP & LLM",
-            "teaser": "LLM-Anwendungen, RAG und Extraktion, mit Evaluations-Harness vor jedem Release."
+            "teaser": "Assistenten, die aus Ihren eigenen Dokumenten antworten, und Pipelines, die Daten daraus ziehen, mit einem Genauigkeitstest vor jedem Release."
           },
           "computer-vision": {
             "name": "Computer Vision",
@@ -787,11 +801,11 @@
           "nlp-llm": {
             "label": "Machine Learning",
             "title": "NLP- & LLM-Engineering",
-            "subtitle": "RAG-Systeme, Dokumentenextraktion, Chat und Agenten, evaluation-first gebaut: Qualität wird gemessen, bevor etwas Nutzer erreicht.",
+            "subtitle": "Assistenten, die aus Ihren eigenen Dokumenten antworten, Datenextraktion, Chat und Automatisierung, so gebaut, dass Qualität gemessen wird, bevor etwas Nutzer erreicht.",
             "breadcrumb": "NLP & LLM",
             "overviewTitle": "Sprachsysteme, die standhalten",
             "overview": [
-              "Die meisten LLM-Demos entstehen an einem Wochenende. Die eigentliche Arbeit ist, sie verlässlich genug für Kunden und Auditoren zu machen: Antworten in Ihren Quellen zu verankern, die Dokumente zu verkraften, an denen Parser scheitern, und Qualität Release für Release zu belegen. LLM-Anwendungen, RAG-Pipelines, Extraktion, Chat- und Agentensysteme bauen wir von Tag eins mit dieser Messlatte.",
+              "Die meisten Sprachmodell-Demos entstehen an einem Wochenende. Die eigentliche Arbeit ist, sie verlässlich genug für Kunden und Auditoren zu machen: sicherzustellen, dass jede Antwort aus Ihren eigenen Quellen kommt statt aus der Fantasie des Modells, die Dokumente zu verkraften, an denen Parser scheitern, und Qualität Release für Release zu belegen. Assistenten, Abruf-Pipelines (das Muster, das üblicherweise RAG heißt), Extraktion, Chat und Automatisierung bauen wir von Tag eins mit dieser Messlatte.",
               "Wir liefern evaluation-first. Bevor wir Prompts justieren oder ein Modell wählen, bauen wir ein Testset aus Ihren echten Dokumenten und Fragen, mit Kriterien, die Sie abnehmen. Jede Änderung wird daran gemessen, sodass Halluzinationsrate, Extraktionsgenauigkeit und Latenz Zahlen auf einem Dashboard sind, keine Eindrücke aus einer Demo.",
               "Am Ende steht ein System, das Ihr Team gefahrlos ändern kann: das Modell tauschen, wenn ein besseres erscheint, Prompts anpassen, den Korpus erweitern, und die Eval-Suite sagt in Minuten, ob die Qualität gehalten hat. Kosten werden pro Anfrage erfasst, sodass die Skalierungsentscheidung mit Preisschild kommt, nicht mit einer Überraschungsrechnung."
             ],
@@ -799,7 +813,7 @@
             "benefits": [
               {
                 "title": "Verankerte Antworten",
-                "description": "RAG mit Zitaten zurück zu Ihren Quellen, sodass jede Antwort prüfbar ist und die Halluzinationsrate gemessen wird, nicht geschätzt."
+                "description": "Antworten aus Ihren eigenen Quellen, mit Verweis auf jede einzelne, sodass jede Antwort prüfbar ist und die Rate erfundener Antworten gemessen wird, nicht geschätzt."
               },
               {
                 "title": "Evaluation vor dem Launch",
@@ -830,7 +844,7 @@
               },
               {
                 "title": "Für Produktion härten",
-                "description": "Guardrails, Fallbacks, Limits, strukturierte Logs und Kostenkontrolle rund um den Happy Path."
+                "description": "Grenzen für das, was das System ausgeben darf, Fallbacks, Limits, strukturierte Logs und Kostenkontrolle rund um den Happy Path."
               },
               {
                 "title": "Ausliefern und überwachen",
@@ -840,7 +854,7 @@
             "deliverablesTitle": "Was Sie bekommen",
             "deliverables": [
               "Eval-Suite aus Ihren echten Dokumenten",
-              "RAG- oder Extraktions-Pipeline, deployt hinter einer API",
+              "Antwort- oder Extraktions-Pipeline, deployt hinter einer API",
               "Prompts und Modellkonfiguration unter Versionskontrolle",
               "Kosten- und Qualitäts-Dashboard pro Anfrage",
               "Runbook für Korpus-Updates und Modellwechsel"
@@ -857,7 +871,7 @@
               },
               {
                 "q": "Und Halluzinationen vor Kunden?",
-                "a": "Retrieval verankert Antworten in Ihren Inhalten, Zitate machen sie prüfbar, Guardrails fangen Ausreißer ab. Die Halluzinationsrate messen wir am Eval-Set und machen sie zum Freigabekriterium."
+                "a": "Antworten stammen aus Ihren Inhalten statt aus dem Gedächtnis des Modells, Zitate machen sie prüfbar, und eine Grenzschicht fängt Ausgaben ab, die Ihre Regeln verletzen. Wir messen an einem festen Testset, wie oft das System etwas erfindet, und machen diese Zahl zum Freigabekriterium."
               }
             ],
             "cta": {
@@ -1758,16 +1772,16 @@
       "consulting": {
         "label": "KI & Daten",
         "title": "AI Consulting",
-        "subtitle": "Erfahrene Engineers, die die KI-Use-Cases mit echtem Geschäftswert identifizieren, sie in Wochen auf Ihren Daten belegen und bleiben, bis sie in Produktion laufen.",
+        "subtitle": "Senior Engineers, die abbilden, wie Ihre Arbeit heute läuft, die KI-Use-Cases mit echtem Geschäftswert finden, sie in Wochen auf Ihren Daten belegen und bleiben, bis sie in Produktion laufen.",
         "breadcrumb": "AI Consulting",
         "features": {
           "strategy": {
-            "title": "KI-Strategieentwicklung",
-            "description": "Wir übersetzen Ihre Geschäftsziele in ein priorisiertes Portfolio von KI-Use-Cases mit Verantwortlichen, Budgets und Erfolgskennzahlen. Das Ergebnis ist ein Plan, den der Vorstand finanzieren und Ihre Engineers bauen können."
+            "title": "Prozess-Mapping & KI-Strategie",
+            "description": "Wir bilden ab, wie die Arbeit heute tatsächlich läuft, Schritt für Schritt und System für System, und übersetzen das in ein priorisiertes Portfolio von KI-Use-Cases mit Verantwortlichen, Budgets und Erfolgskennzahlen. Diese Karte fehlte den meisten Kunden bisher."
           },
           "assessment": {
-            "title": "AI Readiness Assessment",
-            "description": "Wir prüfen Daten, Systeme, Kompetenzen und Prozesse gegen das, was Ihre Ziel-Use-Cases tatsächlich erfordern. Sie erhalten eine Scorecard und einen Plan zum Schließen der Lücken, kein Reifegrad-Poster."
+            "title": "Daten- & KI-Readiness-Audit",
+            "description": "Wir prüfen Daten, Systeme, Kompetenzen und Prozesse gegen das, was Ihre Ziel-Use-Cases wirklich erfordern, einschließlich Herkunft, Verantwortung und Zugriffsrechten. Sie erhalten eine Scorecard und einen Plan zum Schließen der Lücken, kein Reifegrad-Poster."
           },
           "implementation": {
             "title": "Umsetzungsplanung",
@@ -1778,8 +1792,8 @@
             "description": "Wir schulen Engineers, Produktmanager und Führungskräfte in den KI-Themen, mit denen sie wirklich arbeiten. Praxis auf Ihrem Stack und Ihren Daten, keine generischen Folien."
           },
           "governance": {
-            "title": "KI-Governance",
-            "description": "Wir etablieren Risikoklassifizierung, Review-Gates und Dokumentation, die den EU AI Act erfüllen, ohne die Lieferung zu bremsen. Governance, die Engineers mittragen, weil sie zu ihrer Arbeitsweise passt."
+            "title": "Daten-Governance, Risiko & Datenschutz",
+            "description": "Datenverantwortung, Aufbewahrung, Zugriff und Herkunft, dazu Risikoklassifizierung und Review-Gates, die DSGVO und EU AI Act erfüllen, ohne die Lieferung zu bremsen. Governance, die Engineers mittragen, weil sie zu ihrer Arbeitsweise passt."
           },
           "optimization": {
             "title": "Performance-Optimierung",
@@ -1789,7 +1803,7 @@
         "process": {
           "discovery": {
             "title": "Discovery",
-            "description": "Wir sprechen mit Ihren Stakeholdern und prüfen Daten, Systeme und Workflows. Nach zwei Wochen wissen Sie, welche KI-Potenziale real sind und welche nur Rauschen."
+            "description": "Wir sprechen mit Ihren Stakeholdern und bilden Daten, Systeme und Workflows so ab, wie sie tatsächlich laufen. Nach zwei Wochen wissen Sie, welche KI-Potenziale real sind und welche nur Rauschen."
           },
           "strategy": {
             "title": "Strategie",
@@ -1873,8 +1887,8 @@
             "description": "Ein konkretes Systemdesign für Ihre wichtigsten Use Cases: Modelle, Datenflüsse, Integrationspunkte und Infrastruktur."
           },
           {
-            "title": "Governance-Playbook",
-            "description": "Risikoklassifizierung, Review-Gates, Dokumentationsvorlagen und eine EU-AI-Act-Checkliste, zugeschnitten auf Ihre Use Cases."
+            "title": "Playbook für Daten-Governance & Compliance",
+            "description": "Regeln für Datenverantwortung und Aufbewahrung, Risikoklassifizierung, Review-Gates, Dokumentationsvorlagen sowie eine DSGVO- und EU-AI-Act-Checkliste, zugeschnitten auf Ihre Use Cases."
           },
           {
             "title": "Pilot-Evaluationsbericht",
@@ -1893,8 +1907,8 @@
             "duration": "2 Wochen · Festpreis",
             "description": "Ein Audit mit festem Umfang über Workflows, Daten und Systeme, am Ende steht eine priorisierte Shortlist von KI-Use-Cases. Der richtige Start, wenn klar ist, dass KI zählt, aber nicht wo.",
             "bullets": [
-              "Stakeholder-Interviews und Workflow-Analyse",
-              "Daten- und Systemprüfung gegen die Use-Case-Anforderungen",
+              "Stakeholder-Interviews und eine schriftliche Prozesskarte der betrachteten Abläufe",
+              "Daten- und Systemprüfung gegen die Use-Case-Anforderungen, inklusive Verantwortung und Zugriff",
               "Bewertete Shortlist mit ROI-Schätzungen",
               "Empfehlung für Ihren ersten Pilot"
             ]
@@ -1917,15 +1931,15 @@
             "bullets": [
               "Monatliche Architektur- und Roadmap-Reviews",
               "Bewertung neuer Modelle und Anbieter, sobald sie erscheinen",
-              "Unterstützung bei Einstellungen und technischen Interviews",
+              "Kompetenzprüfung und Fachinterviews für Rollen, die Sie besetzen",
               "Direkter Draht zu einem Senior Engineer, ohne Ticket-Warteschlange"
             ]
           }
         ],
         "toolsTitle": "Methoden und Stacks, mit denen wir arbeiten",
         "tools": [
-          "LLM-Evaluations-Harnesses",
-          "RAG-Architekturen",
+          "Genauigkeitstests für LLMs",
+          "Antworten aus Ihren Quellen (RAG)",
           "Agenten-Architekturen",
           "OpenAI- & Anthropic-APIs",
           "Azure OpenAI",
@@ -1937,7 +1951,10 @@
           "MLOps-Grundlagen",
           "EU-AI-Act-Compliance",
           "Kosten- & Latenzmodellierung",
-          "Build-vs-Buy-Analysen"
+          "Build-vs-Buy-Analysen",
+          "Prozess-Mapping (BPMN)",
+          "Daten-Governance-Frameworks",
+          "DSGVO & Privacy by Design"
         ],
         "whoTitle": "Für wen das gedacht ist",
         "who": [
@@ -1971,11 +1988,11 @@
           },
           "genai-implementation": {
             "name": "GenAI-Implementierung",
-            "teaser": "RAG, Agenten und LLM-Features vom validierten Pilot bis in die überwachte Produktion."
+            "teaser": "Assistenten, Automatisierung und Sprachmodell-Features vom validierten Piloten bis in die überwachte Produktion."
           },
           "ai-governance": {
-            "name": "KI-Governance",
-            "teaser": "EU-AI-Act-Compliance, Risiko-Gates und Modelldokumentation, die die Lieferung nicht ausbremsen."
+            "name": "Daten- & KI-Governance",
+            "teaser": "Datenverantwortung, Aufbewahrung und Zugriff, dazu DSGVO- und EU-AI-Act-Compliance, die nicht ausbremst."
           },
           "team-enablement": {
             "name": "Team-Enablement",
@@ -2150,12 +2167,12 @@
           "genai-implementation": {
             "label": "AI Consulting",
             "title": "GenAI-Implementierung",
-            "subtitle": "RAG-Systeme, Agenten und LLM-Features von der validierten Idee bis in die überwachte Produktion. Gebaut auf Evaluationen, nicht auf Eindrücken.",
+            "subtitle": "Assistenten, die aus Ihren eigenen Dokumenten antworten, Automatisierung und Sprachmodell-Features, von der validierten Idee bis in die überwachte Produktion. Gebaut auf Messungen, nicht auf Eindrücken.",
             "breadcrumb": "GenAI-Implementierung",
             "overviewTitle": "Worum es geht",
             "overview": [
               "GenAI-Implementierung ist der Punkt, an dem ein validierter Use Case zu einem System wird, auf dem Ihr Geschäft läuft. Wir entwerfen und bauen LLM-Features, Retrieval-Pipelines und Agenten-Workflows, integriert in Ihre bestehenden Systeme und vom ersten Tag an mit einem Evaluations-Harness gemessen. Produktion ist das Ziel, der Pilot ein Kontrollpunkt.",
-              "Die Arbeit läuft in Stufen: zuerst Architektur und Datenpipeline, dann ein Pilot auf Ihren echten Daten gegen eine vereinbarte Baseline, danach Produktionshärtung mit Guardrails, Monitoring, Kostenkontrolle und Rollout-Plan. Sie sehen auf jeder Stufe gemessene Qualitätszahlen, und ein No-Go ist immer ein akzeptables, vorab vereinbartes Ergebnis.",
+              "Die Arbeit läuft in Stufen: zuerst Architektur und Datenpipeline, dann ein Pilot auf Ihren echten Daten gegen eine vereinbarte Baseline, danach Produktionshärtung mit Grenzen für das, was das System tun darf, Monitoring, Kostenkontrolle und Rollout-Plan. Sie sehen auf jeder Stufe gemessene Qualitätszahlen, und ein No-Go ist immer ein akzeptables, vorab vereinbartes Ergebnis.",
               "Was sich für Sie ändert: ein KI-Feature mit bekannter Genauigkeit, Latenz und bekannten Kosten pro Anfrage, betrieben in Ihrer Infrastruktur und innerhalb Ihrer Compliance-Grenzen. Ihr Team erhält Evaluations-Harness, Runbooks und Training und kann das System ohne Abhängigkeit von uns erweitern, nachtrainieren und betreiben."
             ],
             "benefitsTitle": "Warum das funktioniert",
@@ -2173,7 +2190,7 @@
                 "description": "Modell-Routing, Caching und Prompt-Budgets sind von Beginn an eingeplant, nicht nach der ersten Rechnung nachgerüstet."
               },
               {
-                "title": "Guardrails, die halten",
+                "title": "Grenzen, die halten",
                 "description": "Eingabevalidierung, Ausgabefilter und Fallbacks für die Fehlermodi, die LLMs in Produktion wirklich zeigen."
               },
               {
@@ -2193,7 +2210,7 @@
               },
               {
                 "title": "Härten",
-                "description": "Guardrails, Monitoring, Last- und Kostentests, Security-Review und Integration in Ihre Deployment-Pipeline."
+                "description": "Ausgabegrenzen, Monitoring, Last- und Kostentests, Security-Review und Integration in Ihre Deployment-Pipeline."
               },
               {
                 "title": "Ausrollen und übergeben",
@@ -2204,7 +2221,7 @@
             "deliverables": [
               "Produktionsreifes GenAI-System in Ihrer Infrastruktur",
               "Evaluations-Harness mit Baseline und Qualitätsmetriken",
-              "Guardrail- und Fallback-Schicht für produktive Fehlermodi",
+              "Eine Grenz- und Fallback-Schicht für die Fehlermodi in Produktion",
               "Monitoring-Dashboard für Qualität, Latenz und Kosten",
               "Runbooks und Übergabetraining für Ihr Team"
             ],
@@ -2231,24 +2248,24 @@
           },
           "ai-governance": {
             "label": "AI Consulting",
-            "title": "KI-Governance",
-            "subtitle": "Risikoklassifizierung, Review-Gates und Dokumentation, die den EU AI Act erfüllen, ohne Ihre Roadmap auszubremsen.",
-            "breadcrumb": "KI-Governance",
+            "title": "Daten- & KI-Governance",
+            "subtitle": "Wer welche Daten verantwortet, wer sie sehen darf, wie lange Sie sie aufbewahren und was DSGVO und EU AI Act für jeden KI-Einsatz verlangen. So aufgesetzt, dass Ihre Roadmap nicht ausgebremst wird.",
+            "breadcrumb": "Daten- & KI-Governance",
             "overviewTitle": "Worum es geht",
             "overview": [
-              "KI-Governance macht Ihre KI-Systeme auditierbar, regelkonform und sicher skalierbar. Wir klassifizieren Ihre Use Cases nach dem EU AI Act, erstellen die Risikobewertungen und die Dokumentation, die jede Klasse verlangt, und definieren Review-Gates für neue KI-Initiativen. Von Engineers gebaut, passt das Ganze dazu, wie Ihre Teams tatsächlich Software liefern.",
-              "Das Projekt beginnt mit einer Inventur: jedes KI-System, jeder Use Case und jedes Anbietertool im Einsatz, klassifiziert nach Risiko. Darauf aufbauend schreiben wir die Richtlinien, die für Ihre Exponierung zählen: Datenumgang, menschliche Aufsicht, Modelldokumentation, Incident Response. Die Prüfungen verankern wir in Ihrem bestehenden Lieferprozess statt in einer Parallelbürokratie.",
-              "Was sich ändert: Compliance und Recht erhalten Nachweise, die sie Auditoren vorlegen können, und Ihre Engineers bekommen klare Regeln statt Einzelfall-Eskalationen. Neue KI-Initiativen passieren die Governance in Tagen statt Wochen, weil Gates und Vorlagen bereits existieren und allen Beteiligten vertraut sind."
+              "Governance beginnt bei den Daten, nicht beim Modell. Wir bilden ab, woher jeder Datenbestand stammt, wer ihn verantwortet, wer ihn sehen darf, wie lange Sie ihn aufbewahren dürfen und wohin er weiterfließt. Die meisten Unternehmen entdecken hier, dass derselbe Kundendatensatz in vier Systemen unter drei verschiedenen Aufbewahrungsregeln liegt, und genau dieser Befund macht die restliche Arbeit erst möglich.",
+              "Darauf aufbauend klassifizieren wir Ihre KI-Use-Cases nach dem EU AI Act, erstellen die Risikobewertungen und die Dokumentation, die jede Klasse verlangt, und schreiben die Richtlinien, die für Ihre Exponierung zählen: Umgang mit personenbezogenen Daten und die DSGVO-Grundlage dafür, menschliche Aufsicht, Modelldokumentation, Incident Response. Das Projekt beginnt mit einer Inventur jedes KI-Systems, Use Case und Anbietertools im Einsatz, auch der inoffiziellen, die Ihre Teams längst nutzen. Die Prüfungen verankern wir in Ihrem bestehenden Lieferprozess statt in einer Parallelbürokratie.",
+              "Was sich ändert: Compliance und Recht erhalten Nachweise, die sie Auditoren oder einer Datenschutzbehörde vorlegen können, und Ihre Engineers bekommen klare Regeln statt Einzelfall-Eskalationen. Neue KI-Initiativen passieren die Governance in Tagen statt Wochen, weil Gates, Datenkarte und Vorlagen bereits existieren und alle wissen, wie sie zu nutzen sind."
             ],
             "benefitsTitle": "Warum das funktioniert",
             "benefits": [
               {
-                "title": "EU AI Act auf Ihre Systeme gemappt",
-                "description": "Jeder Use Case nach Risiko klassifiziert, mit den konkreten Pflichten je Klasse. Compliance-Arbeit zielt auf das, was das Gesetz wirklich verlangt."
+                "title": "Eine Karte Ihrer Daten, kein Richtlinienordner",
+                "description": "Jeder Datenbestand zurückverfolgt zu Quelle, Verantwortlichem, Aufbewahrungsfrist und den Systemen, in die er fließt. Diese Karte macht jede spätere Compliance-Frage in Minuten beantwortbar."
               },
               {
-                "title": "Governance im Prozess, nicht im Gremium",
-                "description": "Die Prüfungen leben in Ihrem Lieferworkflow, nicht in einem separaten Komitee. Engineers tragen sie mit, weil sie keine Reibung erzeugen."
+                "title": "DSGVO und EU AI Act in einem Durchgang",
+                "description": "Pflichten zu personenbezogenen Daten und KI-Risikoklassifizierung gemeinsam bearbeitet, je Use Case, denn in der Praxis treffen sie dieselben Systeme und dieselben Teams."
               },
               {
                 "title": "Audit-fähige Dokumentation",
@@ -2266,8 +2283,8 @@
             "approachTitle": "So gehen wir vor",
             "approach": [
               {
-                "title": "Inventarisieren",
-                "description": "Wir katalogisieren jedes KI-System, jeden Use Case und jedes Anbietertool im Einsatz, auch die inoffiziellen, die Ihre Teams längst nutzen."
+                "title": "Daten kartieren",
+                "description": "Woher jeder Datenbestand stammt, wer ihn verantwortet, wer Zugriff hat, wie lange er aufbewahrt wird und in welche Systeme er fließt, inklusive der Tabellen, zu denen sich niemand bekennt."
               },
               {
                 "title": "Klassifizieren",
@@ -2284,8 +2301,10 @@
             ],
             "deliverablesTitle": "Was Sie erhalten",
             "deliverables": [
+              "Datenkarte: Quellen, Verantwortliche, Zugriff, Aufbewahrung und Weiterflüsse",
               "KI-Systeminventar mit EU-AI-Act-Risikoklassifizierung",
               "Governance-Playbook mit Richtlinien und Review-Gates",
+              "DSGVO-Verarbeitungsverzeichnis und Datenschutz-Folgenabschätzungen für KI-Einsätze",
               "Vorlagen für Modelldokumentation und Datenherkunft",
               "Verfahren für menschliche Aufsicht und Incident Response",
               "Nachweispaket für Audits"
@@ -2303,12 +2322,16 @@
               {
                 "q": "Wir haben bereits ein Compliance-Team. Warum Engineers?",
                 "a": "Weil die Pflichten im Code landen: Logging, Aufsichtsmechanismen, Dokumentation, Evaluationsnachweise. Wir übersetzen rechtliche Anforderungen in technische Kontrollen, die Ihr Compliance-Team prüfen kann. Genau diesen Teil lassen die meisten Richtliniendokumente aus."
+              },
+              {
+                "q": "Geht es hier um den AI Act oder um die DSGVO?",
+                "a": "Um beides, und die Trennung kostet nur Zeit. Ein KI-Use-Case verarbeitet fast immer personenbezogene Daten, braucht also eine Rechtsgrundlage, eine Aufbewahrungsregel und ein Zugriffsmodell nach DSGVO sowie eine Risikoklassifizierung samt Dokumentation nach AI Act. Wir bearbeiten beides gemeinsam, je Use Case, und Sie erhalten einen Nachweissatz statt zweier Projekte, die sich widersprechen."
               }
             ],
             "cta": {
-              "title": "Compliant werden, ohne stehen zu bleiben",
-              "subtitle": "Buchen Sie ein Gespräch zur Abgrenzung von Inventur und Klassifizierung. Es ist der schnellste Weg zu Ihrer realen Exponierung.",
-              "button": "Mit der Inventur starten"
+              "title": "Mit der Datenkarte starten",
+              "subtitle": "Buchen Sie ein Gespräch zur Abgrenzung von Datenkarte und KI-Inventar. Es ist der schnellste Weg zu Ihrer realen Exponierung unter DSGVO und EU AI Act.",
+              "button": "Datenkarte abstecken"
             }
           },
           "team-enablement": {
@@ -2319,7 +2342,7 @@
             "overviewTitle": "Worum es geht",
             "overview": [
               "Team-Enablement macht unseren Einsatz planmäßig überflüssig. Wir schulen Engineers, Produktmanager und Führungskräfte in den KI-Fähigkeiten, die ihre Rollen wirklich brauchen, und arbeiten dabei an Ihrem Code und Ihren Daten statt an Lehrbuchbeispielen. Das Ziel ist ein Team, das KI-Features ohne externe Hilfe zuschneidet, baut und betreibt.",
-              "Die Formate passen zur Zielgruppe: Hands-on-Workshops für Engineers zu RAG, Evaluationen, Prompting und Agentenmustern; Use-Case- und Scoping-Sessions für Produktteams; Briefings für die Führung zu Kosten, Risiko und realistischen Zeitplänen. Die Sessions laufen auf Ihrem Stack, und jede Übung hinterlässt funktionierenden Code oder ein nutzbares Artefakt.",
+              "Die Formate passen zur Zielgruppe: Hands-on-Workshops für Engineers zu Abruf aus eigenen Quellen (RAG), Genauigkeitstests, Prompting und Automatisierungsmustern; Use-Case- und Scoping-Sessions für Produktteams; Briefings für die Führung zu Kosten, Risiko und realistischen Zeitplänen. Die Sessions laufen auf Ihrem Stack, und jede Übung hinterlässt funktionierenden Code oder ein nutzbares Artefakt.",
               "Was sich ändert: KI ist nicht länger die Domäne eines einzelnen Spezialisten. Engineers liefern LLM-Features mit Evaluationen, Produktmanager schreiben KI-Spezifikationen, die der Realität standhalten, und die Führung entscheidet über Finanzierung oder Stopp anhand echter Zahlen. Interne Champions führen die Praxis weiter, wenn wir gehen."
             ],
             "benefitsTitle": "Warum das funktioniert",
@@ -3256,7 +3279,7 @@
           },
           "ai": {
             "title": "KI-Fähigkeiten als APIs",
-            "description": "Wir verpacken Modelle, RAG-Pipelines und Agenten in stabile, überwachte Endpoints mit Kostenkontrolle und Fallbacks. Ihre KI-Features werden zu Produkten, auf denen andere Teams aufbauen können."
+            "description": "Wir verpacken Modelle, Abruf-Pipelines und Automatisierung in stabile, überwachte Endpoints mit Kostenkontrolle und Fallbacks. Ihre KI-Features werden zu Produkten, auf denen andere Teams aufbauen können."
           }
         },
         "processTitle": "So läuft ein Projekt",
@@ -5300,62 +5323,62 @@
       },
       "hr": {
         "label": "HR & Recruiting",
-        "title": "Human Resources neu gedacht",
-        "subtitle": "Wir entwickeln intelligente HR-Lösungen, die das Recruiting verschlanken, die Employee Experience verbessern und belastbare Einblicke in Ihre Belegschaft liefern.",
+        "title": "Vorauswahl, Prüfung und der Papierkram rund ums Recruiting",
+        "subtitle": "Ihr ATS parst Lebensläufe und matcht Kandidaten längst. Wir kümmern uns um das, was es nicht kann: das erste Screening-Gespräch, die Prüfung von Kompetenzen, die intern niemand beurteilen kann, und Bewerberdaten, die der DSGVO standhalten.",
         "challenges": {
           "challenge1": {
-            "title": "Talentgewinnung",
-            "description": "Qualifizierte Kandidaten in einem umkämpften Markt finden und überzeugen, bei gleichzeitig kürzerer Time-to-Hire."
+            "title": "Der erste Anruf ist der Flaschenhals",
+            "description": "Recruiter verlieren ihre Woche mit Screening-Anrufen, die meist mit einem Nein enden. Währenddessen warten starke Kandidaten tagelang auf Rückruf und nehmen das andere Angebot."
           },
           "challenge2": {
-            "title": "Mitarbeiterengagement",
-            "description": "Motivation im Team halten und Fluktuation senken, gerade in Zeiten von Remote- und Hybrid-Arbeit."
+            "title": "Einstellen, was niemand beurteilen kann",
+            "description": "Der erste Data Engineer, die erste ML-Person, der erste Security-Lead. Niemand im Haus unterscheidet eine starke Antwort von einer selbstbewussten."
           },
           "challenge3": {
-            "title": "Administrativer Aufwand",
-            "description": "Manuelle HR-Prozesse binden wertvolle Zeit, die für strategische Aufgaben fehlt."
+            "title": "Das Einfache kann Ihr ATS schon",
+            "description": "CV-Parsing und Kandidaten-Matching bringt jedes moderne ATS mit. Ein zweites zu kaufen ändert nichts, denn die Zeit geht woanders verloren."
           },
           "challenge4": {
-            "title": "Datengetriebenes HR",
-            "description": "HR-Daten in Erkenntnisse verwandeln, für bessere Personalplanung und fundierte Entscheidungen."
+            "title": "Bewerberdaten sind regulierte Daten",
+            "description": "Einwilligungen, Aufbewahrungsfristen und die Regeln zu automatisierten Entscheidungen im Recruiting. Nach dem EU AI Act gilt Recruiting-KI als hochriskant, mit entsprechenden Pflichten."
           }
         },
         "solutions": {
           "ai": {
-            "title": "KI & Machine Learning",
-            "description": "KI-gestütztes Candidate Matching, Lebenslauf-Screening, Stimmungsanalysen im Team und Fluktuationsprognosen."
+            "title": "Voice-Screening",
+            "description": "Ein KI-Anrufer, der das erste Gespräch führt, wie ein Mensch klingt und Ihrem Recruiter Transkript, Zusammenfassung und Empfehlung übergibt."
           },
           "web": {
-            "title": "HR-Plattformen",
-            "description": "Umfassende HRIS-Systeme, Bewerbermanagement und Self-Service-Portale für Mitarbeitende."
+            "title": "Kompetenzprüfung",
+            "description": "Unsere Senior Engineers entwerfen die Aufgabe, führen das Fachinterview und bewerten es, für Rollen, die Ihr eigenes Team noch nicht beurteilen kann."
           },
           "mobile": {
-            "title": "Mobile HR-Apps",
-            "description": "Zeiterfassung, Urlaubsanträge, Teamkommunikation und mobiles Lernen, jederzeit und überall."
+            "title": "Recruiting-Papierkram",
+            "description": "Verträge, Arbeitserlaubnisse und Onboarding-Formulare werden gelesen, geprüft und ins HR-System eingepflegt, ohne dass jemand abtippt."
           },
           "cloud": {
-            "title": "Sichere HR-Cloud",
-            "description": "Skalierbare Infrastruktur für HR-Daten mit rollenbasierten Zugriffsrechten und Compliance-Funktionen."
+            "title": "Governance für Bewerberdaten",
+            "description": "Einwilligungs-Tracking, Aufbewahrungsregeln, Zugriffskontrolle und die AI-Act-Dokumentation, die Recruiting-KI heute verlangt."
           }
         },
         "useCases": {
           "case1": {
-            "title": "Intelligente Recruiting-Plattform",
-            "description": "End-to-End-Bewerbermanagement mit KI-gestütztem Kandidaten-Screening, Interviewplanung und kollaborativen Hiring-Workflows."
+            "title": "Ein Screening-Anruf, der nicht nach Roboter klingt",
+            "description": "Der Assistent ruft wenige Minuten nach der Bewerbung an, stellt Ihre fünf Qualifizierungsfragen, hakt nach und terminiert das Interview, wenn die Antworten tragen. Jedes Gespräch wird transkribiert, und jeder Kandidat bekommt dieselben Fragen."
           },
           "case2": {
-            "title": "Employee Experience Hub",
-            "description": "Eine zentrale Plattform für Onboarding, Weiterbildung, Performance Management und interne Kommunikation."
+            "title": "Kompetenzprüfung für eine Rolle, die Sie zum ersten Mal besetzen",
+            "description": "Sie stellen Ihren ersten Data Engineer ein, und intern kann niemand die Antworten bewerten. Wir schreiben die Aufgabe, sitzen im Fachinterview und übergeben einen bewerteten Bericht mit Begründung, damit die Entscheidung bei Ihnen bleibt und belastbar ist."
           },
           "case3": {
-            "title": "Workforce-Analytics-Dashboard",
-            "description": "Echtzeit-Einblicke in Headcount, Fluktuation, Engagement-Scores und Gehaltsbenchmarks."
+            "title": "Bewerberdaten, die einer Prüfung standhalten",
+            "description": "Ein Datensatz pro Kandidat mit Einwilligungs- und Aufbewahrungsdaten, protokolliertem Zugriff und einer schriftlichen Einstufung jedes automatisierten Schritts Ihres Hiring-Prozesses nach dem EU AI Act."
           }
         },
         "cta": {
-          "title": "Bereit, Ihre HR-Prozesse zu transformieren?",
-          "subtitle": "Lassen Sie uns Lösungen bauen, mit denen Sie Top-Talente gewinnen, halten und entwickeln.",
-          "button": "Jetzt starten"
+          "title": "Den ersten Screening-Anruf von Ihren Recruitern nehmen?",
+          "subtitle": "Buchen Sie 30 Minuten. Erzählen Sie, wie Ihr erster Anruf heute abläuft, und wir sagen Ihnen, ob sich die Automatisierung rechnet.",
+          "button": "Gespräch buchen"
         }
       },
       "logistics": {
@@ -6087,7 +6110,7 @@
             {
               "num": "04",
               "title": "Härten",
-              "desc": "Wir testen den Piloten mit Edge Cases, feindseligen Eingaben und Fehlerszenarien und ergänzen die Guardrails, Fallbacks und das Monitoring, die Produktion verlangt."
+              "desc": "Wir testen den Piloten mit Edge Cases, feindseligen Eingaben und Fehlerszenarien und ergänzen die Ausgabegrenzen, Fallbacks und das Monitoring, die Produktion verlangt."
             },
             {
               "num": "05",
