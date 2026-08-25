@@ -5111,6 +5111,7 @@
             "ecommerce": "E-Commerce & Retail",
             "hr": "HR & Recruitment",
             "logistics": "Logistics & Transport",
+            "legal": "Legal",
             "ai": "AI & Machine Learning",
             "saas": "SaaS & Startups",
             "manufacturing": "Manufacturing & Industry"
@@ -5439,6 +5440,66 @@
           "title": "Ready to optimize your logistics?",
           "subtitle": "Let's build solutions that deliver efficiency gains across your supply chain.",
           "button": "Plan your project"
+        }
+      },
+      "legal": {
+        "label": "Legal",
+        "title": "We read every contract, so your lawyers read the ones that matter",
+        "subtitle": "Law firms and in-house legal teams hold more documents than anyone can get through. We build the systems that pull out the clauses, flag every deviation from your playbook and find the paragraph you half-remember, each answer citing the page it came from. A lawyer still signs off. That part does not change.",
+        "challenges": {
+          "challenge1": {
+            "title": "Review is the bottleneck, not the drafting",
+            "description": "The standard NDA takes ten minutes and there are forty of them this week. The one that genuinely needed two hours is somewhere in the same pile."
+          },
+          "challenge2": {
+            "title": "Nobody can answer 'which of our contracts say X'",
+            "description": "The answer is spread across a shared drive, an email archive and a filing cabinet. Digging it out costs a week, so after a while the question stops being asked."
+          },
+          "challenge3": {
+            "title": "Scanned paper that ordinary tools give up on",
+            "description": "Signed originals come back as photographs: stamps, handwriting in the margin, one page upside down. That is exactly where standard document tools fail."
+          },
+          "challenge4": {
+            "title": "Confidentiality leaves no room for guessing",
+            "description": "Professional privilege, the GDPR and your bar obligations all say the same thing: the documents cannot leave your control, and every automated step has to be explainable."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "Clause extraction & review",
+            "description": "Every contract read against your playbook: clauses pulled out, deviations flagged, and the risky ones pushed to the top of the queue."
+          },
+          "web": {
+            "title": "Search across everything you hold",
+            "description": "Ask in plain language, get the paragraph back with its document, page and signature date. No keyword guessing."
+          },
+          "mobile": {
+            "title": "Scanned and handwritten documents",
+            "description": "Photographed pages, stamps, marginalia and signature blocks read reliably, because that is what most legal archives actually look like."
+          },
+          "cloud": {
+            "title": "Privilege & data protection",
+            "description": "Everything runs inside your tenancy or on models you host, with access logged per document and retention rules your bar association and the GDPR both accept."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "The forty NDAs nobody wants to read",
+            "description": "Incoming agreements checked against your standard positions overnight. In the morning your team sees which are clean, which carry three deviations, and exactly which sentence is worth arguing about."
+          },
+          "case2": {
+            "title": "Due diligence on a data room, in days rather than weeks",
+            "description": "Thousands of documents sorted, change-of-control and assignment clauses extracted, obligations tabulated with a link back to the page. Your associates verify findings instead of hunting for them."
+          },
+          "case3": {
+            "title": "An answer you can trace back to the source",
+            "description": "Ask which of your contracts carry uncapped liability and get a list with the clause quoted and the file named. Anything the system cannot source, it says so instead of inventing it."
+          }
+        },
+        "cta": {
+          "title": "Sitting on an archive nobody has time to read?",
+          "subtitle": "Book 30 minutes. Bring one contract type and we will tell you what a system could reliably pull out of it, and what it could not.",
+          "button": "Book a call"
         }
       },
       "ai": {

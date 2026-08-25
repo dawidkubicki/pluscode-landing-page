@@ -14,7 +14,7 @@ const slugs: (string | null)[] = [
   "ecommerce",
   "hr",
   "logistics",
-  null, // legal
+  "legal",
   "saas",
   "manufacturing",
 ];

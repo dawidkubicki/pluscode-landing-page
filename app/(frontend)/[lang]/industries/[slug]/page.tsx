@@ -12,6 +12,7 @@ const SLUGS: IndustrySlug[] = [
   "ecommerce",
   "hr",
   "logistics",
+  "legal",
   "ai",
   "saas",
   "manufacturing",

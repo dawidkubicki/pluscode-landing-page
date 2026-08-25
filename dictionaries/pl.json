@@ -5111,6 +5111,7 @@
             "ecommerce": "E-Commerce i Handel",
             "hr": "HR i Rekrutacja",
             "logistics": "Logistyka i Transport",
+            "legal": "Branża prawna",
             "ai": "AI i Machine Learning",
             "saas": "SaaS i Startupy",
             "manufacturing": "Produkcja i Przemysł"
@@ -5439,6 +5440,66 @@
           "title": "Gotowy zoptymalizować logistykę?",
           "subtitle": "Zbudujmy rozwiązania, które przynoszą wzrost efektywności w całym łańcuchu dostaw.",
           "button": "Zaplanuj projekt"
+        }
+      },
+      "legal": {
+        "label": "Branża prawna",
+        "title": "Czytamy każdą umowę, żeby prawnicy czytali te, które mają znaczenie",
+        "subtitle": "Kancelarie i działy prawne trzymają więcej dokumentów, niż ktokolwiek zdoła przerobić. Budujemy systemy, które wyciągają klauzule, oznaczają każde odstępstwo od Twojego wzorca i znajdują akapit, który pamiętasz połowicznie, a każda odpowiedź wskazuje stronę, z której pochodzi. Decyzję i tak podpisuje prawnik. To się nie zmienia.",
+        "challenges": {
+          "challenge1": {
+            "title": "Wąskim gardłem jest przegląd, nie redagowanie",
+            "description": "Standardowe NDA zajmuje dziesięć minut, a w tym tygodniu jest ich czterdzieści. Ta jedna, która naprawdę wymagała dwóch godzin, leży w tym samym stosie."
+          },
+          "challenge2": {
+            "title": "Nikt nie odpowie, które z naszych umów mówią X",
+            "description": "Odpowiedź jest rozsiana po dysku współdzielonym, archiwum maili i szafie z segregatorami. Wykopanie jej kosztuje tydzień, więc po czasie to pytanie przestaje padać."
+          },
+          "challenge3": {
+            "title": "Skany papieru, na których zwykłe narzędzia się poddają",
+            "description": "Podpisane oryginały wracają jako zdjęcia: pieczątki, pismo odręczne na marginesie, jedna strona do góry nogami. Właśnie na tym standardowe narzędzia do dokumentów zawodzą."
+          },
+          "challenge4": {
+            "title": "Poufność nie zostawia miejsca na zgadywanie",
+            "description": "Tajemnica zawodowa, RODO i obowiązki wobec samorządu mówią to samo: dokumenty nie mogą opuścić Twojej kontroli, a każdy automatyczny krok musi dać się wytłumaczyć."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "Ekstrakcja klauzul i przegląd",
+            "description": "Każda umowa przeczytana pod kątem Twojego wzorca: klauzule wyciągnięte, odstępstwa oznaczone, a ryzykowne przesunięte na górę kolejki."
+          },
+          "web": {
+            "title": "Wyszukiwanie po całym zasobie",
+            "description": "Pytaj zwykłym językiem, dostajesz akapit razem z dokumentem, stroną i datą podpisu. Bez zgadywania słów kluczowych."
+          },
+          "mobile": {
+            "title": "Skany i dokumenty odręczne",
+            "description": "Sfotografowane strony, pieczątki, dopiski na marginesach i bloki podpisów odczytane niezawodnie, bo tak właśnie wygląda większość archiwów prawnych."
+          },
+          "cloud": {
+            "title": "Tajemnica zawodowa i ochrona danych",
+            "description": "Wszystko działa w Twojej infrastrukturze albo na modelach, które sam hostujesz, z logowanym dostępem do każdego dokumentu i zasadami retencji akceptowalnymi dla samorządu i RODO."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Czterdzieści NDA, których nikt nie chce czytać",
+            "description": "Przychodzące umowy sprawdzone w nocy względem Twoich standardowych stanowisk. Rano zespół widzi, które są czyste, które mają trzy odstępstwa i o które dokładnie zdanie warto się spierać."
+          },
+          "case2": {
+            "title": "Due diligence na data roomie w dni, a nie tygodnie",
+            "description": "Tysiące dokumentów posortowanych, klauzule zmiany kontroli i cesji wyciągnięte, zobowiązania zestawione w tabeli z odnośnikiem do strony. Twoi prawnicy weryfikują ustalenia, zamiast ich szukać."
+          },
+          "case3": {
+            "title": "Odpowiedź, którą da się cofnąć do źródła",
+            "description": "Zapytaj, które z Twoich umów mają nieograniczoną odpowiedzialność, a dostaniesz listę z zacytowaną klauzulą i nazwą pliku. Czego system nie potrafi udokumentować, o tym mówi wprost, zamiast to zmyślać."
+          }
+        },
+        "cta": {
+          "title": "Siedzisz na archiwum, na które nikt nie ma czasu?",
+          "subtitle": "Umów 30 minut. Przynieś jeden typ umowy, a powiemy, co system potrafiłby z niej niezawodnie wyciągnąć, a czego nie.",
+          "button": "Umów rozmowę"
         }
       },
       "ai": {

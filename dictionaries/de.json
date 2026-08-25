@@ -5111,6 +5111,7 @@
             "ecommerce": "E-Commerce & Handel",
             "hr": "HR & Recruiting",
             "logistics": "Logistik & Transport",
+            "legal": "Recht",
             "ai": "KI & Machine Learning",
             "saas": "SaaS & Startups",
             "manufacturing": "Fertigung & Industrie"
@@ -5439,6 +5440,66 @@
           "title": "Bereit, Ihre Logistik zu optimieren?",
           "subtitle": "Lassen Sie uns Lösungen bauen, die entlang Ihrer Supply Chain messbare Effizienzgewinne liefern.",
           "button": "Projekt planen"
+        }
+      },
+      "legal": {
+        "label": "Recht",
+        "title": "Wir lesen jeden Vertrag, damit Ihre Juristen die wichtigen lesen",
+        "subtitle": "Kanzleien und Rechtsabteilungen halten mehr Dokumente, als irgendjemand durcharbeiten kann. Wir bauen die Systeme, die Klauseln herausziehen, jede Abweichung von Ihrem Muster markieren und den Absatz finden, an den Sie sich halb erinnern, wobei jede Antwort die Seite nennt, von der sie stammt. Unterschreiben tut weiterhin ein Anwalt. Daran ändert sich nichts.",
+        "challenges": {
+          "challenge1": {
+            "title": "Der Engpass ist die Prüfung, nicht das Entwerfen",
+            "description": "Die Standard-NDA dauert zehn Minuten, und diese Woche sind es vierzig. Die eine, die wirklich zwei Stunden gebraucht hätte, liegt im selben Stapel."
+          },
+          "challenge2": {
+            "title": "Niemand kann sagen, welche unserer Verträge X enthalten",
+            "description": "Die Antwort verteilt sich über ein Netzlaufwerk, ein E-Mail-Archiv und einen Aktenschrank. Sie herauszusuchen kostet eine Woche, also wird die Frage irgendwann nicht mehr gestellt."
+          },
+          "challenge3": {
+            "title": "Gescanntes Papier, an dem gewöhnliche Werkzeuge scheitern",
+            "description": "Unterschriebene Originale kommen als Fotos zurück: Stempel, Handschrift am Rand, eine Seite auf dem Kopf. Genau daran versagen Standardwerkzeuge für Dokumente."
+          },
+          "challenge4": {
+            "title": "Verschwiegenheit lässt keinen Spielraum zum Raten",
+            "description": "Anwaltliche Verschwiegenheit, die DSGVO und Ihr Berufsrecht sagen dasselbe: Die Dokumente dürfen Ihre Kontrolle nicht verlassen, und jeder automatisierte Schritt muss erklärbar sein."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "Klauselextraktion & Prüfung",
+            "description": "Jeder Vertrag gegen Ihr Muster gelesen: Klauseln extrahiert, Abweichungen markiert und die riskanten nach oben in die Warteschlange gestellt."
+          },
+          "web": {
+            "title": "Suche über Ihren gesamten Bestand",
+            "description": "Fragen Sie in normaler Sprache und erhalten Sie den Absatz zurück, mit Dokument, Seite und Unterschriftsdatum. Kein Rätselraten um Suchbegriffe."
+          },
+          "mobile": {
+            "title": "Gescannte und handschriftliche Dokumente",
+            "description": "Fotografierte Seiten, Stempel, Randnotizen und Unterschriftsfelder zuverlässig gelesen, denn so sehen die meisten juristischen Archive tatsächlich aus."
+          },
+          "cloud": {
+            "title": "Verschwiegenheit & Datenschutz",
+            "description": "Alles läuft in Ihrer Umgebung oder auf Modellen, die Sie selbst hosten, mit protokolliertem Zugriff je Dokument und Aufbewahrungsregeln, die Kammer und DSGVO gleichermaßen akzeptieren."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "Die vierzig NDAs, die niemand lesen will",
+            "description": "Eingehende Vereinbarungen über Nacht gegen Ihre Standardpositionen geprüft. Am Morgen sieht Ihr Team, welche sauber sind, welche drei Abweichungen tragen und über welchen Satz genau sich das Verhandeln lohnt."
+          },
+          "case2": {
+            "title": "Due Diligence im Datenraum, in Tagen statt Wochen",
+            "description": "Tausende Dokumente sortiert, Change-of-Control- und Abtretungsklauseln extrahiert, Pflichten tabelliert mit Verweis auf die Seite. Ihre Associates prüfen die Funde, statt sie zu suchen."
+          },
+          "case3": {
+            "title": "Eine Antwort, die sich bis zur Quelle zurückverfolgen lässt",
+            "description": "Fragen Sie, welche Ihrer Verträge eine unbegrenzte Haftung enthalten, und erhalten Sie eine Liste mit zitierter Klausel und Dateiname. Was das System nicht belegen kann, sagt es, statt es zu erfinden."
+          }
+        },
+        "cta": {
+          "title": "Sitzen Sie auf einem Archiv, für das niemand Zeit hat?",
+          "subtitle": "Buchen Sie 30 Minuten. Bringen Sie einen Vertragstyp mit, und wir sagen Ihnen, was ein System zuverlässig daraus ziehen könnte und was nicht.",
+          "button": "Gespräch buchen"
         }
       },
       "ai": {
