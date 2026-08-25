@@ -8,6 +8,7 @@ import * as migration_20260824_120000_use_cases_section from './20260824_120000_
 import * as migration_20260824_121000_seed_home_use_cases from './20260824_121000_seed_home_use_cases';
 import * as migration_20260824_130000_announcement_pages from './20260824_130000_announcement_pages';
 import * as migration_20260824_131000_seed_startup_consultations_announcement from './20260824_131000_seed_startup_consultations_announcement';
+import * as migration_20260825_090000_use_case_art from './20260825_090000_use_case_art';
 
 export const migrations = [
   {
@@ -59,5 +60,10 @@ export const migrations = [
     up: migration_20260824_131000_seed_startup_consultations_announcement.up,
     down: migration_20260824_131000_seed_startup_consultations_announcement.down,
     name: '20260824_131000_seed_startup_consultations_announcement',
+  },
+  {
+    up: migration_20260825_090000_use_case_art.up,
+    down: migration_20260825_090000_use_case_art.down,
+    name: '20260825_090000_use_case_art',
   },
 ];

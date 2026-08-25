@@ -5758,6 +5758,256 @@
       }
     ]
   },
+  "useCaseFlows": {
+    "label": "Eine Ebene tiefer",
+    "title": "Den Daten folgen, Schritt für Schritt",
+    "subtitle": "Wählen Sie einen Anwendungsfall und sehen Sie den ganzen Weg: was hereinkommt, welche Ihrer Systeme jeder Schritt berührt, wo der Prozess selbst entscheidet und wo er anhält und auf einen Menschen wartet.",
+    "legend": {
+      "in": "Daten rein",
+      "run": "Was läuft",
+      "out": "Daten raus",
+      "tools": "Systeme",
+      "decision": "Entscheidungspunkt",
+      "pass": "Läuft durch",
+      "fail": "Geht an einen Menschen",
+      "human": "Wo der Mensch beteiligt bleibt"
+    },
+    "items": [
+      {
+        "id": "invoices",
+        "tab": "Rechnungen",
+        "title": "Von der Lieferantenrechnung zur Buchung",
+        "in": [
+          "Lieferantenrechnung, PDF oder Scan, die in einem gemeinsamen Postfach landet",
+          "Die passende Bestellung und der Wareneingang aus dem ERP",
+          "Lieferantenstammdaten: Steuernummer, Bankverbindung, Zahlungsziele"
+        ],
+        "steps": [
+          {
+            "title": "Lesen",
+            "desc": "Holt Lieferant, Daten, Steuernummer, Beträge und jede Position aus dem Dokument, in welchem Layout es auch ankommt.",
+            "tools": [
+              "Gemeinsames Postfach",
+              "Dokumentenmodell"
+            ]
+          },
+          {
+            "title": "Abgleichen",
+            "desc": "Stellt die Rechnung gegen Bestellung und Lieferung und markiert jede Abweichung bei Preis, Menge und Steuersatz.",
+            "tools": [
+              "ERP: SAP, Comarch, Dynamics",
+              "Lieferantenverzeichnis"
+            ]
+          },
+          {
+            "title": "Buchen",
+            "desc": "Bucht, was übereinstimmt, hängt die Quelldatei an den Beleg und gibt den Rest mit bereits markierter Abweichung weiter.",
+            "tools": [
+              "ERP-API",
+              "Dokumentenarchiv"
+            ]
+          }
+        ],
+        "decision": {
+          "question": "Stimmen Rechnung, Bestellung und Lieferung überein, und wurde jedes Feld mit hoher Sicherheit gelesen?",
+          "pass": "Wird automatisch im ERP gebucht, mit angehängter Quelldatei, und geht in den nächsten Zahllauf.",
+          "fail": "Geht in die Klärungsliste der Buchhaltung, mit ausgeschriebener Abweichung: Bestellung sagt 1.200, Rechnung sagt 1.320."
+        },
+        "out": [
+          "Ein gebuchter Beleg im ERP, zahlungsbereit",
+          "Eine Klärungsliste mit genau den Rechnungen, die wirklich einen Menschen brauchen",
+          "Ein Nachweis zu jedem Feld: wo es auf der Seite stand und wie sicher das Modell war"
+        ],
+        "human": "Die Buchhaltung arbeitet die Klärungsliste ab und gibt alles über ihrem Limit frei. Nichts bucht sich an ihr vorbei."
+      },
+      {
+        "id": "support",
+        "tab": "Kundenservice",
+        "title": "Von der Kundenfrage zur gesendeten Antwort",
+        "in": [
+          "Die eingehende Nachricht aus E-Mail, Chat oder Kontaktformular",
+          "Aktueller Auftrags-, Liefer- und Rechnungsstatus aus Ihren Systemen",
+          "Antworten, die es schon gibt: Hilfe-Center, Richtlinien, gelöste Tickets"
+        ],
+        "steps": [
+          {
+            "title": "Verstehen",
+            "desc": "Klärt, was wirklich gefragt wird und um welchen Auftrag oder welches Konto es geht.",
+            "tools": [
+              "Helpdesk: Zendesk, Freshdesk, Jira"
+            ]
+          },
+          {
+            "title": "Nachschlagen",
+            "desc": "Holt die Fakten: wo das Paket ist, was berechnet wurde, was die Richtlinie in diesem Fall zulässt.",
+            "tools": [
+              "Auftrags- und Lieferschnittstelle",
+              "ERP / WMS"
+            ]
+          },
+          {
+            "title": "Entwerfen",
+            "desc": "Schreibt die Antwort in Ihrer Tonalität, in der Sprache der Anfrage, mit der genutzten Quelle daneben.",
+            "tools": [
+              "Antwortbibliothek",
+              "Ticket-Historie"
+            ]
+          }
+        ],
+        "decision": {
+          "question": "Ist der Fall Routine, und ist jede Aussage der Antwort durch eine Quelle gedeckt?",
+          "pass": "Geht in Sekunden raus, Ticket getaggt und geschlossen, Sendungsverfolgung inklusive.",
+          "fail": "Geht an eine Servicekraft, mit Entwurf, den Fakten dahinter und einer Zeile dazu, warum angehalten wurde."
+        },
+        "out": [
+          "Eine Antwort im Postfach, in der Sprache der Anfrage",
+          "Ein Ticket, kategorisiert, getaggt und im Helpdesk geschlossen",
+          "Eine Wochenliste dessen, was immer wieder gefragt wird, und wo Ihr Prozess immer wieder scheitert"
+        ],
+        "human": "Der Service übernimmt die Eskalationen und korrigiert jeden Entwurf, den er anders sieht. Jede Korrektur wird zur besseren Antwort für die nächste Anfrage."
+      },
+      {
+        "id": "demand",
+        "tab": "Bedarf und Bestand",
+        "title": "Von der Verkaufshistorie zum Bestellvorschlag",
+        "in": [
+          "Zwei bis drei Jahre Verkäufe, je Artikel und je Standort",
+          "Preise, Aktionen und der Kampagnenkalender",
+          "Bestand, offene Bestellungen und Lieferzeiten",
+          "Lokaler Kontext: Feiertage, Ferien, Wetter"
+        ],
+        "steps": [
+          {
+            "title": "Prognose",
+            "desc": "Schätzt den Bedarf je Artikel und Standort für die nächste Woche und das nächste Quartal, als Spanne statt als eine Zahl.",
+            "tools": [
+              "Verkaufshistorie",
+              "Prognosemodelle"
+            ]
+          },
+          {
+            "title": "Übersetzen",
+            "desc": "Macht aus der Prognose einen konkreten Vorschlag: wie viel, bei welchem Lieferanten, an welchem Tag.",
+            "tools": [
+              "ERP / WMS",
+              "Lieferantenkonditionen"
+            ]
+          },
+          {
+            "title": "Nachhalten",
+            "desc": "Stellt die Prognose wöchentlich gegen den tatsächlichen Absatz, damit Abweichung sichtbar wird, bevor sie Geld kostet.",
+            "tools": [
+              "BI-Dashboard"
+            ]
+          }
+        ],
+        "decision": {
+          "question": "Passt der Vorschlag in die Grenzen des Einkaufs: Budget, Haltbarkeit, Mindestbestellmenge?",
+          "pass": "Landet als Bestellentwurf im ERP, mit einem Klick freizugeben.",
+          "fail": "Geht markiert an den Einkauf, mit Begründung und dem nächstbesten Vorschlag, der passt."
+        },
+        "out": [
+          "Wöchentliche Bestellvorschläge je Standort",
+          "Eine priorisierte Liste der Fehlmengen- und Überbestandsrisiken",
+          "Prognose gegen Ist, Woche für Woche nachgehalten und für alle sichtbar"
+        ],
+        "human": "Der Einkauf setzt die Grenzen und behält das letzte Wort. Das System rechnet über Tausende Artikel, urteilen tut es nicht."
+      },
+      {
+        "id": "quality",
+        "tab": "Qualitätsprüfung",
+        "title": "Vom Kamerabild zu i.O. oder n.i.O.",
+        "in": [
+          "Bilder der Linienkamera, ausgelöst von der Steuerung",
+          "Die Referenz: Zeichnung, Toleranzen, ein abgestimmter Satz guter und schlechter Muster",
+          "Kontext zu Charge, Schicht und Maschine aus dem Produktionssystem"
+        ],
+        "steps": [
+          {
+            "title": "Aufnehmen",
+            "desc": "Fotografiert jedes Teil im gleichen Winkel und im gleichen Licht, im Takt der Linie.",
+            "tools": [
+              "Linienkamera",
+              "SPS-Auslöser"
+            ]
+          },
+          {
+            "title": "Vergleichen",
+            "desc": "Prüft das Teil gegen die Referenz und lokalisiert den Fehler: Kratzer, Spalt, Druckfehler, fehlendes Bauteil.",
+            "tools": [
+              "Bildmodell",
+              "Edge-Gerät an der Linie"
+            ]
+          },
+          {
+            "title": "Festhalten",
+            "desc": "Protokolliert das Urteil mit Foto, Charge und Schicht, damit das Muster hinter den Fehlern sichtbar wird.",
+            "tools": [
+              "MES",
+              "Qualitätsbericht"
+            ]
+          }
+        ],
+        "decision": {
+          "question": "Ist das Urteil eindeutig, oder ist sich das Modell bei genau diesem Teil unsicher?",
+          "pass": "Ein n.i.O.-Signal an die Steuerung innerhalb der Taktzeit. Das Teil verlässt die Linie, und im Chargensatz steht der Grund.",
+          "fail": "Das Foto geht auf den Bildschirm der Bedienung. Ihr Urteil entscheidet und wird als neues Beispiel gespeichert."
+        },
+        "out": [
+          "Ein i.O. oder n.i.O. je Teil, innerhalb der Taktzeit",
+          "Fehlerfotos, gruppiert nach Typ, Schicht und Maschine",
+          "Ein wachsender Beispielsatz, der mit jedem Urteil der Bedienung schärfer wird"
+        ],
+        "human": "Die Bedienung entscheidet die unsicheren Teile, die Qualitätssicherung setzt die Schwellen. Die Linie steht nie allein wegen der Meinung einer Maschine."
+      },
+      {
+        "id": "knowledge",
+        "tab": "Unternehmenswissen",
+        "title": "Von der Frage zur belegten Antwort",
+        "in": [
+          "Dokumente dort, wo sie schon liegen: SharePoint, Drive, Confluence, Netzlaufwerke",
+          "Verträge, Verfahrensanweisungen, Angebote und technische Dokumentation",
+          "Ihre bestehenden Berechtigungen: wer was sehen darf"
+        ],
+        "steps": [
+          {
+            "title": "Indizieren",
+            "desc": "Liest die Dokumente und behält je Dokument die Berechtigungen bei, damit nichts bei jemandem auftaucht, der die Datei nicht öffnen dürfte.",
+            "tools": [
+              "SharePoint, Drive, Confluence",
+              "Ihr Identitätsanbieter"
+            ]
+          },
+          {
+            "title": "Antworten",
+            "desc": "Antwortet in der Sprache der Frage, zitiert die Stelle und verlinkt das Dokument, aus dem sie stammt.",
+            "tools": [
+              "Suche über Ihre Dokumente",
+              "Teams, Slack oder Intranet"
+            ]
+          },
+          {
+            "title": "Protokollieren",
+            "desc": "Hält jede Frage fest, für die es keine dokumentierte Antwort gab, damit die Lücken nicht unsichtbar bleiben.",
+            "tools": [
+              "Fragenprotokoll"
+            ]
+          }
+        ],
+        "decision": {
+          "question": "Gibt es eine dokumentierte Antwort, und darf diese Person sie sehen?",
+          "pass": "Die Antwort, mit Link auf genau die Seite oder Klausel, aus der sie stammt.",
+          "fail": "Sagt klar, dass nichts dokumentiert ist, und nennt die zuständige Person, statt sich etwas auszudenken."
+        },
+        "out": [
+          "Eine Antwort in Sekunden statt drei Nachfragen im Team",
+          "Jede Antwort rückverfolgbar bis zum Quelldokument",
+          "Eine Liste der Fragen, die noch niemand dokumentiert hat"
+        ],
+        "human": "Die zuständige Person schließt die Lücken, die das Protokoll zeigt. Der Assistent macht sie sichtbar, er überdeckt sie nicht."
+      }
+    ]
+  },
   "reports": {
     "cta": "Mehr erfahren",
     "items": [

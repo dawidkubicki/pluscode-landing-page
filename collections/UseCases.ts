@@ -31,6 +31,21 @@ export const UseCases: CollectionConfig = {
       admin: { description: "Card background image." },
     },
     {
+      name: "art",
+      type: "select",
+      options: [
+        { label: "Document into a system", value: "document" },
+        { label: "Assistant answering", value: "assistant" },
+        { label: "Forecast curve", value: "forecast" },
+        { label: "Inspected part", value: "vision" },
+        { label: "Searched documents", value: "knowledge" },
+      ],
+      admin: {
+        description:
+          "Drawing used when no image is uploaded. Left empty, the card falls back to the drawing that matches its position in the mosaic.",
+      },
+    },
+    {
       name: "href",
       type: "text",
       admin: {
