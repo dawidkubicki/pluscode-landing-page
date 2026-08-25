@@ -2,6 +2,10 @@ import { findDocs, findGlobal } from "./cms";
 import type { Locale } from "./i18n/config";
 import { getDictionary } from "./i18n/dictionaries";
 import { img, type Img } from "./team";
+import {
+  isArtKind,
+  type UseCaseArtKind,
+} from "@/app/(frontend)/[lang]/components/use-case-art";
 
 export type UseCasesSectionContent = {
   label: string;
@@ -34,6 +38,8 @@ export type UseCaseCard = {
   category: string;
   href: string | null;
   image: Img;
+  /** Drawing to fall back on when there is no uploaded image. */
+  art: UseCaseArtKind | null;
   featured: boolean;
 };
 
@@ -42,6 +48,7 @@ export type UseCaseDoc = {
   title: string;
   category?: string | null;
   image?: unknown;
+  art?: string | null;
   href?: string | null;
   featured?: boolean | null;
   order?: number | null;
@@ -54,6 +61,7 @@ function toCard(d: UseCaseDoc): UseCaseCard {
     category: d.category ?? "",
     href: d.href ?? null,
     image: img(d.image as never, d.title),
+    art: isArtKind(d.art) ? d.art : null,
     featured: !!d.featured,
   };
 }
@@ -82,6 +90,7 @@ export async function getUseCases(
     category: item.category,
     href: null,
     image: null,
+    art: null,
     featured: i === 0,
   }));
 }

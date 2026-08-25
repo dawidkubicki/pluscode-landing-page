@@ -5758,6 +5758,256 @@
       }
     ]
   },
+  "useCaseFlows": {
+    "label": "One level deeper",
+    "title": "Follow the data, step by step",
+    "subtitle": "Pick a use case and see the whole path: what comes in, which of your systems each step touches, where the process decides on its own, and where it stops and waits for a person.",
+    "legend": {
+      "in": "Data in",
+      "run": "What runs",
+      "out": "Data out",
+      "tools": "Systems",
+      "decision": "Decision point",
+      "pass": "Goes through",
+      "fail": "Stops for a person",
+      "human": "Where a person stays in the loop"
+    },
+    "items": [
+      {
+        "id": "invoices",
+        "tab": "Invoices",
+        "title": "Supplier invoice to posted entry",
+        "in": [
+          "Supplier invoice, PDF or scan, landing in a shared mailbox",
+          "The matching purchase order and goods receipt from the ERP",
+          "Supplier master data: tax ID, bank account, payment terms"
+        ],
+        "steps": [
+          {
+            "title": "Read",
+            "desc": "Pull the supplier, dates, tax ID, totals and every line item out of the document, whatever layout it arrives in.",
+            "tools": [
+              "Shared mailbox",
+              "Document model"
+            ]
+          },
+          {
+            "title": "Match",
+            "desc": "Set the invoice against the order and the delivery, and mark every difference in price, quantity and VAT rate.",
+            "tools": [
+              "ERP: SAP, Comarch, Dynamics",
+              "Supplier register"
+            ]
+          },
+          {
+            "title": "Post",
+            "desc": "Book what agrees, attach the source file to the entry, and hand the rest over with the difference already marked.",
+            "tools": [
+              "ERP API",
+              "Document archive"
+            ]
+          }
+        ],
+        "decision": {
+          "question": "Do the invoice, the order and the delivery agree, and was every field read with high confidence?",
+          "pass": "Booked into the ERP automatically, source file attached, into the next payment run.",
+          "fail": "Into the accountant's queue with the difference spelled out: the order says 1,200, the invoice says 1,320."
+        },
+        "out": [
+          "A posted entry in the ERP, ready for payment",
+          "An exception queue holding only the invoices a person really needs to see",
+          "A record of every field: where on the page it was read and how sure the model was"
+        ],
+        "human": "An accountant clears the exception queue and approves anything above their limit. Nothing books itself around them."
+      },
+      {
+        "id": "support",
+        "tab": "Customer support",
+        "title": "Customer question to a sent reply",
+        "in": [
+          "The incoming message, from email, chat or the contact form",
+          "Live order, delivery and invoice status out of your systems",
+          "Answers you already have: help centre, policies, resolved tickets"
+        ],
+        "steps": [
+          {
+            "title": "Understand",
+            "desc": "Work out what the customer is actually asking and which order or account it concerns.",
+            "tools": [
+              "Helpdesk: Zendesk, Freshdesk, Jira"
+            ]
+          },
+          {
+            "title": "Look up",
+            "desc": "Fetch the facts: where the parcel is, what was invoiced, what the policy allows in this case.",
+            "tools": [
+              "Order and delivery API",
+              "ERP / WMS"
+            ]
+          },
+          {
+            "title": "Draft",
+            "desc": "Write the reply in your tone of voice, in the language the customer wrote in, with the source it used attached.",
+            "tools": [
+              "Answer library",
+              "Ticket history"
+            ]
+          }
+        ],
+        "decision": {
+          "question": "Is this a routine case, and is every claim in the answer backed by a source?",
+          "pass": "Sent in seconds, ticket tagged and closed, tracking link included.",
+          "fail": "Handed to an agent with the draft, the facts behind it and one line on why it stopped."
+        },
+        "out": [
+          "An answer in the customer's inbox, in the language they wrote in",
+          "A ticket categorised, tagged and closed in the helpdesk",
+          "A weekly list of what people keep asking about, and where your process keeps failing them"
+        ],
+        "human": "Agents take the escalations and edit any draft they disagree with. Every edit becomes a better answer for the next customer."
+      },
+      {
+        "id": "demand",
+        "tab": "Demand and stock",
+        "title": "Sales history to an order proposal",
+        "in": [
+          "Two or three years of sales, per product and per location",
+          "Prices, promotions and the campaign calendar",
+          "Stock on hand, open orders and supplier lead times",
+          "Local context: holidays, school terms, weather"
+        ],
+        "steps": [
+          {
+            "title": "Forecast",
+            "desc": "Estimate demand per product and location for next week and the next quarter, as a range rather than one number.",
+            "tools": [
+              "Sales history",
+              "Forecasting models"
+            ]
+          },
+          {
+            "title": "Translate",
+            "desc": "Turn the forecast into a concrete proposal: how much to order, from which supplier, on which day.",
+            "tools": [
+              "ERP / WMS",
+              "Supplier terms"
+            ]
+          },
+          {
+            "title": "Track",
+            "desc": "Hold the forecast against what actually sold, every week, so drift shows up before it costs money.",
+            "tools": [
+              "BI dashboard"
+            ]
+          }
+        ],
+        "decision": {
+          "question": "Does the proposal fit the buyer's limits on budget, shelf life and minimum order quantity?",
+          "pass": "Lands in the ERP as a draft order, ready to release in one click.",
+          "fail": "Goes to the buyer flagged, with the reason and the nearest proposal that does fit."
+        },
+        "out": [
+          "Weekly order proposals per location",
+          "A ranked list of stock-out and overstock risks",
+          "Forecast against actual, tracked week by week and visible to everyone"
+        ],
+        "human": "The buyer sets the limits and keeps the last word. The system does the arithmetic across thousands of products, not the judgement calls."
+      },
+      {
+        "id": "quality",
+        "tab": "Quality control",
+        "title": "Camera frame to pass or fail",
+        "in": [
+          "Frames from the line camera, triggered by the controller",
+          "The reference: drawing, tolerances, an agreed set of good and bad samples",
+          "Batch, shift and machine context from the production system"
+        ],
+        "steps": [
+          {
+            "title": "Capture",
+            "desc": "Photograph every part at the same angle and the same light, in step with the line.",
+            "tools": [
+              "Line camera",
+              "PLC trigger"
+            ]
+          },
+          {
+            "title": "Compare",
+            "desc": "Check the part against the reference and locate the defect: a scratch, a gap, a misprint, a missing component.",
+            "tools": [
+              "Vision model",
+              "Edge device on the line"
+            ]
+          },
+          {
+            "title": "Record",
+            "desc": "Log the verdict with the photo, the batch and the shift, so the pattern behind the defects becomes visible.",
+            "tools": [
+              "MES",
+              "Quality report"
+            ]
+          }
+        ],
+        "decision": {
+          "question": "Is the verdict clear, or is the model unsure about this particular part?",
+          "pass": "A fail signal to the controller inside the cycle time. The part leaves the line and the batch record says why.",
+          "fail": "The photo goes to the operator's screen. Their verdict decides, and it is kept as a new example."
+        },
+        "out": [
+          "A pass or fail per part, inside the cycle time",
+          "Defect photos grouped by type, shift and machine",
+          "A growing set of examples that gets sharper with every operator verdict"
+        ],
+        "human": "Operators rule on the uncertain parts and quality sets the thresholds. The line never stops on a machine's opinion alone."
+      },
+      {
+        "id": "knowledge",
+        "tab": "Company knowledge",
+        "title": "A question to a sourced answer",
+        "in": [
+          "Documents where they already live: SharePoint, Drive, Confluence, network shares",
+          "Contracts, procedures, offers and technical documentation",
+          "Your existing permissions: who is allowed to see what"
+        ],
+        "steps": [
+          {
+            "title": "Index",
+            "desc": "Read the documents and keep each one's permissions attached, so nothing surfaces to someone who could not open the file.",
+            "tools": [
+              "SharePoint, Drive, Confluence",
+              "Your identity provider"
+            ]
+          },
+          {
+            "title": "Answer",
+            "desc": "Answer in the language the question was asked, quoting the passage and linking the document it came from.",
+            "tools": [
+              "Search across your documents",
+              "Teams, Slack or the intranet"
+            ]
+          },
+          {
+            "title": "Log",
+            "desc": "Record every question that had no documented answer, so the gaps stop being invisible.",
+            "tools": [
+              "Question log"
+            ]
+          }
+        ],
+        "decision": {
+          "question": "Is there a documented answer, and is this person allowed to see it?",
+          "pass": "The answer, with a link to the exact page or clause it came from.",
+          "fail": "It says plainly that nothing is documented and names the person who owns that area, instead of inventing something."
+        },
+        "out": [
+          "An answer in seconds instead of asking three colleagues",
+          "Every answer traceable back to a source document",
+          "A list of the questions nobody has documented yet"
+        ],
+        "human": "The owner of each area closes the gaps the log exposes. The assistant makes them visible, it does not paper over them."
+      }
+    ]
+  },
   "reports": {
     "cta": "Learn more",
     "items": [

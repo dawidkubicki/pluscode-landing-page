@@ -522,6 +522,10 @@ export interface UseCase {
    */
   image?: (number | null) | Media;
   /**
+   * Drawing used when no image is uploaded. Left empty, the card falls back to the drawing that matches its position in the mosaic.
+   */
+  art?: ('document' | 'assistant' | 'forecast' | 'vision' | 'knowledge') | null;
+  /**
    * Where the card leads: an internal path (e.g. "/insights/some-article") or a full URL.
    */
   href?: string | null;
@@ -893,6 +897,7 @@ export interface UseCasesSelect<T extends boolean = true> {
   title?: T;
   category?: T;
   image?: T;
+  art?: T;
   href?: T;
   featured?: T;
   order?: T;
