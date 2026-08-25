@@ -1,4 +1,5 @@
-import { Reveal, Stagger, StaggerItem } from "./motion";
+import { Reveal } from "./motion";
+import ProcessSteps from "./process-steps";
 import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 
@@ -26,24 +27,9 @@ export default function Process({ locale }: { locale: Locale }) {
           </Reveal>
         </div>
 
-        <Stagger
-          className="mt-14 grid border-l border-t border-cream-line sm:grid-cols-2 lg:grid-cols-4"
-          gap={0.08}
-        >
-          {t.steps.map((step) => (
-            <StaggerItem key={step.num} className="h-full">
-              <div className="flex h-full flex-col border-b border-r border-cream-line bg-white p-7 transition-colors duration-300 hover:bg-cream sm:p-8">
-                <span className="font-serif text-5xl font-light text-lime">
-                  {step.num}
-                </span>
-                <h3 className="mt-7 text-lg font-semibold text-ink">{step.title}</h3>
-                <p className="mt-3 text-[14.5px] leading-[1.65] text-ink-soft">
-                  {step.desc}
-                </p>
-              </div>
-            </StaggerItem>
-          ))}
-        </Stagger>
+        <div className="mt-14">
+          <ProcessSteps steps={t.steps} />
+        </div>
       </div>
     </section>
   );
