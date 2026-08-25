@@ -28,6 +28,7 @@ const hrefMap: Record<string, string> = {
   "industries.ecommerce": "/industries/ecommerce",
   "industries.hr": "/industries/hr",
   "industries.logistics": "/industries/logistics",
+  "industries.legal": "/industries/legal",
   "industries.ai": "/industries/ai",
   "industries.saas": "/industries/saas",
   "industries.manufacturing": "/industries/manufacturing",

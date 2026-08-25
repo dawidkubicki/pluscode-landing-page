@@ -96,6 +96,18 @@ export default function Offerings({ locale }: { locale: Locale }) {
                   </span>
                 </div>
 
+                {/* The concrete version of the pitch above: a scope a
+                    15-person firm and a corporate department can both
+                    picture themselves in. */}
+                <div className="mt-6 border-l-2 border-lime/40 pl-4">
+                  <div className="font-mono text-[11.5px] uppercase tracking-[0.14em] text-bone-dim">
+                    {t.exampleLabel}
+                  </div>
+                  <p className="mt-2 text-[14.5px] leading-[1.65] text-bone-soft">
+                    {item.example}
+                  </p>
+                </div>
+
                 <div className="mt-6 border-t border-white/10 pt-6">
                   <div className="mb-3.5 font-mono text-[11.5px] uppercase tracking-[0.14em] text-bone-dim">
                     {t.deliverablesLabel}

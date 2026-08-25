@@ -6,12 +6,13 @@ import { getDictionary } from "@/lib/i18n/dictionaries";
 /** Home "Capabilities" band — numbered practice list, linking into each subpage.
  *  Index-aligned with `services.items` in the dictionaries (AI consulting spine). */
 const hrefs = [
-  "/ai-data/consulting", // 01 AI Strategy & Roadmap
-  "/ai-data/machine-learning", // 02 Generative AI & LLM Apps
-  "/ai-data/machine-learning", // 03 AI Agents & Automation
-  "/ai-data/machine-learning", // 04 Intelligent Document Processing
-  "/ai-data/analytics", // 05 ML & Data Foundations
-  "/ai-data/consulting", // 06 AI Enablement & Governance
+  "/ai-data/consulting", // 01 Process mapping & AI roadmap
+  "/ai-data/machine-learning", // 02 Assistants that answer from your own documents
+  "/ai-data/machine-learning", // 03 Automation with a person in the loop
+  "/ai-data/machine-learning", // 04 Document & paperwork automation
+  "/ai-data/analytics", // 05 Data foundations & forecasting
+  "/ai-data/consulting/ai-governance", // 06 Data governance, risk & privacy
+  "/industries/hr", // 07 Technical hiring & competency checks
 ];
 
 export default function Services({ locale }: { locale: Locale }) {

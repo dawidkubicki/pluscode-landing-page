@@ -8,7 +8,7 @@ import { useLenis } from "lenis/react";
 import { Plus, Pill } from "./ui";
 import LocaleLink from "./locale-link";
 import { LinkedInIcon, InstagramIcon } from "./icons";
-import { locales, localeNames, type Locale } from "@/lib/i18n/config";
+import { locales, localeNames, localeLabels, type Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 type Nav = Dictionary["navigation"];
@@ -95,30 +95,69 @@ function LocaleDropdown({
   label: string;
 }) {
   const [open, setOpen] = useState(false);
+  const [canHover, setCanHover] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Hover-to-open only where a pointer can actually hover. On touch the same
+  // tap fires mouseenter and click, which opened and instantly re-closed it.
+  useEffect(() => {
+    const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const sync = () => setCanHover(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
+  const cancelClose = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  };
+  // A grace period on leave, so a diagonal path from the trigger towards the
+  // list doesn't close the menu out from under the pointer.
+  const scheduleClose = () => {
+    cancelClose();
+    closeTimer.current = setTimeout(() => setOpen(false), 240);
+  };
+  useEffect(() => cancelClose, []);
 
   useEffect(() => {
     if (!open) return;
     const onDoc = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
     };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
     document.addEventListener("mousedown", onDoc);
-    return () => document.removeEventListener("mousedown", onDoc);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDoc);
+      document.removeEventListener("keydown", onKey);
+    };
   }, [open]);
 
   return (
     <div
       ref={ref}
       className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={canHover ? () => { cancelClose(); setOpen(true); } : undefined}
+      onMouseLeave={canHover ? scheduleClose : undefined}
+      // No open-on-focus: a tap focuses the button before it clicks it, which
+      // would toggle the menu straight back shut. Enter/Space fire the click
+      // handler, so the keyboard path is covered either way.
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node)) setOpen(false);
+      }}
     >
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => { cancelClose(); setOpen((v) => !v); }}
         aria-haspopup="menu"
         aria-expanded={open}
-        aria-label={label}
+        aria-label={`${label}: ${localeLabels[active]}`}
         className="flex items-center gap-1 px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.14em] text-bone transition-colors hover:text-lime-soft"
       >
         {localeNames[active]}
@@ -126,30 +165,42 @@ function LocaleDropdown({
           <path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
+      {/* The panel hangs off a padded wrapper rather than sitting on a margin:
+          padding is part of the hover region, a margin is a dead zone that
+          fired mouseleave halfway to the list. */}
       <div
-        role="menu"
-        className={`absolute right-0 top-full z-10 mt-1.5 min-w-[3.5rem] overflow-hidden rounded-[2px] border border-white/10 bg-night-soft/95 p-1 shadow-[0_12px_30px_-12px_rgba(0,0,0,0.6)] backdrop-blur-xl transition-all duration-200 ${
-          open ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"
+        className={`absolute right-0 top-full z-30 pt-2 transition-all duration-200 ${
+          open
+            ? "visible translate-y-0 opacity-100"
+            : "pointer-events-none invisible -translate-y-1 opacity-0"
         }`}
       >
-        {locales.map((loc) => {
-          const target = `/${loc}${basePath === "/" ? "" : basePath}`;
-          const isActive = loc === active;
-          return (
-            <Link
-              key={loc}
-              href={target}
-              role="menuitem"
-              onClick={() => setOpen(false)}
-              aria-current={isActive ? "true" : undefined}
-              className={`block rounded-[2px] px-2.5 py-1 text-center font-mono text-[11px] uppercase tracking-[0.14em] transition-colors ${
-                isActive ? "bg-lime text-night" : "text-bone-soft hover:bg-white/5 hover:text-bone"
-              }`}
-            >
-              {localeNames[loc]}
-            </Link>
-          );
-        })}
+        <div
+          role="menu"
+          className="min-w-[9.5rem] overflow-hidden rounded-[2px] border border-white/10 bg-night-soft/95 p-1 shadow-[0_12px_30px_-12px_rgba(0,0,0,0.6)] backdrop-blur-xl"
+        >
+          {locales.map((loc) => {
+            const target = `/${loc}${basePath === "/" ? "" : basePath}`;
+            const isActive = loc === active;
+            return (
+              <Link
+                key={loc}
+                href={target}
+                role="menuitem"
+                onClick={() => setOpen(false)}
+                aria-current={isActive ? "true" : undefined}
+                className={`flex items-center gap-2.5 rounded-[2px] px-2.5 py-1.5 transition-colors ${
+                  isActive ? "bg-lime text-night" : "text-bone-soft hover:bg-white/5 hover:text-bone"
+                }`}
+              >
+                <span className="font-mono text-[11px] uppercase tracking-[0.14em]">
+                  {localeNames[loc]}
+                </span>
+                <span className="text-[13px]">{localeLabels[loc]}</span>
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
@@ -273,9 +324,9 @@ export default function Header({
               </LocaleLink>
             </nav>
 
-            <div className="hidden sm:block">
-              <LocaleDropdown active={locale} basePath={basePath} label={nav.language} />
-            </div>
+            {/* Also on phones: the only other switcher lives at the bottom of
+                the mega menu, which is a long scroll away. */}
+            <LocaleDropdown active={locale} basePath={basePath} label={nav.language} />
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}

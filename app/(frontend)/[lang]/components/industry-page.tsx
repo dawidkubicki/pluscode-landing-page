@@ -11,6 +11,7 @@ export type IndustrySlug =
   | "ecommerce"
   | "hr"
   | "logistics"
+  | "legal"
   | "ai"
   | "saas"
   | "manufacturing";

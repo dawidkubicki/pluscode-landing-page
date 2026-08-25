@@ -1,10 +1,10 @@
 {
   "meta": {
     "title": "Pluscode | Software Development & AI Solutions",
-    "description": "Pluscode is a software house and AI consultancy. From AI-driven innovation to custom applications, we deliver expert software development that drives measurable business impact.",
-    "ogTitle": "Pluscode | AI consulting that ships real products",
-    "ogDescription": "We don't ask for a leap of faith. We prove AI on your real data in weeks, then engineer it into production.",
-    "ogImageAlt": "Pluscode: AI consulting that ships real products",
+    "description": "Pluscode is an AI consultancy and software house. We map how your work actually runs, put AI where it removes real paperwork and manual steps, and keep it running in production. Data governance, privacy and EU regulation handled by the engineers who build the controls.",
+    "ogTitle": "Pluscode | AI consulting that puts artificial intelligence to work. For real.",
+    "ogDescription": "Less paperwork, fewer systems that refuse to talk to each other, fewer hours lost to retyping data. We map the process, put AI where it saves real hours, and run it in production.",
+    "ogImageAlt": "Pluscode: AI consulting that puts artificial intelligence to work. For real.",
     "keywords": [
       "software development",
       "AI solutions",
@@ -13,7 +13,10 @@
       "cloud",
       "data analytics",
       "Pluscode",
-      "Poznań"
+      "Poznań",
+      "data governance",
+      "process automation",
+      "EU AI Act"
     ]
   },
   "announcement": {
@@ -35,7 +38,7 @@
     "aiDataItems": {
       "machineLearning": {
         "title": "Generative AI & LLMs",
-        "description": "Copilots, RAG and agents grounded in your data"
+        "description": "Assistants and automation that work from your own data"
       },
       "dataAnalytics": {
         "title": "ML & Data Foundations",
@@ -43,7 +46,7 @@
       },
       "aiConsulting": {
         "title": "AI Strategy & Consulting",
-        "description": "Roadmaps, readiness audits and governance"
+        "description": "Process mapping, roadmaps and data governance"
       }
     },
     "servicesItems": {
@@ -82,8 +85,8 @@
     }
   },
   "hero": {
-    "headlineStart": "AI consulting that ships",
-    "subtext": "We don't ask for a leap of faith. We prove AI on your real data in weeks, then engineer it into production.",
+    "headlineStart": "AI consulting that puts artificial intelligence to work.",
+    "subtext": "You do not need another digital product. You need less paperwork, fewer systems that refuse to talk to each other, and fewer hours lost to retyping data. That is the work we take on.",
     "ctaPrimary": "Book a discovery call",
     "ctaSecondary": "See our work",
     "online": "Online",
@@ -91,8 +94,8 @@
     "call": "Call",
     "fallbackName": "Dawid Kubicki",
     "fallbackRole": "CEO & Founder",
-    "eyebrow": "AI consulting · product engineering · workshops",
-    "headlineEm": "real products",
+    "eyebrow": "AI consulting · process automation · data governance",
+    "headlineEm": "For real.",
     "headlineEnd": "",
     "stats": [
       {
@@ -124,52 +127,58 @@
   },
   "services": {
     "label": "Capabilities",
-    "title": "From AI strategy to systems in production",
-    "subtitle": "From strategy to production. Staffed by senior engineers, not slide decks.",
+    "title": "From mapping how the work runs today to systems in production",
+    "subtitle": "Senior engineers, not slide decks. We start by watching how the work actually happens, then automate the parts that cost you hours.",
     "items": [
       {
         "num": "01",
-        "title": "AI Strategy & Roadmap",
-        "desc": "An honest readiness check and a roadmap to the use cases with real ROI.",
-        "tags": "readiness audit · use-case discovery · roadmapping"
+        "title": "Process mapping & AI roadmap",
+        "desc": "We follow the paperwork through your business, count where the hours actually go, and rank the fixes by what each one saves.",
+        "tags": "process mapping · readiness audit · costed roadmap"
       },
       {
         "num": "02",
-        "title": "Generative AI & LLM Apps",
-        "desc": "Copilots and RAG grounded in your data. Accurate, cited, backed by real evals.",
-        "tags": "RAG · copilots · evals · guardrails"
+        "title": "Assistants that answer from your own documents",
+        "desc": "An assistant that reads your contracts, procedures and tickets, and answers with a link back to the source. We measure how often it is right before anyone relies on it.",
+        "tags": "answers from your own sources · quoted sources · measured accuracy"
       },
       {
         "num": "03",
-        "title": "AI Agents & Automation",
-        "desc": "Agents that take real work off your team's plate, with humans in the loop where it counts.",
-        "tags": "agentic workflows · orchestration · human-in-the-loop"
+        "title": "Automation with a person in the loop",
+        "desc": "Software that runs the repetitive steps end to end and stops for a person at the decisions that carry real risk.",
+        "tags": "step-by-step automation · approval points · full audit trail"
       },
       {
         "num": "04",
-        "title": "Intelligent Document Processing",
-        "desc": "Our flagship. LLM pipelines that read, classify and validate documents. Auditable, not manual.",
-        "tags": "OCR + LLM · extraction · straight-through"
+        "title": "Document & paperwork automation",
+        "desc": "Our flagship. Invoices, delivery notes, customs forms and contracts read, checked and written into the systems you already run. Nobody retypes anything.",
+        "tags": "scanning + reading · automatic checks · straight into your ERP"
       },
       {
         "num": "05",
-        "title": "ML & Data Foundations",
-        "desc": "Data pipelines, deployed models, and the MLOps that keeps them accurate after launch.",
-        "tags": "ML models · data infrastructure · MLOps"
+        "title": "Data foundations & forecasting",
+        "desc": "Getting your numbers into one place you can trust, then the models that predict demand, delays and risk from them.",
+        "tags": "data pipelines · forecasting models · keeping them accurate"
       },
       {
         "num": "06",
-        "title": "AI Enablement & Governance",
-        "desc": "We upskill your team and set the guardrails, so the capability stays in-house.",
-        "tags": "training · governance · adoption"
+        "title": "Data governance, risk & privacy",
+        "desc": "Who owns which data, who may see it, how long you keep it, and what the GDPR and the EU AI Act require of each use. Written by the engineers who build the controls.",
+        "tags": "data ownership · risk classification · GDPR & EU AI Act"
+      },
+      {
+        "num": "07",
+        "title": "Technical hiring & competency checks",
+        "desc": "Hiring for a skill nobody on your team has yet? Our senior engineers design and run the technical screening, and hand you a scored report you can defend.",
+        "tags": "competency verification · technical interviews · scorecards"
       }
     ]
   },
   "offerings": {
     "label": "Ways to work together",
-    "title": "Start with a workshop, scale into a system",
-    "subtitle": "Clear scope, timeline and deliverable. Fixed price, no surprises. Start small, prove value, scale what works.",
-    "note": "Every engagement starts with a free 30-minute call. You'll talk to a senior engineer, not a sales rep.",
+    "title": "Start with one process, not a transformation programme",
+    "subtitle": "The same senior engineers whether you are a 15-person forwarder or a corporate department. Fixed scope, fixed price, and you know what lands at the end before we start.",
+    "note": "Every engagement starts with a free 30-minute call. You talk to the engineer who would do the work, and you get a straight answer on whether it is worth doing at all.",
     "forLabel": "Best for",
     "deliverablesLabel": "You leave with",
     "featuredLabel": "Most popular",
@@ -177,7 +186,7 @@
       {
         "name": "AI Opportunity Workshop",
         "meta": "Half day · fixed fee",
-        "for": "Leaders scoping where to start",
+        "for": "Owners and ops leads, 10 to 500 people",
         "desc": "Pressure-test your AI ideas against ROI and feasibility. Leave with a clear first move.",
         "deliverables": [
           "Prioritized use-case shortlist",
@@ -185,12 +194,13 @@
           "Your recommended first pilot"
         ],
         "cta": "Book a workshop",
-        "featured": false
+        "featured": false,
+        "example": "Half a day with the person who actually runs operations. We walk through one week of real paperwork, count where the hours go, and leave you with two ideas worth funding and the list of ones that are not."
       },
       {
         "name": "AI Discovery Sprint",
         "meta": "2 weeks · fixed scope",
-        "for": "Teams ready to prove a use case",
+        "for": "One team with one painful process",
         "desc": "One use case, taken deep: data, feasibility and a working prototype. Commit with confidence.",
         "deliverables": [
           "Technical feasibility assessment",
@@ -198,12 +208,13 @@
           "Costed delivery roadmap"
         ],
         "cta": "Book a sprint",
-        "featured": true
+        "featured": true,
+        "example": "Two weeks on a single process. Say delivery notes that arrive as PDFs, phone photos and email attachments: we run your real ones through a working prototype and show you how often it gets them right."
       },
       {
         "name": "GenAI Proof-of-Concept",
         "meta": "4-6 weeks",
-        "for": "A validated use case that needs proof",
+        "for": "A department that has to show a result upstairs",
         "desc": "A production-grade pilot on your data, measured on real evals and ready to pitch for rollout.",
         "deliverables": [
           "Production-ready pilot",
@@ -211,12 +222,13 @@
           "Rollout plan"
         ],
         "cta": "Scope a pilot",
-        "featured": false
+        "featured": false,
+        "example": "Four to six weeks turning that prototype into something your team opens every morning: wired into the systems you already run, with the checks, logs and access rules an auditor will ask about."
       },
       {
         "name": "Fractional AI Team",
         "meta": "Monthly · ongoing",
-        "for": "Scaling AI across the org",
+        "for": "Companies with no AI people of their own",
         "desc": "A senior AI team embedded in yours: strategy, engineering and MLOps, scaling with your roadmap.",
         "deliverables": [
           "Embedded senior AI engineers",
@@ -224,9 +236,11 @@
           "Flexible monthly capacity"
         ],
         "cta": "Talk to us",
-        "featured": false
+        "featured": false,
+        "example": "A few days of senior engineering a week, on your board and in your standups. Cheaper than a hire, and you can stop at the end of any month."
       }
-    ]
+    ],
+    "exampleLabel": "What that looks like"
   },
   "process": {
     "label": "How we work",
@@ -280,7 +294,7 @@
       {
         "num": "04",
         "name": "HR & Recruitment",
-        "note": "CV parsing, candidate matching at scale"
+        "note": "Voice screening calls, competency verification"
       },
       {
         "num": "05",
@@ -534,7 +548,7 @@
           },
           {
             "q": "How do you stop hallucinations?",
-            "a": "RAG grounds answers in your sources, backed by guardrails, citations, and automated evals on every release. We measure hallucination rate and gate deploys on it. Trust comes from tests, not hope."
+            "a": "The assistant answers only from your own sources and quotes them, so every answer can be checked. On top of that sit limits on what it is allowed to say, and an automated accuracy test on every release. We measure how often it makes something up and block the release when that number moves the wrong way. Trust comes from tests, not hope."
           },
           {
             "q": "Do we keep the IP and models?",
@@ -686,7 +700,7 @@
           },
           "nlp-llm": {
             "name": "NLP & LLM",
-            "teaser": "LLM apps, RAG and extraction with an evaluation harness in front of every release."
+            "teaser": "Assistants that answer from your own documents, and pipelines that pull data out of them, with an accuracy test in front of every release."
           },
           "computer-vision": {
             "name": "Computer vision",
@@ -787,11 +801,11 @@
           "nlp-llm": {
             "label": "Machine Learning",
             "title": "NLP & LLM engineering",
-            "subtitle": "RAG systems, document extraction, chat and agents, built evaluation-first so quality is measured before anything reaches users.",
+            "subtitle": "Assistants that answer from your own documents, data extraction, chat and automation, built so quality is measured before anything reaches users.",
             "breadcrumb": "NLP & LLM",
             "overviewTitle": "Language systems that hold up",
             "overview": [
-              "Most LLM demos take a weekend. Making one reliable enough to face customers or auditors is the real work: grounding answers in your sources, handling the documents that break parsers, and proving quality release after release. We build LLM applications, RAG pipelines, extraction services, chat and agent systems with that bar in mind from day one.",
+              "Most language-model demos take a weekend. Making one reliable enough to face customers or auditors is the real work: making sure every answer comes from your own sources rather than the model's imagination, handling the documents that break parsers, and proving quality release after release. We build assistants, retrieval pipelines (the pattern usually called RAG), extraction services, chat and automation with that bar in mind from day one.",
               "Delivery is evaluation-first. Before we tune prompts or choose a model, we build a test set from your real documents and questions, with pass criteria you agree to. Every change is scored against it, so hallucination rate, extraction accuracy and latency are numbers on a dashboard, not impressions from a demo.",
               "You end up with a system your team can change safely: swap the model when a better one ships, edit prompts, extend the corpus, and the eval suite tells you within minutes whether quality held. Costs are tracked per query, so the decision to scale comes with a price tag attached, not a surprise invoice at month end."
             ],
@@ -799,7 +813,7 @@
             "benefits": [
               {
                 "title": "Grounded answers",
-                "description": "RAG with citations back to your sources, so every answer can be checked and hallucination rate is measured, not guessed."
+                "description": "Answers drawn from your own sources with a citation back to each one, so every answer can be checked and the rate of made-up answers is measured, not guessed."
               },
               {
                 "title": "Evaluation before launch",
@@ -830,7 +844,7 @@
               },
               {
                 "title": "Harden for production",
-                "description": "Guardrails, fallbacks, rate limits, structured logging and cost controls around the happy path."
+                "description": "Limits on what the system may output, fallbacks, rate limits, structured logging and cost controls around the happy path."
               },
               {
                 "title": "Ship and monitor",
@@ -840,7 +854,7 @@
             "deliverablesTitle": "What you get",
             "deliverables": [
               "Evaluation suite built from your real documents",
-              "RAG or extraction pipeline deployed behind an API",
+              "Answering or extraction pipeline deployed behind an API",
               "Prompts and model configuration under version control",
               "Cost and quality dashboard per query",
               "Runbook for corpus updates and model swaps"
@@ -857,7 +871,7 @@
               },
               {
                 "q": "What about hallucinations in front of customers?",
-                "a": "Retrieval grounds answers in your content, citations make them checkable, and guardrails catch off-policy output. We measure hallucination rate on the eval set and gate releases on it."
+                "a": "Answers are drawn from your content rather than the model's memory, citations make them checkable, and a limit layer catches output that breaks your rules. We measure how often the system makes something up on a fixed test set and gate releases on that number."
               }
             ],
             "cta": {
@@ -1758,16 +1772,16 @@
       "consulting": {
         "label": "AI & Data",
         "title": "AI Consulting",
-        "subtitle": "Senior engineers who find the AI use cases worth funding, prove them on your data in weeks, and stay until they run in production.",
+        "subtitle": "Senior engineers who map how your work runs today, find the AI use cases worth funding, prove them on your data in weeks, and stay until they run in production.",
         "breadcrumb": "AI Consulting",
         "features": {
           "strategy": {
-            "title": "AI strategy development",
-            "description": "We turn your business goals into a ranked portfolio of AI use cases with owners, budgets and success metrics. The output is a plan your board can fund and your engineers can build."
+            "title": "Process mapping & AI strategy",
+            "description": "We map how the work actually runs today, step by step and system by system, then turn that into a ranked portfolio of AI use cases with owners, budgets and success metrics. The map is usually the part clients did not have."
           },
           "assessment": {
-            "title": "AI readiness assessment",
-            "description": "We audit your data, systems, skills and processes against what your target use cases actually require. You get a scorecard and a gap plan, not a maturity-model poster."
+            "title": "Data & AI readiness audit",
+            "description": "We audit your data, systems, skills and processes against what your target use cases actually require, including where the data came from, who owns it and who may see it. You get a scorecard and a gap plan, not a maturity-model poster."
           },
           "implementation": {
             "title": "Implementation planning",
@@ -1778,8 +1792,8 @@
             "description": "We train your engineers, product managers and leadership on the parts of AI they will actually touch. Hands-on sessions on your stack and your data, not generic slideware."
           },
           "governance": {
-            "title": "AI governance",
-            "description": "We set up risk classification, review gates and documentation that satisfy the EU AI Act without stalling delivery. Governance engineers follow because it fits how they work."
+            "title": "Data governance, risk & privacy",
+            "description": "Data ownership, retention, access and lineage, plus risk classification and review gates that satisfy the GDPR and the EU AI Act without stalling delivery. Governance engineers follow, because it fits how they already work."
           },
           "optimization": {
             "title": "Performance optimization",
@@ -1789,7 +1803,7 @@
         "process": {
           "discovery": {
             "title": "Discovery",
-            "description": "We interview your stakeholders and review your data, systems and workflows. Within two weeks you know which AI opportunities are real and which are noise."
+            "description": "We interview your stakeholders and map your data, systems and workflows as they actually run. Within two weeks you know which AI opportunities are real and which are noise."
           },
           "strategy": {
             "title": "Strategy",
@@ -1873,8 +1887,8 @@
             "description": "A concrete system design for your top use cases: models, data flows, integration points and infrastructure."
           },
           {
-            "title": "Governance playbook",
-            "description": "Risk classification, review gates, documentation templates and an EU AI Act compliance checklist mapped to your use cases."
+            "title": "Data governance & compliance playbook",
+            "description": "Data ownership and retention rules, risk classification, review gates, documentation templates, and a GDPR and EU AI Act checklist mapped to your use cases."
           },
           {
             "title": "Pilot evaluation report",
@@ -1893,8 +1907,8 @@
             "duration": "2 weeks · fixed fee",
             "description": "A fixed-scope audit of your workflows, data and systems that ends in a ranked shortlist of AI use cases. The right start when you know AI matters but not where.",
             "bullets": [
-              "Stakeholder interviews and workflow analysis",
-              "Data and systems review against use-case requirements",
+              "Stakeholder interviews and a written process map of the workflows in scope",
+              "Data and systems review against use-case requirements, including ownership and access",
               "Scored shortlist of use cases with ROI estimates",
               "Recommendation for your first pilot"
             ]
@@ -1917,15 +1931,15 @@
             "bullets": [
               "Monthly architecture and roadmap reviews",
               "Evaluation of new models and vendors as they ship",
-              "Hiring support and technical interviews",
+              "Competency verification and technical interviews for roles you are hiring",
               "Direct line to a senior engineer, no ticket queue"
             ]
           }
         ],
         "toolsTitle": "Methods and stacks we work with",
         "tools": [
-          "LLM evaluation harnesses",
-          "RAG architectures",
+          "Accuracy test suites for LLMs",
+          "Answering from your own sources (RAG)",
           "Agent architectures",
           "OpenAI & Anthropic APIs",
           "Azure OpenAI",
@@ -1937,7 +1951,10 @@
           "MLOps foundations",
           "EU AI Act compliance",
           "Cost & latency modeling",
-          "Build-vs-buy analysis"
+          "Build-vs-buy analysis",
+          "Process mapping (BPMN)",
+          "Data governance frameworks",
+          "GDPR & privacy by design"
         ],
         "whoTitle": "Who this is for",
         "who": [
@@ -1971,11 +1988,11 @@
           },
           "genai-implementation": {
             "name": "GenAI implementation",
-            "teaser": "RAG, agents and LLM features taken from validated pilot to monitored production."
+            "teaser": "Assistants, automation and language-model features taken from validated pilot to monitored production."
           },
           "ai-governance": {
-            "name": "AI governance",
-            "teaser": "EU AI Act compliance, risk gates and model documentation that do not stall delivery."
+            "name": "Data & AI governance",
+            "teaser": "Data ownership, retention and access, plus GDPR and EU AI Act compliance that does not stall delivery."
           },
           "team-enablement": {
             "name": "Team enablement",
@@ -2150,12 +2167,12 @@
           "genai-implementation": {
             "label": "AI Consulting",
             "title": "GenAI implementation",
-            "subtitle": "RAG systems, agents and LLM features taken from validated idea to monitored production. Built on evals, not vibes.",
+            "subtitle": "Assistants that answer from your own documents, automation and language-model features, taken from validated idea to monitored production. Built on measurements, not vibes.",
             "breadcrumb": "GenAI implementation",
             "overviewTitle": "What it is",
             "overview": [
               "GenAI implementation is where a validated use case becomes a system your business runs on. We design and build LLM features, retrieval pipelines and agent workflows, integrated with your existing systems and measured by an evaluation harness from day one. Production is the goal, and the pilot is a checkpoint on the way there.",
-              "The work runs in stages: architecture and data pipeline first, then a pilot on your real data measured against an agreed baseline, then production hardening with guardrails, monitoring, cost controls and a rollout plan. You see measured quality numbers at every stage, and a no-go is always an acceptable outcome, agreed before we start.",
+              "The work runs in stages: architecture and data pipeline first, then a pilot on your real data measured against an agreed baseline, then production hardening with limits on what the system may do, monitoring, cost controls and a rollout plan. You see measured quality numbers at every stage, and a no-go is always an acceptable outcome, agreed before we start.",
               "What changes for you: an AI feature with known accuracy, latency and cost per request, running inside your infrastructure and your compliance boundaries. Your team gets the evaluation harness, the runbooks and the training to go with them, so they can extend, retrain and operate the system without depending on us for every change."
             ],
             "benefitsTitle": "Why it works",
@@ -2173,7 +2190,7 @@
                 "description": "Model routing, caching and prompt budgets are engineered in from the start, not patched on after the first invoice."
               },
               {
-                "title": "Guardrails that hold",
+                "title": "Limits that hold",
                 "description": "Input validation, output filtering and fallbacks for the failure modes LLMs actually have in production."
               },
               {
@@ -2193,7 +2210,7 @@
               },
               {
                 "title": "Harden",
-                "description": "Guardrails, monitoring, load and cost testing, security review, and integration into your deployment pipeline."
+                "description": "Output limits, monitoring, load and cost testing, security review, and integration into your deployment pipeline."
               },
               {
                 "title": "Roll out and hand over",
@@ -2204,7 +2221,7 @@
             "deliverables": [
               "Production-ready GenAI system in your infrastructure",
               "Evaluation harness with baseline and quality metrics",
-              "Guardrail and fallback layer for production failure modes",
+              "A limit and fallback layer for the ways these systems fail in production",
               "Monitoring dashboard for quality, latency and cost",
               "Runbooks and handover training for your team"
             ],
@@ -2231,24 +2248,24 @@
           },
           "ai-governance": {
             "label": "AI Consulting",
-            "title": "AI governance",
-            "subtitle": "Risk classification, review gates and documentation that satisfy the EU AI Act without stalling your roadmap.",
-            "breadcrumb": "AI governance",
+            "title": "Data & AI governance",
+            "subtitle": "Who owns which data, who may see it, how long you keep it, and what the GDPR and the EU AI Act require of every AI use. Set up so it does not stall your roadmap.",
+            "breadcrumb": "Data & AI governance",
             "overviewTitle": "What it is",
             "overview": [
-              "AI governance makes your AI systems auditable, compliant and safe to scale. We classify your use cases under the EU AI Act, set up the risk assessments and documentation each class requires, and define review gates for new AI initiatives. Built by engineers, the whole setup fits the way your teams actually ship software today.",
-              "The engagement starts with an inventory: every AI system, use case and vendor tool in play, classified by risk. From there we write the policies that matter for your exposure: data handling, human oversight, model documentation, incident response. The checks are wired into your existing delivery process, not into a parallel bureaucracy.",
-              "What changes: your compliance and legal teams get evidence they can hand to auditors, and your engineers get clear rules instead of case-by-case escalation. New AI initiatives clear governance in days rather than weeks, because the gates and templates already exist and everyone involved knows exactly how to use them."
+              "Governance starts with the data, not the model. We map where each dataset comes from, who owns it, who may see it, how long you are allowed to keep it and where it flows next. Most companies discover here that the same customer record lives in four systems under three different retention rules, and that is the finding that makes the rest of the work possible.",
+              "On top of that we classify your AI use cases under the EU AI Act, set up the risk assessments and documentation each class requires, and write the policies that matter for your exposure: personal-data handling and the GDPR basis for it, human oversight, model documentation, incident response. The engagement starts with an inventory of every AI system, use case and vendor tool in play, including the unofficial ones your teams already use. The checks are wired into your existing delivery process, not into a parallel bureaucracy.",
+              "What changes: your compliance and legal teams get evidence they can hand to auditors or to a data protection authority, and your engineers get clear rules instead of case-by-case escalation. New AI initiatives clear governance in days rather than weeks, because the gates, the data map and the templates already exist and everyone involved knows how to use them."
             ],
             "benefitsTitle": "Why it works",
             "benefits": [
               {
-                "title": "EU AI Act, mapped to your systems",
-                "description": "Each use case classified by risk with its concrete obligations listed, so compliance work targets what the law actually requires."
+                "title": "A map of your data, not a policy binder",
+                "description": "Every dataset traced to its source, its owner, its retention window and the systems it flows into. That map is what makes every later compliance question answerable in minutes."
               },
               {
-                "title": "Governance inside the pipeline",
-                "description": "Checks live in your delivery workflow, not in a separate committee. Engineers follow the process because it adds no drag."
+                "title": "GDPR and the EU AI Act in one pass",
+                "description": "Personal-data obligations and AI risk classification handled together, per use case, because in practice they land on the same systems and the same teams."
               },
               {
                 "title": "Audit-ready documentation",
@@ -2266,8 +2283,8 @@
             "approachTitle": "How we run it",
             "approach": [
               {
-                "title": "Inventory",
-                "description": "We catalogue every AI system, use case and vendor tool in play, including the unofficial ones your teams already use."
+                "title": "Map the data",
+                "description": "Where each dataset comes from, who owns it, who has access, how long it is kept and which systems it flows into, including the spreadsheets nobody admits to."
               },
               {
                 "title": "Classify",
@@ -2284,8 +2301,10 @@
             ],
             "deliverablesTitle": "What you get",
             "deliverables": [
+              "Data map: sources, owners, access, retention and downstream flows",
               "AI system inventory with EU AI Act risk classification",
               "Governance playbook with policies and review gates",
+              "GDPR records of processing and privacy impact assessments for AI uses",
               "Model documentation and data lineage templates",
               "Human oversight and incident response procedures",
               "Compliance evidence pack for audits"
@@ -2303,12 +2322,16 @@
               {
                 "q": "We already have a compliance team. Why involve engineers?",
                 "a": "Because the obligations land in code: logging, oversight hooks, documentation, evaluation evidence. We translate legal requirements into technical controls your compliance team can verify, which is the part most policy documents skip."
+              },
+              {
+                "q": "Is this about the AI Act or about the GDPR?",
+                "a": "Both, and separating them wastes your time. An AI use case almost always processes personal data, so it needs a lawful basis, a retention rule and an access model under the GDPR, and a risk classification with its documentation under the AI Act. We work through them together, per use case, and you end up with one set of evidence instead of two projects that contradict each other."
               }
             ],
             "cta": {
-              "title": "Get compliant without stalling",
-              "subtitle": "Book a call to scope the inventory and classification. It is the fastest way to learn your real exposure.",
-              "button": "Start with the inventory"
+              "title": "Start with the data map",
+              "subtitle": "Book a call to scope the data map and the AI inventory. It is the fastest way to learn your real exposure under both the GDPR and the EU AI Act.",
+              "button": "Scope the data map"
             }
           },
           "team-enablement": {
@@ -2319,7 +2342,7 @@
             "overviewTitle": "What it is",
             "overview": [
               "Team enablement makes our involvement temporary by design. We train your engineers, product managers and leadership on the AI skills their roles actually need, working on your codebase and your data rather than toy examples. The goal is a team that scopes, builds and operates AI features without external help, and knows when to ask for it.",
-              "Formats match the audience: hands-on workshops for engineers covering RAG, evals, prompting and agent patterns; use-case and scoping sessions for product teams; briefings for leadership on cost, risk and realistic timelines. Sessions run on your stack, and every exercise leaves working code or a usable artifact behind, not just notes.",
+              "Formats match the audience: hands-on workshops for engineers covering retrieval (RAG), accuracy testing, prompting and automation patterns; use-case and scoping sessions for product teams; briefings for leadership on cost, risk and realistic timelines. Sessions run on your stack, and every exercise leaves working code or a usable artifact behind, not just notes.",
               "What changes: AI stops being one specialist's domain. Engineers ship LLM features with evals attached, product managers write AI specs that survive contact with reality, and leadership makes fund-or-kill decisions on real numbers. Internal champions carry the practice forward after we leave, which is the point of the whole exercise."
             ],
             "benefitsTitle": "Why it works",
@@ -3256,7 +3279,7 @@
           },
           "ai": {
             "title": "AI capabilities as APIs",
-            "description": "We wrap models, RAG pipelines and agents in stable, monitored endpoints with cost controls and fallbacks. Your AI features become products other teams can build on."
+            "description": "We wrap models, retrieval pipelines and automation in stable, monitored endpoints with cost controls and fallbacks. Your AI features become products other teams can build on."
           }
         },
         "processTitle": "How a build runs",
@@ -5088,6 +5111,7 @@
             "ecommerce": "E-Commerce & Retail",
             "hr": "HR & Recruitment",
             "logistics": "Logistics & Transport",
+            "legal": "Legal",
             "ai": "AI & Machine Learning",
             "saas": "SaaS & Startups",
             "manufacturing": "Manufacturing & Industry"
@@ -5300,62 +5324,62 @@
       },
       "hr": {
         "label": "HR & Recruitment",
-        "title": "Revolutionizing Human Resources",
-        "subtitle": "We build intelligent HR solutions that streamline recruitment, enhance employee experience, and provide actionable workforce insights.",
+        "title": "Screening, verification and the paperwork behind hiring",
+        "subtitle": "Your ATS already parses CVs and matches candidates. We work on what it cannot do: the first screening conversation, verifying skills nobody in-house can judge, and keeping candidate data on the right side of the GDPR.",
         "challenges": {
           "challenge1": {
-            "title": "Talent Acquisition",
-            "description": "Finding and attracting qualified candidates in a competitive market while reducing time-to-hire."
+            "title": "The first call is the bottleneck",
+            "description": "Recruiters lose their week to screening calls that mostly end in a no. Meanwhile the strong candidates wait days for a callback and take the other offer."
           },
           "challenge2": {
-            "title": "Employee Engagement",
-            "description": "Maintaining workforce motivation and reducing turnover in an era of remote and hybrid work."
+            "title": "Hiring for skills you cannot judge",
+            "description": "The first data engineer, the first ML person, the first security lead. Nobody in the building can tell a strong answer from a confident one."
           },
           "challenge3": {
-            "title": "Administrative Burden",
-            "description": "Manual HR processes consume valuable time that could be spent on strategic initiatives."
+            "title": "Your ATS already does the easy part",
+            "description": "CV parsing and candidate matching ship with every modern ATS. Buying a second one changes nothing, because the time is going somewhere else."
           },
           "challenge4": {
-            "title": "Data-Driven HR",
-            "description": "Turning HR data into insights for better workforce planning and decision-making."
+            "title": "Candidate data is regulated data",
+            "description": "Consent, retention windows and the rules on automated decisions in hiring. Under the EU AI Act, recruitment AI counts as high risk, and that carries obligations."
           }
         },
         "solutions": {
           "ai": {
-            "title": "AI & Machine Learning",
-            "description": "AI-powered candidate matching, resume screening, employee sentiment analysis, and attrition prediction."
+            "title": "Voice screening",
+            "description": "An AI caller that runs the first conversation, sounds like a person, and hands your recruiter a transcript, a summary and a recommendation."
           },
           "web": {
-            "title": "HR Platforms",
-            "description": "Comprehensive HRIS systems, applicant tracking, and employee self-service portals."
+            "title": "Competency verification",
+            "description": "Our senior engineers design the task, run the technical interview and score it, for the roles your own team cannot assess yet."
           },
           "mobile": {
-            "title": "Mobile HR Apps",
-            "description": "On-the-go access for time tracking, leave requests, team communication, and mobile learning."
+            "title": "Hiring paperwork",
+            "description": "Contracts, right-to-work documents and onboarding forms read, checked and filed into your HR system without anyone retyping them."
           },
           "cloud": {
-            "title": "Secure HR Cloud",
-            "description": "Scalable infrastructure for HR data with role-based access and compliance features."
+            "title": "Candidate data governance",
+            "description": "Consent tracking, retention rules, access control and the EU AI Act documentation that hiring AI now requires."
           }
         },
         "useCases": {
           "case1": {
-            "title": "Intelligent Recruitment Platform",
-            "description": "End-to-end ATS with AI-powered candidate screening, interview scheduling, and collaborative hiring workflows."
+            "title": "A screening call that does not sound like a robot",
+            "description": "The assistant calls within minutes of the application, asks your five qualifying questions, handles the follow-ups, and books the interview when the answers hold up. Every call is transcribed, and every candidate gets the same questions."
           },
           "case2": {
-            "title": "Employee Experience Hub",
-            "description": "Unified platform for onboarding, learning, performance management, and internal communications."
+            "title": "Competency verification for a role you are filling for the first time",
+            "description": "You are hiring your first data engineer and nobody internally can grade the answers. We write the task, sit in the technical interview and hand you a scored report with the reasoning, so the decision stays yours and it holds up."
           },
           "case3": {
-            "title": "Workforce Analytics Dashboard",
-            "description": "Real-time insights into headcount, turnover, engagement scores, and compensation benchmarking."
+            "title": "Candidate data you can show an auditor",
+            "description": "One record per candidate with consent and retention dates attached, access logged, and a written classification of every automated step in your hiring flow against the EU AI Act."
           }
         },
         "cta": {
-          "title": "Ready to transform your HR operations?",
-          "subtitle": "Let's build solutions that help you attract, retain, and develop top talent.",
-          "button": "Get started"
+          "title": "Want the first screening call off your recruiters' plate?",
+          "subtitle": "Book 30 minutes. Tell us what your first call sounds like today, and we will tell you whether automating it is worth the money.",
+          "button": "Book a call"
         }
       },
       "logistics": {
@@ -5416,6 +5440,66 @@
           "title": "Ready to optimize your logistics?",
           "subtitle": "Let's build solutions that deliver efficiency gains across your supply chain.",
           "button": "Plan your project"
+        }
+      },
+      "legal": {
+        "label": "Legal",
+        "title": "We read every contract, so your lawyers read the ones that matter",
+        "subtitle": "Law firms and in-house legal teams hold more documents than anyone can get through. We build the systems that pull out the clauses, flag every deviation from your playbook and find the paragraph you half-remember, each answer citing the page it came from. A lawyer still signs off. That part does not change.",
+        "challenges": {
+          "challenge1": {
+            "title": "Review is the bottleneck, not the drafting",
+            "description": "The standard NDA takes ten minutes and there are forty of them this week. The one that genuinely needed two hours is somewhere in the same pile."
+          },
+          "challenge2": {
+            "title": "Nobody can answer 'which of our contracts say X'",
+            "description": "The answer is spread across a shared drive, an email archive and a filing cabinet. Digging it out costs a week, so after a while the question stops being asked."
+          },
+          "challenge3": {
+            "title": "Scanned paper that ordinary tools give up on",
+            "description": "Signed originals come back as photographs: stamps, handwriting in the margin, one page upside down. That is exactly where standard document tools fail."
+          },
+          "challenge4": {
+            "title": "Confidentiality leaves no room for guessing",
+            "description": "Professional privilege, the GDPR and your bar obligations all say the same thing: the documents cannot leave your control, and every automated step has to be explainable."
+          }
+        },
+        "solutions": {
+          "ai": {
+            "title": "Clause extraction & review",
+            "description": "Every contract read against your playbook: clauses pulled out, deviations flagged, and the risky ones pushed to the top of the queue."
+          },
+          "web": {
+            "title": "Search across everything you hold",
+            "description": "Ask in plain language, get the paragraph back with its document, page and signature date. No keyword guessing."
+          },
+          "mobile": {
+            "title": "Scanned and handwritten documents",
+            "description": "Photographed pages, stamps, marginalia and signature blocks read reliably, because that is what most legal archives actually look like."
+          },
+          "cloud": {
+            "title": "Privilege & data protection",
+            "description": "Everything runs inside your tenancy or on models you host, with access logged per document and retention rules your bar association and the GDPR both accept."
+          }
+        },
+        "useCases": {
+          "case1": {
+            "title": "The forty NDAs nobody wants to read",
+            "description": "Incoming agreements checked against your standard positions overnight. In the morning your team sees which are clean, which carry three deviations, and exactly which sentence is worth arguing about."
+          },
+          "case2": {
+            "title": "Due diligence on a data room, in days rather than weeks",
+            "description": "Thousands of documents sorted, change-of-control and assignment clauses extracted, obligations tabulated with a link back to the page. Your associates verify findings instead of hunting for them."
+          },
+          "case3": {
+            "title": "An answer you can trace back to the source",
+            "description": "Ask which of your contracts carry uncapped liability and get a list with the clause quoted and the file named. Anything the system cannot source, it says so instead of inventing it."
+          }
+        },
+        "cta": {
+          "title": "Sitting on an archive nobody has time to read?",
+          "subtitle": "Book 30 minutes. Bring one contract type and we will tell you what a system could reliably pull out of it, and what it could not.",
+          "button": "Book a call"
         }
       },
       "ai": {
@@ -6087,7 +6171,7 @@
             {
               "num": "04",
               "title": "Harden",
-              "desc": "We stress the pilot with edge cases, adversarial inputs, and failure modes, then add the guardrails, fallbacks, and monitoring that production will demand."
+              "desc": "We stress the pilot with edge cases, adversarial inputs, and failure modes, then add the output limits, fallbacks, and monitoring that production will demand."
             },
             {
               "num": "05",
