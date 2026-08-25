@@ -1,7 +1,9 @@
+import type { ReactNode } from "react";
 import { PageHero, CtaBand } from "./page-hero";
 import Footer from "./footer";
 import { Reveal, Stagger, StaggerItem } from "./motion";
 import { type VisualKind } from "./visual";
+import { BrandMark } from "./brand-marks";
 import LocaleLink from "./locale-link";
 import { Arrow } from "./ui";
 import type { Locale } from "@/lib/i18n/config";
@@ -56,7 +58,10 @@ export type ServiceData = {
   modelsTitle?: string;
   modelsIntro?: string;
   models?: EngagementModel[];
-  /** Tooling chip row. */
+  /** Named products we build on, each chip carrying its vendor mark. */
+  techTitle?: string;
+  tech?: { mark: string; name: string }[];
+  /** Tooling chip row. On pages that also list `tech`, this is the methods half. */
   toolsTitle?: string;
   tools?: string[];
   /** "Built for" audience grid. */
@@ -72,6 +77,34 @@ export type ServiceData = {
 
 /** Two-digit index label ("01", "02", ...). */
 const num = (i: number) => String(i + 1).padStart(2, "0");
+
+/** One labelled row of chips: mono eyebrow on the left, chips wrapping beside it. */
+function ToolRow({
+  title,
+  className = "",
+  children,
+}: {
+  title?: string;
+  className?: string;
+  children: ReactNode;
+}) {
+  return (
+    <div
+      className={`flex flex-col items-start gap-6 lg:flex-row lg:gap-12 ${className}`}
+    >
+      {title && (
+        <Reveal>
+          <div className="shrink-0 font-mono text-[13px] uppercase leading-[1.5] tracking-[0.14em] text-lime lg:w-[15rem] lg:pt-2.5">
+            {title}
+          </div>
+        </Reveal>
+      )}
+      <Stagger className="flex flex-wrap gap-2.5" gap={0.03}>
+        {children}
+      </Stagger>
+    </div>
+  );
+}
 
 /** Green checkmark used in checklists on light surfaces. */
 export function Check({ className = "" }: { className?: string }) {
@@ -145,6 +178,7 @@ export default function ServicePage({
   const stats = d.stats ?? [];
   const deliverables = d.deliverables ?? [];
   const models = d.models ?? [];
+  const tech = d.tech ?? [];
   const tools = d.tools ?? [];
   const who = d.who ?? [];
   const subEntries = hrefBase && d.sub ? Object.entries(d.sub) : [];
@@ -338,26 +372,40 @@ export default function ServicePage({
         </section>
       )}
 
-      {/* Tooling */}
-      {tools.length > 0 && (
+      {/* Tooling. Two rows when a page separates the products it builds on
+          (with their marks) from the methods it applies; one row otherwise. */}
+      {(tech.length > 0 || tools.length > 0) && (
         <section className="border-t border-cream-line bg-white">
-          <div className="mx-auto flex max-w-[1240px] flex-col items-start gap-6 px-5 py-12 sm:px-10 sm:py-14 lg:flex-row lg:items-center lg:gap-12">
-            {d.toolsTitle && (
-              <Reveal>
-                <div className="shrink-0 font-mono text-[13px] uppercase tracking-[0.14em] text-lime">
-                  {d.toolsTitle}
-                </div>
-              </Reveal>
+          <div className="mx-auto max-w-[1240px] px-5 py-12 sm:px-10 sm:py-14">
+            {tech.length > 0 && (
+              <ToolRow title={d.techTitle}>
+                {tech.map((t) => (
+                  <StaggerItem key={t.name}>
+                    <span className="inline-flex items-center gap-2 rounded-[2px] border border-cream-line px-3.5 py-2 font-mono text-[13px] text-ink-soft">
+                      <BrandMark name={t.mark} className="size-[18px] shrink-0 text-ink" />
+                      {t.name}
+                    </span>
+                  </StaggerItem>
+                ))}
+              </ToolRow>
             )}
-            <Stagger className="flex flex-wrap gap-2.5" gap={0.03}>
-              {tools.map((t) => (
-                <StaggerItem key={t}>
-                  <span className="inline-block rounded-[2px] border border-cream-line px-3.5 py-2 font-mono text-[13px] text-ink-soft">
-                    {t}
-                  </span>
-                </StaggerItem>
-              ))}
-            </Stagger>
+
+            {tools.length > 0 && (
+              <ToolRow
+                title={d.toolsTitle}
+                className={
+                  tech.length > 0 ? "mt-8 border-t border-cream-line pt-8" : ""
+                }
+              >
+                {tools.map((t) => (
+                  <StaggerItem key={t}>
+                    <span className="inline-block rounded-[2px] border border-cream-line px-3.5 py-2 font-mono text-[13px] text-ink-soft">
+                      {t}
+                    </span>
+                  </StaggerItem>
+                ))}
+              </ToolRow>
+            )}
           </div>
         </section>
       )}

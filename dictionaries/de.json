@@ -86,7 +86,7 @@
   },
   "hero": {
     "headlineStart": "KI-Beratung, die künstliche Intelligenz an die Arbeit bringt.",
-    "subtext": "Sie brauchen kein weiteres digitales Produkt. Sie brauchen weniger Papierkram, weniger Systeme, die nicht miteinander reden, und weniger Stunden fürs Abtippen von Daten. Genau das übernehmen wir.",
+    "subtext": "Sie brauchen kein weiteres digitales Produkt. Sie brauchen weniger Papierkram und weniger Stunden fürs Abtippen von Daten. Genau das übernehmen wir.",
     "ctaPrimary": "Erstgespräch buchen",
     "ctaSecondary": "Referenzen ansehen",
     "online": "Online",
@@ -1936,16 +1936,38 @@
             ]
           }
         ],
-        "toolsTitle": "Methoden und Stacks, mit denen wir arbeiten",
+        "techTitle": "Technologien, auf denen wir aufbauen",
+        "tech": [
+          {
+            "mark": "openai",
+            "name": "OpenAI-API"
+          },
+          {
+            "mark": "anthropic",
+            "name": "Anthropic-API"
+          },
+          {
+            "mark": "azure",
+            "name": "Azure OpenAI"
+          },
+          {
+            "mark": "bedrock",
+            "name": "AWS Bedrock"
+          },
+          {
+            "mark": "langgraph",
+            "name": "LangGraph"
+          },
+          {
+            "mark": "vector",
+            "name": "Vektordatenbanken"
+          }
+        ],
+        "toolsTitle": "Methoden, mit denen wir arbeiten",
         "tools": [
           "Genauigkeitstests für LLMs",
           "Antworten aus Ihren Quellen (RAG)",
           "Agenten-Architekturen",
-          "OpenAI- & Anthropic-APIs",
-          "Azure OpenAI",
-          "AWS Bedrock",
-          "LangGraph",
-          "Vektordatenbanken",
           "Prompt-Versionierung & -Tests",
           "Data-Readiness-Audits",
           "MLOps-Grundlagen",

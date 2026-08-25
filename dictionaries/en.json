@@ -86,7 +86,7 @@
   },
   "hero": {
     "headlineStart": "AI consulting that puts artificial intelligence to work.",
-    "subtext": "You do not need another digital product. You need less paperwork, fewer systems that refuse to talk to each other, and fewer hours lost to retyping data. That is the work we take on.",
+    "subtext": "You do not need another digital product. You need less paperwork and fewer hours lost to retyping data. That is the work we take on.",
     "ctaPrimary": "Book a discovery call",
     "ctaSecondary": "See our work",
     "online": "Online",
@@ -1936,16 +1936,38 @@
             ]
           }
         ],
-        "toolsTitle": "Methods and stacks we work with",
+        "techTitle": "Technologies we build on",
+        "tech": [
+          {
+            "mark": "openai",
+            "name": "OpenAI API"
+          },
+          {
+            "mark": "anthropic",
+            "name": "Anthropic API"
+          },
+          {
+            "mark": "azure",
+            "name": "Azure OpenAI"
+          },
+          {
+            "mark": "bedrock",
+            "name": "AWS Bedrock"
+          },
+          {
+            "mark": "langgraph",
+            "name": "LangGraph"
+          },
+          {
+            "mark": "vector",
+            "name": "Vector databases"
+          }
+        ],
+        "toolsTitle": "Methods we apply",
         "tools": [
           "Accuracy test suites for LLMs",
           "Answering from your own sources (RAG)",
           "Agent architectures",
-          "OpenAI & Anthropic APIs",
-          "Azure OpenAI",
-          "AWS Bedrock",
-          "LangGraph",
-          "Vector databases",
           "Prompt versioning & testing",
           "Data readiness audits",
           "MLOps foundations",

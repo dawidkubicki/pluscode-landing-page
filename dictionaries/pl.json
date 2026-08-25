@@ -86,7 +86,7 @@
   },
   "hero": {
     "headlineStart": "Doradztwo AI, które zaprzęga sztuczną inteligencję do pracy.",
-    "subtext": "Nie potrzebujesz kolejnego produktu cyfrowego. Potrzebujesz mniej papierologii, mniej systemów, które ze sobą nie rozmawiają, i mniej godzin traconych na przepisywanie danych. Tym się zajmujemy.",
+    "subtext": "Nie potrzebujesz kolejnego produktu cyfrowego. Potrzebujesz mniej papierologii i mniej godzin traconych na przepisywanie danych. Tym się zajmujemy.",
     "ctaPrimary": "Umów rozmowę wstępną",
     "ctaSecondary": "Zobacz nasze realizacje",
     "online": "Online",
@@ -1936,16 +1936,38 @@
             ]
           }
         ],
-        "toolsTitle": "Metody i technologie, z którymi pracujemy",
+        "techTitle": "Technologie, na których budujemy",
+        "tech": [
+          {
+            "mark": "openai",
+            "name": "API OpenAI"
+          },
+          {
+            "mark": "anthropic",
+            "name": "API Anthropic"
+          },
+          {
+            "mark": "azure",
+            "name": "Azure OpenAI"
+          },
+          {
+            "mark": "bedrock",
+            "name": "AWS Bedrock"
+          },
+          {
+            "mark": "langgraph",
+            "name": "LangGraph"
+          },
+          {
+            "mark": "vector",
+            "name": "Bazy wektorowe"
+          }
+        ],
+        "toolsTitle": "Metody, którymi pracujemy",
         "tools": [
           "Zestawy testów trafności dla LLM",
           "Odpowiadanie z Twoich źródeł (RAG)",
           "Architektury agentowe",
-          "API OpenAI i Anthropic",
-          "Azure OpenAI",
-          "AWS Bedrock",
-          "LangGraph",
-          "Bazy wektorowe",
           "Wersjonowanie i testowanie promptów",
           "Audyty gotowości danych",
           "Fundamenty MLOps",
