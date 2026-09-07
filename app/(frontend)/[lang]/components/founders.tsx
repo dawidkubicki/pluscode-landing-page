@@ -1,33 +1,57 @@
 import Image from "next/image";
 
-import type { Dictionary } from "@/lib/i18n/dictionaries";
 import LocaleLink from "./locale-link";
+import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 /* ------------------------------------------------------------------ *
- *  PEOPLE. The band that introduces the two of us, and the only ask on
- *  the page: one button, at the bottom, after the reader has met them.
+ *  PEOPLE. The band that introduces the two of us, as the same staggered
+ *  editorial spread Cases uses, because the reference's People section
+ *  is exactly that: three portraits at three heights, a caption, a
+ *  quote, a name.
  *
- *  The reference runs a single huge quote on the left against a
- *  full-bleed portrait on the right. We have two people, so that block
- *  runs twice and the second is mirrored, which is what stops a two
- *  person band reading as one template repeated.
+ *  THREE CARDS FOR TWO PEOPLE. The third card is the two of them
+ *  together. A two card row on a twelve column grid leaves a third of
+ *  the page empty or forces each card to a half, and a half width
+ *  portrait next to a half width portrait is a team page, not an
+ *  editorial spread. The pair shot also carries the one line the other
+ *  two cannot: that the reader talks to both of these people, and to
+ *  nobody else.
  *
- *  THE MIRROR IS COLUMN PLACEMENT, NOT ORDER. Both rows put the text
- *  block first in the DOM and move it with `col-start`, so a screen
- *  reader hears caption, quote, attribution, portrait in both rows and
- *  the tab order matches the reading order. `flex-row-reverse` or a
- *  per-person DOM swap would give the same picture and a different
- *  reading order in row two. `md:row-start-1` is load bearing on the
- *  mirrored row: a definite `col-start-1` on the item that comes second
- *  would otherwise be auto placed onto a new row, since the cursor has
- *  already passed column 1.
+ *  THE STAGGER IS THE BAND. As in Cases, the offsets and the aspect
+ *  ratios are fixed per position, not per person, and they only exist
+ *  from md up: below 768px every card is full width at 4:5 with no
+ *  offset, because a stagger on a single column stack is just uneven
+ *  whitespace. All three source photographs are portrait orientation
+ *  (the pair shot is 1350 by 1800), so neither the 3:4 nor the 4:5 crop
+ *  loses a face. The portraits are already black and white; there is no
+ *  filter here and there must not be one.
  *
- *  Each row is its own `pc-grid` rather than more items on one grid.
- *  Every grid inside `pc-shell` resolves to the same 12 columns, so the
- *  rows still line up with each other and with every other band, and the
- *  large gap between people is a plain top margin instead of a fight
- *  with implicit row placement.
+ *  CAPTION ABOVE THE QUOTE. The same inversion Cases makes: the muted
+ *  line comes first and the large line second, which is what makes the
+ *  card read as editorial rather than as a tile with a subtitle. The
+ *  order of the four elements is load bearing. Each card is a `figure`
+ *  holding the portrait and the `blockquote`, and the `figcaption` is
+ *  the attribution, so the name and the role are bound to the quote in
+ *  the tree and not only on the screen. The guillemets live in the
+ *  dictionary, so the quote renders exactly as written and never gets a
+ *  second set of marks from CSS.
+ *
+ *  NOT LINKS. There is no person page to go to, so the cards carry no
+ *  hover, no underline and no group: the only action in this band is
+ *  the button in the header.
+ *
+ *  Server component: no state, no effects.
  * ------------------------------------------------------------------ */
+
+/** Per position, not per person: position 1 hangs from the header's
+ *  baseline, 2 drops furthest and widens, 3 drops half as far and
+ *  narrows again. Index 0 carries no offset so the row still hangs off
+ *  the band header. */
+const SHAPES = [
+  { offset: "", aspect: "aspect-[4/5] md:aspect-[3/4]" },
+  { offset: "md:mt-24", aspect: "aspect-[4/5]" },
+  { offset: "md:mt-12", aspect: "aspect-[4/5] md:aspect-[3/4]" },
+] as const;
 
 export default function Founders({
   dict,
@@ -41,33 +65,46 @@ export default function Founders({
           <div className="col-span-4 md:col-span-6">
             <h2 className="text-heading-xl">{dict.title}</h2>
           </div>
-          <p className="col-span-4 md:col-span-5 md:col-start-8 text-[1.125rem] leading-[1.375] text-moss">
-            {dict.intro}
-          </p>
+          <div className="col-span-4 flex flex-col items-start gap-5 md:col-span-6 md:items-end md:justify-end">
+            <p className="text-[1.125rem] leading-[1.375] text-moss">
+              {dict.intro}
+            </p>
+            <LocaleLink href="/book-a-call" className="btn btn-primary">
+              {dict.cta}
+            </LocaleLink>
+          </div>
         </div>
 
-        {dict.items.map((person, index) => {
-          const mirrored = index % 2 === 1;
+        <div className="pc-grid mt-16 md:mt-24">
+          {dict.items.map((person, i) => {
+            const shape = SHAPES[i] ?? SHAPES[0];
 
-          return (
-            <div key={person.key} className="pc-grid mt-20 md:mt-32">
+            /* `col-span-4` is a third of the page above md and the full
+               width of the four column phone grid below it, so one class
+               covers both. */
+            return (
               <figure
-                className={
-                  mirrored
-                    ? "col-span-4 md:col-span-6 md:col-start-7 md:row-start-1"
-                    : "col-span-4 md:col-span-6 md:col-start-1 md:row-start-1"
-                }
+                key={person.key}
+                className={`col-span-4 ${shape.offset}`}
               >
-                <p className="text-[1.125rem] leading-[1.375] text-moss">
+                <div
+                  className={`relative overflow-hidden bg-paper-dim ${shape.aspect}`}
+                >
+                  <Image
+                    src={person.image}
+                    alt={person.alt}
+                    fill
+                    sizes="(max-width: 767px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+                <p className="mt-6 text-[1.125rem] leading-[1.375] text-moss">
                   {person.caption}
                 </p>
-                {/* The guillemets already live in the dictionary, so the
-                    quote renders exactly as written and never gets a
-                    second set of marks from CSS. */}
-                <blockquote className="mt-6 text-heading-md text-ink">
+                <blockquote className="mt-2 text-heading-md text-ink">
                   {person.quote}
                 </blockquote>
-                <figcaption className="mt-8">
+                <figcaption className="mt-6">
                   <span className="block text-[1.125rem] leading-[1.375] text-ink">
                     {person.name}
                   </span>
@@ -76,32 +113,8 @@ export default function Founders({
                   </span>
                 </figcaption>
               </figure>
-
-              <div
-                className={`relative aspect-[4/5] overflow-hidden bg-paper-dim ${
-                  mirrored
-                    ? "col-span-4 md:col-span-5 md:col-start-1 md:row-start-1"
-                    : "col-span-4 md:col-span-5 md:col-start-8 md:row-start-1"
-                }`}
-              >
-                <Image
-                  src={person.image}
-                  alt={person.alt}
-                  fill
-                  sizes="(max-width: 767px) 100vw, 42vw"
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          );
-        })}
-
-        <div className="pc-grid mt-16">
-          <div className="col-span-4 md:col-span-6">
-            <LocaleLink href="/book-a-call" className="btn btn-primary">
-              {dict.cta}
-            </LocaleLink>
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>

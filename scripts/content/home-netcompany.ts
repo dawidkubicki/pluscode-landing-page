@@ -283,7 +283,7 @@ const en: HomeContent = {
   },
   founders: {
     title: "People",
-    intro: "Two engineers. No account managers, no handover.",
+    intro: "The people who scope the work are the people who build it.",
     cta: "Book a call",
     items: [
       {
@@ -305,6 +305,15 @@ const en: HomeContent = {
           "»First we count the hours the work costs today. If the number is small, we say so and you keep your money.«",
         image: "/assets/team/krzysztof-sulinski.jpg",
         alt: "Krzysztof Suliński",
+      },
+      {
+        key: "together",
+        name: "Dawid and Krzysztof",
+        role: "Founders, Poznań",
+        caption: "Dawid and Krzysztof on why the same people scope the work and build it",
+        quote: "»You talk to the engineer who writes the code. No account managers, no handover.«",
+        image: "/assets/team/founders.jpg",
+        alt: "Dawid Kubicki and Krzysztof Suliński",
       },
     ],
   },
@@ -335,6 +344,10 @@ const en: HomeContent = {
         role: "Consulting",
         body: "We work with Italian teams as consultants, on the same terms.",
       },
+      { code: "NL", name: "Netherlands", city: "Remote", role: "Consulting", body: "We work with Dutch teams as consultants, in English." },
+      { code: "NO", name: "Norway", city: "Remote", role: "Consulting", body: "We work with Norwegian teams as consultants, in English." },
+      { code: "SE", name: "Sweden", city: "Remote", role: "Consulting", body: "We work with Swedish teams as consultants, in English." },
+      { code: "FI", name: "Finland", city: "Remote", role: "Consulting", body: "We work with Finnish teams as consultants, in English." },
     ],
   },
   menu: {
@@ -592,7 +605,7 @@ const pl: HomeContent = {
   },
   founders: {
     title: "Ludzie",
-    intro: "Dwóch inżynierów. Bez opiekunów klienta, bez przekazywania projektu.",
+    intro: "Ci, którzy ustalają zakres pracy, to ci sami, którzy ją budują.",
     cta: "Umów rozmowę",
     items: [
       {
@@ -614,6 +627,15 @@ const pl: HomeContent = {
           "»Najpierw liczymy godziny, które ta praca kosztuje dzisiaj. Jeśli liczba jest mała, mówimy to wprost i zostają Wam pieniądze.«",
         image: "/assets/team/krzysztof-sulinski.jpg",
         alt: "Krzysztof Suliński",
+      },
+      {
+        key: "together",
+        name: "Dawid i Krzysztof",
+        role: "Założyciele, Poznań",
+        caption: "Dawid i Krzysztof o tym, dlaczego zakres ustalają ci sami ludzie, którzy potem budują",
+        quote: "»Rozmawiasz z inżynierem, który pisze kod. Bez opiekunów klienta, bez przekazywania projektu.«",
+        image: "/assets/team/founders.jpg",
+        alt: "Dawid Kubicki i Krzysztof Suliński",
       },
     ],
   },
@@ -644,6 +666,10 @@ const pl: HomeContent = {
         role: "Konsulting",
         body: "Pracujemy z włoskimi zespołami jako konsultanci, na tych samych zasadach.",
       },
+      { code: "NL", name: "Holandia", city: "Zdalnie", role: "Konsulting", body: "Pracujemy z holenderskimi zespołami jako konsultanci, po angielsku." },
+      { code: "NO", name: "Norwegia", city: "Zdalnie", role: "Konsulting", body: "Pracujemy z norweskimi zespołami jako konsultanci, po angielsku." },
+      { code: "SE", name: "Szwecja", city: "Zdalnie", role: "Konsulting", body: "Pracujemy ze szwedzkimi zespołami jako konsultanci, po angielsku." },
+      { code: "FI", name: "Finlandia", city: "Zdalnie", role: "Konsulting", body: "Pracujemy z fińskimi zespołami jako konsultanci, po angielsku." },
     ],
   },
   menu: {
@@ -901,7 +927,7 @@ const de: HomeContent = {
   },
   founders: {
     title: "Menschen",
-    intro: "Zwei Ingenieure. Keine Kundenbetreuer, keine Übergabe.",
+    intro: "Wer die Arbeit abstimmt, baut sie auch.",
     cta: "Gespräch buchen",
     items: [
       {
@@ -923,6 +949,15 @@ const de: HomeContent = {
           "»Zuerst zählen wir die Stunden, die diese Arbeit heute kostet. Ist die Zahl klein, sagen wir das, und Sie behalten Ihr Geld.«",
         image: "/assets/team/krzysztof-sulinski.jpg",
         alt: "Krzysztof Suliński",
+      },
+      {
+        key: "together",
+        name: "Dawid und Krzysztof",
+        role: "Gründer, Poznań",
+        caption: "Dawid und Krzysztof darüber, warum dieselben Leute abstimmen und bauen",
+        quote: "»Sie sprechen mit dem Ingenieur, der den Code schreibt. Keine Kundenbetreuer, keine Übergabe.«",
+        image: "/assets/team/founders.jpg",
+        alt: "Dawid Kubicki und Krzysztof Suliński",
       },
     ],
   },
@@ -953,6 +988,10 @@ const de: HomeContent = {
         role: "Beratung",
         body: "Wir arbeiten mit italienischen Teams als Berater, zu denselben Bedingungen.",
       },
+      { code: "NL", name: "Niederlande", city: "Remote", role: "Beratung", body: "Wir arbeiten mit niederländischen Teams als Berater, auf Englisch." },
+      { code: "NO", name: "Norwegen", city: "Remote", role: "Beratung", body: "Wir arbeiten mit norwegischen Teams als Berater, auf Englisch." },
+      { code: "SE", name: "Schweden", city: "Remote", role: "Beratung", body: "Wir arbeiten mit schwedischen Teams als Berater, auf Englisch." },
+      { code: "FI", name: "Finnland", city: "Remote", role: "Beratung", body: "Wir arbeiten mit finnischen Teams als Berater, auf Englisch." },
     ],
   },
   menu: {

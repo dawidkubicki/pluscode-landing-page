@@ -92,6 +92,17 @@
           "available" everywhere on the web. 8px, appears once. ---- */
   --color-status-online: #3f9142;
 
+  /* ---- EMBER. The one contrast colour, and it is a HOVER colour.
+          Dawid asked for a modern orange for the calls to action that is
+          not visible at rest: every button and editorial link is still ink
+          or white until the pointer lands, and then it goes ember. It never
+          appears on a resting surface, never on body text, never as a
+          background, so the page stays the quiet grey-green of the
+          reference and the orange is a reward for reaching for something.
+          Two steps: the fill, and a deeper press state. ---- */
+  --color-ember: #ff6a2b;
+  --color-ember-deep: #e5551a;
+
   /* ---- Type. One family, one weight. ---- */
   --font-sans: var(--font-inter), "Helvetica Neue", Helvetica, Arial,
     ui-sans-serif, system-ui, sans-serif;
@@ -455,10 +466,10 @@
     box-shadow: none;
   }
   .btn-primary:hover {
-    background-color: var(--color-deep);
+    background-color: var(--color-ember);
   }
   .btn-primary:active {
-    background-color: var(--color-carbon);
+    background-color: var(--color-ember-deep);
   }
 
   /* The white button. The default on any dark ground. */
@@ -467,7 +478,12 @@
     background-color: var(--color-white);
   }
   .btn-invert:hover {
-    background-color: var(--color-mist);
+    color: var(--color-white);
+    background-color: var(--color-ember);
+  }
+  .btn-invert:active {
+    color: var(--color-white);
+    background-color: var(--color-ember-deep);
   }
 
   .btn-outline {
@@ -477,7 +493,8 @@
   }
   .btn-outline:hover {
     color: var(--color-white);
-    background: var(--color-ink);
+    background: var(--color-ember);
+    border-color: var(--color-ember);
   }
 
   /* on a dark ground */
@@ -487,9 +504,9 @@
     border-color: var(--color-rule-dark);
   }
   .btn-outline-dark:hover {
-    color: var(--color-ink);
-    background: var(--color-white);
-    border-color: var(--color-white);
+    color: var(--color-white);
+    background: var(--color-ember);
+    border-color: var(--color-ember);
   }
 
   /* THE FOCUS RING. WCAG 2.2 asks for 3:1 against whatever the ring sits
@@ -546,7 +563,10 @@
   .pc-link {
     color: inherit;
     text-decoration: none;
-    background-image: linear-gradient(currentColor, currentColor);
+    /* The underline grows in from zero on hover, and it grows in EMBER
+       rather than in the text colour: that is the whole of the accent on
+       an editorial card. */
+    background-image: linear-gradient(var(--color-ember), var(--color-ember));
     background-size: 0% 1px;
     background-position: 0 100%;
     background-repeat: no-repeat;

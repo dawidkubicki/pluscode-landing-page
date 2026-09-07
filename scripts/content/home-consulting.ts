@@ -42,24 +42,16 @@ export type ConsultingContent = {
       num: string;
       title: string;
       body: string;
-      tags: string;
     }[];
   };
-  /** Four ways to start, each with an audience, an example and deliverables. */
+  /** Four ways to start. One line each, on purpose: the first draft carried
+   *  an audience, an example and three deliverables per item and read as a
+   *  brochure. The detail lives on the service pages. */
   offerings: {
     title: string;
     intro: string;
     cta: string;
-    forLabel: string;
-    exampleLabel: string;
-    deliverablesLabel: string;
-    items: {
-      key: string;
-      title: string;
-      audience: string;
-      example: string;
-      deliverables: string[];
-    }[];
+    items: { key: string; title: string; body: string }[];
   };
   /** How we work: the rules the work follows, which this buyer asks about. */
   approach: {
@@ -96,35 +88,30 @@ const en: ConsultingContent = {
         num: "01",
         title: "Paperwork automation",
         body: "Invoices, orders and forms are read and filed without anyone retyping them.",
-        tags: "Invoices, delivery notes, contracts, straight into your system",
       },
       {
         key: "answers",
         num: "02",
         title: "Answers from your documents",
         body: "Your team asks a question and gets the answer, with the source page attached.",
-        tags: "Your files, your wording, answers with a source",
       },
       {
         key: "software",
         num: "03",
         title: "Software development",
         body: "Custom systems built end to end by the people who will run them.",
-        tags: "Web, mobile, fits the systems you already use",
       },
       {
         key: "mvp",
         num: "04",
         title: "MVP development",
         body: "A first version live in weeks, then grown on what real users do with it.",
-        tags: "Scope, build, launch, measure",
       },
       {
         key: "forecasting",
         num: "05",
         title: "Forecasting and reporting",
         body: "Numbers from every system in one place, and a view of the months ahead.",
-        tags: "One picture, updated as the data arrives",
       },
     ],
   },
@@ -132,58 +119,11 @@ const en: ConsultingContent = {
     title: "Four ways to start",
     intro: "Pick the one that matches where you are.",
     cta: "Book a call",
-    forLabel: "For",
-    exampleLabel: "For example",
-    deliverablesLabel: "You get",
     items: [
-      {
-        key: "audit",
-        title: "Process audit",
-        audience: "Companies who know something is slow but not what to fix",
-        example:
-          "Your accounting team retypes 300 invoices a month. We count the hours and price what it takes to stop.",
-        deliverables: [
-          "A map of the process as it runs today",
-          "The hours and the cost of doing it by hand",
-          "A costed shortlist of what to fix first",
-        ],
-      },
-      {
-        key: "mvp",
-        title: "Build the first version",
-        audience: "Teams with an idea that needs to become real",
-        example:
-          "A portal where your customers check their order status without calling you.",
-        deliverables: [
-          "A working product your team can use",
-          "Live with real users, not a demo",
-          "A clear plan for what comes next",
-        ],
-      },
-      {
-        key: "ai",
-        title: "AI in daily work",
-        audience: "Companies putting AI into the work people already do",
-        example:
-          "Incoming email is read, answered where it is routine, and passed to a person where it is not.",
-        deliverables: [
-          "A system running on your own data",
-          "Checks and approvals wherever a person is needed",
-          "Handover, training and support",
-        ],
-      },
-      {
-        key: "workshop",
-        title: "Workshop",
-        audience: "Leadership and the people doing the work",
-        example:
-          "Half a day with your managers on what AI can do for your company, in plain language.",
-        deliverables: [
-          "A shared picture of what is worth doing",
-          "The ideas ranked by effort and payback",
-          "A written summary you can act on",
-        ],
-      },
+      { key: "audit", title: "Process audit", body: "We count the hours a process costs today and price what it takes to stop." },
+      { key: "mvp", title: "First version", body: "A working product with real users in weeks, then a plan for what comes next." },
+      { key: "ai", title: "AI in daily work", body: "Routine work handled by a system on your own data, with a person wherever one is needed." },
+      { key: "workshop", title: "Workshop", body: "Half a day with your managers on what AI can do for your company, in plain language." },
     ],
   },
   approach: {
@@ -265,35 +205,30 @@ const pl: ConsultingContent = {
         num: "01",
         title: "Automatyzacja papierologii",
         body: "Faktury, zamówienia i formularze zostają odczytane i opisane bez przepisywania ręcznie.",
-        tags: "Faktury, listy przewozowe, umowy, prosto do Twojego systemu",
       },
       {
         key: "answers",
         num: "02",
         title: "Odpowiedzi z Twoich dokumentów",
         body: "Zespół zadaje pytanie i dostaje odpowiedź razem ze stroną źródłową.",
-        tags: "Twoje pliki, Twoje słownictwo, odpowiedzi ze źródłem",
       },
       {
         key: "software",
         num: "03",
         title: "Tworzenie oprogramowania",
         body: "Systemy budowane od początku do końca przez ludzi, którzy potem je utrzymują.",
-        tags: "Web, mobile, dopasowane do systemów, które już macie",
       },
       {
         key: "mvp",
         num: "04",
         title: "Rozwój MVP",
         body: "Pierwsza wersja na żywo w kilka tygodni, potem rozwijana na podstawie tego, co robią użytkownicy.",
-        tags: "Zakres, budowa, wdrożenie, pomiar",
       },
       {
         key: "forecasting",
         num: "05",
         title: "Prognozy i raporty",
         body: "Liczby ze wszystkich systemów w jednym miejscu i widok najbliższych miesięcy.",
-        tags: "Jeden obraz, aktualizowany wraz z danymi",
       },
     ],
   },
@@ -301,58 +236,11 @@ const pl: ConsultingContent = {
     title: "Cztery sposoby, żeby zacząć",
     intro: "Wybierz ten, który pasuje do miejsca, w którym jesteście.",
     cta: "Umów rozmowę",
-    forLabel: "Dla kogo",
-    exampleLabel: "Na przykład",
-    deliverablesLabel: "Co dostajecie",
     items: [
-      {
-        key: "audit",
-        title: "Audyt procesu",
-        audience: "Firm, które wiedzą, że coś idzie wolno, ale nie wiedzą co naprawić",
-        example:
-          "Księgowość przepisuje 300 faktur miesięcznie. Liczymy godziny i wyceniamy, ile kosztuje to zatrzymać.",
-        deliverables: [
-          "Mapa procesu takiego, jaki jest dzisiaj",
-          "Godziny i koszt robienia tego ręcznie",
-          "Wyceniona lista tego, co naprawić najpierw",
-        ],
-      },
-      {
-        key: "mvp",
-        title: "Pierwsza wersja produktu",
-        audience: "Zespołów z pomysłem, który ma stać się czymś realnym",
-        example:
-          "Portal, w którym klienci sprawdzają status zamówienia bez dzwonienia do Was.",
-        deliverables: [
-          "Działający produkt, z którego korzysta zespół",
-          "Wdrożony u prawdziwych użytkowników, nie demo",
-          "Jasny plan tego, co dalej",
-        ],
-      },
-      {
-        key: "ai",
-        title: "AI w codziennej pracy",
-        audience: "Firm, które wprowadzają AI do pracy, którą ludzie już wykonują",
-        example:
-          "Przychodzące maile są czytane, rutynowe odpowiadane, a reszta trafia do człowieka.",
-        deliverables: [
-          "System działający na Waszych danych",
-          "Kontrole i akceptacje wszędzie tam, gdzie potrzebny jest człowiek",
-          "Przekazanie, szkolenie i wsparcie",
-        ],
-      },
-      {
-        key: "workshop",
-        title: "Warsztat",
-        audience: "Zarządu i ludzi, którzy wykonują tę pracę",
-        example:
-          "Pół dnia z Waszymi menedżerami o tym, co AI może zrobić dla firmy, prostym językiem.",
-        deliverables: [
-          "Wspólny obraz tego, co warto zrobić",
-          "Pomysły uszeregowane według nakładu i zwrotu",
-          "Pisemne podsumowanie, na którym można działać",
-        ],
-      },
+      { key: "audit", title: "Audyt procesu", body: "Liczymy godziny, które proces kosztuje dzisiaj, i wyceniamy, ile kosztuje to zatrzymać." },
+      { key: "mvp", title: "Pierwsza wersja", body: "Działający produkt z prawdziwymi użytkownikami w kilka tygodni, potem plan tego, co dalej." },
+      { key: "ai", title: "AI w codziennej pracy", body: "Rutynową pracę przejmuje system na Waszych danych, a człowiek zostaje tam, gdzie jest potrzebny." },
+      { key: "workshop", title: "Warsztat", body: "Pół dnia z Waszymi menedżerami o tym, co AI może zrobić dla firmy, prostym językiem." },
     ],
   },
   approach: {
@@ -434,35 +322,30 @@ const de: ConsultingContent = {
         num: "01",
         title: "Automatisierte Sachbearbeitung",
         body: "Rechnungen, Bestellungen und Formulare werden gelesen und abgelegt, ohne dass jemand sie abtippt.",
-        tags: "Rechnungen, Lieferscheine, Verträge, direkt in Ihr System",
       },
       {
         key: "answers",
         num: "02",
         title: "Antworten aus Ihren Dokumenten",
         body: "Ihr Team stellt eine Frage und bekommt die Antwort, mit der Quellseite dazu.",
-        tags: "Ihre Dateien, Ihre Begriffe, Antworten mit Quelle",
       },
       {
         key: "software",
         num: "03",
         title: "Softwareentwicklung",
         body: "Systeme, von Anfang bis Ende gebaut von den Leuten, die sie danach betreiben.",
-        tags: "Web, Mobile, passend zu Ihren bestehenden Systemen",
       },
       {
         key: "mvp",
         num: "04",
         title: "MVP-Entwicklung",
         body: "Eine erste Version in Wochen live, danach gewachsen an dem, was echte Nutzer tun.",
-        tags: "Umfang, Bau, Launch, Messung",
       },
       {
         key: "forecasting",
         num: "05",
         title: "Prognose und Reporting",
         body: "Zahlen aus allen Systemen an einem Ort, und ein Blick auf die kommenden Monate.",
-        tags: "Ein Bild, aktualisiert mit den Daten",
       },
     ],
   },
@@ -470,58 +353,11 @@ const de: ConsultingContent = {
     title: "Vier Wege zu beginnen",
     intro: "Nehmen Sie den, der zu Ihrem Stand passt.",
     cta: "Gespräch buchen",
-    forLabel: "Für wen",
-    exampleLabel: "Zum Beispiel",
-    deliverablesLabel: "Sie bekommen",
     items: [
-      {
-        key: "audit",
-        title: "Prozessaudit",
-        audience: "Unternehmen, die wissen, dass etwas langsam ist, aber nicht was",
-        example:
-          "Ihre Buchhaltung tippt 300 Rechnungen im Monat ab. Wir zählen die Stunden und beziffern, was es kostet, damit aufzuhören.",
-        deliverables: [
-          "Eine Karte des Prozesses, wie er heute läuft",
-          "Die Stunden und die Kosten der Handarbeit",
-          "Eine bezifferte Liste dessen, was zuerst drankommt",
-        ],
-      },
-      {
-        key: "mvp",
-        title: "Die erste Version bauen",
-        audience: "Teams mit einer Idee, die real werden muss",
-        example:
-          "Ein Portal, in dem Ihre Kunden den Auftragsstatus sehen, ohne anzurufen.",
-        deliverables: [
-          "Ein laufendes Produkt, das Ihr Team nutzt",
-          "Live bei echten Nutzern, keine Demo",
-          "Ein klarer Plan für das, was folgt",
-        ],
-      },
-      {
-        key: "ai",
-        title: "KI in der täglichen Arbeit",
-        audience: "Unternehmen, die KI in die Arbeit bringen, die ohnehin getan wird",
-        example:
-          "Eingehende E-Mails werden gelesen, im Routinefall beantwortet und sonst an eine Person übergeben.",
-        deliverables: [
-          "Ein System, das auf Ihren eigenen Daten läuft",
-          "Prüfungen und Freigaben überall dort, wo ein Mensch nötig ist",
-          "Übergabe, Schulung und Support",
-        ],
-      },
-      {
-        key: "workshop",
-        title: "Workshop",
-        audience: "Führung und die Leute, die die Arbeit machen",
-        example:
-          "Ein halber Tag mit Ihren Führungskräften darüber, was KI für Ihr Unternehmen tun kann, in klarer Sprache.",
-        deliverables: [
-          "Ein gemeinsames Bild davon, was sich lohnt",
-          "Die Ideen sortiert nach Aufwand und Ertrag",
-          "Eine schriftliche Zusammenfassung zum Handeln",
-        ],
-      },
+      { key: "audit", title: "Prozessaudit", body: "Wir zählen die Stunden, die ein Prozess heute kostet, und beziffern, was es kostet, damit aufzuhören." },
+      { key: "mvp", title: "Erste Version", body: "Ein laufendes Produkt mit echten Nutzern in Wochen, danach ein Plan für das, was folgt." },
+      { key: "ai", title: "KI in der täglichen Arbeit", body: "Routinearbeit übernimmt ein System auf Ihren Daten, ein Mensch bleibt überall dort, wo einer nötig ist." },
+      { key: "workshop", title: "Workshop", body: "Ein halber Tag mit Ihren Führungskräften darüber, was KI für Ihr Unternehmen tun kann, in klarer Sprache." },
     ],
   },
   approach: {

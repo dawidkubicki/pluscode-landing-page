@@ -6981,7 +6981,7 @@
     },
     "founders": {
       "title": "Ludzie",
-      "intro": "Dwóch inżynierów. Bez opiekunów klienta, bez przekazywania projektu.",
+      "intro": "Ci, którzy ustalają zakres pracy, to ci sami, którzy ją budują.",
       "cta": "Umów rozmowę",
       "items": [
         {
@@ -7001,6 +7001,15 @@
           "quote": "»Najpierw liczymy godziny, które ta praca kosztuje dzisiaj. Jeśli liczba jest mała, mówimy to wprost i zostają Wam pieniądze.«",
           "image": "/assets/team/krzysztof-sulinski.jpg",
           "alt": "Krzysztof Suliński"
+        },
+        {
+          "key": "together",
+          "name": "Dawid i Krzysztof",
+          "role": "Założyciele, Poznań",
+          "caption": "Dawid i Krzysztof o tym, dlaczego zakres ustalają ci sami ludzie, którzy potem budują",
+          "quote": "»Rozmawiasz z inżynierem, który pisze kod. Bez opiekunów klienta, bez przekazywania projektu.«",
+          "image": "/assets/team/founders.jpg",
+          "alt": "Dawid Kubicki i Krzysztof Suliński"
         }
       ]
     },
@@ -7030,6 +7039,34 @@
           "city": "Zdalnie",
           "role": "Konsulting",
           "body": "Pracujemy z włoskimi zespołami jako konsultanci, na tych samych zasadach."
+        },
+        {
+          "code": "NL",
+          "name": "Holandia",
+          "city": "Zdalnie",
+          "role": "Konsulting",
+          "body": "Pracujemy z holenderskimi zespołami jako konsultanci, po angielsku."
+        },
+        {
+          "code": "NO",
+          "name": "Norwegia",
+          "city": "Zdalnie",
+          "role": "Konsulting",
+          "body": "Pracujemy z norweskimi zespołami jako konsultanci, po angielsku."
+        },
+        {
+          "code": "SE",
+          "name": "Szwecja",
+          "city": "Zdalnie",
+          "role": "Konsulting",
+          "body": "Pracujemy ze szwedzkimi zespołami jako konsultanci, po angielsku."
+        },
+        {
+          "code": "FI",
+          "name": "Finlandia",
+          "city": "Zdalnie",
+          "role": "Konsulting",
+          "body": "Pracujemy z fińskimi zespołami jako konsultanci, po angielsku."
         }
       ]
     },
@@ -7140,36 +7177,31 @@
           "key": "paperwork",
           "num": "01",
           "title": "Automatyzacja papierologii",
-          "body": "Faktury, zamówienia i formularze zostają odczytane i opisane bez przepisywania ręcznie.",
-          "tags": "Faktury, listy przewozowe, umowy, prosto do Twojego systemu"
+          "body": "Faktury, zamówienia i formularze zostają odczytane i opisane bez przepisywania ręcznie."
         },
         {
           "key": "answers",
           "num": "02",
           "title": "Odpowiedzi z Twoich dokumentów",
-          "body": "Zespół zadaje pytanie i dostaje odpowiedź razem ze stroną źródłową.",
-          "tags": "Twoje pliki, Twoje słownictwo, odpowiedzi ze źródłem"
+          "body": "Zespół zadaje pytanie i dostaje odpowiedź razem ze stroną źródłową."
         },
         {
           "key": "software",
           "num": "03",
           "title": "Tworzenie oprogramowania",
-          "body": "Systemy budowane od początku do końca przez ludzi, którzy potem je utrzymują.",
-          "tags": "Web, mobile, dopasowane do systemów, które już macie"
+          "body": "Systemy budowane od początku do końca przez ludzi, którzy potem je utrzymują."
         },
         {
           "key": "mvp",
           "num": "04",
           "title": "Rozwój MVP",
-          "body": "Pierwsza wersja na żywo w kilka tygodni, potem rozwijana na podstawie tego, co robią użytkownicy.",
-          "tags": "Zakres, budowa, wdrożenie, pomiar"
+          "body": "Pierwsza wersja na żywo w kilka tygodni, potem rozwijana na podstawie tego, co robią użytkownicy."
         },
         {
           "key": "forecasting",
           "num": "05",
           "title": "Prognozy i raporty",
-          "body": "Liczby ze wszystkich systemów w jednym miejscu i widok najbliższych miesięcy.",
-          "tags": "Jeden obraz, aktualizowany wraz z danymi"
+          "body": "Liczby ze wszystkich systemów w jednym miejscu i widok najbliższych miesięcy."
         }
       ]
     },
@@ -7177,53 +7209,26 @@
       "title": "Cztery sposoby, żeby zacząć",
       "intro": "Wybierz ten, który pasuje do miejsca, w którym jesteście.",
       "cta": "Umów rozmowę",
-      "forLabel": "Dla kogo",
-      "exampleLabel": "Na przykład",
-      "deliverablesLabel": "Co dostajecie",
       "items": [
         {
           "key": "audit",
           "title": "Audyt procesu",
-          "audience": "Firm, które wiedzą, że coś idzie wolno, ale nie wiedzą co naprawić",
-          "example": "Księgowość przepisuje 300 faktur miesięcznie. Liczymy godziny i wyceniamy, ile kosztuje to zatrzymać.",
-          "deliverables": [
-            "Mapa procesu takiego, jaki jest dzisiaj",
-            "Godziny i koszt robienia tego ręcznie",
-            "Wyceniona lista tego, co naprawić najpierw"
-          ]
+          "body": "Liczymy godziny, które proces kosztuje dzisiaj, i wyceniamy, ile kosztuje to zatrzymać."
         },
         {
           "key": "mvp",
-          "title": "Pierwsza wersja produktu",
-          "audience": "Zespołów z pomysłem, który ma stać się czymś realnym",
-          "example": "Portal, w którym klienci sprawdzają status zamówienia bez dzwonienia do Was.",
-          "deliverables": [
-            "Działający produkt, z którego korzysta zespół",
-            "Wdrożony u prawdziwych użytkowników, nie demo",
-            "Jasny plan tego, co dalej"
-          ]
+          "title": "Pierwsza wersja",
+          "body": "Działający produkt z prawdziwymi użytkownikami w kilka tygodni, potem plan tego, co dalej."
         },
         {
           "key": "ai",
           "title": "AI w codziennej pracy",
-          "audience": "Firm, które wprowadzają AI do pracy, którą ludzie już wykonują",
-          "example": "Przychodzące maile są czytane, rutynowe odpowiadane, a reszta trafia do człowieka.",
-          "deliverables": [
-            "System działający na Waszych danych",
-            "Kontrole i akceptacje wszędzie tam, gdzie potrzebny jest człowiek",
-            "Przekazanie, szkolenie i wsparcie"
-          ]
+          "body": "Rutynową pracę przejmuje system na Waszych danych, a człowiek zostaje tam, gdzie jest potrzebny."
         },
         {
           "key": "workshop",
           "title": "Warsztat",
-          "audience": "Zarządu i ludzi, którzy wykonują tę pracę",
-          "example": "Pół dnia z Waszymi menedżerami o tym, co AI może zrobić dla firmy, prostym językiem.",
-          "deliverables": [
-            "Wspólny obraz tego, co warto zrobić",
-            "Pomysły uszeregowane według nakładu i zwrotu",
-            "Pisemne podsumowanie, na którym można działać"
-          ]
+          "body": "Pół dnia z Waszymi menedżerami o tym, co AI może zrobić dla firmy, prostym językiem."
         }
       ]
     },

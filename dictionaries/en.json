@@ -6981,7 +6981,7 @@
     },
     "founders": {
       "title": "People",
-      "intro": "Two engineers. No account managers, no handover.",
+      "intro": "The people who scope the work are the people who build it.",
       "cta": "Book a call",
       "items": [
         {
@@ -7001,6 +7001,15 @@
           "quote": "»First we count the hours the work costs today. If the number is small, we say so and you keep your money.«",
           "image": "/assets/team/krzysztof-sulinski.jpg",
           "alt": "Krzysztof Suliński"
+        },
+        {
+          "key": "together",
+          "name": "Dawid and Krzysztof",
+          "role": "Founders, Poznań",
+          "caption": "Dawid and Krzysztof on why the same people scope the work and build it",
+          "quote": "»You talk to the engineer who writes the code. No account managers, no handover.«",
+          "image": "/assets/team/founders.jpg",
+          "alt": "Dawid Kubicki and Krzysztof Suliński"
         }
       ]
     },
@@ -7030,6 +7039,34 @@
           "city": "Remote",
           "role": "Consulting",
           "body": "We work with Italian teams as consultants, on the same terms."
+        },
+        {
+          "code": "NL",
+          "name": "Netherlands",
+          "city": "Remote",
+          "role": "Consulting",
+          "body": "We work with Dutch teams as consultants, in English."
+        },
+        {
+          "code": "NO",
+          "name": "Norway",
+          "city": "Remote",
+          "role": "Consulting",
+          "body": "We work with Norwegian teams as consultants, in English."
+        },
+        {
+          "code": "SE",
+          "name": "Sweden",
+          "city": "Remote",
+          "role": "Consulting",
+          "body": "We work with Swedish teams as consultants, in English."
+        },
+        {
+          "code": "FI",
+          "name": "Finland",
+          "city": "Remote",
+          "role": "Consulting",
+          "body": "We work with Finnish teams as consultants, in English."
         }
       ]
     },
@@ -7140,36 +7177,31 @@
           "key": "paperwork",
           "num": "01",
           "title": "Paperwork automation",
-          "body": "Invoices, orders and forms are read and filed without anyone retyping them.",
-          "tags": "Invoices, delivery notes, contracts, straight into your system"
+          "body": "Invoices, orders and forms are read and filed without anyone retyping them."
         },
         {
           "key": "answers",
           "num": "02",
           "title": "Answers from your documents",
-          "body": "Your team asks a question and gets the answer, with the source page attached.",
-          "tags": "Your files, your wording, answers with a source"
+          "body": "Your team asks a question and gets the answer, with the source page attached."
         },
         {
           "key": "software",
           "num": "03",
           "title": "Software development",
-          "body": "Custom systems built end to end by the people who will run them.",
-          "tags": "Web, mobile, fits the systems you already use"
+          "body": "Custom systems built end to end by the people who will run them."
         },
         {
           "key": "mvp",
           "num": "04",
           "title": "MVP development",
-          "body": "A first version live in weeks, then grown on what real users do with it.",
-          "tags": "Scope, build, launch, measure"
+          "body": "A first version live in weeks, then grown on what real users do with it."
         },
         {
           "key": "forecasting",
           "num": "05",
           "title": "Forecasting and reporting",
-          "body": "Numbers from every system in one place, and a view of the months ahead.",
-          "tags": "One picture, updated as the data arrives"
+          "body": "Numbers from every system in one place, and a view of the months ahead."
         }
       ]
     },
@@ -7177,53 +7209,26 @@
       "title": "Four ways to start",
       "intro": "Pick the one that matches where you are.",
       "cta": "Book a call",
-      "forLabel": "For",
-      "exampleLabel": "For example",
-      "deliverablesLabel": "You get",
       "items": [
         {
           "key": "audit",
           "title": "Process audit",
-          "audience": "Companies who know something is slow but not what to fix",
-          "example": "Your accounting team retypes 300 invoices a month. We count the hours and price what it takes to stop.",
-          "deliverables": [
-            "A map of the process as it runs today",
-            "The hours and the cost of doing it by hand",
-            "A costed shortlist of what to fix first"
-          ]
+          "body": "We count the hours a process costs today and price what it takes to stop."
         },
         {
           "key": "mvp",
-          "title": "Build the first version",
-          "audience": "Teams with an idea that needs to become real",
-          "example": "A portal where your customers check their order status without calling you.",
-          "deliverables": [
-            "A working product your team can use",
-            "Live with real users, not a demo",
-            "A clear plan for what comes next"
-          ]
+          "title": "First version",
+          "body": "A working product with real users in weeks, then a plan for what comes next."
         },
         {
           "key": "ai",
           "title": "AI in daily work",
-          "audience": "Companies putting AI into the work people already do",
-          "example": "Incoming email is read, answered where it is routine, and passed to a person where it is not.",
-          "deliverables": [
-            "A system running on your own data",
-            "Checks and approvals wherever a person is needed",
-            "Handover, training and support"
-          ]
+          "body": "Routine work handled by a system on your own data, with a person wherever one is needed."
         },
         {
           "key": "workshop",
           "title": "Workshop",
-          "audience": "Leadership and the people doing the work",
-          "example": "Half a day with your managers on what AI can do for your company, in plain language.",
-          "deliverables": [
-            "A shared picture of what is worth doing",
-            "The ideas ranked by effort and payback",
-            "A written summary you can act on"
-          ]
+          "body": "Half a day with your managers on what AI can do for your company, in plain language."
         }
       ]
     },

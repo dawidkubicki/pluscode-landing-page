@@ -49,7 +49,7 @@ function Avatar({ photo, initials }: { photo: Photo; initials: string }) {
 function OnlineDot({ className = "" }: { className?: string }) {
   return (
     <span
-      className={`block size-2 rounded-full bg-status-online ${className}`}
+      className={`block size-2.5 rounded-full border-2 border-paper bg-status-online ${className}`}
       // The radius is inline, not left to the class. globals.css carries an
       // UNLAYERED `.rounded-full { border-radius: 0 }` that squares the whole
       // site off, and an unlayered author rule beats every utility; only an
@@ -221,10 +221,15 @@ export default function FloatingContact({
             >
               <Avatar photo={photo} initials={initials} />
             </span>
-            {/* 8px, not 4px. The launcher is a circle: at a 4px inset the dot's
-                centre sits 28.3px from the middle against a 28px radius, so it
-                straddles the arc. This inset seats it inside the edge. */}
-            <OnlineDot className="absolute bottom-2 right-2 z-10" />
+            {/* ON the rim, deliberately, like every chat app's presence badge.
+                The launcher is a 56px circle; the rim at 45 degrees is 19.8px
+                from the centre on each axis, so a 10px badge centred there
+                spans 42.8 to 52.8px and a 3px inset puts it half on the photo
+                and half outside it. The 2px ring in the page ground is what
+                separates it from the photo so it reads as a badge, not as a
+                mark on the picture. An earlier version sat it fully inside,
+                which Dawid read as a dot painted on the image. */}
+            <OnlineDot className="absolute bottom-[3px] right-[3px] z-10" />
           </button>
         </motion.div>
       )}

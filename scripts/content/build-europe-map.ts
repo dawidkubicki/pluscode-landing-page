@@ -22,31 +22,50 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-/* The frame. Longitude and latitude bounds of the drawing.
-   Two things decide these four numbers, and the second one is easy to miss:
+/* WHICH COUNTRIES, not which frame. The first two versions of this file
+   drew every polygon that touched a longitude/latitude box and let the SVG
+   viewBox clip the rest. That is how a world map is usually framed, and it
+   produced Russia, Turkey and North Africa sliced off in dead straight lines
+   along three edges of the band. Dawid's words: awful, cut at the edges,
+   should be countries, not a straight line.
 
-   1. The three countries we work in must sit comfortably inside it, and the
-      continent must still read as a continent: the Atlantic edge at Ireland,
-      the Baltic, the Mediterranean with the whole Italian peninsula, and
-      enough of Turkey and North Africa that the frame looks cropped rather
-      than truncated.
+   So the map is now a LIST. Every country below is drawn whole, nothing else
+   is drawn at all, and the viewBox is fitted to the result. The outer edge of
+   the drawing is therefore the outer edge of Europe itself: Iceland's coast,
+   Norway's cape, the Polish and Finnish borders with Russia, the Greek
+   islands, the Portuguese coast. There is no frame to cut anything.
 
-   2. THE RESULT HAS TO BE A WIDE BAND. Mercator stretches vertically at
-      European latitudes, so a frame drawn tight around Europe comes out
-      almost SQUARE: the first version of this file spanned 70 degrees of
-      longitude and produced a 1000x986 map, which at seven grid columns
-      rendered 844px wide and 832px TALL and swallowed the band it sits in.
-      Widening the longitude span to 96 degrees and trimming the far north
-      brings it to roughly 8:5, which is the proportion the band wants. The
-      extra longitude is mostly the Atlantic and western Russia, and both
-      read as quiet ground rather than as filler. */
-const LON_MIN = -28;
-const LON_MAX = 68;
+   Russia, Turkey and the Caucasus are left out on purpose. Russia alone would
+   drag the bounding box to the Pacific; Turkey is mostly not in Europe and
+   would reintroduce a hard edge on its own eastern border. Ukraine, Belarus
+   and Moldova stay in because their borders with Russia are the organic
+   eastern edge that makes the shape read as Europe. */
+const EUROPE = [
+  "Iceland", "Norway", "Sweden", "Finland", "Denmark",
+  "United Kingdom", "Ireland",
+  "Netherlands", "Belgium", "Luxembourg", "France", "Germany",
+  "Poland", "Czechia", "Slovakia", "Austria", "Switzerland",
+  "Italy", "Spain", "Portugal",
+  "Estonia", "Latvia", "Lithuania", "Belarus", "Ukraine", "Moldova",
+  "Romania", "Bulgaria", "Hungary", "Slovenia", "Croatia",
+  "Bosnia and Herz.", "Serbia", "Montenegro", "Kosovo",
+  "North Macedonia", "Albania", "Greece", "Cyprus",
+];
+
+/* A ring is kept only if its centroid falls inside this box. It is NOT a
+   drawing frame (nothing is clipped to it); it is how overseas territories
+   are dropped. Natural Earth ships France with French Guiana, the
+   Netherlands with its Caribbean islands and Norway with Svalbard in the
+   same MultiPolygon, and any of those would stretch the bounding box across
+   an ocean. Svalbard is the reason the north edge is 72, not 80. */
+const LON_MIN = -26;
+const LON_MAX = 45;
 const LAT_MIN = 33;
-const LAT_MAX = 69;
+const LAT_MAX = 72;
 
-/* The viewBox. Width is fixed and height falls out of the projection, so the
-   map never distorts to fit a box someone picked. */
+/* The viewBox width. Height and the origin are computed from the extent of
+   the drawn countries once they are projected, so the map never distorts to
+   fit a box someone picked and never carries empty margin. */
 const WIDTH = 1000;
 
 /** Web Mercator's y term. Standard, and the shape everyone recognises. */
@@ -66,8 +85,10 @@ const yBottom = mercatorY(LAT_MIN);
    than it is tall. One scale for both axes is also what makes the
    projection conformal, so this single constant is what keeps the
    coastlines the right shape. */
+/* Provisional scale from the filter box. The final viewBox is fitted to the
+   drawn extent below, and the paths are re-based onto it, so this only has
+   to be in the right ballpark. */
 const SCALE = WIDTH / (rad(LON_MAX) - rad(LON_MIN));
-const HEIGHT = Math.round((yTop - yBottom) * SCALE);
 
 function project(lon: number, lat: number): [number, number] {
   const x = (rad(lon) - rad(LON_MIN)) * SCALE;
@@ -137,31 +158,48 @@ function ringsOf(geometry: Geometry): number[][][] {
   return [];
 }
 
-function pathFor(geometry: Geometry): string {
-  const parts: string[] = [];
+/** Centroid of a lon/lat ring, good enough to decide which side of an ocean
+ *  it is on. */
+function centroid(ring: number[][]): [number, number] {
+  let lon = 0;
+  let lat = 0;
+  for (const [x, y] of ring) {
+    lon += x;
+    lat += y;
+  }
+  return [lon / ring.length, lat / ring.length];
+}
+
+type Projected = [number, number][][];
+
+/** Projects every ring of a country that belongs to Europe proper, whole.
+ *  Nothing is clipped: a ring is either drawn entire or not at all. */
+function ringsFor(geometry: Geometry): Projected {
+  const out: Projected = [];
   for (const ring of ringsOf(geometry)) {
-    const projected = ring
-      /* Clip generously, not to the frame: a polygon that merely crosses the
-         edge must keep its outside vertices or the fill closes across the
-         middle of the country. The SVG viewBox does the real clipping. */
-      .filter(
-        ([lon, lat]) =>
-          lon > LON_MIN - 45 &&
-          lon < LON_MAX + 45 &&
-          lat > LAT_MIN - 25 &&
-          lat < LAT_MAX + 12,
-      )
-      .map(([lon, lat]) => project(lon, lat) as [number, number]);
+    const [clon, clat] = centroid(ring);
+    if (clon < LON_MIN || clon > LON_MAX || clat < LAT_MIN || clat > LAT_MAX) {
+      continue;
+    }
+    const projected = ring.map(([lon, lat]) => project(lon, lat) as [number, number]);
     if (projected.length < 4) continue;
     if (ringArea(projected) < MIN_AREA) continue;
     const reduced = simplify(projected, 0.35);
     if (reduced.length < 3) continue;
-    const d = reduced
-      .map(([x, y], i) => `${i === 0 ? "M" : "L"}${round(x)} ${round(y)}`)
-      .join("");
-    parts.push(`${d}Z`);
+    out.push(reduced);
   }
-  return parts.join("");
+  return out;
+}
+
+function pathFor(rings: Projected, dx: number, dy: number): string {
+  return rings
+    .map(
+      (ring) =>
+        ring
+          .map(([x, y], i) => `${i === 0 ? "M" : "L"}${round(x - dx)} ${round(y - dy)}`)
+          .join("") + "Z",
+    )
+    .join("");
 }
 
 /* The countries we work in. Everything else in the frame is drawn in the
@@ -171,6 +209,10 @@ const ACTIVE: Record<string, string> = {
   Poland: "PL",
   Germany: "DE",
   Italy: "IT",
+  Netherlands: "NL",
+  Norway: "NO",
+  Sweden: "SE",
+  Finland: "FI",
 };
 
 const source = process.argv[2];
@@ -188,17 +230,48 @@ type Feature = {
 
 const geo = JSON.parse(readFileSync(source, "utf8")) as { features: Feature[] };
 
-const backdrop: string[] = [];
-const active: { code: string; name: string; d: string }[] = [];
+const europe = new Set(EUROPE);
+const drawn: { name: string; code?: string; rings: Projected }[] = [];
 
 for (const feature of geo.features) {
   const name = feature.properties.NAME ?? feature.properties.name;
-  if (!name) continue;
-  const d = pathFor(feature.geometry);
-  if (!d) continue;
-  const code = ACTIVE[name];
-  if (code) active.push({ code, name, d });
-  else backdrop.push(d);
+  if (!name || !europe.has(name)) continue;
+  const rings = ringsFor(feature.geometry);
+  if (!rings.length) continue;
+  drawn.push({ name, code: ACTIVE[name], rings });
+}
+
+const missing = EUROPE.filter((n) => !drawn.some((d) => d.name === n));
+if (missing.length) {
+  throw new Error(`countries in EUROPE but not in the source: ${missing.join(", ")}`);
+}
+
+/* Fit the viewBox to what was actually drawn, plus a small margin so the
+   outermost coastline does not touch the edge of the svg. */
+let minX = Infinity;
+let minY = Infinity;
+let maxX = -Infinity;
+let maxY = -Infinity;
+for (const d of drawn)
+  for (const ring of d.rings)
+    for (const [x, y] of ring) {
+      if (x < minX) minX = x;
+      if (y < minY) minY = y;
+      if (x > maxX) maxX = x;
+      if (y > maxY) maxY = y;
+    }
+const MARGIN = 8;
+const originX = minX - MARGIN;
+const originY = minY - MARGIN;
+const VIEW_W = Math.round(maxX - minX + MARGIN * 2);
+const VIEW_H = Math.round(maxY - minY + MARGIN * 2);
+
+const backdrop: string[] = [];
+const active: { code: string; name: string; d: string }[] = [];
+for (const d of drawn) {
+  const path = pathFor(d.rings, originX, originY);
+  if (d.code) active.push({ code: d.code, name: d.name, d: path });
+  else backdrop.push(path);
 }
 
 active.sort((a, b) => a.code.localeCompare(b.code));
@@ -213,13 +286,17 @@ const file = `/**
  * GENERATED by scripts/content/build-europe-map.ts. Do not edit by hand.
  *
  * Natural Earth 1:110m country polygons, public domain, projected to Web
- * Mercator and simplified. \`backdrop\` is every other country in the frame as
- * one path; \`active\` is the three countries Pluscode works in, each on its
- * own path so it can be lit, hovered and labelled independently.
+ * Mercator and simplified. Only the countries of Europe proper are drawn,
+ * each one whole, and the viewBox is fitted to them, so the edge of the
+ * drawing is the coast and the eastern borders rather than a rectangle.
+ * \`backdrop\` is every drawn country we do not work in, as one path;
+ * \`active\` is each country Pluscode works in on its own path so it can be
+ * lit, hovered and labelled independently.
  */
 
-/** Matches the projection: width is fixed, height falls out of it. */
-export const MAP_VIEWBOX = "0 0 ${WIDTH} ${HEIGHT}";
+/** Fitted to the drawn countries with an 8 unit margin, so the svg has no
+ *  empty band and no country is cut by its edge. */
+export const MAP_VIEWBOX = "0 0 ${VIEW_W} ${VIEW_H}";
 
 /** Every country in the frame except the three below. One path, one fill. */
 export const MAP_BACKDROP =
@@ -227,14 +304,14 @@ export const MAP_BACKDROP =
 
 export type MapCountry = { code: string; name: string; d: string };
 
-/** The three we work in, in code order: DE, IT, PL. */
+/** The countries we work in, in code order. */
 export const MAP_ACTIVE: MapCountry[] = ${JSON.stringify(active, null, 2)};
 `;
 
 const out = resolve(process.cwd(), "lib/europe-map.ts");
 writeFileSync(out, file, "utf8");
 console.log(
-  `wrote lib/europe-map.ts  viewBox 0 0 ${WIDTH} ${HEIGHT}  active=${active
+  `wrote lib/europe-map.ts  viewBox 0 0 ${VIEW_W} ${VIEW_H}  active=${active
     .map((a) => a.code)
     .join(",")}  backdrop rings=${backdrop.length}  ${Math.round(
     file.length / 1024,

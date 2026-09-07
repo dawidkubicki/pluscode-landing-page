@@ -12,7 +12,7 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
  *  headline still starts on the same x as every band below it.
  *
  *  FOUR LAYERS, back to front: the video, a deep green wash, the column
- *  ruling, then the content. The wash is what makes this work. At 88% the
+ *  ruling, then the content. The wash is what makes this work. At 65% the
  *  field reads as texture under the words instead of a picture competing
  *  with them, and the headline sits at full white contrast rather than
  *  swimming over moving mid tones. There is no fallback gradient behind it
@@ -74,7 +74,7 @@ export default function Hero({ dict }: { dict: Dictionary["home"]["hero"] }) {
       <video
         ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover"
-        poster="/hero/field-poster.jpg"
+        poster="/hero/hero-poster.jpg"
         autoPlay
         muted
         loop
@@ -83,12 +83,17 @@ export default function Hero({ dict }: { dict: Dictionary["home"]["hero"] }) {
         aria-hidden="true"
         tabIndex={-1}
       >
-        <source src="/hero/field.webm" type="video/webm" />
-        <source src="/hero/field.mp4" type="video/mp4" />
+        <source src="/hero/hero.webm" type="video/webm" />
+        <source src="/hero/hero.mp4" type="video/mp4" />
       </video>
 
       {/* 2. The wash. */}
-      <div aria-hidden="true" className="absolute inset-0 bg-deep/[0.88]" />
+      {/* 65%, down from 88%. The first hero ran an abstract contour field
+          that only had to read as texture, so it could sit almost fully
+          under the green. This is real footage, a Pluscode cyclist against
+          a pale wall, and at 88% it disappeared. At 65% the figure reads
+          and the white headline still measures about 5:1 on the blend. */}
+      <div aria-hidden="true" className="absolute inset-0 bg-deep/[0.65]" />
 
       {/* 3. The column ruling, carried across the hero so the grid that
              aligns the page is visible from the first screen. */}

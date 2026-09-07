@@ -24,14 +24,82 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
  *  than tucked into a corner. Never drop it and never soften it into
  *  partner language.
  *
- *  Everything sits on the one 12 column grid, so the item hairlines line
- *  up with the columns of every other band on the page.
+ *  Everything sits on the one 12 column grid, so the four feature boxes
+ *  and the industry hairlines line up with the columns of every other
+ *  band on the page.
+ *
+ *  THE FOUR FEATURES ARE BOXES, and the box is the one place on the page
+ *  where the hover is a gradient. At rest each is a 1px hairline in the
+ *  band's own rule colour, square, unfilled, so it reads as four ruled
+ *  cells and not as four cards. On hover the hairline becomes a 135deg
+ *  sweep from ember into sage and the feature name goes ember with it;
+ *  nothing moves, nothing lifts, nothing fills. Ember is a hover colour by
+ *  rule, so neither the border nor the name may ever be ember at rest.
  *
  *  The industries row at the foot is the shortest honest answer to "would
  *  this work for us": six named trades, one line each, straight from the
  *  product's own navigation. It is a list of facts, so the cells are not
  *  links and have no hover.
  * ------------------------------------------------------------------ */
+
+/* THE GRADIENT BORDER, as a scoped stylesheet rather than utilities.
+ *
+ *  A `border-color` cannot be a gradient, so the box paints two backgrounds
+ *  instead: ink clipped to the padding box on top, the gradient clipped to
+ *  the border box underneath, and a 1px transparent border between them is
+ *  the ring through which the gradient shows. Two things stop this being
+ *  written as Tailwind classes:
+ *
+ *    - An inline `style` for the rest state beats every class, so a
+ *      `hover:[background:...]` utility could never override it.
+ *    - Browsers do not interpolate between two gradients, so a transition
+ *      on `background` would snap from hairline to sweep with no fade.
+ *
+ *  So the two colour stops are registered custom properties (`@property`,
+ *  typed `<color>`) and the transition runs on THOSE. The gradient itself
+ *  never changes shape; only its two colours move, and a registered colour
+ *  interpolates like any other. A browser without `@property` still gets
+ *  the border and the hover, it just arrives without the 240ms fade.
+ *
+ *  Unlayered on purpose, like the flatteners at the foot of globals.css:
+ *  it beats the utilities layer so no stray `bg-*` on the box can undo the
+ *  padding-box layer. The hover is gated on `(hover: hover)` exactly as
+ *  Tailwind gates its own `hover:` variant, so a tap on a phone does not
+ *  leave one box stuck in ember. Reduced motion is handled by the global
+ *  rule that shortens every transition. */
+const ITEM_CSS = `
+@property --pc-platform-item-a {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+@property --pc-platform-item-b {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+.pc-platform-item {
+  --pc-platform-item-a: var(--color-rule-dark);
+  --pc-platform-item-b: var(--color-rule-dark);
+  background:
+    linear-gradient(var(--color-ink), var(--color-ink)) padding-box,
+    linear-gradient(
+        135deg,
+        var(--pc-platform-item-a),
+        var(--pc-platform-item-b)
+      )
+      border-box;
+  transition:
+    --pc-platform-item-a 240ms var(--ease-io-attio),
+    --pc-platform-item-b 240ms var(--ease-io-attio);
+}
+@media (hover: hover) {
+  .pc-platform-item:hover {
+    --pc-platform-item-a: var(--color-ember);
+    --pc-platform-item-b: var(--color-sage);
+  }
+}
+`;
 
 export default function Platform({
   dict,
@@ -40,6 +108,10 @@ export default function Platform({
 }) {
   return (
     <section className="on-dark bg-ink py-20 md:py-[104px]">
+      {/* A <style> element renders nothing and takes no grid cell, so it
+          can sit here inside the band that uses it. The child is a static
+          module constant, never content from the dictionary or the CMS. */}
+      <style>{ITEM_CSS}</style>
       <div className="pc-shell">
         <div className="pc-grid">
           <div className="col-span-4 md:col-span-6">
@@ -91,12 +163,19 @@ export default function Platform({
             </a>
           </div>
 
+          {/* The four boxes. `border border-transparent` is load-bearing:
+              it is the 1px ring the gradient in ITEM_CSS shows through, and
+              the box has no other border. `group` lets the name answer the
+              same hover as the ring, on the same 240ms curve, so the two
+              read as one movement rather than a border and then a title. */}
           {dict.items.map((item) => (
             <div
               key={item.key}
-              className="col-span-4 mt-16 border-t border-rule-dark pt-8 md:col-span-3 md:mt-24"
+              className="pc-platform-item group col-span-4 mt-16 border border-transparent p-7 md:col-span-3 md:mt-24"
             >
-              <h3 className="text-heading-sm text-white">{item.name}</h3>
+              <h3 className="text-heading-sm text-white transition-colors duration-[240ms] ease-[var(--ease-io-attio)] group-hover:text-ember">
+                {item.name}
+              </h3>
               <p className="mt-4 text-[1.125rem] leading-[1.375] text-mist">
                 {item.body}
               </p>

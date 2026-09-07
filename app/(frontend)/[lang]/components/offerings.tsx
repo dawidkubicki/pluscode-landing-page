@@ -2,7 +2,7 @@ import LocaleLink from "./locale-link";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 /* ------------------------------------------------------------------ *
- *  OFFERINGS. Four ways to start, as four labelled cells.
+ *  OFFERINGS. Four ways to start, as four ruled cells.
  *
  *  GROUND, NOT RULES, SEPARATES THIS BAND. Services above it and the
  *  Quanty plate below it both meet this band edge to edge, and a third
@@ -12,19 +12,16 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
  *  reserves for exactly this: a band that changes subject without
  *  changing voice.
  *
- *  THREE LABELLED PAIRS PER CELL, IN A FIXED ORDER. Each cell answers
- *  who it is for, what it looks like in practice, and what is handed
- *  over. The labels come from the dictionary, so they translate with the
- *  copy, and every cell uses the identical margin ladder (mt-6 above a
- *  label, mt-1 under it) so the three labels sit at or near the same
- *  three heights across the row.
+ *  ONE HEADLINE AND ONE SENTENCE PER CELL. That is the whole cell. An
+ *  earlier draft stacked three labelled pairs under each headline (who
+ *  it is for, an example, the deliverables) and review cut all of it:
+ *  the band ran longer than Services and said less, and the four cells
+ *  ragged out at four different heights. A reader who wants the detail
+ *  has the button, which goes to a call, not to a page.
  *
- *  They will not line up perfectly, and that is deliberate. Exact
- *  alignment needs a fixed height per pair, and a fixed height clips the
- *  German and Polish copy, which runs longer than the English at every
- *  one of these strings. A ragged label is legible; a cropped sentence
- *  is not. If the alignment ever has to be exact, the fix is a subgrid
- *  across the four cells, never a height.
+ *  The hairline sits on the cell, not on the row, so the four cells read
+ *  as four entries in a list that happens to run sideways, and below
+ *  768px they stack into the same ruled list Services uses above.
  *
  *  Server component: no state, no effects.
  * ------------------------------------------------------------------ */
@@ -56,43 +53,9 @@ export default function Offerings({
               className="col-span-4 mt-16 border-t border-rule pt-8 md:col-span-3 md:mt-24"
             >
               <h3 className="text-heading-sm text-ink">{item.title}</h3>
-
-              <p className="mt-6 text-[0.875rem] text-moss">{dict.forLabel}</p>
-              <p className="mt-1 text-[1rem] leading-[1.375] text-ink">
-                {item.audience}
+              <p className="mt-4 text-[1.125rem] leading-[1.375] text-moss">
+                {item.body}
               </p>
-
-              <p className="mt-6 text-[0.875rem] text-moss">
-                {dict.exampleLabel}
-              </p>
-              <p className="mt-1 text-[1rem] leading-[1.375] text-moss">
-                {item.example}
-              </p>
-
-              <p className="mt-6 text-[0.875rem] text-moss">
-                {dict.deliverablesLabel}
-              </p>
-              {/* No disc, no marker glyph. A 4px square in the muted green
-                  is the same mark the rest of the page uses for a hairline,
-                  and it is set as a flex row rather than a list-style so the
-                  wrapped second line of a deliverable hangs under the text
-                  and not under the square. The 0.55em top offset centres the
-                  square on the first line at this size; `shrink-0` stops the
-                  flex row squeezing it into a rectangle. */}
-              <ul className="mt-2">
-                {item.deliverables.map((deliverable) => (
-                  <li
-                    key={deliverable}
-                    className="mt-2 flex gap-3 text-[1rem] leading-[1.375] text-moss first:mt-0"
-                  >
-                    <span
-                      aria-hidden="true"
-                      className="mt-[0.55em] h-1 w-1 shrink-0 bg-moss"
-                    />
-                    <span>{deliverable}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           ))}
         </div>
