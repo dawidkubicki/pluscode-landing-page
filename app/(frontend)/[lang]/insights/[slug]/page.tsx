@@ -4,7 +4,6 @@ import { RichText } from "@payloadcms/richtext-lexical/react";
 import { PageHero, CtaBand } from "../../components/page-hero";
 import Footer from "../../components/footer";
 import { Reveal, Stagger, StaggerItem } from "../../components/motion";
-import { Arrow } from "../../components/ui";
 import LocaleLink from "../../components/locale-link";
 import {
   isLocale,
@@ -78,85 +77,89 @@ export default async function InsightPage({
     <main>
       <PageHero eyebrow={eyebrow} title={card.title} intro={card.excerpt} />
 
-      <article className="bg-cream">
-        <div className="mx-auto max-w-3xl px-5 py-20 sm:px-10 sm:py-[6.25rem]">
-          {/* byline */}
-          <Reveal>
-            <div className="mb-10 flex items-center gap-3 border-b border-cream-line pb-6 font-mono text-xs uppercase tracking-[0.1em] text-ink-mute">
-              <span>{card.author}</span>
-              {date && <span>· {date}</span>}
-            </div>
-          </Reveal>
+      <article className="bg-paper py-20 md:py-[104px]">
+        <div className="pc-shell">
+          <div className="pc-grid">
+            {/* Seven of twelve columns: the article is a reading column on
+                the grid rather than a centred sheet. */}
+            <div className="col-span-4 md:col-span-7">
+              {/* byline */}
+              <Reveal>
+                <div className="mb-10 flex items-center gap-3 border-b border-rule pb-6 text-[0.875rem] text-moss">
+                  <span>{card.author}</span>
+                  {date && <span>· {date}</span>}
+                </div>
+              </Reveal>
 
-          {/* cover */}
-          <Reveal>
-            <div className={`mb-12 h-72 overflow-hidden rounded ${card.gradient}`}>
-              {card.image && (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={card.image.url} alt={card.image.alt} className="size-full object-cover" />
-              )}
-            </div>
-          </Reveal>
+              {/* cover */}
+              <Reveal>
+                <div className={`relative mb-12 aspect-[16/9] overflow-hidden ${card.gradient}`}>
+                  {card.image && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={card.image.url} alt={card.image.alt} className="absolute inset-0 size-full object-cover" />
+                  )}
+                </div>
+              </Reveal>
 
-          <Reveal>
-            {doc?.content ? (
-              <div className="prose-pc">
-                <Rich data={doc.content} />
+              <Reveal>
+                {doc?.content ? (
+                  <div className="prose-pc">
+                    <Rich data={doc.content} />
+                  </div>
+                ) : (
+                  <div className="prose-pc">
+                    <p>{article.content.intro}</p>
+                    <h2>{article.content.section1.title}</h2>
+                    <p>{article.content.section1.paragraph}</p>
+                    <h2>{article.content.section2.title}</h2>
+                    <p>{article.content.section2.paragraph}</p>
+                    <h2>{article.content.section3.title}</h2>
+                    <p>{article.content.section3.paragraph}</p>
+                    <h3>{article.content.keyTakeaways.title}</h3>
+                    <ul>
+                      <li>{article.content.keyTakeaways.item1}</li>
+                      <li>{article.content.keyTakeaways.item2}</li>
+                      <li>{article.content.keyTakeaways.item3}</li>
+                    </ul>
+                  </div>
+                )}
+              </Reveal>
+
+              <div className="mt-12">
+                <LocaleLink
+                  href="/insights"
+                  className="pc-link inline-block text-[1.125rem] text-moss"
+                >
+                  ← {article.breadcrumbParent}
+                </LocaleLink>
               </div>
-            ) : (
-              <div className="prose-pc">
-                <p>{article.content.intro}</p>
-                <h2>{article.content.section1.title}</h2>
-                <p>{article.content.section1.paragraph}</p>
-                <h2>{article.content.section2.title}</h2>
-                <p>{article.content.section2.paragraph}</p>
-                <h2>{article.content.section3.title}</h2>
-                <p>{article.content.section3.paragraph}</p>
-                <h3>{article.content.keyTakeaways.title}</h3>
-                <ul>
-                  <li>{article.content.keyTakeaways.item1}</li>
-                  <li>{article.content.keyTakeaways.item2}</li>
-                  <li>{article.content.keyTakeaways.item3}</li>
-                </ul>
-              </div>
-            )}
-          </Reveal>
-
-          <div className="mt-12">
-            <LocaleLink
-              href="/insights"
-              className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime-soft transition-colors hover:text-ink"
-            >
-              ← {article.breadcrumbParent}
-            </LocaleLink>
+            </div>
           </div>
         </div>
       </article>
 
       {/* Related */}
       {related.length > 0 && (
-        <section className="border-t border-cream-line bg-cream">
-          <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-24">
-            <h2 className="font-serif text-[1.75rem] font-medium tracking-[-0.01em] text-ink">
-              {article.related.title}
-            </h2>
-            <Stagger className="mt-8 grid gap-6 md:grid-cols-3" gap={0.08}>
+        <section className="bg-paper-dim py-20 md:py-[104px]">
+          <div className="pc-shell">
+            <div className="pc-grid">
+              <h2 className="col-span-4 text-heading-lg text-ink md:col-span-8">
+                {article.related.title}
+              </h2>
+            </div>
+            <Stagger className="pc-grid mt-16 md:mt-20" gap={0.08}>
               {related.map((r) => (
-                <StaggerItem key={r.slug}>
-                  <LocaleLink
-                    href={`/insights/${r.slug}`}
-                    className="group flex h-full flex-col overflow-hidden rounded border border-cream-line bg-cream-surface transition-colors duration-300 hover:border-lime"
-                  >
-                    <div className={`h-32 ${r.gradient}`} />
-                    <div className="flex flex-1 flex-col p-5">
-                      <h3 className="text-lg font-semibold text-ink transition-colors group-hover:text-lime-soft">
+                <StaggerItem key={r.slug} className="col-span-4">
+                  <LocaleLink href={`/insights/${r.slug}`} className="group block">
+                    <div className={`aspect-[4/3] ${r.gradient}`} />
+                    <h3 className="mt-6 text-heading-md text-ink">
+                      <span className="pc-link group-hover:[background-size:100%_1px]">
                         {r.title}
-                      </h3>
-                      <span className="mt-4 inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime-soft">
-                        {labels.readMore}
-                        <Arrow className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                       </span>
-                    </div>
+                    </h3>
+                    <span className="mt-4 inline-block text-[1rem] text-moss">
+                      {labels.readMore}
+                    </span>
                   </LocaleLink>
                 </StaggerItem>
               ))}

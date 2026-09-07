@@ -31,38 +31,42 @@ export default function LegalPage({
     <main>
       <PageHero eyebrow={d.lastUpdated} title={d.title} intro={d.subtitle} />
 
-      <section className="bg-cream">
-        <div className="mx-auto grid max-w-[1240px] gap-12 px-5 py-20 sm:px-10 sm:py-[6.25rem] lg:grid-cols-[260px_1fr] lg:gap-16">
-          {/* TOC */}
-          <aside className="lg:sticky lg:top-28 lg:self-start">
-            <Eyebrow>{d.tableOfContents}</Eyebrow>
-            <nav className="mt-5 space-y-2.5 border-l border-cream-line pl-4">
-              {entries.map(([key, s]) => (
-                <a
-                  key={key}
-                  href={`#${key}`}
-                  className="block text-sm text-ink-soft transition-colors duration-300 ease-io-attio hover:text-ink hover:duration-50"
-                >
-                  {s.title}
-                </a>
-              ))}
-            </nav>
-          </aside>
-
-          {/* Sections */}
-          <div className="max-w-3xl">
-            {entries.map(([key, s], i) => (
-              <Reveal key={key} delay={i === 0 ? 0 : 0.02}>
-                <section id={key} className="scroll-mt-28 border-b border-cream-line py-8 first:pt-0 last:border-0">
-                  <h2 className="display text-heading-xs text-ink">
+      <section className="bg-paper py-20 md:py-[104px]">
+        <div className="pc-shell">
+          <div className="pc-grid">
+            {/* The contents sit in three columns and the document in eight,
+                starting at column five. Below 768px the grid is four wide,
+                so the two stack and the contents lead. */}
+            <aside className="col-span-4 md:col-span-3 md:sticky md:top-28 md:self-start">
+              <Eyebrow>{d.tableOfContents}</Eyebrow>
+              <nav className="mt-5 flex flex-col gap-2.5 border-l border-rule pl-4">
+                {entries.map(([key, s]) => (
+                  <a
+                    key={key}
+                    href={`#${key}`}
+                    className="block text-[1rem] text-moss transition-colors duration-300 ease-io-attio hover:text-ink hover:duration-50"
+                  >
                     {s.title}
-                  </h2>
-                  <p className="mt-4 whitespace-pre-line text-[15px] leading-[1.6] text-ink-soft">
-                    {s.content}
-                  </p>
-                </section>
-              </Reveal>
-            ))}
+                  </a>
+                ))}
+              </nav>
+            </aside>
+
+            <div className="col-span-4 md:col-span-8 md:col-start-5">
+              {entries.map(([key, s], i) => (
+                <Reveal key={key} delay={i === 0 ? 0 : 0.02}>
+                  <section
+                    id={key}
+                    className="scroll-mt-28 border-b border-rule py-8 first:pt-0 last:border-0"
+                  >
+                    <h2 className="text-heading-sm text-ink">{s.title}</h2>
+                    <p className="mt-4 max-w-[64ch] whitespace-pre-line text-[1.125rem] leading-[1.375] text-moss">
+                      {s.content}
+                    </p>
+                  </section>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>

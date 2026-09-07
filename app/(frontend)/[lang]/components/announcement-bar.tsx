@@ -20,13 +20,13 @@ type Announcement = {
  * and page padding always collapse together with the bar and no empty strip is
  * left above the nav.
  *
- * On the dark page it is a lifted strip, not a dark one: `night` is a step up
- * from the page ground, with a `night-line` hairline under it and the link in
- * the accent text colour. It is 40px tall and the height is load-bearing: the
- * header's `top-10` and the layout's `pt-10` are both keyed to it. The bar
- * therefore cannot grow a second line, and the sentence cannot be set smaller
- * than the 12px floor, so the only variable left is how much of the row it
- * renders.
+ * It is a dark band on the pale page: the ink ground, mist copy, the link in
+ * white and the arrow in sage, with a rule-dark hairline under it. There is no
+ * accent colour, no radius and no shadow, and the whole strip is one weight.
+ * It is 40px tall and the height is load-bearing: the header's `top-10` and the
+ * layout's `pt-10` are both keyed to it. The bar therefore cannot grow a second
+ * line, and the sentence cannot be set smaller than the 14px floor, so the only
+ * variable left is how much of the row it renders.
  *
  * THREE DEFECTS CLOSED, all measured at 390px.
  *
@@ -61,9 +61,9 @@ type Announcement = {
  *    candidate widths are computed the same way in every mode, and stepping
  *    back up to `full` needs 2px more room than stepping down did.
  *
- * Both interactive children are 44px tall boxes centred in the 40px band. They
- * paint nothing outside it (the link has no ground, and the dismiss button's
- * hover disc is a 36px child), so the band still reads as exactly 40px.
+ * Both interactive children are 44px tall boxes centred in the 40px band, which
+ * is the touch target the band itself is too short to give. Neither paints a
+ * ground of its own, so the band still reads as exactly 40px.
  */
 
 type Mode = "full" | "compact" | "off";
@@ -201,25 +201,35 @@ export default function AnnouncementBar({
       ref={lineRef}
       className="flex shrink-0 items-center gap-1.5 whitespace-nowrap"
     >
-      <span>{text}</span>
+      <span className="text-mist">{text}</span>
       {linkText && !compact && (
+        // No colour class here on purpose: `.pc-link` sets `color: inherit`
+        // and, being defined after the generated utilities in the same layer,
+        // would win over a `text-white` on the same element. The white comes
+        // from the anchor instead. `group-hover` draws the underline from
+        // anywhere on the row, which is what the whole 40px band is for.
         <span
           ref={labelRef}
-          className="font-medium text-lime-soft underline decoration-lime-soft/40 underline-offset-[3px] transition-colors duration-300 ease-io-attio group-hover:text-lime-ink group-hover:decoration-lime-ink group-hover:duration-50"
+          className="pc-link group-hover:[background-size:100%_1px]"
         >
           {linkText}
         </span>
       )}
-      {linkUrl && (
-        <Arrow className="size-3 shrink-0 text-lime-soft transition-transform duration-300 group-hover:translate-x-0.5" />
-      )}
+      {linkUrl && <Arrow className="size-3 shrink-0 text-sage" />}
     </span>
   );
 
   return (
     <div
       className={[
-        "fixed inset-x-0 top-0 z-[60] h-10 items-center border-b border-night-line bg-night px-1 text-bone-soft sm:px-2",
+        // `on-dark` is what turns the global focus ring white for everything
+        // inside the band.
+        "on-dark fixed inset-x-0 top-0 z-[60] h-10 items-center border-b border-rule-dark bg-ink px-1 text-mist sm:px-2",
+        // 16px is the system's small size. Below 640 it steps to the 14px
+        // micro size, because the fit ladder answers an oversized sentence by
+        // taking the whole bar off the page, and a phone reaching that rung
+        // over two points of type would be a worse outcome than the step.
+        "text-[0.875rem] leading-none sm:text-[1rem]",
         // Before hydration the attribute drives display, so a returning
         // visitor who dismissed this banner never sees it flash. After
         // hydration React owns it, because a `display:none` bar cannot be
@@ -242,17 +252,15 @@ export default function AnnouncementBar({
           <LocaleLink
             href={linkUrl}
             // 44px of target in a 40px band: the box overhangs 2px top and
-            // bottom and paints nothing there, and the focus ring is drawn
-            // 2px inboard so it lands exactly on the band.
+            // bottom and paints nothing there. The white here is the link
+            // colour, and the sentence inside steps back down to mist.
             aria-label={compact && linkText ? `${text} ${linkText}` : undefined}
-            className="group flex h-11 shrink-0 items-center text-[12px] leading-none text-bone-soft transition-colors duration-300 ease-io-attio hover:text-bone hover:duration-50 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-bone-dim sm:text-[13px]"
+            className="group flex h-11 shrink-0 items-center text-white"
           >
             {line}
           </LocaleLink>
         ) : (
-          <span className="flex h-10 shrink-0 items-center text-[12px] leading-none sm:text-[13px]">
-            {line}
-          </span>
+          <span className="flex h-10 shrink-0 items-center">{line}</span>
         )}
       </div>
 
@@ -260,20 +268,19 @@ export default function AnnouncementBar({
         type="button"
         onClick={dismiss}
         aria-label="Dismiss announcement"
-        className="group flex size-11 shrink-0 items-center justify-center rounded-full text-bone-dim transition-colors duration-300 ease-io-attio hover:text-bone hover:duration-50 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-bone-dim"
+        // A square 44px hit area with no ground of its own: the glyph moving
+        // from sage to white is the whole hover state, so the button paints
+        // nothing outside the 40px band even while it overhangs it.
+        className="flex size-11 shrink-0 items-center justify-center text-sage transition-colors duration-300 ease-io-attio hover:text-white hover:duration-50"
       >
-        {/* The hover disc is a 36px child, so the 44px target never paints
-            outside the 40px band. */}
-        <span className="flex size-9 items-center justify-center rounded-full transition-colors duration-300 ease-io-attio group-hover:bg-white/10 group-hover:duration-50">
-          <svg viewBox="0 0 24 24" className="size-4" fill="none" aria-hidden>
-            <path
-              d="M6 6l12 12M18 6 6 18"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-            />
-          </svg>
-        </span>
+        <svg viewBox="0 0 24 24" className="size-4" fill="none" aria-hidden>
+          <path
+            d="M6 6l12 12M18 6 6 18"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+        </svg>
       </button>
     </div>
   );

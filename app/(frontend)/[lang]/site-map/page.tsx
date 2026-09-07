@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "../components/page-hero";
 import Footer from "../components/footer";
 import { Stagger, StaggerItem } from "../components/motion";
+import { Eyebrow } from "../components/ui";
 import LocaleLink from "../components/locale-link";
 import { isLocale, defaultLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
@@ -66,28 +67,32 @@ export default async function Page({
     <main>
       <PageHero eyebrow={t.breadcrumb} title={t.title} intro={t.subtitle} visual="grid" />
 
-      <section className="bg-cream">
-        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
-          <Stagger className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3" gap={0.06}>
+      <section className="bg-paper py-20 md:py-[104px]">
+        <div className="pc-shell">
+          {/* One section per grid third, each opened by a hairline. The
+              section title was a two-pixel accent rule over a mono caps
+              label; it is a plain hairline and a sentence case label now. */}
+          <Stagger className="pc-grid" gap={0.06}>
             {sections.map(([sectionKey, section]) => (
-              <StaggerItem key={sectionKey}>
-                <div className="h-full border-t-2 border-lime pt-6">
-                  <h2 className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime-soft">
-                    {section.title}
-                  </h2>
-                  <ul className="mt-5 space-y-3">
-                    {Object.entries(section.links).map(([linkKey, label]) => (
-                      <li key={linkKey}>
-                        <LocaleLink
-                          href={hrefMap[`${sectionKey}.${linkKey}`] ?? "/"}
-                          className="text-[15px] text-ink-soft transition-colors hover:text-lime-soft"
-                        >
-                          {label}
-                        </LocaleLink>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <StaggerItem
+                key={sectionKey}
+                className="col-span-4 border-t border-rule pt-8 "
+              >
+                <h2>
+                  <Eyebrow>{section.title}</Eyebrow>
+                </h2>
+                <ul className="mt-5 flex flex-col gap-3">
+                  {Object.entries(section.links).map(([linkKey, label]) => (
+                    <li key={linkKey}>
+                      <LocaleLink
+                        href={hrefMap[`${sectionKey}.${linkKey}`] ?? "/"}
+                        className="pc-link text-[1.125rem] text-ink"
+                      >
+                        {label}
+                      </LocaleLink>
+                    </li>
+                  ))}
+                </ul>
               </StaggerItem>
             ))}
           </Stagger>

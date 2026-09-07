@@ -1,45 +1,47 @@
 import Hero from "./components/hero";
+import Latest from "./components/latest";
 import Clients from "./components/clients";
-import Services from "./components/services";
-import Offerings from "./components/offerings";
-import TimeSaved from "./components/time-saved";
-import TokenMeasure from "./components/token-measure";
-import Figures from "./components/figures";
-import QuantyShowcase from "./components/quanty-showcase";
-import People from "./components/people";
-import Europe from "./components/europe";
-import Banner from "./components/banner";
+import Platform from "./components/platform";
+import Cases from "./components/cases";
+import Stories from "./components/stories";
+import Founders from "./components/founders";
+import Locations from "./components/locations";
 import Footer from "./components/footer";
-import { Spacer } from "./components/ui";
 import { isLocale, defaultLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
-import { getTrustLogos } from "@/lib/trust";
+import { MAP_VIEWBOX, MAP_BACKDROP } from "@/lib/europe-map";
 
-// Revalidate so the CMS-managed content on this page (the client marks and
-// the team members behind the people band) refreshes periodically.
 export const revalidate = 60;
 
 /**
- * The homepage band order, September 2026. This file decides the sequence
- * and nothing else: every band owns its own ground, padding and height.
+ * The home page, September 2026.
  *
- *   1. Hero            the promise, on the WebGL mesh
- *   2. Clients         who we have built for: three named teams, one line each
- *   3. Services        five ways we take work off a desk, one 3D stage
- *   4. Offerings       four ways to start, each with a plain example
- *   5. TimeSaved       four jobs, hours today and after
- *   6. TokenMeasure    the paired half: what runs, by process
- *   7. Figures         four checkable numbers about this company
- *   8. QuantyShowcase  our own product, as proof we ship
- *   9. People          the two people who do the work
- *  10. Europe          where we are from and the rules the work follows
- *  11. Banner          the one dark call to action
- *  12. Footer
+ * This file decides the sequence and nothing else. Every band owns its own
+ * ground, its own vertical padding and its own grid placement, and no band
+ * knows what sits above or below it.
  *
- * The proof used to be one 130px strip of three names and three figures
- * under the hero. It is now two bands in two places: the names right after
- * the promise, where a reader asks "who else", and the figures after the
- * savings, where a reader asks "and can I believe you".
+ * The order alternates ground so the page reads as a set of plates rather
+ * than a scroll of boxes. Only three grounds exist and they are used in
+ * this rhythm:
+ *
+ *   1. Hero        deep green over a video loop        (dark)
+ *   2. Latest      the page ground, an index and one   (pale)
+ *                  open story beside it
+ *   3. Clients     the page ground, one ruled row      (pale)
+ *   4. Platform    ink, and the only product on the    (dark)
+ *                  site that is ours: Quanty
+ *   5. Cases       the page ground, staggered grid     (pale)
+ *   6. Stories     the page ground, staggered grid     (pale)
+ *   7. Founders    the page ground, two quotes         (pale)
+ *   8. Locations   deep green, the map                 (dark)
+ *   9. Footer      carbon                              (dark)
+ *
+ * Cases and Stories deliberately share a ground and a grid: they are the
+ * editorial middle of the page, and the reader should feel one long column
+ * of work rather than two competing sections.
+ *
+ * There is no closing CTA band. The founders band carries the only ask on
+ * the page, next to the faces of the people who answer.
  */
 export default async function Home({
   params,
@@ -49,23 +51,27 @@ export default async function Home({
   const { lang } = await params;
   const locale: Locale = isLocale(lang) ? lang : defaultLocale;
   const dict = getDictionary(locale);
-  const trustLogos = await getTrustLogos();
+  const home = dict.home;
 
   return (
     <main>
-      <Hero dict={dict.hero} />
-      <Clients dict={dict.clients} logos={trustLogos} />
-      <Services locale={locale} />
-      <Offerings locale={locale} />
-      <TimeSaved dict={dict.timeSaved} />
-      <TokenMeasure locale={locale} />
-      <Figures dict={dict.figures} stats={dict.hero.stats} />
-      <QuantyShowcase dict={dict.quanty} />
-      <Spacer h={120} />
-      <People locale={locale} />
-      <Europe locale={locale} />
-      <Spacer h={96} />
-      <Banner dict={dict.banners.move} />
+      <Hero dict={home.hero} />
+      <Latest dict={home.latest} />
+      <Clients dict={home.clients} />
+      <Platform dict={home.platform} />
+      <Cases dict={home.cases} />
+      <Stories dict={home.stories} />
+      <Founders dict={home.founders} />
+      {/* The map's backdrop path is 60KB and is imported HERE, on the
+          server, then handed down. Locations is a client component (the map
+          and the pills share one selection), so importing the whole map
+          module inside it would put every byte of that path into the client
+          chunk as well as into the HTML. */}
+      <Locations
+        dict={home.locations}
+        viewBox={MAP_VIEWBOX}
+        backdrop={MAP_BACKDROP}
+      />
       <Footer locale={locale} />
     </main>
   );

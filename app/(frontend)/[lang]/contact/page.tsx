@@ -3,6 +3,7 @@ import { PageHero } from "../components/page-hero";
 import Contact from "../components/contact";
 import Footer from "../components/footer";
 import { Reveal, Stagger, StaggerItem } from "../components/motion";
+import { Eyebrow } from "../components/ui";
 import { Visual } from "../components/visual";
 import { isLocale, defaultLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
@@ -36,81 +37,91 @@ export default async function ContactPage({
       <Contact locale={locale} showIntro={false} />
 
       {/* Location */}
-      <section className="bg-cream">
-        <div className="mx-auto grid max-w-[1240px] items-center gap-12 px-5 py-20 sm:px-10 sm:py-[6.25rem] lg:grid-cols-2 lg:gap-20">
-          <div>
-            <Reveal>
-              <div className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime-soft">{t.location.label}</div>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <h2 className="mt-4 text-balance font-serif text-[2.5rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-5xl">
-                {t.location.title}
-              </h2>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <p className="mt-5 max-w-md text-[17px] leading-[1.7] text-ink-soft">
-                {t.location.description}
-              </p>
-            </Reveal>
-            <Reveal delay={0.15}>
-              <div className="mt-8 grid gap-6 sm:grid-cols-2">
-                <div className="rounded border border-cream-line bg-cream-surface p-6">
-                  <p className="font-mono text-xs uppercase tracking-[0.1em] text-lime-soft">
-                    {t.location.address.title}
-                  </p>
-                  <p className="mt-3 text-ink">
-                    Kosowska 12/3
-                    <br />
-                    60-464 {t.location.address.line1}
-                    <br />
-                    {t.location.address.line2}
-                  </p>
-                </div>
-                <div className="rounded border border-cream-line bg-cream-surface p-6">
-                  <p className="font-mono text-xs uppercase tracking-[0.1em] text-lime-soft">
-                    {t.location.hours.title}
-                  </p>
-                  <p className="mt-3 text-ink">
-                    {t.location.hours.weekdays}
-                    <br />
-                    {t.location.hours.timezone}
-                  </p>
-                </div>
+      <section className="bg-paper-dim py-20 md:py-[104px]">
+        <div className="pc-shell">
+          <div className="pc-grid">
+            <div className="col-span-4 md:col-span-6">
+              <Reveal>
+                <Eyebrow>{t.location.label}</Eyebrow>
+              </Reveal>
+              <Reveal delay={0.05}>
+                <h2 className="mt-4 text-heading-lg text-ink">
+                  {t.location.title}
+                </h2>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <p className="mt-6 max-w-[46ch] text-[1.125rem] leading-[1.375] text-moss">
+                  {t.location.description}
+                </p>
+              </Reveal>
+            </div>
+            <Reveal delay={0.1} className="col-span-4 md:col-span-5 md:col-start-8">
+              <div className="aspect-[4/3] overflow-hidden bg-paper">
+                <Visual kind="grid" />
               </div>
             </Reveal>
           </div>
-          <Reveal delay={0.1}>
-            <div className="aspect-[4/3] overflow-hidden rounded">
-              <Visual kind="grid" />
+
+          {/* The address and the hours are two ruled cells on the grid, not
+              two boxes: the hairline is the separation. */}
+          <Reveal delay={0.15}>
+            <div className="pc-grid mt-12 md:mt-16">
+              <div className="col-span-4 border-t border-rule pt-8 md:col-span-3">
+                <Eyebrow>{t.location.address.title}</Eyebrow>
+                <p className="mt-3 text-[1.125rem] leading-[1.375] text-ink">
+                  Kosowska 12/3
+                  <br />
+                  60-464 {t.location.address.line1}
+                  <br />
+                  {t.location.address.line2}
+                </p>
+              </div>
+              <div className="col-span-4 border-t border-rule pt-8 md:col-span-3">
+                <Eyebrow>{t.location.hours.title}</Eyebrow>
+                <p className="mt-3 text-[1.125rem] leading-[1.375] text-ink">
+                  {t.location.hours.weekdays}
+                  <br />
+                  {t.location.hours.timezone}
+                </p>
+              </div>
             </div>
           </Reveal>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="border-t border-cream-line bg-cream">
-        <div className="mx-auto max-w-3xl px-5 py-20 sm:px-10 sm:py-[6.25rem]">
-          <Reveal className="text-center">
-            <div className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime-soft">{t.faq.label}</div>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="mx-auto mt-4 max-w-xl text-balance text-center font-serif text-[2.5rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-5xl">
-              {t.faq.title}
-            </h2>
-          </Reveal>
-          <Stagger className="mt-12 space-y-4" gap={0.06}>
+      <section className="bg-paper py-20 md:py-[104px]">
+        <div className="pc-shell">
+          <div className="pc-grid">
+            <div className="col-span-4 md:col-span-8">
+              <Reveal>
+                <Eyebrow>{t.faq.label}</Eyebrow>
+              </Reveal>
+              <Reveal delay={0.05}>
+                <h2 className="mt-4 text-heading-lg text-ink">{t.faq.title}</h2>
+              </Reveal>
+            </div>
+          </div>
+          {/* Each question is a ruled row in a reading column. Nothing is
+              centred and nothing is a card. */}
+          <Stagger className="pc-grid mt-16 md:mt-20" gap={0.06}>
             {faq.map((item) => (
-              <StaggerItem key={item.question}>
-                <details className="group rounded border border-cream-line bg-cream-surface p-6">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-medium text-ink">
+              <StaggerItem
+                key={item.question}
+                className="col-span-4 border-t border-rule md:col-span-8"
+              >
+                <details className="group py-6">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[1.125rem] leading-[1.375] text-ink">
                     {item.question}
-                    <span className="flex size-7 shrink-0 items-center justify-center rounded-[2px] border border-cream-line text-lime-soft transition-transform duration-300 group-open:rotate-45">
+                    <span className="flex size-7 shrink-0 items-center justify-center border border-rule text-moss transition-transform duration-300 group-open:rotate-45">
                       <svg viewBox="0 0 24 24" className="size-4" fill="none" aria-hidden>
-                        <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                        <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="1.5" />
                       </svg>
                     </span>
                   </summary>
-                  <p className="mt-4 leading-relaxed text-ink-soft">{item.answer}</p>
+                  <p className="mt-4 max-w-[46ch] text-[1.125rem] leading-[1.375] text-moss">
+                    {item.answer}
+                  </p>
                 </details>
               </StaggerItem>
             ))}

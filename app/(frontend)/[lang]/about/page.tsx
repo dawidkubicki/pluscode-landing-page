@@ -5,7 +5,7 @@ import Banner from "../components/banner";
 import Stats from "../components/stats";
 import Footer from "../components/footer";
 import { Reveal, Stagger, StaggerItem } from "../components/motion";
-import { Plus } from "../components/ui";
+import { Eyebrow, Plus } from "../components/ui";
 import { Visual } from "../components/visual";
 import { LinkedInIcon, MailIcon } from "../components/icons";
 import { isLocale, defaultLocale, type Locale } from "@/lib/i18n/config";
@@ -72,58 +72,61 @@ export default async function AboutPage({
         cta={{ label: t.cta.cta, href: "/contact" }}
       />
 
-      {/* Story */}
-      <section className="bg-cream">
-        <div className="mx-auto grid max-w-[1240px] items-center gap-12 px-5 py-20 sm:px-10 sm:py-[6.25rem] lg:grid-cols-2 lg:gap-20">
-          <div>
-            <Reveal>
-              <div className="mb-4 font-mono text-[13px] uppercase tracking-[0.14em] text-lime-soft">
-                {t.story.label}
-              </div>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <h2 className="text-balance font-serif text-[2.5rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-5xl">
-                {t.story.title}
-              </h2>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <div className="mt-6 space-y-4 text-[17px] leading-[1.7] text-ink-soft">
-                <p>{t.story.paragraph1}</p>
-                <p>{t.story.paragraph2}</p>
+      {/* Story. The text runs in six columns and the plate fills the last
+          five, which is the same pair the homepage uses for a band header. */}
+      <section className="bg-paper py-20 md:py-[104px]">
+        <div className="pc-shell">
+          <div className="pc-grid">
+            <div className="col-span-4 md:col-span-6">
+              <Reveal>
+                <Eyebrow>{t.story.label}</Eyebrow>
+              </Reveal>
+              <Reveal delay={0.05}>
+                <h2 className="mt-4 text-heading-lg text-ink">
+                  {t.story.title}
+                </h2>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <div className="mt-6 space-y-4 text-[1.125rem] leading-[1.375] text-moss">
+                  <p className="max-w-[46ch]">{t.story.paragraph1}</p>
+                  <p className="max-w-[46ch]">{t.story.paragraph2}</p>
+                </div>
+              </Reveal>
+            </div>
+            <Reveal delay={0.1} className="col-span-4 md:col-span-5 md:col-start-8">
+              <div className="aspect-[4/3] overflow-hidden bg-paper-dim">
+                <Visual kind="nodes" />
               </div>
             </Reveal>
           </div>
-          <Reveal delay={0.1}>
-            <div className="aspect-[4/3] overflow-hidden rounded">
-              <Visual kind="nodes" />
-            </div>
-          </Reveal>
         </div>
       </section>
 
       {/* Values */}
-      <section className="border-t border-cream-line bg-cream">
-        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
-          <Reveal>
-            <div className="mb-4 font-mono text-[13px] uppercase tracking-[0.14em] text-lime-soft">
-              {t.values.label}
+      <section className="bg-paper-dim py-20 md:py-[104px]">
+        <div className="pc-shell">
+          <div className="pc-grid">
+            <div className="col-span-4 md:col-span-8">
+              <Reveal>
+                <Eyebrow>{t.values.label}</Eyebrow>
+              </Reveal>
+              <Reveal delay={0.05}>
+                <h2 className="mt-4 text-heading-lg text-ink">
+                  {t.values.title}
+                </h2>
+              </Reveal>
             </div>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="max-w-3xl text-balance font-serif text-[2.5rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-5xl">
-              {t.values.title}
-            </h2>
-          </Reveal>
-          <Stagger
-            className="mt-14 grid border-l border-t border-cream-line sm:grid-cols-2 lg:grid-cols-4"
-            gap={0.08}
-          >
+          </div>
+          <Stagger className="pc-grid mt-16 md:mt-24" gap={0.08}>
             {values.map((v) => (
-              <StaggerItem key={v.title} className="h-full">
-                <article className="flex h-full flex-col border-b border-r border-cream-line p-7 transition-colors duration-300 ease-io-attio hover:bg-cream-surface hover:duration-50">
-                  <Plus className="size-5" />
-                  <h3 className="mt-5 text-lg font-semibold text-ink">{v.title}</h3>
-                  <p className="mt-3 text-[14.5px] leading-[1.65] text-ink-soft">
+              <StaggerItem
+                key={v.title}
+                className="col-span-4 border-t border-rule pt-8 md:col-span-3"
+              >
+                <article>
+                  <Plus className="size-5 text-moss" />
+                  <h3 className="mt-5 text-heading-sm text-ink">{v.title}</h3>
+                  <p className="mt-3 text-[1.125rem] leading-[1.375] text-moss">
                     {v.description}
                   </p>
                 </article>
@@ -136,72 +139,73 @@ export default async function AboutPage({
       <Stats locale={locale} />
 
       {/* Team */}
-      <section className="border-t border-cream-line bg-cream">
-        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
-          <Reveal>
-            <div className="mb-4 font-mono text-[13px] uppercase tracking-[0.14em] text-lime-soft">
-              {t.team.label}
+      <section className="bg-paper py-20 md:py-[104px]">
+        <div className="pc-shell">
+          <div className="pc-grid">
+            <div className="col-span-4 md:col-span-8">
+              <Reveal>
+                <Eyebrow>{t.team.label}</Eyebrow>
+              </Reveal>
+              <Reveal delay={0.05}>
+                <h2 className="mt-4 text-heading-lg text-ink">
+                  {t.team.title}
+                </h2>
+              </Reveal>
             </div>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="max-w-3xl text-balance font-serif text-[2.5rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-5xl">
-              {t.team.title}
-            </h2>
-          </Reveal>
-          {/* Two people, so a two-up. A four-column grid holding two cards was
-              what made the old placeholder members look necessary. The 3:4
-              portrait and the one filter, grayscale(1) contrast(1.02), are the
-              photo system from spec F1, the same one the homepage uses. */}
-          <Stagger className="mt-14 grid max-w-[860px] gap-6 sm:grid-cols-2" gap={0.08}>
+          </div>
+          {/* Two people, so two cells of four columns each. The 3:4 portrait
+              and the one filter, grayscale(1) contrast(1.02), are the photo
+              system from spec F1, the same one the homepage uses. The card is
+              the photograph plus the words under it: no frame, no ground and
+              no border, because the portrait is its own edge. */}
+          <Stagger className="pc-grid mt-16 md:mt-24" gap={0.08}>
             {team.map((m) => (
-              <StaggerItem key={m.id} className="h-full">
-                <article className="flex h-full flex-col overflow-hidden rounded border border-cream-line bg-cream-surface transition-colors duration-300 hover:border-lime">
-                  <div className="relative aspect-[3/4] overflow-hidden bg-cream-surface">
+              <StaggerItem key={m.id} className="col-span-4">
+                <article>
+                  <div className="relative aspect-[3/4] overflow-hidden bg-paper-dim">
                     {m.photo && (
                       <Image
                         src={m.photo.url}
                         alt={m.photo.alt}
                         fill
-                        sizes="(min-width: 860px) 414px, (min-width: 640px) 46vw, 92vw"
+                        sizes="(min-width: 768px) 33vw, 92vw"
                         className="object-cover object-center grayscale contrast-[1.02]"
                       />
                     )}
                   </div>
-                  <div className="flex flex-1 flex-col p-6">
-                    <h3 className="text-lg font-semibold text-ink">{m.name}</h3>
-                    {m.role && (
-                      <p className="mt-1 font-mono text-xs uppercase tracking-[0.1em] text-lime-soft">
-                        {m.role}
-                      </p>
-                    )}
-                    {m.bio && (
-                      <p className="mt-3 text-[14.5px] leading-[1.65] text-ink-soft">{m.bio}</p>
-                    )}
-                    {(m.email || m.linkedin) && (
-                      <div className="-ml-3 mt-auto flex items-center pt-2 text-ink-soft">
-                        {m.email && (
-                          <a
-                            href={`mailto:${m.email}`}
-                            aria-label={`Email ${m.name}`}
-                            className="inline-flex size-11 items-center justify-center transition-colors hover:text-ink"
-                          >
-                            <MailIcon className="size-[18px]" />
-                          </a>
-                        )}
-                        {m.linkedin && (
-                          <a
-                            href={m.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`${m.name} on LinkedIn`}
-                            className="inline-flex size-11 items-center justify-center transition-colors hover:text-ink"
-                          >
-                            <LinkedInIcon className="size-[18px]" />
-                          </a>
-                        )}
-                      </div>
-                    )}
-                  </div>
+                  <h3 className="mt-6 text-heading-md text-ink">{m.name}</h3>
+                  {m.role && (
+                    <p className="mt-2 text-[0.875rem] text-moss">{m.role}</p>
+                  )}
+                  {m.bio && (
+                    <p className="mt-4 text-[1.125rem] leading-[1.375] text-moss">
+                      {m.bio}
+                    </p>
+                  )}
+                  {(m.email || m.linkedin) && (
+                    <div className="-ml-3 mt-4 flex items-center text-moss">
+                      {m.email && (
+                        <a
+                          href={`mailto:${m.email}`}
+                          aria-label={`Email ${m.name}`}
+                          className="inline-flex size-11 items-center justify-center transition-colors hover:text-ink"
+                        >
+                          <MailIcon className="size-[18px]" />
+                        </a>
+                      )}
+                      {m.linkedin && (
+                        <a
+                          href={m.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${m.name} on LinkedIn`}
+                          className="inline-flex size-11 items-center justify-center transition-colors hover:text-ink"
+                        >
+                          <LinkedInIcon className="size-[18px]" />
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </article>
               </StaggerItem>
             ))}

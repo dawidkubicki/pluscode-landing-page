@@ -7,8 +7,13 @@ import LocaleLink from "./locale-link";
 
 type FormDict = Dictionary["form"];
 
+/* The form sits on the page ground now, so a field is a white plate with a
+   hairline: square, no radius, 18px ink text. The focus state moves the
+   border to ink and nothing else. The outline is deliberately not set here,
+   because the global `:focus-visible` rule in globals.css already draws the
+   2px ink ring with its 2px offset on every input on this ground. */
 const FIELD =
-  "w-full rounded-xl border border-cream-line-strong bg-night px-4 py-3.5 text-[15px] text-bone placeholder:text-bone-dim transition-colors duration-300 ease-io-attio focus:border-lime-soft focus:duration-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime";
+  "w-full border border-rule bg-white px-4 py-3.5 text-[1.125rem] leading-[1.375] text-ink placeholder:text-moss transition-colors duration-300 ease-io-attio focus:border-ink focus:duration-50";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -41,12 +46,9 @@ function Label({
   required?: boolean;
 }) {
   return (
-    <label
-      htmlFor={htmlFor}
-      className="mb-2 block text-[13px] font-medium text-bone-soft"
-    >
+    <label htmlFor={htmlFor} className="mb-2 block text-[0.875rem] text-moss">
       {children}
-      {required && <span className="ml-0.5 text-lime-soft">*</span>}
+      {required && <span className="ml-0.5 text-ink">*</span>}
     </label>
   );
 }
@@ -148,23 +150,32 @@ export default function LeadForm({
 
   if (sent) {
     return (
-      <div className="flex min-h-72 flex-col items-start justify-center rounded-[20px] border border-night-line bg-night-soft p-8 sm:p-10">
-        {/* Neutral, not accent-filled. The accent is rationed to the button,
-            the focus ring and the required marks on this screen. */}
-        <span className="flex size-12 items-center justify-center rounded-full bg-bone text-night">
+      <div className="flex min-h-72 flex-col items-start justify-center border border-rule bg-white p-8 sm:p-10">
+        {/* A filled ink square, not a coloured badge: the confirmation is a
+            change of ground, which is the only emphasis this system has. */}
+        <span className="flex size-12 items-center justify-center bg-ink text-white">
           <svg viewBox="0 0 24 24" className="size-6" fill="none" aria-hidden>
             <path d="m5 13 4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
-        <h3 className="display mt-5 text-heading-xs text-bone">{t.successTitle}</h3>
-        <p className="mt-2 max-w-sm text-[14.5px] text-bone-soft">{t.successMessage}</p>
+        <h3 className="mt-5 text-heading-sm text-ink">{t.successTitle}</h3>
+        <p className="mt-3 max-w-[46ch] text-[1.125rem] leading-[1.375] text-moss">
+          {t.successMessage}
+        </p>
       </div>
     );
   }
 
+  /* The one colour on the site that is not in the palette. An invalid field
+     has to read as invalid, and every palette value here is either the body
+     colour or a hairline, so a validation message drawn in any of them says
+     nothing. Red 700 measures 5.9:1 on white. */
   const Err = ({ k }: { k: string }) =>
     errors[k] ? (
-      <span id={`${id(k)}-error`} className="mt-1.5 block text-xs text-red-400">
+      <span
+        id={`${id(k)}-error`}
+        className="mt-1.5 block text-[0.875rem] text-red-700"
+      >
         {errors[k]}
       </span>
     ) : null;
@@ -176,8 +187,12 @@ export default function LeadForm({
       : {};
 
   return (
-    <form onSubmit={onSubmit} noValidate className="rounded-[20px] border border-night-line bg-night-soft p-6 sm:p-10">
-      {title && <div className="mb-6 text-[19px] font-semibold text-bone">{title}</div>}
+    <form
+      onSubmit={onSubmit}
+      noValidate
+      className="border border-rule bg-white p-6 sm:p-10"
+    >
+      {title && <div className="mb-6 text-heading-sm text-ink">{title}</div>}
       <div className="flex flex-col gap-5">
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
@@ -252,12 +267,12 @@ export default function LeadForm({
               name="hearAbout"
               value={values.hearAbout}
               onChange={onChange}
-              className={`${FIELD} appearance-none pr-11 ${values.hearAbout ? "" : "text-bone-dim"}`}
+              className={`${FIELD} appearance-none pr-11 ${values.hearAbout ? "" : "text-moss"}`}
               {...a11y("hearAbout")}
             >
               <option value="">{t.hearAboutPlaceholder}</option>
               {t.hearAboutOptions.map((o) => (
-                <option key={o.value} value={o.value} className="bg-night text-bone">
+                <option key={o.value} value={o.value} className="bg-white text-ink">
                   {o.label}
                 </option>
               ))}
@@ -265,7 +280,7 @@ export default function LeadForm({
             <svg
               viewBox="0 0 24 24"
               aria-hidden
-              className="pointer-events-none absolute right-4 top-1/2 size-4 -translate-y-1/2 text-bone-dim"
+              className="pointer-events-none absolute right-4 top-1/2 size-4 -translate-y-1/2 text-moss"
               fill="none"
             >
               <path d="m6 9 6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -290,7 +305,7 @@ export default function LeadForm({
           <Err k="message" />
         </div>
 
-        <div className="flex flex-col gap-3.5 border-t border-night-line pt-5">
+        <div className="flex flex-col gap-3.5 border-t border-rule pt-5">
           <div>
             <div className="flex items-start gap-3">
               <input
@@ -301,23 +316,23 @@ export default function LeadForm({
                   setConsentTerms(e.target.checked);
                   clearError("consentTerms");
                 }}
-                className="mt-0.5 size-4 shrink-0 cursor-pointer accent-lime"
+                className="mt-0.5 size-4 shrink-0 cursor-pointer accent-ink"
                 {...a11y("consentTerms")}
               />
               <label
                 htmlFor={id("consentTerms")}
-                className="cursor-pointer text-[13.5px] leading-[1.5] text-bone-soft"
+                className="cursor-pointer text-[0.875rem] leading-[1.5] text-moss"
               >
                 {t.consentTermsPrefix}{" "}
-                <LocaleLink href="/terms-of-use" className="text-lime-soft underline underline-offset-2 transition-colors duration-300 ease-io-attio hover:text-bone hover:duration-50">
+                <LocaleLink href="/terms-of-use" className="text-ink underline underline-offset-2 transition-colors duration-300 ease-io-attio hover:text-moss hover:duration-50">
                   {t.consentTermsLink}
                 </LocaleLink>{" "}
                 {t.consentTermsMiddle}{" "}
-                <LocaleLink href="/privacy-policy" className="text-lime-soft underline underline-offset-2 transition-colors duration-300 ease-io-attio hover:text-bone hover:duration-50">
+                <LocaleLink href="/privacy-policy" className="text-ink underline underline-offset-2 transition-colors duration-300 ease-io-attio hover:text-moss hover:duration-50">
                   {t.consentPrivacyLink}
                 </LocaleLink>
                 {t.consentTermsSuffix}
-                <span className="ml-0.5 text-lime-soft">*</span>
+                <span className="ml-0.5 text-ink">*</span>
               </label>
             </div>
             <Err k="consentTerms" />
@@ -329,20 +344,20 @@ export default function LeadForm({
               type="checkbox"
               checked={consentMarketing}
               onChange={(e) => setConsentMarketing(e.target.checked)}
-              className="mt-0.5 size-4 shrink-0 cursor-pointer accent-lime"
+              className="mt-0.5 size-4 shrink-0 cursor-pointer accent-ink"
             />
             <div>
               <label
                 htmlFor={id("consentMarketing")}
-                className="cursor-pointer text-[13.5px] leading-[1.5] text-bone-soft"
+                className="cursor-pointer text-[0.875rem] leading-[1.5] text-moss"
               >
                 {t.consentMarketing}
               </label>
               <details className="group mt-1">
-                <summary className="cursor-pointer list-none text-[12.5px] text-bone-soft underline underline-offset-2 transition-colors duration-300 ease-io-attio hover:text-bone hover:duration-50">
+                <summary className="cursor-pointer list-none text-[0.875rem] text-moss underline underline-offset-2 transition-colors duration-300 ease-io-attio hover:text-ink hover:duration-50">
                   {t.consentDetailsLabel}
                 </summary>
-                <p className="mt-2 text-[12.5px] leading-[1.55] text-bone-soft">
+                <p className="mt-2 text-[0.875rem] leading-[1.55] text-moss">
                   {t.consentDetailsText}
                 </p>
               </details>
@@ -351,21 +366,18 @@ export default function LeadForm({
         </div>
 
         {submitError && (
-          <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3">
-            <p className="text-sm text-red-300">{submitError}</p>
+          <div className="border border-rule bg-paper-dim px-4 py-3">
+            <p className="text-[1rem] text-red-700">{submitError}</p>
           </div>
         )}
 
+        {/* The sanctioned dark button, stretched. `.btn` carries the size,
+            the square edge, the hover step and the focus ring, so the only
+            thing this call site adds is the full width. */}
         <button
           type="submit"
           disabled={submitting}
-          // Not `.btn btn-primary`: this one is a full-width block at 56px,
-          // and `.btn` fixes the height at 36. It carries the primary fill,
-          // the lighter border and the same asymmetric hover by hand. The
-          // focus ring is bone rather than the usual accent, because an
-          // blue ring around a blue fill is not a ring. The border is one
-          // step lighter than the fill, the same trick as `.btn-primary`.
-          className="rounded-[10px] border border-lime-bright bg-lime p-4 text-[15.5px] font-semibold text-white transition-colors duration-300 ease-io-attio hover:bg-lime-bright hover:duration-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bone-soft active:bg-lime-deep disabled:opacity-60"
+          className="btn btn-primary w-full disabled:opacity-60"
         >
           {submitting ? t.sending : submitLabel}
         </button>

@@ -5,7 +5,7 @@ import { Reveal, Stagger, StaggerItem } from "./motion";
 import { type VisualKind } from "./visual";
 import { BrandMark } from "./brand-marks";
 import LocaleLink from "./locale-link";
-import { Arrow } from "./ui";
+import { Eyebrow } from "./ui";
 import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import type { SubpageData } from "./service-subpage";
@@ -79,7 +79,8 @@ export type ServiceData = {
 /** Two-digit index label ("01", "02", ...). */
 const num = (i: number) => String(i + 1).padStart(2, "0");
 
-/** One labelled row of chips: mono eyebrow on the left, chips wrapping beside it. */
+/** One labelled row of chips, laid on the grid: label in the first three
+ *  columns, chips wrapping across the remaining nine. */
 function ToolRow({
   title,
   className = "",
@@ -90,17 +91,18 @@ function ToolRow({
   children: ReactNode;
 }) {
   return (
-    <div
-      className={`flex flex-col items-start gap-6 lg:flex-row lg:gap-12 ${className}`}
-    >
+    <div className={`pc-grid ${className}`}>
       {title && (
-        <Reveal>
-          <div className="shrink-0 font-mono text-[13px] uppercase leading-[1.5] tracking-[0.14em] text-lime-soft lg:w-[15rem] lg:pt-2.5">
-            {title}
-          </div>
+        <Reveal className="col-span-4 md:col-span-3">
+          <Eyebrow>{title}</Eyebrow>
         </Reveal>
       )}
-      <Stagger className="flex flex-wrap gap-2.5" gap={0.03}>
+      <Stagger
+        className={`col-span-4 flex flex-wrap gap-2.5 ${
+          title ? "md:col-span-9" : "md:col-span-12"
+        }`}
+        gap={0.03}
+      >
         {children}
       </Stagger>
     </div>
@@ -122,7 +124,15 @@ export function Check({ className = "" }: { className?: string }) {
   );
 }
 
-/** Centered section heading: optional mono eyebrow, serif title, intro. */
+/**
+ * Section heading: optional eyebrow, the section title, an optional intro.
+ *
+ * It used to be centred with a serif 40px title. Nothing is centred in this
+ * system: a band header hangs off the left edge of the grid like every header
+ * on the homepage. The root element is a plain div so the call site can place
+ * it on the grid through `className`, which is also where its column span
+ * comes from.
+ */
 export function SectionHeading({
   eyebrow,
   title,
@@ -135,22 +145,20 @@ export function SectionHeading({
   className?: string;
 }) {
   return (
-    <div className={`text-center ${className}`}>
+    <div className={className}>
       {eyebrow && (
         <Reveal>
-          <div className="mb-4 font-mono text-[13px] uppercase tracking-[0.14em] text-lime-soft">
-            {eyebrow}
-          </div>
+          <Eyebrow>{eyebrow}</Eyebrow>
         </Reveal>
       )}
       <Reveal delay={eyebrow ? 0.05 : 0}>
-        <h2 className="mx-auto max-w-3xl text-balance font-serif text-[2.5rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-5xl">
+        <h2 className={`text-heading-lg text-ink ${eyebrow ? "mt-4" : ""}`}>
           {title}
         </h2>
       </Reveal>
       {intro && (
         <Reveal delay={0.1}>
-          <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.7] text-ink-soft">
+          <p className="mt-6 max-w-[46ch] text-[1.125rem] leading-[1.375] text-moss">
             {intro}
           </p>
         </Reveal>
@@ -198,27 +206,26 @@ export default function ServicePage({
         cta={{ label: d.cta.button, href: ctaHref }}
       />
 
-      {/* Proof band. `night` is one step above the page, so it carries both
-          hairlines to read as a lifted band rather than a gap. */}
+      {/* Proof band. The change of ground is the whole separation: no
+          hairlines above and below a band that is already a different
+          colour from the two it sits between. */}
       {stats.length > 0 && (
-        <section className="border-y border-night-line bg-night text-bone">
-          <div className="mx-auto max-w-[1240px] px-5 py-14 sm:px-10 sm:py-16">
-            <Stagger
-              className={`grid grid-cols-2 gap-x-10 gap-y-10 ${
-                stats.length >= 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"
-              }`}
-              gap={0.1}
-            >
+        <section className="on-dark bg-ink py-20 md:py-[104px]">
+          <div className="pc-shell">
+            <Stagger className="pc-grid" gap={0.1}>
               {stats.map((s) => (
-                <StaggerItem key={s.label}>
-                  <div className="flex flex-col gap-2">
-                    <span className="display text-4xl text-bone sm:text-5xl">
-                      {s.value}
-                    </span>
-                    <span className="max-w-[15rem] text-[14px] leading-[1.5] text-bone-dim">
-                      {s.label}
-                    </span>
-                  </div>
+                <StaggerItem
+                  key={s.label}
+                  className={`col-span-4 border-t border-rule-dark pt-8 ${
+                    stats.length >= 4 ? "md:col-span-3" : "md:col-span-4"
+                  }`}
+                >
+                  <span className="block text-heading-lg text-white">
+                    {s.value}
+                  </span>
+                  <span className="mt-4 block text-[1.125rem] leading-[1.375] text-sage">
+                    {s.label}
+                  </span>
                 </StaggerItem>
               ))}
             </Stagger>
@@ -227,30 +234,31 @@ export default function ServicePage({
       )}
 
       {/* Features */}
-      <section className="bg-cream">
-        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
+      <section className="bg-paper py-20 md:py-[104px]">
+        <div className="pc-shell">
           {d.featuresTitle && (
-            <SectionHeading
-              title={d.featuresTitle}
-              intro={d.featuresIntro}
-              className="mb-14"
-            />
+            <div className="pc-grid">
+              <SectionHeading
+                title={d.featuresTitle}
+                intro={d.featuresIntro}
+                className="col-span-4 md:col-span-8"
+              />
+            </div>
           )}
           <Stagger
-            className="grid border-l border-t border-cream-line sm:grid-cols-2 lg:grid-cols-3"
+            className={`pc-grid ${d.featuresTitle ? "mt-16 md:mt-24" : ""}`}
             gap={0.06}
           >
             {features.map((f, i) => (
-              <StaggerItem key={f.title} className="h-full">
-                <article className="flex h-full flex-col border-b border-r border-cream-line p-7 transition-colors duration-300 ease-io-attio hover:bg-cream-surface hover:duration-50 sm:p-8">
-                  <span className="font-serif text-3xl font-light text-ink-mute">
-                    {num(i)}
-                  </span>
-                  <h3 className="mt-5 text-xl font-semibold text-ink">{f.title}</h3>
-                  <p className="mt-3 text-[15px] leading-[1.65] text-ink-soft">
-                    {f.description}
-                  </p>
-                </article>
+              <StaggerItem
+                key={f.title}
+                className="col-span-4 border-t border-rule pt-8 "
+              >
+                <span className="text-[0.875rem] text-moss">{num(i)}</span>
+                <h3 className="mt-3 text-heading-sm text-ink">{f.title}</h3>
+                <p className="mt-4 text-[1.125rem] leading-[1.375] text-moss">
+                  {f.description}
+                </p>
               </StaggerItem>
             ))}
           </Stagger>
@@ -259,28 +267,32 @@ export default function ServicePage({
 
       {/* Deliverables */}
       {deliverables.length > 0 && (
-        <section className="border-t border-cream-line bg-cream-dim">
-          <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
+        <section className="bg-paper-dim py-20 md:py-[104px]">
+          <div className="pc-shell">
             {d.deliverablesTitle && (
-              <SectionHeading
-                title={d.deliverablesTitle}
-                intro={d.deliverablesIntro}
-                className="mb-14"
-              />
+              <div className="pc-grid">
+                <SectionHeading
+                  title={d.deliverablesTitle}
+                  intro={d.deliverablesIntro}
+                  className="col-span-4 md:col-span-8"
+                />
+              </div>
             )}
-            <Stagger className="grid gap-5 sm:grid-cols-2" gap={0.06}>
+            <Stagger
+              className={`pc-grid ${d.deliverablesTitle ? "mt-16 md:mt-24" : ""}`}
+              gap={0.06}
+            >
               {deliverables.map((item) => (
-                <StaggerItem key={item.title} className="h-full">
-                  <div className="flex h-full items-start gap-4 rounded border border-cream-line bg-cream-surface p-6 sm:p-7">
-                    <span className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-[2px] border border-cream-line text-lime-soft">
-                      <Check className="size-4" />
-                    </span>
-                    <div>
-                      <h3 className="text-lg font-semibold text-ink">{item.title}</h3>
-                      <p className="mt-2 text-[14.5px] leading-[1.65] text-ink-soft">
-                        {item.description}
-                      </p>
-                    </div>
+                <StaggerItem
+                  key={item.title}
+                  className="col-span-4 flex items-start gap-4 border-t border-rule pt-8 md:col-span-6"
+                >
+                  <Check className="mt-1 size-5 shrink-0 text-ink" />
+                  <div>
+                    <h3 className="text-heading-sm text-ink">{item.title}</h3>
+                    <p className="mt-3 text-[1.125rem] leading-[1.375] text-moss">
+                      {item.description}
+                    </p>
                   </div>
                 </StaggerItem>
               ))}
@@ -290,24 +302,26 @@ export default function ServicePage({
       )}
 
       {/* Process */}
-      <section className="border-t border-cream-line bg-cream-dim">
-        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
-          <SectionHeading eyebrow={d.label} title={d.processTitle ?? d.title} />
-          <Stagger
-            className="mt-14 grid border-l border-t border-cream-line sm:grid-cols-2 lg:grid-cols-4"
-            gap={0.08}
-          >
+      <section className="bg-paper py-20 md:py-[104px]">
+        <div className="pc-shell">
+          <div className="pc-grid">
+            <SectionHeading
+              eyebrow={d.label}
+              title={d.processTitle ?? d.title}
+              className="col-span-4 md:col-span-8"
+            />
+          </div>
+          <Stagger className="pc-grid mt-16 md:mt-24" gap={0.08}>
             {steps.map((s, i) => (
-              <StaggerItem key={s.title} className="h-full">
-                <div className="flex h-full flex-col border-b border-r border-cream-line p-7 sm:p-8">
-                  <span className="font-serif text-5xl font-light text-lime-soft">
-                    {num(i)}
-                  </span>
-                  <h3 className="mt-7 text-lg font-semibold text-ink">{s.title}</h3>
-                  <p className="mt-3 text-[14.5px] leading-[1.65] text-ink-soft">
-                    {s.description}
-                  </p>
-                </div>
+              <StaggerItem
+                key={s.title}
+                className="col-span-4 border-t border-rule pt-8 md:col-span-3"
+              >
+                <span className="text-[0.875rem] text-moss">{num(i)}</span>
+                <h3 className="mt-3 text-heading-sm text-ink">{s.title}</h3>
+                <p className="mt-4 text-[1.125rem] leading-[1.375] text-moss">
+                  {s.description}
+                </p>
               </StaggerItem>
             ))}
           </Stagger>
@@ -316,40 +330,42 @@ export default function ServicePage({
 
       {/* Engagement models */}
       {models.length > 0 && (
-        <section className="border-t border-cream-line bg-cream">
-          <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
+        <section className="bg-paper-dim py-20 md:py-[104px]">
+          <div className="pc-shell">
             {d.modelsTitle && (
-              <SectionHeading
-                title={d.modelsTitle}
-                intro={d.modelsIntro}
-                className="mb-14"
-              />
+              <div className="pc-grid">
+                <SectionHeading
+                  title={d.modelsTitle}
+                  intro={d.modelsIntro}
+                  className="col-span-4 md:col-span-8"
+                />
+              </div>
             )}
-            <Stagger className="grid gap-5 lg:grid-cols-3" gap={0.08}>
+            <Stagger
+              className={`pc-grid ${d.modelsTitle ? "mt-16 md:mt-24" : ""}`}
+              gap={0.08}
+            >
               {models.map((m) => (
-                <StaggerItem key={m.name} className="h-full">
-                  <article className="flex h-full flex-col rounded border border-cream-line bg-cream-surface p-7 transition-colors duration-300 hover:border-cream-line-strong sm:p-8">
-                    <h3 className="font-serif text-[1.7rem] font-medium leading-tight text-ink">
-                      {m.name}
-                    </h3>
-                    <div className="mt-2.5 font-mono text-[12.5px] uppercase tracking-[0.1em] text-lime-soft">
-                      {m.duration}
-                    </div>
-                    <p className="mt-5 text-[15px] leading-[1.65] text-ink-soft">
-                      {m.description}
-                    </p>
-                    <ul className="mt-6 flex flex-col gap-2.5 border-t border-cream-line pt-6">
-                      {m.bullets.map((b) => (
-                        <li
-                          key={b}
-                          className="flex items-start gap-2.5 text-[14.5px] text-ink-soft"
-                        >
-                          <Check className="mt-0.5 size-4 shrink-0 text-lime-soft" />
-                          <span>{b}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </article>
+                <StaggerItem
+                  key={m.name}
+                  className="col-span-4 border-t border-rule pt-8 "
+                >
+                  <span className="text-[0.875rem] text-moss">{m.duration}</span>
+                  <h3 className="mt-3 text-heading-md text-ink">{m.name}</h3>
+                  <p className="mt-4 text-[1.125rem] leading-[1.375] text-moss">
+                    {m.description}
+                  </p>
+                  <ul className="mt-6 flex flex-col gap-2.5 border-t border-rule pt-6">
+                    {m.bullets.map((b) => (
+                      <li
+                        key={b}
+                        className="flex items-start gap-2.5 text-[1rem] leading-[1.375] text-moss"
+                      >
+                        <Check className="mt-1 size-4 shrink-0 text-ink" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </StaggerItem>
               ))}
             </Stagger>
@@ -359,18 +375,29 @@ export default function ServicePage({
 
       {/* Built for */}
       {who.length > 0 && (
-        <section className="border-t border-cream-line bg-cream-dim">
-          <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
-            {d.whoTitle && <SectionHeading title={d.whoTitle} className="mb-14" />}
-            <Stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4" gap={0.08}>
+        <section className="bg-paper py-20 md:py-[104px]">
+          <div className="pc-shell">
+            {d.whoTitle && (
+              <div className="pc-grid">
+                <SectionHeading
+                  title={d.whoTitle}
+                  className="col-span-4 md:col-span-8"
+                />
+              </div>
+            )}
+            <Stagger
+              className={`pc-grid ${d.whoTitle ? "mt-16 md:mt-24" : ""}`}
+              gap={0.08}
+            >
               {who.map((w) => (
-                <StaggerItem key={w.title} className="h-full">
-                  <div className="h-full rounded border border-cream-line bg-cream-surface p-6 sm:p-7">
-                    <h3 className="text-lg font-semibold text-ink">{w.title}</h3>
-                    <p className="mt-2.5 text-[14.5px] leading-[1.65] text-ink-soft">
-                      {w.description}
-                    </p>
-                  </div>
+                <StaggerItem
+                  key={w.title}
+                  className="col-span-4 border-t border-rule pt-8 md:col-span-3"
+                >
+                  <h3 className="text-heading-sm text-ink">{w.title}</h3>
+                  <p className="mt-4 text-[1.125rem] leading-[1.375] text-moss">
+                    {w.description}
+                  </p>
                 </StaggerItem>
               ))}
             </Stagger>
@@ -381,13 +408,13 @@ export default function ServicePage({
       {/* Tooling. Two rows when a page separates the products it builds on
           (with their marks) from the methods it applies; one row otherwise. */}
       {(tech.length > 0 || tools.length > 0) && (
-        <section className="border-t border-cream-line bg-cream">
-          <div className="mx-auto max-w-[1240px] px-5 py-12 sm:px-10 sm:py-14">
+        <section className="bg-paper py-20 md:py-[104px]">
+          <div className="pc-shell">
             {tech.length > 0 && (
               <ToolRow title={d.techTitle}>
                 {tech.map((t) => (
                   <StaggerItem key={t.name}>
-                    <span className="inline-flex items-center gap-2 rounded-[2px] border border-cream-line px-3.5 py-2 font-mono text-[13px] text-ink-soft">
+                    <span className="inline-flex items-center gap-2 border border-rule px-3.5 py-2 text-[1rem] text-moss">
                       <BrandMark name={t.mark} className="size-[18px] shrink-0 text-ink" />
                       {t.name}
                     </span>
@@ -399,13 +426,11 @@ export default function ServicePage({
             {tools.length > 0 && (
               <ToolRow
                 title={d.toolsTitle}
-                className={
-                  tech.length > 0 ? "mt-8 border-t border-cream-line pt-8" : ""
-                }
+                className={tech.length > 0 ? "mt-12 md:mt-16" : ""}
               >
                 {tools.map((t) => (
                   <StaggerItem key={t}>
-                    <span className="inline-block rounded-[2px] border border-cream-line px-3.5 py-2 font-mono text-[13px] text-ink-soft">
+                    <span className="inline-block border border-rule px-3.5 py-2 text-[1rem] text-moss">
                       {t}
                     </span>
                   </StaggerItem>
@@ -418,31 +443,39 @@ export default function ServicePage({
 
       {/* Go deeper: sub-service cards */}
       {hrefBase && subEntries.length > 0 && (
-        <section className="border-t border-cream-line bg-cream">
-          <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
+        <section className="bg-paper-dim py-20 md:py-[104px]">
+          <div className="pc-shell">
             {d.subTitle && (
-              <SectionHeading
-                title={d.subTitle}
-                intro={d.subIntro}
-                className="mb-14"
-              />
+              <div className="pc-grid">
+                <SectionHeading
+                  title={d.subTitle}
+                  intro={d.subIntro}
+                  className="col-span-4 md:col-span-8"
+                />
+              </div>
             )}
-            <Stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" gap={0.08}>
+            <Stagger
+              className={`pc-grid ${d.subTitle ? "mt-16 md:mt-24" : ""}`}
+              gap={0.08}
+            >
               {subEntries.map(([slug, s]) => (
-                <StaggerItem key={slug} className="h-full">
-                  <LocaleLink
-                    href={`${hrefBase}/${slug}`}
-                    className="group flex h-full flex-col rounded border border-cream-line bg-cream-surface p-7 transition-colors duration-300 hover:border-lime sm:p-8"
-                  >
-                    <h3 className="font-serif text-2xl font-medium leading-tight text-ink">
-                      {s.name}
+                <StaggerItem
+                  key={slug}
+                  className="col-span-4 border-t border-rule pt-8 "
+                >
+                  {/* The whole cell is the link and the headline is what
+                      moves, the same pairing the homepage cards use. The
+                      underline sits on an inline span so it ends where the
+                      words do rather than at the column edge. */}
+                  <LocaleLink href={`${hrefBase}/${slug}`} className="group block">
+                    <h3 className="text-heading-md text-ink">
+                      <span className="pc-link group-hover:[background-size:100%_1px]">
+                        {s.name}
+                      </span>
                     </h3>
-                    <p className="mt-3.5 text-[15px] leading-[1.65] text-ink-soft">
+                    <p className="mt-4 text-[1.125rem] leading-[1.375] text-moss">
                       {s.teaser}
                     </p>
-                    <span className="mt-auto flex items-center pt-7 text-lime-soft">
-                      <Arrow className="size-[18px] transition-transform duration-300 group-hover:translate-x-1" />
-                    </span>
                   </LocaleLink>
                 </StaggerItem>
               ))}
@@ -452,26 +485,35 @@ export default function ServicePage({
       )}
 
       {d.faq && d.faq.length > 0 && (
-        <section className="border-t border-cream-line bg-cream">
-          <div className="mx-auto max-w-3xl px-5 py-20 sm:px-10 sm:py-[6.25rem]">
-            <Reveal>
-              <h2 className="text-balance text-center font-serif text-[2.5rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-5xl">
-                {d.faqTitle ?? "FAQ"}
-              </h2>
-            </Reveal>
-            <Stagger className="mt-12 space-y-4" gap={0.06}>
+        <section className="bg-paper py-20 md:py-[104px]">
+          <div className="pc-shell">
+            <div className="pc-grid">
+              <Reveal className="col-span-4 md:col-span-8">
+                <h2 className="text-heading-lg text-ink">
+                  {d.faqTitle ?? "FAQ"}
+                </h2>
+              </Reveal>
+            </div>
+            {/* Questions run in a reading column, each one a ruled row: the
+                hairline is the separation, so there is no card to draw. */}
+            <Stagger className="pc-grid mt-16 md:mt-20" gap={0.06}>
               {d.faq.map((item) => (
-                <StaggerItem key={item.q}>
-                  <details className="group rounded border border-cream-line bg-cream-surface p-6">
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-medium text-ink">
+                <StaggerItem
+                  key={item.q}
+                  className="col-span-4 border-t border-rule md:col-span-8"
+                >
+                  <details className="group py-6">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[1.125rem] leading-[1.375] text-ink">
                       {item.q}
-                      <span className="flex size-7 shrink-0 items-center justify-center rounded-[2px] border border-cream-line text-lime-soft transition-transform duration-300 group-open:rotate-45">
+                      <span className="flex size-7 shrink-0 items-center justify-center border border-rule text-moss transition-transform duration-300 group-open:rotate-45">
                         <svg viewBox="0 0 24 24" className="size-4" fill="none" aria-hidden>
-                          <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                          <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="1.5" />
                         </svg>
                       </span>
                     </summary>
-                    <p className="mt-4 leading-relaxed text-ink-soft">{item.a}</p>
+                    <p className="mt-4 max-w-[46ch] text-[1.125rem] leading-[1.375] text-moss">
+                      {item.a}
+                    </p>
                   </details>
                 </StaggerItem>
               ))}

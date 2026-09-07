@@ -16,22 +16,24 @@ import { posts } from "./content/insights-news";
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 
 /* The covers are baked PNGs, so nothing in globals.css can reach them:
-   these five constants are the site tokens copied by hand. Neutral
-   near-black, never navy, and the accent is indigo. Change one of them and
-   every cover has to be regenerated with `pnpm generate:covers`. */
-const NIGHT = "#101014"; /* --color-night */
-const NIGHT_SOFT = "#1b1b22"; /* --color-night-soft */
-const NIGHT_LINE = "#2a2a34"; /* --color-night-line */
-const BONE_DIM = "#7e7e90"; /* --color-bone-dim */
-const LIME = "#5b5bd6"; /* --color-lime */
-const LIME_SOFT = "#8b8be8"; /* between --color-lime and --color-lime-soft */
+   these six constants are the site tokens copied by hand. The ground is a
+   green-black ink and there is no accent hue in this system, so the two
+   constants still named LIME and LIME_SOFT now hold the two light steps of
+   one green ramp: sage, then mist. The names are kept only so the
+   compositions below keep compiling. Change one of them and every cover has
+   to be regenerated with `pnpm generate:covers`. */
+const NIGHT = "#141E1E"; /* --color-night, the ink ground */
+const NIGHT_SOFT = "#1F2C2C"; /* --color-night-soft, the raised ground */
+const NIGHT_LINE = "#2A3535"; /* --color-night-line, the hairline */
+const BONE_DIM = "#91A6A4"; /* --color-sage, metadata text */
+const LIME = "#91A6A4"; /* sage, the light mark */
+const LIME_SOFT = "#D0D7D7"; /* mist, the brightest mark */
 
 const logoDataUri = `data:image/svg+xml;base64,${fs
   .readFileSync(path.join(root, "public/assets/logo/pluscode-logo.svg"))
   .toString("base64")}`;
 
-const figtree400 = fs.readFileSync(path.join(root, "scripts/fonts/Figtree-Regular.ttf"));
-const figtree600 = fs.readFileSync(path.join(root, "scripts/fonts/Figtree-SemiBold.ttf"));
+const inter400 = fs.readFileSync(path.join(root, "scripts/fonts/Inter-Regular.ttf"));
 
 const CATEGORY_LABEL: Record<string, string> = {
   ai: "AI & Machine Learning",
@@ -55,7 +57,7 @@ function motifRegulation() {
           top: 210 + Math.sin(a) * 190 - 9,
           width: 18,
           height: 18,
-          borderRadius: 999,
+          borderRadius: 0,
           backgroundColor: i < 8 ? LIME_SOFT : NIGHT_LINE,
         }}
       />
@@ -80,7 +82,7 @@ function motifRegulation() {
             top: 60,
             width: 300,
             height: 300,
-            borderRadius: 999,
+            borderRadius: 0,
             border: `3px solid ${NIGHT_LINE}`,
           }}
         />
@@ -95,7 +97,7 @@ function motifRegulation() {
             top: 300 + i * 110,
             width: 560,
             height: 74,
-            borderRadius: 10,
+            borderRadius: 0,
             backgroundColor: i === 0 ? LIME : NIGHT_SOFT,
             border: `2px solid ${i === 0 ? LIME : NIGHT_LINE}`,
             display: "flex",
@@ -108,7 +110,7 @@ function motifRegulation() {
             style={{
               width: 26,
               height: 26,
-              borderRadius: 999,
+              borderRadius: 0,
               backgroundColor: i === 0 ? NIGHT : LIME_SOFT,
             }}
           />
@@ -116,8 +118,8 @@ function motifRegulation() {
             style={{
               width: i === 0 ? 330 : 260 - i * 40,
               height: 12,
-              borderRadius: 6,
-              backgroundColor: i === 0 ? "rgba(16,16,20,0.55)" : NIGHT_LINE,
+              borderRadius: 0,
+              backgroundColor: i === 0 ? "rgba(20,30,30,0.55)" : NIGHT_LINE,
             }}
           />
         </div>
@@ -147,8 +149,8 @@ function motifTiers() {
               bottom: 0,
               width: 250,
               height: s.h,
-              borderRadius: "14px 14px 0 0",
-              backgroundColor: top ? "rgba(91,91,214,0.24)" : NIGHT_SOFT,
+              borderRadius: 0,
+              backgroundColor: top ? "rgba(145,166,164,0.24)" : NIGHT_SOFT,
               border: `2px solid ${top ? LIME_SOFT : NIGHT_LINE}`,
               display: "flex",
               justifyContent: "center",
@@ -159,7 +161,7 @@ function motifTiers() {
               style={{
                 width: 54,
                 height: 8,
-                borderRadius: 4,
+                borderRadius: 0,
                 backgroundColor: top ? LIME_SOFT : NIGHT_LINE,
               }}
             />
@@ -173,7 +175,7 @@ function motifTiers() {
           top: 300,
           width: 60,
           height: 60,
-          borderRadius: 999,
+          borderRadius: 0,
           backgroundColor: LIME,
           filter: "blur(2px)",
         }}
@@ -213,7 +215,7 @@ function motifBars() {
             bottom: 120,
             width: 130,
             height: b.h,
-            borderRadius: "10px 10px 0 0",
+            borderRadius: 0,
             backgroundColor:
               b.kind === "lime"
                 ? LIME
@@ -221,7 +223,7 @@ function motifBars() {
                   ? "transparent"
                   : b.kind === "dim"
                     ? NIGHT_SOFT
-                    : "rgba(139,139,232,0.35)",
+                    : "rgba(208,215,215,0.35)",
             border: `2px ${b.kind === "outline" ? "dashed" : "solid"} ${
               b.kind === "lime" ? LIME : b.kind === "outline" ? BONE_DIM : NIGHT_LINE
             }`,
@@ -246,8 +248,8 @@ function motifCode() {
             top: 210 + i * 62,
             width: w,
             height: 18,
-            borderRadius: 9,
-            backgroundColor: i % 3 === 0 ? "rgba(139,139,232,0.55)" : NIGHT_SOFT,
+            borderRadius: 0,
+            backgroundColor: i % 3 === 0 ? "rgba(208,215,215,0.55)" : NIGHT_SOFT,
             border: `1px solid ${i % 3 === 0 ? LIME_SOFT : NIGHT_LINE}`,
           }}
         />
@@ -268,9 +270,9 @@ function motifCode() {
             display: "flex",
             width: 480,
             height: 220,
-            borderRadius: 12,
+            borderRadius: 0,
             border: `2px solid ${NIGHT_LINE}`,
-            backgroundColor: "rgba(27,27,34,0.6)",
+            backgroundColor: "rgba(31,44,44,0.6)",
             position: "relative",
           }}
         >
@@ -283,7 +285,7 @@ function motifCode() {
                 bottom: 30,
                 width: 26,
                 height: 30 + i * 28,
-                borderRadius: 4,
+                borderRadius: 0,
                 backgroundColor: LIME_SOFT,
               }}
             />
@@ -294,9 +296,9 @@ function motifCode() {
             display: "flex",
             width: 480,
             height: 120,
-            borderRadius: 12,
+            borderRadius: 0,
             border: `2px solid ${NIGHT_LINE}`,
-            backgroundColor: "rgba(27,27,34,0.6)",
+            backgroundColor: "rgba(31,44,44,0.6)",
             alignItems: "center",
           }}
         >
@@ -305,7 +307,7 @@ function motifCode() {
               marginLeft: 40,
               width: 400,
               height: 4,
-              borderRadius: 2,
+              borderRadius: 0,
               backgroundColor: BONE_DIM,
             }}
           />
@@ -329,7 +331,7 @@ function motifEmbedded() {
           top: 250 + Math.sin(a) * 230 - 20,
           width: 40,
           height: 40,
-          borderRadius: 999,
+          borderRadius: 0,
           backgroundColor: NIGHT_SOFT,
           border: `2px solid ${NIGHT_LINE}`,
         }}
@@ -356,7 +358,7 @@ function motifEmbedded() {
             top: 194,
             width: 112,
             height: 112,
-            borderRadius: 999,
+            borderRadius: 0,
             backgroundColor: LIME,
             border: `2px solid ${LIME_SOFT}`,
           }}
@@ -371,7 +373,7 @@ function motifEmbedded() {
             top: 300 + i * 110,
             width: 470,
             height: 74,
-            borderRadius: 10,
+            borderRadius: 0,
             backgroundColor: i === 0 ? LIME : NIGHT_SOFT,
             border: `2px solid ${i === 0 ? LIME : NIGHT_LINE}`,
             display: "flex",
@@ -384,7 +386,7 @@ function motifEmbedded() {
             style={{
               width: 26,
               height: 26,
-              borderRadius: 999,
+              borderRadius: 0,
               backgroundColor: i === 0 ? NIGHT : LIME_SOFT,
             }}
           />
@@ -392,8 +394,8 @@ function motifEmbedded() {
             style={{
               width: i === 0 ? 260 : 210 - i * 40,
               height: 12,
-              borderRadius: 6,
-              backgroundColor: i === 0 ? "rgba(16,16,20,0.55)" : NIGHT_LINE,
+              borderRadius: 0,
+              backgroundColor: i === 0 ? "rgba(20,30,30,0.55)" : NIGHT_LINE,
             }}
           />
         </div>
@@ -423,8 +425,8 @@ async function render(slug: string, category: string) {
           display: "flex",
           backgroundColor: NIGHT,
           backgroundImage:
-            "radial-gradient(circle at 85% 10%, rgba(91,91,214,0.16) 0%, rgba(91,91,214,0) 55%)",
-          fontFamily: "Figtree",
+            "radial-gradient(circle at 85% 10%, rgba(145,166,164,0.16) 0%, rgba(145,166,164,0) 55%)",
+          fontFamily: "Inter",
           position: "relative",
         }}
       >
@@ -447,13 +449,10 @@ async function render(slug: string, category: string) {
             gap: 14,
           }}
         >
-          <div style={{ width: 10, height: 10, borderRadius: 999, backgroundColor: LIME }} />
+          <div style={{ width: 10, height: 10, borderRadius: 0, backgroundColor: LIME }} />
           <div
             style={{
               fontSize: 24,
-              fontWeight: 600,
-              textTransform: "uppercase",
-              letterSpacing: "0.14em",
               color: BONE_DIM,
             }}
           >
@@ -465,10 +464,7 @@ async function render(slug: string, category: string) {
     {
       width: 1600,
       height: 900,
-      fonts: [
-        { name: "Figtree", data: figtree400, weight: 400, style: "normal" },
-        { name: "Figtree", data: figtree600, weight: 600, style: "normal" },
-      ],
+      fonts: [{ name: "Inter", data: inter400, weight: 400, style: "normal" }],
     },
   );
 

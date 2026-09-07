@@ -80,117 +80,142 @@ export default async function CaseStudyPage({
         visual="mesh"
       />
 
-      <section className="bg-cream">
-        <div className="mx-auto max-w-3xl px-5 py-20 sm:px-10 sm:py-[6.25rem]">
-          {/* Stats */}
+      <section className="bg-paper py-20 md:py-[104px]">
+        <div className="pc-shell">
+          {/* Stats. Full width cells with a rule over each figure, so the
+              proof row lines up with the columns of every other band. */}
           {stats.length > 0 && (
             <Reveal>
-              <div className="mb-14 grid grid-cols-2 gap-x-8 gap-y-8 border-y border-cream-line py-8 sm:grid-cols-4">
+              <div className="pc-grid">
                 {stats.map((s, i) => (
-                  <div key={i}>
-                    <div className="display text-4xl text-ink">{s.value}</div>
-                    <p className="mt-2 text-[13px] leading-snug text-ink-soft">{s.label}</p>
+                  <div
+                    key={i}
+                    className="col-span-4 border-t border-rule pt-8 md:col-span-3"
+                  >
+                    <div className="text-heading-lg text-ink">{s.value}</div>
+                    <p className="mt-4 text-[1.125rem] leading-[1.375] text-moss">
+                      {s.label}
+                    </p>
                   </div>
                 ))}
               </div>
             </Reveal>
           )}
 
-          {hasRich ? (
-            <div className="space-y-12">
-              {richBlocks.map((b) => (
-                <Reveal key={b.label}>
-                  <div>
-                    <p className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime-soft">
-                      {b.label}
-                    </p>
-                    <div className="prose-pc mt-4">
-                      <Rich data={b.content} />
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          ) : (
-            <div className="space-y-12">
-              <Reveal>
-                <div>
-                  <p className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime-soft">
-                    {detail.overview.label}
-                  </p>
-                  <h2 className="mt-3 font-serif text-[1.75rem] font-medium tracking-[-0.01em] text-ink">
-                    {detail.overview.title}
-                  </h2>
-                  <p className="mt-4 leading-relaxed text-ink-soft">
-                    {detail.overview.description}
-                  </p>
-                  <div className="mt-6 flex flex-wrap gap-8 border-t border-cream-line pt-6">
-                    <div>
-                      <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-mute">
-                        {detail.overview.industry}
-                      </p>
-                      <p className="mt-1 text-ink">{detail.overview.industryValue}</p>
-                    </div>
-                    <div>
-                      <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-mute">
-                        {detail.overview.services}
-                      </p>
-                      <p className="mt-1 text-ink">{detail.overview.servicesValue}</p>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-
-              <Reveal>
-                <div>
-                  <p className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime-soft">
-                    {detail.challenge.label}
-                  </p>
-                  <h2 className="mt-3 font-serif text-[1.75rem] font-medium tracking-[-0.01em] text-ink">
-                    {detail.challenge.title}
-                  </h2>
-                  <p className="mt-4 leading-relaxed text-ink-soft">
-                    {detail.challenge.description}
-                  </p>
-                </div>
-              </Reveal>
-
-              <Reveal>
-                <div>
-                  <p className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime-soft">
-                    {detail.solution.label}
-                  </p>
-                  <h2 className="mt-3 font-serif text-[1.75rem] font-medium tracking-[-0.01em] text-ink">
-                    {detail.solution.title}
-                  </h2>
-                  <p className="mt-4 leading-relaxed text-ink-soft">
-                    {detail.solution.description}
-                  </p>
-                  <div className="mt-6 grid gap-4 sm:grid-cols-3">
-                    {Object.values(detail.solution.steps).map((step, i) => (
-                      <div key={i} className="rounded border border-cream-line bg-cream-surface p-5">
-                        <span className="font-mono text-xs text-lime-soft">
-                          0{i + 1}
-                        </span>
-                        <h3 className="mt-2 font-medium text-ink">{step.title}</h3>
-                        <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                          {step.description}
-                        </p>
+          <div className={`pc-grid ${stats.length > 0 ? "mt-16 md:mt-24" : ""}`}>
+            {/* The document runs in seven of twelve columns. Its blocks are
+                separated by space and by their labels, never by a card. */}
+            <div className="col-span-4 md:col-span-7">
+              {hasRich ? (
+                <div className="space-y-12">
+                  {richBlocks.map((b) => (
+                    <Reveal key={b.label}>
+                      <div>
+                        <p className="text-[0.875rem] text-moss">{b.label}</p>
+                        <div className="prose-pc mt-4">
+                          <Rich data={b.content} />
+                        </div>
                       </div>
-                    ))}
-                  </div>
+                    </Reveal>
+                  ))}
                 </div>
-              </Reveal>
+              ) : (
+                <div className="space-y-12">
+                  <Reveal>
+                    <div>
+                      <p className="text-[0.875rem] text-moss">
+                        {detail.overview.label}
+                      </p>
+                      <h2 className="mt-3 text-heading-md text-ink">
+                        {detail.overview.title}
+                      </h2>
+                      <p className="mt-4 max-w-[46ch] text-[1.125rem] leading-[1.375] text-moss">
+                        {detail.overview.description}
+                      </p>
+                      <div className="mt-6 flex flex-wrap gap-8 border-t border-rule pt-6">
+                        <div>
+                          <p className="text-[0.875rem] text-moss">
+                            {detail.overview.industry}
+                          </p>
+                          <p className="mt-1 text-[1.125rem] leading-[1.375] text-ink">
+                            {detail.overview.industryValue}
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-[0.875rem] text-moss">
+                            {detail.overview.services}
+                          </p>
+                          <p className="mt-1 text-[1.125rem] leading-[1.375] text-ink">
+                            {detail.overview.servicesValue}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Reveal>
+
+                  <Reveal>
+                    <div>
+                      <p className="text-[0.875rem] text-moss">
+                        {detail.challenge.label}
+                      </p>
+                      <h2 className="mt-3 text-heading-md text-ink">
+                        {detail.challenge.title}
+                      </h2>
+                      <p className="mt-4 max-w-[46ch] text-[1.125rem] leading-[1.375] text-moss">
+                        {detail.challenge.description}
+                      </p>
+                    </div>
+                  </Reveal>
+
+                  <Reveal>
+                    <div>
+                      <p className="text-[0.875rem] text-moss">
+                        {detail.solution.label}
+                      </p>
+                      <h2 className="mt-3 text-heading-md text-ink">
+                        {detail.solution.title}
+                      </h2>
+                      <p className="mt-4 max-w-[46ch] text-[1.125rem] leading-[1.375] text-moss">
+                        {detail.solution.description}
+                      </p>
+                    </div>
+                  </Reveal>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* The three solution steps close the fallback document. They are a
+              row of the page grid rather than a nested grid inside the
+              reading column, so they rule up with the stats above them. */}
+          {!hasRich && (
+            <div className="pc-grid mt-12 md:mt-16">
+              {Object.values(detail.solution.steps).map((step, i) => (
+                <div
+                  key={i}
+                  className="col-span-4 border-t border-rule pt-8 "
+                >
+                  <span className="text-[0.875rem] text-moss">
+                    0{i + 1}
+                  </span>
+                  <h3 className="mt-3 text-heading-sm text-ink">{step.title}</h3>
+                  <p className="mt-4 text-[1.125rem] leading-[1.375] text-moss">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
             </div>
           )}
 
-          <div className="mt-14">
-            <LocaleLink
-              href="/case-studies"
-              className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime-soft transition-colors hover:text-ink"
-            >
-              ← {detail.cta.viewAll}
-            </LocaleLink>
+          <div className="pc-grid mt-16 md:mt-20">
+            <div className="col-span-4 md:col-span-7">
+              <LocaleLink
+                href="/case-studies"
+                className="pc-link inline-block text-[1.125rem] text-moss"
+              >
+                ← {detail.cta.viewAll}
+              </LocaleLink>
+            </div>
           </div>
         </div>
       </section>

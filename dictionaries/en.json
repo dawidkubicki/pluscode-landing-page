@@ -6782,5 +6782,318 @@
     "note": "Quanty is a product of Pluscode Sp. z o.o.",
     "imageAlt": "The Quanty workbook with invoices read into a table",
     "chip": "Built by Pluscode"
+  },
+  "home": {
+    "hero": {
+      "headline": "Putting AI to work",
+      "subline": "Pluscode, from Poznań, across Europe.",
+      "cta": "Start exploring",
+      "scroll": "Scroll"
+    },
+    "latest": {
+      "title": "Latest",
+      "intro": "More from Pluscode",
+      "cta": "Insights",
+      "readMore": "Learn more",
+      "items": [
+        {
+          "key": "quanty",
+          "tag": "Quanty",
+          "title": "Our own AI spreadsheet reaches public beta",
+          "body": "Quanty reads invoices, contracts and statements into rows you can check, with the source page beside every value. Built by the same two engineers you would work with.",
+          "href": "https://quanty.ai"
+        },
+        {
+          "key": "fde",
+          "tag": "Forward deployed engineers",
+          "title": "An engineer inside your team, accountable for the result",
+          "body": "Not a body on a timesheet. One of ours sits with your people, learns the job, and owns what ships.",
+          "href": "/services/forward-deployed-engineers"
+        },
+        {
+          "key": "ai-act",
+          "tag": "EU AI Act",
+          "title": "What actually changed in August 2026",
+          "body": "The general purpose obligations are live. We work out your risk tier before anything is designed, not after it is built.",
+          "href": "/insights/eu-ai-act-august-2026-what-actually-changed"
+        },
+        {
+          "key": "agents",
+          "tag": "Agents",
+          "title": "Enterprise agents in 2026, hype against numbers",
+          "body": "Where autonomous workflows have paid for themselves, where they have not, and how to tell the two apart before you buy.",
+          "href": "/insights/ai-agents-enterprise-2026-hype-vs-numbers"
+        },
+        {
+          "key": "zabka",
+          "tag": "Retail",
+          "title": "The architecture behind unstaffed stores",
+          "body": "We planned, designed and ran the system architecture for autonomous stores at Poland's largest convenience chain.",
+          "href": "/case-studies"
+        }
+      ]
+    },
+    "clients": {
+      "title": "Selected clients",
+      "items": [
+        {
+          "key": "zabka",
+          "name": "Żabka",
+          "what": "Autonomous store architecture"
+        },
+        {
+          "key": "ubs",
+          "name": "UBS",
+          "what": "Mobile banking, redesigned"
+        },
+        {
+          "key": "ebm",
+          "name": "EBM Dental",
+          "what": "A platform for a clinic"
+        }
+      ]
+    },
+    "platform": {
+      "eyebrow": "Platform",
+      "title": "Quanty",
+      "intro": "The AI spreadsheet that reads your documents into rows you can check. Ours, built here, and the same parts go into client systems.",
+      "cta": "Learn about Quanty",
+      "note": "Quanty is a product of Pluscode Sp. z o.o.",
+      "items": [
+        {
+          "key": "read",
+          "name": "READ",
+          "body": "Invoices, contracts, statements and email become rows, with the source page beside every value."
+        },
+        {
+          "key": "check",
+          "name": "CHECK",
+          "body": "Every number keeps a link back to where it came from, so a wrong figure is a click from its page."
+        },
+        {
+          "key": "forecast",
+          "name": "FORECAST",
+          "body": "Your numbers in one place and a view of the months ahead, updated as documents arrive."
+        },
+        {
+          "key": "report",
+          "name": "REPORT",
+          "body": "The workbook builds the deck, so the monthly pack stops being somebody's Thursday."
+        }
+      ]
+    },
+    "cases": {
+      "title": "Cases",
+      "intro": "Explore more of our work",
+      "cta": "Go to Cases",
+      "items": [
+        {
+          "key": "zabka",
+          "caption": "How a convenience chain opened stores with nobody behind the counter",
+          "title": "Shops that run themselves",
+          "image": "/assets/cases/zabka.jpg",
+          "alt": "Żabka autonomous store architecture",
+          "href": "/case-studies"
+        },
+        {
+          "key": "ubs",
+          "caption": "How a bank unified payment flows across its mobile app",
+          "title": "One way to pay, on every screen",
+          "image": "/assets/cases/ubs.jpg",
+          "alt": "UBS mobile banking redesign",
+          "href": "/case-studies"
+        },
+        {
+          "key": "ebm",
+          "caption": "How a Poznań dental practice replaced a phone line with a platform",
+          "title": "A clinic that books itself",
+          "image": "/assets/cases/ebm.jpg",
+          "alt": "EBM Dental platform",
+          "href": "/case-studies"
+        }
+      ]
+    },
+    "stories": {
+      "title": "Stories",
+      "intro": "Explore more stories",
+      "cta": "Go to Stories",
+      "items": [
+        {
+          "key": "fde",
+          "caption": "What a forward deployed engineer actually does all day",
+          "title": "The engineer who sits with you",
+          "image": "/assets/stories/what-is-a-forward-deployed-engineer.png",
+          "alt": "What is a forward deployed engineer",
+          "href": "/insights/what-is-a-forward-deployed-engineer"
+        },
+        {
+          "key": "coding",
+          "caption": "Developers got faster and delivery did not move",
+          "title": "»The AI coding paradox«",
+          "image": "/assets/stories/ai-coding-paradox-faster-developers-flat-delivery.png",
+          "alt": "The AI coding paradox",
+          "href": "/insights/ai-coding-paradox-faster-developers-flat-delivery"
+        },
+        {
+          "key": "models",
+          "caption": "The frontier models of the second half of 2026, compared",
+          "title": "What we actually run, and why",
+          "image": "/assets/stories/frontier-models-h2-2026-claude-fable-5-gpt-5-6.png",
+          "alt": "Frontier models in the second half of 2026",
+          "href": "/insights/frontier-models-h2-2026-claude-fable-5-gpt-5-6"
+        }
+      ]
+    },
+    "founders": {
+      "title": "People",
+      "intro": "Two engineers. No account managers, no handover.",
+      "cta": "Book a call",
+      "items": [
+        {
+          "key": "dawid",
+          "name": "Dawid Kubicki",
+          "role": "CEO and AI Consultant, Poznań",
+          "caption": "Dawid Kubicki on building systems that survive contact with real data",
+          "quote": "»Vector search kept confusing two haulage firms with almost the same name. We rebuilt it as a graph, and the ambiguity went away.«",
+          "image": "/assets/team/dawid-kubicki.jpg",
+          "alt": "Dawid Kubicki"
+        },
+        {
+          "key": "krzysztof",
+          "name": "Krzysztof Suliński",
+          "role": "AI Consultant, Poznań",
+          "caption": "Krzysztof Suliński on what makes an automation worth building",
+          "quote": "»First we count the hours the work costs today. If the number is small, we say so and you keep your money.«",
+          "image": "/assets/team/krzysztof-sulinski.jpg",
+          "alt": "Krzysztof Suliński"
+        }
+      ]
+    },
+    "locations": {
+      "title": "Pluscode works across Europe.",
+      "intro": "See locations",
+      "entity": "Pluscode Sp. z o.o., Poznań, Poland",
+      "roleLabel": "Role",
+      "countries": [
+        {
+          "code": "PL",
+          "name": "Poland",
+          "city": "Poznań",
+          "role": "Head office",
+          "body": "Where the company is registered and where the engineering happens."
+        },
+        {
+          "code": "DE",
+          "name": "Germany",
+          "city": "Remote",
+          "role": "Consulting",
+          "body": "We work with German teams as consultants, in German where it helps."
+        },
+        {
+          "code": "IT",
+          "name": "Italy",
+          "city": "Remote",
+          "role": "Consulting",
+          "body": "We work with Italian teams as consultants, on the same terms."
+        }
+      ]
+    },
+    "menu": {
+      "label": "Offerings",
+      "close": "Close",
+      "columns": [
+        {
+          "key": "solutions",
+          "title": "Solutions",
+          "href": "/ai-data/consulting",
+          "items": [
+            {
+              "title": "Paperwork automation",
+              "description": "Documents arrive, get read, and land in the right place",
+              "href": "/ai-data/machine-learning"
+            },
+            {
+              "title": "Answers from your documents",
+              "description": "A question goes in, an answer comes back with its source",
+              "href": "/ai-data/machine-learning"
+            },
+            {
+              "title": "Forecasting and reporting",
+              "description": "Your numbers in one place, and a view of what comes next",
+              "href": "/ai-data/analytics"
+            },
+            {
+              "title": "Process mapping",
+              "description": "We find the work worth automating before anyone writes code",
+              "href": "/ai-data/consulting"
+            },
+            {
+              "title": "Data governance",
+              "description": "GDPR, the EU AI Act, and who may see what",
+              "href": "/ai-data/consulting"
+            }
+          ]
+        },
+        {
+          "key": "platform",
+          "title": "Platform",
+          "href": "https://quanty.ai",
+          "items": [
+            {
+              "title": "Quanty",
+              "description": "The AI spreadsheet that reads your documents into rows",
+              "href": "https://quanty.ai"
+            },
+            {
+              "title": "Document reading",
+              "description": "Invoices, contracts and statements, with the source kept",
+              "href": "https://quanty.ai"
+            },
+            {
+              "title": "Forecasting",
+              "description": "The months ahead, updated as documents arrive",
+              "href": "https://quanty.ai"
+            },
+            {
+              "title": "Reporting",
+              "description": "The workbook builds the deck",
+              "href": "https://quanty.ai"
+            }
+          ]
+        },
+        {
+          "key": "engineering",
+          "title": "Engineering",
+          "href": "/services",
+          "items": [
+            {
+              "title": "Forward deployed engineers",
+              "description": "Our engineer inside your team, accountable for the result",
+              "href": "/services/forward-deployed-engineers"
+            },
+            {
+              "title": "Software development",
+              "description": "Custom systems built end to end",
+              "href": "/services/software-development"
+            },
+            {
+              "title": "MVP development",
+              "description": "From idea to launched product in weeks",
+              "href": "/services/mvp-development"
+            },
+            {
+              "title": "Cloud and MLOps",
+              "description": "Infrastructure that runs AI in production",
+              "href": "/services/cloud"
+            },
+            {
+              "title": "Team extension",
+              "description": "Senior engineers embedded in your team",
+              "href": "/services/team-extension"
+            }
+          ]
+        }
+      ]
+    }
   }
 }

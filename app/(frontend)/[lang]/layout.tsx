@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import "./globals.css";
-import { inter, interTight } from "./fonts";
+import { inter } from "./fonts";
 import SmoothScroll from "./components/smooth-scroll";
 import Header from "./components/header";
 import FloatingContact from "./components/floating-contact";
@@ -90,10 +90,10 @@ export default async function LocaleLayout({
   return (
     <html
       lang={lang}
-      className={`${inter.variable} ${interTight.variable} antialiased`}
+      className={`${inter.variable} antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen bg-cream text-ink">
+      <body className="min-h-screen bg-paper text-ink">
         {announcementScript && <AnnouncementScript code={announcementScript} />}
         <LocaleProvider locale={lang}>
           {banner && <AnnouncementBar announcement={banner} />}

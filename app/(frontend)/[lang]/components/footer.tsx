@@ -4,19 +4,13 @@ import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { socialLinks, QUANTY_URL, type SocialKey } from "@/lib/social";
 
-/* Every footer link is a 44px tap target. The row pitch is the target, not a
-   gap: `min-h-11` on an `inline-flex` row tiles the column at 44px and the
-   list needs no `gap` of its own. */
-const linkCls =
-  "inline-flex min-h-11 items-center text-[15px] text-bone-dim transition-colors duration-300 ease-io-attio hover:text-bone hover:duration-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bone-dim";
-
-const colTitleCls =
-  "block pb-1 text-[13px] font-semibold uppercase tracking-[0.06em] text-bone";
-
-/* The 12px legal row sits on `night`, where `bone-dim` measures 4.6:1: a
-   pass, but a thin one at that size. It is set in `bone-soft` (9:1) instead. */
-const legalCls =
-  "inline-flex min-h-11 items-center text-[12px] text-bone-soft transition-colors duration-300 ease-io-attio hover:text-bone hover:duration-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bone-dim";
+/* Three shared strings, so a column can never drift from its neighbour.
+   `pc-link` carries the hover underline; the colour step is a plain hover
+   utility rather than a transition class, because `pc-link` already owns the
+   `transition` shorthand and a second one would cancel the underline. */
+const headingCls = "text-[1.125rem] leading-[1.375] text-white";
+const linkCls = "pc-link text-[1rem] leading-[1.375] hover:text-white";
+const legalCls = "pc-link text-[0.875rem] hover:text-white";
 
 const socialIcons: Record<SocialKey, typeof LinkedInIcon> = {
   linkedin: LinkedInIcon,
@@ -25,40 +19,32 @@ const socialIcons: Record<SocialKey, typeof LinkedInIcon> = {
 };
 
 /**
- * Site footer.
+ * Site footer, on the September 2026 system. Seventeen pages import it, so it
+ * is the one band that has to read as the page's terminal edge everywhere.
  *
- * Three structural changes this round, no new content.
+ * LAYOUT. One `pc-grid`, no nested grids and no second shell. The wordmark
+ * takes columns 1 to 4 and the four link groups take 5 to 12, two columns
+ * each, so the field reaches the right edge instead of stopping a column
+ * short. Below 768px the grid is four wide and each group takes two of them:
+ * a 2x2 block, which halves the scroll depth of four stacked lists without
+ * squeezing the longest label ("Forward Deployed Engineers") past two lines.
  *
- * 1. ONTO `.pc-shell`. It carried its own `max-w-[1240px] px-5 sm:px-10`, the
- *    third grid on a site that should have one, so the footer's left edge sat
- *    58px inboard of every band above it. It now uses the same shell, the same
- *    24 column field and `col-[2/-2]`, with `.pc-rules-dark` continuing the two
- *    vertical hairlines down onto the dark ground.
+ * The row gap between the brand block and the link field is a bottom margin,
+ * not a grid `gap-y`: `.pc-grid` sets the `gap` shorthand, and a `gap-y-*`
+ * utility landing in the same layer is not reliably the winner.
  *
- * 2. THREE HAND-BUILT COLUMNS BECOME CSS MULTI-COLUMN. `columns-*` with
- *    `break-inside-avoid` on each group, stepping 1 to 2 to 3 to 4. Groups of
- *    unequal length balance themselves, so a dictionary that adds a link no
- *    longer leaves one column 44px taller than its neighbours.
+ * Ground, hairline, type. No panel, no rounded card, no circles around the
+ * social marks: the only structure below the links is one `rule-dark`
+ * hairline, and the only hierarchy is size and colour.
  *
- * 3. A BOTTOM BAR on `night`, one step up from the footer's `night-deep`, with
- *    the social marks left and the legal and registry lines right at 12px. It
- *    gives the page a real terminal edge instead of trailing off into a
- *    copyright line floating on the same ground as the links.
+ * WHAT MOVED. `footer.sitemap` used to sit in the Company list and now sits
+ * with Privacy and Terms in the legal row, where a sitemap link belongs.
+ * Everything else, including the Quanty entry, stays in the group it was in.
  */
 export default function Footer({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
   const nav = dict.navigation;
   const f = dict.footer;
-
-  /** `footer.ourProduct` may not have landed in every dictionary yet. */
-  const ourProduct = (f as typeof f & { ourProduct?: string }).ourProduct;
-
-  /** Same guard for the Forward Deployed Engineers entry. */
-  const fde = (
-    nav.servicesItems as typeof nav.servicesItems & {
-      forwardDeployedEngineers?: { title: string };
-    }
-  ).forwardDeployedEngineers;
 
   // Five links a group at most. The footer used to carry every route the
   // site has, which is what /site-map is for; a wall of eight makes the one
@@ -84,9 +70,10 @@ export default function Footer({ locale }: { locale: Locale }) {
     {
       title: nav.services,
       links: [
-        ...(fde
-          ? [{ label: fde.title, href: "/services/forward-deployed-engineers" }]
-          : []),
+        {
+          label: nav.servicesItems.forwardDeployedEngineers.title,
+          href: "/services/forward-deployed-engineers",
+        },
         {
           label: nav.servicesItems.softwareDevelopment.title,
           href: "/services/software-development",
@@ -108,10 +95,7 @@ export default function Footer({ locale }: { locale: Locale }) {
         { label: nav.about, href: "/about" },
         { label: nav.caseStudies, href: "/case-studies" },
         { label: nav.insights, href: "/insights" },
-        { label: f.sitemap, href: "/site-map" },
-        ...(ourProduct
-          ? [{ label: ourProduct, href: QUANTY_URL, external: true }]
-          : []),
+        { label: f.ourProduct, href: QUANTY_URL, external: true },
       ],
     },
   ];
@@ -119,103 +103,86 @@ export default function Footer({ locale }: { locale: Locale }) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-night-line bg-night-deep text-bone-dim">
+    <footer className="on-dark bg-carbon pt-20 pb-12 text-sage md:pt-[104px]">
       <div className="pc-shell">
-        <div className="pc-rules-dark">
-          {/* Brand beside the field, not stacked above it. Stacking cost the
-              band 170px of height for a logo and one sentence, and the height
-              of this footer is set by its tallest link group either way. */}
-          <div className="pc-grid pb-11 pt-12 lg:pt-14">
-            <div className="col-[2/-2] flex flex-col gap-10 lg:flex-row lg:gap-14">
-              <div className="lg:w-[22%] lg:shrink-0">
-                <LocaleLink
-                  href="/"
-                  aria-label="Pluscode home"
-                  className="inline-flex min-h-11 items-center"
-                >
-                  {/* The white mark, the only one that reads on `night-deep`. */}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/assets/logo/pluscode-logo.svg"
-                    alt="Pluscode"
-                    className="h-8 w-auto"
-                  />
-                </LocaleLink>
-                <p className="mt-2 max-w-[26em] text-[15px] leading-[1.5] text-bone-soft">
-                  {f.tagline}
-                </p>
-                <LocaleLink
-                  href="/book-a-call"
-                  className="btn btn-primary mt-5"
-                >
-                  {nav.getInTouch}
-                </LocaleLink>
-              </div>
+        <div className="pc-grid">
+          {/* The brand block. The wordmark is type now, not an SVG: at 35px
+              in white it is the largest thing in the band, which is the whole
+              of the hierarchy the footer needs. */}
+          <div className="col-span-4 mb-12 md:mb-0">
+            <LocaleLink
+              href="/"
+              aria-label="Pluscode"
+              className="block text-heading-md text-white"
+            >
+              Pluscode
+            </LocaleLink>
+            <p className="mt-5 max-w-[24em] text-[1.125rem] leading-[1.375] text-sage">
+              {f.tagline}
+            </p>
+            <LocaleLink
+              href="/book-a-call"
+              className="pc-link mt-6 inline-block text-[1.125rem] text-white"
+            >
+              {nav.getInTouch}
+            </LocaleLink>
+          </div>
 
-              {/* The link field. One multi-column flow, not three hand-built
-                  columns: the groups are unequal and the browser balances
-                  them, so a dictionary that adds a link cannot leave one
-                  column standing 44px taller than its neighbours. */}
-              <div className="min-w-0 flex-1 columns-1 gap-8 sm:columns-2 lg:columns-3 xl:columns-4">
-                {groups.map((g) => (
-                  <div key={g.title} className="mb-8 break-inside-avoid">
-                    <span className={colTitleCls}>{g.title}</span>
-                    <div className="flex flex-col items-start">
-                      {g.links.map((l) =>
-                        l.external ? (
-                          <a
-                            key={l.href}
-                            href={l.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={linkCls}
-                          >
-                            {l.label}
-                          </a>
-                        ) : (
-                          <LocaleLink
-                            key={l.href}
-                            href={l.href}
-                            className={linkCls}
-                          >
-                            {l.label}
-                          </LocaleLink>
-                        ),
-                      )}
-                    </div>
-                  </div>
-                ))}
-
-                <div className="mb-8 break-inside-avoid">
-                  <span className={colTitleCls}>{f.columns.connect}</span>
-                  <div className="flex flex-col items-start">
-                    <a href="mailto:contact@pluscode.io" className={linkCls}>
-                      contact@pluscode.io
+          {groups.map((g, i) => (
+            <div
+              key={g.title}
+              className={`col-span-2 mb-10  md:mb-0 ${
+                i === 0 ? "md:col-start-5" : ""
+              }`}
+            >
+              <h2 className={headingCls}>{g.title}</h2>
+              <div className="mt-5 flex flex-col items-start gap-3">
+                {g.links.map((l) =>
+                  l.external ? (
+                    <a
+                      key={l.href}
+                      href={l.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={linkCls}
+                    >
+                      {l.label}
                     </a>
-                    <a href="tel:+48667688927" className={linkCls}>
-                      +48 667 688 927
-                    </a>
-                    <address className="py-2 text-[15px] not-italic leading-[1.5] text-bone-dim">
-                      Kosowska 12/3
-                      <br />
-                      60-464 Poznań, Poland
-                    </address>
-                  </div>
-                </div>
+                  ) : (
+                    <LocaleLink key={l.href} href={l.href} className={linkCls}>
+                      {l.label}
+                    </LocaleLink>
+                  ),
+                )}
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          ))}
 
-      {/* The terminal edge. One step up from the footer ground, so the page
-          closes on a visible edge rather than fading out. */}
-      <div className="border-t border-night-line bg-night">
-        <div className="pc-shell">
-          <div className="pc-rules-dark">
-            <div className="pc-grid">
-              <div className="col-[2/-2] flex flex-col gap-4 py-6 lg:flex-row lg:items-center lg:justify-between">
-                <div className="flex items-center gap-2">
+          {/* Connect closes the field. Same column shape as a link group, so
+              the four headings sit on one line. */}
+          <div className="col-span-2 mb-10 md:mb-0">
+            <h2 className={headingCls}>{f.columns.connect}</h2>
+            <div className="mt-5 flex flex-col items-start gap-3">
+              <a href="mailto:contact@pluscode.io" className={linkCls}>
+                contact@pluscode.io
+              </a>
+              <a href="tel:+48667688927" className={linkCls}>
+                +48 667 688 927
+              </a>
+              <address className="text-[1rem] leading-[1.375] not-italic text-sage">
+                {f.address}
+              </address>
+            </div>
+          </div>
+
+          {/* The terminal edge: one hairline, then the small print. Two
+              blocks on a wrapping flex row, so below 768px they stack in
+              reading order (marks, company, registry, then legal) rather
+              than needing a second breakpoint. */}
+          <div className="col-span-4 mt-20 border-t border-rule-dark pt-8 md:col-span-12">
+            <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-wrap items-center gap-x-6">
                   {socialLinks.map(({ key, label, href }) => {
                     const Icon = socialIcons[key];
                     return (
@@ -223,31 +190,35 @@ export default function Footer({ locale }: { locale: Locale }) {
                         key={key}
                         href={href}
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noreferrer"
                         aria-label={label}
-                        className="flex size-11 items-center justify-center rounded-full border border-night-line text-bone-dim transition-colors duration-300 ease-io-attio hover:border-bone-dim hover:text-bone hover:duration-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bone-dim"
+                        /* Square and unframed: the 44px height is the tap
+                           target, not a shape. */
+                        className="inline-flex min-h-11 items-center text-sage hover:text-white"
                       >
-                        <Icon className="size-[18px]" />
+                        <Icon className="size-5" />
                       </a>
                     );
                   })}
                 </div>
+                <p className="text-[0.875rem] leading-[1.375] text-sage">
+                  © {year} Pluscode Sp. z o.o. {f.allRightsReserved}
+                </p>
+                <p className="text-[0.875rem] leading-[1.375] text-sage tabular-nums">
+                  {f.krs} 0000811470 · {f.nip} 7812002984 · {f.regon} 384741150
+                </p>
+              </div>
 
-                <div className="flex flex-wrap items-center gap-x-6 gap-y-1 text-[12px] leading-[1.5] text-bone-soft lg:justify-end">
-                  <LocaleLink href="/privacy-policy" className={legalCls}>
-                    {f.privacyPolicy}
-                  </LocaleLink>
-                  <LocaleLink href="/terms-of-use" className={legalCls}>
-                    {f.termsOfUse}
-                  </LocaleLink>
-                  <span>
-                    © {year} Pluscode Sp. z o.o. {f.allRightsReserved}
-                  </span>
-                  <span className="tabular-nums">
-                    {f.krs} 0000811470 · {f.nip} 7812002984 · {f.regon}{" "}
-                    384741150
-                  </span>
-                </div>
+              <div className="flex flex-wrap items-start gap-x-6 gap-y-2 text-sage md:justify-end">
+                <LocaleLink href="/privacy-policy" className={legalCls}>
+                  {f.privacyPolicy}
+                </LocaleLink>
+                <LocaleLink href="/terms-of-use" className={legalCls}>
+                  {f.termsOfUse}
+                </LocaleLink>
+                <LocaleLink href="/site-map" className={legalCls}>
+                  {f.sitemap}
+                </LocaleLink>
               </div>
             </div>
           </div>

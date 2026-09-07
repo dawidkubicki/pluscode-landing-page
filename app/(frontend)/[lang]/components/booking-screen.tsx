@@ -3,6 +3,7 @@ import Footer from "./footer";
 import { Reveal } from "./motion";
 import LeadForm from "./lead-form";
 import LocaleLink from "./locale-link";
+import { Eyebrow } from "./ui";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { CONTACT_PERSON } from "@/lib/contact-person";
 import type { Locale } from "@/lib/i18n/config";
@@ -29,6 +30,14 @@ function Check({ className = "" }: { className?: string }) {
  * front and centre with a lean support column (what you're booking, what
  * happens next, a named point of contact, trust). No marketing sections, so the
  * only thing to do on the page is submit the form.
+ *
+ * The screen sits on the page ground, on the same 12 column grid and with the
+ * same header inset as `PageHero`: the header is fixed, so `pt-40` is what
+ * leaves clear ground under it. What is gone is the lifted `night` plate, the
+ * accent glow in its corner and the pulsing dot beside the eyebrow. There are
+ * no glows in this system and the dot was a lit accent marker with nothing
+ * left to be lit in; the label carries itself. The form is a white plate whose
+ * focus ring has to be ink, which an `on-dark` band would repaint white.
  */
 export function BookingScreen({
   locale,
@@ -64,50 +73,40 @@ export function BookingScreen({
 }) {
   return (
     <main>
-      {/* The whole screen sits on `night`, one step above the page, so it
-          closes with a hairline against the footer and carries a corner glow
-          of the accent (`lime` at 18%) to read as lit rather than as a gap. */}
-      <section className="relative isolate overflow-hidden border-b border-night-line bg-night text-bone">
-        <div className="pointer-events-none absolute -right-44 -top-44 -z-10 size-[34rem] rounded-full bg-[radial-gradient(circle,rgba(51,102,255,0.18)_0%,rgba(51,102,255,0)_65%)]" />
-
-        <div className="mx-auto max-w-[1240px] px-5 pb-20 pt-36 sm:px-10 sm:pb-28 sm:pt-40">
+      <section className="bg-paper pb-20 pt-40 md:pb-[104px] md:pt-48">
+        <div className="pc-shell">
           {/* Header */}
-          <div className="max-w-[760px]">
-            <Reveal>
-              <div className="mb-7 flex items-center gap-2.5">
-                <span className="inline-block size-2 rounded-full bg-lime-soft animate-pulse-dot" />
-                <span className="font-mono text-[12px] uppercase tracking-[0.14em] text-bone-dim sm:text-[13px]">
-                  {eyebrow}
-                </span>
-              </div>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <h1 className="display text-balance text-4xl sm:text-5xl lg:text-[3.5rem]">
-                {title}
-              </h1>
-            </Reveal>
-            {intro && (
-              <Reveal delay={0.1}>
-                <p className="mt-6 max-w-[600px] text-lg leading-[1.65] text-bone-soft">
-                  {intro}
-                </p>
+          <div className="pc-grid">
+            <div className="col-span-4 md:col-span-8">
+              <Reveal>
+                <Eyebrow>{eyebrow}</Eyebrow>
               </Reveal>
-            )}
-            {back && (
-              <Reveal delay={0.15}>
-                <LocaleLink
-                  href={back.href}
-                  className="mt-8 inline-flex items-center gap-2 text-[14.5px] font-medium text-bone-dim transition-colors hover:text-bone"
-                >
-                  ← {back.label}
-                </LocaleLink>
+              <Reveal delay={0.05}>
+                <h1 className="mt-4 text-heading-xl text-ink">{title}</h1>
               </Reveal>
-            )}
+              {intro && (
+                <Reveal delay={0.1}>
+                  <p className="mt-6 max-w-[46ch] text-[1.125rem] leading-[1.375] text-moss">
+                    {intro}
+                  </p>
+                </Reveal>
+              )}
+              {back && (
+                <Reveal delay={0.15}>
+                  <LocaleLink
+                    href={back.href}
+                    className="pc-link mt-8 inline-block text-[1.125rem] text-moss"
+                  >
+                    ← {back.label}
+                  </LocaleLink>
+                </Reveal>
+              )}
+            </div>
           </div>
 
-          {/* Form + support column */}
-          <div className="mt-14 grid items-start gap-10 lg:mt-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,380px)] lg:gap-16">
-            <Reveal delay={0.1}>
+          {/* Form, then the support column in the last four columns */}
+          <div className="pc-grid mt-16 md:mt-24">
+            <Reveal delay={0.1} className="col-span-4 md:col-span-7">
               <LeadForm
                 t={form}
                 offering={offering}
@@ -116,18 +115,24 @@ export function BookingScreen({
               />
             </Reveal>
 
-            <Reveal delay={0.15}>
-              <div className="flex flex-col gap-7 lg:sticky lg:top-28">
+            <Reveal
+              delay={0.15}
+              className="col-span-4 md:col-start-9"
+            >
+              <div className="flex flex-col gap-10 md:sticky md:top-28">
                 {summary && (
-                  <div className="rounded border border-night-line bg-night-soft p-6 sm:p-7">
-                    <div className="font-mono text-[11.5px] uppercase tracking-[0.14em] text-lime-soft">
-                      {summaryLabel ?? booking.summaryTitle}
+                  <div className="border-t border-rule pt-8">
+                    <Eyebrow>{summaryLabel ?? booking.summaryTitle}</Eyebrow>
+                    <div className="mt-3 text-[1rem] leading-[1.375] text-ink">
+                      {summary.meta}
                     </div>
-                    <div className="mt-3 text-[14px] leading-[1.5] text-bone-soft">{summary.meta}</div>
-                    <ul className="mt-5 flex flex-col gap-2.5 border-t border-night-line pt-5">
+                    <ul className="mt-5 flex flex-col gap-2.5 border-t border-rule pt-5">
                       {summary.points.map((p) => (
-                        <li key={p} className="flex items-start gap-2.5 text-[14px] leading-[1.5] text-bone-soft">
-                          <Check className="mt-0.5 size-[15px] shrink-0 text-lime-soft" />
+                        <li
+                          key={p}
+                          className="flex items-start gap-2.5 text-[1rem] leading-[1.375] text-moss"
+                        >
+                          <Check className="mt-1 size-4 shrink-0 text-ink" />
                           <span>{p}</span>
                         </li>
                       ))}
@@ -136,30 +141,31 @@ export function BookingScreen({
                 )}
 
                 {/* What happens next */}
-                <div>
-                  <div className="font-mono text-[11.5px] uppercase tracking-[0.14em] text-bone-dim">
-                    {booking.nextTitle}
-                  </div>
+                <div className="border-t border-rule pt-8">
+                  <Eyebrow>{booking.nextTitle}</Eyebrow>
                   <ol className="mt-4 flex flex-col gap-3">
                     {booking.steps.map((step, i) => (
                       <li key={step} className="flex items-center gap-3">
-                        <span className="flex size-6 shrink-0 items-center justify-center rounded-full border border-cream-line-strong font-mono text-[11px] text-lime-soft">
+                        <span className="flex size-6 shrink-0 items-center justify-center border border-rule text-[0.875rem] text-moss">
                           {i + 1}
                         </span>
-                        <span className="text-[14.5px] leading-[1.45] text-bone-soft">{step}</span>
+                        <span className="text-[1rem] leading-[1.375] text-ink">
+                          {step}
+                        </span>
                       </li>
                     ))}
                   </ol>
                 </div>
 
                 {/* Point of contact */}
-                <div className="border-t border-night-line pt-6">
+                <div className="border-t border-rule pt-8">
                   <div className="flex items-center gap-3.5">
-                    {/* A round photo means "there is a live human here and you
+                    {/* A photograph means "there is a live human here and you
                         can reach them", so the contact is his face rather than
-                        his initials. Local file, not CMS: it has to be right on
-                        first paint. */}
-                    <span className="flex size-11 shrink-0 overflow-hidden rounded-full bg-photo-ground ring-1 ring-cream-line-strong">
+                        his initials. Square like every other image on the site,
+                        and a local file rather than the CMS: it has to be right
+                        on first paint. */}
+                    <span className="flex size-11 shrink-0 overflow-hidden bg-paper-dim">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={CONTACT_PERSON.photo.url}
@@ -172,24 +178,26 @@ export function BookingScreen({
                       />
                     </span>
                     <div>
-                      <div className="text-[15px] font-semibold text-bone">{booking.contactName}</div>
-                      <div className="text-[13px] text-bone-dim">{booking.contactRole}</div>
+                      <div className="text-[1.125rem] leading-[1.375] text-ink">
+                        {booking.contactName}
+                      </div>
+                      <div className="text-[0.875rem] text-moss">
+                        {booking.contactRole}
+                      </div>
                     </div>
                   </div>
-                  <p className="mt-3.5 text-[13.5px] text-bone-dim">
+                  <p className="mt-4 text-[1rem] leading-[1.375] text-moss">
                     {booking.emailPrefix}{" "}
-                    <a href="mailto:contact@pluscode.io" className="text-lime-soft transition-colors hover:text-bone">
+                    <a href="mailto:contact@pluscode.io" className="pc-link text-ink">
                       contact@pluscode.io
                     </a>
                   </p>
                 </div>
 
                 {/* Trust */}
-                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 border-t border-night-line pt-6">
-                  <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-bone-dim">
-                    {booking.trustTitle}
-                  </span>
-                  <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-[13.5px] font-medium text-bone-soft">
+                <div className="border-t border-rule pt-8">
+                  <Eyebrow>{booking.trustTitle}</Eyebrow>
+                  <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-[1rem] text-ink">
                     {clients.map((c) => (
                       <span key={c}>{c}</span>
                     ))}

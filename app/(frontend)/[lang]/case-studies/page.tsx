@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { PageHero, CtaBand } from "../components/page-hero";
 import Footer from "../components/footer";
 import { Stagger, StaggerItem } from "../components/motion";
-import { Arrow } from "../components/ui";
 import LocaleLink from "../components/locale-link";
 import { isLocale, defaultLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
@@ -37,41 +36,47 @@ export default async function CaseStudiesPage({
     <main>
       <PageHero eyebrow={t.label} title={t.title} intro={t.subtitle} visual="mesh" />
 
-      <section className="bg-cream">
-        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
-          <Stagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" gap={0.08}>
+      <section className="bg-paper py-20 md:py-[104px]">
+        <div className="pc-shell">
+          {/* Three to a row, on the same shape as the homepage case band: the
+              caption sits above the headline, the whole cell is the link and
+              the headline is what moves. */}
+          <Stagger className="pc-grid" gap={0.08}>
             {caseStudies.map((cs) => (
-              <StaggerItem key={cs.slug} className="h-full">
+              <StaggerItem key={cs.slug} className="col-span-4">
                 <LocaleLink
                   href={`/case-studies/${cs.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded border border-cream-line bg-cream-surface transition-colors duration-300 hover:border-lime"
+                  className="group block"
                 >
-                  <div className={`relative isolate flex h-52 items-center justify-center overflow-hidden ${cs.gradient}`}>
+                  <div
+                    className={`relative flex aspect-[4/3] items-center justify-center overflow-hidden ${cs.gradient}`}
+                  >
                     {cs.image ? (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={cs.image.url} alt={cs.image.alt} className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                      <img src={cs.image.url} alt={cs.image.alt} className="absolute inset-0 size-full object-cover" />
                     ) : cs.logo ? (
-                      <span className="rounded bg-white/95 px-5 py-3 shadow-sm">
+                      <span className="bg-white px-5 py-3">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={cs.logo.url} alt={cs.logo.alt} className="h-7 w-auto" />
                       </span>
                     ) : (
-                      <span className="text-2xl font-medium text-white/90">{cs.client ?? cs.title}</span>
+                      <span className="text-heading-sm text-white">
+                        {cs.client ?? cs.title}
+                      </span>
                     )}
                   </div>
-                  <div className="flex flex-1 flex-col gap-3 p-7">
-                    <span className="font-mono text-xs uppercase tracking-[0.1em] text-lime-soft">
-                      {cs.category}
-                    </span>
-                    <h2 className="font-serif text-[22px] font-semibold leading-[1.25] text-ink">
+                  <p className="mt-6 text-[1.125rem] text-moss">{cs.category}</p>
+                  <h2 className="mt-2 text-heading-md text-ink">
+                    <span className="pc-link group-hover:[background-size:100%_1px]">
                       {cs.title}
-                    </h2>
-                    <p className="flex-1 text-[15px] leading-[1.65] text-ink-soft">{cs.excerpt}</p>
-                    <span className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime-soft transition-colors group-hover:text-ink">
-                      {shared.viewCaseStudy}
-                      <Arrow className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </span>
-                  </div>
+                  </h2>
+                  <p className="mt-4 text-[1.125rem] leading-[1.375] text-moss">
+                    {cs.excerpt}
+                  </p>
+                  <span className="mt-4 inline-block text-[1rem] text-moss">
+                    {shared.viewCaseStudy}
+                  </span>
                 </LocaleLink>
               </StaggerItem>
             ))}

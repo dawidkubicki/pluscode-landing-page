@@ -1,6 +1,5 @@
 import { Reveal } from "./motion";
 import LeadForm from "./lead-form";
-import { BandGlow } from "./ui";
 import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 
@@ -14,6 +13,18 @@ const details = [
   },
 ];
 
+/* ------------------------------------------------------------------ *
+ *  CONTACT. The details on the left half of the grid, the form on the
+ *  right, both on the page ground.
+ *
+ *  THE BAND MOVED OFF INK, and that is a real decision rather than a
+ *  restyle. The form is a white plate with hairline fields, and the
+ *  global focus ring inside an `on-dark` band is white: a white ring on
+ *  a white input is not a ring, and there is no way to scope the ring
+ *  back to ink for one subtree from here. Paper keeps every focus state
+ *  on this page visible. The closing ask on ink is still carried by
+ *  `Banner` and `CtaBand`, so the page keeps its dark plate.
+ * ------------------------------------------------------------------ */
 export default function Contact({
   locale,
   showIntro = true,
@@ -25,64 +36,62 @@ export default function Contact({
   const t = dict.contact;
 
   return (
-    <section
-      id="contact"
-      className="relative isolate overflow-hidden border-y border-night-line bg-night text-bone"
-    >
-      <BandGlow />
-      <div className="mx-auto grid max-w-[1240px] items-center gap-14 px-5 py-20 sm:px-10 sm:py-[6.875rem] lg:grid-cols-2 lg:gap-[5.625rem]">
-        <div>
-          {showIntro && (
-            <>
-              <Reveal>
-                <h2 className="text-balance font-serif text-[2.5rem] font-medium leading-[1.1] tracking-[-0.01em] sm:text-[3.25rem]">
-                  {t.title}
-                </h2>
-              </Reveal>
-              <Reveal delay={0.05}>
-                <p className="mt-6 max-w-[460px] text-[17px] leading-[1.7] text-bone-soft">
-                  {t.subtitle}
-                </p>
-              </Reveal>
-            </>
-          )}
+    <section id="contact" className="bg-paper py-20 md:py-[104px]">
+      <div className="pc-shell">
+        <div className="pc-grid">
+          <div className="col-span-4 md:col-span-5">
+            {showIntro && (
+              <>
+                <Reveal>
+                  <h2 className="text-heading-lg text-ink">{t.title}</h2>
+                </Reveal>
+                <Reveal delay={0.05}>
+                  <p className="mt-6 max-w-[46ch] text-[1.125rem] leading-[1.375] text-moss">
+                    {t.subtitle}
+                  </p>
+                </Reveal>
+              </>
+            )}
 
-          <Reveal delay={0.1}>
-            <div className={`${showIntro ? "mt-9" : ""} flex flex-col gap-3.5 text-[15px] text-bone-dim`}>
-              {details.map(({ prefix, value, href }) => {
-                const row = (
-                  <>
-                    <span className="font-mono text-lime-soft">{prefix}</span>
-                    <span>{value}</span>
-                  </>
-                );
-                return href ? (
-                  <a
-                    key={prefix}
-                    href={href}
-                    className="flex items-baseline gap-3 transition-colors hover:text-bone"
-                  >
-                    {row}
-                  </a>
-                ) : (
-                  <div key={prefix} className="flex items-baseline gap-3">
-                    {row}
-                  </div>
-                );
-              })}
-            </div>
+            <Reveal delay={0.1}>
+              <div
+                className={`${showIntro ? "mt-10" : ""} flex flex-col gap-4 text-[1.125rem] leading-[1.375] text-ink`}
+              >
+                {details.map(({ prefix, value, href }) => {
+                  const row = (
+                    <>
+                      <span className="text-[0.875rem] text-moss">{prefix}</span>
+                      <span>{value}</span>
+                    </>
+                  );
+                  return href ? (
+                    <a
+                      key={prefix}
+                      href={href}
+                      className="flex items-baseline gap-3 transition-colors hover:text-moss"
+                    >
+                      {row}
+                    </a>
+                  ) : (
+                    <div key={prefix} className="flex items-baseline gap-3">
+                      {row}
+                    </div>
+                  );
+                })}
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal delay={0.1} className="col-span-4 md:col-span-6 md:col-start-7">
+            <LeadForm
+              t={dict.form}
+              offering="general"
+              submitLabel={t.submit}
+              source="/contact"
+              title={t.formTitle}
+            />
           </Reveal>
         </div>
-
-        <Reveal delay={0.1}>
-          <LeadForm
-            t={dict.form}
-            offering="general"
-            submitLabel={t.submit}
-            source="/contact"
-            title={t.formTitle}
-          />
-        </Reveal>
       </div>
     </section>
   );

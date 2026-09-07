@@ -71,29 +71,35 @@ export default async function AnnouncementPage({
     <main>
       <PageHero eyebrow={t.eyebrow} title={data.title} />
 
-      <article className="bg-cream">
-        <div className="mx-auto max-w-3xl px-5 py-20 sm:px-10 sm:py-[6.25rem]">
-          {date && (
-            <Reveal>
-              <div className="mb-10 border-b border-cream-line pb-6 font-mono text-xs uppercase tracking-[0.1em] text-ink-mute">
-                {date}
+      <article className="bg-paper py-20 md:py-[104px]">
+        <div className="pc-shell">
+          <div className="pc-grid">
+            {/* The document runs in seven of twelve columns: a reading
+                column on the grid, not a centred sheet. */}
+            <div className="col-span-4 md:col-span-7">
+              {date && (
+                <Reveal>
+                  <div className="mb-10 border-b border-rule pb-6 text-[0.875rem] text-moss">
+                    {date}
+                  </div>
+                </Reveal>
+              )}
+
+              <Reveal>
+                <div className="prose-pc">
+                  {data.body ? <Rich data={data.body} /> : <p>{data.bannerText}</p>}
+                </div>
+              </Reveal>
+
+              <div className="mt-12">
+                <LocaleLink
+                  href="/"
+                  className="pc-link inline-block text-[1.125rem] text-moss"
+                >
+                  ← {t.back}
+                </LocaleLink>
               </div>
-            </Reveal>
-          )}
-
-          <Reveal>
-            <div className="prose-pc">
-              {data.body ? <Rich data={data.body} /> : <p>{data.bannerText}</p>}
             </div>
-          </Reveal>
-
-          <div className="mt-12">
-            <LocaleLink
-              href="/"
-              className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime-soft transition-colors hover:text-ink"
-            >
-              ← {t.back}
-            </LocaleLink>
           </div>
         </div>
       </article>

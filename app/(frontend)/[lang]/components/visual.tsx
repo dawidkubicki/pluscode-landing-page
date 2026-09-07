@@ -8,24 +8,29 @@ import type { CSSProperties } from "react";
  * later, drop an <img>/<Image> into the same slots in place of <Visual />. The
  * framing/aspect classes live on the parent.
  *
- * The page is dark, so these are lit rather than shaded. The previous set was
- * dark art drawn for a white page and it vanished into the ground. Every kind
- * now sits on the `night` ground with a hairline ring so it has an edge, and
- * the colour is the accent blue with cyan and violet as the second and third
- * voices, which is the one place outside a WebGL scene they are allowed.
+ * These sit on the dark grounds of the palette, so they are lit rather than
+ * shaded, and each one carries a hairline ring so it has an edge.
+ *
+ * September 2026: the whole set moved off the old blue accent onto the single
+ * green and ink palette. Only the eight constants below changed; every
+ * gradient and every SVG below reads them, so the art re-themed without a
+ * single composition being redrawn. The names still say ACCENT and CYAN
+ * because 200 lines of SVG reference them, but there is no accent hue in this
+ * system any more: the five colour names now hold five steps of one green
+ * ramp, from the deep band down to the carbon ground.
  */
 
 /* The palette, matching the tokens in globals.css. Written out as literals
    because these are SVG paint attributes and inline gradient strings, neither
    of which Tailwind can resolve. */
-const ACCENT = "#3366ff"; /* --color-lime */
-const ACCENT_BRIGHT = "#4d7aff"; /* --color-lime-bright */
-const ACCENT_SOFT = "#8ab0ff"; /* --color-lime-soft */
-const CYAN = "#22d3ee"; /* --color-signal-cyan */
-const VIOLET = "#7c5cff"; /* --color-signal-violet */
-const GROUND = "#111219"; /* --color-night */
-const GROUND_SOFT = "#1a1b26"; /* --color-night-soft */
-const GROUND_DEEP = "#07080b"; /* --color-night-deep */
+const ACCENT = "#123836"; /* --color-deep */
+const ACCENT_BRIGHT = "#1b4643"; /* --color-deep-soft */
+const ACCENT_SOFT = "#91a6a4"; /* --color-sage, the lightest step */
+const CYAN = "#41605e"; /* --color-moss, the second voice */
+const VIOLET = "#0e1111"; /* --color-carbon, the third voice */
+const GROUND = "#141e1e"; /* --color-ink */
+const GROUND_SOFT = "#1f2c2c"; /* --color-night-soft */
+const GROUND_DEEP = "#0e1111"; /* --color-carbon */
 
 export type VisualKind =
   | "aurora"
@@ -55,7 +60,7 @@ export function Visual({
 }) {
   return (
     <div
-      className={`relative isolate size-full overflow-hidden rounded-[inherit] ${className}`}
+      className={`relative isolate size-full overflow-hidden border border-white/10 ${className}`}
       style={{ backgroundImage: gradients[kind], ...style }}
     >
       {kind === "aurora" && (
@@ -156,7 +161,6 @@ export function Visual({
             y="44"
             width="320"
             height="312"
-            rx="16"
             fill="none"
             stroke={ACCENT_SOFT}
             strokeWidth="1.2"
@@ -200,13 +204,10 @@ export function Visual({
         </svg>
       )}
 
-      {/* The edge. A dark box on a dark page has no outline of its own, so a
-          hairline ring is drawn above the art. `rounded-[inherit]` lets it
-          follow whatever radius the parent slot set. */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 z-10 rounded-[inherit] shadow-[inset_0_0_0_1px_rgb(255_255_255_/_0.1)]"
-      />
+      {/* The edge used to be a separate absolutely positioned div carrying
+          an inset box-shadow. globals.css now flattens every shadow to none,
+          so that div drew nothing at all while still claiming to draw the
+          border. The hairline is a real `border` on the wrapper above. */}
     </div>
   );
 }

@@ -1,90 +1,126 @@
-import Image from "next/image";
-import HeroMesh from "./hero-mesh";
+"use client";
+
+import { useEffect, useRef } from "react";
 import LocaleLink from "./locale-link";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
-/**
- * The hero. One promise, one ask, and the lit surface behind them.
+/* ------------------------------------------------------------------ *
+ *  THE HOME HERO. The first thing anyone sees.
  *
- * The band is tall on purpose (78svh of visible height on a desktop, natural
- * on a phone) because the object here is the WebGL surface in `hero-mesh.tsx`
- * and it needs a floor to lie on: the copy sits in the upper part of the band
- * and the folds of light rise around and below it. The copy column carries
- * `data-hero-copy`, which the mesh measures on every layout to keep the
- * ground behind the words at the page's own colour.
+ *  Full bleed, and deliberately NOT inside `.pc-shell`: the contour field
+ *  runs to all four edges of the viewport. Only the type is shelled, so the
+ *  headline still starts on the same x as every band below it.
  *
- * The first 72px of the section sit under the fixed header, hence the
- * `+72px` in the minimum height and the top padding. From 768px up the
- * bottom padding has a 340px floor as well as an svh share: on a short
- * viewport around 860x806 the copy runs most of the way down the band and
- * the svh share alone left the surface a dim strip under the note.
+ *  FOUR LAYERS, back to front: the video, a deep green wash, the column
+ *  ruling, then the content. The wash is what makes this work. At 88% the
+ *  field reads as texture under the words instead of a picture competing
+ *  with them, and the headline sits at full white contrast rather than
+ *  swimming over moving mid tones. There is no fallback gradient behind it
+ *  on purpose: when the sources fail the poster stays on screen, and a
+ *  gradient would double up with it.
  *
- * The entrance is `[data-rise]`: a plain time based CSS animation, hand
- * staggered, with no observer, no scroll timeline and no JavaScript. Nothing
- * above the fold, and in particular neither call to action, may depend on a
- * scroll animation or on hydration to become visible.
- */
-export default function Hero({ dict }: { dict: Dictionary["hero"] }) {
+ *  The type is pushed to the LOWER LEFT, not centred. The section is a flex
+ *  column with `justify-end`, so the grid sits on the bottom padding and the
+ *  height of the headline block never pulls it back toward the middle.
+ *
+ *  WHY THIS IS A CLIENT COMPONENT. Reduced motion. `autoplay` is an HTML
+ *  attribute, so no media query can suppress it: the only place to honour
+ *  `prefers-reduced-motion` is at runtime, by pausing the element. That is
+ *  the whole reason for the boundary, and it costs one ref and one effect.
+ *  Everything visible here renders from the server and needs no JavaScript.
+ * ------------------------------------------------------------------ */
+export default function Hero({ dict }: { dict: Dictionary["home"]["hero"] }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const apply = () => {
+      if (query.matches) {
+        // Clearing the property as well as pausing matters: the browser
+        // re-reads `autoplay` on every load, so a source swap, a bfcache
+        // restore or a return to the tab would otherwise start it again.
+        video.autoplay = false;
+        video.pause();
+        try {
+          video.currentTime = 0;
+        } catch {
+          // Seeking before metadata arrives throws in some browsers. Nothing
+          // has played yet in that case, so there is nothing to rewind.
+        }
+      } else if (video.paused) {
+        video.autoplay = true;
+        void video.play().catch(() => {
+          // Autoplay refused (low power mode, for one). The poster stands in.
+        });
+      }
+    };
+
+    apply();
+    // Listen, so toggling the OS setting takes effect without a reload.
+    query.addEventListener("change", apply);
+    return () => query.removeEventListener("change", apply);
+  }, []);
+
   return (
-    <section
-      id="top"
-      className="relative isolate overflow-hidden border-b border-cream-line bg-cream text-ink"
-    >
-      <HeroMesh className="pointer-events-none z-0" />
+    <section className="relative flex h-[100svh] min-h-[640px] flex-col justify-end overflow-hidden">
+      {/* 1. The field. Decoration, not content: it carries no meaning the
+             copy does not already carry, so it is hidden from assistive
+             technology and taken out of the tab order. WebM first so a
+             browser that reads both takes the smaller file. */}
+      <video
+        ref={videoRef}
+        className="absolute inset-0 h-full w-full object-cover"
+        poster="/hero/field-poster.jpg"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+        tabIndex={-1}
+      >
+        <source src="/hero/field.webm" type="video/webm" />
+        <source src="/hero/field.mp4" type="video/mp4" />
+      </video>
 
-      <div className="pc-shell">
-        <div className="pc-rules relative z-10">
-          <div className="pc-grid relative min-h-[calc(78svh+72px)] pb-[min(38svh,300px)] pt-[max(128px,calc(72px+8svh))] md:pb-[max(340px,22svh)] lg:min-h-[calc(80svh+72px)] lg:pt-[max(136px,calc(72px+9svh))]">
-            <div
-              data-hero-copy
-              className="relative col-[2/-2] flex flex-col items-center self-start text-center"
+      {/* 2. The wash. */}
+      <div aria-hidden="true" className="absolute inset-0 bg-deep/[0.88]" />
+
+      {/* 3. The column ruling, carried across the hero so the grid that
+             aligns the page is visible from the first screen. */}
+      <div aria-hidden="true" className="pc-ruled-dark absolute inset-0" />
+
+      {/* 4. The content. `relative` lifts it clear of the three layers. */}
+      <div className="pc-shell relative pb-24 md:pb-[104px]">
+        <div className="pc-grid">
+          <div className="col-span-4 md:col-span-8">
+            <h1 data-rise="0" className="text-heading-xl text-white">
+              {dict.headline}
+            </h1>
+            <p data-rise="1" className="mt-5 text-[1.125rem] text-mist">
+              {dict.subline}
+            </p>
+            <LocaleLink
+              href="/services"
+              data-rise="2"
+              className="btn btn-invert mt-8"
             >
-              <span className="pc-pill" data-rise="0">
-                {dict.eyebrow}
-              </span>
+              {dict.cta}
+            </LocaleLink>
+          </div>
 
-              <h1
-                className="display mt-9 max-w-[16em] text-balance text-[clamp(44px,calc(14px+5.2svh),76px)] leading-[1.06] tracking-[-0.028em] text-ink lg:leading-[0.95]"
-                data-rise="1"
-              >
-                {dict.headlineStart}{" "}
-                <em className="not-italic text-lime-soft">{dict.headlineEm}</em>
-                {dict.headlineEnd}
-              </h1>
-
-              <p
-                className="mt-5 max-w-[27em] text-[18px] font-medium leading-[1.4] tracking-[-0.18px] text-ink-soft"
-                data-rise="2"
-              >
-                {dict.subtext}
-              </p>
-
-              <div
-                className="mt-8 flex items-center gap-x-2.5 gap-y-2 max-md:w-full max-md:flex-col"
-                data-rise="3"
-              >
-                <LocaleLink href="/book-a-call" className="btn btn-primary max-md:w-full">
-                  {dict.ctaPrimary}
-                </LocaleLink>
-                <a href="#time-saved" className="btn btn-outline max-md:w-full">
-                  {dict.ctaSecondary}
-                </a>
-              </div>
-
-              <p
-                className="mt-5 flex flex-wrap items-center justify-center gap-2 text-[14px] leading-[1.5] text-ink-mute"
-                data-rise="3"
-              >
-                <Image
-                  src="/assets/team/krzysztof-avatar.jpg"
-                  alt=""
-                  width={28}
-                  height={28}
-                  className="size-7 shrink-0 rounded-full object-cover object-center ring-1 ring-cream-line-strong"
-                />
-                {dict.ctaNote}
-              </p>
-            </div>
+          {/* The scroll cue sits on the last four columns, on the button's
+              own line. Below md there are only four columns and no room for
+              it beside the type, and a phone needs no invitation to scroll. */}
+          <div
+            aria-hidden="true"
+            className="hidden md:col-span-4 md:flex md:items-end md:justify-end"
+          >
+            <span className="text-[0.875rem] text-sage">{dict.scroll}</span>
           </div>
         </div>
       </div>

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { PageHero, CtaBand } from "../components/page-hero";
 import Footer from "../components/footer";
 import { Stagger, StaggerItem } from "../components/motion";
-import { Arrow } from "../components/ui";
 import { Visual, type VisualKind } from "../components/visual";
 import LocaleLink from "../components/locale-link";
 import { isLocale, defaultLocale, type Locale } from "@/lib/i18n/config";
@@ -74,33 +73,36 @@ export default async function ServicesIndexPage({
         cta={{ label: t.cta, href: "/contact" }}
       />
 
-      <section className="bg-cream">
-        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
-          <Stagger
-            className="grid border-l border-t border-cream-line sm:grid-cols-2 lg:grid-cols-4"
-            gap={0.08}
-          >
+      <section className="bg-paper py-20 md:py-[104px]">
+        <div className="pc-shell">
+          {/* Nine offerings, three to a row. Each cell is ruled at the top and
+              carries its own plate: no boxes, no hover lift, and the headline
+              is the thing that answers a hover. */}
+          <Stagger className="pc-grid" gap={0.08}>
             {cards.map((c, i) => {
               const item = items[c.key];
               return (
-                <StaggerItem key={c.key}>
+                <StaggerItem key={c.key} className="col-span-4">
                   <LocaleLink
                     href={c.href}
-                    className="group flex h-full flex-col border-b border-r border-cream-line p-7 transition-colors duration-300 ease-io-attio hover:bg-cream-surface hover:duration-50"
+                    className="group block border-t border-rule pt-8"
                   >
-                    <div className="h-32 overflow-hidden rounded">
+                    <div className="aspect-[16/9] overflow-hidden bg-paper-dim">
                       <Visual kind={c.visual} />
                     </div>
-                    <span className="mt-6 font-mono text-xs text-ink-mute">
+                    <span className="mt-6 block text-[0.875rem] text-moss">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="mt-2 text-xl font-semibold text-ink">{item.title}</h3>
-                    <p className="mt-3 flex-1 text-[15px] leading-[1.65] text-ink-soft">
+                    <h3 className="mt-2 text-heading-md text-ink">
+                      <span className="pc-link group-hover:[background-size:100%_1px]">
+                        {item.title}
+                      </span>
+                    </h3>
+                    <p className="mt-4 text-[1.125rem] leading-[1.375] text-moss">
                       {item.description}
                     </p>
-                    <span className="mt-5 inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime-soft transition-colors group-hover:text-ink">
+                    <span className="mt-4 inline-block text-[1rem] text-moss">
                       {t.view}
-                      <Arrow className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </span>
                   </LocaleLink>
                 </StaggerItem>

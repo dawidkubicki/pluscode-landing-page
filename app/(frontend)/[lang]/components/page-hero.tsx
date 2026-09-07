@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Reveal } from "./motion";
-import { BandGlow, Eyebrow } from "./ui";
+import { Eyebrow } from "./ui";
 import { type VisualKind } from "./visual";
 import LocaleLink from "./locale-link";
 import type { Locale } from "@/lib/i18n/config";
@@ -9,19 +9,23 @@ import { getDictionary } from "@/lib/i18n/dictionaries";
 type Cta = { label: string; href: string };
 
 /**
- * Shared hero banner for routed subpages.
+ * PAGE HERO. The top of every inner page.
  *
- * Eleven routes open with this, so it carries the site's first impression
- * everywhere except the homepage. Page ground, a tinted eyebrow pill, one
- * display headline and one sentence: the same language as the home hero, and
- * nothing behind the words. The top padding clears the fixed header.
+ * Eleven routes open with this, so it carries the first impression
+ * everywhere except the homepage, and it has to be the same object as a
+ * homepage band: page ground, the one 12 column grid, no artwork and
+ * nothing behind the words.
  *
- * THE ONE GRID. This used to wrap in `max-w-[1240px] px-5 sm:px-10`, which was
- * a third container beside the homepage's shell and the footer's own copy of
- * the same 1240 wrapper. Eleven subpages therefore lined up with nothing. It
- * now sits on `.pc-shell` > `.pc-rules` > `.pc-grid` at `col-[2/-2]`, the same
- * 1,276px measure inside the same two hairlines that every homepage band uses,
- * so a headline here starts on the same x as a headline there.
+ * The top padding is doing real work. The header is fixed, so `pt-40`
+ * (and `md:pt-48`) is what leaves clear ground under it rather than
+ * letting the eyebrow run beneath the bar. The bottom padding is the
+ * standard band value, so the first band below this one sits at the same
+ * distance it would sit from any other band.
+ *
+ * The text runs to eight of twelve columns and the sentence is held to
+ * roughly 46 characters, which is the measure the reference reads at.
+ * Below 768px the grid is four columns wide, so the mobile span is
+ * col-span-4 and the desktop one is prefixed.
  */
 export function PageHero({
   eyebrow,
@@ -39,39 +43,30 @@ export function PageHero({
   grid?: boolean;
 }) {
   return (
-    <section className="border-b border-cream-line bg-cream">
+    <section className="bg-paper pb-20 pt-40 md:pb-[104px] md:pt-48">
       <div className="pc-shell">
-        <div className="pc-rules">
-          {/* The header is 72px and fixed, and the layout already pushes the
-              page down past the announcement bar, so `pt-32` leaves 56px of
-              clear ground under the bar rather than 72. */}
-          <div className="pc-grid pb-14 pt-32 lg:pb-16 lg:pt-36 xl:pb-18 xl:pt-40">
-            <div className="col-[2/-2] flex flex-col items-start">
-              <Reveal>
-                <Eyebrow>{eyebrow}</Eyebrow>
+        <div className="pc-grid">
+          <div className="col-span-4 md:col-span-8">
+            <Reveal>
+              <Eyebrow>{eyebrow}</Eyebrow>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <h1 className="mt-4 text-heading-xl text-ink">{title}</h1>
+            </Reveal>
+            {intro && (
+              <Reveal delay={0.1}>
+                <p className="mt-6 max-w-[46ch] text-[1.125rem] leading-[1.375] text-moss">
+                  {intro}
+                </p>
               </Reveal>
-              <Reveal delay={0.05}>
-                <h1 className="display mt-6 max-w-[16em] text-balance text-heading-md text-ink sm:text-heading-lg xl:text-heading-xl">
-                  {title}
-                </h1>
+            )}
+            {cta && (
+              <Reveal delay={0.15}>
+                <LocaleLink href={cta.href} className="btn btn-primary mt-8">
+                  {cta.label}
+                </LocaleLink>
               </Reveal>
-              {intro && (
-                <Reveal delay={0.1}>
-                  <p className="mt-5 max-w-[32em] text-[17px] leading-[1.6] text-ink-soft">
-                    {intro}
-                  </p>
-                </Reveal>
-              )}
-              {cta && (
-                <Reveal delay={0.15}>
-                  <div className="mt-8">
-                    <LocaleLink href={cta.href} className="btn btn-primary">
-                      {cta.label}
-                    </LocaleLink>
-                  </div>
-                </Reveal>
-              )}
-            </div>
+            )}
           </div>
         </div>
       </div>
@@ -80,19 +75,18 @@ export function PageHero({
 }
 
 /**
- * Closing call-to-action band for subpages.
+ * CTA BAND. The closing ask on an inner page.
  *
- * On `night`, one step above the page, pinstriped and radially masked, with
- * both hairlines and the same accent glow as the homepage banner, so it reads
- * as the same ask rather than as a second, competing one. It used to be a
- * full accent-coloured ground, which spent the whole page's accent budget on a
- * band nobody reads twice.
+ * A dark plate on ink, laid out on the same header pair every band on the
+ * homepage uses: the ask on the left half, the sentence and the button on
+ * the right, aligned to the right edge above 768px. It used to be a lifted
+ * ground with two hairlines, a pinstripe and an accent glow under the
+ * button. None of those exist in this system, so the change of ground is
+ * the whole separation.
  *
- * On the same grid as everything else, with `.pc-rules-dark` carrying the two
- * vertical hairlines through onto the dark ground, so the band's edges line up
- * with the light bands above it instead of stopping 100px short of them.
- * The split is Attio's 24/8: the ask at columns 2 to 13, the sentence and the
- * button at 14 to 25.
+ * `on-dark` is not cosmetic. It is what switches the global focus ring
+ * from ink to white, and without it the ring on this button would be
+ * invisible against the ground.
  */
 export function CtaBand({
   locale,
@@ -111,37 +105,25 @@ export function CtaBand({
   // Left on /contact deliberately: retargeting every subpage's closing ask at
   // /book-a-call is a routing decision, not a restyle.
   const resolvedCta = cta ?? { label: t.button, href: "/contact" };
+
   return (
-    <section className="relative isolate overflow-hidden border-y border-night-line bg-night text-bone">
-      <div
-        aria-hidden
-        className="pinstripe-dark texture-mask pointer-events-none absolute inset-0 -z-10"
-      />
-      <BandGlow />
+    <section className="on-dark bg-ink py-20 md:py-[104px]">
       <div className="pc-shell">
-        <div className="pc-rules-dark">
-          <div className="pc-grid gap-y-8 py-16 lg:py-20">
-            <div className="col-[2/-2] lg:col-[2/13] lg:self-center">
-              <Reveal>
-                <h2 className="display max-w-[12em] text-balance text-heading-md lg:text-heading-lg">
-                  {resolvedTitle}
-                </h2>
-              </Reveal>
-            </div>
-            <div className="col-[2/-2] lg:col-[14/-2] lg:self-center">
-              <Reveal delay={0.08}>
-                <p className="max-w-[32em] text-[16px] leading-[1.6] text-bone-soft">
-                  {resolvedText}
-                </p>
-                <LocaleLink
-                  href={resolvedCta.href}
-                  className="btn btn-primary mt-7"
-                >
-                  {resolvedCta.label}
-                </LocaleLink>
-              </Reveal>
-            </div>
-          </div>
+        <div className="pc-grid">
+          <Reveal className="col-span-4 md:col-span-6">
+            <h2 className="text-heading-lg text-white">{resolvedTitle}</h2>
+          </Reveal>
+          <Reveal
+            delay={0.08}
+            className="col-span-4 flex flex-col items-start gap-5 md:col-span-6 md:items-end md:justify-end"
+          >
+            <p className="max-w-[46ch] text-[1.125rem] leading-[1.375] text-mist">
+              {resolvedText}
+            </p>
+            <LocaleLink href={resolvedCta.href} className="btn btn-invert">
+              {resolvedCta.label}
+            </LocaleLink>
+          </Reveal>
         </div>
       </div>
     </section>
