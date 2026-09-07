@@ -586,7 +586,11 @@
   "pages": {
     "announcements": {
       "eyebrow": "Ogłoszenie",
-      "back": "Wróć na stronę główną"
+      "back": "Wróć na stronę główną",
+      "cta": {
+        "label": "Umów bezpłatną konsultację",
+        "href": "/book-a-call"
+      }
     },
     "services": {
       "index": {
@@ -6791,9 +6795,9 @@
       "scroll": "Przewiń"
     },
     "latest": {
-      "title": "Najnowsze",
+      "title": "Insights",
       "intro": "Więcej od Pluscode",
-      "cta": "Artykuły",
+      "cta": "Wszystkie artykuły",
       "readMore": "Czytaj dalej",
       "items": [
         {
@@ -6801,35 +6805,45 @@
           "tag": "Quanty",
           "title": "Nasz arkusz AI wchodzi w publiczną betę",
           "body": "Quanty czyta faktury, umowy i wyciągi do wierszy, które można sprawdzić, a przy każdej wartości zostaje strona źródłowa. Zbudowany przez tych samych dwóch inżynierów, z którymi będziesz pracować.",
-          "href": "https://quanty.ai"
+          "href": "https://quanty.ai",
+          "image": "/assets/quanty/chat-2x.webp",
+          "alt": "Agent AI Quanty dodaje kolumnę statusu dostawy do arkusza zamówień"
         },
         {
           "key": "fde",
           "tag": "Forward deployed engineers",
           "title": "Inżynier w Twoim zespole, odpowiedzialny za efekt",
           "body": "Nie osoba na liście godzin. Nasz inżynier siada z Twoimi ludźmi, uczy się pracy i odpowiada za to, co powstaje.",
-          "href": "/services/forward-deployed-engineers"
+          "href": "/services/forward-deployed-engineers",
+          "image": "/assets/insights/what-is-a-forward-deployed-engineer.png",
+          "alt": "Okładka artykułu o forward deployed engineers"
         },
         {
           "key": "ai-act",
           "tag": "AI Act",
           "title": "Co naprawdę zmieniło się w sierpniu 2026",
           "body": "Obowiązki dla modeli ogólnego przeznaczenia już obowiązują. Poziom ryzyka ustalamy przed projektowaniem, nie po wdrożeniu.",
-          "href": "/insights/eu-ai-act-august-2026-what-actually-changed"
+          "href": "/insights/eu-ai-act-august-2026-what-actually-changed",
+          "image": "/assets/insights/eu-ai-act-august-2026-what-actually-changed.png",
+          "alt": "Okładka artykułu o zmianach w AI Act z sierpnia 2026"
         },
         {
           "key": "agents",
           "tag": "Agenci",
           "title": "Agenci w firmach w 2026, szum kontra liczby",
           "body": "Gdzie autonomiczne procesy się zwróciły, gdzie nie, i jak to rozpoznać przed zakupem.",
-          "href": "/insights/ai-agents-enterprise-2026-hype-vs-numbers"
+          "href": "/insights/ai-agents-enterprise-2026-hype-vs-numbers",
+          "image": "/assets/insights/ai-agents-enterprise-2026-hype-vs-numbers.png",
+          "alt": "Okładka artykułu o agentach w firmach w 2026"
         },
         {
           "key": "zabka",
           "tag": "Handel",
           "title": "Architektura sklepów bez obsługi",
           "body": "Zaplanowaliśmy, zaprojektowaliśmy i poprowadziliśmy architekturę systemu autonomicznych sklepów największej sieci convenience w Polsce.",
-          "href": "/case-studies"
+          "href": "/case-studies",
+          "image": "/assets/cases/zabka.jpg",
+          "alt": "Pole konturowe dla wdrożenia sklepów bez obsługi"
         }
       ]
     },
@@ -6857,6 +6871,7 @@
       "eyebrow": "Platforma",
       "title": "Quanty",
       "logoAlt": "Quanty",
+      "shotAlt": "Arkusz Quanty z fakturami wczytanymi do wierszy i stroną źródłową otwartą przy wartości",
       "tagline": "Wrzuć dokumenty. Arkusz wypełni się sam.",
       "intro": "Quanty czyta faktury, umowy i zamówienia, wpisuje wartości do tabeli i przy każdej pokazuje stronę, z której pochodzi. Budujemy go my, a te same części trafiają do systemów klientów.",
       "cta": "Zobacz Quanty",
@@ -7016,6 +7031,7 @@
     "locations": {
       "title": "Pluscode pracuje w całej Europie.",
       "intro": "Zobacz lokalizacje",
+      "cta": "Umów rozmowę",
       "entity": "Pluscode Sp. z o.o., Poznań, Polska",
       "roleLabel": "Rola",
       "countries": [

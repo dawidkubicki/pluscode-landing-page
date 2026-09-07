@@ -91,6 +91,16 @@ export default async function AnnouncementPage({
                 </div>
               </Reveal>
 
+              {/* The announcement itself is the offer, so the ask sits where the
+                  reader finishes the text, not only in the CtaBand at the foot. */}
+              <Reveal>
+                <div className="mt-12 border-t border-rule pt-10">
+                  <LocaleLink href={t.cta.href} className="btn btn-primary">
+                    {t.cta.label}
+                  </LocaleLink>
+                </div>
+              </Reveal>
+
               <div className="mt-12">
                 <LocaleLink
                   href="/"

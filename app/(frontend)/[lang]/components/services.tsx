@@ -1,8 +1,18 @@
 import LocaleLink from "./locale-link";
+import { SERVICE_ICONS } from "./band-icons";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 /* ------------------------------------------------------------------ *
  *  SERVICES. The five engagements, as a ruled list.
+ *
+ *  A GLYPH UNDER EACH NUMBER. Five rows of text that differ only in their
+ *  words do not scan; the number tells you where you are, not what the
+ *  row is. The first column now carries a single-colour glyph for the
+ *  engagement beneath its number (sheets, a bubble, brackets, a growing
+ *  block, bars), so the list can be told apart before it is read. They
+ *  are solid black slabs rather than line icons because ink is the only
+ *  decoration this system allows: no accent, no radius, no second weight.
+ *  Looked up by the item's key; a key without a glyph renders nothing.
  *
  *  A LIST, NOT CARDS. This is the densest band on the page: five items,
  *  each carrying a number, a headline and a sentence. Five cards in a
@@ -22,7 +32,7 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
  *  starts on column 7, which is the same line the band header's intro
  *  and button hang from. Below 768px the grid is four columns and every
  *  part claims all four, so the row stacks with the number above the
- *  title.
+ *  glyph, then the title, then the body.
  *
  *  An earlier draft carried a fourth column of tags on the right. It
  *  was cut in review: three columns of text on one row was already the
@@ -59,24 +69,30 @@ export default function Services({
         </div>
 
         <div className="pc-grid mt-16 md:mt-24">
-          {dict.items.map((item) => (
-            <div
-              key={item.key}
-              className="col-span-4 border-t border-rule py-8 md:col-span-12"
-            >
-              <div className="pc-grid">
-                <p className="col-span-4 text-[0.875rem] text-moss md:col-span-1">
-                  {item.num}
-                </p>
-                <h3 className="col-span-4 text-heading-md text-ink md:col-span-5">
-                  {item.title}
-                </h3>
-                <p className="col-span-4 text-[1.125rem] leading-[1.375] text-moss md:col-span-6">
-                  {item.body}
-                </p>
+          {dict.items.map((item) => {
+            const Icon = SERVICE_ICONS[item.key];
+            return (
+              <div
+                key={item.key}
+                className="col-span-4 border-t border-rule py-8 md:col-span-12"
+              >
+                <div className="pc-grid">
+                  {/* The number and its glyph share the first column, so
+                      the column reads number then object, top to bottom. */}
+                  <div className="col-span-4 md:col-span-1">
+                    <p className="text-[0.875rem] text-moss">{item.num}</p>
+                    {Icon && <Icon className="mt-5 size-14 text-ink" />}
+                  </div>
+                  <h3 className="col-span-4 text-heading-md text-ink md:col-span-5">
+                    {item.title}
+                  </h3>
+                  <p className="col-span-4 text-[1.125rem] leading-[1.375] text-moss md:col-span-6">
+                    {item.body}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
 
           {/* The closing hairline. Every rule in this list belongs to the
               row below it, so without this the list would be open at the

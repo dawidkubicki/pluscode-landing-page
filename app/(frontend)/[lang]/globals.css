@@ -20,8 +20,11 @@
  *
  *    1. ONE WEIGHT. Everything is 400. There is no bold anywhere, at any
  *       size. Hierarchy comes from size and from colour, never from weight.
- *    2. NO LETTER-SPACING. Every size is tracked at `normal`, including the
- *       76px display. Do not add negative tracking to headlines.
+ *    2. ALMOST NO LETTER-SPACING. Body and label sizes are tracked at
+ *       `normal`. The two display sizes carry a small negative track
+ *       (-0.02em on heading-xl, -0.01em on heading-lg), asked for on
+ *       2026-09-07 so the 76px band titles ("Wybrani klienci") sit a
+ *       little narrower. Nothing below heading-lg is ever tracked.
  *    3. NO RADIUS. Buttons, cards, inputs, images and pills are all square.
  *       `--radius-*` is 0 on purpose.
  *
@@ -124,11 +127,15 @@
           viewport, but the ratios and the line-height of 1 are fixed. ---- */
   --text-heading-xl: clamp(2.75rem, 5.1vw, 4.725rem); /* -> 75.6px */
   --text-heading-xl--line-height: 1;
-  --text-heading-xl--letter-spacing: normal;
+  /* The one deliberate departure from `normal`: the band titles read a
+     touch wide at 76px, so they close up by 2%. Measured against the
+     reference's own display setting this is still within a pixel per
+     letter pair, and it is the only size that gets it apart from lg. */
+  --text-heading-xl--letter-spacing: -0.02em;
   --text-heading-xl--font-weight: 400;
   --text-heading-lg: clamp(2.25rem, 4.1vw, 3.75rem);
   --text-heading-lg--line-height: 1;
-  --text-heading-lg--letter-spacing: normal;
+  --text-heading-lg--letter-spacing: -0.01em;
   --text-heading-lg--font-weight: 400;
   --text-heading-md: clamp(1.75rem, 2.4vw, 2.1875rem); /* -> 35px */
   /* Leading 1, not 1.05. The reference sets its 35px card headlines at

@@ -586,7 +586,11 @@
   "pages": {
     "announcements": {
       "eyebrow": "Ankündigung",
-      "back": "Zurück zur Startseite"
+      "back": "Zurück zur Startseite",
+      "cta": {
+        "label": "Kostenlose Beratung buchen",
+        "href": "/book-a-call"
+      }
     },
     "services": {
       "index": {
@@ -6791,9 +6795,9 @@
       "scroll": "Scrollen"
     },
     "latest": {
-      "title": "Aktuelles",
+      "title": "Insights",
       "intro": "Mehr von Pluscode",
-      "cta": "Insights",
+      "cta": "Alle Insights",
       "readMore": "Mehr erfahren",
       "items": [
         {
@@ -6801,35 +6805,45 @@
           "tag": "Quanty",
           "title": "Unsere KI-Tabelle geht in die öffentliche Beta",
           "body": "Quanty liest Rechnungen, Verträge und Kontoauszüge in prüfbare Zeilen, mit der Quellseite neben jedem Wert. Gebaut von denselben zwei Ingenieuren, mit denen Sie arbeiten würden.",
-          "href": "https://quanty.ai"
+          "href": "https://quanty.ai",
+          "image": "/assets/quanty/chat-2x.webp",
+          "alt": "Der Quanty-KI-Agent fügt einer Bestelltabelle eine Lieferstatus-Spalte hinzu"
         },
         {
           "key": "fde",
           "tag": "Forward Deployed Engineers",
           "title": "Ein Ingenieur in Ihrem Team, verantwortlich für das Ergebnis",
           "body": "Keine Position auf einem Stundenzettel. Einer von uns sitzt bei Ihren Leuten, lernt die Arbeit und verantwortet, was entsteht.",
-          "href": "/services/forward-deployed-engineers"
+          "href": "/services/forward-deployed-engineers",
+          "image": "/assets/insights/what-is-a-forward-deployed-engineer.png",
+          "alt": "Cover des Beitrags über Forward Deployed Engineers"
         },
         {
           "key": "ai-act",
           "tag": "KI-Verordnung",
           "title": "Was sich im August 2026 wirklich geändert hat",
           "body": "Die Pflichten für Allzweckmodelle gelten. Wir klären Ihre Risikostufe, bevor etwas entworfen wird, nicht danach.",
-          "href": "/insights/eu-ai-act-august-2026-what-actually-changed"
+          "href": "/insights/eu-ai-act-august-2026-what-actually-changed",
+          "image": "/assets/insights/eu-ai-act-august-2026-what-actually-changed.png",
+          "alt": "Cover des Beitrags über die Änderungen der KI-Verordnung im August 2026"
         },
         {
           "key": "agents",
           "tag": "Agenten",
           "title": "Agenten im Unternehmen 2026, Hype gegen Zahlen",
           "body": "Wo sich autonome Abläufe gerechnet haben, wo nicht, und woran Sie das vor dem Kauf erkennen.",
-          "href": "/insights/ai-agents-enterprise-2026-hype-vs-numbers"
+          "href": "/insights/ai-agents-enterprise-2026-hype-vs-numbers",
+          "image": "/assets/insights/ai-agents-enterprise-2026-hype-vs-numbers.png",
+          "alt": "Cover des Beitrags über Agenten im Unternehmen 2026"
         },
         {
           "key": "zabka",
           "tag": "Handel",
           "title": "Die Architektur hinter unbesetzten Filialen",
           "body": "Wir haben die Systemarchitektur für autonome Filialen der größten Convenience-Kette Polens geplant, entworfen und geführt.",
-          "href": "/case-studies"
+          "href": "/case-studies",
+          "image": "/assets/cases/zabka.jpg",
+          "alt": "Konturfeld für den Fall der unbesetzten Filialen"
         }
       ]
     },
@@ -6857,6 +6871,7 @@
       "eyebrow": "Plattform",
       "title": "Quanty",
       "logoAlt": "Quanty",
+      "shotAlt": "Die Quanty-Tabelle mit Rechnungen in Zeilen und der Quellseite neben einem Wert",
       "tagline": "Dokumente rein. Die Tabelle füllt sich selbst.",
       "intro": "Quanty liest Ihre Rechnungen, Verträge und Bestellungen, füllt die Tabelle und zeigt die Seite, aus der jeder Wert stammt. Wir bauen es, und dieselben Teile stecken in Kundensystemen.",
       "cta": "Quanty ansehen",
@@ -7016,6 +7031,7 @@
     "locations": {
       "title": "Pluscode arbeitet in ganz Europa.",
       "intro": "Standorte ansehen",
+      "cta": "Gespräch buchen",
       "entity": "Pluscode Sp. z o.o., Poznań, Polen",
       "roleLabel": "Rolle",
       "countries": [

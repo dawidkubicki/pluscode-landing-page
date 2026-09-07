@@ -586,7 +586,11 @@
   "pages": {
     "announcements": {
       "eyebrow": "Announcement",
-      "back": "Back to home"
+      "back": "Back to home",
+      "cta": {
+        "label": "Book a free consultation",
+        "href": "/book-a-call"
+      }
     },
     "services": {
       "index": {
@@ -6791,9 +6795,9 @@
       "scroll": "Scroll"
     },
     "latest": {
-      "title": "Latest",
+      "title": "Insights",
       "intro": "More from Pluscode",
-      "cta": "Insights",
+      "cta": "All insights",
       "readMore": "Learn more",
       "items": [
         {
@@ -6801,35 +6805,45 @@
           "tag": "Quanty",
           "title": "Our own AI spreadsheet reaches public beta",
           "body": "Quanty reads invoices, contracts and statements into rows you can check, with the source page beside every value. Built by the same two engineers you would work with.",
-          "href": "https://quanty.ai"
+          "href": "https://quanty.ai",
+          "image": "/assets/quanty/chat-2x.webp",
+          "alt": "The Quanty AI agent adding a delivery status column to an orders sheet"
         },
         {
           "key": "fde",
           "tag": "Forward deployed engineers",
           "title": "An engineer inside your team, accountable for the result",
           "body": "Not a body on a timesheet. One of ours sits with your people, learns the job, and owns what ships.",
-          "href": "/services/forward-deployed-engineers"
+          "href": "/services/forward-deployed-engineers",
+          "image": "/assets/insights/what-is-a-forward-deployed-engineer.png",
+          "alt": "Cover of the insight on forward deployed engineers"
         },
         {
           "key": "ai-act",
           "tag": "EU AI Act",
           "title": "What actually changed in August 2026",
           "body": "The general purpose obligations are live. We work out your risk tier before anything is designed, not after it is built.",
-          "href": "/insights/eu-ai-act-august-2026-what-actually-changed"
+          "href": "/insights/eu-ai-act-august-2026-what-actually-changed",
+          "image": "/assets/insights/eu-ai-act-august-2026-what-actually-changed.png",
+          "alt": "Cover of the insight on the EU AI Act changes of August 2026"
         },
         {
           "key": "agents",
           "tag": "Agents",
           "title": "Enterprise agents in 2026, hype against numbers",
           "body": "Where autonomous workflows have paid for themselves, where they have not, and how to tell the two apart before you buy.",
-          "href": "/insights/ai-agents-enterprise-2026-hype-vs-numbers"
+          "href": "/insights/ai-agents-enterprise-2026-hype-vs-numbers",
+          "image": "/assets/insights/ai-agents-enterprise-2026-hype-vs-numbers.png",
+          "alt": "Cover of the insight on enterprise agents in 2026"
         },
         {
           "key": "zabka",
           "tag": "Retail",
           "title": "The architecture behind unstaffed stores",
           "body": "We planned, designed and ran the system architecture for autonomous stores at Poland's largest convenience chain.",
-          "href": "/case-studies"
+          "href": "/case-studies",
+          "image": "/assets/cases/zabka.jpg",
+          "alt": "Contour field for the unstaffed stores case"
         }
       ]
     },
@@ -6857,6 +6871,7 @@
       "eyebrow": "Platform",
       "title": "Quanty",
       "logoAlt": "Quanty",
+      "shotAlt": "The Quanty sheet with invoices read into rows and the source page open beside a value",
       "tagline": "Drop in documents. The sheet fills itself.",
       "intro": "Quanty reads your invoices, contracts and orders, fills the table and shows the page every value came from. We build it, and the same parts go into client systems.",
       "cta": "See Quanty",
@@ -7016,6 +7031,7 @@
     "locations": {
       "title": "Pluscode works across Europe.",
       "intro": "See locations",
+      "cta": "Book a call",
       "entity": "Pluscode Sp. z o.o., Poznań, Poland",
       "roleLabel": "Role",
       "countries": [

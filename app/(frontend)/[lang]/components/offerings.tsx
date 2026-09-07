@@ -1,8 +1,18 @@
 import LocaleLink from "./locale-link";
+import { OFFERING_ICONS } from "./band-icons";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 /* ------------------------------------------------------------------ *
  *  OFFERINGS. Four ways to start, as four ruled cells.
+ *
+ *  A GLYPH ABOVE EACH HEADLINE. Four cells of text that differ only in
+ *  their words do not scan; a reader has to read all four to find the
+ *  one they want. Each cell now opens with a single-colour glyph for its
+ *  engagement (a ticked slab, a cube, a chip, a bench), so the row can be
+ *  told apart at a glance before any of it is read. They are solid black
+ *  slabs rather than line icons because ink is the only decoration this
+ *  system allows: no accent, no radius, no second weight. Looked up by
+ *  the item's key; a key without a glyph renders nothing.
  *
  *  GROUND, NOT RULES, SEPARATES THIS BAND. Services above it and the
  *  Quanty plate below it both meet this band edge to edge, and a third
@@ -47,17 +57,21 @@ export default function Offerings({
             </LocaleLink>
           </div>
 
-          {dict.items.map((item) => (
-            <div
-              key={item.key}
-              className="col-span-4 mt-16 border-t border-rule pt-8 md:col-span-3 md:mt-24"
-            >
-              <h3 className="text-heading-sm text-ink">{item.title}</h3>
-              <p className="mt-4 text-[1.125rem] leading-[1.375] text-moss">
-                {item.body}
-              </p>
-            </div>
-          ))}
+          {dict.items.map((item) => {
+            const Icon = OFFERING_ICONS[item.key];
+            return (
+              <div
+                key={item.key}
+                className="col-span-4 mt-16 border-t border-rule pt-8 md:col-span-3 md:mt-24"
+              >
+                {Icon && <Icon className="mb-8 size-14 text-ink" />}
+                <h3 className="text-heading-sm text-ink">{item.title}</h3>
+                <p className="mt-4 text-[1.125rem] leading-[1.375] text-moss">
+                  {item.body}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

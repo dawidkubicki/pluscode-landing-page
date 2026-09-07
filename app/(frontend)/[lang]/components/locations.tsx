@@ -5,7 +5,9 @@
  *  (Poznan) and where it consults (Germany, Italy, the Netherlands,
  *  Norway, Sweden and Finland, all remote). No country here is an office
  *  except Poland, and the detail block says so in the copy rather than in
- *  the styling.
+ *  the styling. The band closes with a call to action because it used to
+ *  be the only band on the page without one, and a reader who has just
+ *  found their country needs somewhere to go.
  *
  *  "use client" because the whole point of the band is one shared
  *  selection: the map and the pills are two controls over the SAME piece
@@ -32,6 +34,7 @@
  * ------------------------------------------------------------------ */
 
 import { useState } from "react";
+import LocaleLink from "./locale-link";
 import { MAP_ACTIVE } from "@/lib/europe-map";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
@@ -189,6 +192,10 @@ export default function Locations({
                 {active.body}
               </p>
             </div>
+
+            <LocaleLink href="/book-a-call" className="btn btn-invert mt-8">
+              {dict.cta}
+            </LocaleLink>
 
             <p className="mt-10 text-[0.875rem] text-sage">{dict.entity}</p>
           </div>

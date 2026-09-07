@@ -18,6 +18,18 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
  *  drawn for a dark ground, which is why the band shows it rather than
  *  setting "Quanty" in the page's own face like every other heading.
  *
+ *  THE SCREENSHOT IS A REAL CAPTURE OF THE PRODUCT, not a mock-up. The
+ *  repo has a rule against synthetic app windows, and a genuine screenshot
+ *  of our own product is the one exception to it: `sheet-2x.webp` is the
+ *  Quanty sheet as it renders at quanty.ai, invoices read into rows with
+ *  the source popover open beside a value, captured at 2240x1282. It is
+ *  never edited, retouched or composited. When the product UI changes the
+ *  file is captured again from quanty.ai and replaced, so the band always
+ *  shows what a user would actually see. Its ground is near black and the
+ *  band is ink, so a 1px rule-dark hairline draws the edge of the window;
+ *  there is no browser chrome and no shadow, by the same rule as every
+ *  other image on the page.
+ *
  *  The note line is a disclosure, not decoration. Quanty is built by
  *  Pluscode, it is not a partner platform and not a certification, so the
  *  note renders at full label contrast in the flow of the band rather
@@ -163,11 +175,32 @@ export default function Platform({
             </a>
           </div>
 
+          {/* The product itself, full width under the header. The hairline
+              is load-bearing: the capture's own ground is near black on an
+              ink band, and without the border there would be no edge to say
+              where the window ends. `sizes="100vw"` because the figure
+              spans every column of the shell at every width. No
+              `unoptimized` here; that exception is for the SVG wordmark
+              only, and this is a raster that /_next/image serves resized. */}
+          <figure className="col-span-4 mt-16 md:col-span-12 md:mt-24">
+            <div className="relative aspect-[2240/1282] overflow-hidden border border-rule-dark">
+              <Image
+                src="/assets/quanty/sheet-2x.webp"
+                alt={dict.shotAlt}
+                fill
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
+          </figure>
+
           {/* The four boxes. `border border-transparent` is load-bearing:
               it is the 1px ring the gradient in ITEM_CSS shows through, and
               the box has no other border. `group` lets the name answer the
               same hover as the ring, on the same 240ms curve, so the two
-              read as one movement rather than a border and then a title. */}
+              read as one movement rather than a border and then a title.
+              The top margin now measures from the screenshot, not the
+              header, so the rhythm stays header, screenshot, boxes. */}
           {dict.items.map((item) => (
             <div
               key={item.key}

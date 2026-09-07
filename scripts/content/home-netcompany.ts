@@ -44,6 +44,10 @@ export type HomeContent = {
       title: string;
       body: string;
       href: string;
+      /** A real picture beside the open item: a product screenshot, an
+       *  insight cover or a case field. Never a stock photograph. */
+      image: string;
+      alt: string;
     }[];
   };
   clients: {
@@ -101,6 +105,8 @@ export type HomeContent = {
   locations: {
     title: string;
     intro: string;
+    /** The one action in the band, next to the country detail. */
+    cta: string;
     entity: string;
     roleLabel: string;
     countries: {
@@ -139,9 +145,9 @@ const en: HomeContent = {
     scroll: "Scroll",
   },
   latest: {
-    title: "Latest",
+    title: "Insights",
     intro: "More from Pluscode",
-    cta: "Insights",
+    cta: "All insights",
     readMore: "Learn more",
     items: [
       {
@@ -150,6 +156,8 @@ const en: HomeContent = {
         title: "Our own AI spreadsheet reaches public beta",
         body: "Quanty reads invoices, contracts and statements into rows you can check, with the source page beside every value. Built by the same two engineers you would work with.",
         href: "https://quanty.ai",
+        image: "/assets/quanty/chat-2x.webp",
+        alt: "The Quanty AI agent adding a delivery status column to an orders sheet",
       },
       {
         key: "fde",
@@ -157,6 +165,8 @@ const en: HomeContent = {
         title: "An engineer inside your team, accountable for the result",
         body: "Not a body on a timesheet. One of ours sits with your people, learns the job, and owns what ships.",
         href: "/services/forward-deployed-engineers",
+        image: "/assets/insights/what-is-a-forward-deployed-engineer.png",
+        alt: "Cover of the insight on forward deployed engineers",
       },
       {
         key: "ai-act",
@@ -164,6 +174,8 @@ const en: HomeContent = {
         title: "What actually changed in August 2026",
         body: "The general purpose obligations are live. We work out your risk tier before anything is designed, not after it is built.",
         href: "/insights/eu-ai-act-august-2026-what-actually-changed",
+        image: "/assets/insights/eu-ai-act-august-2026-what-actually-changed.png",
+        alt: "Cover of the insight on the EU AI Act changes of August 2026",
       },
       {
         key: "agents",
@@ -171,6 +183,8 @@ const en: HomeContent = {
         title: "Enterprise agents in 2026, hype against numbers",
         body: "Where autonomous workflows have paid for themselves, where they have not, and how to tell the two apart before you buy.",
         href: "/insights/ai-agents-enterprise-2026-hype-vs-numbers",
+        image: "/assets/insights/ai-agents-enterprise-2026-hype-vs-numbers.png",
+        alt: "Cover of the insight on enterprise agents in 2026",
       },
       {
         key: "zabka",
@@ -178,6 +192,8 @@ const en: HomeContent = {
         title: "The architecture behind unstaffed stores",
         body: "We planned, designed and ran the system architecture for autonomous stores at Poland's largest convenience chain.",
         href: "/case-studies",
+        image: "/assets/cases/zabka.jpg",
+        alt: "Contour field for the unstaffed stores case",
       },
     ],
   },
@@ -320,6 +336,7 @@ const en: HomeContent = {
   locations: {
     title: "Pluscode works across Europe.",
     intro: "See locations",
+    cta: "Book a call",
     entity: "Pluscode Sp. z o.o., Poznań, Poland",
     roleLabel: "Role",
     countries: [
@@ -461,9 +478,9 @@ const pl: HomeContent = {
     scroll: "Przewiń",
   },
   latest: {
-    title: "Najnowsze",
+    title: "Insights",
     intro: "Więcej od Pluscode",
-    cta: "Artykuły",
+    cta: "Wszystkie artykuły",
     readMore: "Czytaj dalej",
     items: [
       {
@@ -472,6 +489,8 @@ const pl: HomeContent = {
         title: "Nasz arkusz AI wchodzi w publiczną betę",
         body: "Quanty czyta faktury, umowy i wyciągi do wierszy, które można sprawdzić, a przy każdej wartości zostaje strona źródłowa. Zbudowany przez tych samych dwóch inżynierów, z którymi będziesz pracować.",
         href: "https://quanty.ai",
+        image: "/assets/quanty/chat-2x.webp",
+        alt: "Agent AI Quanty dodaje kolumnę statusu dostawy do arkusza zamówień",
       },
       {
         key: "fde",
@@ -479,6 +498,8 @@ const pl: HomeContent = {
         title: "Inżynier w Twoim zespole, odpowiedzialny za efekt",
         body: "Nie osoba na liście godzin. Nasz inżynier siada z Twoimi ludźmi, uczy się pracy i odpowiada za to, co powstaje.",
         href: "/services/forward-deployed-engineers",
+        image: "/assets/insights/what-is-a-forward-deployed-engineer.png",
+        alt: "Okładka artykułu o forward deployed engineers",
       },
       {
         key: "ai-act",
@@ -486,6 +507,8 @@ const pl: HomeContent = {
         title: "Co naprawdę zmieniło się w sierpniu 2026",
         body: "Obowiązki dla modeli ogólnego przeznaczenia już obowiązują. Poziom ryzyka ustalamy przed projektowaniem, nie po wdrożeniu.",
         href: "/insights/eu-ai-act-august-2026-what-actually-changed",
+        image: "/assets/insights/eu-ai-act-august-2026-what-actually-changed.png",
+        alt: "Okładka artykułu o zmianach w AI Act z sierpnia 2026",
       },
       {
         key: "agents",
@@ -493,6 +516,8 @@ const pl: HomeContent = {
         title: "Agenci w firmach w 2026, szum kontra liczby",
         body: "Gdzie autonomiczne procesy się zwróciły, gdzie nie, i jak to rozpoznać przed zakupem.",
         href: "/insights/ai-agents-enterprise-2026-hype-vs-numbers",
+        image: "/assets/insights/ai-agents-enterprise-2026-hype-vs-numbers.png",
+        alt: "Okładka artykułu o agentach w firmach w 2026",
       },
       {
         key: "zabka",
@@ -500,6 +525,8 @@ const pl: HomeContent = {
         title: "Architektura sklepów bez obsługi",
         body: "Zaplanowaliśmy, zaprojektowaliśmy i poprowadziliśmy architekturę systemu autonomicznych sklepów największej sieci convenience w Polsce.",
         href: "/case-studies",
+        image: "/assets/cases/zabka.jpg",
+        alt: "Pole konturowe dla wdrożenia sklepów bez obsługi",
       },
     ],
   },
@@ -642,6 +669,7 @@ const pl: HomeContent = {
   locations: {
     title: "Pluscode pracuje w całej Europie.",
     intro: "Zobacz lokalizacje",
+    cta: "Umów rozmowę",
     entity: "Pluscode Sp. z o.o., Poznań, Polska",
     roleLabel: "Rola",
     countries: [
@@ -783,9 +811,9 @@ const de: HomeContent = {
     scroll: "Scrollen",
   },
   latest: {
-    title: "Aktuelles",
+    title: "Insights",
     intro: "Mehr von Pluscode",
-    cta: "Insights",
+    cta: "Alle Insights",
     readMore: "Mehr erfahren",
     items: [
       {
@@ -794,6 +822,8 @@ const de: HomeContent = {
         title: "Unsere KI-Tabelle geht in die öffentliche Beta",
         body: "Quanty liest Rechnungen, Verträge und Kontoauszüge in prüfbare Zeilen, mit der Quellseite neben jedem Wert. Gebaut von denselben zwei Ingenieuren, mit denen Sie arbeiten würden.",
         href: "https://quanty.ai",
+        image: "/assets/quanty/chat-2x.webp",
+        alt: "Der Quanty-KI-Agent fügt einer Bestelltabelle eine Lieferstatus-Spalte hinzu",
       },
       {
         key: "fde",
@@ -801,6 +831,8 @@ const de: HomeContent = {
         title: "Ein Ingenieur in Ihrem Team, verantwortlich für das Ergebnis",
         body: "Keine Position auf einem Stundenzettel. Einer von uns sitzt bei Ihren Leuten, lernt die Arbeit und verantwortet, was entsteht.",
         href: "/services/forward-deployed-engineers",
+        image: "/assets/insights/what-is-a-forward-deployed-engineer.png",
+        alt: "Cover des Beitrags über Forward Deployed Engineers",
       },
       {
         key: "ai-act",
@@ -808,6 +840,8 @@ const de: HomeContent = {
         title: "Was sich im August 2026 wirklich geändert hat",
         body: "Die Pflichten für Allzweckmodelle gelten. Wir klären Ihre Risikostufe, bevor etwas entworfen wird, nicht danach.",
         href: "/insights/eu-ai-act-august-2026-what-actually-changed",
+        image: "/assets/insights/eu-ai-act-august-2026-what-actually-changed.png",
+        alt: "Cover des Beitrags über die Änderungen der KI-Verordnung im August 2026",
       },
       {
         key: "agents",
@@ -815,6 +849,8 @@ const de: HomeContent = {
         title: "Agenten im Unternehmen 2026, Hype gegen Zahlen",
         body: "Wo sich autonome Abläufe gerechnet haben, wo nicht, und woran Sie das vor dem Kauf erkennen.",
         href: "/insights/ai-agents-enterprise-2026-hype-vs-numbers",
+        image: "/assets/insights/ai-agents-enterprise-2026-hype-vs-numbers.png",
+        alt: "Cover des Beitrags über Agenten im Unternehmen 2026",
       },
       {
         key: "zabka",
@@ -822,6 +858,8 @@ const de: HomeContent = {
         title: "Die Architektur hinter unbesetzten Filialen",
         body: "Wir haben die Systemarchitektur für autonome Filialen der größten Convenience-Kette Polens geplant, entworfen und geführt.",
         href: "/case-studies",
+        image: "/assets/cases/zabka.jpg",
+        alt: "Konturfeld für den Fall der unbesetzten Filialen",
       },
     ],
   },
@@ -964,6 +1002,7 @@ const de: HomeContent = {
   locations: {
     title: "Pluscode arbeitet in ganz Europa.",
     intro: "Standorte ansehen",
+    cta: "Gespräch buchen",
     entity: "Pluscode Sp. z o.o., Poznań, Polen",
     roleLabel: "Rolle",
     countries: [

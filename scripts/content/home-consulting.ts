@@ -64,6 +64,8 @@ export type ConsultingContent = {
     eyebrow: string;
     title: string;
     logoAlt: string;
+    /** Alt text for the real product screenshot shown in the band. */
+    shotAlt: string;
     tagline: string;
     intro: string;
     cta: string;
@@ -152,6 +154,7 @@ const en: ConsultingContent = {
     eyebrow: "Platform",
     title: "Quanty",
     logoAlt: "Quanty",
+    shotAlt: "The Quanty sheet with invoices read into rows and the source page open beside a value",
     tagline: "Drop in documents. The sheet fills itself.",
     intro:
       "Quanty reads your invoices, contracts and orders, fills the table and shows the page every value came from. We build it, and the same parts go into client systems.",
@@ -269,6 +272,7 @@ const pl: ConsultingContent = {
     eyebrow: "Platforma",
     title: "Quanty",
     logoAlt: "Quanty",
+    shotAlt: "Arkusz Quanty z fakturami wczytanymi do wierszy i stroną źródłową otwartą przy wartości",
     tagline: "Wrzuć dokumenty. Arkusz wypełni się sam.",
     intro:
       "Quanty czyta faktury, umowy i zamówienia, wpisuje wartości do tabeli i przy każdej pokazuje stronę, z której pochodzi. Budujemy go my, a te same części trafiają do systemów klientów.",
@@ -386,6 +390,7 @@ const de: ConsultingContent = {
     eyebrow: "Plattform",
     title: "Quanty",
     logoAlt: "Quanty",
+    shotAlt: "Die Quanty-Tabelle mit Rechnungen in Zeilen und der Quellseite neben einem Wert",
     tagline: "Dokumente rein. Die Tabelle füllt sich selbst.",
     intro:
       "Quanty liest Ihre Rechnungen, Verträge und Bestellungen, füllt die Tabelle und zeigt die Seite, aus der jeder Wert stammt. Wir bauen es, und dieselben Teile stecken in Kundensystemen.",
