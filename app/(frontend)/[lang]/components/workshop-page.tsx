@@ -2,7 +2,7 @@ import Footer from "./footer";
 import LeadForm from "./lead-form";
 import LocaleLink from "./locale-link";
 import { Reveal, Stagger, StaggerItem } from "./motion";
-import { Arrow } from "./ui";
+import { Arrow, BandGlow, Eyebrow } from "./ui";
 import { Check, SectionHeading } from "./service-page";
 import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
@@ -32,21 +32,22 @@ export type WorkshopPage = {
   form: { title: string; note: string; cta: string };
 };
 
-/** Simple check row on a light surface (outcomes, audience, prep). */
+/** Simple check row, lifted one step off the band (outcomes, audience, prep). */
 function CheckRow({ text }: { text: string }) {
   return (
-    <div className="flex h-full items-start gap-3 rounded border border-cream-line bg-white p-5">
-      <Check className="mt-0.5 size-5 shrink-0 text-lime" />
+    <div className="flex h-full items-start gap-3 rounded-xl border border-cream-line bg-cream-surface p-5">
+      <Check className="mt-0.5 size-5 shrink-0 text-ink-mute" />
       <span className="text-[15px] leading-[1.6] text-ink">{text}</span>
     </div>
   );
 }
 
 /**
- * Full marketing page for a single workshop offering: dark hero with meta
- * chips, overview, outcomes, agenda, audience, optional prep and progression
+ * Full marketing page for a single workshop offering: page-ground hero with
+ * meta chips, overview, outcomes, agenda, audience, optional prep and progression
  * sections, FAQ, and the same booking form the standalone booking screen uses,
- * anchored at #book so the hero CTA can jump straight to it.
+ * anchored at #book so the hero CTA can jump straight to it. Only the closing
+ * two bands sit on the lifted `night` ground, which is where the ask lives.
  */
 export default function WorkshopPageView({
   locale,
@@ -60,6 +61,11 @@ export default function WorkshopPageView({
   const dict = getDictionary(locale);
   const idx = dict.workshops.index;
   const booking = dict.booking;
+  const hasPrep = Boolean(page.prep && page.prep.items.length > 0);
+  // The prep band is optional, so the page / off band alternation has to be
+  // computed. Hard-coding it puts two identical grounds either side of the FAQ
+  // on whichever half of the pages does not carry a prep section.
+  const faqGround = hasPrep ? "bg-cream-dim" : "bg-cream";
   const chips = [
     page.meta.duration,
     page.meta.format,
@@ -70,26 +76,18 @@ export default function WorkshopPageView({
   return (
     <main>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden bg-night text-bone">
-        <div className="blueprint-grid absolute inset-0 -z-10" />
-        <div className="absolute -right-44 -top-44 -z-10 size-[34rem] rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.2)_0%,rgba(16,185,129,0)_65%)]" />
-
-        <div className="mx-auto max-w-[1240px] px-5 pb-16 pt-40 sm:px-10 sm:pb-20 sm:pt-[11rem]">
+      <section className="border-b border-cream-line bg-cream">
+        <div className="mx-auto max-w-[1240px] px-5 pb-16 pt-36 sm:px-10 lg:pb-18 lg:pt-40 xl:pb-20 xl:pt-46">
           <Reveal>
-            <div className="mb-7 flex items-center gap-2.5">
-              <span className="inline-block size-2 rounded-full bg-lime animate-pulse-dot" />
-              <span className="font-mono text-[12px] uppercase tracking-[0.14em] text-bone-dim sm:text-[13px]">
-                {page.eyebrow}
-              </span>
-            </div>
+            <Eyebrow>{page.eyebrow}</Eyebrow>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="display max-w-[940px] text-balance text-5xl sm:text-6xl lg:text-[4.5rem]">
+            <h1 className="display mt-6 max-w-[16em] text-balance text-heading-md text-ink sm:text-heading-lg xl:text-heading-xl">
               {page.title}
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-7 max-w-[620px] text-lg leading-[1.65] text-bone-soft sm:text-[19px]">
+            <p className="mt-6 max-w-[34em] text-[17px] leading-[1.65] text-ink-soft">
               {page.subtitle}
             </p>
           </Reveal>
@@ -98,7 +96,7 @@ export default function WorkshopPageView({
               {chips.map((chip) => (
                 <span
                   key={chip}
-                  className="inline-block rounded-[2px] border border-white/15 px-3.5 py-2 font-mono text-[12px] uppercase tracking-[0.1em] text-bone-soft"
+                  className="inline-flex items-center rounded-lg border border-cream-line bg-cream-surface px-3 py-1.5 text-[13px] text-ink-soft"
                 >
                   {chip}
                 </span>
@@ -106,13 +104,9 @@ export default function WorkshopPageView({
             </div>
           </Reveal>
           <Reveal delay={0.2}>
-            <div className="mt-10">
-              <a
-                href="#book"
-                className="group inline-flex items-center gap-3 rounded-[2px] bg-lime px-[30px] py-4 text-[15.5px] font-semibold text-night transition-colors hover:bg-lime-bright"
-              >
+            <div className="mt-9">
+              <a href="#book" className="btn btn-primary">
                 {page.form.cta}
-                <Arrow className="size-[18px] transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             </div>
           </Reveal>
@@ -120,10 +114,10 @@ export default function WorkshopPageView({
       </section>
 
       {/* Overview */}
-      <section className="bg-white">
+      <section className="bg-cream">
         <div className="mx-auto max-w-3xl px-5 py-20 sm:px-10 sm:py-[6.25rem]">
           <Reveal>
-            <h2 className="text-balance font-serif text-[2.5rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-5xl">
+            <h2 className="display max-w-[22em] text-balance text-heading-md text-ink lg:text-heading-lg">
               {page.overview.title}
             </h2>
           </Reveal>
@@ -146,7 +140,7 @@ export default function WorkshopPageView({
       </section>
 
       {/* Outcomes */}
-      <section className="border-t border-cream-line bg-cream">
+      <section className="border-t border-cream-line bg-cream-dim">
         <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
           <SectionHeading title={page.outcomes.title} className="mb-14" />
           <Stagger className="grid gap-4 sm:grid-cols-2" gap={0.05}>
@@ -160,7 +154,7 @@ export default function WorkshopPageView({
       </section>
 
       {/* Agenda */}
-      <section className="border-t border-cream-line bg-white">
+      <section className="border-t border-cream-line bg-cream">
         <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
           <SectionHeading
             eyebrow={page.eyebrow}
@@ -173,11 +167,11 @@ export default function WorkshopPageView({
           >
             {page.agenda.steps.map((s) => (
               <StaggerItem key={s.num} className="h-full">
-                <div className="flex h-full flex-col border-b border-r border-cream-line bg-white p-7 sm:p-8">
-                  <span className="font-serif text-5xl font-light text-lime">
+                <div className="flex h-full flex-col border-b border-r border-cream-line p-7 sm:p-8">
+                  <span className="display text-heading-sm text-ink-mute">
                     {s.num}
                   </span>
-                  <h3 className="mt-7 text-lg font-semibold text-ink">{s.title}</h3>
+                  <h3 className="mt-7 text-[19px] font-semibold leading-[1.25] text-ink">{s.title}</h3>
                   <p className="mt-3 text-[14.5px] leading-[1.65] text-ink-soft">
                     {s.desc}
                   </p>
@@ -189,7 +183,7 @@ export default function WorkshopPageView({
       </section>
 
       {/* Audience */}
-      <section className="border-t border-cream-line bg-cream">
+      <section className="border-t border-cream-line bg-cream-dim">
         <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
           <SectionHeading title={page.audience.title} className="mb-14" />
           <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.05}>
@@ -203,8 +197,8 @@ export default function WorkshopPageView({
       </section>
 
       {/* How to prepare */}
-      {page.prep && page.prep.items.length > 0 && (
-        <section className="border-t border-cream-line bg-white">
+      {hasPrep && page.prep && (
+        <section className="border-t border-cream-line bg-cream">
           <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
             <SectionHeading
               title={page.prep.title}
@@ -224,20 +218,20 @@ export default function WorkshopPageView({
 
       {/* FAQ */}
       {page.faq.length > 0 && (
-        <section className="border-t border-cream-line bg-white">
+        <section className={`border-t border-cream-line ${faqGround}`}>
           <div className="mx-auto max-w-3xl px-5 py-20 sm:px-10 sm:py-[6.25rem]">
             <Reveal>
-              <h2 className="text-balance text-center font-serif text-[2.5rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-5xl">
+              <h2 className="display text-balance text-center text-heading-md text-ink lg:text-heading-lg">
                 {idx.faqTitle}
               </h2>
             </Reveal>
             <Stagger className="mt-12 space-y-4" gap={0.06}>
               {page.faq.map((item) => (
                 <StaggerItem key={item.q}>
-                  <details className="group rounded border border-cream-line bg-white p-6">
+                  <details className="group rounded-[20px] border border-cream-line bg-cream-surface px-[23px] pb-[23px] pt-[21px]">
                     <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-medium text-ink">
                       {item.q}
-                      <span className="flex size-7 shrink-0 items-center justify-center rounded-[2px] border border-cream-line text-lime transition-transform duration-300 group-open:rotate-45">
+                      <span className="flex size-7 shrink-0 items-center justify-center rounded-lg border border-cream-line text-ink-mute transition-transform duration-300 group-open:rotate-45">
                         <svg viewBox="0 0 24 24" className="size-4" fill="none" aria-hidden>
                           <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                         </svg>
@@ -257,22 +251,22 @@ export default function WorkshopPageView({
         <section className="border-t border-night-line bg-night text-bone">
           <div className="mx-auto grid max-w-[1240px] items-center gap-10 px-5 py-16 sm:px-10 sm:py-20 lg:grid-cols-[1.3fr_1fr] lg:gap-20">
             <Reveal>
-              <h2 className="display text-balance text-4xl leading-[1.1] sm:text-5xl">
+              <h2 className="display max-w-[12em] text-balance text-heading-md lg:text-heading-lg">
                 {page.next.title}
               </h2>
             </Reveal>
             <Reveal delay={0.08}>
               <div>
-                <p className="text-[16px] leading-[1.7] text-bone-soft">
+                <p className="max-w-[34em] text-[17px] leading-[1.65] text-bone-soft">
                   {page.next.text}
                 </p>
                 {page.next.linkLabel && (
                   <LocaleLink
                     href={page.next.slug ? `/workshops/${page.next.slug}` : "/book-a-call"}
-                    className="group mt-7 inline-flex items-center gap-2.5 rounded-[2px] bg-lime px-7 py-4 text-[15px] font-semibold text-night transition-colors duration-300 hover:bg-lime-bright"
+                    className="btn btn-primary group mt-8"
                   >
                     {page.next.linkLabel}
-                    <Arrow className="size-[18px] transition-transform duration-300 group-hover:translate-x-1" />
+                    <Arrow className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" />
                   </LocaleLink>
                 )}
               </div>
@@ -284,17 +278,18 @@ export default function WorkshopPageView({
       {/* Booking */}
       <section
         id="book"
-        className="scroll-mt-24 border-t border-night-line bg-night text-bone"
+        className="relative isolate scroll-mt-24 overflow-hidden border-y border-night-line bg-night text-bone"
       >
+        <BandGlow />
         <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
           <div className="max-w-[720px]">
             <Reveal>
-              <h2 className="display text-balance text-4xl sm:text-5xl">
+              <h2 className="display max-w-[16em] text-balance text-heading-md lg:text-heading-lg">
                 {page.form.title}
               </h2>
             </Reveal>
             <Reveal delay={0.05}>
-              <p className="mt-5 text-[16px] leading-[1.7] text-bone-soft">
+              <p className="mt-5 max-w-[34em] text-[17px] leading-[1.65] text-bone-soft">
                 {page.form.note}
               </p>
             </Reveal>
@@ -313,20 +308,20 @@ export default function WorkshopPageView({
             <Reveal delay={0.12}>
               <div className="flex flex-col gap-7 lg:sticky lg:top-28">
                 {/* What you're booking */}
-                <div className="rounded border border-white/10 bg-night-soft p-6 sm:p-7">
-                  <div className="font-mono text-[11.5px] uppercase tracking-[0.14em] text-lime-soft">
+                <div className="rounded-[20px] border border-night-line bg-night-soft p-6 sm:p-7">
+                  <div className="text-[13px] font-semibold text-bone">
                     {booking.summaryTitle}
                   </div>
                   <div className="mt-3 text-[14px] leading-[1.5] text-bone-soft">
                     {[page.meta.duration, page.meta.format, page.meta.price].join(" · ")}
                   </div>
-                  <ul className="mt-5 flex flex-col gap-2.5 border-t border-white/10 pt-5">
+                  <ul className="mt-5 flex flex-col gap-2.5 border-t border-night-line pt-5">
                     {page.outcomes.items.map((p) => (
                       <li
                         key={p}
                         className="flex items-start gap-2.5 text-[14px] leading-[1.5] text-bone-soft"
                       >
-                        <Check className="mt-0.5 size-[15px] shrink-0 text-lime" />
+                        <Check className="mt-0.5 size-[15px] shrink-0 text-bone-dim" />
                         <span>{p}</span>
                       </li>
                     ))}
@@ -335,13 +330,13 @@ export default function WorkshopPageView({
 
                 {/* What happens next */}
                 <div>
-                  <div className="font-mono text-[11.5px] uppercase tracking-[0.14em] text-bone-dim">
+                  <div className="text-[13px] font-semibold text-bone">
                     {booking.nextTitle}
                   </div>
                   <ol className="mt-4 flex flex-col gap-3">
                     {booking.steps.map((step, i) => (
                       <li key={step} className="flex items-center gap-3">
-                        <span className="flex size-6 shrink-0 items-center justify-center rounded-full border border-white/15 font-mono text-[11px] text-lime-soft">
+                        <span className="flex size-6 shrink-0 items-center justify-center rounded-full border border-night-line text-[11px] font-semibold text-bone-soft">
                           {i + 1}
                         </span>
                         <span className="text-[14.5px] leading-[1.45] text-bone-soft">
@@ -353,10 +348,10 @@ export default function WorkshopPageView({
                 </div>
 
                 {/* Back to all engagements */}
-                <div className="border-t border-white/10 pt-6">
+                <div className="border-t border-night-line pt-6">
                   <LocaleLink
                     href="/workshops"
-                    className="inline-flex items-center gap-2 text-[14.5px] font-medium text-bone-dim transition-colors hover:text-bone"
+                    className="inline-flex items-center gap-2 text-[14.5px] font-medium text-bone-dim transition-colors duration-300 ease-io-attio hover:text-bone hover:duration-50"
                   >
                     ← {idx.backToAll}
                   </LocaleLink>

@@ -41,10 +41,13 @@ export type InsightDoc = {
   seoDescription?: string | null;
 };
 
+/** Card ground when a post carries no cover image and no gradient of its
+ *  own. Neutral near-black, the same family as the baked cover art. */
 const DEFAULT_GRADIENT =
-  "bg-gradient-to-br from-night-soft via-night-soft to-night";
+  "bg-gradient-to-br from-night-soft via-night to-night-deep";
 
-/** Static fallbacks used until the CMS is seeded — keyed to dictionary copy. */
+/** Static fallbacks used until the CMS is seeded, keyed to dictionary copy.
+ *  The gradients match the ones scripts/seed.ts writes for the same slugs. */
 const FALLBACK: {
   slug: string;
   key: "featured" | "post1" | "post2" | "post3";
@@ -59,7 +62,7 @@ const FALLBACK: {
     category: "ai",
     readTime: 8,
     featured: true,
-    gradient: "bg-gradient-to-br from-purple-600 via-violet-500 to-indigo-400",
+    gradient: "bg-gradient-to-br from-night via-night-deep to-night-soft",
   },
   {
     slug: "scalable-microservices",
@@ -67,7 +70,7 @@ const FALLBACK: {
     category: "development",
     readTime: 5,
     featured: false,
-    gradient: "bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-400",
+    gradient: "bg-gradient-to-br from-night-deep via-night to-night-soft",
   },
   {
     slug: "startup-to-scaleup",
@@ -75,7 +78,7 @@ const FALLBACK: {
     category: "business",
     readTime: 6,
     featured: false,
-    gradient: "bg-gradient-to-br from-emerald-600 via-emerald-500 to-teal-400",
+    gradient: "bg-gradient-to-br from-night via-night-soft to-night-deep",
   },
   {
     slug: "cloud-native-best-practices",
@@ -83,7 +86,7 @@ const FALLBACK: {
     category: "technology",
     readTime: 4,
     featured: false,
-    gradient: "bg-gradient-to-br from-orange-500 via-amber-500 to-yellow-400",
+    gradient: "bg-gradient-to-br from-night-soft via-night-deep to-night",
   },
 ];
 
@@ -121,7 +124,7 @@ function fallbackCards(locale: Locale): InsightCard[] {
   });
 }
 
-/** All insights as cards — CMS first, dictionary fallback otherwise. */
+/** All insights as cards: CMS first, dictionary fallback otherwise. */
 export async function getInsights(locale: Locale): Promise<InsightCard[]> {
   const docs = await findDocs<InsightDoc>("insights", {
     sort: "-publishedAt",

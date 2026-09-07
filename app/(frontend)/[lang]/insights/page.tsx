@@ -44,7 +44,7 @@ export default async function InsightsPage({
               <StaggerItem key={insight.slug} className="h-full">
                 <LocaleLink
                   href={`/insights/${insight.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded border border-cream-line bg-white transition-colors duration-300 hover:border-lime"
+                  className="group flex h-full flex-col overflow-hidden rounded border border-cream-line bg-cream-surface transition-colors duration-300 hover:border-lime"
                 >
                   <div className={`relative h-48 overflow-hidden ${insight.gradient}`}>
                     {insight.image && (
@@ -53,7 +53,7 @@ export default async function InsightsPage({
                     )}
                   </div>
                   <div className="flex flex-1 flex-col gap-3 p-7">
-                    <div className="font-mono text-xs uppercase tracking-[0.1em] text-lime">
+                    <div className="font-mono text-xs uppercase tracking-[0.1em] text-lime-soft">
                       {labels.categories[insight.category]}
                       <span className="normal-case tracking-normal text-ink-mute"> · {insight.readTime} {labels.minRead}</span>
                     </div>
@@ -63,7 +63,7 @@ export default async function InsightsPage({
                     <p className="line-clamp-3 flex-1 text-[15px] leading-[1.65] text-ink-soft">
                       {insight.excerpt}
                     </p>
-                    <span className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime transition-colors group-hover:text-ink">
+                    <span className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime-soft transition-colors group-hover:text-ink">
                       {labels.readMore}
                       <Arrow className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </span>

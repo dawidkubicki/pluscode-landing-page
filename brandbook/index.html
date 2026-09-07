@@ -1,0 +1,2015 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pluscode Brand Book</title>
+<meta name="description" content="The Pluscode visual identity: voice, logo, palette, typography, layout, components and motion.">
+<style>
+/* Figtree, variable 300-900, loaded from ./assets/fonts so this folder
+   renders the same offline as it does on the web. SIL Open Font License;
+   the licence text ships alongside the files. */
+@font-face {
+  font-family: "Figtree";
+  src: url("assets/fonts/Figtree.ttf") format("truetype-variations"),
+       url("assets/fonts/Figtree.ttf") format("truetype");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Figtree";
+  src: url("assets/fonts/Figtree-Italic.ttf") format("truetype-variations"),
+       url("assets/fonts/Figtree-Italic.ttf") format("truetype");
+  font-weight: 300 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ------------------------------------------------------------------ *
+ *  Pluscode brand book
+ *  Built in the system it documents: tokens lifted verbatim from
+ *  app/(frontend)/[lang]/globals.css, Figtree across every role,
+ *  2px radius, hairline rules, navy / paper band rhythm.
+ * ------------------------------------------------------------------ */
+
+:root {
+  /* Surfaces */
+  --night: #0a1929;
+  --night-soft: #0f2237;
+  --night-deep: #061220;
+  --night-line: #22303e;
+  --cream: #f7f8fa;
+  --cream-dim: #eef0f4;
+  --cream-line: #e2e6ec;
+  --paper: #ffffff;
+
+  /* Ink + accent */
+  --ink: #0a1929;
+  --ink-soft: #4a5a6d;
+  --ink-mute: #8093a8;
+  --bone: #ffffff;
+  --bone-soft: #b9c6d8;
+  --bone-dim: #8fa3bd;
+  --lime: #059669;
+  --lime-deep: #047857;
+  --lime-soft: #34d399;
+  --lime-bright: #10b981;
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --rail: 232px;
+  --gut: clamp(20px, 4vw, 40px);
+  --measure: 1240px;
+
+  font-family: "Figtree", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* This document commits to the Pluscode world on purpose. A brand book
+   that re-tints itself to the reader's OS theme would misreport the very
+   colours it specifies, so every ground is painted explicitly. */
+
+* { box-sizing: border-box; }
+h1, h2, h3, h4, p, dl, dd, ol, ul, pre, figure { margin: 0; }
+ol, ul { padding: 0; list-style: none; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--lime); color: #fff; }
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--lime-bright);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------------------------------------------------------------- *
+ *  Band system — every child reads --fg / --line / --accent-text,
+ *  so a section can be moved between grounds without recolouring.
+ * ---------------------------------------------------------------- */
+.band {
+  --fg: var(--ink);
+  --fg-soft: var(--ink-soft);
+  --fg-mute: var(--ink-mute);
+  --line: var(--cream-line);
+  --accent-text: var(--lime-deep);
+  --chip: var(--cream-dim);
+  background: var(--cream);
+  color: var(--fg);
+  position: relative;
+}
+.band.is-paper { background: var(--paper); --chip: var(--cream); }
+.band.is-night {
+  --fg: var(--bone);
+  --fg-soft: var(--bone-soft);
+  --fg-mute: var(--bone-dim);
+  --line: rgba(255, 255, 255, 0.10);
+  --accent-text: var(--lime-soft);
+  --chip: var(--night-soft);
+  background: var(--night);
+  color: var(--fg);
+}
+.band.is-deep { background: var(--night-deep); }
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: clamp(64px, 8vw, 100px) var(--gut);
+}
+
+/* ---------------------------------------------------------------- *
+ *  Section index rail
+ * ---------------------------------------------------------------- */
+.rail {
+  display: none;
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: var(--rail);
+  padding: 40px 28px;
+  background: var(--night-deep);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 40;
+  overflow-y: auto;
+}
+.rail-mark { display: block; color: #fff; margin-bottom: 34px; }
+.rail-mark svg { width: 132px; height: auto; display: block; }
+/* Inline marks at their shipping heights: footer 36px, colophon 28px. */
+.mk-footer { display: block; color: #fff; }
+.mk-footer svg { height: 36px; width: auto; display: block; }
+.mk-colophon { display: block; color: #fff; }
+.mk-colophon svg { height: 28px; width: auto; display: block; }
+.rail-kicker {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--bone-dim);
+  margin: 0 0 16px;
+}
+.rail ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.rail a {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: 8px;
+  align-items: baseline;
+  padding: 6px 8px;
+  margin-left: -8px;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 13.5px;
+  color: var(--bone-dim);
+  transition: color 0.3s var(--ease), background-color 0.3s var(--ease);
+}
+.rail a:hover { color: #fff; background: rgba(255, 255, 255, 0.05); }
+.rail a .n {
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  font-variant-numeric: tabular-nums;
+  color: var(--night-line);
+  transition: color 0.3s var(--ease);
+}
+.rail a:hover .n { color: var(--bone-dim); }
+.rail a[aria-current="true"] { color: var(--lime-soft); }
+.rail a[aria-current="true"] .n { color: var(--lime); }
+.rail-foot {
+  margin-top: 32px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--bone-dim);
+}
+
+@media (min-width: 1120px) {
+  .rail { display: block; }
+  body { padding-left: var(--rail); }
+}
+
+/* ---------------------------------------------------------------- *
+ *  Type roles
+ * ---------------------------------------------------------------- */
+.display {
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+  text-wrap: balance;
+  margin: 0;
+}
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-text);
+  margin: 0;
+}
+.label svg { width: 12px; height: 12px; flex: none; color: var(--lime); }
+.band.is-night .label svg { color: var(--lime-soft); }
+.micro {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--fg-mute);
+  margin: 0;
+}
+
+h2.sec {
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
+  margin: 16px 0 0;
+  text-wrap: balance;
+}
+h3.sub {
+  font-size: 1.375rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin: 0;
+}
+h4.min {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+  color: var(--fg);
+}
+p { margin: 0; }
+.lead {
+  font-size: clamp(17px, 1.6vw, 19px);
+  line-height: 1.65;
+  color: var(--fg-soft);
+  max-width: 62ch;
+}
+.body { font-size: 15.5px; line-height: 1.7; color: var(--fg-soft); max-width: 66ch; }
+.note { font-size: 13.5px; line-height: 1.65; color: var(--fg-mute); }
+
+.sec-head { display: flex; flex-direction: column; gap: 0; margin-bottom: 52px; }
+.sec-head .lead { margin-top: 20px; }
+
+/* Section number sits with the eyebrow, so a reader can cite "§04". */
+.sec-no {
+  font-variant-numeric: tabular-nums;
+  color: var(--fg-mute);
+  letter-spacing: 0.14em;
+}
+
+/* ---------------------------------------------------------------- *
+ *  Blocks
+ * ---------------------------------------------------------------- */
+.grid { display: grid; gap: 24px; }
+@media (min-width: 720px) { .g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 900px) { .g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 900px) { .g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 26px;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.band.is-paper .card { background: var(--cream); }
+.band.is-night .card { background: var(--night-soft); }
+
+.rule { height: 1px; background: var(--line); border: 0; margin: 0; }
+
+.spec {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+.spec-row {
+  display: grid;
+  gap: 6px 28px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+@media (min-width: 760px) {
+  .spec-row { grid-template-columns: 210px 1fr; }
+}
+.spec-row dt { font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: var(--fg); margin: 0; }
+.spec-row dd { margin: 0; font-size: 14.5px; line-height: 1.65; color: var(--fg-soft); }
+.spec-row dd code, code.tok {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 0.94em;
+  letter-spacing: 0.005em;
+  background: var(--chip);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 1px 6px;
+  color: var(--fg);
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------- *
+ *  Cover
+ * ---------------------------------------------------------------- */
+.cover { position: relative; isolation: isolate; overflow: hidden; }
+.cover .wrap { padding-top: clamp(72px, 10vw, 128px); padding-bottom: clamp(56px, 7vw, 88px); position: relative; z-index: 2; }
+.blueprint {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(16, 185, 129, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.07) 1px, transparent 1px);
+  background-size: 56px 56px;
+  pointer-events: none;
+}
+.glow {
+  position: absolute;
+  width: 42rem; height: 42rem;
+  top: -14rem; right: -12rem;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, rgba(16, 185, 129, 0) 65%);
+  pointer-events: none;
+}
+.cover-mark { color: #fff; display: block; }
+.cover-mark svg { width: clamp(180px, 22vw, 236px); height: auto; display: block; }
+.cover-title {
+  font-size: clamp(2.75rem, 7vw, 4.75rem);
+  margin-top: 40px;
+  max-width: 16ch;
+}
+.cover-meta {
+  margin-top: 44px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: grid;
+  gap: 20px 40px;
+}
+@media (min-width: 760px) { .cover-meta { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.cover-meta div { display: flex; flex-direction: column; gap: 6px; }
+.cover-meta dt { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--bone-dim); }
+.cover-meta dd { margin: 0; font-size: 15px; color: var(--bone); }
+
+.dot {
+  width: 8px; height: 8px; border-radius: 999px; background: var(--lime);
+  animation: pulse-dot 2.4s ease-in-out infinite;
+  flex: none;
+}
+@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+/* ---------------------------------------------------------------- *
+ *  §01 brand
+ * ---------------------------------------------------------------- */
+.pillars { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 2px; overflow: hidden; }
+@media (min-width: 860px) { .pillars { grid-template-columns: repeat(3, 1fr); } }
+.pillar { background: var(--paper); padding: 28px 26px; display: flex; flex-direction: column; gap: 10px; }
+.band.is-paper .pillar { background: var(--cream); }
+.pillar .k { font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--lime-deep); }
+
+.figures { display: grid; gap: 1px; background: var(--line); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+@media (min-width: 720px) { .figures { grid-template-columns: repeat(3, 1fr); } }
+.figure { background: var(--cream); padding: 30px 26px; display: flex; flex-direction: column; gap: 8px; }
+.figure .v { font-size: clamp(2.25rem, 4vw, 3rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; }
+.figure .l { font-size: 14px; line-height: 1.55; color: var(--ink-soft); }
+
+/* ---------------------------------------------------------------- *
+ *  §02 voice
+ * ---------------------------------------------------------------- */
+.dodont { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 2px; overflow: hidden; }
+@media (min-width: 800px) { .dodont { grid-template-columns: 1fr 1fr; } }
+.dd-head {
+  background: var(--paper);
+  padding: 14px 22px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.band.is-paper .dd-head { background: var(--cream); }
+.dd-head.write { color: var(--lime-deep); }
+.dd-head.avoid { color: #b0453a; }
+.dd-cell { background: var(--paper); padding: 20px 22px; font-size: 15.5px; line-height: 1.6; }
+.band.is-paper .dd-cell { background: var(--cream); }
+.dd-cell.avoid { color: var(--fg-soft); }
+.dd-cell .why { display: block; margin-top: 8px; font-size: 13px; color: var(--fg-mute); }
+@media (max-width: 799px) {
+  .dd-head.avoid { border-top: 1px solid var(--line); }
+}
+
+/* ---------------------------------------------------------------- *
+ *  §03 logo
+ * ---------------------------------------------------------------- */
+.lockups { display: grid; gap: 20px; }
+@media (min-width: 760px) { .lockups { grid-template-columns: 1fr 1fr; } }
+.lockup {
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.lockup .stage { padding: 52px 32px; display: flex; align-items: center; justify-content: center; }
+.lockup .stage svg { width: min(220px, 70%); height: auto; }
+.stage.on-dark { background: var(--night); color: #fff; }
+.stage.on-light { background: var(--paper); color: var(--ink); }
+.lockup .cap { padding: 14px 20px; border-top: 1px solid var(--line); background: var(--chip); display: flex; flex-direction: column; gap: 3px; }
+.lockup .cap b { font-size: 13px; font-weight: 600; }
+.lockup .cap span { font-size: 12.5px; color: var(--fg-mute); }
+
+.clearspace { position: relative; background: var(--night); padding: 44px; border-radius: 2px; border: 1px solid var(--line); }
+.cs-box { position: relative; display: inline-block; padding: 22px; outline: 1px dashed rgba(52, 211, 153, 0.55); outline-offset: 0; }
+.cs-box svg { width: min(240px, 62vw); height: auto; color: #fff; display: block; }
+.cs-tag {
+  position: absolute; left: 50%; transform: translateX(-50%); bottom: -11px;
+  background: var(--night); padding: 0 8px;
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lime-soft);
+}
+
+.misuse { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 2px; overflow: hidden; }
+@media (min-width: 640px) { .misuse { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .misuse { grid-template-columns: repeat(3, 1fr); } }
+.mis { background: var(--paper); padding: 22px; display: flex; gap: 14px; align-items: flex-start; }
+.band.is-paper .mis { background: var(--cream); }
+.mis .x { flex: none; width: 20px; height: 20px; color: #b0453a; margin-top: 1px; }
+.mis p { font-size: 14.5px; line-height: 1.55; color: var(--fg-soft); }
+.mis p b { color: var(--fg); font-weight: 600; }
+
+/* ---------------------------------------------------------------- *
+ *  §04 colour
+ * ---------------------------------------------------------------- */
+.swatches { display: grid; gap: 14px; }
+@media (min-width: 620px) { .swatches { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .swatches { grid-template-columns: repeat(4, 1fr); } }
+
+.sw {
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+  background: none;
+  padding: 0;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.sw:hover { border-color: var(--lime); transform: translateY(-2px); }
+.sw .chip { height: 104px; position: relative; display: flex; align-items: flex-end; padding: 12px; }
+.sw .chip .copied {
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.35); color: #fff; padding: 3px 7px; border-radius: 2px;
+  opacity: 0; transition: opacity 0.25s var(--ease);
+}
+.sw[data-copied="1"] .chip .copied { opacity: 1; }
+.sw .meta { padding: 14px 14px 16px; display: flex; flex-direction: column; gap: 4px; background: var(--paper); }
+.band.is-paper .sw .meta { background: var(--cream); }
+.band.is-night .sw .meta { background: var(--night-soft); }
+.sw .nm { font-size: 14px; font-weight: 600; }
+.sw .hx { font-size: 12.5px; letter-spacing: 0.06em; color: var(--fg-mute); font-variant-numeric: tabular-nums; text-transform: uppercase; }
+.sw .us { font-size: 12.5px; line-height: 1.5; color: var(--fg-soft); margin-top: 4px; }
+
+.group-head { display: flex; align-items: baseline; gap: 14px; margin: 48px 0 18px; }
+.group-head:first-of-type { margin-top: 0; }
+.group-head h3 { margin: 0; }
+.group-head .n { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-mute); }
+
+table.contrast { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+table.contrast th, table.contrast td { text-align: left; padding: 13px 16px 13px 0; border-bottom: 1px solid var(--line); vertical-align: middle; }
+table.contrast th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--fg-mute); font-weight: 500; border-bottom-color: var(--fg-mute); }
+table.contrast td.ratio { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowrap; }
+.verdict { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; white-space: nowrap; font-weight: 600; }
+.verdict.pass { background: rgba(5, 150, 105, 0.14); color: var(--lime-deep); }
+.band.is-night .verdict.pass { background: rgba(52, 211, 153, 0.16); color: var(--lime-soft); }
+.verdict.large { background: rgba(180, 130, 20, 0.14); color: #8a6410; }
+.verdict.fail { background: rgba(176, 69, 58, 0.12); color: #b0453a; }
+.tbl-scroll { overflow-x: auto; }
+.pair { display: inline-flex; align-items: center; gap: 8px; }
+.pair i { width: 14px; height: 14px; border-radius: 2px; border: 1px solid rgba(128, 147, 168, 0.4); flex: none; }
+
+/* ---------------------------------------------------------------- *
+ *  §05 typography
+ * ---------------------------------------------------------------- */
+.scale { border-top: 1px solid var(--line); }
+.scale-row {
+  display: grid;
+  gap: 10px 32px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: baseline;
+}
+@media (min-width: 860px) { .scale-row { grid-template-columns: 190px 1fr; } }
+.scale-row .k { display: flex; flex-direction: column; gap: 3px; }
+.scale-row .k b { font-size: 13px; font-weight: 600; }
+.scale-row .k span { font-size: 12px; color: var(--fg-mute); font-variant-numeric: tabular-nums; }
+.scale-row .s { overflow: hidden; }
+.sp-xl { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.05; }
+.sp-l  { font-size: clamp(2rem, 4.2vw, 3rem); font-weight: 500; letter-spacing: -0.01em; line-height: 1.12; }
+.sp-m  { font-size: clamp(1.75rem, 3.2vw, 2.5rem); font-weight: 500; letter-spacing: -0.01em; line-height: 1.15; }
+.sp-t  { font-size: 1.5rem; font-weight: 500; letter-spacing: -0.01em; line-height: 1.25; }
+.sp-ld { font-size: 19px; line-height: 1.65; }
+.sp-b  { font-size: 15px; line-height: 1.7; }
+.sp-lb { font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; }
+.sp-mi { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.18em; }
+
+.weights { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 2px; overflow: hidden; }
+@media (min-width: 700px) { .weights { grid-template-columns: repeat(5, 1fr); } }
+.wt { background: var(--paper); padding: 22px 20px; display: flex; flex-direction: column; gap: 8px; }
+.band.is-paper .wt { background: var(--cream); }
+.wt .g { font-size: 2.25rem; line-height: 1; letter-spacing: -0.02em; }
+.wt .n { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--fg-mute); }
+
+/* ---------------------------------------------------------------- *
+ *  §07 components
+ * ---------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 2px;
+  padding: 16px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.btn svg { width: 16px; height: 16px; transition: transform 0.3s var(--ease); }
+.btn:hover svg { transform: translateX(4px); }
+.btn.lime { background: var(--lime); color: var(--night); }
+.btn.lime:hover { background: var(--lime-bright); }
+.btn.dark { background: var(--night); color: #fff; }
+.btn.dark:hover { background: var(--lime); color: var(--night); }
+.btn.light { background: #fff; color: var(--ink); }
+.btn.light:hover { background: var(--night); color: #fff; }
+.btn.outline { background: transparent; color: currentColor; border: 1px solid currentColor; }
+.btn.outline:hover { background: rgba(128, 147, 168, 0.12); }
+.btn.ghost {
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  background: transparent;
+  color: #fff;
+}
+.btn.ghost:hover { border-color: var(--lime); background: var(--lime); color: var(--night); }
+
+.comp {
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.comp .demo { padding: 34px 26px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.comp .demo.on-dark { background: var(--night); color: var(--bone); }
+.comp .demo.on-light { background: var(--paper); }
+.comp .cap { padding: 14px 20px; border-top: 1px solid var(--line); background: var(--chip); font-size: 12.5px; color: var(--fg-soft); line-height: 1.55; }
+.comp .cap b { color: var(--fg); font-weight: 600; }
+
+.demo-link { color: var(--lime-deep); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; font-size: 15.5px; }
+.demo-nav {
+  color: var(--bone);
+  text-decoration: underline;
+  text-decoration-color: var(--lime-soft);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 8px;
+  font-size: 14.5px;
+  font-weight: 500;
+}
+.demo-nav.idle { text-decoration: none; color: var(--bone); }
+
+/* ---------------------------------------------------------------- *
+ *  §08 motion
+ * ---------------------------------------------------------------- */
+.reveal-demo { display: grid; gap: 14px; }
+@media (min-width: 720px) { .reveal-demo { grid-template-columns: repeat(3, 1fr); } }
+.rv {
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 24px;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(28px);
+}
+.band.is-paper .rv { background: var(--cream); }
+.rv.go { animation: reveal 0.9s var(--ease) forwards; }
+.rv:nth-child(2).go { animation-delay: 0.05s; }
+.rv:nth-child(3).go { animation-delay: 0.1s; }
+@keyframes reveal { to { opacity: 1; transform: translateY(0); } }
+.rv .n { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lime-deep); }
+.rv .t { font-size: 17px; font-weight: 500; }
+.rv .d { font-size: 14px; color: var(--fg-soft); line-height: 1.55; }
+
+.replay {
+  display: inline-flex; align-items: center; gap: 9px;
+  font: inherit; font-size: 13px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.14em;
+  background: transparent; border: 1px solid var(--line); border-radius: 2px;
+  padding: 10px 18px; color: var(--fg); cursor: pointer;
+  transition: border-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+.replay:hover { border-color: var(--lime); color: var(--lime-deep); }
+
+.curve { display: flex; gap: 28px; flex-wrap: wrap; align-items: center; }
+.curve svg { width: 148px; height: 148px; flex: none; }
+
+/* ---------------------------------------------------------------- *
+ *  §09 surface
+ * ---------------------------------------------------------------- */
+.tex { border: 1px solid var(--line); border-radius: 2px; overflow: hidden; display: flex; flex-direction: column; }
+.tex .stage { height: 168px; position: relative; background: var(--night); overflow: hidden; }
+.tex .cap { padding: 16px 20px; border-top: 1px solid var(--line); background: var(--chip); display: flex; flex-direction: column; gap: 5px; }
+.tex .cap b { font-size: 13.5px; font-weight: 600; }
+.tex .cap span { font-size: 12.5px; color: var(--fg-mute); line-height: 1.55; }
+.grain-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+}
+.glow-stage { background: var(--night); }
+.glow-stage::after {
+  content: "";
+  position: absolute;
+  width: 22rem; height: 22rem;
+  top: -8rem; right: -6rem;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, rgba(16, 185, 129, 0) 65%);
+}
+.sel-stage { background: var(--paper); display: flex; align-items: center; justify-content: center; padding: 20px; }
+.sel-stage span { font-size: 20px; font-weight: 500; background: var(--lime); color: #fff; padding: 2px 4px; }
+
+/* ---------------------------------------------------------------- *
+ *  §10 applications
+ * ---------------------------------------------------------------- */
+.og {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+  background: var(--night);
+  background-image: radial-gradient(circle at 88% 0%, rgba(16, 185, 129, 0.22) 0%, rgba(16, 185, 129, 0) 60%);
+  aspect-ratio: 1200 / 630;
+  padding: clamp(18px, 3.4vw, 38px);
+  display: flex;
+  flex-direction: column;
+  color: var(--bone);
+  overflow: hidden;
+}
+.og .mk { color: #fff; }
+.og .mk svg { width: clamp(96px, 14vw, 148px); height: auto; display: block; }
+.og .sp { flex: 1; }
+.og .ey {
+  display: flex; align-items: center; gap: 8px;
+  font-size: clamp(9px, 1.35vw, 13px);
+  text-transform: uppercase; letter-spacing: 0.14em; color: var(--bone-dim);
+}
+.og .ey .dot { width: 6px; height: 6px; }
+.og .hl {
+  margin-top: clamp(8px, 1.6vw, 18px);
+  font-size: clamp(20px, 4.4vw, 44px);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  max-width: 20ch;
+}
+.og .hl em { font-style: normal; color: var(--lime-soft); }
+
+.logos-strip { display: flex; flex-wrap: wrap; gap: 34px; align-items: center; }
+.logos-strip img { height: 26px; width: auto; opacity: 0.6; filter: brightness(0) invert(1); transition: opacity 0.3s var(--ease); }
+.logos-strip img:hover { opacity: 0.9; }
+/* Stand-ins: real client artwork is supplied per engagement, never mocked up. */
+.mark-slot {
+  height: 26px; display: inline-flex; align-items: center; padding: 0 14px;
+  border: 1px dashed rgba(255, 255, 255, 0.28); border-radius: 2px;
+  font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #fff; opacity: 0.6; transition: opacity 0.3s var(--ease);
+}
+.mark-slot:hover { opacity: 0.9; }
+
+/* ---------------------------------------------------------------- *
+ *  §11 tokens
+ * ---------------------------------------------------------------- */
+.codeblock {
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--night-deep);
+  color: var(--bone-soft);
+  padding: 26px;
+  overflow-x: auto;
+  font-size: 13px;
+  line-height: 1.75;
+  margin: 0;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  tab-size: 2;
+}
+.codeblock .c { color: var(--bone-dim); }
+.codeblock .p { color: var(--lime-soft); }
+.codeblock .v { color: #fff; }
+
+.copy-all {
+  display: inline-flex; align-items: center; gap: 9px;
+  font: inherit; font-size: 12px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.14em;
+  background: transparent; border: 1px solid var(--line); border-radius: 2px;
+  padding: 9px 16px; color: var(--fg); cursor: pointer;
+  transition: border-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+.copy-all:hover { border-color: var(--lime); color: var(--accent-text); }
+
+.colophon { display: grid; gap: 26px; }
+@media (min-width: 800px) { .colophon { grid-template-columns: 1.2fr 1fr; } }
+
+.stack { display: flex; flex-direction: column; gap: 26px; }
+.stack-sm { display: flex; flex-direction: column; gap: 14px; }
+.stack-lg { display: flex; flex-direction: column; gap: 44px; }
+.row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+
+/* Asset kit (folder render only) */
+.kit { border-top: 1px solid var(--line); }
+.kit-row {
+  display: grid;
+  gap: 4px 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: inherit;
+  align-items: baseline;
+  transition: background-color 0.3s var(--ease);
+}
+.kit-row:hover { background: rgba(5, 150, 105, 0.06); }
+.kit-n { font-size: 14.5px; font-weight: 600; }
+.kit-f { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent-text); }
+.kit-d { font-size: 13.5px; color: var(--fg-soft); line-height: 1.55; }
+.kit-s { font-size: 12.5px; color: var(--fg-mute); font-variant-numeric: tabular-nums; }
+@media (min-width: 820px) {
+  .kit-row { grid-template-columns: 210px 170px 1fr 70px; }
+  .kit-s { text-align: right; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .rv { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ================================================================ -->
+<!-- Section index                                                     -->
+<!-- ================================================================ -->
+<nav class="rail" aria-label="Brand book sections">
+  <span class="rail-mark"><svg viewBox="0 0 203 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M92.9627 7.9209H89.4575V29.4015H92.9627V7.9209Z" fill="currentColor"/><path d="M126.414 21.1772C125.519 20.8501 124.533 20.5945 123.455 20.4095L122.387 20.2256C121.574 20.0823 120.927 19.8674 120.45 19.5808C119.972 19.2942 119.733 18.8441 119.733 18.2304C119.733 17.6572 119.977 17.2131 120.465 16.8954C120.954 16.5778 121.625 16.4202 122.478 16.4202C123.332 16.4202 124.085 16.6101 124.675 16.9874C125.265 17.3659 125.651 18.0154 125.835 18.936L128.763 18.1074C128.438 16.7987 127.731 15.7599 126.643 14.9934C125.555 14.2256 124.167 13.8423 122.479 13.8423C120.791 13.8423 119.328 14.2363 118.27 15.0232C117.213 15.8113 116.684 16.9205 116.684 18.3534C116.684 19.3145 116.928 20.1026 117.417 20.7163C117.905 21.3301 118.566 21.8113 119.399 22.1587C120.232 22.5074 121.158 22.7725 122.175 22.9575L123.213 23.1414C124.21 23.3253 124.963 23.5617 125.471 23.8471C125.979 24.1337 126.234 24.5838 126.234 25.1975C126.234 25.8113 125.964 26.3128 125.425 26.7008C124.885 27.0901 124.117 27.2835 123.122 27.2835C122.451 27.2835 121.825 27.1808 121.246 26.9766C120.666 26.7725 120.183 26.425 119.797 25.9331C119.411 25.4423 119.137 24.7772 118.973 23.9378L116.045 24.6435C116.33 26.3832 117.101 27.6811 118.363 28.5408C119.623 29.4005 121.21 29.8292 123.122 29.8292C125.033 29.8292 126.517 29.4089 127.637 28.5707C128.755 27.7325 129.314 26.5551 129.314 25.0411C129.314 24.0178 129.054 23.1999 128.535 22.5862C128.017 21.9725 127.31 21.502 126.415 21.1748L126.414 21.1772Z" fill="currentColor"/><path d="M157.271 13.8291C152.876 13.8291 149.314 17.4136 149.314 21.8339C149.314 26.2542 152.877 29.8387 157.271 29.8387C161.666 29.8387 165.229 26.2542 165.229 21.8339C165.229 17.4136 161.666 13.8291 157.271 13.8291ZM157.271 26.7378C154.583 26.7378 152.396 24.5384 152.396 21.8339C152.396 19.1294 154.583 16.93 157.271 16.93C159.96 16.93 162.146 19.1294 162.146 21.8339C162.146 24.5384 159.96 26.7378 157.271 26.7378Z" fill="currentColor"/><path d="M77.9825 13.8291C76.17 13.8291 74.5046 14.4452 73.1669 15.4721V14.2733H70.0249V35.539H73.1669V28.1969C74.5046 29.2226 76.17 29.8399 77.9825 29.8399C82.3779 29.8399 85.9401 26.2554 85.9401 21.8351C85.9401 17.4148 82.3767 13.8303 77.9825 13.8303V13.8291ZM77.9825 26.7593C75.5575 26.7593 73.5527 24.9718 73.1669 22.6411V21.0267C73.5527 18.696 75.5575 16.9085 77.9825 16.9085C80.6829 16.9085 82.8788 19.1187 82.8788 21.8339C82.8788 24.5491 80.6817 26.7593 77.9825 26.7593Z" fill="currentColor"/><path d="M181.089 15.4901C179.752 14.4644 178.086 13.8471 176.274 13.8471C171.878 13.8471 168.316 17.4316 168.316 21.8519C168.316 26.2721 171.88 29.8566 176.274 29.8566C178.086 29.8566 179.752 29.2405 181.089 28.2136V29.4124H184.231V8.14795H181.089V15.4901ZM176.274 26.7784C173.573 26.7784 171.377 24.5683 171.377 21.853C171.377 19.1378 173.573 16.9277 176.274 16.9277C178.699 16.9277 180.704 18.7151 181.089 21.0459V22.6602C180.704 24.991 178.699 26.7784 176.274 26.7784Z" fill="currentColor"/><path d="M140.055 16.928C141.519 16.928 142.832 17.5811 143.729 18.608L146.936 17.8462C145.559 15.4581 142.997 13.8486 140.054 13.8486C135.659 13.8486 132.096 17.4331 132.096 21.8534C132.096 26.2737 135.66 29.8581 140.054 29.8581C142.912 29.8581 145.411 28.3369 146.814 26.0611C145.798 25.7208 144.77 25.3769 143.775 25.045C142.877 26.1041 141.542 26.7787 140.054 26.7787C137.354 26.7787 135.158 24.5698 135.158 21.8534C135.158 19.1369 137.355 16.928 140.055 16.928Z" fill="currentColor"/><path d="M202.279 26.0765C201.265 25.735 200.238 25.3887 199.243 25.0544C198.342 26.1111 197.008 26.7833 195.518 26.7809C193.081 26.7774 191.064 24.972 190.696 22.6233L202.307 22.6436H202.96C202.984 22.3881 203 22.1302 203 21.8675C203 21.3302 202.944 20.8072 202.844 20.2997H202.848C202.846 20.2866 202.841 20.2735 202.838 20.2592C202.836 20.2448 202.835 20.2305 202.831 20.2162H202.828C202.076 16.5875 199.371 13.8556 195.54 13.8496C191.144 13.8424 187.576 17.4197 187.568 21.8412C187.561 26.2627 191.117 29.852 195.512 29.8603C198.371 29.8651 200.872 28.3487 202.278 26.0753L202.279 26.0765ZM195.535 16.9314C197.657 16.935 199.458 18.3081 200.132 20.2138C197.509 20.209 193.533 20.203 190.922 20.1983C191.602 18.295 193.411 16.9278 195.535 16.9314Z" fill="currentColor"/><path d="M108.55 21.8342H108.543C108.543 24.5506 107.058 26.7596 104.359 26.7596C101.66 26.7596 100.209 24.5816 100.177 21.8927V14.2593H97.1123V21.8342C97.1123 26.2557 99.9634 29.839 104.358 29.839C106.209 29.839 107.197 29.1966 108.55 28.1303V29.4019H112.21V14.2604H108.55V21.8354V21.8342Z" fill="currentColor"/><path d="M13.4593 35.5391C20.8926 35.5391 26.9185 29.4775 26.9185 22C26.9185 14.5226 20.8926 8.46094 13.4593 8.46094C6.02592 8.46094 0 14.5226 0 22C0 29.4775 6.02592 35.5391 13.4593 35.5391Z" fill="currentColor"/><path d="M35.3405 0C29.3355 0 23.8968 2.43463 19.9453 6.37612C21.943 7.21552 23.7781 8.44776 25.3556 10.0334C28.5331 13.2299 30.2828 17.4794 30.2828 22C30.2828 26.5206 28.5331 30.7701 25.3556 33.9666C23.7781 35.5534 21.943 36.7845 19.9453 37.6239C23.8979 41.5654 29.3367 44 35.3405 44C47.4193 44 57.2108 34.1504 57.2108 22C57.2108 9.84955 47.4193 0 35.3405 0Z" fill="currentColor"/></svg></span>
+  <p class="rail-kicker">Brand book</p>
+  <ol>
+    <li><a href="#brand"><span class="n">01</span><span>The brand</span></a></li>
+    <li><a href="#voice"><span class="n">02</span><span>Voice and tone</span></a></li>
+    <li><a href="#logo"><span class="n">03</span><span>Logo</span></a></li>
+    <li><a href="#color"><span class="n">04</span><span>Colour</span></a></li>
+    <li><a href="#type"><span class="n">05</span><span>Typography</span></a></li>
+    <li><a href="#layout"><span class="n">06</span><span>Layout and grid</span></a></li>
+    <li><a href="#components"><span class="n">07</span><span>Components</span></a></li>
+    <li><a href="#motion"><span class="n">08</span><span>Motion</span></a></li>
+    <li><a href="#surface"><span class="n">09</span><span>Surface and texture</span></a></li>
+    <li><a href="#apps"><span class="n">10</span><span>Applications</span></a></li>
+    <li><a href="#tokens"><span class="n">11</span><span>Token reference</span></a></li>
+  </ol>
+  <p class="rail-foot">Pluscode Sp. z o.o.<br>Poznań, Poland</p>
+</nav>
+
+<!-- ================================================================ -->
+<!-- Cover                                                             -->
+<!-- ================================================================ -->
+<header class="band is-night cover">
+  <div class="blueprint"></div>
+  <div class="glow"></div>
+  <div class="wrap">
+    <span class="cover-mark"><svg viewBox="0 0 203 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pluscode"><path d="M92.9627 7.9209H89.4575V29.4015H92.9627V7.9209Z" fill="currentColor"/><path d="M126.414 21.1772C125.519 20.8501 124.533 20.5945 123.455 20.4095L122.387 20.2256C121.574 20.0823 120.927 19.8674 120.45 19.5808C119.972 19.2942 119.733 18.8441 119.733 18.2304C119.733 17.6572 119.977 17.2131 120.465 16.8954C120.954 16.5778 121.625 16.4202 122.478 16.4202C123.332 16.4202 124.085 16.6101 124.675 16.9874C125.265 17.3659 125.651 18.0154 125.835 18.936L128.763 18.1074C128.438 16.7987 127.731 15.7599 126.643 14.9934C125.555 14.2256 124.167 13.8423 122.479 13.8423C120.791 13.8423 119.328 14.2363 118.27 15.0232C117.213 15.8113 116.684 16.9205 116.684 18.3534C116.684 19.3145 116.928 20.1026 117.417 20.7163C117.905 21.3301 118.566 21.8113 119.399 22.1587C120.232 22.5074 121.158 22.7725 122.175 22.9575L123.213 23.1414C124.21 23.3253 124.963 23.5617 125.471 23.8471C125.979 24.1337 126.234 24.5838 126.234 25.1975C126.234 25.8113 125.964 26.3128 125.425 26.7008C124.885 27.0901 124.117 27.2835 123.122 27.2835C122.451 27.2835 121.825 27.1808 121.246 26.9766C120.666 26.7725 120.183 26.425 119.797 25.9331C119.411 25.4423 119.137 24.7772 118.973 23.9378L116.045 24.6435C116.33 26.3832 117.101 27.6811 118.363 28.5408C119.623 29.4005 121.21 29.8292 123.122 29.8292C125.033 29.8292 126.517 29.4089 127.637 28.5707C128.755 27.7325 129.314 26.5551 129.314 25.0411C129.314 24.0178 129.054 23.1999 128.535 22.5862C128.017 21.9725 127.31 21.502 126.415 21.1748L126.414 21.1772Z" fill="currentColor"/><path d="M157.271 13.8291C152.876 13.8291 149.314 17.4136 149.314 21.8339C149.314 26.2542 152.877 29.8387 157.271 29.8387C161.666 29.8387 165.229 26.2542 165.229 21.8339C165.229 17.4136 161.666 13.8291 157.271 13.8291ZM157.271 26.7378C154.583 26.7378 152.396 24.5384 152.396 21.8339C152.396 19.1294 154.583 16.93 157.271 16.93C159.96 16.93 162.146 19.1294 162.146 21.8339C162.146 24.5384 159.96 26.7378 157.271 26.7378Z" fill="currentColor"/><path d="M77.9825 13.8291C76.17 13.8291 74.5046 14.4452 73.1669 15.4721V14.2733H70.0249V35.539H73.1669V28.1969C74.5046 29.2226 76.17 29.8399 77.9825 29.8399C82.3779 29.8399 85.9401 26.2554 85.9401 21.8351C85.9401 17.4148 82.3767 13.8303 77.9825 13.8303V13.8291ZM77.9825 26.7593C75.5575 26.7593 73.5527 24.9718 73.1669 22.6411V21.0267C73.5527 18.696 75.5575 16.9085 77.9825 16.9085C80.6829 16.9085 82.8788 19.1187 82.8788 21.8339C82.8788 24.5491 80.6817 26.7593 77.9825 26.7593Z" fill="currentColor"/><path d="M181.089 15.4901C179.752 14.4644 178.086 13.8471 176.274 13.8471C171.878 13.8471 168.316 17.4316 168.316 21.8519C168.316 26.2721 171.88 29.8566 176.274 29.8566C178.086 29.8566 179.752 29.2405 181.089 28.2136V29.4124H184.231V8.14795H181.089V15.4901ZM176.274 26.7784C173.573 26.7784 171.377 24.5683 171.377 21.853C171.377 19.1378 173.573 16.9277 176.274 16.9277C178.699 16.9277 180.704 18.7151 181.089 21.0459V22.6602C180.704 24.991 178.699 26.7784 176.274 26.7784Z" fill="currentColor"/><path d="M140.055 16.928C141.519 16.928 142.832 17.5811 143.729 18.608L146.936 17.8462C145.559 15.4581 142.997 13.8486 140.054 13.8486C135.659 13.8486 132.096 17.4331 132.096 21.8534C132.096 26.2737 135.66 29.8581 140.054 29.8581C142.912 29.8581 145.411 28.3369 146.814 26.0611C145.798 25.7208 144.77 25.3769 143.775 25.045C142.877 26.1041 141.542 26.7787 140.054 26.7787C137.354 26.7787 135.158 24.5698 135.158 21.8534C135.158 19.1369 137.355 16.928 140.055 16.928Z" fill="currentColor"/><path d="M202.279 26.0765C201.265 25.735 200.238 25.3887 199.243 25.0544C198.342 26.1111 197.008 26.7833 195.518 26.7809C193.081 26.7774 191.064 24.972 190.696 22.6233L202.307 22.6436H202.96C202.984 22.3881 203 22.1302 203 21.8675C203 21.3302 202.944 20.8072 202.844 20.2997H202.848C202.846 20.2866 202.841 20.2735 202.838 20.2592C202.836 20.2448 202.835 20.2305 202.831 20.2162H202.828C202.076 16.5875 199.371 13.8556 195.54 13.8496C191.144 13.8424 187.576 17.4197 187.568 21.8412C187.561 26.2627 191.117 29.852 195.512 29.8603C198.371 29.8651 200.872 28.3487 202.278 26.0753L202.279 26.0765ZM195.535 16.9314C197.657 16.935 199.458 18.3081 200.132 20.2138C197.509 20.209 193.533 20.203 190.922 20.1983C191.602 18.295 193.411 16.9278 195.535 16.9314Z" fill="currentColor"/><path d="M108.55 21.8342H108.543C108.543 24.5506 107.058 26.7596 104.359 26.7596C101.66 26.7596 100.209 24.5816 100.177 21.8927V14.2593H97.1123V21.8342C97.1123 26.2557 99.9634 29.839 104.358 29.839C106.209 29.839 107.197 29.1966 108.55 28.1303V29.4019H112.21V14.2604H108.55V21.8354V21.8342Z" fill="currentColor"/><path d="M13.4593 35.5391C20.8926 35.5391 26.9185 29.4775 26.9185 22C26.9185 14.5226 20.8926 8.46094 13.4593 8.46094C6.02592 8.46094 0 14.5226 0 22C0 29.4775 6.02592 35.5391 13.4593 35.5391Z" fill="currentColor"/><path d="M35.3405 0C29.3355 0 23.8968 2.43463 19.9453 6.37612C21.943 7.21552 23.7781 8.44776 25.3556 10.0334C28.5331 13.2299 30.2828 17.4794 30.2828 22C30.2828 26.5206 28.5331 30.7701 25.3556 33.9666C23.7781 35.5534 21.943 36.7845 19.9453 37.6239C23.8979 41.5654 29.3367 44 35.3405 44C47.4193 44 57.2108 34.1504 57.2108 22C57.2108 9.84955 47.4193 0 35.3405 0Z" fill="currentColor"/></svg></span>
+
+    <h1 class="display cover-title">The brand book</h1>
+    <p class="lead" style="margin-top:24px;max-width:52ch;color:var(--bone-soft)">
+      Everything the Pluscode identity is made of: the words, the emerald, the
+      navy, the single typeface, and the rules that keep them behaving the same
+      way on every page we ship.
+    </p>
+
+    <dl class="cover-meta">
+      <div>
+        <dt>Edition</dt>
+        <dd>v1.0 · August 2026</dd>
+      </div>
+      <div>
+        <dt>Source of truth</dt>
+        <dd>pluscode.io production system</dd>
+      </div>
+      <div>
+        <dt>Status</dt>
+        <dd style="display:flex;align-items:center;gap:9px"><span class="dot"></span>Live</dd>
+      </div>
+    </dl>
+  </div>
+</header>
+
+<!-- ================================================================ -->
+<!-- §01 The brand                                                     -->
+<!-- ================================================================ -->
+<section class="band" id="brand">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg><span class="sec-no">01</span> The brand</p>
+      <h2 class="sec">An engineering firm that sells hours back to you</h2>
+      <p class="lead">
+        Pluscode is an AI consultancy and software house. We map how work
+        actually runs inside a company, put AI where it removes real paperwork
+        and manual steps, and keep it running in production. The identity has
+        one job: to make that sound like a measurable promise rather than a
+        pitch.
+      </p>
+    </div>
+
+    <div class="stack-lg">
+      <div class="pillars">
+        <div class="pillar">
+          <span class="k">Positioning</span>
+          <h3 class="sub">AI consulting that puts artificial intelligence to work. For real.</h3>
+          <p class="body">
+            The headline line, and the spine of every page. "For real" always
+            sits in emerald. It is the sentence the rest of the brand defends.
+          </p>
+        </div>
+        <div class="pillar">
+          <span class="k">The promise</span>
+          <h3 class="sub">Less paperwork, fewer hours lost to retyping data</h3>
+          <p class="body">
+            We never promise transformation. We promise specific hours back,
+            named processes fixed, and a person still in the loop where the risk
+            is.
+          </p>
+        </div>
+        <div class="pillar">
+          <span class="k">Who we speak to</span>
+          <h3 class="sub">Owners and ops leads at 10 to 500 people</h3>
+          <p class="body">
+            Plus departments inside larger organisations who need to show a
+            result upstairs. They are practical, sceptical, and short on time.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="sub" style="margin-bottom:20px">The proof we lead with</h3>
+        <div class="figures">
+          <div class="figure">
+            <span class="v">40+</span>
+            <span class="l">AI and software projects shipped across 8 industries</span>
+          </div>
+          <div class="figure">
+            <span class="v">99.2%</span>
+            <span class="l">Straight-through processing on our document-AI pipelines</span>
+          </div>
+          <div class="figure">
+            <span class="v">6 yrs</span>
+            <span class="l">Building AI and software systems since 2019</span>
+          </div>
+        </div>
+        <p class="note" style="margin-top:16px">
+          Figures are load-bearing. If one cannot be sourced from a real
+          engagement, it comes off the page rather than getting rounded up.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="sub" style="margin-bottom:20px">The entity</h3>
+        <dl class="spec">
+          <div class="spec-row"><dt>Registered name</dt><dd>Pluscode Sp. z o.o.</dd></div>
+          <div class="spec-row"><dt>Written as</dt><dd>Pluscode. One word, capital P, never PlusCode, PLUSCODE or Plus Code.</dd></div>
+          <div class="spec-row"><dt>Address</dt><dd>Kosowska 12/3, 60-464 Poznań, Poland</dd></div>
+          <div class="spec-row"><dt>Registry</dt><dd>KRS 0000811470 · VAT-ID 7812002984 · REGON 384741150</dd></div>
+          <div class="spec-row"><dt>Contact</dt><dd>contact@pluscode.io · +48 667 688 927</dd></div>
+          <div class="spec-row"><dt>Social handle</dt><dd><code class="tok">pluscodeio</code> on LinkedIn, Instagram and Facebook. The bare "pluscode" handles belong to other companies, so never link them.</dd></div>
+          <div class="spec-row"><dt>Our product</dt><dd>Quanty, at quanty.ai. Named as "Quanty (our product)" wherever it appears outside its own site.</dd></div>
+          <div class="spec-row"><dt>Languages</dt><dd>English, Polish and German. Every page ships in all three, and copy is written to translate cleanly rather than translated after the fact.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- §02 Voice                                                         -->
+<!-- ================================================================ -->
+<section class="band is-paper" id="voice">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg><span class="sec-no">02</span> Voice and tone</p>
+      <h2 class="sec">Engineers, not slide decks</h2>
+      <p class="lead">
+        The voice is the most distinctive thing Pluscode owns. It is plain,
+        concrete and slightly blunt: it counts hours, names processes, and says
+        out loud where AI will not help yet. Read a sentence back and ask
+        whether an engineer who did the work could have said it.
+      </p>
+    </div>
+
+    <div class="stack-lg">
+      <div class="grid g3">
+        <div class="card">
+          <h4 class="min">Concrete over impressive</h4>
+          <p class="body">
+            Name the artefact, not the ambition. "Delivery notes that arrive as
+            PDFs, phone photos and email attachments" beats "unstructured
+            document ingestion" every time.
+          </p>
+        </div>
+        <div class="card">
+          <h4 class="min">Count, do not claim</h4>
+          <p class="body">
+            Hours, weeks, percentages, headcount. If a claim has no number
+            behind it, either find the number or cut the claim.
+          </p>
+        </div>
+        <div class="card">
+          <h4 class="min">Say the limit</h4>
+          <p class="body">
+            "We honestly flag where it won't yet." Admitting the edge of the
+            work is what makes the rest of the page credible. Never write around
+            a limitation.
+          </p>
+        </div>
+        <div class="card">
+          <h4 class="min">Second person, active voice</h4>
+          <p class="body">
+            "You leave with", "you talk to the engineer who would do the work".
+            The reader is in the sentence, doing something.
+          </p>
+        </div>
+        <div class="card">
+          <h4 class="min">Short sentences, full stops</h4>
+          <p class="body">
+            Fragments are allowed when they land. "For real." "Fixed scope,
+            fixed price." Rhythm carries more conviction than length.
+          </p>
+        </div>
+        <div class="card">
+          <h4 class="min">No em-dashes</h4>
+          <p class="body">
+            House rule. Recast with a comma, a colon, a bracket or a new
+            sentence. Em-dashes make copy read as though nobody chose the
+            punctuation.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="sub" style="margin-bottom:20px">On the page</h3>
+        <div class="dodont">
+          <div class="dd-head write"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:13px;height:13px;flex:none"><path d="M4 12.5 9.5 18 20 6.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Write this</div>
+          <div class="dd-head avoid"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:13px;height:13px;flex:none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg> Not this</div>
+
+          <div class="dd-cell">
+            We follow the paperwork and count where the hours go.
+            <span class="why">Names a physical activity and a unit of measure.</span>
+          </div>
+          <div class="dd-cell avoid">
+            We leverage cutting-edge AI to unlock operational efficiencies.
+            <span class="why">Nothing in it can be checked, priced or refused.</span>
+          </div>
+
+          <div class="dd-cell">
+            Start with one process, not a transformation programme.
+            <span class="why">Sets a scope the reader can say yes to on a Tuesday.</span>
+          </div>
+          <div class="dd-cell avoid">
+            Begin your enterprise-wide digital transformation journey.
+            <span class="why">Sells a budget cycle, not a first move.</span>
+          </div>
+
+          <div class="dd-cell">
+            You do not need another digital product. You need less paperwork.
+            <span class="why">Contradicts the reader's assumption, then replaces it.</span>
+          </div>
+          <div class="dd-cell avoid">
+            Our bespoke solutions are tailored to your unique business needs.
+            <span class="why">True of every agency, therefore says nothing.</span>
+          </div>
+
+          <div class="dd-cell">
+            Runs the repetitive steps, stops where risk starts.
+            <span class="why">Describes the actual behaviour of the system.</span>
+          </div>
+          <div class="dd-cell avoid">
+            Fully autonomous, end-to-end intelligent automation.
+            <span class="why">Overstates, and quietly removes the human we design in.</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="sub" style="margin-bottom:20px">Mechanics</h3>
+        <dl class="spec">
+          <div class="spec-row"><dt>Headlines</dt><dd>Sentence case. One idea. The emphasised phrase is set in emerald, never italic, and never longer than four words.</dd></div>
+          <div class="spec-row"><dt>Eyebrows</dt><dd>Two or three words, uppercase, describing the band: <code class="tok">Capabilities</code>, <code class="tok">How we work</code>, <code class="tok">Selected work</code>. Never a sentence.</dd></div>
+          <div class="spec-row"><dt>Buttons</dt><dd>A verb and its object: <code class="tok">Book a discovery call</code>, <code class="tok">Scope a pilot</code>, <code class="tok">View all case studies</code>. Never "Learn more" or "Submit".</dd></div>
+          <div class="spec-row"><dt>Numerals</dt><dd>Digits for anything countable, including one to nine. "2 weeks", "40+ projects", "8 industries".</dd></div>
+          <div class="spec-row"><dt>Spelling</dt><dd>British-neutral English on the site. Avoid words that split the two, and prefer the shorter form when they do.</dd></div>
+          <div class="spec-row"><dt>Jargon</dt><dd>Allowed only where the reader already uses it. "Straight-through processing" earns its place in logistics; "RAG" does not, so we say "answers from your own documents, source attached".</dd></div>
+          <div class="spec-row"><dt>Never</dt><dd>Exclamation marks, emoji as section markers, "revolutionary", "game-changing", "seamless", "synergy", or any sentence that would survive a find-and-replace of the company name.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- §03 Logo                                                          -->
+<!-- ================================================================ -->
+<section class="band" id="logo">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg><span class="sec-no">03</span> Logo</p>
+      <h2 class="sec">Two discs and a wordmark</h2>
+      <p class="lead">
+        The mark is a small filled disc overlapping a larger one, with the
+        intersection knocked out. It is drawn as a single lockup with the
+        wordmark: the two never separate, and the wordmark is never reset in
+        another typeface.
+      </p>
+    </div>
+
+    <div class="stack-lg">
+      <div class="lockups">
+        <div class="lockup">
+          <div class="stage on-dark"><svg viewBox="0 0 203 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pluscode"><path d="M92.9627 7.9209H89.4575V29.4015H92.9627V7.9209Z" fill="currentColor"/><path d="M126.414 21.1772C125.519 20.8501 124.533 20.5945 123.455 20.4095L122.387 20.2256C121.574 20.0823 120.927 19.8674 120.45 19.5808C119.972 19.2942 119.733 18.8441 119.733 18.2304C119.733 17.6572 119.977 17.2131 120.465 16.8954C120.954 16.5778 121.625 16.4202 122.478 16.4202C123.332 16.4202 124.085 16.6101 124.675 16.9874C125.265 17.3659 125.651 18.0154 125.835 18.936L128.763 18.1074C128.438 16.7987 127.731 15.7599 126.643 14.9934C125.555 14.2256 124.167 13.8423 122.479 13.8423C120.791 13.8423 119.328 14.2363 118.27 15.0232C117.213 15.8113 116.684 16.9205 116.684 18.3534C116.684 19.3145 116.928 20.1026 117.417 20.7163C117.905 21.3301 118.566 21.8113 119.399 22.1587C120.232 22.5074 121.158 22.7725 122.175 22.9575L123.213 23.1414C124.21 23.3253 124.963 23.5617 125.471 23.8471C125.979 24.1337 126.234 24.5838 126.234 25.1975C126.234 25.8113 125.964 26.3128 125.425 26.7008C124.885 27.0901 124.117 27.2835 123.122 27.2835C122.451 27.2835 121.825 27.1808 121.246 26.9766C120.666 26.7725 120.183 26.425 119.797 25.9331C119.411 25.4423 119.137 24.7772 118.973 23.9378L116.045 24.6435C116.33 26.3832 117.101 27.6811 118.363 28.5408C119.623 29.4005 121.21 29.8292 123.122 29.8292C125.033 29.8292 126.517 29.4089 127.637 28.5707C128.755 27.7325 129.314 26.5551 129.314 25.0411C129.314 24.0178 129.054 23.1999 128.535 22.5862C128.017 21.9725 127.31 21.502 126.415 21.1748L126.414 21.1772Z" fill="currentColor"/><path d="M157.271 13.8291C152.876 13.8291 149.314 17.4136 149.314 21.8339C149.314 26.2542 152.877 29.8387 157.271 29.8387C161.666 29.8387 165.229 26.2542 165.229 21.8339C165.229 17.4136 161.666 13.8291 157.271 13.8291ZM157.271 26.7378C154.583 26.7378 152.396 24.5384 152.396 21.8339C152.396 19.1294 154.583 16.93 157.271 16.93C159.96 16.93 162.146 19.1294 162.146 21.8339C162.146 24.5384 159.96 26.7378 157.271 26.7378Z" fill="currentColor"/><path d="M77.9825 13.8291C76.17 13.8291 74.5046 14.4452 73.1669 15.4721V14.2733H70.0249V35.539H73.1669V28.1969C74.5046 29.2226 76.17 29.8399 77.9825 29.8399C82.3779 29.8399 85.9401 26.2554 85.9401 21.8351C85.9401 17.4148 82.3767 13.8303 77.9825 13.8303V13.8291ZM77.9825 26.7593C75.5575 26.7593 73.5527 24.9718 73.1669 22.6411V21.0267C73.5527 18.696 75.5575 16.9085 77.9825 16.9085C80.6829 16.9085 82.8788 19.1187 82.8788 21.8339C82.8788 24.5491 80.6817 26.7593 77.9825 26.7593Z" fill="currentColor"/><path d="M181.089 15.4901C179.752 14.4644 178.086 13.8471 176.274 13.8471C171.878 13.8471 168.316 17.4316 168.316 21.8519C168.316 26.2721 171.88 29.8566 176.274 29.8566C178.086 29.8566 179.752 29.2405 181.089 28.2136V29.4124H184.231V8.14795H181.089V15.4901ZM176.274 26.7784C173.573 26.7784 171.377 24.5683 171.377 21.853C171.377 19.1378 173.573 16.9277 176.274 16.9277C178.699 16.9277 180.704 18.7151 181.089 21.0459V22.6602C180.704 24.991 178.699 26.7784 176.274 26.7784Z" fill="currentColor"/><path d="M140.055 16.928C141.519 16.928 142.832 17.5811 143.729 18.608L146.936 17.8462C145.559 15.4581 142.997 13.8486 140.054 13.8486C135.659 13.8486 132.096 17.4331 132.096 21.8534C132.096 26.2737 135.66 29.8581 140.054 29.8581C142.912 29.8581 145.411 28.3369 146.814 26.0611C145.798 25.7208 144.77 25.3769 143.775 25.045C142.877 26.1041 141.542 26.7787 140.054 26.7787C137.354 26.7787 135.158 24.5698 135.158 21.8534C135.158 19.1369 137.355 16.928 140.055 16.928Z" fill="currentColor"/><path d="M202.279 26.0765C201.265 25.735 200.238 25.3887 199.243 25.0544C198.342 26.1111 197.008 26.7833 195.518 26.7809C193.081 26.7774 191.064 24.972 190.696 22.6233L202.307 22.6436H202.96C202.984 22.3881 203 22.1302 203 21.8675C203 21.3302 202.944 20.8072 202.844 20.2997H202.848C202.846 20.2866 202.841 20.2735 202.838 20.2592C202.836 20.2448 202.835 20.2305 202.831 20.2162H202.828C202.076 16.5875 199.371 13.8556 195.54 13.8496C191.144 13.8424 187.576 17.4197 187.568 21.8412C187.561 26.2627 191.117 29.852 195.512 29.8603C198.371 29.8651 200.872 28.3487 202.278 26.0753L202.279 26.0765ZM195.535 16.9314C197.657 16.935 199.458 18.3081 200.132 20.2138C197.509 20.209 193.533 20.203 190.922 20.1983C191.602 18.295 193.411 16.9278 195.535 16.9314Z" fill="currentColor"/><path d="M108.55 21.8342H108.543C108.543 24.5506 107.058 26.7596 104.359 26.7596C101.66 26.7596 100.209 24.5816 100.177 21.8927V14.2593H97.1123V21.8342C97.1123 26.2557 99.9634 29.839 104.358 29.839C106.209 29.839 107.197 29.1966 108.55 28.1303V29.4019H112.21V14.2604H108.55V21.8354V21.8342Z" fill="currentColor"/><path d="M13.4593 35.5391C20.8926 35.5391 26.9185 29.4775 26.9185 22C26.9185 14.5226 20.8926 8.46094 13.4593 8.46094C6.02592 8.46094 0 14.5226 0 22C0 29.4775 6.02592 35.5391 13.4593 35.5391Z" fill="currentColor"/><path d="M35.3405 0C29.3355 0 23.8968 2.43463 19.9453 6.37612C21.943 7.21552 23.7781 8.44776 25.3556 10.0334C28.5331 13.2299 30.2828 17.4794 30.2828 22C30.2828 26.5206 28.5331 30.7701 25.3556 33.9666C23.7781 35.5534 21.943 36.7845 19.9453 37.6239C23.8979 41.5654 29.3367 44 35.3405 44C47.4193 44 57.2108 34.1504 57.2108 22C57.2108 9.84955 47.4193 0 35.3405 0Z" fill="currentColor"/></svg></div>
+          <div class="cap">
+            <b>Primary · white on navy</b>
+            <span>pluscode-logo.svg. The default lockup. Header, footer, mega menu, Open Graph cards.</span>
+          </div>
+        </div>
+        <div class="lockup">
+          <div class="stage on-light"><svg viewBox="0 0 203 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pluscode"><path d="M92.9627 7.9209H89.4575V29.4015H92.9627V7.9209Z" fill="currentColor"/><path d="M126.414 21.1772C125.519 20.8501 124.533 20.5945 123.455 20.4095L122.387 20.2256C121.574 20.0823 120.927 19.8674 120.45 19.5808C119.972 19.2942 119.733 18.8441 119.733 18.2304C119.733 17.6572 119.977 17.2131 120.465 16.8954C120.954 16.5778 121.625 16.4202 122.478 16.4202C123.332 16.4202 124.085 16.6101 124.675 16.9874C125.265 17.3659 125.651 18.0154 125.835 18.936L128.763 18.1074C128.438 16.7987 127.731 15.7599 126.643 14.9934C125.555 14.2256 124.167 13.8423 122.479 13.8423C120.791 13.8423 119.328 14.2363 118.27 15.0232C117.213 15.8113 116.684 16.9205 116.684 18.3534C116.684 19.3145 116.928 20.1026 117.417 20.7163C117.905 21.3301 118.566 21.8113 119.399 22.1587C120.232 22.5074 121.158 22.7725 122.175 22.9575L123.213 23.1414C124.21 23.3253 124.963 23.5617 125.471 23.8471C125.979 24.1337 126.234 24.5838 126.234 25.1975C126.234 25.8113 125.964 26.3128 125.425 26.7008C124.885 27.0901 124.117 27.2835 123.122 27.2835C122.451 27.2835 121.825 27.1808 121.246 26.9766C120.666 26.7725 120.183 26.425 119.797 25.9331C119.411 25.4423 119.137 24.7772 118.973 23.9378L116.045 24.6435C116.33 26.3832 117.101 27.6811 118.363 28.5408C119.623 29.4005 121.21 29.8292 123.122 29.8292C125.033 29.8292 126.517 29.4089 127.637 28.5707C128.755 27.7325 129.314 26.5551 129.314 25.0411C129.314 24.0178 129.054 23.1999 128.535 22.5862C128.017 21.9725 127.31 21.502 126.415 21.1748L126.414 21.1772Z" fill="currentColor"/><path d="M157.271 13.8291C152.876 13.8291 149.314 17.4136 149.314 21.8339C149.314 26.2542 152.877 29.8387 157.271 29.8387C161.666 29.8387 165.229 26.2542 165.229 21.8339C165.229 17.4136 161.666 13.8291 157.271 13.8291ZM157.271 26.7378C154.583 26.7378 152.396 24.5384 152.396 21.8339C152.396 19.1294 154.583 16.93 157.271 16.93C159.96 16.93 162.146 19.1294 162.146 21.8339C162.146 24.5384 159.96 26.7378 157.271 26.7378Z" fill="currentColor"/><path d="M77.9825 13.8291C76.17 13.8291 74.5046 14.4452 73.1669 15.4721V14.2733H70.0249V35.539H73.1669V28.1969C74.5046 29.2226 76.17 29.8399 77.9825 29.8399C82.3779 29.8399 85.9401 26.2554 85.9401 21.8351C85.9401 17.4148 82.3767 13.8303 77.9825 13.8303V13.8291ZM77.9825 26.7593C75.5575 26.7593 73.5527 24.9718 73.1669 22.6411V21.0267C73.5527 18.696 75.5575 16.9085 77.9825 16.9085C80.6829 16.9085 82.8788 19.1187 82.8788 21.8339C82.8788 24.5491 80.6817 26.7593 77.9825 26.7593Z" fill="currentColor"/><path d="M181.089 15.4901C179.752 14.4644 178.086 13.8471 176.274 13.8471C171.878 13.8471 168.316 17.4316 168.316 21.8519C168.316 26.2721 171.88 29.8566 176.274 29.8566C178.086 29.8566 179.752 29.2405 181.089 28.2136V29.4124H184.231V8.14795H181.089V15.4901ZM176.274 26.7784C173.573 26.7784 171.377 24.5683 171.377 21.853C171.377 19.1378 173.573 16.9277 176.274 16.9277C178.699 16.9277 180.704 18.7151 181.089 21.0459V22.6602C180.704 24.991 178.699 26.7784 176.274 26.7784Z" fill="currentColor"/><path d="M140.055 16.928C141.519 16.928 142.832 17.5811 143.729 18.608L146.936 17.8462C145.559 15.4581 142.997 13.8486 140.054 13.8486C135.659 13.8486 132.096 17.4331 132.096 21.8534C132.096 26.2737 135.66 29.8581 140.054 29.8581C142.912 29.8581 145.411 28.3369 146.814 26.0611C145.798 25.7208 144.77 25.3769 143.775 25.045C142.877 26.1041 141.542 26.7787 140.054 26.7787C137.354 26.7787 135.158 24.5698 135.158 21.8534C135.158 19.1369 137.355 16.928 140.055 16.928Z" fill="currentColor"/><path d="M202.279 26.0765C201.265 25.735 200.238 25.3887 199.243 25.0544C198.342 26.1111 197.008 26.7833 195.518 26.7809C193.081 26.7774 191.064 24.972 190.696 22.6233L202.307 22.6436H202.96C202.984 22.3881 203 22.1302 203 21.8675C203 21.3302 202.944 20.8072 202.844 20.2997H202.848C202.846 20.2866 202.841 20.2735 202.838 20.2592C202.836 20.2448 202.835 20.2305 202.831 20.2162H202.828C202.076 16.5875 199.371 13.8556 195.54 13.8496C191.144 13.8424 187.576 17.4197 187.568 21.8412C187.561 26.2627 191.117 29.852 195.512 29.8603C198.371 29.8651 200.872 28.3487 202.278 26.0753L202.279 26.0765ZM195.535 16.9314C197.657 16.935 199.458 18.3081 200.132 20.2138C197.509 20.209 193.533 20.203 190.922 20.1983C191.602 18.295 193.411 16.9278 195.535 16.9314Z" fill="currentColor"/><path d="M108.55 21.8342H108.543C108.543 24.5506 107.058 26.7596 104.359 26.7596C101.66 26.7596 100.209 24.5816 100.177 21.8927V14.2593H97.1123V21.8342C97.1123 26.2557 99.9634 29.839 104.358 29.839C106.209 29.839 107.197 29.1966 108.55 28.1303V29.4019H112.21V14.2604H108.55V21.8354V21.8342Z" fill="currentColor"/><path d="M13.4593 35.5391C20.8926 35.5391 26.9185 29.4775 26.9185 22C26.9185 14.5226 20.8926 8.46094 13.4593 8.46094C6.02592 8.46094 0 14.5226 0 22C0 29.4775 6.02592 35.5391 13.4593 35.5391Z" fill="currentColor"/><path d="M35.3405 0C29.3355 0 23.8968 2.43463 19.9453 6.37612C21.943 7.21552 23.7781 8.44776 25.3556 10.0334C28.5331 13.2299 30.2828 17.4794 30.2828 22C30.2828 26.5206 28.5331 30.7701 25.3556 33.9666C23.7781 35.5534 21.943 36.7845 19.9453 37.6239C23.8979 41.5654 29.3367 44 35.3405 44C47.4193 44 57.2108 34.1504 57.2108 22C57.2108 9.84955 47.4193 0 35.3405 0Z" fill="currentColor"/></svg></div>
+          <div class="cap">
+            <b>Secondary · black on paper</b>
+            <span>pluscode-black-logo.svg. Documents, invoices, decks, anything printed on white.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid g2">
+        <div class="stack-sm">
+          <h3 class="sub">Clear space</h3>
+          <p class="body">
+            Keep free space on every side equal to half the lockup height. At
+            the native 203 × 44 artwork that is 22px. Nothing crosses it: no
+            type, no rule, no photograph edge, no other logo.
+          </p>
+          <div class="clearspace">
+            <span class="cs-box">
+              <svg viewBox="0 0 203 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pluscode"><path d="M92.9627 7.9209H89.4575V29.4015H92.9627V7.9209Z" fill="currentColor"/><path d="M126.414 21.1772C125.519 20.8501 124.533 20.5945 123.455 20.4095L122.387 20.2256C121.574 20.0823 120.927 19.8674 120.45 19.5808C119.972 19.2942 119.733 18.8441 119.733 18.2304C119.733 17.6572 119.977 17.2131 120.465 16.8954C120.954 16.5778 121.625 16.4202 122.478 16.4202C123.332 16.4202 124.085 16.6101 124.675 16.9874C125.265 17.3659 125.651 18.0154 125.835 18.936L128.763 18.1074C128.438 16.7987 127.731 15.7599 126.643 14.9934C125.555 14.2256 124.167 13.8423 122.479 13.8423C120.791 13.8423 119.328 14.2363 118.27 15.0232C117.213 15.8113 116.684 16.9205 116.684 18.3534C116.684 19.3145 116.928 20.1026 117.417 20.7163C117.905 21.3301 118.566 21.8113 119.399 22.1587C120.232 22.5074 121.158 22.7725 122.175 22.9575L123.213 23.1414C124.21 23.3253 124.963 23.5617 125.471 23.8471C125.979 24.1337 126.234 24.5838 126.234 25.1975C126.234 25.8113 125.964 26.3128 125.425 26.7008C124.885 27.0901 124.117 27.2835 123.122 27.2835C122.451 27.2835 121.825 27.1808 121.246 26.9766C120.666 26.7725 120.183 26.425 119.797 25.9331C119.411 25.4423 119.137 24.7772 118.973 23.9378L116.045 24.6435C116.33 26.3832 117.101 27.6811 118.363 28.5408C119.623 29.4005 121.21 29.8292 123.122 29.8292C125.033 29.8292 126.517 29.4089 127.637 28.5707C128.755 27.7325 129.314 26.5551 129.314 25.0411C129.314 24.0178 129.054 23.1999 128.535 22.5862C128.017 21.9725 127.31 21.502 126.415 21.1748L126.414 21.1772Z" fill="currentColor"/><path d="M157.271 13.8291C152.876 13.8291 149.314 17.4136 149.314 21.8339C149.314 26.2542 152.877 29.8387 157.271 29.8387C161.666 29.8387 165.229 26.2542 165.229 21.8339C165.229 17.4136 161.666 13.8291 157.271 13.8291ZM157.271 26.7378C154.583 26.7378 152.396 24.5384 152.396 21.8339C152.396 19.1294 154.583 16.93 157.271 16.93C159.96 16.93 162.146 19.1294 162.146 21.8339C162.146 24.5384 159.96 26.7378 157.271 26.7378Z" fill="currentColor"/><path d="M77.9825 13.8291C76.17 13.8291 74.5046 14.4452 73.1669 15.4721V14.2733H70.0249V35.539H73.1669V28.1969C74.5046 29.2226 76.17 29.8399 77.9825 29.8399C82.3779 29.8399 85.9401 26.2554 85.9401 21.8351C85.9401 17.4148 82.3767 13.8303 77.9825 13.8303V13.8291ZM77.9825 26.7593C75.5575 26.7593 73.5527 24.9718 73.1669 22.6411V21.0267C73.5527 18.696 75.5575 16.9085 77.9825 16.9085C80.6829 16.9085 82.8788 19.1187 82.8788 21.8339C82.8788 24.5491 80.6817 26.7593 77.9825 26.7593Z" fill="currentColor"/><path d="M181.089 15.4901C179.752 14.4644 178.086 13.8471 176.274 13.8471C171.878 13.8471 168.316 17.4316 168.316 21.8519C168.316 26.2721 171.88 29.8566 176.274 29.8566C178.086 29.8566 179.752 29.2405 181.089 28.2136V29.4124H184.231V8.14795H181.089V15.4901ZM176.274 26.7784C173.573 26.7784 171.377 24.5683 171.377 21.853C171.377 19.1378 173.573 16.9277 176.274 16.9277C178.699 16.9277 180.704 18.7151 181.089 21.0459V22.6602C180.704 24.991 178.699 26.7784 176.274 26.7784Z" fill="currentColor"/><path d="M140.055 16.928C141.519 16.928 142.832 17.5811 143.729 18.608L146.936 17.8462C145.559 15.4581 142.997 13.8486 140.054 13.8486C135.659 13.8486 132.096 17.4331 132.096 21.8534C132.096 26.2737 135.66 29.8581 140.054 29.8581C142.912 29.8581 145.411 28.3369 146.814 26.0611C145.798 25.7208 144.77 25.3769 143.775 25.045C142.877 26.1041 141.542 26.7787 140.054 26.7787C137.354 26.7787 135.158 24.5698 135.158 21.8534C135.158 19.1369 137.355 16.928 140.055 16.928Z" fill="currentColor"/><path d="M202.279 26.0765C201.265 25.735 200.238 25.3887 199.243 25.0544C198.342 26.1111 197.008 26.7833 195.518 26.7809C193.081 26.7774 191.064 24.972 190.696 22.6233L202.307 22.6436H202.96C202.984 22.3881 203 22.1302 203 21.8675C203 21.3302 202.944 20.8072 202.844 20.2997H202.848C202.846 20.2866 202.841 20.2735 202.838 20.2592C202.836 20.2448 202.835 20.2305 202.831 20.2162H202.828C202.076 16.5875 199.371 13.8556 195.54 13.8496C191.144 13.8424 187.576 17.4197 187.568 21.8412C187.561 26.2627 191.117 29.852 195.512 29.8603C198.371 29.8651 200.872 28.3487 202.278 26.0753L202.279 26.0765ZM195.535 16.9314C197.657 16.935 199.458 18.3081 200.132 20.2138C197.509 20.209 193.533 20.203 190.922 20.1983C191.602 18.295 193.411 16.9278 195.535 16.9314Z" fill="currentColor"/><path d="M108.55 21.8342H108.543C108.543 24.5506 107.058 26.7596 104.359 26.7596C101.66 26.7596 100.209 24.5816 100.177 21.8927V14.2593H97.1123V21.8342C97.1123 26.2557 99.9634 29.839 104.358 29.839C106.209 29.839 107.197 29.1966 108.55 28.1303V29.4019H112.21V14.2604H108.55V21.8354V21.8342Z" fill="currentColor"/><path d="M13.4593 35.5391C20.8926 35.5391 26.9185 29.4775 26.9185 22C26.9185 14.5226 20.8926 8.46094 13.4593 8.46094C6.02592 8.46094 0 14.5226 0 22C0 29.4775 6.02592 35.5391 13.4593 35.5391Z" fill="currentColor"/><path d="M35.3405 0C29.3355 0 23.8968 2.43463 19.9453 6.37612C21.943 7.21552 23.7781 8.44776 25.3556 10.0334C28.5331 13.2299 30.2828 17.4794 30.2828 22C30.2828 26.5206 28.5331 30.7701 25.3556 33.9666C23.7781 35.5534 21.943 36.7845 19.9453 37.6239C23.8979 41.5654 29.3367 44 35.3405 44C47.4193 44 57.2108 34.1504 57.2108 22C57.2108 9.84955 47.4193 0 35.3405 0Z" fill="currentColor"/></svg>
+              <span class="cs-tag">½ height, all sides</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="stack-sm">
+          <h3 class="sub">Sizes in use</h3>
+          <dl class="spec">
+            <div class="spec-row"><dt>Header</dt><dd>28px tall (h-7)</dd></div>
+            <div class="spec-row"><dt>Footer</dt><dd>36px tall (h-9)</dd></div>
+            <div class="spec-row"><dt>Open Graph card</dt><dd>176 × 38 on a 1200 × 630 frame</dd></div>
+            <div class="spec-row"><dt>Digital minimum</dt><dd>24px tall / 111px wide. Below that the wordmark counters close up.</dd></div>
+            <div class="spec-row"><dt>Print minimum</dt><dd>18mm wide</dd></div>
+            <div class="spec-row"><dt>Format</dt><dd>SVG everywhere it can be. PNG at 3× only where SVG is refused.</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="sub" style="margin-bottom:20px">Misuse</h3>
+        <div class="misuse">
+          <div class="mis"><svg class="x" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><p><b>Do not tint it emerald.</b> The lockup is white or black. Emerald is an accent colour, not a logo colour.</p></div>
+          <div class="mis"><svg class="x" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><p><b>Do not put white on a light ground.</b> Switch to the black lockup rather than adding a shadow to rescue it.</p></div>
+          <div class="mis"><svg class="x" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><p><b>Do not stretch or condense.</b> Scale both axes together, always from the supplied SVG.</p></div>
+          <div class="mis"><svg class="x" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><p><b>Do not box or badge it.</b> No containers, outlines, rounded plates or drop shadows.</p></div>
+          <div class="mis"><svg class="x" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><p><b>Do not reset the wordmark.</b> The letterforms are artwork, not live Figtree text.</p></div>
+          <div class="mis"><svg class="x" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><p><b>Do not place it on busy imagery.</b> If the ground is noisy, lay the navy gradient over it first, as the hero does.</p></div>
+        </div>
+      </div>
+
+
+      <div>
+        <h3 class="sub" style="margin-bottom:8px">Asset kit</h3>
+        <p class="body" style="margin-bottom:20px">
+          The source files, sitting in this folder. Always start from these
+          rather than from a screenshot or an exported PNG.
+        </p>
+        <div class="kit">
+            <a class="kit-row" href="assets/logo/pluscode-logo.svg" download>
+              <span class="kit-n">Logo · white lockup</span>
+              <span class="kit-f">SVG</span>
+              <span class="kit-d">Primary. Use on Night, on imagery, and on any dark ground.</span>
+              <span class="kit-s">5 KB</span>
+            </a>
+            <a class="kit-row" href="assets/logo/pluscode-black-logo.svg" download>
+              <span class="kit-n">Logo · black lockup</span>
+              <span class="kit-f">SVG</span>
+              <span class="kit-d">Secondary. Documents, decks, invoices, anything on white.</span>
+              <span class="kit-s">5 KB</span>
+            </a>
+            <a class="kit-row" href="assets/fonts/Figtree.ttf" download>
+              <span class="kit-n">Figtree</span>
+              <span class="kit-f">Variable TTF 300–900</span>
+              <span class="kit-d">The one family. Covers display, body and label roles.</span>
+              <span class="kit-s">61 KB</span>
+            </a>
+            <a class="kit-row" href="assets/fonts/Figtree-Italic.ttf" download>
+              <span class="kit-n">Figtree Italic</span>
+              <span class="kit-f">Variable TTF 300–900</span>
+              <span class="kit-d">Matching italic. Rarely used: emphasis is emerald, not slanted.</span>
+              <span class="kit-s">61 KB</span>
+            </a>
+            <a class="kit-row" href="assets/tokens.css" download>
+              <span class="kit-n">Design tokens</span>
+              <span class="kit-f">CSS</span>
+              <span class="kit-d">Every colour, font and motion value as custom properties.</span>
+              <span class="kit-s">2 KB</span>
+            </a>
+            <a class="kit-row" href="assets/fonts/OFL.txt" download>
+              <span class="kit-n">SIL Open Font License</span>
+              <span class="kit-f">TXT</span>
+              <span class="kit-d">Figtree's licence. Ships with the font wherever it goes.</span>
+              <span class="kit-s">4 KB</span>
+            </a>
+        </div>
+      </div>
+
+      <div class="card" style="max-width:none">
+        <h4 class="min">The plus marker</h4>
+        <p class="body" style="max-width:72ch">
+          A separate device, drawn as two 2.5px strokes with round caps on a
+          24 × 24 grid. It sets eyebrows and marks list items in emerald, and it
+          is the one piece of the identity that is allowed to be decorative. It
+          is not a logo substitute and never appears at logo scale.
+        </p>
+        <div class="row" style="margin-top:6px">
+          <span class="label"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg> Capabilities</span>
+          <span class="label"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg> How we work</span>
+          <span class="label"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg> Selected work</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- §04 Colour                                                        -->
+<!-- ================================================================ -->
+<section class="band is-paper" id="color">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg><span class="sec-no">04</span> Colour</p>
+      <h2 class="sec">Deep navy, cool paper, one emerald</h2>
+      <p class="lead">
+        Two grounds and a single accent. Navy carries the hero, the mega menu
+        and the footer; a cool paper white carries everything that has to be
+        read at length. Emerald is the only chromatic colour in the system, so
+        it is spent carefully: roughly one emphatic use per screen.
+      </p>
+      <p class="note" style="margin-top:14px">Click any swatch to copy its hex.</p>
+    </div>
+
+    <div class="stack-lg">
+      <div>
+        <div class="group-head"><span class="n">Group A</span><h3 class="sub">Dark surfaces</h3></div>
+        <div class="swatches" data-swatches>
+          <button class="sw" data-hex="#0a1929" type="button">
+            <span class="chip" style="background:#0a1929"><span class="copied">Copied</span></span>
+            <span class="meta"><span class="nm">Night</span><span class="hx">#0a1929 · --color-night</span><span class="us">Hero, dark bands, mega menu, primary button text.</span></span>
+          </button>
+          <button class="sw" data-hex="#0f2237" type="button">
+            <span class="chip" style="background:#0f2237"><span class="copied">Copied</span></span>
+            <span class="meta"><span class="nm">Night soft</span><span class="hx">#0f2237 · --color-night-soft</span><span class="us">Cards raised off a dark ground.</span></span>
+          </button>
+          <button class="sw" data-hex="#061220" type="button">
+            <span class="chip" style="background:#061220"><span class="copied">Copied</span></span>
+            <span class="meta"><span class="nm">Night deep</span><span class="hx">#061220 · --color-night-deep</span><span class="us">Footer, and the base of the animated gradient.</span></span>
+          </button>
+          <button class="sw" data-hex="#22303e" type="button">
+            <span class="chip" style="background:#22303e"><span class="copied">Copied</span></span>
+            <span class="meta"><span class="nm">Night line</span><span class="hx">#22303e · --color-night-line</span><span class="us">Hairlines on dark, where white at 10% is too faint.</span></span>
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <div class="group-head"><span class="n">Group B</span><h3 class="sub">Light surfaces</h3></div>
+        <div class="swatches" data-swatches>
+          <button class="sw" data-hex="#f7f8fa" type="button">
+            <span class="chip" style="background:#f7f8fa;border-bottom:1px solid var(--cream-line)"><span class="copied">Copied</span></span>
+            <span class="meta"><span class="nm">Cream</span><span class="hx">#f7f8fa · --color-cream</span><span class="us">Page default. A paper white with a cool blue bias, not a warm off-white.</span></span>
+          </button>
+          <button class="sw" data-hex="#ffffff" type="button">
+            <span class="chip" style="background:#ffffff;border-bottom:1px solid var(--cream-line)"><span class="copied">Copied</span></span>
+            <span class="meta"><span class="nm">White</span><span class="hx">#ffffff</span><span class="us">Alternating bands and cards, to separate sections without a rule.</span></span>
+          </button>
+          <button class="sw" data-hex="#eef0f4" type="button">
+            <span class="chip" style="background:#eef0f4;border-bottom:1px solid var(--cream-line)"><span class="copied">Copied</span></span>
+            <span class="meta"><span class="nm">Cream dim</span><span class="hx">#eef0f4 · --color-cream-dim</span><span class="us">Muted fills, chips, inactive states.</span></span>
+          </button>
+          <button class="sw" data-hex="#e2e6ec" type="button">
+            <span class="chip" style="background:#e2e6ec"><span class="copied">Copied</span></span>
+            <span class="meta"><span class="nm">Cream line</span><span class="hx">#e2e6ec · --color-cream-line</span><span class="us">Every hairline on light. The most-used border in the system.</span></span>
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <div class="group-head"><span class="n">Group C</span><h3 class="sub">Ink on light, bone on dark</h3></div>
+        <div class="swatches" data-swatches>
+          <button class="sw" data-hex="#0a1929" type="button">
+            <span class="chip" style="background:#0a1929"><span class="copied">Copied</span></span>
+            <span class="meta"><span class="nm">Ink</span><span class="hx">#0a1929 · --color-ink</span><span class="us">Headings and body on light. The same value as Night, so text and ground share a hue.</span></span>
+          </button>
+          <button class="sw" data-hex="#4a5a6d" type="button">
+            <span class="chip" style="background:#4a5a6d"><span class="copied">Copied</span></span>
+            <span class="meta"><span class="nm">Ink soft</span><span class="hx">#4a5a6d · --color-ink-soft</span><span class="us">Secondary copy, descriptions, captions.</span></span>
+          </button>
+          <button class="sw" data-hex="#8093a8" type="button">
+            <span class="chip" style="background:#8093a8"><span class="copied">Copied</span></span>
+            <span class="meta"><span class="nm">Ink mute</span><span class="hx">#8093a8 · --color-ink-mute</span><span class="us">Metadata and labels only. Never running text: it fails contrast below 18px.</span></span>
+          </button>
+          <button class="sw" data-hex="#b9c6d8" type="button">
+            <span class="chip" style="background:#b9c6d8"><span class="copied">Copied</span></span>
+            <span class="meta"><span class="nm">Bone soft</span><span class="hx">#b9c6d8 · --color-bone-soft</span><span class="us">Body copy on navy. Bone (#ffffff) is reserved for headings there.</span></span>
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <div class="group-head"><span class="n">Group D</span><h3 class="sub">The emerald accent</h3></div>
+        <div class="swatches" data-swatches>
+          <button class="sw" data-hex="#059669" type="button">
+            <span class="chip" style="background:#059669"><span class="copied">Copied</span></span>
+            <span class="meta"><span class="nm">Emerald</span><span class="hx">#059669 · --color-lime</span><span class="us">The brand accent. Primary buttons, the plus marker, the status dot, text selection.</span></span>
+          </button>
+          <button class="sw" data-hex="#047857" type="button">
+            <span class="chip" style="background:#047857"><span class="copied">Copied</span></span>
+            <span class="meta"><span class="nm">Emerald deep</span><span class="hx">#047857 · --color-lime-deep</span><span class="us">Accent text and links on light, where #059669 does not carry enough contrast.</span></span>
+          </button>
+          <button class="sw" data-hex="#34d399" type="button">
+            <span class="chip" style="background:#34d399"><span class="copied">Copied</span></span>
+            <span class="meta"><span class="nm">Emerald soft</span><span class="hx">#34d399 · --color-lime-soft</span><span class="us">Accent text on navy: the emphasised headline phrase, hovered nav links.</span></span>
+          </button>
+          <button class="sw" data-hex="#10b981" type="button">
+            <span class="chip" style="background:#10b981"><span class="copied">Copied</span></span>
+            <span class="meta"><span class="nm">Emerald bright</span><span class="hx">#10b981 · --color-lime-bright</span><span class="us">Button hover, and the source of every emerald glow and grid at low alpha.</span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid g2">
+        <div class="stack-sm">
+          <h3 class="sub">Rules of use</h3>
+          <dl class="spec">
+            <div class="spec-row"><dt>One emphasis per view</dt><dd>A single emerald element should be doing the pulling. A second one halves the value of the first.</dd></div>
+            <div class="spec-row"><dt>Pick by ground</dt><dd><code class="tok">#047857</code> for accent text on light, <code class="tok">#34d399</code> for accent text on dark, <code class="tok">#059669</code> for fills on either.</dd></div>
+            <div class="spec-row"><dt>Emerald fills carry navy</dt><dd>Text on an emerald button is Night, not white. 4.71:1, and it keeps the button feeling like a surface rather than a label.</dd></div>
+            <div class="spec-row"><dt>Atmosphere runs on alpha</dt><dd>Glows, grids and rings are always <code class="tok">#10b981</code> at 7% to 25%. Never a second hue.</dd></div>
+            <div class="spec-row"><dt>Semantics stay separate</dt><dd>Success, warning and error states are their own colours. Emerald is a brand accent and must not double as "success", or state stops reading as state.</dd></div>
+          </dl>
+        </div>
+
+        <div class="stack-sm">
+          <h3 class="sub">Contrast, checked</h3>
+          <div class="tbl-scroll">
+            <table class="contrast">
+              <thead>
+                <tr><th>Pairing</th><th>Ratio</th><th>Verdict</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="pair"><i style="background:#0a1929"></i>Ink on Cream</span></td><td class="ratio">16.69</td><td><span class="verdict pass">AAA</span></td></tr>
+                <tr><td><span class="pair"><i style="background:#ffffff"></i>Bone on Night</span></td><td class="ratio">17.74</td><td><span class="verdict pass">AAA</span></td></tr>
+                <tr><td><span class="pair"><i style="background:#b9c6d8"></i>Bone soft on Night</span></td><td class="ratio">10.25</td><td><span class="verdict pass">AAA</span></td></tr>
+                <tr><td><span class="pair"><i style="background:#34d399"></i>Emerald soft on Night</span></td><td class="ratio">9.23</td><td><span class="verdict pass">AAA</span></td></tr>
+                <tr><td><span class="pair"><i style="background:#8fa3bd"></i>Bone dim on Night</span></td><td class="ratio">6.88</td><td><span class="verdict pass">AA</span></td></tr>
+                <tr><td><span class="pair"><i style="background:#4a5a6d"></i>Ink soft on Cream</span></td><td class="ratio">6.64</td><td><span class="verdict pass">AA</span></td></tr>
+                <tr><td><span class="pair"><i style="background:#047857"></i>Emerald deep on Cream</span></td><td class="ratio">5.16</td><td><span class="verdict pass">AA</span></td></tr>
+                <tr><td><span class="pair"><i style="background:#0a1929"></i>Night on Emerald fill</span></td><td class="ratio">4.71</td><td><span class="verdict pass">AA</span></td></tr>
+                <tr><td><span class="pair"><i style="background:#059669"></i>Emerald on Cream</span></td><td class="ratio">3.55</td><td><span class="verdict large">Large only</span></td></tr>
+                <tr><td><span class="pair"><i style="background:#8093a8"></i>Ink mute on Cream</span></td><td class="ratio">2.97</td><td><span class="verdict fail">Labels only</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">
+            The last two are the traps. Emerald at #059669 is only safe on light
+            above 24px or at 19px bold, which is why label text switches to
+            #047857. Ink mute never carries a sentence: it is for uppercase
+            metadata at 11 to 13px, where it reads as a rule rather than as
+            prose.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- §05 Typography                                                    -->
+<!-- ================================================================ -->
+<section class="band" id="type">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg><span class="sec-no">05</span> Typography</p>
+      <h2 class="sec">One family, doing every job</h2>
+      <p class="lead">
+        Figtree, variable, 300 to 900, with a matching italic. There is no
+        second face. Display, body, and the uppercase label slots that most
+        systems hand to a monospace are all Figtree, separated by weight,
+        size and letter-spacing rather than by family. It is a deliberately
+        narrow constraint, and it is what keeps the pages feeling engineered
+        rather than assembled.
+      </p>
+    </div>
+
+    <div class="stack-lg">
+      <div class="weights">
+        <div class="wt"><span class="g" style="font-weight:300">Aa</span><span class="n">300 Light</span></div>
+        <div class="wt"><span class="g" style="font-weight:400">Aa</span><span class="n">400 Regular</span></div>
+        <div class="wt"><span class="g" style="font-weight:500">Aa</span><span class="n">500 Medium</span></div>
+        <div class="wt"><span class="g" style="font-weight:600">Aa</span><span class="n">600 Semibold</span></div>
+        <div class="wt"><span class="g" style="font-weight:600;font-style:italic">Aa</span><span class="n">600 Italic</span></div>
+      </div>
+      <p class="note">
+        400, 500 and 600 do the work. 300 appears nowhere on the site today, and
+        700 and up are available but unused: if a headline needs more weight it
+        usually needs fewer words.
+      </p>
+
+      <div>
+        <h3 class="sub" style="margin-bottom:8px">The scale</h3>
+        <p class="body" style="margin-bottom:24px">
+          Sizes as they ship. Everything above 24px is tightened; everything
+          below is not.
+        </p>
+        <div class="scale">
+          <div class="scale-row">
+            <span class="k"><b>Display XL</b><span>80px · 600 · -0.015em · 1.05</span></span>
+            <span class="s"><span class="sp-xl">Put AI to work. <em style="font-style:normal;color:var(--lime-deep)">For real.</em></span></span>
+          </div>
+          <div class="scale-row">
+            <span class="k"><b>Section</b><span>48px · 500 · -0.01em · 1.12</span></span>
+            <span class="s"><span class="sp-l">From process map to system in production</span></span>
+          </div>
+          <div class="scale-row">
+            <span class="k"><b>Display M</b><span>40px · 500 · -0.01em · 1.15</span></span>
+            <span class="s"><span class="sp-m">Sector knowledge, engineering depth</span></span>
+          </div>
+          <div class="scale-row">
+            <span class="k"><b>Title</b><span>24px · 500 · -0.01em · 1.25</span></span>
+            <span class="s"><span class="sp-t">AI Discovery Sprint</span></span>
+          </div>
+          <div class="scale-row">
+            <span class="k"><b>Lead</b><span>19px · 400 · 1.65</span></span>
+            <span class="s"><span class="sp-ld">You do not need another digital product. You need less paperwork and fewer hours lost to retyping data.</span></span>
+          </div>
+          <div class="scale-row">
+            <span class="k"><b>Body</b><span>15px · 400 · 1.7</span></span>
+            <span class="s"><span class="sp-b">Engineers, not slide decks. We automate what costs you hours, then keep it running in production where it has to hold up.</span></span>
+          </div>
+          <div class="scale-row">
+            <span class="k"><b>Label</b><span>13px · 500 · 0.14em · uppercase</span></span>
+            <span class="s"><span class="sp-lb" style="color:var(--lime-deep)">Ways to work together</span></span>
+          </div>
+          <div class="scale-row">
+            <span class="k"><b>Micro</b><span>11px · 500 · 0.18em · uppercase</span></span>
+            <span class="s"><span class="sp-mi" style="color:var(--ink-mute)">Trusted by teams shipping AI to production</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid g2">
+        <div class="stack-sm">
+          <h3 class="sub">Setting rules</h3>
+          <dl class="spec">
+            <div class="spec-row"><dt>Measure</dt><dd>Keep running text at 60 to 66 characters. Leads cap around 580px, body columns around 720px.</dd></div>
+            <div class="spec-row"><dt>Balance</dt><dd>Every headline gets <code class="tok">text-wrap: balance</code>. A two-line headline with one orphan word is a bug.</dd></div>
+            <div class="spec-row"><dt>Emphasis</dt><dd>Colour, not italic. The emphasised phrase in a headline is emerald and stays upright, so it reads as a highlight rather than a tone shift.</dd></div>
+            <div class="spec-row"><dt>Tracking</dt><dd>Negative above 24px, none in body, generous in uppercase. Never letterspace lowercase text.</dd></div>
+            <div class="spec-row"><dt>Numerals</dt><dd>Tabular figures wherever numbers stack: statistics, tables, step numbers, prices.</dd></div>
+            <div class="spec-row"><dt>Fallback</dt><dd><code class="tok">ui-sans-serif, system-ui, -apple-system, sans-serif</code>. Declared on every role so a failed font load degrades rather than reflows.</dd></div>
+          </dl>
+        </div>
+
+        <div class="stack-sm">
+          <h3 class="sub">Why one family</h3>
+          <p class="body">
+            The system keeps three token slots, <code class="tok">--font-sans</code>,
+            <code class="tok">--font-serif</code> and <code class="tok">--font-mono</code>,
+            and points all three at Figtree. Components that ask for a serif
+            display or a mono label keep working untouched, and the site loads
+            two font files instead of six.
+          </p>
+          <p class="body">
+            If a second face is ever introduced, it goes into the serif slot
+            for display only. The mono slot stays pointed at Figtree: the
+            uppercase label style is doing that job already, and it is doing it
+            better on a page this dense.
+          </p>
+          <div class="card" style="background:var(--night);color:var(--bone);border-color:var(--night-line)">
+            <span class="micro" style="color:var(--bone-dim)">Specimen · navy</span>
+            <p style="font-size:26px;font-weight:600;letter-spacing:-0.015em;line-height:1.2;margin:0">
+              A clear path from idea to impact, <em style="font-style:normal;color:var(--lime-soft)">no black boxes</em>
+            </p>
+            <p style="font-size:15px;line-height:1.7;color:var(--bone-soft);margin:0">
+              The same path on every engagement. You always know where we are and
+              what is next.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- §06 Layout                                                        -->
+<!-- ================================================================ -->
+<section class="band is-night" id="layout">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg><span class="sec-no">06</span> Layout and grid</p>
+      <h2 class="sec">1240 pixels and a 2 pixel radius</h2>
+      <p class="lead" style="color:var(--bone-soft)">
+        The page is a stack of full-bleed bands, each holding a centred 1240px
+        column. Sections alternate cream, white and navy so the rhythm reads
+        without dividers. Corners are almost square throughout: 2px, which is
+        the single most recognisable structural decision in the system.
+      </p>
+    </div>
+
+    <div class="stack-lg">
+      <div class="grid g2">
+        <dl class="spec">
+          <div class="spec-row"><dt>Container</dt><dd>max-width 1240px, centred. Editorial reading pages narrow to 760px.</dd></div>
+          <div class="spec-row"><dt>Gutters</dt><dd>20px on phones, 40px from 640px up.</dd></div>
+          <div class="spec-row"><dt>Band padding</dt><dd>80px vertical on phones, 100px from 640px up. Dense bands drop to 64px, never lower.</dd></div>
+          <div class="spec-row"><dt>Header</dt><dd>72px tall, fixed, transparent until the page scrolls 8px, then navy at 90% with a blur and a 10% white hairline.</dd></div>
+          <div class="spec-row"><dt>Announcement bar</dt><dd>40px, above the header, pushing both down. Dismissed state is remembered, so the offset is applied before first paint rather than after.</dd></div>
+        </dl>
+        <dl class="spec">
+          <div class="spec-row"><dt>Radius</dt><dd><code class="tok">2px</code> on every rectangle: buttons, cards, inputs, menus, chips. Fully round only for dots, avatars and icon buttons. Nothing in between.</dd></div>
+          <div class="spec-row"><dt>Hairlines</dt><dd>1px. <code class="tok">#e2e6ec</code> on light, white at 8 to 15% on dark. Structure is drawn with lines, not shadows.</dd></div>
+          <div class="spec-row"><dt>Shadows</dt><dd>Reserved for things that float: menus, popovers, the mega menu. Long, soft and heavily offset, for example <code class="tok">0 40px 80px -20px rgba(0,0,0,0.6)</code>. Cards never carry one.</dd></div>
+          <div class="spec-row"><dt>Sticky columns</dt><dd>Section headings pin at 110px on two-column bands, so the eyebrow stays with the list it introduces.</dd></div>
+          <div class="spec-row"><dt>Grid overlay</dt><dd>The blueprint grid is 56px square, emerald at 7%. It marks a band as atmospheric, so it never sits under dense reading copy.</dd></div>
+        </dl>
+      </div>
+
+      <div>
+        <h3 class="sub" style="margin-bottom:18px">Band rhythm</h3>
+        <div style="border:1px solid var(--line);border-radius:2px;overflow:hidden">
+          <div style="background:var(--night);padding:26px 24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline">
+            <span style="font-size:15px;font-weight:600;color:var(--bone)">Hero · Night</span>
+            <span style="font-size:13px;color:var(--bone-dim)">Full viewport height, animated gradient, blueprint grid</span>
+          </div>
+          <div style="background:var(--paper);padding:26px 24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline;border-top:1px solid var(--line)">
+            <span style="font-size:15px;font-weight:600;color:var(--ink)">Capabilities · White</span>
+            <span style="font-size:13px;color:var(--ink-mute)">Sticky heading, numbered list</span>
+          </div>
+          <div style="background:var(--cream);padding:26px 24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline;border-top:1px solid var(--line)">
+            <span style="font-size:15px;font-weight:600;color:var(--ink)">Ways to work together · Cream</span>
+            <span style="font-size:13px;color:var(--ink-mute)">Card grid, one card featured</span>
+          </div>
+          <div style="background:var(--paper);padding:26px 24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline;border-top:1px solid var(--line)">
+            <span style="font-size:15px;font-weight:600;color:var(--ink)">Selected work · White</span>
+            <span style="font-size:13px;color:var(--ink-mute)">Case study tiles</span>
+          </div>
+          <div style="background:var(--night);padding:26px 24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline;border-top:1px solid var(--line)">
+            <span style="font-size:15px;font-weight:600;color:var(--bone)">Contact · Night</span>
+            <span style="font-size:13px;color:var(--bone-dim)">Blueprint grid returns, closing the page where it opened</span>
+          </div>
+          <div style="background:var(--night-deep);padding:26px 24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline;border-top:1px solid var(--line)">
+            <span style="font-size:15px;font-weight:600;color:var(--bone)">Footer · Night deep</span>
+            <span style="font-size:13px;color:var(--bone-dim)">Darkest surface on the site, registry line at the base</span>
+          </div>
+        </div>
+        <p class="note" style="margin-top:16px;color:var(--bone-dim)">
+          Two navy bands never touch. If a layout puts them next to each other,
+          one of them is the wrong ground.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- §07 Components                                                    -->
+<!-- ================================================================ -->
+<section class="band" id="components">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg><span class="sec-no">07</span> Components</p>
+      <h2 class="sec">Live parts, drawn to spec</h2>
+      <p class="lead">
+        Everything below is rendered with the real values, not a screenshot.
+        Hover the buttons to see the arrow travel and the colour transition
+        that every interactive element in the system shares.
+      </p>
+    </div>
+
+    <div class="stack-lg">
+      <div>
+        <h3 class="sub" style="margin-bottom:18px">Buttons</h3>
+        <div class="grid g2">
+          <div class="comp">
+            <div class="demo on-light">
+              <a class="btn lime" href="#components">Book a discovery call <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <a class="btn dark" href="#components">See our work <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+            <div class="cap"><b>On light.</b> Emerald primary with Night text, hovering to #10b981. Navy secondary, which inverts to emerald on hover.</div>
+          </div>
+          <div class="comp">
+            <div class="demo on-dark">
+              <a class="btn lime" href="#components">Book a workshop <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <a class="btn ghost" href="#components">Get in touch</a>
+            </div>
+            <div class="cap"><b>On dark.</b> The same emerald primary. The outlined variant carries a 1.5px white border at 60% and fills emerald on hover, which is the header's call to action before scroll.</div>
+          </div>
+        </div>
+        <dl class="spec" style="margin-top:26px">
+          <div class="spec-row"><dt>Geometry</dt><dd>2px radius, 28px horizontal padding, 16px vertical, 15px semibold. The hero button runs slightly larger at 30px / 15.5px.</dd></div>
+          <div class="spec-row"><dt>Arrow</dt><dd>A 16px right arrow, 1.6px stroke, round caps. It translates 4px on hover over 300ms. Present on forward actions, absent on dismissive ones.</dd></div>
+          <div class="spec-row"><dt>Variants</dt><dd><code class="tok">lime</code> primary · <code class="tok">dark</code> secondary on light · <code class="tok">light</code> secondary on dark · <code class="tok">outline</code> tertiary, inheriting the surrounding colour.</dd></div>
+          <div class="spec-row"><dt>Never</dt><dd>Two primaries in one group, a full-width button on desktop, or an emerald button on an emerald surface.</dd></div>
+        </dl>
+      </div>
+
+      <div>
+        <h3 class="sub" style="margin-bottom:18px">Labels, links and cards</h3>
+        <div class="grid g3">
+          <div class="comp">
+            <div class="demo on-light" style="flex-direction:column;align-items:flex-start;gap:18px">
+              <span class="label"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg> Capabilities</span>
+              <span class="micro" style="color:var(--ink-mute)">Trusted by teams shipping AI</span>
+            </div>
+            <div class="cap"><b>Eyebrow and micro label.</b> 13px at 0.14em with the plus marker; 11px at 0.18em without it, for strips and metadata.</div>
+          </div>
+          <div class="comp">
+            <div class="demo on-light" style="flex-direction:column;align-items:flex-start;gap:18px">
+              <a class="demo-link" href="#components">Read the case study</a>
+              <span style="display:flex;gap:22px;background:var(--night);padding:12px 16px;border-radius:2px">
+                <a class="demo-nav" href="#components">Services</a>
+                <a class="demo-nav idle" href="#components">Insights</a>
+              </span>
+            </div>
+            <div class="cap"><b>Links.</b> Inline links underline in Emerald deep at 4px offset. Active nav items underline in Emerald soft at 1.5px, 8px below the baseline.</div>
+          </div>
+          <div class="comp">
+            <div class="demo on-light" style="flex-direction:column;align-items:stretch;gap:0;padding:26px">
+              <div class="card" style="background:var(--paper);border-color:var(--cream-line);gap:9px">
+                <span class="micro" style="color:var(--lime-deep);letter-spacing:0.14em">Most popular</span>
+                <h4 style="font-size:19px;font-weight:500;margin:0;letter-spacing:-0.01em">AI Discovery Sprint</h4>
+                <p style="font-size:14px;line-height:1.6;color:var(--ink-soft);margin:0">2 weeks, fixed scope. One use case taken deep.</p>
+              </div>
+            </div>
+            <div class="cap"><b>Card.</b> 1px hairline, 2px radius, no shadow, no accent rail. A featured card is marked with an emerald label, not a coloured border.</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="sub" style="margin-bottom:18px">Structural devices</h3>
+        <dl class="spec">
+          <div class="spec-row"><dt>Numbered lists</dt><dd>01, 02, 03 in the micro label style. Used only where order is real: process steps, the capability list, the workshop path. Never as decoration on an unordered grid.</dd></div>
+          <div class="spec-row"><dt>Status dot</dt><dd>8px emerald circle, pulsing between 100% and 35% opacity over 2.4s. It signals live presence. One per page.</dd></div>
+          <div class="spec-row"><dt>Marquee</dt><dd>A 38s linear loop for logo strips, 60s for the slower variant, masked to transparent at both edges over 8%.</dd></div>
+          <div class="spec-row"><dt>Focus</dt><dd>Every interactive element keeps a visible focus ring. Emerald bright, 2px, offset 3px.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- §08 Motion                                                        -->
+<!-- ================================================================ -->
+<section class="band is-paper" id="motion">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg><span class="sec-no">08</span> Motion</p>
+      <h2 class="sec">One curve, four durations</h2>
+      <p class="lead">
+        Everything that moves uses the same easing: a fast start that settles
+        long and softly. Content arrives by rising 28px while it fades in.
+        Nothing bounces, nothing springs, nothing loops for attention.
+      </p>
+    </div>
+
+    <div class="stack-lg">
+      <div class="curve">
+        <svg viewBox="0 0 100 100" aria-label="Easing curve: cubic-bezier 0.16, 1, 0.3, 1" role="img">
+          <rect x="0.5" y="0.5" width="99" height="99" fill="none" stroke="var(--cream-line)"></rect>
+          <path d="M0 100 L100 100 M0 100 L0 0" stroke="var(--ink-mute)" stroke-width="0.8" fill="none"></path>
+          <path d="M0 100 C16 0, 30 0, 100 0" fill="none" stroke="var(--lime)" stroke-width="2.2" stroke-linecap="round"></path>
+        </svg>
+        <div class="stack-sm" style="flex:1;min-width:260px">
+          <h3 class="sub">--ease-out-expo</h3>
+          <p class="body"><code class="tok">cubic-bezier(0.16, 1, 0.3, 1)</code></p>
+          <p class="body">
+            It covers most of the distance in the first third of the duration,
+            then eases out for a long time. That is why long durations here do
+            not feel slow: by the time the eye arrives, the element has almost
+            stopped.
+          </p>
+        </div>
+      </div>
+
+      <dl class="spec">
+        <div class="spec-row"><dt>200ms</dt><dd>Micro states: dropdown chevrons, a menu panel appearing under a trigger.</dd></div>
+        <div class="spec-row"><dt>300ms</dt><dd>The default. Every hover colour change and the 4px arrow travel.</dd></div>
+        <div class="spec-row"><dt>500 to 700ms</dt><dd>Panels and overlays: the mega menu slides in over 700ms and back out over 500ms, because leaving should be quicker than arriving.</dd></div>
+        <div class="spec-row"><dt>900ms</dt><dd>Scroll reveals. Opacity 0 to 1 and 28px of vertical travel, fired once when an element is 12% inside the viewport.</dd></div>
+        <div class="spec-row"><dt>50ms</dt><dd>The stagger between siblings in a revealed group. Enough to read as a sequence, short enough that the group still arrives together.</dd></div>
+        <div class="spec-row"><dt>Ambient</dt><dd>The status dot pulses over 2.4s. Logo marquees run 38s or 60s. Nothing else loops.</dd></div>
+        <div class="spec-row"><dt>Scrolling</dt><dd>Lenis drives the page, so native smooth scrolling is switched off to stop the two fighting.</dd></div>
+        <div class="spec-row"><dt>Reduced motion</dt><dd>Under <code class="tok">prefers-reduced-motion</code>, every duration collapses to 0.001ms and reveals render in their final state. This is enforced globally, not per component.</dd></div>
+      </dl>
+
+      <div>
+        <div class="row" style="justify-content:space-between;margin-bottom:18px">
+          <h3 class="sub">The reveal, staggered</h3>
+          <button class="replay" type="button" data-replay>Replay</button>
+        </div>
+        <div class="reveal-demo" data-reveal-group>
+          <div class="rv"><span class="n">01</span><span class="t">Map</span><span class="d">We find where AI creates measurable value, and honestly flag where it will not yet.</span></div>
+          <div class="rv"><span class="n">02</span><span class="t">Prototype</span><span class="d">A working prototype in weeks. Decisions grounded in something real.</span></div>
+          <div class="rv"><span class="n">03</span><span class="t">Build</span><span class="d">Engineered into a reliable system: evaluated, observable, secure.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- §09 Surface                                                       -->
+<!-- ================================================================ -->
+<section class="band" id="surface">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg><span class="sec-no">09</span> Surface and texture</p>
+      <h2 class="sec">Four atmospheres, all emerald</h2>
+      <p class="lead">
+        Dark bands are never flat. Four treatments give them depth, and all
+        four are built from the same emerald at low alpha, which is why the
+        navy never picks up a competing cast.
+      </p>
+    </div>
+
+    <div class="grid g4">
+      <div class="tex">
+        <div class="stage"><div class="blueprint"></div></div>
+        <div class="cap">
+          <b>Blueprint grid</b>
+          <span>56px squares, emerald at 7%. Marks a band as structural: hero, contact, promo cards.</span>
+        </div>
+      </div>
+      <div class="tex">
+        <div class="stage glow-stage"></div>
+        <div class="cap">
+          <b>Emerald glow</b>
+          <span>A radial gradient from 22% to zero at 65%, anchored off the top right corner.</span>
+        </div>
+      </div>
+      <div class="tex">
+        <div class="stage grain-stage"></div>
+        <div class="cap">
+          <b>Film grain</b>
+          <span>Fractal noise at 0.85, two octaves, 50% opacity, overlay blend. Used sparingly on rich sections.</span>
+        </div>
+      </div>
+      <div class="tex">
+        <div class="stage sel-stage"><span>selected text</span></div>
+        <div class="cap">
+          <b>Selection</b>
+          <span>Emerald ground with white text. A small detail, and one of the few places the brand shows up unprompted.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:44px">
+      <div class="stack-sm">
+        <h3 class="sub">The animated hero gradient</h3>
+        <p class="body">
+          The hero runs a WebGL gradient over an opaque Night base, drifting
+          between <code class="tok">#0a1929</code> and <code class="tok">#061220</code>.
+          It is atmosphere, not content: it must never pull attention off the
+          headline, and it is replaced wholesale when background media is set,
+          because an opaque canvas would cover the media underneath.
+        </p>
+      </div>
+      <div class="stack-sm">
+        <h3 class="sub">Photography and media</h3>
+        <p class="body">
+          Where a hero carries an image or video, two overlays go on top: a
+          105 degree navy gradient from 94% to 60% opacity, then a vertical
+          fade from Night to transparent. The rule is simple: the headline has
+          to survive the picture, so the picture is always dimmed to serve it.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- §10 Applications                                                  -->
+<!-- ================================================================ -->
+<section class="band is-paper" id="apps">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg><span class="sec-no">10</span> Applications</p>
+      <h2 class="sec">Where the brand leaves the site</h2>
+      <p class="lead">
+        The identity has to survive a link preview, a partner logo strip and a
+        legal footer. These are the three places it most often gets diluted, so
+        each has a fixed specification.
+      </p>
+    </div>
+
+    <div class="stack-lg">
+      <div class="grid g2">
+        <div class="stack-sm">
+          <h3 class="sub">Open Graph card</h3>
+          <div class="og">
+            <span class="mk"><svg viewBox="0 0 203 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pluscode"><path d="M92.9627 7.9209H89.4575V29.4015H92.9627V7.9209Z" fill="currentColor"/><path d="M126.414 21.1772C125.519 20.8501 124.533 20.5945 123.455 20.4095L122.387 20.2256C121.574 20.0823 120.927 19.8674 120.45 19.5808C119.972 19.2942 119.733 18.8441 119.733 18.2304C119.733 17.6572 119.977 17.2131 120.465 16.8954C120.954 16.5778 121.625 16.4202 122.478 16.4202C123.332 16.4202 124.085 16.6101 124.675 16.9874C125.265 17.3659 125.651 18.0154 125.835 18.936L128.763 18.1074C128.438 16.7987 127.731 15.7599 126.643 14.9934C125.555 14.2256 124.167 13.8423 122.479 13.8423C120.791 13.8423 119.328 14.2363 118.27 15.0232C117.213 15.8113 116.684 16.9205 116.684 18.3534C116.684 19.3145 116.928 20.1026 117.417 20.7163C117.905 21.3301 118.566 21.8113 119.399 22.1587C120.232 22.5074 121.158 22.7725 122.175 22.9575L123.213 23.1414C124.21 23.3253 124.963 23.5617 125.471 23.8471C125.979 24.1337 126.234 24.5838 126.234 25.1975C126.234 25.8113 125.964 26.3128 125.425 26.7008C124.885 27.0901 124.117 27.2835 123.122 27.2835C122.451 27.2835 121.825 27.1808 121.246 26.9766C120.666 26.7725 120.183 26.425 119.797 25.9331C119.411 25.4423 119.137 24.7772 118.973 23.9378L116.045 24.6435C116.33 26.3832 117.101 27.6811 118.363 28.5408C119.623 29.4005 121.21 29.8292 123.122 29.8292C125.033 29.8292 126.517 29.4089 127.637 28.5707C128.755 27.7325 129.314 26.5551 129.314 25.0411C129.314 24.0178 129.054 23.1999 128.535 22.5862C128.017 21.9725 127.31 21.502 126.415 21.1748L126.414 21.1772Z" fill="currentColor"/><path d="M157.271 13.8291C152.876 13.8291 149.314 17.4136 149.314 21.8339C149.314 26.2542 152.877 29.8387 157.271 29.8387C161.666 29.8387 165.229 26.2542 165.229 21.8339C165.229 17.4136 161.666 13.8291 157.271 13.8291ZM157.271 26.7378C154.583 26.7378 152.396 24.5384 152.396 21.8339C152.396 19.1294 154.583 16.93 157.271 16.93C159.96 16.93 162.146 19.1294 162.146 21.8339C162.146 24.5384 159.96 26.7378 157.271 26.7378Z" fill="currentColor"/><path d="M77.9825 13.8291C76.17 13.8291 74.5046 14.4452 73.1669 15.4721V14.2733H70.0249V35.539H73.1669V28.1969C74.5046 29.2226 76.17 29.8399 77.9825 29.8399C82.3779 29.8399 85.9401 26.2554 85.9401 21.8351C85.9401 17.4148 82.3767 13.8303 77.9825 13.8303V13.8291ZM77.9825 26.7593C75.5575 26.7593 73.5527 24.9718 73.1669 22.6411V21.0267C73.5527 18.696 75.5575 16.9085 77.9825 16.9085C80.6829 16.9085 82.8788 19.1187 82.8788 21.8339C82.8788 24.5491 80.6817 26.7593 77.9825 26.7593Z" fill="currentColor"/><path d="M181.089 15.4901C179.752 14.4644 178.086 13.8471 176.274 13.8471C171.878 13.8471 168.316 17.4316 168.316 21.8519C168.316 26.2721 171.88 29.8566 176.274 29.8566C178.086 29.8566 179.752 29.2405 181.089 28.2136V29.4124H184.231V8.14795H181.089V15.4901ZM176.274 26.7784C173.573 26.7784 171.377 24.5683 171.377 21.853C171.377 19.1378 173.573 16.9277 176.274 16.9277C178.699 16.9277 180.704 18.7151 181.089 21.0459V22.6602C180.704 24.991 178.699 26.7784 176.274 26.7784Z" fill="currentColor"/><path d="M140.055 16.928C141.519 16.928 142.832 17.5811 143.729 18.608L146.936 17.8462C145.559 15.4581 142.997 13.8486 140.054 13.8486C135.659 13.8486 132.096 17.4331 132.096 21.8534C132.096 26.2737 135.66 29.8581 140.054 29.8581C142.912 29.8581 145.411 28.3369 146.814 26.0611C145.798 25.7208 144.77 25.3769 143.775 25.045C142.877 26.1041 141.542 26.7787 140.054 26.7787C137.354 26.7787 135.158 24.5698 135.158 21.8534C135.158 19.1369 137.355 16.928 140.055 16.928Z" fill="currentColor"/><path d="M202.279 26.0765C201.265 25.735 200.238 25.3887 199.243 25.0544C198.342 26.1111 197.008 26.7833 195.518 26.7809C193.081 26.7774 191.064 24.972 190.696 22.6233L202.307 22.6436H202.96C202.984 22.3881 203 22.1302 203 21.8675C203 21.3302 202.944 20.8072 202.844 20.2997H202.848C202.846 20.2866 202.841 20.2735 202.838 20.2592C202.836 20.2448 202.835 20.2305 202.831 20.2162H202.828C202.076 16.5875 199.371 13.8556 195.54 13.8496C191.144 13.8424 187.576 17.4197 187.568 21.8412C187.561 26.2627 191.117 29.852 195.512 29.8603C198.371 29.8651 200.872 28.3487 202.278 26.0753L202.279 26.0765ZM195.535 16.9314C197.657 16.935 199.458 18.3081 200.132 20.2138C197.509 20.209 193.533 20.203 190.922 20.1983C191.602 18.295 193.411 16.9278 195.535 16.9314Z" fill="currentColor"/><path d="M108.55 21.8342H108.543C108.543 24.5506 107.058 26.7596 104.359 26.7596C101.66 26.7596 100.209 24.5816 100.177 21.8927V14.2593H97.1123V21.8342C97.1123 26.2557 99.9634 29.839 104.358 29.839C106.209 29.839 107.197 29.1966 108.55 28.1303V29.4019H112.21V14.2604H108.55V21.8354V21.8342Z" fill="currentColor"/><path d="M13.4593 35.5391C20.8926 35.5391 26.9185 29.4775 26.9185 22C26.9185 14.5226 20.8926 8.46094 13.4593 8.46094C6.02592 8.46094 0 14.5226 0 22C0 29.4775 6.02592 35.5391 13.4593 35.5391Z" fill="currentColor"/><path d="M35.3405 0C29.3355 0 23.8968 2.43463 19.9453 6.37612C21.943 7.21552 23.7781 8.44776 25.3556 10.0334C28.5331 13.2299 30.2828 17.4794 30.2828 22C30.2828 26.5206 28.5331 30.7701 25.3556 33.9666C23.7781 35.5534 21.943 36.7845 19.9453 37.6239C23.8979 41.5654 29.3367 44 35.3405 44C47.4193 44 57.2108 34.1504 57.2108 22C57.2108 9.84955 47.4193 0 35.3405 0Z" fill="currentColor"/></svg></span>
+            <span class="sp"></span>
+            <p class="hl">AI consulting that puts artificial intelligence to work. <em>For real.</em></p>
+          </div>
+          <p class="note">
+            1200 × 630, generated per locale from the live hero copy so a link
+            preview and the page it opens never disagree. Night ground, emerald
+            glow anchored at 88% 0%, white wordmark top left, headline at the
+            base with the emphasised phrase in Emerald soft. Nothing else: no
+            strapline, no eyebrow, no button. At preview size a second line of
+            small type only competes with the sentence that has to land.
+          </p>
+        </div>
+
+        <div class="stack-sm">
+          <h3 class="sub">Partner and client marks</h3>
+          <div style="background:var(--night);border:1px solid var(--night-line);border-radius:2px;padding:34px 26px">
+            <p class="micro" style="color:var(--bone);margin-bottom:20px">Trusted by teams shipping AI to production</p>
+            <div class="logos-strip">
+              <span class="mark-slot">Client mark</span>
+              <span class="mark-slot">Client mark</span>
+              <span class="mark-slot">Client mark</span>
+            </div>
+          </div>
+          <p class="note">
+            Slots shown above; real artwork is supplied per engagement. Client
+            logos are flattened to pure white and set at 60% opacity,
+            rising to 90% on hover. Every mark gets the same treatment
+            regardless of its own brand colours, so the strip reads as one row
+            rather than a collection. Height 24 to 28px, aligned on the optical
+            centre, not the bounding box.
+          </p>
+          <p class="note">
+            If a client has not agreed to be named, they do not appear. The
+            strip is proof, so it has to be true.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="sub" style="margin-bottom:18px">Footer</h3>
+        <div style="background:var(--night-deep);border:1px solid var(--night-line);border-radius:2px;padding:34px 28px;display:flex;flex-direction:column;gap:22px">
+          <span class="mk-footer"><svg viewBox="0 0 203 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pluscode"><path d="M92.9627 7.9209H89.4575V29.4015H92.9627V7.9209Z" fill="currentColor"/><path d="M126.414 21.1772C125.519 20.8501 124.533 20.5945 123.455 20.4095L122.387 20.2256C121.574 20.0823 120.927 19.8674 120.45 19.5808C119.972 19.2942 119.733 18.8441 119.733 18.2304C119.733 17.6572 119.977 17.2131 120.465 16.8954C120.954 16.5778 121.625 16.4202 122.478 16.4202C123.332 16.4202 124.085 16.6101 124.675 16.9874C125.265 17.3659 125.651 18.0154 125.835 18.936L128.763 18.1074C128.438 16.7987 127.731 15.7599 126.643 14.9934C125.555 14.2256 124.167 13.8423 122.479 13.8423C120.791 13.8423 119.328 14.2363 118.27 15.0232C117.213 15.8113 116.684 16.9205 116.684 18.3534C116.684 19.3145 116.928 20.1026 117.417 20.7163C117.905 21.3301 118.566 21.8113 119.399 22.1587C120.232 22.5074 121.158 22.7725 122.175 22.9575L123.213 23.1414C124.21 23.3253 124.963 23.5617 125.471 23.8471C125.979 24.1337 126.234 24.5838 126.234 25.1975C126.234 25.8113 125.964 26.3128 125.425 26.7008C124.885 27.0901 124.117 27.2835 123.122 27.2835C122.451 27.2835 121.825 27.1808 121.246 26.9766C120.666 26.7725 120.183 26.425 119.797 25.9331C119.411 25.4423 119.137 24.7772 118.973 23.9378L116.045 24.6435C116.33 26.3832 117.101 27.6811 118.363 28.5408C119.623 29.4005 121.21 29.8292 123.122 29.8292C125.033 29.8292 126.517 29.4089 127.637 28.5707C128.755 27.7325 129.314 26.5551 129.314 25.0411C129.314 24.0178 129.054 23.1999 128.535 22.5862C128.017 21.9725 127.31 21.502 126.415 21.1748L126.414 21.1772Z" fill="currentColor"/><path d="M157.271 13.8291C152.876 13.8291 149.314 17.4136 149.314 21.8339C149.314 26.2542 152.877 29.8387 157.271 29.8387C161.666 29.8387 165.229 26.2542 165.229 21.8339C165.229 17.4136 161.666 13.8291 157.271 13.8291ZM157.271 26.7378C154.583 26.7378 152.396 24.5384 152.396 21.8339C152.396 19.1294 154.583 16.93 157.271 16.93C159.96 16.93 162.146 19.1294 162.146 21.8339C162.146 24.5384 159.96 26.7378 157.271 26.7378Z" fill="currentColor"/><path d="M77.9825 13.8291C76.17 13.8291 74.5046 14.4452 73.1669 15.4721V14.2733H70.0249V35.539H73.1669V28.1969C74.5046 29.2226 76.17 29.8399 77.9825 29.8399C82.3779 29.8399 85.9401 26.2554 85.9401 21.8351C85.9401 17.4148 82.3767 13.8303 77.9825 13.8303V13.8291ZM77.9825 26.7593C75.5575 26.7593 73.5527 24.9718 73.1669 22.6411V21.0267C73.5527 18.696 75.5575 16.9085 77.9825 16.9085C80.6829 16.9085 82.8788 19.1187 82.8788 21.8339C82.8788 24.5491 80.6817 26.7593 77.9825 26.7593Z" fill="currentColor"/><path d="M181.089 15.4901C179.752 14.4644 178.086 13.8471 176.274 13.8471C171.878 13.8471 168.316 17.4316 168.316 21.8519C168.316 26.2721 171.88 29.8566 176.274 29.8566C178.086 29.8566 179.752 29.2405 181.089 28.2136V29.4124H184.231V8.14795H181.089V15.4901ZM176.274 26.7784C173.573 26.7784 171.377 24.5683 171.377 21.853C171.377 19.1378 173.573 16.9277 176.274 16.9277C178.699 16.9277 180.704 18.7151 181.089 21.0459V22.6602C180.704 24.991 178.699 26.7784 176.274 26.7784Z" fill="currentColor"/><path d="M140.055 16.928C141.519 16.928 142.832 17.5811 143.729 18.608L146.936 17.8462C145.559 15.4581 142.997 13.8486 140.054 13.8486C135.659 13.8486 132.096 17.4331 132.096 21.8534C132.096 26.2737 135.66 29.8581 140.054 29.8581C142.912 29.8581 145.411 28.3369 146.814 26.0611C145.798 25.7208 144.77 25.3769 143.775 25.045C142.877 26.1041 141.542 26.7787 140.054 26.7787C137.354 26.7787 135.158 24.5698 135.158 21.8534C135.158 19.1369 137.355 16.928 140.055 16.928Z" fill="currentColor"/><path d="M202.279 26.0765C201.265 25.735 200.238 25.3887 199.243 25.0544C198.342 26.1111 197.008 26.7833 195.518 26.7809C193.081 26.7774 191.064 24.972 190.696 22.6233L202.307 22.6436H202.96C202.984 22.3881 203 22.1302 203 21.8675C203 21.3302 202.944 20.8072 202.844 20.2997H202.848C202.846 20.2866 202.841 20.2735 202.838 20.2592C202.836 20.2448 202.835 20.2305 202.831 20.2162H202.828C202.076 16.5875 199.371 13.8556 195.54 13.8496C191.144 13.8424 187.576 17.4197 187.568 21.8412C187.561 26.2627 191.117 29.852 195.512 29.8603C198.371 29.8651 200.872 28.3487 202.278 26.0753L202.279 26.0765ZM195.535 16.9314C197.657 16.935 199.458 18.3081 200.132 20.2138C197.509 20.209 193.533 20.203 190.922 20.1983C191.602 18.295 193.411 16.9278 195.535 16.9314Z" fill="currentColor"/><path d="M108.55 21.8342H108.543C108.543 24.5506 107.058 26.7596 104.359 26.7596C101.66 26.7596 100.209 24.5816 100.177 21.8927V14.2593H97.1123V21.8342C97.1123 26.2557 99.9634 29.839 104.358 29.839C106.209 29.839 107.197 29.1966 108.55 28.1303V29.4019H112.21V14.2604H108.55V21.8354V21.8342Z" fill="currentColor"/><path d="M13.4593 35.5391C20.8926 35.5391 26.9185 29.4775 26.9185 22C26.9185 14.5226 20.8926 8.46094 13.4593 8.46094C6.02592 8.46094 0 14.5226 0 22C0 29.4775 6.02592 35.5391 13.4593 35.5391Z" fill="currentColor"/><path d="M35.3405 0C29.3355 0 23.8968 2.43463 19.9453 6.37612C21.943 7.21552 23.7781 8.44776 25.3556 10.0334C28.5331 13.2299 30.2828 17.4794 30.2828 22C30.2828 26.5206 28.5331 30.7701 25.3556 33.9666C23.7781 35.5534 21.943 36.7845 19.9453 37.6239C23.8979 41.5654 29.3367 44 35.3405 44C47.4193 44 57.2108 34.1504 57.2108 22C57.2108 9.84955 47.4193 0 35.3405 0Z" fill="currentColor"/></svg></span>
+          <p style="font-size:15px;line-height:1.7;color:var(--bone-soft);margin:0;max-width:42ch">
+            Software and AI systems that create measurable business impact.
+          </p>
+          <hr class="rule" style="background:rgba(255,255,255,0.08)">
+          <div style="display:flex;flex-wrap:wrap;gap:8px 26px;font-size:13px;color:var(--bone-dim)">
+            <span>© 2026 Pluscode Sp. z o.o. All rights reserved.</span>
+            <span>KRS 0000811470 · VAT-ID 7812002984 · REGON 384741150</span>
+          </div>
+        </div>
+        <p class="note" style="margin-top:16px">
+          Night deep is the only place this value is used, which is what makes
+          the footer read as the floor of the page. The registry line is
+          non-negotiable and always sits last.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- §11 Tokens                                                        -->
+<!-- ================================================================ -->
+<section class="band is-night" id="tokens">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg><span class="sec-no">11</span> Token reference</p>
+      <h2 class="sec">The system, in one block</h2>
+      <p class="lead" style="color:var(--bone-soft)">
+        These are the live values from the production stylesheet. If this book
+        and the code ever disagree, the code is right and this page needs
+        updating.
+      </p>
+    </div>
+
+    <div class="stack">
+      <div class="row"><button class="copy-all" type="button" data-copy-tokens>Copy the token block</button></div>
+      <pre class="codeblock"><code id="tokens-src">@theme {
+  <span class="c">/* Surfaces */</span>
+  <span class="p">--color-night</span>: <span class="v">#0a1929</span>;
+  <span class="p">--color-night-soft</span>: <span class="v">#0f2237</span>;
+  <span class="p">--color-night-deep</span>: <span class="v">#061220</span>;
+  <span class="p">--color-night-line</span>: <span class="v">#22303e</span>;
+  <span class="p">--color-cream</span>: <span class="v">#f7f8fa</span>;
+  <span class="p">--color-cream-dim</span>: <span class="v">#eef0f4</span>;
+  <span class="p">--color-cream-line</span>: <span class="v">#e2e6ec</span>;
+
+  <span class="c">/* Ink + accent */</span>
+  <span class="p">--color-ink</span>: <span class="v">#0a1929</span>;
+  <span class="p">--color-ink-soft</span>: <span class="v">#4a5a6d</span>;
+  <span class="p">--color-ink-mute</span>: <span class="v">#8093a8</span>;
+  <span class="p">--color-bone</span>: <span class="v">#ffffff</span>;
+  <span class="p">--color-bone-soft</span>: <span class="v">#b9c6d8</span>;
+  <span class="p">--color-bone-dim</span>: <span class="v">#8fa3bd</span>;
+  <span class="p">--color-lime</span>: <span class="v">#059669</span>;
+  <span class="p">--color-lime-deep</span>: <span class="v">#047857</span>;
+  <span class="p">--color-lime-soft</span>: <span class="v">#34d399</span>;
+  <span class="p">--color-lime-bright</span>: <span class="v">#10b981</span>;
+
+  <span class="c">/* Type — one family in every slot */</span>
+  <span class="p">--font-sans</span>: <span class="v">var(--font-figtree), ui-sans-serif, system-ui, sans-serif</span>;
+  <span class="p">--font-mono</span>: <span class="v">var(--font-figtree), ui-sans-serif, system-ui, sans-serif</span>;
+  <span class="p">--font-serif</span>: <span class="v">var(--font-figtree), ui-sans-serif, system-ui, sans-serif</span>;
+
+  <span class="c">/* Motion */</span>
+  <span class="p">--ease-out-expo</span>: <span class="v">cubic-bezier(0.16, 1, 0.3, 1)</span>;
+  <span class="p">--animate-marquee</span>: <span class="v">marquee 38s linear infinite</span>;
+  <span class="p">--animate-marquee-slow</span>: <span class="v">marquee 60s linear infinite</span>;
+  <span class="p">--animate-pulse-dot</span>: <span class="v">pulse-dot 2.4s ease-in-out infinite</span>;
+}</code></pre>
+
+      <div class="colophon" style="margin-top:22px">
+        <div class="stack-sm">
+          <h3 class="sub">A note on the token names</h3>
+          <p class="body" style="color:var(--bone-soft)">
+            The accent token is called <code class="tok" style="background:var(--night-soft);border-color:var(--night-line);color:var(--bone)">--color-lime</code>
+            and holds an emerald. The name is a fossil from an earlier palette
+            and it stays, because renaming it would touch several hundred class
+            names across the site for no visual gain. Read "lime" as "the brand
+            accent" and the system is consistent.
+          </p>
+          <p class="body" style="color:var(--bone-soft)">
+            The same applies to <code class="tok" style="background:var(--night-soft);border-color:var(--night-line);color:var(--bone)">--font-serif</code>
+            and <code class="tok" style="background:var(--night-soft);border-color:var(--night-line);color:var(--bone)">--font-mono</code>,
+            which both resolve to Figtree. The slots are kept open so a future
+            face can be introduced in one place.
+          </p>
+        </div>
+        <div class="stack-sm">
+          <h3 class="sub">Where things live</h3>
+          <dl class="spec">
+            <div class="spec-row"><dt>Tokens</dt><dd>app/(frontend)/[lang]/globals.css</dd></div>
+            <div class="spec-row"><dt>Type loading</dt><dd>app/(frontend)/[lang]/fonts.ts</dd></div>
+            <div class="spec-row"><dt>Primitives</dt><dd>components/ui.tsx</dd></div>
+            <div class="spec-row"><dt>Motion</dt><dd>components/motion.tsx</dd></div>
+            <div class="spec-row"><dt>Copy</dt><dd>dictionaries/{en,pl,de}.json</dd></div>
+            <div class="spec-row"><dt>Logos</dt><dd>public/assets/logo/</dd></div>
+            <div class="spec-row"><dt>OG cards</dt><dd>scripts/generate-og.tsx, run with pnpm generate:og</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="band is-deep">
+  <div class="wrap" style="padding-top:44px;padding-bottom:44px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center">
+    <span class="mk-colophon"><svg viewBox="0 0 203 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M92.9627 7.9209H89.4575V29.4015H92.9627V7.9209Z" fill="currentColor"/><path d="M126.414 21.1772C125.519 20.8501 124.533 20.5945 123.455 20.4095L122.387 20.2256C121.574 20.0823 120.927 19.8674 120.45 19.5808C119.972 19.2942 119.733 18.8441 119.733 18.2304C119.733 17.6572 119.977 17.2131 120.465 16.8954C120.954 16.5778 121.625 16.4202 122.478 16.4202C123.332 16.4202 124.085 16.6101 124.675 16.9874C125.265 17.3659 125.651 18.0154 125.835 18.936L128.763 18.1074C128.438 16.7987 127.731 15.7599 126.643 14.9934C125.555 14.2256 124.167 13.8423 122.479 13.8423C120.791 13.8423 119.328 14.2363 118.27 15.0232C117.213 15.8113 116.684 16.9205 116.684 18.3534C116.684 19.3145 116.928 20.1026 117.417 20.7163C117.905 21.3301 118.566 21.8113 119.399 22.1587C120.232 22.5074 121.158 22.7725 122.175 22.9575L123.213 23.1414C124.21 23.3253 124.963 23.5617 125.471 23.8471C125.979 24.1337 126.234 24.5838 126.234 25.1975C126.234 25.8113 125.964 26.3128 125.425 26.7008C124.885 27.0901 124.117 27.2835 123.122 27.2835C122.451 27.2835 121.825 27.1808 121.246 26.9766C120.666 26.7725 120.183 26.425 119.797 25.9331C119.411 25.4423 119.137 24.7772 118.973 23.9378L116.045 24.6435C116.33 26.3832 117.101 27.6811 118.363 28.5408C119.623 29.4005 121.21 29.8292 123.122 29.8292C125.033 29.8292 126.517 29.4089 127.637 28.5707C128.755 27.7325 129.314 26.5551 129.314 25.0411C129.314 24.0178 129.054 23.1999 128.535 22.5862C128.017 21.9725 127.31 21.502 126.415 21.1748L126.414 21.1772Z" fill="currentColor"/><path d="M157.271 13.8291C152.876 13.8291 149.314 17.4136 149.314 21.8339C149.314 26.2542 152.877 29.8387 157.271 29.8387C161.666 29.8387 165.229 26.2542 165.229 21.8339C165.229 17.4136 161.666 13.8291 157.271 13.8291ZM157.271 26.7378C154.583 26.7378 152.396 24.5384 152.396 21.8339C152.396 19.1294 154.583 16.93 157.271 16.93C159.96 16.93 162.146 19.1294 162.146 21.8339C162.146 24.5384 159.96 26.7378 157.271 26.7378Z" fill="currentColor"/><path d="M77.9825 13.8291C76.17 13.8291 74.5046 14.4452 73.1669 15.4721V14.2733H70.0249V35.539H73.1669V28.1969C74.5046 29.2226 76.17 29.8399 77.9825 29.8399C82.3779 29.8399 85.9401 26.2554 85.9401 21.8351C85.9401 17.4148 82.3767 13.8303 77.9825 13.8303V13.8291ZM77.9825 26.7593C75.5575 26.7593 73.5527 24.9718 73.1669 22.6411V21.0267C73.5527 18.696 75.5575 16.9085 77.9825 16.9085C80.6829 16.9085 82.8788 19.1187 82.8788 21.8339C82.8788 24.5491 80.6817 26.7593 77.9825 26.7593Z" fill="currentColor"/><path d="M181.089 15.4901C179.752 14.4644 178.086 13.8471 176.274 13.8471C171.878 13.8471 168.316 17.4316 168.316 21.8519C168.316 26.2721 171.88 29.8566 176.274 29.8566C178.086 29.8566 179.752 29.2405 181.089 28.2136V29.4124H184.231V8.14795H181.089V15.4901ZM176.274 26.7784C173.573 26.7784 171.377 24.5683 171.377 21.853C171.377 19.1378 173.573 16.9277 176.274 16.9277C178.699 16.9277 180.704 18.7151 181.089 21.0459V22.6602C180.704 24.991 178.699 26.7784 176.274 26.7784Z" fill="currentColor"/><path d="M140.055 16.928C141.519 16.928 142.832 17.5811 143.729 18.608L146.936 17.8462C145.559 15.4581 142.997 13.8486 140.054 13.8486C135.659 13.8486 132.096 17.4331 132.096 21.8534C132.096 26.2737 135.66 29.8581 140.054 29.8581C142.912 29.8581 145.411 28.3369 146.814 26.0611C145.798 25.7208 144.77 25.3769 143.775 25.045C142.877 26.1041 141.542 26.7787 140.054 26.7787C137.354 26.7787 135.158 24.5698 135.158 21.8534C135.158 19.1369 137.355 16.928 140.055 16.928Z" fill="currentColor"/><path d="M202.279 26.0765C201.265 25.735 200.238 25.3887 199.243 25.0544C198.342 26.1111 197.008 26.7833 195.518 26.7809C193.081 26.7774 191.064 24.972 190.696 22.6233L202.307 22.6436H202.96C202.984 22.3881 203 22.1302 203 21.8675C203 21.3302 202.944 20.8072 202.844 20.2997H202.848C202.846 20.2866 202.841 20.2735 202.838 20.2592C202.836 20.2448 202.835 20.2305 202.831 20.2162H202.828C202.076 16.5875 199.371 13.8556 195.54 13.8496C191.144 13.8424 187.576 17.4197 187.568 21.8412C187.561 26.2627 191.117 29.852 195.512 29.8603C198.371 29.8651 200.872 28.3487 202.278 26.0753L202.279 26.0765ZM195.535 16.9314C197.657 16.935 199.458 18.3081 200.132 20.2138C197.509 20.209 193.533 20.203 190.922 20.1983C191.602 18.295 193.411 16.9278 195.535 16.9314Z" fill="currentColor"/><path d="M108.55 21.8342H108.543C108.543 24.5506 107.058 26.7596 104.359 26.7596C101.66 26.7596 100.209 24.5816 100.177 21.8927V14.2593H97.1123V21.8342C97.1123 26.2557 99.9634 29.839 104.358 29.839C106.209 29.839 107.197 29.1966 108.55 28.1303V29.4019H112.21V14.2604H108.55V21.8354V21.8342Z" fill="currentColor"/><path d="M13.4593 35.5391C20.8926 35.5391 26.9185 29.4775 26.9185 22C26.9185 14.5226 20.8926 8.46094 13.4593 8.46094C6.02592 8.46094 0 14.5226 0 22C0 29.4775 6.02592 35.5391 13.4593 35.5391Z" fill="currentColor"/><path d="M35.3405 0C29.3355 0 23.8968 2.43463 19.9453 6.37612C21.943 7.21552 23.7781 8.44776 25.3556 10.0334C28.5331 13.2299 30.2828 17.4794 30.2828 22C30.2828 26.5206 28.5331 30.7701 25.3556 33.9666C23.7781 35.5534 21.943 36.7845 19.9453 37.6239C23.8979 41.5654 29.3367 44 35.3405 44C47.4193 44 57.2108 34.1504 57.2108 22C57.2108 9.84955 47.4193 0 35.3405 0Z" fill="currentColor"/></svg></span>
+    <p style="font-size:13px;color:var(--bone-dim);margin:0">
+      Brand book v1.0 · August 2026 · Pluscode Sp. z o.o., Poznań
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  /* Copy a hex from any swatch, and the whole token block from §11. */
+  function flash(el) {
+    el.setAttribute("data-copied", "1");
+    setTimeout(function () { el.removeAttribute("data-copied"); }, 1300);
+  }
+
+  function copy(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text);
+    }
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+    return Promise.resolve();
+  }
+
+  document.querySelectorAll(".sw").forEach(function (sw) {
+    sw.addEventListener("click", function () {
+      copy(sw.getAttribute("data-hex")).then(function () { flash(sw); });
+    });
+  });
+
+  var tokenBtn = document.querySelector("[data-copy-tokens]");
+  var tokenSrc = document.getElementById("tokens-src");
+  if (tokenBtn && tokenSrc) {
+    tokenBtn.addEventListener("click", function () {
+      copy(tokenSrc.innerText).then(function () {
+        var was = tokenBtn.textContent;
+        tokenBtn.textContent = "Copied";
+        setTimeout(function () { tokenBtn.textContent = was; }, 1300);
+      });
+    });
+  }
+
+  /* Rail: mark the section currently under the reader. */
+  var links = Array.prototype.slice.call(document.querySelectorAll(".rail a"));
+  var byId = {};
+  links.forEach(function (a) { byId[a.getAttribute("href").slice(1)] = a; });
+
+  var sections = links
+    .map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); })
+    .filter(Boolean);
+
+  if ("IntersectionObserver" in window && sections.length) {
+    var visible = new Set();
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) visible.add(e.target.id);
+        else visible.delete(e.target.id);
+      });
+      var current = null;
+      for (var i = 0; i < sections.length; i++) {
+        if (visible.has(sections[i].id)) { current = sections[i].id; break; }
+      }
+      links.forEach(function (a) { a.removeAttribute("aria-current"); });
+      if (current && byId[current]) byId[current].setAttribute("aria-current", "true");
+    }, { rootMargin: "-15% 0px -70% 0px", threshold: 0 });
+    sections.forEach(function (s) { io.observe(s); });
+  }
+
+  /* §08: replay the staggered reveal on demand, and once on first sight. */
+  var group = document.querySelector("[data-reveal-group]");
+  var replay = document.querySelector("[data-replay]");
+
+  function play() {
+    if (!group) return;
+    var cards = group.querySelectorAll(".rv");
+    cards.forEach(function (c) { c.classList.remove("go"); });
+    /* Force a reflow so removing and re-adding the class restarts it. */
+    void group.offsetWidth;
+    cards.forEach(function (c) { c.classList.add("go"); });
+  }
+
+  if (replay) replay.addEventListener("click", play);
+
+  if (group && "IntersectionObserver" in window) {
+    var once = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { play(); once.disconnect(); }
+      });
+    }, { threshold: 0.35 });
+    once.observe(group);
+  } else {
+    play();
+  }
+})();
+</script>
+</body>
+</html>

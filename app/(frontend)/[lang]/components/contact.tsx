@@ -1,5 +1,6 @@
 import { Reveal } from "./motion";
 import LeadForm from "./lead-form";
+import { BandGlow } from "./ui";
 import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 
@@ -24,7 +25,11 @@ export default function Contact({
   const t = dict.contact;
 
   return (
-    <section id="contact" className="relative isolate overflow-hidden bg-night text-bone">
+    <section
+      id="contact"
+      className="relative isolate overflow-hidden border-y border-night-line bg-night text-bone"
+    >
+      <BandGlow />
       <div className="mx-auto grid max-w-[1240px] items-center gap-14 px-5 py-20 sm:px-10 sm:py-[6.875rem] lg:grid-cols-2 lg:gap-[5.625rem]">
         <div>
           {showIntro && (

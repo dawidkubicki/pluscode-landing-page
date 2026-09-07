@@ -1,44 +1,81 @@
 import { Reveal } from "./motion";
-import ServicesList from "./services-list";
+import { CapabilityTabs } from "./services-list";
 import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 
-/** Home "Capabilities" band — numbered practice list, linking into each subpage.
- *  Index-aligned with `services.items` in the dictionaries (AI consulting spine). */
+/** Home capabilities band: five things we take off somebody's desk.
+ *  INDEX-ALIGNED with `services.items` in the dictionaries: entry n is the
+ *  page behind capability n, so reordering one without the other points a
+ *  tab at the wrong route. Forward Deployed Engineers is deliberately absent,
+ *  because it is a way to buy rather than a capability: it closes the
+ *  ways-to-work band instead. Every route below exists on disk. */
 const hrefs = [
-  "/ai-data/consulting", // 01 Process mapping & AI roadmap
-  "/ai-data/machine-learning", // 02 Assistants that answer from your own documents
-  "/ai-data/machine-learning", // 03 Automation with a person in the loop
-  "/ai-data/machine-learning", // 04 Document & paperwork automation
-  "/ai-data/analytics", // 05 Data foundations & forecasting
-  "/ai-data/consulting/ai-governance", // 06 Data governance, risk & privacy
-  "/industries/hr", // 07 Technical hiring & competency checks
+  "/ai-data/machine-learning", // 01 Paperwork automation
+  "/ai-data/machine-learning", // 02 Answers from your own documents
+  "/services/software-development", // 03 Software development
+  "/services/mvp-development", // 04 MVP Development
+  "/ai-data/analytics", // 05 Forecasting and reporting
 ];
 
+/**
+ * The band is a header, a five cell tab row and ONE stage, 256 + 88 + 560.
+ *
+ * It used to be a 360px sticky rail beside five stacked prose rows: the rail
+ * held 297px of content in an 877px column, so more than half of the left
+ * side was empty, and each row restated the same three text roles with
+ * nothing to look at. Five wells would need five objects each strong enough
+ * to carry a whole band. There is one object instead, a three.js field of
+ * sheets that takes a different shape for each capability, and the five
+ * share a single 560px stage and take turns on it.
+ *
+ * This file stays a server component: it reads the dictionary and hands the
+ * slice down. Only the active index is client state, and that lives in
+ * `services-list.tsx`.
+ */
 export default function Services({ locale }: { locale: Locale }) {
-  const t = getDictionary(locale).services;
+  const dict = getDictionary(locale);
+  /**
+   * `greyClause` is read defensively. The three dictionaries
+   * are cast rather than validated, so a key that has not landed yet must
+   * render its predecessor rather than the word `undefined`.
+   */
+  const t = dict.services as (typeof dict)["services"] & {
+    greyClause?: string;
+  };
+  /* The two-tone h2: the claim in ink, the qualifier in grey, one size, one
+     weight. It replaces the heading plus the paragraph that used to sit under
+     every band header, and it caps the explanation at about fourteen words
+     because it is being set at 40px. */
+  const title = t.title.replace(/\s*\.\s*$/, "");
+  const grey = t.greyClause ?? t.subtitle;
 
   return (
-    <section id="services" className="bg-white">
-      <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
-        <div className="grid items-start gap-14 lg:grid-cols-[380px_1fr] lg:gap-20">
-          <div className="lg:sticky lg:top-[110px]">
-            <Reveal>
-              <div className="mb-4 font-mono text-[13px] uppercase tracking-[0.14em] text-lime">
-                {t.label}
-              </div>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <h2 className="font-serif text-[2.5rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-5xl">
-                {t.title}
+    <section
+      id="services"
+      className="scroll-mt-24 border-t border-cream-line bg-cream-dim"
+    >
+      <div className="pc-shell">
+        <div className="pc-rules">
+          {/* S1, the shared band header. It closes on its own rule and the
+              tab row opens against it, so there is no seam to pad. Tighter
+              than the other band headers on purpose: the object below is
+              the point of this band and should be on screen sooner. */}
+          <div className="pc-grid border-b border-cream-line pt-14 pb-10 lg:pt-16 lg:pb-12 xl:pt-20">
+            <Reveal className="col-[3/-3] flex flex-col items-start gap-6 lg:col-[2/-2]">
+              <span className="pc-pill">{t.label}</span>
+              <h2 className="display max-w-[26em] text-balance text-heading-md">
+                <span className="text-ink">{title}. </span>
+                <span className="text-ink-soft">{grey}</span>
               </h2>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <p className="mt-5 leading-[1.7] text-ink-soft">{t.subtitle}</p>
             </Reveal>
           </div>
 
-          <ServicesList items={t.items} hrefs={hrefs} />
+          <CapabilityTabs
+            items={t.items}
+            hrefs={hrefs}
+            label={t.label}
+            linkLabel={dict.shared.learnMore}
+          />
         </div>
       </div>
     </section>

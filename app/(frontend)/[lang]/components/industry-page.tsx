@@ -1,7 +1,7 @@
 import { PageHero, CtaBand } from "./page-hero";
 import Footer from "./footer";
 import { Reveal, Stagger, StaggerItem } from "./motion";
-import { Plus } from "./ui";
+import { Eyebrow, Plus } from "./ui";
 import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 
@@ -27,8 +27,12 @@ type IndustryData = {
   cta: { title: string; subtitle: string; button: string };
 };
 
-const visualForSlug = (slug: IndustrySlug) =>
-  slug === "ai" ? "nodes" : slug === "saas" ? "mesh" : "grid";
+/* Grounds alternate page / off band, and every change of ground also gets a
+   hairline. A colour step of three values is not a section break on its own.
+   Cells in a ruled grid carry no ground of their own: on a dark page a lifted
+   cell is a lighter one, so the hover is `cream-surface` and rest is the band. */
+const H2 = "display max-w-[22em] text-balance text-heading-md text-ink lg:text-heading-lg";
+const SECTION = "mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]";
 
 export default function IndustryPage({
   locale,
@@ -51,34 +55,31 @@ export default function IndustryPage({
         eyebrow={d.label}
         title={d.title}
         intro={d.subtitle}
-        visual={visualForSlug(slug)}
         cta={{ label: d.cta.button, href: "/contact" }}
       />
 
       {/* Challenges */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
+      <section className="bg-cream">
+        <div className={SECTION}>
           <Reveal>
-            <div className="mb-4 font-mono text-[13px] uppercase tracking-[0.14em] text-lime">
-              {shared.challengesTitle}
-            </div>
+            <Eyebrow>{shared.challengesTitle}</Eyebrow>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="max-w-3xl text-balance font-serif text-[2.5rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-5xl">
-              {shared.challengesSubtitle}
-            </h2>
+            <h2 className={`mt-6 ${H2}`}>{shared.challengesSubtitle}</h2>
           </Reveal>
           <Stagger
             className="mt-14 grid border-l border-t border-cream-line sm:grid-cols-2"
-            gap={0.08}
+            gap={0.07}
           >
             {challenges.map((c) => (
               <StaggerItem key={c.title} className="h-full">
-                <article className="flex h-full gap-5 border-b border-r border-cream-line bg-white p-7 transition-colors duration-300 hover:bg-cream sm:p-8">
-                  <Plus className="mt-1 size-5 shrink-0" />
+                <article className="flex h-full gap-5 border-b border-r border-cream-line p-7 transition-colors duration-300 ease-io-attio hover:bg-cream-surface hover:duration-50 sm:p-8">
+                  <Plus className="mt-1 size-5 shrink-0 text-ink-mute" />
                   <div>
-                    <h3 className="text-xl font-semibold text-ink">{c.title}</h3>
-                    <p className="mt-2.5 text-[15px] leading-[1.65] text-ink-soft">
+                    <h3 className="text-[19px] font-semibold leading-[1.25] text-ink">
+                      {c.title}
+                    </h3>
+                    <p className="mt-2.5 text-[15px] leading-[1.6] text-ink-soft">
                       {c.description}
                     </p>
                   </div>
@@ -90,26 +91,23 @@ export default function IndustryPage({
       </section>
 
       {/* Solutions */}
-      <section className="relative isolate overflow-hidden bg-night text-bone">
-        <div className="absolute -left-52 -bottom-64 -z-10 size-[38rem] rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.18)_0%,rgba(16,185,129,0)_65%)]" />
-        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
+      <section className="border-t border-cream-line bg-cream-dim">
+        <div className={SECTION}>
           <Reveal>
-            <div className="mb-4 font-mono text-[13px] uppercase tracking-[0.14em] text-lime-soft">
-              {shared.solutionsTitle}
-            </div>
+            <Eyebrow>{shared.solutionsTitle}</Eyebrow>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="max-w-3xl text-balance font-serif text-[2.5rem] font-medium leading-[1.12] tracking-[-0.01em] sm:text-5xl">
-              {shared.solutionsSubtitle}
-            </h2>
+            <h2 className={`mt-6 ${H2}`}>{shared.solutionsSubtitle}</h2>
           </Reveal>
-          <Stagger className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" gap={0.08}>
+          <Stagger className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" gap={0.07}>
             {solutions.map((s) => (
               <StaggerItem key={s.title} className="h-full">
-                <article className="flex h-full flex-col rounded border border-white/10 bg-night-soft p-6 sm:p-7">
-                  <Plus className="size-5" />
-                  <h3 className="mt-5 text-lg font-semibold text-bone">{s.title}</h3>
-                  <p className="mt-2.5 text-[14.5px] leading-[1.65] text-bone-soft">
+                <article className="flex h-full flex-col rounded-[20px] border border-cream-line bg-cream-surface px-[23px] pb-[23px] pt-[21px]">
+                  <Plus className="size-5 text-ink-mute" />
+                  <h3 className="mt-5 text-[19px] font-semibold leading-[1.25] text-ink">
+                    {s.title}
+                  </h3>
+                  <p className="mt-2.5 text-[15px] leading-[1.6] text-ink-soft">
                     {s.description}
                   </p>
                 </article>
@@ -120,30 +118,28 @@ export default function IndustryPage({
       </section>
 
       {/* Use cases */}
-      <section className="bg-cream">
-        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
+      <section className="border-t border-cream-line bg-cream">
+        <div className={SECTION}>
           <Reveal>
-            <div className="mb-4 font-mono text-[13px] uppercase tracking-[0.14em] text-lime">
-              {shared.useCasesTitle}
-            </div>
+            <Eyebrow>{shared.useCasesTitle}</Eyebrow>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="max-w-3xl text-balance font-serif text-[2.5rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-5xl">
-              {shared.useCasesSubtitle}
-            </h2>
+            <h2 className={`mt-6 ${H2}`}>{shared.useCasesSubtitle}</h2>
           </Reveal>
           <Stagger
             className="mt-14 grid border-l border-t border-cream-line sm:grid-cols-2 lg:grid-cols-3"
-            gap={0.08}
+            gap={0.07}
           >
             {useCases.map((u, i) => (
               <StaggerItem key={u.title} className="h-full">
-                <article className="flex h-full flex-col border-b border-r border-cream-line bg-white p-7 transition-colors duration-300 hover:bg-cream sm:p-8">
-                  <span className="font-mono text-xs text-ink-mute">
+                <article className="flex h-full flex-col border-b border-r border-cream-line p-7 transition-colors duration-300 ease-io-attio hover:bg-cream-surface hover:duration-50 sm:p-8">
+                  <span className="text-[13px] tabular-nums text-ink-mute">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="mt-4 text-xl font-semibold text-ink">{u.title}</h3>
-                  <p className="mt-3 text-[15px] leading-[1.65] text-ink-soft">
+                  <h3 className="mt-4 text-[19px] font-semibold leading-[1.25] text-ink">
+                    {u.title}
+                  </h3>
+                  <p className="mt-3 text-[15px] leading-[1.6] text-ink-soft">
                     {u.description}
                   </p>
                 </article>

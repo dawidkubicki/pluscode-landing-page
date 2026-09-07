@@ -129,10 +129,10 @@ export async function POST(request: NextRequest) {
         from: "Pluscode Bookings <noreply@pluscode.io>",
         to: [toEmail],
         replyTo: email,
-        subject: `New booking: ${label} — ${fullName}`,
+        subject: `New booking: ${label}, ${fullName}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-            <h2 style="color:#0a1929;border-bottom:2px solid #059669;padding-bottom:10px;">
+            <h2 style="color:#16161d;border-bottom:2px solid #5b5bd6;padding-bottom:10px;">
               New ${esc(label)} request
             </h2>
             <div style="margin:16px 0;">
@@ -144,11 +144,11 @@ export async function POST(request: NextRequest) {
               ${row("Page", data.source)}
               ${row("Marketing consent", data.consentMarketing ? "yes" : "no")}
             </div>
-            <div style="background:#f7f8fa;padding:16px;border-radius:8px;margin:16px 0;">
-              <h3 style="color:#0a1929;margin:0 0 8px;">About the project</h3>
-              <p style="white-space:pre-wrap;color:#333;margin:0;">${esc(message)}</p>
+            <div style="background:#f4f4f8;padding:16px;border-radius:8px;margin:16px 0;">
+              <h3 style="color:#16161d;margin:0 0 8px;">About the project</h3>
+              <p style="white-space:pre-wrap;color:#5a5a6b;margin:0;">${esc(message)}</p>
             </div>
-            <p style="color:#888;font-size:12px;">Stored in CMS: ${stored ? "yes" : "no (DB unavailable, this email is the record)"}.</p>
+            <p style="color:#6e6e85;font-size:12px;">Stored in CMS: ${stored ? "yes" : "no (DB unavailable, this email is the record)"}.</p>
           </div>`,
         });
         if (error) console.error("[book] Resend error:", error);

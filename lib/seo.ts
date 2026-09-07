@@ -2,6 +2,15 @@ import type { Metadata } from "next";
 import { locales, type Locale } from "./i18n/config";
 import { getDictionary } from "./i18n/dictionaries";
 
+/**
+ * Cache buster for the brand share cards in public/og/. Facebook, LinkedIn,
+ * Slack and X all key their scrape cache on the image URL, so repainting the
+ * cards with `pnpm generate:og` is invisible to them until the URL changes.
+ * Bump this whenever those PNGs are regenerated. Currently: the neutral
+ * near-black and indigo card that replaced the navy and emerald one.
+ */
+const OG_CARD_VERSION = "2";
+
 /** Open Graph locale tags per supported locale. */
 export const ogLocaleTag: Record<Locale, string> = {
   en: "en_GB",
@@ -43,7 +52,7 @@ export function buildOpenGraph(
       ? [{ url: overrides.image.url, alt: overrides.image.alt }]
       : [
           {
-            url: `/og/${locale}.png`,
+            url: `/og/${locale}.png?v=${OG_CARD_VERSION}`,
             width: 1200,
             height: 630,
             alt: meta.ogImageAlt,

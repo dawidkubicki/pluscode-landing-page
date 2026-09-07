@@ -15,12 +15,16 @@ import { posts } from "./content/insights-news";
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 
-const NIGHT = "#0a1929";
-const NIGHT_SOFT = "#0f2237";
-const NIGHT_LINE = "#22303e";
-const BONE_DIM = "#8fa3bd";
-const LIME = "#059669";
-const LIME_SOFT = "#34d399";
+/* The covers are baked PNGs, so nothing in globals.css can reach them:
+   these five constants are the site tokens copied by hand. Neutral
+   near-black, never navy, and the accent is indigo. Change one of them and
+   every cover has to be regenerated with `pnpm generate:covers`. */
+const NIGHT = "#101014"; /* --color-night */
+const NIGHT_SOFT = "#1b1b22"; /* --color-night-soft */
+const NIGHT_LINE = "#2a2a34"; /* --color-night-line */
+const BONE_DIM = "#7e7e90"; /* --color-bone-dim */
+const LIME = "#5b5bd6"; /* --color-lime */
+const LIME_SOFT = "#8b8be8"; /* between --color-lime and --color-lime-soft */
 
 const logoDataUri = `data:image/svg+xml;base64,${fs
   .readFileSync(path.join(root, "public/assets/logo/pluscode-logo.svg"))
@@ -38,7 +42,7 @@ const CATEGORY_LABEL: Record<string, string> = {
   mobile: "Mobile",
 };
 
-/** Documents + a ring of dots — regulation / compliance. */
+/** Documents plus a ring of dots: regulation and compliance. */
 function motifRegulation() {
   const dots = Array.from({ length: 12 }, (_, i) => {
     const a = (i / 12) * 2 * Math.PI;
@@ -113,7 +117,7 @@ function motifRegulation() {
               width: i === 0 ? 330 : 260 - i * 40,
               height: 12,
               borderRadius: 6,
-              backgroundColor: i === 0 ? "rgba(10,25,41,0.55)" : NIGHT_LINE,
+              backgroundColor: i === 0 ? "rgba(16,16,20,0.55)" : NIGHT_LINE,
             }}
           />
         </div>
@@ -122,7 +126,7 @@ function motifRegulation() {
   );
 }
 
-/** Ascending tiers with a glowing top step — frontier model tiers. */
+/** Ascending tiers with a glowing top step: frontier model tiers. */
 function motifTiers() {
   const steps = [
     { x: 430, h: 160 },
@@ -144,7 +148,7 @@ function motifTiers() {
               width: 250,
               height: s.h,
               borderRadius: "14px 14px 0 0",
-              backgroundColor: top ? "rgba(5,150,105,0.24)" : NIGHT_SOFT,
+              backgroundColor: top ? "rgba(91,91,214,0.24)" : NIGHT_SOFT,
               border: `2px solid ${top ? LIME_SOFT : NIGHT_LINE}`,
               display: "flex",
               justifyContent: "center",
@@ -178,7 +182,7 @@ function motifTiers() {
   );
 }
 
-/** Bar chart, one outlined "cancelled" bar — adoption vs failure numbers. */
+/** Bar chart, one outlined "cancelled" bar: adoption against failure numbers. */
 function motifBars() {
   const bars = [
     { h: 250, kind: "solid" },
@@ -217,7 +221,7 @@ function motifBars() {
                   ? "transparent"
                   : b.kind === "dim"
                     ? NIGHT_SOFT
-                    : "rgba(52,211,153,0.35)",
+                    : "rgba(139,139,232,0.35)",
             border: `2px ${b.kind === "outline" ? "dashed" : "solid"} ${
               b.kind === "lime" ? LIME : b.kind === "outline" ? BONE_DIM : NIGHT_LINE
             }`,
@@ -228,7 +232,7 @@ function motifBars() {
   );
 }
 
-/** Code lines vs one flat delivery line — the coding paradox. */
+/** Code lines against one flat delivery line: the coding paradox. */
 function motifCode() {
   const lines = [340, 470, 250, 520, 300, 430, 380, 490];
   return (
@@ -243,7 +247,7 @@ function motifCode() {
             width: w,
             height: 18,
             borderRadius: 9,
-            backgroundColor: i % 3 === 0 ? "rgba(52,211,153,0.55)" : NIGHT_SOFT,
+            backgroundColor: i % 3 === 0 ? "rgba(139,139,232,0.55)" : NIGHT_SOFT,
             border: `1px solid ${i % 3 === 0 ? LIME_SOFT : NIGHT_LINE}`,
           }}
         />
@@ -266,7 +270,7 @@ function motifCode() {
             height: 220,
             borderRadius: 12,
             border: `2px solid ${NIGHT_LINE}`,
-            backgroundColor: "rgba(15,34,55,0.6)",
+            backgroundColor: "rgba(27,27,34,0.6)",
             position: "relative",
           }}
         >
@@ -292,7 +296,7 @@ function motifCode() {
             height: 120,
             borderRadius: 12,
             border: `2px solid ${NIGHT_LINE}`,
-            backgroundColor: "rgba(15,34,55,0.6)",
+            backgroundColor: "rgba(27,27,34,0.6)",
             alignItems: "center",
           }}
         >
@@ -311,11 +315,99 @@ function motifCode() {
   );
 }
 
+/** One filled marker at the centre of a ring of outlined ones, with the
+ *  client's existing systems stacked on the left: embedded, not adjacent. */
+function motifEmbedded() {
+  const ring = Array.from({ length: 12 }, (_, i) => {
+    const a = (i / 12) * 2 * Math.PI;
+    return (
+      <div
+        key={i}
+        style={{
+          position: "absolute",
+          left: 250 + Math.cos(a) * 230 - 20,
+          top: 250 + Math.sin(a) * 230 - 20,
+          width: 40,
+          height: 40,
+          borderRadius: 999,
+          backgroundColor: NIGHT_SOFT,
+          border: `2px solid ${NIGHT_LINE}`,
+        }}
+      />
+    );
+  });
+  return (
+    <div style={{ display: "flex", position: "absolute", left: 0, top: 0, width: 1600, height: 900 }}>
+      <div
+        style={{
+          position: "absolute",
+          right: 130,
+          top: 200,
+          width: 500,
+          height: 500,
+          display: "flex",
+        }}
+      >
+        {ring}
+        <div
+          style={{
+            position: "absolute",
+            left: 194,
+            top: 194,
+            width: 112,
+            height: 112,
+            borderRadius: 999,
+            backgroundColor: LIME,
+            border: `2px solid ${LIME_SOFT}`,
+          }}
+        />
+      </div>
+      {[0, 1, 2].map((i) => (
+        <div
+          key={i}
+          style={{
+            position: "absolute",
+            left: 150,
+            top: 300 + i * 110,
+            width: 470,
+            height: 74,
+            borderRadius: 10,
+            backgroundColor: i === 0 ? LIME : NIGHT_SOFT,
+            border: `2px solid ${i === 0 ? LIME : NIGHT_LINE}`,
+            display: "flex",
+            alignItems: "center",
+            paddingLeft: 26,
+            gap: 18,
+          }}
+        >
+          <div
+            style={{
+              width: 26,
+              height: 26,
+              borderRadius: 999,
+              backgroundColor: i === 0 ? NIGHT : LIME_SOFT,
+            }}
+          />
+          <div
+            style={{
+              width: i === 0 ? 260 : 210 - i * 40,
+              height: 12,
+              borderRadius: 6,
+              backgroundColor: i === 0 ? "rgba(16,16,20,0.55)" : NIGHT_LINE,
+            }}
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
+
 const MOTIFS: Record<string, () => ReactElement> = {
   "eu-ai-act-august-2026-what-actually-changed": motifRegulation,
   "frontier-models-h2-2026-claude-fable-5-gpt-5-6": motifTiers,
   "ai-agents-enterprise-2026-hype-vs-numbers": motifBars,
   "ai-coding-paradox-faster-developers-flat-delivery": motifCode,
+  "what-is-a-forward-deployed-engineer": motifEmbedded,
 };
 
 async function render(slug: string, category: string) {
@@ -331,7 +423,7 @@ async function render(slug: string, category: string) {
           display: "flex",
           backgroundColor: NIGHT,
           backgroundImage:
-            "radial-gradient(circle at 85% 10%, rgba(16,185,129,0.16) 0%, rgba(16,185,129,0) 55%)",
+            "radial-gradient(circle at 85% 10%, rgba(91,91,214,0.16) 0%, rgba(91,91,214,0) 55%)",
           fontFamily: "Figtree",
           position: "relative",
         }}

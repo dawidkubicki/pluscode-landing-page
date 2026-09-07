@@ -5,9 +5,27 @@ import type { CSSProperties } from "react";
  *
  * Layered gradient + SVG compositions themed around software / data so the
  * layout reads as finished without external photography. To use real imagery
- * later, drop an <img>/<Image> into the same slots in place of <Visual /> — the
+ * later, drop an <img>/<Image> into the same slots in place of <Visual />. The
  * framing/aspect classes live on the parent.
+ *
+ * The page is dark, so these are lit rather than shaded. The previous set was
+ * dark art drawn for a white page and it vanished into the ground. Every kind
+ * now sits on the `night` ground with a hairline ring so it has an edge, and
+ * the colour is the accent blue with cyan and violet as the second and third
+ * voices, which is the one place outside a WebGL scene they are allowed.
  */
+
+/* The palette, matching the tokens in globals.css. Written out as literals
+   because these are SVG paint attributes and inline gradient strings, neither
+   of which Tailwind can resolve. */
+const ACCENT = "#3366ff"; /* --color-lime */
+const ACCENT_BRIGHT = "#4d7aff"; /* --color-lime-bright */
+const ACCENT_SOFT = "#8ab0ff"; /* --color-lime-soft */
+const CYAN = "#22d3ee"; /* --color-signal-cyan */
+const VIOLET = "#7c5cff"; /* --color-signal-violet */
+const GROUND = "#111219"; /* --color-night */
+const GROUND_SOFT = "#1a1b26"; /* --color-night-soft */
+const GROUND_DEEP = "#07080b"; /* --color-night-deep */
 
 export type VisualKind =
   | "aurora"
@@ -18,15 +36,12 @@ export type VisualKind =
   | "portrait";
 
 const gradients: Record<VisualKind, string> = {
-  aurora:
-    "radial-gradient(120% 120% at 20% 10%, #047857 0%, #0f2237 45%, #0a1929 100%)",
-  grid: "linear-gradient(180deg, #132c47 0%, #0e2036 55%, #0a1929 100%)",
-  nodes:
-    "radial-gradient(120% 100% at 80% 10%, #059669 0%, #0f2237 55%, #0a1929 100%)",
-  mesh: "linear-gradient(135deg, #059669 0%, #047857 45%, #34d399 100%)",
-  code: "linear-gradient(180deg, #0e2036 0%, #0a1929 100%)",
-  portrait:
-    "radial-gradient(120% 120% at 70% 10%, #047857 0%, #0f2237 50%, #0a1929 100%)",
+  aurora: `radial-gradient(95% 95% at 18% 12%, ${VIOLET} 0%, ${ACCENT} 34%, ${GROUND} 82%)`,
+  grid: `linear-gradient(180deg, ${GROUND_SOFT} 0%, ${GROUND} 55%, ${GROUND_DEEP} 100%)`,
+  nodes: `radial-gradient(120% 100% at 82% 8%, ${ACCENT} 0%, ${GROUND} 58%, ${GROUND_DEEP} 100%)`,
+  mesh: `linear-gradient(135deg, ${ACCENT} 0%, ${VIOLET} 52%, ${CYAN} 100%)`,
+  code: `linear-gradient(180deg, ${GROUND_SOFT} 0%, ${GROUND_DEEP} 100%)`,
+  portrait: `radial-gradient(120% 120% at 70% 10%, ${VIOLET} 0%, ${GROUND} 55%, ${GROUND_DEEP} 100%)`,
 };
 
 export function Visual({
@@ -40,7 +55,7 @@ export function Visual({
 }) {
   return (
     <div
-      className={`grain relative isolate size-full overflow-hidden ${className}`}
+      className={`relative isolate size-full overflow-hidden rounded-[inherit] ${className}`}
       style={{ backgroundImage: gradients[kind], ...style }}
     >
       {kind === "aurora" && (
@@ -50,9 +65,9 @@ export function Visual({
           preserveAspectRatio="xMidYMid slice"
           aria-hidden
         >
-          <circle cx="90" cy="70" r="120" fill="#3ba5f5" opacity="0.18" />
-          <circle cx="320" cy="300" r="140" fill="#7c5cff" opacity="0.16" />
-          <circle cx="260" cy="90" r="60" fill="#06b6d4" opacity="0.18" />
+          <circle cx="90" cy="70" r="120" fill={ACCENT_SOFT} opacity="0.22" />
+          <circle cx="320" cy="300" r="140" fill={ACCENT} opacity="0.22" />
+          <circle cx="260" cy="90" r="60" fill={CYAN} opacity="0.2" />
         </svg>
       )}
 
@@ -63,9 +78,10 @@ export function Visual({
           preserveAspectRatio="xMidYMid slice"
           aria-hidden
         >
-          <circle cx="320" cy="70" r="80" fill="#3ba5f5" opacity="0.18" />
+          <circle cx="320" cy="70" r="80" fill={ACCENT} opacity="0.38" />
+          <circle cx="320" cy="70" r="36" fill={ACCENT_BRIGHT} opacity="0.5" />
           {/* perspective floor */}
-          <g stroke="#3ba5f5" strokeWidth="1" opacity="0.32" fill="none">
+          <g stroke={CYAN} strokeWidth="1" opacity="0.4" fill="none">
             {Array.from({ length: 12 }).map((_, i) => {
               const t = i / 11;
               const xTop = 200 + (t - 0.5) * 60;
@@ -87,7 +103,7 @@ export function Visual({
           preserveAspectRatio="xMidYMid slice"
           aria-hidden
         >
-          <g stroke="#3ba5f5" strokeWidth="1.1" opacity="0.45">
+          <g stroke={ACCENT_SOFT} strokeWidth="1.1" opacity="0.55">
             <line x1="70" y1="110" x2="180" y2="80" />
             <line x1="180" y1="80" x2="300" y2="150" />
             <line x1="180" y1="80" x2="160" y2="220" />
@@ -97,7 +113,7 @@ export function Visual({
             <line x1="90" y1="320" x2="240" y2="330" />
             <line x1="330" y1="290" x2="240" y2="330" />
           </g>
-          <g fill="#7cc4ff">
+          <g>
             {[
               [70, 110],
               [180, 80],
@@ -107,7 +123,13 @@ export function Visual({
               [330, 290],
               [240, 330],
             ].map(([cx, cy], i) => (
-              <circle key={i} cx={cx} cy={cy} r={i % 3 === 0 ? 6 : 4} />
+              <circle
+                key={i}
+                cx={cx}
+                cy={cy}
+                r={i % 3 === 0 ? 6 : 4}
+                fill={i % 3 === 0 ? CYAN : ACCENT_SOFT}
+              />
             ))}
           </g>
         </svg>
@@ -120,17 +142,13 @@ export function Visual({
           preserveAspectRatio="xMidYMid slice"
           aria-hidden
         >
-          <g
-            stroke="#3ba5f5"
-            strokeWidth="6"
-            strokeLinecap="round"
-            opacity="0.28"
-          >
+          <g strokeWidth="6" strokeLinecap="round" opacity="0.55">
             {Array.from({ length: 9 }).map((_, i) => {
               const y = 70 + i * 30;
               const x1 = 60 + (i % 3) * 24;
               const x2 = x1 + 80 + ((i * 37) % 140);
-              return <line key={i} x1={x1} y1={y} x2={x2} y2={y} />;
+              const stroke = i % 4 === 1 ? CYAN : i % 4 === 3 ? VIOLET : ACCENT_SOFT;
+              return <line key={i} x1={x1} y1={y} x2={x2} y2={y} stroke={stroke} />;
             })}
           </g>
           <rect
@@ -140,9 +158,9 @@ export function Visual({
             height="312"
             rx="16"
             fill="none"
-            stroke="#3ba5f5"
+            stroke={ACCENT_SOFT}
             strokeWidth="1.2"
-            opacity="0.3"
+            opacity="0.35"
           />
         </svg>
       )}
@@ -154,16 +172,16 @@ export function Visual({
           preserveAspectRatio="xMidYMid slice"
           aria-hidden
         >
-          <circle cx="220" cy="250" r="120" fill="#3ba5f5" opacity="0.1" />
+          <circle cx="220" cy="250" r="120" fill={CYAN} opacity="0.1" />
           <path
             d="M-20 360 C 120 300 240 360 420 300 C 260 420 140 420 -20 470 Z"
-            fill="#3ba5f5"
-            opacity="0.25"
+            fill={ACCENT_SOFT}
+            opacity="0.3"
           />
           <path
             d="M-40 420 C 120 380 260 430 440 380 C 280 470 120 480 -40 520 Z"
-            fill="#7c5cff"
-            opacity="0.2"
+            fill={ACCENT}
+            opacity="0.3"
           />
         </svg>
       )}
@@ -175,10 +193,20 @@ export function Visual({
           preserveAspectRatio="xMidYMid slice"
           aria-hidden
         >
-          <circle cx="300" cy="90" r="120" fill="#fff" opacity="0.12" />
-          <circle cx="90" cy="320" r="100" fill="#0c111b" opacity="0.18" />
+          {/* A white disc on a saturated field, not on the page: this is the
+              one hard-coded white that is right on a dark site. */}
+          <circle cx="300" cy="90" r="120" fill="#ffffff" opacity="0.12" />
+          <circle cx="90" cy="320" r="100" fill={GROUND_DEEP} opacity="0.18" />
         </svg>
       )}
+
+      {/* The edge. A dark box on a dark page has no outline of its own, so a
+          hairline ring is drawn above the art. `rounded-[inherit]` lets it
+          follow whatever radius the parent slot set. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-10 rounded-[inherit] shadow-[inset_0_0_0_1px_rgb(255_255_255_/_0.1)]"
+      />
     </div>
   );
 }

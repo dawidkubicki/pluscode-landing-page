@@ -16,6 +16,7 @@ const resolve = (lang: string): Locale => (isLocale(lang) ? lang : defaultLocale
 /** The Services-category offerings, in display order. */
 const cards: {
   key:
+    | "forwardDeployedEngineers"
     | "softwareDevelopment"
     | "webDevelopment"
     | "mobileApps"
@@ -27,6 +28,11 @@ const cards: {
   href: string;
   visual: VisualKind;
 }[] = [
+  {
+    key: "forwardDeployedEngineers",
+    href: "/services/forward-deployed-engineers",
+    visual: "nodes",
+  },
   { key: "softwareDevelopment", href: "/services/software-development", visual: "code" },
   { key: "webDevelopment", href: "/services/web-development", visual: "code" },
   { key: "mobileApps", href: "/services/mobile", visual: "grid" },
@@ -68,7 +74,7 @@ export default async function ServicesIndexPage({
         cta={{ label: t.cta, href: "/contact" }}
       />
 
-      <section className="bg-white">
+      <section className="bg-cream">
         <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
           <Stagger
             className="grid border-l border-t border-cream-line sm:grid-cols-2 lg:grid-cols-4"
@@ -80,7 +86,7 @@ export default async function ServicesIndexPage({
                 <StaggerItem key={c.key}>
                   <LocaleLink
                     href={c.href}
-                    className="group flex h-full flex-col border-b border-r border-cream-line bg-white p-7 transition-colors duration-300 hover:bg-cream"
+                    className="group flex h-full flex-col border-b border-r border-cream-line p-7 transition-colors duration-300 ease-io-attio hover:bg-cream-surface hover:duration-50"
                   >
                     <div className="h-32 overflow-hidden rounded">
                       <Visual kind={c.visual} />
@@ -92,7 +98,7 @@ export default async function ServicesIndexPage({
                     <p className="mt-3 flex-1 text-[15px] leading-[1.65] text-ink-soft">
                       {item.description}
                     </p>
-                    <span className="mt-5 inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime transition-colors group-hover:text-ink">
+                    <span className="mt-5 inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime-soft transition-colors group-hover:text-ink">
                       {t.view}
                       <Arrow className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </span>

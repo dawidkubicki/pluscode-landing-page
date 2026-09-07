@@ -8,7 +8,7 @@ import LocaleLink from "./locale-link";
 type FormDict = Dictionary["form"];
 
 const FIELD =
-  "w-full rounded-[2px] border border-white/15 bg-night px-4 py-3.5 text-[15px] text-bone placeholder:text-bone-dim outline-none transition-colors focus:border-lime";
+  "w-full rounded-xl border border-cream-line-strong bg-night px-4 py-3.5 text-[15px] text-bone placeholder:text-bone-dim transition-colors duration-300 ease-io-attio focus:border-lime-soft focus:duration-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -43,7 +43,7 @@ function Label({
   return (
     <label
       htmlFor={htmlFor}
-      className="mb-2 block text-[13px] font-medium tracking-[0.01em] text-bone-dim"
+      className="mb-2 block text-[13px] font-medium text-bone-soft"
     >
       {children}
       {required && <span className="ml-0.5 text-lime-soft">*</span>}
@@ -148,13 +148,15 @@ export default function LeadForm({
 
   if (sent) {
     return (
-      <div className="flex min-h-72 flex-col items-start justify-center rounded border border-white/10 bg-night-soft p-8 sm:p-10">
-        <span className="flex size-12 items-center justify-center rounded-full bg-lime text-night">
+      <div className="flex min-h-72 flex-col items-start justify-center rounded-[20px] border border-night-line bg-night-soft p-8 sm:p-10">
+        {/* Neutral, not accent-filled. The accent is rationed to the button,
+            the focus ring and the required marks on this screen. */}
+        <span className="flex size-12 items-center justify-center rounded-full bg-bone text-night">
           <svg viewBox="0 0 24 24" className="size-6" fill="none" aria-hidden>
             <path d="m5 13 4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
-        <h3 className="mt-5 text-2xl font-semibold text-bone">{t.successTitle}</h3>
+        <h3 className="display mt-5 text-heading-xs text-bone">{t.successTitle}</h3>
         <p className="mt-2 max-w-sm text-[14.5px] text-bone-soft">{t.successMessage}</p>
       </div>
     );
@@ -174,7 +176,7 @@ export default function LeadForm({
       : {};
 
   return (
-    <form onSubmit={onSubmit} noValidate className="rounded border border-white/10 bg-night-soft p-6 sm:p-10">
+    <form onSubmit={onSubmit} noValidate className="rounded-[20px] border border-night-line bg-night-soft p-6 sm:p-10">
       {title && <div className="mb-6 text-[19px] font-semibold text-bone">{title}</div>}
       <div className="flex flex-col gap-5">
         <div className="grid gap-5 sm:grid-cols-2">
@@ -288,7 +290,7 @@ export default function LeadForm({
           <Err k="message" />
         </div>
 
-        <div className="flex flex-col gap-3.5 border-t border-white/10 pt-5">
+        <div className="flex flex-col gap-3.5 border-t border-night-line pt-5">
           <div>
             <div className="flex items-start gap-3">
               <input
@@ -307,11 +309,11 @@ export default function LeadForm({
                 className="cursor-pointer text-[13.5px] leading-[1.5] text-bone-soft"
               >
                 {t.consentTermsPrefix}{" "}
-                <LocaleLink href="/terms-of-use" className="text-lime-soft hover:text-bone">
+                <LocaleLink href="/terms-of-use" className="text-lime-soft underline underline-offset-2 transition-colors duration-300 ease-io-attio hover:text-bone hover:duration-50">
                   {t.consentTermsLink}
                 </LocaleLink>{" "}
                 {t.consentTermsMiddle}{" "}
-                <LocaleLink href="/privacy-policy" className="text-lime-soft hover:text-bone">
+                <LocaleLink href="/privacy-policy" className="text-lime-soft underline underline-offset-2 transition-colors duration-300 ease-io-attio hover:text-bone hover:duration-50">
                   {t.consentPrivacyLink}
                 </LocaleLink>
                 {t.consentTermsSuffix}
@@ -337,10 +339,10 @@ export default function LeadForm({
                 {t.consentMarketing}
               </label>
               <details className="group mt-1">
-                <summary className="cursor-pointer list-none text-[12.5px] text-bone-dim underline underline-offset-2 transition-colors hover:text-bone-soft">
+                <summary className="cursor-pointer list-none text-[12.5px] text-bone-soft underline underline-offset-2 transition-colors duration-300 ease-io-attio hover:text-bone hover:duration-50">
                   {t.consentDetailsLabel}
                 </summary>
-                <p className="mt-2 text-[12.5px] leading-[1.55] text-bone-dim">
+                <p className="mt-2 text-[12.5px] leading-[1.55] text-bone-soft">
                   {t.consentDetailsText}
                 </p>
               </details>
@@ -349,7 +351,7 @@ export default function LeadForm({
         </div>
 
         {submitError && (
-          <div className="rounded-[2px] border border-red-500/30 bg-red-500/10 px-4 py-3">
+          <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3">
             <p className="text-sm text-red-300">{submitError}</p>
           </div>
         )}
@@ -357,7 +359,13 @@ export default function LeadForm({
         <button
           type="submit"
           disabled={submitting}
-          className="rounded-[2px] bg-lime p-4 text-[15.5px] font-semibold text-night transition-colors duration-300 hover:bg-lime-bright disabled:opacity-60"
+          // Not `.btn btn-primary`: this one is a full-width block at 56px,
+          // and `.btn` fixes the height at 36. It carries the primary fill,
+          // the lighter border and the same asymmetric hover by hand. The
+          // focus ring is bone rather than the usual accent, because an
+          // blue ring around a blue fill is not a ring. The border is one
+          // step lighter than the fill, the same trick as `.btn-primary`.
+          className="rounded-[10px] border border-lime-bright bg-lime p-4 text-[15.5px] font-semibold text-white transition-colors duration-300 ease-io-attio hover:bg-lime-bright hover:duration-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bone-soft active:bg-lime-deep disabled:opacity-60"
         >
           {submitting ? t.sending : submitLabel}
         </button>

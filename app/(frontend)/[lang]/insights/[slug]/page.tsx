@@ -78,7 +78,7 @@ export default async function InsightPage({
     <main>
       <PageHero eyebrow={eyebrow} title={card.title} intro={card.excerpt} />
 
-      <article className="bg-white">
+      <article className="bg-cream">
         <div className="mx-auto max-w-3xl px-5 py-20 sm:px-10 sm:py-[6.25rem]">
           {/* byline */}
           <Reveal>
@@ -125,7 +125,7 @@ export default async function InsightPage({
           <div className="mt-12">
             <LocaleLink
               href="/insights"
-              className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime transition-colors hover:text-ink"
+              className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime-soft transition-colors hover:text-ink"
             >
               ← {article.breadcrumbParent}
             </LocaleLink>
@@ -145,14 +145,14 @@ export default async function InsightPage({
                 <StaggerItem key={r.slug}>
                   <LocaleLink
                     href={`/insights/${r.slug}`}
-                    className="group flex h-full flex-col overflow-hidden rounded border border-cream-line bg-white transition-colors duration-300 hover:border-lime"
+                    className="group flex h-full flex-col overflow-hidden rounded border border-cream-line bg-cream-surface transition-colors duration-300 hover:border-lime"
                   >
                     <div className={`h-32 ${r.gradient}`} />
                     <div className="flex flex-1 flex-col p-5">
-                      <h3 className="text-lg font-semibold text-ink transition-colors group-hover:text-lime-deep">
+                      <h3 className="text-lg font-semibold text-ink transition-colors group-hover:text-lime-soft">
                         {r.title}
                       </h3>
-                      <span className="mt-4 inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime">
+                      <span className="mt-4 inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime-soft">
                         {labels.readMore}
                         <Arrow className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                       </span>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero } from "../components/page-hero";
 import Banner from "../components/banner";
 import Stats from "../components/stats";
@@ -14,6 +15,17 @@ import { getTeam, type TeamMember } from "@/lib/team";
 export const revalidate = 60;
 
 const resolve = (lang: string): Locale => (isLocale(lang) ? lang : defaultLocale);
+
+/**
+ * The 3:4 portrait register from spec F1. These files ship in the repo, so the
+ * page shows the two real people with their real faces even when the CMS is
+ * unreachable and the dictionary fallback is doing the work. Keyed by name so
+ * it matches scripts/content/team.ts without importing a seed script.
+ */
+const PORTRAITS: Record<string, string> = {
+  "Dawid Kubicki": "/assets/team/dawid-kubicki.jpg",
+  "Krzysztof Suliński": "/assets/team/krzysztof-sulinski.jpg",
+};
 
 export async function generateMetadata({
   params,
@@ -41,10 +53,10 @@ export default async function AboutPage({
       name: m.name,
       role: m.role,
       bio: m.bio,
-      email: null,
+      email: "contact@pluscode.io",
       phone: null,
       linkedin: null,
-      photo: null,
+      photo: PORTRAITS[m.name] ? { url: PORTRAITS[m.name], alt: m.name } : null,
     }),
   );
   const team = cmsTeam.length > 0 ? cmsTeam : fallbackTeam;
@@ -61,11 +73,11 @@ export default async function AboutPage({
       />
 
       {/* Story */}
-      <section className="bg-white">
+      <section className="bg-cream">
         <div className="mx-auto grid max-w-[1240px] items-center gap-12 px-5 py-20 sm:px-10 sm:py-[6.25rem] lg:grid-cols-2 lg:gap-20">
           <div>
             <Reveal>
-              <div className="mb-4 font-mono text-[13px] uppercase tracking-[0.14em] text-lime">
+              <div className="mb-4 font-mono text-[13px] uppercase tracking-[0.14em] text-lime-soft">
                 {t.story.label}
               </div>
             </Reveal>
@@ -93,7 +105,7 @@ export default async function AboutPage({
       <section className="border-t border-cream-line bg-cream">
         <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
           <Reveal>
-            <div className="mb-4 font-mono text-[13px] uppercase tracking-[0.14em] text-lime">
+            <div className="mb-4 font-mono text-[13px] uppercase tracking-[0.14em] text-lime-soft">
               {t.values.label}
             </div>
           </Reveal>
@@ -108,7 +120,7 @@ export default async function AboutPage({
           >
             {values.map((v) => (
               <StaggerItem key={v.title} className="h-full">
-                <article className="flex h-full flex-col border-b border-r border-cream-line bg-white p-7 transition-colors duration-300 hover:bg-cream">
+                <article className="flex h-full flex-col border-b border-r border-cream-line p-7 transition-colors duration-300 ease-io-attio hover:bg-cream-surface hover:duration-50">
                   <Plus className="size-5" />
                   <h3 className="mt-5 text-lg font-semibold text-ink">{v.title}</h3>
                   <p className="mt-3 text-[14.5px] leading-[1.65] text-ink-soft">
@@ -124,10 +136,10 @@ export default async function AboutPage({
       <Stats locale={locale} />
 
       {/* Team */}
-      <section className="border-t border-cream-line bg-white">
+      <section className="border-t border-cream-line bg-cream">
         <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-10 sm:py-[6.25rem]">
           <Reveal>
-            <div className="mb-4 font-mono text-[13px] uppercase tracking-[0.14em] text-lime">
+            <div className="mb-4 font-mono text-[13px] uppercase tracking-[0.14em] text-lime-soft">
               {t.team.label}
             </div>
           </Reveal>
@@ -136,22 +148,29 @@ export default async function AboutPage({
               {t.team.title}
             </h2>
           </Reveal>
-          <Stagger className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" gap={0.08}>
+          {/* Two people, so a two-up. A four-column grid holding two cards was
+              what made the old placeholder members look necessary. The 3:4
+              portrait and the one filter, grayscale(1) contrast(1.02), are the
+              photo system from spec F1, the same one the homepage uses. */}
+          <Stagger className="mt-14 grid max-w-[860px] gap-6 sm:grid-cols-2" gap={0.08}>
             {team.map((m) => (
               <StaggerItem key={m.id} className="h-full">
-                <article className="flex h-full flex-col overflow-hidden rounded border border-cream-line bg-white transition-colors duration-300 hover:border-lime">
-                  <div className="aspect-[4/5] overflow-hidden">
-                    {m.photo ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={m.photo.url} alt={m.photo.alt} className="size-full object-cover" />
-                    ) : (
-                      <Visual kind="portrait" />
+                <article className="flex h-full flex-col overflow-hidden rounded border border-cream-line bg-cream-surface transition-colors duration-300 hover:border-lime">
+                  <div className="relative aspect-[3/4] overflow-hidden bg-cream-surface">
+                    {m.photo && (
+                      <Image
+                        src={m.photo.url}
+                        alt={m.photo.alt}
+                        fill
+                        sizes="(min-width: 860px) 414px, (min-width: 640px) 46vw, 92vw"
+                        className="object-cover object-center grayscale contrast-[1.02]"
+                      />
                     )}
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <h3 className="text-lg font-semibold text-ink">{m.name}</h3>
                     {m.role && (
-                      <p className="mt-1 font-mono text-xs uppercase tracking-[0.1em] text-lime">
+                      <p className="mt-1 font-mono text-xs uppercase tracking-[0.1em] text-lime-soft">
                         {m.role}
                       </p>
                     )}
@@ -159,14 +178,24 @@ export default async function AboutPage({
                       <p className="mt-3 text-[14.5px] leading-[1.65] text-ink-soft">{m.bio}</p>
                     )}
                     {(m.email || m.linkedin) && (
-                      <div className="mt-auto flex items-center gap-3 pt-5 text-ink-soft">
+                      <div className="-ml-3 mt-auto flex items-center pt-2 text-ink-soft">
                         {m.email && (
-                          <a href={`mailto:${m.email}`} aria-label={`Email ${m.name}`} className="transition-colors hover:text-ink">
+                          <a
+                            href={`mailto:${m.email}`}
+                            aria-label={`Email ${m.name}`}
+                            className="inline-flex size-11 items-center justify-center transition-colors hover:text-ink"
+                          >
                             <MailIcon className="size-[18px]" />
                           </a>
                         )}
                         {m.linkedin && (
-                          <a href={m.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${m.name} on LinkedIn`} className="transition-colors hover:text-ink">
+                          <a
+                            href={m.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${m.name} on LinkedIn`}
+                            className="inline-flex size-11 items-center justify-center transition-colors hover:text-ink"
+                          >
                             <LinkedInIcon className="size-[18px]" />
                           </a>
                         )}

@@ -13,7 +13,7 @@ export type TrustLogo = { id: string; name: string; logo: NonNullable<Img> };
 
 /**
  * Active client logos for the hero trust strip, ordered. Empty array when the
- * CMS is unreachable or nothing is configured — the hero then falls back to
+ * CMS is unreachable or nothing is configured. The hero then falls back to
  * the dictionary's text names.
  */
 export async function getTrustLogos(): Promise<TrustLogo[]> {

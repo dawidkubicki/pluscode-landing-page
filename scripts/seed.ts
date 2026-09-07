@@ -5,10 +5,16 @@
  *   pnpm seed
  * (which is: node --env-file=.env --import tsx scripts/seed.ts)
  *
- * Safe to re-run — it skips records that already exist.
+ * Safe to re-run: it skips records that already exist.
  */
 import { getPayload } from "payload";
 import config from "../payload.config.ts";
+import { TEAM, teamDoc } from "./content/team.ts";
+import {
+  BANNER_TITLE,
+  LEGACY_BANNER_TITLES,
+  bannerDoc,
+} from "./content/announcement.ts";
 
 /** Build a minimal Lexical rich-text value from plain paragraphs. */
 function richText(paragraphs: string[]) {
@@ -58,7 +64,7 @@ async function ensure(
     limit: 1,
   });
   if (existing.docs.length > 0) {
-    console.log(`• ${collection}: "${label}" already exists — skipped`);
+    console.log(`• ${collection}: "${label}" already exists, skipped`);
     return existing.docs[0];
   }
   const doc = await payload.create({
@@ -83,49 +89,28 @@ async function seed() {
   );
 
   // --- Team ---
-  const team = [
-    {
-      name: "Dawid Kubicki",
-      role: "CEO & Founder",
-      bio: "Passionate about technology and its potential to transform businesses. We start with people, not technology.",
-      email: "contact@pluscode.io",
-      phone: "+48 667 688 927",
-      linkedin: "https://www.linkedin.com/company/pluscode",
-      featuredOnHome: true,
-      order: 0,
-    },
-    {
-      name: "Engineering Lead",
-      role: "Head of Engineering",
-      bio: "Building scalable solutions with cutting-edge technologies.",
-      email: "contact@pluscode.io",
-      order: 1,
-    },
-    {
-      name: "Design Lead",
-      role: "Head of Design",
-      bio: "Creating beautiful, intuitive experiences that users love.",
-      email: "contact@pluscode.io",
-      order: 2,
-    },
-  ];
-  for (const m of team) {
-    await ensure(payload, "team", { name: { equals: m.name } }, m, m.name);
+  // The two real people, and only the two. Krzysztof carries featuredOnHome
+  // because he is the person on the booking card and in the contact widget;
+  // getFeatured() takes the first flagged member in `order`.
+  // scripts/content/team.ts is the source of truth, shared with
+  // scripts/seed-team.ts, which repairs a database seeded before the team was
+  // corrected. Run that one to replace placeholder members and add portraits.
+  for (const person of TEAM) {
+    const doc = teamDoc(person);
+    await ensure(payload, "team", { name: { equals: doc.name } }, doc, doc.name);
   }
 
   // --- Announcement ---
+  // English only here. scripts/content/announcement.ts reads the copy off the
+  // dictionaries so this row and the dictionary fallback in lib/announcement.ts
+  // cannot drift; scripts/localize-announcement.ts adds PL and DE and repairs a
+  // database seeded before the copy changed.
   await ensure(
     payload,
     "announcements",
-    { title: { equals: "AI consultations for startups" } },
-    {
-      title: "AI consultations for startups",
-      text: "New: We're now offering free AI consultations for startups.",
-      linkText: "Learn more",
-      linkUrl: "/contact",
-      isActive: true,
-    },
-    "AI consultations for startups",
+    { title: { in: [BANNER_TITLE, ...LEGACY_BANNER_TITLES] } },
+    bannerDoc(),
+    BANNER_TITLE,
   );
 
   // --- Case studies ---
@@ -137,7 +122,7 @@ async function seed() {
       client: "Żabka",
       excerpt:
         "Planning, designing, implementing, and maintaining autonomous stores architecture for a major retail chain.",
-      gradient: "bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-400",
+      gradient: "bg-gradient-to-br from-night via-night-soft to-night-deep",
       featured: true,
       order: 0,
       publishedAt: new Date().toISOString(),
@@ -146,7 +131,7 @@ async function seed() {
         "Żabka set out to scale a fleet of autonomous, cashier-less stores. We partnered with their team to design and run the cloud architecture behind it.",
       ]),
       challenge: richText([
-        "Autonomous retail demands real-time computer vision, inventory sync and payments at the edge — across hundreds of locations, with zero tolerance for downtime.",
+        "Autonomous retail demands real-time computer vision, inventory sync and payments at the edge, across hundreds of locations, with zero tolerance for downtime.",
       ]),
       solution: richText([
         "We built an event-driven, cloud-native platform: containerised services on Kubernetes, infrastructure as code, and edge connectivity with automated failover and observability end to end.",
@@ -167,7 +152,7 @@ async function seed() {
       client: "UBS",
       excerpt:
         "A seamless, consistent experience with unified payment flows and easier in-app navigation.",
-      gradient: "bg-gradient-to-br from-indigo-500 via-blue-600 to-slate-700",
+      gradient: "bg-gradient-to-br from-night-deep via-night to-night-soft",
       featured: true,
       order: 1,
       publishedAt: new Date().toISOString(),
@@ -176,7 +161,7 @@ async function seed() {
         "We extended UBS's product team to accelerate a redesign of their mobile banking experience without slowing delivery.",
       ]),
       challenge: richText([
-        "Fragmented flows and inconsistent UI made everyday banking harder than it needed to be — and the roadmap couldn't wait.",
+        "Fragmented flows and inconsistent UI made everyday banking harder than it needed to be, and the roadmap couldn't wait.",
       ]),
       solution: richText([
         "Embedded engineers and designers integrated with the existing team, unifying payment flows, rebuilding navigation and shipping behind a shared design system.",
@@ -202,7 +187,7 @@ async function seed() {
       category: "ai",
       excerpt:
         "The key ways artificial intelligence is revolutionizing how companies operate, from automated workflows to predictive analytics.",
-      gradient: "bg-gradient-to-br from-purple-600 via-violet-500 to-indigo-400",
+      gradient: "bg-gradient-to-br from-night via-night-deep to-night-soft",
       author: "Pluscode",
       readTime: 8,
       featured: true,
@@ -210,7 +195,7 @@ async function seed() {
       _status: "published",
       content: richText([
         "Artificial intelligence has moved from experiment to operating model. The companies pulling ahead are the ones embedding it into everyday workflows.",
-        "From automated document processing to predictive analytics that anticipate demand, AI is quietly reshaping how decisions get made — and how fast.",
+        "From automated document processing to predictive analytics that anticipate demand, AI is quietly reshaping how decisions get made, and how fast.",
       ]),
     },
     {
@@ -219,14 +204,14 @@ async function seed() {
       category: "development",
       excerpt:
         "A practical guide to designing and implementing microservices that grow with your business needs.",
-      gradient: "bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-400",
+      gradient: "bg-gradient-to-br from-night-deep via-night-soft to-night",
       author: "Pluscode",
       readTime: 5,
       featured: false,
       publishedAt: new Date(Date.now() - 86400000).toISOString(),
       _status: "published",
       content: richText([
-        "Microservices promise scale and autonomy — but only if the boundaries are right. Start with the domain, not the org chart.",
+        "Microservices promise scale and autonomy, but only if the boundaries are right. Start with the domain, not the org chart.",
       ]),
     },
     {
@@ -235,14 +220,14 @@ async function seed() {
       category: "business",
       excerpt:
         "Key insights from our experience helping startups navigate rapid growth phases.",
-      gradient: "bg-gradient-to-br from-emerald-600 via-emerald-500 to-teal-400",
+      gradient: "bg-gradient-to-br from-night via-night-soft to-night-deep",
       author: "Pluscode",
       readTime: 6,
       featured: false,
       publishedAt: new Date(Date.now() - 2 * 86400000).toISOString(),
       _status: "published",
       content: richText([
-        "Scaling is less about doing more and more about doing the right things repeatably. Here's what we've learned alongside fast-growing teams.",
+        "Scaling is less about doing more and more about doing the right things repeatably. Here is what we have learned alongside fast-growing teams.",
       ]),
     },
     {
@@ -251,7 +236,7 @@ async function seed() {
       category: "technology",
       excerpt:
         "Essential patterns and practices for building resilient cloud applications.",
-      gradient: "bg-gradient-to-br from-orange-500 via-amber-500 to-yellow-400",
+      gradient: "bg-gradient-to-br from-night-soft via-night-deep to-night",
       author: "Pluscode",
       readTime: 4,
       featured: false,

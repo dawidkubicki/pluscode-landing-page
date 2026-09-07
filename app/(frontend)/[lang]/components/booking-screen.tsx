@@ -4,6 +4,7 @@ import { Reveal } from "./motion";
 import LeadForm from "./lead-form";
 import LocaleLink from "./locale-link";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
+import { CONTACT_PERSON } from "@/lib/contact-person";
 import type { Locale } from "@/lib/i18n/config";
 
 type BookingChrome = Dictionary["booking"];
@@ -21,15 +22,6 @@ function Check({ className = "" }: { className?: string }) {
       <path d="m5 12.5 4.5 4.5L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
-}
-
-function initials(name: string): string {
-  return name
-    .split(" ")
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((w) => w[0]?.toUpperCase() ?? "")
-    .join("");
 }
 
 /**
@@ -72,15 +64,18 @@ export function BookingScreen({
 }) {
   return (
     <main>
-      <section className="relative isolate overflow-hidden bg-night text-bone">
-        <div className="pointer-events-none absolute -right-44 -top-44 -z-10 size-[34rem] rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.18)_0%,rgba(16,185,129,0)_65%)]" />
+      {/* The whole screen sits on `night`, one step above the page, so it
+          closes with a hairline against the footer and carries a corner glow
+          of the accent (`lime` at 18%) to read as lit rather than as a gap. */}
+      <section className="relative isolate overflow-hidden border-b border-night-line bg-night text-bone">
+        <div className="pointer-events-none absolute -right-44 -top-44 -z-10 size-[34rem] rounded-full bg-[radial-gradient(circle,rgba(51,102,255,0.18)_0%,rgba(51,102,255,0)_65%)]" />
 
         <div className="mx-auto max-w-[1240px] px-5 pb-20 pt-36 sm:px-10 sm:pb-28 sm:pt-40">
           {/* Header */}
           <div className="max-w-[760px]">
             <Reveal>
               <div className="mb-7 flex items-center gap-2.5">
-                <span className="inline-block size-2 rounded-full bg-lime animate-pulse-dot" />
+                <span className="inline-block size-2 rounded-full bg-lime-soft animate-pulse-dot" />
                 <span className="font-mono text-[12px] uppercase tracking-[0.14em] text-bone-dim sm:text-[13px]">
                   {eyebrow}
                 </span>
@@ -124,15 +119,15 @@ export function BookingScreen({
             <Reveal delay={0.15}>
               <div className="flex flex-col gap-7 lg:sticky lg:top-28">
                 {summary && (
-                  <div className="rounded border border-white/10 bg-night-soft p-6 sm:p-7">
+                  <div className="rounded border border-night-line bg-night-soft p-6 sm:p-7">
                     <div className="font-mono text-[11.5px] uppercase tracking-[0.14em] text-lime-soft">
                       {summaryLabel ?? booking.summaryTitle}
                     </div>
                     <div className="mt-3 text-[14px] leading-[1.5] text-bone-soft">{summary.meta}</div>
-                    <ul className="mt-5 flex flex-col gap-2.5 border-t border-white/10 pt-5">
+                    <ul className="mt-5 flex flex-col gap-2.5 border-t border-night-line pt-5">
                       {summary.points.map((p) => (
                         <li key={p} className="flex items-start gap-2.5 text-[14px] leading-[1.5] text-bone-soft">
-                          <Check className="mt-0.5 size-[15px] shrink-0 text-lime" />
+                          <Check className="mt-0.5 size-[15px] shrink-0 text-lime-soft" />
                           <span>{p}</span>
                         </li>
                       ))}
@@ -148,7 +143,7 @@ export function BookingScreen({
                   <ol className="mt-4 flex flex-col gap-3">
                     {booking.steps.map((step, i) => (
                       <li key={step} className="flex items-center gap-3">
-                        <span className="flex size-6 shrink-0 items-center justify-center rounded-full border border-white/15 font-mono text-[11px] text-lime-soft">
+                        <span className="flex size-6 shrink-0 items-center justify-center rounded-full border border-cream-line-strong font-mono text-[11px] text-lime-soft">
                           {i + 1}
                         </span>
                         <span className="text-[14.5px] leading-[1.45] text-bone-soft">{step}</span>
@@ -158,10 +153,23 @@ export function BookingScreen({
                 </div>
 
                 {/* Point of contact */}
-                <div className="border-t border-white/10 pt-6">
+                <div className="border-t border-night-line pt-6">
                   <div className="flex items-center gap-3.5">
-                    <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-lime font-mono text-[13px] font-semibold text-night">
-                      {initials(booking.contactName)}
+                    {/* A round photo means "there is a live human here and you
+                        can reach them", so the contact is his face rather than
+                        his initials. Local file, not CMS: it has to be right on
+                        first paint. */}
+                    <span className="flex size-11 shrink-0 overflow-hidden rounded-full bg-photo-ground ring-1 ring-cream-line-strong">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={CONTACT_PERSON.photo.url}
+                        alt={booking.contactName}
+                        width={44}
+                        height={44}
+                        className="size-full object-cover object-center [filter:grayscale(1)_contrast(1.02)]"
+                        loading="lazy"
+                        decoding="async"
+                      />
                     </span>
                     <div>
                       <div className="text-[15px] font-semibold text-bone">{booking.contactName}</div>
@@ -177,7 +185,7 @@ export function BookingScreen({
                 </div>
 
                 {/* Trust */}
-                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 border-t border-white/10 pt-6">
+                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 border-t border-night-line pt-6">
                   <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-bone-dim">
                     {booking.trustTitle}
                   </span>

@@ -1,12 +1,20 @@
 /**
- * Editorial content for the AI-news insight posts published 2026-08.
+ * Editorial content for the insight posts published 2026-08 and 2026-09.
  * Facts sourced from: Gibson Dunn / DLA Piper / Holland & Knight briefings on
  * the EU AI Act Digital Omnibus (July 2026), Anthropic's Claude Fable 5 /
  * Mythos 5 announcement (June 2026), OpenAI's GPT-5.6 releases (July and
  * August 2026), McKinsey / PwC / Gartner / IBM agent-adoption research, and
  * the DORA 2025 report on AI-assisted engineering.
  *
- * House style: no em dashes anywhere in the copy.
+ * The forward deployed engineer explainer carries only three factual claims,
+ * each checkable in public: the military origin of the phrase, Palantir's
+ * long-standing public use of the title on its own careers pages, and the
+ * fact that AI labs and enterprise software vendors advertise the same title.
+ * No figures, no client names, no case-study claims.
+ *
+ * House style: no em dashes anywhere in the copy. Gradients stay on the
+ * near-black plus indigo palette, so a card without a cover still matches
+ * the site.
  *
  * Consumed by scripts/seed-insights.ts (upsert into Payload) and
  * scripts/generate-insight-covers.tsx (cover art).
@@ -40,7 +48,7 @@ export const posts: NewsPost[] = [
     readTime: 7,
     featured: true,
     publishedAt: "2026-08-18T09:00:00.000Z",
-    gradient: "bg-gradient-to-br from-emerald-600 via-emerald-500 to-teal-400",
+    gradient: "bg-gradient-to-br from-night-soft via-night to-night-deep",
     coverAlt: "Abstract compliance-checklist graphic for the EU AI Act deadline",
     locales: {
       en: {
@@ -162,7 +170,7 @@ export const posts: NewsPost[] = [
     readTime: 6,
     featured: false,
     publishedAt: "2026-08-11T09:00:00.000Z",
-    gradient: "bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-400",
+    gradient: "bg-gradient-to-br from-night via-night-soft to-night-deep",
     coverAlt: "Abstract tiered-steps graphic representing frontier AI model tiers",
     locales: {
       en: {
@@ -269,7 +277,7 @@ export const posts: NewsPost[] = [
     readTime: 6,
     featured: false,
     publishedAt: "2026-08-04T09:00:00.000Z",
-    gradient: "bg-gradient-to-br from-purple-600 via-violet-500 to-indigo-400",
+    gradient: "bg-gradient-to-br from-night-deep via-night to-night-soft",
     coverAlt: "Abstract bar-chart graphic contrasting AI agent adoption and failure rates",
     locales: {
       en: {
@@ -367,7 +375,7 @@ export const posts: NewsPost[] = [
     readTime: 5,
     featured: false,
     publishedAt: "2026-07-28T09:00:00.000Z",
-    gradient: "bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-400",
+    gradient: "bg-gradient-to-br from-night via-night-deep to-night-soft",
     coverAlt: "Abstract code-lines graphic showing rising individual output and a flat delivery line",
     locales: {
       en: {
@@ -454,6 +462,272 @@ export const posts: NewsPost[] = [
           },
           {
             p: "Genau in dieser Lücke verbringen wir die meiste Beratungszeit: KI-Beschleunigung in ein Delivery-System einbauen (Reviews, Tests, Observability), damit das Tempo die Produktion erreicht, statt sich davor zu stauen.",
+          },
+        ],
+      },
+    },
+  },
+  {
+    slug: "what-is-a-forward-deployed-engineer",
+    category: "business",
+    readTime: 6,
+    featured: false,
+    publishedAt: "2026-09-03T09:00:00.000Z",
+    gradient: "bg-gradient-to-br from-night-soft via-night-deep to-night",
+    coverAlt: "Abstract graphic of one filled marker inside a ring of outlined markers",
+    locales: {
+      en: {
+        title: "What is a forward deployed engineer?",
+        excerpt:
+          "A forward deployed engineer is a senior engineer who works inside your company instead of at arm's length from it. Where the term came from, what the person actually does, and when it is the wrong thing to buy.",
+        seoTitle: "What is a forward deployed engineer?",
+        seoDescription:
+          "A plain-language explanation of the forward deployed engineer model: where the term came from, what the role does day to day, when it fits, and when a fixed scope project fits better.",
+        content: [
+          {
+            p: "“Forward deployed engineer” is a job title that has started appearing in places where companies buy software. It sounds like jargon, and half of it is: “forward deployed” is borrowed from the military, where it means stationed close to where the work happens rather than back at headquarters. Strip the borrowed half away and what is left is simple. A forward deployed engineer is a senior engineer who works inside your company, on your problem, instead of at arm's length from it.",
+          },
+          {
+            p: "The distinction matters more than it sounds. Most technical work you buy arrives in one of two shapes. Either you buy a document, where somebody studies your business and hands back a recommendation, or you buy a project, where somebody takes a written specification away and returns with software built to it. Both shapes assume that the hard part is doing the work, and that the question was already clear before anyone started. In a lot of AI work, that assumption is simply wrong. The hard part is finding out what the system actually has to handle, and you find that out by running something against last month's real cases, not by writing a longer specification.",
+          },
+          {
+            p: "The forward deployed model is the answer to that. Instead of receiving a specification, the engineer sits where the work is done, watches one full cycle of it, agrees on a single outcome with somebody who can say yes, and then builds towards it, changing course as the real cases teach them what they missed. They are accountable for the result rather than for a list of tickets. When it works, the difference a client notices is not the technology. It is that nobody is waiting for anybody else to write something down.",
+          },
+          { h2: "Where the title came from" },
+          {
+            p: "The title was popularised by Palantir, an American software company that has used it publicly on its own careers pages for years, for engineers sent to work on site with customers rather than building a product at a distance from them. The pattern spread. AI labs and enterprise software companies now publicly advertise roles under this title or a close variant, because what they sell has to be shaped around each customer's data and process before it is worth anything.",
+          },
+          {
+            p: "There is an honest reason the model exists. General purpose systems solve the general part of a problem and then stop. The value left over is locked inside one company's own mess: the exceptions, the local rules, the spreadsheet somebody maintains by hand, the three systems that describe the same customer differently. No amount of product work at a distance unlocks that. The only way in is to send somebody into the mess.",
+          },
+          { h2: "What the person actually does" },
+          {
+            p: "The first two months look much the same wherever the model works. Week one is spent watching the work being done and getting access to the systems it touches, and it ends with one page saying what the outcome is and how it will be measured. A good forward deployed engineer spends more of that week asking questions than writing code, and that is not a delay: it decides whether the rest of the work is aimed at anything.",
+          },
+          {
+            ul: [
+              "Week one: watch one full cycle of the work, get access, and agree one page on the outcome and the measure.",
+              "Week two: something narrow runs on the real data, in front of the people whose job it changes.",
+              "After that: the errors it makes are the specification for the rest of the work.",
+              "Around month two: in production, with a human override, documented so the team can run it alone.",
+            ],
+          },
+          { h2: "How it is different from the things you already buy" },
+          {
+            p: "A consultancy leaves a document. That is the right purchase when the decision is the bottleneck. It is the wrong purchase when everybody already agrees what should happen and nothing is happening. A forward deployed engineer leaves a running system instead, which is worth less than a document if the decision was the hard part, and a great deal more if it was not.",
+          },
+          {
+            p: "Contractors and staff augmentation sell capacity. Somebody on your side writes the tickets and carries the risk of asking for the wrong thing, and the supplier is judged on whether the tickets closed. A forward deployed engineer is judged on whether the process got faster or cheaper, and helps decide what gets built.",
+          },
+          {
+            p: "A fixed scope project needs the answer to be knowable before the work starts. When it is, take the fixed scope: it is cheaper and the risk of a wrong estimate sits with the supplier. When it is not, a fixed price is either padded to cover the unknown, which makes it expensive, or held to the letter, which delivers what was written and nothing anybody needed.",
+          },
+          { h2: "When it is the right choice" },
+          {
+            ul: [
+              "You can name the process that costs the most hours but not the fix, and nobody in house could build it.",
+              "Somebody delivered a strategy document about your AI opportunities and nothing has run since.",
+              "Hiring would take months, and it is not yet clear the work justifies a permanent role.",
+              "The exceptions in your process are the hard part, so any scope written today would be a guess.",
+            ],
+          },
+          {
+            p: "All four have the same shape: the question is still open. Where the question is open, buying an outcome beats buying a plan or a pair of hands.",
+          },
+          { h2: "When it is not" },
+          {
+            ul: [
+              "You already know exactly what to build. Buy the build: it is cheaper and the risk sits with the supplier.",
+              "Nobody on your side can decide inside a week. The model runs on a fast yes or no, and without one the engineer stalls while you pay for the stall.",
+              "Access to your data and systems will take three months of approvals. The clock starts anyway.",
+              "What you need is more hands on a backlog that already exists. That is staff augmentation, a different and cheaper product.",
+            ],
+          },
+          {
+            p: "A supplier who never tells you that one of those applies is selling you something. The question is not whether they do forward deployed engineering. It is what they would talk you out of.",
+          },
+          { h2: "What to ask before you agree to one" },
+          {
+            ul: [
+              "Who exactly is being embedded, and can I speak to that person before signing anything?",
+              "What will be written down at the end of week one, and how will the outcome be measured?",
+              "What will be running on real production data at the end of week two?",
+              "Where does the code live, and who owns it if the engagement ends early?",
+              "What is the notice period, and is there an exit fee?",
+            ],
+          },
+          {
+            p: "At Pluscode we work this way because it is the only way we have found to get a result out of the messy, specific, half documented processes that real companies run on. If you can name the job that costs your team the most hours, we will spend thirty minutes on it with the engineer who would do the work, and tell you honestly whether this is the right way to do it or whether something smaller and cheaper would be enough. That conversation costs nothing and does not commit you to anything.",
+          },
+        ],
+      },
+      pl: {
+        title: "Kim jest forward deployed engineer?",
+        excerpt:
+          "Forward deployed engineer to doświadczony inżynier, który pracuje wewnątrz Twojej firmy, a nie z dystansu. Skąd wzięła się ta nazwa, czym taka osoba naprawdę się zajmuje i kiedy nie warto jej kupować.",
+        seoTitle: "Kim jest forward deployed engineer?",
+        seoDescription:
+          "Proste wyjaśnienie modelu forward deployed engineer: skąd wzięła się nazwa, czym taka osoba zajmuje się na co dzień, kiedy to dobry wybór, a kiedy lepszy jest projekt o stałym zakresie.",
+        content: [
+          {
+            p: "„Forward deployed engineer” to nazwa stanowiska, która zaczęła się pojawiać wszędzie tam, gdzie firmy kupują oprogramowanie. Brzmi jak żargon i w połowie nim jest: „forward deployed” pochodzi z wojska, gdzie oznacza rozmieszczenie blisko miejsca działań, a nie w kwaterze głównej. Jeśli odłożyć tę pożyczoną połowę, zostaje coś prostego. Forward deployed engineer to doświadczony inżynier, który pracuje wewnątrz Twojej firmy, przy Twoim problemie, zamiast patrzeć na niego z dystansu.",
+          },
+          {
+            p: "Ta różnica znaczy więcej, niż się wydaje. Prace techniczne, które kupujesz, mają zwykle jeden z dwóch kształtów. Albo kupujesz dokument, w którym ktoś bada Twoją firmę i oddaje rekomendację, albo kupujesz projekt, w którym ktoś zabiera spisaną specyfikację i wraca z gotowym oprogramowaniem. Oba kształty zakładają, że trudną częścią jest wykonanie pracy, a pytanie było jasne, zanim ktokolwiek zaczął. W wielu projektach z AI to założenie jest po prostu błędne. Trudną częścią jest ustalenie, co system naprawdę musi obsłużyć, a dowiadujesz się tego, uruchamiając coś na prawdziwych sprawach z zeszłego miesiąca, a nie pisząc dłuższą specyfikację.",
+          },
+          {
+            p: "Model forward deployed jest odpowiedzią na ten problem. Zamiast dostać specyfikację, inżynier siada tam, gdzie wykonywana jest praca, obserwuje jeden pełny cykl, ustala jeden wynik z osobą, która może powiedzieć „tak”, i buduje w jego stronę, zmieniając kurs, gdy prawdziwe przypadki pokazują, czego nie przewidział. Odpowiada za rezultat, a nie za listę zadań. Kiedy to działa, klient zauważa różnicę nie w technologii. Zauważa, że nikt nie czeka, aż ktoś inny coś spisze.",
+          },
+          { h2: "Skąd wzięła się ta nazwa" },
+          {
+            p: "Nazwę spopularyzował Palantir, amerykańska firma software'owa, która od lat publicznie używa jej na własnych stronach z ofertami pracy: opisuje tak inżynierów wysyłanych do pracy u klienta, zamiast budowania produktu na dystans. Wzorzec się rozszedł. Laboratoria AI i dostawcy oprogramowania dla firm publicznie rekrutują dziś na stanowiska o tej lub bardzo zbliżonej nazwie, bo to, co sprzedają, trzeba dopasować do danych i procesów każdego klienta, zanim zacznie być cokolwiek warte.",
+          },
+          {
+            p: "Jest szczery powód, dla którego ten model istnieje. Systemy ogólnego przeznaczenia rozwiązują ogólną część problemu, a potem się zatrzymują. Wartość, która zostaje, jest zamknięta w bałaganie konkretnej firmy: w wyjątkach, w lokalnych zasadach, w arkuszu, który ktoś prowadzi ręcznie, w trzech systemach opisujących tego samego klienta inaczej. Żadna ilość pracy nad produktem z dystansu tego nie odblokuje. Jedyne wejście prowadzi przez wysłanie kogoś w ten bałagan.",
+          },
+          { h2: "Czym taka osoba naprawdę się zajmuje" },
+          {
+            p: "Pierwsze dwa miesiące wyglądają podobnie wszędzie tam, gdzie ten model działa. Pierwszy tydzień to obserwowanie pracy i uzyskanie dostępu do systemów, których ona dotyka, a kończy się jedną stroną opisu: jaki jest wynik i jak będzie mierzony. Dobry forward deployed engineer spędza w tym tygodniu więcej czasu na pytaniach niż na pisaniu kodu i to nie jest opóźnienie: to od tego zależy, czy reszta pracy jest w cokolwiek wycelowana.",
+          },
+          {
+            ul: [
+              "Tydzień pierwszy: obserwacja jednego pełnego cyklu pracy, dostępy i jedna strona z opisem wyniku oraz miary.",
+              "Tydzień drugi: coś wąskiego działa na prawdziwych danych, na oczach ludzi, których pracy to dotyczy.",
+              "Potem: błędy, które popełnia, są specyfikacją dla reszty pracy.",
+              "Około drugiego miesiąca: produkcja, nadzór człowieka i dokumentacja, dzięki której zespół prowadzi to sam.",
+            ],
+          },
+          { h2: "Czym to się różni od tego, co już kupujesz" },
+          {
+            p: "Firma doradcza zostawia dokument. To dobry zakup, kiedy wąskim gardłem jest decyzja. To zły zakup, kiedy wszyscy już się zgadzają, co powinno się wydarzyć, a nic się nie dzieje. Forward deployed engineer zostawia zamiast tego działający system, co jest mniej warte niż dokument, jeśli trudną częścią była decyzja, i dużo więcej warte, jeśli nie była.",
+          },
+          {
+            p: "Kontraktorzy i outsourcing zespołów sprzedają moce przerobowe. Ktoś po Twojej stronie pisze zadania i bierze na siebie ryzyko, że poprosi o niewłaściwą rzecz, a dostawcę ocenia się po tym, czy zadania zostały zamknięte. Forward deployed engineer jest oceniany po tym, czy proces stał się szybszy albo tańszy, i współdecyduje o tym, co powstaje.",
+          },
+          {
+            p: "Projekt o stałym zakresie wymaga, żeby odpowiedź była znana przed startem. Kiedy jest, wybierz stały zakres: jest tańszy, a ryzyko błędnej wyceny bierze na siebie dostawca. Kiedy nie jest, stała cena albo zostanie zawyżona na zapas, co czyni ją drogą, albo będzie egzekwowana co do litery, co daje dokładnie to, co spisano, i nic, czego ktokolwiek potrzebował.",
+          },
+          { h2: "Kiedy to dobry wybór" },
+          {
+            ul: [
+              "Umiesz wskazać proces, który kosztuje Twój zespół najwięcej godzin, ale nie wiesz, jak go naprawić, i nikt u Ciebie tego nie zbuduje.",
+              "Ktoś dostarczył dokument o szansach na AI w Twojej firmie i od tego czasu nic nie ruszyło.",
+              "Rekrutacja zajęłaby miesiące, a nie jest jeszcze pewne, czy ta praca uzasadnia etat.",
+              "Trudną częścią procesu są wyjątki, więc każdy zakres spisany dzisiaj byłby zgadywaniem.",
+            ],
+          },
+          {
+            p: "Te cztery przypadki łączy jedno: pytanie wciąż jest otwarte. Kiedy pytanie jest otwarte, kupowanie wyniku wygrywa z kupowaniem planu albo pary rąk.",
+          },
+          { h2: "Kiedy to zły wybór" },
+          {
+            ul: [
+              "Wiesz dokładnie, co ma powstać. Kup wykonanie: jest tańsze, a ryzyko bierze dostawca.",
+              "Nikt po Twojej stronie nie podejmie decyzji w tydzień. Ten model żyje szybkim „tak” albo „nie”, a bez tego inżynier stoi, a Ty płacisz za ten postój.",
+              "Dostęp do danych i systemów zajmie trzy miesiące zgód. Zegar i tak tyka.",
+              "Naprawdę potrzebujesz więcej rąk do istniejącego backlogu. To outsourcing zespołu, inny i tańszy produkt.",
+            ],
+          },
+          {
+            p: "Dostawca, który nigdy nie powie Ci, że jeden z tych punktów dotyczy właśnie Ciebie, coś Ci sprzedaje. Nie pytaj, czy robi forward deployed engineering. Pytaj, od czego by Cię odwiódł.",
+          },
+          { h2: "O co zapytać, zanim się zgodzisz" },
+          {
+            ul: [
+              "Kto dokładnie wejdzie do zespołu i czy mogę z tą osobą porozmawiać przed podpisaniem czegokolwiek?",
+              "Co zostanie spisane na koniec pierwszego tygodnia i jak będzie mierzony wynik?",
+              "Co będzie działać na prawdziwych danych produkcyjnych na koniec drugiego tygodnia?",
+              "Gdzie mieszka kod i do kogo należy, jeśli współpraca skończy się wcześniej?",
+              "Jaki jest okres wypowiedzenia i czy jest opłata za wyjście?",
+            ],
+          },
+          {
+            p: "W Pluscode pracujemy w ten sposób, bo to jedyny znany nam sposób, żeby wyciągnąć wynik z tych zabałaganionych, konkretnych i w połowie opisanych procesów, na których stoją prawdziwe firmy. Jeśli umiesz nazwać zadanie, które kosztuje Twój zespół najwięcej godzin, poświęcimy mu trzydzieści minut z inżynierem, który wykonałby tę pracę, i powiemy szczerze, czy to właściwa droga, czy wystarczy coś mniejszego i tańszego. Ta rozmowa nic nie kosztuje i do niczego nie zobowiązuje.",
+          },
+        ],
+      },
+      de: {
+        title: "Was ist ein Forward Deployed Engineer?",
+        excerpt:
+          "Ein Forward Deployed Engineer ist ein erfahrener Engineer, der in Ihrem Unternehmen arbeitet statt auf Distanz. Woher der Begriff kommt, was die Person tatsächlich tut und wann man sie besser nicht einkauft.",
+        seoTitle: "Was ist ein Forward Deployed Engineer?",
+        seoDescription:
+          "Eine verständliche Erklärung des Forward-Deployed-Engineer-Modells: Woher der Begriff kommt, was die Rolle täglich tut, wann sie passt und wann ein Projekt mit festem Umfang besser passt.",
+        content: [
+          {
+            p: "„Forward Deployed Engineer“ ist eine Berufsbezeichnung, die überall dort auftaucht, wo Unternehmen Software einkaufen. Sie klingt nach Jargon, und zur Hälfte ist sie das auch: „forward deployed“ stammt aus dem Militär und bedeutet dort, nah am Geschehen stationiert zu sein statt im Hauptquartier. Lässt man die geliehene Hälfte weg, bleibt etwas Einfaches übrig. Ein Forward Deployed Engineer ist ein erfahrener Engineer, der in Ihrem Unternehmen und an Ihrem Problem arbeitet, statt es aus der Distanz zu betrachten.",
+          },
+          {
+            p: "Der Unterschied wiegt schwerer, als er klingt. Technische Arbeit, die Sie einkaufen, kommt meist in einer von zwei Formen. Entweder Sie kaufen ein Dokument, in dem jemand Ihr Unternehmen untersucht und eine Empfehlung zurückgibt, oder Sie kaufen ein Projekt, bei dem jemand eine geschriebene Spezifikation mitnimmt und fertige Software zurückbringt. Beide Formen setzen voraus, dass die Ausführung das Schwierige ist und die Frage schon geklärt war, bevor jemand angefangen hat. Bei vieler KI-Arbeit stimmt diese Annahme schlicht nicht. Das Schwierige ist herauszufinden, was das System tatsächlich abdecken muss, und das erfährt man, indem man etwas gegen die echten Fälle des letzten Monats laufen lässt, nicht indem man eine längere Spezifikation schreibt.",
+          },
+          {
+            p: "Das Forward-Deployed-Modell ist die Antwort darauf. Statt eine Spezifikation zu bekommen, setzt sich der Engineer dorthin, wo die Arbeit passiert, sieht einen vollständigen Durchlauf, vereinbart mit jemandem, der Ja sagen kann, ein einziges Ergebnis, und baut darauf zu, während die echten Fälle zeigen, was übersehen wurde. Verantwortlich ist er für das Ergebnis, nicht für eine Ticketliste. Wenn es funktioniert, merkt der Kunde den Unterschied nicht an der Technik. Er merkt ihn daran, dass niemand darauf wartet, dass jemand anderes etwas aufschreibt.",
+          },
+          { h2: "Woher der Titel kommt" },
+          {
+            p: "Bekannt gemacht hat den Titel Palantir, ein amerikanisches Softwareunternehmen, das ihn seit Jahren öffentlich auf den eigenen Karriereseiten verwendet: für Engineers, die vor Ort beim Kunden arbeiten, statt aus der Ferne ein Produkt zu bauen. Das Muster hat sich verbreitet. KI-Labore und Anbieter von Unternehmenssoftware schreiben heute öffentlich Stellen unter diesem oder einem sehr ähnlichen Titel aus, weil das, was sie verkaufen, erst auf die Daten und Abläufe jedes Kunden zugeschnitten werden muss, bevor es etwas taugt.",
+          },
+          {
+            p: "Es gibt einen ehrlichen Grund für dieses Modell. Allzwecksysteme lösen den allgemeinen Teil eines Problems und bleiben dann stehen. Der Wert, der übrig bleibt, steckt im Durcheinander des einzelnen Unternehmens: in den Ausnahmen, den hausgemachten Regeln, der Tabelle, die jemand von Hand pflegt, den drei Systemen, die denselben Kunden unterschiedlich führen. Kein Maß an Produktarbeit aus der Distanz holt das heraus. Der einzige Weg hinein führt darüber, jemanden in dieses Durcheinander zu schicken.",
+          },
+          { h2: "Was die Person tatsächlich tut" },
+          {
+            p: "Die ersten zwei Monate sehen überall ähnlich aus, wo das Modell funktioniert. Die erste Woche vergeht damit, der Arbeit zuzusehen und Zugang zu den Systemen zu bekommen, die sie berührt, und sie endet mit einer Seite, auf der steht, was das Ergebnis ist und wie es gemessen wird. Ein guter Forward Deployed Engineer verbringt diese Woche mehr mit Fragen als mit Code, und das ist keine Verzögerung: Davon hängt ab, ob die restliche Arbeit überhaupt auf etwas zielt.",
+          },
+          {
+            ul: [
+              "Woche eins: einen vollständigen Durchlauf der Arbeit ansehen, Zugänge bekommen, eine Seite zu Ergebnis und Messung vereinbaren.",
+              "Woche zwei: etwas Schmales läuft auf den echten Daten, vor den Leuten, deren Arbeit es verändert.",
+              "Danach: die Fehler, die es macht, sind die Spezifikation für den Rest der Arbeit.",
+              "Um Monat zwei: im Betrieb, mit menschlicher Übersteuerung und dokumentiert, damit das Team allein weitermacht.",
+            ],
+          },
+          { h2: "Wie es sich von dem unterscheidet, was Sie schon einkaufen" },
+          {
+            p: "Eine Beratung hinterlässt ein Dokument. Das ist der richtige Einkauf, wenn die Entscheidung der Engpass ist. Es ist der falsche Einkauf, wenn sich alle längst einig sind, was passieren soll, und trotzdem nichts passiert. Ein Forward Deployed Engineer hinterlässt stattdessen ein laufendes System, was weniger wert ist als ein Dokument, falls die Entscheidung das Schwierige war, und deutlich mehr wert, falls nicht.",
+          },
+          {
+            p: "Dienstleister und Personalaufstockung verkaufen Kapazität. Jemand auf Ihrer Seite schreibt die Tickets und trägt das Risiko, das Falsche zu bestellen, und der Anbieter wird daran gemessen, ob die Tickets geschlossen wurden. Ein Forward Deployed Engineer wird daran gemessen, ob der Prozess schneller oder günstiger geworden ist, und entscheidet mit, was gebaut wird.",
+          },
+          {
+            p: "Ein Projekt mit festem Umfang setzt voraus, dass die Antwort vor dem Start bekannt ist. Wenn sie es ist, nehmen Sie den festen Umfang: Er ist günstiger, und das Risiko einer falschen Schätzung liegt beim Anbieter. Wenn sie es nicht ist, wird ein Festpreis entweder mit Puffer aufgeblasen, was ihn teuer macht, oder buchstabengetreu durchgezogen, was genau das liefert, was aufgeschrieben wurde, und nichts, was jemand gebraucht hätte.",
+          },
+          { h2: "Wann es die richtige Wahl ist" },
+          {
+            ul: [
+              "Sie können den Prozess benennen, der die meisten Stunden kostet, aber nicht die Lösung, und im Haus kann sie niemand bauen.",
+              "Jemand hat ein Strategiepapier zu Ihren KI-Chancen geliefert, und seither läuft nichts.",
+              "Eine Einstellung würde Monate dauern, und es ist noch offen, ob die Arbeit eine feste Stelle rechtfertigt.",
+              "Die Ausnahmen in Ihrem Prozess sind das Schwierige, also wäre jeder heute geschriebene Umfang geraten.",
+            ],
+          },
+          {
+            p: "Diese vier Fälle haben eines gemeinsam: Die Frage ist noch offen. Wo die Frage offen ist, schlägt der Einkauf eines Ergebnisses den Einkauf eines Plans oder zusätzlicher Hände.",
+          },
+          { h2: "Wann es die falsche Wahl ist" },
+          {
+            ul: [
+              "Sie wissen bereits genau, was gebaut werden soll. Kaufen Sie den Bau: Das ist günstiger, und das Risiko liegt beim Anbieter.",
+              "Niemand auf Ihrer Seite kann innerhalb einer Woche entscheiden. Das Modell lebt von einem schnellen Ja oder Nein, sonst steht der Engineer still und Sie zahlen für den Stillstand.",
+              "Der Zugang zu Daten und Systemen dauert drei Monate Freigaben. Die Uhr läuft trotzdem.",
+              "Was Sie wirklich brauchen, sind mehr Hände für ein bestehendes Backlog. Das ist Personalaufstockung, ein anderes und günstigeres Produkt.",
+            ],
+          },
+          {
+            p: "Ein Anbieter, der Ihnen nie sagt, dass einer dieser Punkte auf Sie zutrifft, verkauft Ihnen etwas. Die Frage ist nicht, ob er Forward Deployed Engineering macht. Die Frage ist, wovon er Ihnen abraten würde.",
+          },
+          { h2: "Was Sie fragen sollten, bevor Sie zusagen" },
+          {
+            ul: [
+              "Wer genau kommt ins Team, und kann ich mit dieser Person sprechen, bevor ich etwas unterschreibe?",
+              "Was steht am Ende der ersten Woche auf dem Papier, und wie wird das Ergebnis gemessen?",
+              "Was läuft am Ende der zweiten Woche auf echten Produktivdaten?",
+              "Wo liegt der Code, und wem gehört er, wenn die Zusammenarbeit früher endet?",
+              "Wie lang ist die Kündigungsfrist, und gibt es eine Ausstiegsgebühr?",
+            ],
+          },
+          {
+            p: "Bei Pluscode arbeiten wir so, weil wir keinen anderen Weg gefunden haben, aus den unordentlichen, sehr spezifischen und halb dokumentierten Abläufen, auf denen echte Unternehmen laufen, ein Ergebnis zu holen. Wenn Sie die Aufgabe benennen können, die Ihr Team die meisten Stunden kostet, nehmen wir uns dreißig Minuten dafür, gemeinsam mit dem Engineer, der die Arbeit machen würde, und sagen Ihnen ehrlich, ob das der richtige Weg ist oder ob etwas Kleineres und Günstigeres reicht. Dieses Gespräch kostet nichts und verpflichtet zu nichts.",
           },
         ],
       },

@@ -20,9 +20,9 @@
     ]
   },
   "announcement": {
-    "text": "Nowość: Warsztaty AI Opportunity. Od pomysłu do planu z policzonym ROI w jednej sesji.",
-    "linkText": "Umów warsztat",
-    "linkUrl": "/contact"
+    "text": "Inżynier AI w Twoim zespole.",
+    "linkText": "Jak to działa",
+    "linkUrl": "/services/forward-deployed-engineers"
   },
   "navigation": {
     "aiData": "Usługi AI",
@@ -37,16 +37,16 @@
     "language": "Język",
     "aiDataItems": {
       "machineLearning": {
-        "title": "Generatywne AI i LLM",
-        "description": "Asystenci i automatyzacja działające na Twoich danych"
+        "title": "Asystenci i automatyzacja",
+        "description": "Oprogramowanie, które czyta, odpowiada i zapisuje, na Twoich danych"
       },
       "dataAnalytics": {
-        "title": "ML i fundamenty danych",
-        "description": "Dane i modele, które umożliwiają AI"
+        "title": "Prognozy i raporty",
+        "description": "Twoje liczby w jednym miejscu i obraz tego, co będzie dalej"
       },
       "aiConsulting": {
-        "title": "Strategia i doradztwo AI",
-        "description": "Mapowanie procesów, roadmapy i ład danych"
+        "title": "Mapowanie procesów i plan działania",
+        "description": "Znajdujemy pracę wartą automatyzacji, zanim ktokolwiek napisze kod"
       }
     },
     "servicesItems": {
@@ -66,6 +66,10 @@
         "title": "Rozszerzenie zespołu",
         "description": "Doświadczeni inżynierowie w Twoim zespole"
       },
+      "forwardDeployedEngineers": {
+        "title": "Forward Deployed Engineers",
+        "description": "Nasz inżynier AI w Twoim zespole, odpowiedzialny za wynik"
+      },
       "softwareDevelopment": {
         "title": "Tworzenie Oprogramowania",
         "description": "Dedykowane systemy budowane od A do Z"
@@ -82,165 +86,201 @@
         "title": "Technologie",
         "description": "Stack, w którym budujemy i wdrażamy"
       }
-    }
+    },
+    "callNote": "30 minut z inżynierem, nie prezentacja sprzedażowa."
   },
   "hero": {
-    "headlineStart": "Doradztwo AI, które zaprzęga sztuczną inteligencję do pracy.",
-    "subtext": "Nie potrzebujesz kolejnego produktu cyfrowego. Potrzebujesz mniej papierologii i mniej godzin traconych na przepisywanie danych. Tym się zajmujemy.",
-    "ctaPrimary": "Umów rozmowę wstępną",
-    "ctaSecondary": "Zobacz nasze realizacje",
+    "eyebrow": "Doradztwo AI",
+    "headlineStart": "AI, które oddaje Twojemu zespołowi",
+    "headlineEm": "godziny",
+    "headlineEnd": ".",
+    "subtext": "Znajdujemy powtarzalną pracę Twoich ludzi i porządnie ją automatyzujemy.",
+    "ctaPrimary": "Umów rozmowę",
+    "ctaNote": "30 minut z Krzysztofem Sulińskim, konsultantem AI.",
+    "ctaSecondary": "Zobacz, ile czasu to daje",
     "online": "Online",
     "talkTo": "Napisz do",
+    "talkToName": "Napisz do Krzysztofa",
+    "replyTime": "Zwykle odpowiada w kilka minut",
     "call": "Zadzwoń",
-    "fallbackName": "Dawid Kubicki",
-    "fallbackRole": "CEO i Założyciel",
-    "eyebrow": "Doradztwo AI · automatyzacja procesów · ład danych",
-    "headlineEm": "Naprawdę.",
-    "headlineEnd": "",
+    "fallbackName": "Krzysztof Suliński",
+    "fallbackRole": "Konsultant AI",
     "stats": [
       {
+        "value": "7 lat",
+        "label": "Budujemy AI i oprogramowanie od 2019"
+      },
+      {
         "value": "40+",
-        "label": "Projektów AI i software w 8 branżach"
-      },
-      {
-        "value": "99,2%",
-        "label": "Dokumentów przetworzonych w pełni automatycznie w naszych pipeline'ach document-AI"
-      },
-      {
-        "value": "6 lat",
-        "label": "Tworzymy systemy AI i software od 2019 roku"
+        "label": "Projektów zrealizowanych w ośmiu branżach"
       },
       {
         "value": "2 tyg.",
-        "label": "Od startu do działającego prototypu AI, zazwyczaj"
+        "label": "Od pierwszej rozmowy do prototypu"
+      },
+      {
+        "value": "UE",
+        "label": "Domyślnie hosting w regionach UE"
       }
     ]
   },
   "trust": {
-    "label": "Zaufały nam zespoły wdrażające AI na produkcję",
+    "label": "Firmy, dla których budowaliśmy",
     "clients": [
       "Żabka",
       "UBS",
-      "EBM Dental",
-      "Startupy i scale-upy"
+      "EBM Dental"
     ]
   },
   "services": {
-    "label": "Kompetencje",
-    "title": "Od mapy procesu do systemu na produkcji",
-    "subtitle": "Inżynierowie, nie prezentacje. Automatyzujemy to, co kosztuje Cię godziny.",
+    "label": "Co robimy",
+    "title": "Pięć sposobów, żeby zdjąć pracę z Twojego biurka",
+    "subtitle": "Inżynierowie, nie prezentacje. Każdy z nich zabiera godziny z czyjegoś tygodnia.",
     "items": [
       {
         "num": "01",
-        "title": "Mapowanie procesów i roadmapa AI",
-        "desc": "Idziemy za papierologią i liczymy, gdzie uciekają godziny.",
-        "tags": "mapowanie procesów · audyt gotowości · wyceniona roadmapa"
+        "title": "Automatyzacja dokumentów",
+        "desc": "Faktury, zamówienia i formularze odczytane i zapisane bez przepisywania.",
+        "tags": "faktury · dokumenty dostawy · umowy · prosto do Twojego systemu",
+        "caption": "Dokumenty przychodzą, są czytane i trafiają na swoje miejsce."
       },
       {
         "num": "02",
-        "title": "Asystenci, którzy odpowiadają z Twoich dokumentów",
-        "desc": "Odpowiada z Twoich dokumentów i podaje źródło.",
-        "tags": "odpowiedzi z Twoich źródeł · cytowane źródła · mierzona trafność"
+        "title": "Odpowiedzi z Twoich dokumentów",
+        "desc": "Twój zespół zadaje pytanie i dostaje odpowiedź razem ze źródłem.",
+        "tags": "Twoje pliki · Twoje słownictwo · odpowiedzi ze źródłem",
+        "caption": "Wchodzi pytanie, wraca odpowiedź razem ze źródłem."
       },
       {
         "num": "03",
-        "title": "Automatyzacja z człowiekiem w pętli",
-        "desc": "Robi powtarzalne kroki, zatrzymuje się przy ryzyku.",
-        "tags": "automatyzacja krok po kroku · punkty akceptacji · pełna ścieżka audytu"
+        "title": "Tworzenie oprogramowania",
+        "desc": "Systemy szyte na miarę, budowane przez ludzi, którzy potem je prowadzą.",
+        "tags": "web · mobile · pasuje do systemów, które już masz",
+        "caption": "Elementy, które składają się w jeden działający system."
       },
       {
         "num": "04",
-        "title": "Automatyzacja dokumentów i papierologii",
-        "desc": "Faktury, WZ, cło i umowy prosto do Twoich systemów.",
-        "tags": "skan + odczyt · automatyczna weryfikacja · prosto do Twojego ERP"
+        "title": "Tworzenie MVP",
+        "desc": "Twoja pierwsza działająca wersja u prawdziwych użytkowników w kilka tygodni.",
+        "tags": "ustalony zakres · prawdziwi użytkownicy · zbudowane, żeby zostało",
+        "caption": "Pierwsza wersja, działająca w tygodnie, potem rozwijana."
       },
       {
         "num": "05",
-        "title": "Fundamenty danych i prognozowanie",
-        "desc": "Twoje liczby w jednym miejscu, potem prognozy.",
-        "tags": "przepływy danych · modele prognostyczne · utrzymanie trafności"
-      },
-      {
-        "num": "06",
-        "title": "Ład danych, ryzyko i prywatność",
-        "desc": "Własność danych, ryzyko, RODO i AI Act.",
-        "tags": "własność danych · klasyfikacja ryzyka · RODO i AI Act"
-      },
-      {
-        "num": "07",
-        "title": "Rekrutacja techniczna i weryfikacja kompetencji",
-        "desc": "Weryfikacja techniczna i punktowany raport.",
-        "tags": "weryfikacja kompetencji · rozmowy techniczne · karty oceny"
+        "title": "Prognozy i raporty",
+        "desc": "Twoje liczby w jednym miejscu i obraz tego, co będzie dalej.",
+        "tags": "jeden zestaw liczb · prognozy popytu i gotówki",
+        "caption": "Wiele liczb staje się jednym obrazem tego, co dalej."
       }
-    ]
+    ],
+    "greyClause": "Inżynierowie, nie prezentacje. Każdy zabiera godziny z czyjegoś tygodnia."
   },
   "offerings": {
     "label": "Formy współpracy",
-    "title": "Zacznij od jednego procesu, nie od programu transformacji",
-    "subtitle": "Ci sami doświadczeni inżynierowie, czy jesteś 15-osobową spedycją, czy działem w korporacji. Stały zakres, stała cena, a to, co dostaniesz na końcu, wiesz przed startem.",
-    "note": "Każda współpraca zaczyna się od bezpłatnej 30-minutowej rozmowy. Rozmawiasz z inżynierem, który wykonałby tę pracę, i dostajesz prostą odpowiedź, czy w ogóle warto.",
+    "title": "Cztery sposoby, żeby zacząć",
+    "subtitle": "Stały zakres, stała cena. Wiesz, co dostaniesz na końcu, zanim zaczniemy.",
+    "note": "Każda współpraca zaczyna się od bezpłatnej 30-minutowej rozmowy z inżynierem, który wykonałby tę pracę.",
     "forLabel": "Dla kogo",
-    "deliverablesLabel": "Wychodzisz z",
+    "deliverablesLabel": "Efekty",
     "featuredLabel": "Najczęściej wybierane",
     "items": [
       {
-        "name": "Warsztat AI Opportunity",
+        "name": "Analiza wymagań",
+        "meta": "1 do 2 tygodni · stała cena",
+        "for": "Firm, które wiedzą, że coś idzie wolno, ale nie wiedzą, co naprawić",
+        "desc": "Idziemy za jednym procesem, liczymy godziny, wyceniamy naprawę.",
+        "deliverables": [
+          "Mapa procesu takiego, jaki jest dzisiaj",
+          "Godziny i koszt robienia tego ręcznie",
+          "Wyceniona lista tego, co naprawić najpierw"
+        ],
+        "cta": "Umów analizę",
+        "featured": false,
+        "example": "Księgowość przepisuje 300 faktur miesięcznie. Liczymy godziny i wyceniamy, ile kosztuje z tym skończyć.",
+        "steps": [
+          "Siadamy z osobą, która robi tę pracę",
+          "Liczymy godziny i to, gdzie uciekają",
+          "Dostajesz wycenioną listę, co naprawić najpierw"
+        ]
+      },
+      {
+        "name": "Wdrożenie MVP",
+        "meta": "4 do 8 tygodni · stały zakres",
+        "for": "Zespołów z pomysłem, który ma stać się realny",
+        "desc": "Pierwsza działająca wersja, u prawdziwych użytkowników.",
+        "deliverables": [
+          "Działający produkt, z którego korzysta Twój zespół",
+          "U prawdziwych użytkowników, a nie demo",
+          "Jasny plan tego, co dalej"
+        ],
+        "cta": "Zaplanuj MVP",
+        "featured": false,
+        "example": "Portal, w którym klienci sprawdzają status zamówienia bez dzwonienia do Ciebie.",
+        "steps": [
+          "Ustalamy, co musi robić wersja pierwsza",
+          "Budujemy ją na oczach Twoich użytkowników",
+          "Startuje, a Ty jesteś jej właścicielem"
+        ]
+      },
+      {
+        "name": "Rozwój oparty na AI",
+        "meta": "Od 6 tygodni · stały zakres",
+        "for": "Firm, które wprowadzają AI do codziennej pracy",
+        "desc": "Budujemy system, który niezawodnie wykonuje powtarzalną pracę.",
+        "deliverables": [
+          "System działający na Twoich danych",
+          "Kontrole i zatwierdzenia tam, gdzie potrzebny jest człowiek",
+          "Przekazanie, szkolenie i wsparcie"
+        ],
+        "cta": "Porozmawiajmy o tym",
+        "featured": false,
+        "example": "Przychodzące maile są czytane, rutynowe dostają odpowiedź, reszta trafia do człowieka.",
+        "steps": [
+          "Mapujemy powtarzalną pracę",
+          "Budujemy system na Twoich danych, z zatwierdzeniami",
+          "Przekazujemy go i zostajemy na wsparcie"
+        ]
+      },
+      {
+        "name": "Warsztaty AI",
         "meta": "Pół dnia · stała cena",
-        "for": "Właściciele i szefowie operacji, od 10 do 500 osób",
-        "desc": "Przetestuj swoje pomysły na AI pod kątem ROI i wykonalności. Wyjdź z jasnym pierwszym krokiem.",
+        "for": "Zarządu i ludzi, którzy wykonują tę pracę",
+        "desc": "Pół dnia o tym, co AI może, a czego nie.",
         "deliverables": [
-          "Priorytetyzowana lista przypadków użycia",
-          "Ocena ROI i wykonalności",
-          "Rekomendowany pierwszy pilotaż"
+          "Krótka lista pomysłów wartych finansowania",
+          "Pomysły, które się nie opłacają, i dlaczego",
+          "Jeden pierwszy ruch na przyszły tydzień"
         ],
-        "cta": "Umów warsztat",
+        "cta": "Umów warsztaty",
         "featured": false,
-        "example": "Pół dnia z osobą, która naprawdę prowadzi operacje. Przechodzimy przez tydzień realnej papierologii, liczymy, gdzie uciekają godziny, i zostawiamy dwa pomysły warte pieniędzy oraz listę tych, które nie są."
-      },
-      {
-        "name": "Sprint discovery AI",
-        "meta": "2 tygodnie · stały zakres",
-        "for": "Jeden zespół z jednym bolesnym procesem",
-        "desc": "Jeden przypadek użycia w głąb: dane, wykonalność i działający prototyp. Zdecyduj z pewnością.",
-        "deliverables": [
-          "Ocena wykonalności technicznej",
-          "Działający prototyp",
-          "Wyceniona mapa wdrożenia"
-        ],
-        "cta": "Umów sprint",
-        "featured": true,
-        "example": "Dwa tygodnie na jednym procesie. Na przykład dokumenty dostawy przychodzące jako PDF-y, zdjęcia z telefonu i załączniki do maili: przepuszczamy Twoje prawdziwe przez działający prototyp i pokazujemy, jak często trafia."
-      },
-      {
-        "name": "Proof-of-Concept GenAI",
-        "meta": "4-6 tygodni",
-        "for": "Dział, który musi pokazać wynik zarządowi",
-        "desc": "Pilotaż klasy produkcyjnej na Twoich danych, mierzony realnymi ewaluacjami i gotowy do prezentacji przed wdrożeniem.",
-        "deliverables": [
-          "Pilotaż gotowy do produkcji",
-          "Harness ewaluacyjny i metryki",
-          "Plan wdrożenia"
-        ],
-        "cta": "Zaplanuj pilotaż",
-        "featured": false,
-        "example": "Cztery do sześciu tygodni, żeby z prototypu zrobić narzędzie, które zespół otwiera każdego ranka: podpięte do systemów, z których już korzystasz, z kontrolami, logami i zasadami dostępu, o które zapyta audytor."
-      },
-      {
-        "name": "Zespół AI na część etatu",
-        "meta": "Miesięcznie · na stałe",
-        "for": "Firmy, które nie mają własnych ludzi od AI",
-        "desc": "Doświadczony zespół AI wbudowany w Twój: strategia, inżynieria i MLOps, skalowane wraz z Twoją mapą drogową.",
-        "deliverables": [
-          "Wbudowani doświadczeni inżynierowie AI",
-          "Wsparcie strategii i MLOps",
-          "Elastyczna miesięczna moc przerobowa"
-        ],
-        "cta": "Porozmawiajmy",
-        "featured": false,
-        "example": "Kilka dni pracy doświadczonego inżyniera w tygodniu, na Twojej tablicy i na Twoich standupach. Taniej niż etat, a zakończyć możesz na koniec dowolnego miesiąca."
+        "example": "Pół dnia z menedżerami o tym, co AI może zrobić w Twojej firmie, prostym językiem.",
+        "steps": [
+          "Wcześniej poznajemy Twój biznes",
+          "Pół dnia przykładów, bez slajdów",
+          "Wychodzisz z jednym pierwszym krokiem"
+        ]
       }
     ],
-    "exampleLabel": "Jak to wygląda w praktyce"
+    "fde": {
+      "label": "Współpraca ciągła",
+      "name": "Forward Deployed Engineers",
+      "meta": "Miesięcznie · od trzech miesięcy",
+      "desc": "Nasz inżynier w Twoim zespole, odpowiedzialny za wynik, a nie za listę zadań.",
+      "bulletsLabel": "Zakres prac",
+      "bullets": [
+        "Asystenci odpowiadający z Twoich dokumentów",
+        "Własne modele do trudnych przypadków",
+        "Prototyp na produkcję i utrzymanie",
+        "Projekt dopasowany do Twoich systemów",
+        "Dane uporządkowane, połączone i prognozowane",
+        "Decyzja, co budować dalej"
+      ],
+      "cta": "Zobacz, jak to działa",
+      "readLink": "Przeczytaj: kim jest forward deployed engineer"
+    },
+    "greyClause": "Stały zakres, stała cena. Wiesz, co dostaniesz, zanim zaczniemy.",
+    "exampleLabel": "Na przykład",
+    "stepsLabel": "Jak to wygląda"
   },
   "process": {
     "label": "Jak pracujemy",
@@ -268,9 +308,6 @@
         "desc": "Wdrażamy, przekazujemy wiedzę i zostajemy jako doradcy, gdy skalujesz."
       }
     ]
-  },
-  "stats": {
-    "lead": "Osiem lat tworzenia oprogramowania, które robi różnicę. Liczby, które pokazują, dlaczego zespoły, od dynamicznych startupów po globalne korporacje, wybierają Pluscode."
   },
   "industries": {
     "title": "Znajomość branż, inżynierska głębia",
@@ -345,6 +382,134 @@
     "name": "Dawid Kubicki",
     "title": "CEO i założyciel, Pluscode"
   },
+  "timeSaved": {
+    "label": "Odzyskany czas",
+    "title": "Około dzień w tygodniu z powrotem",
+    "subtitle": "Cztery zadania, które niemal każda firma nadal robi ręcznie. Górny pasek to dzisiaj, dolny to po wdrożeniu.",
+    "scaleMax": 16,
+    "unit": "godz.",
+    "beforeLabel": "Dzisiaj",
+    "afterLabel": "Z AI",
+    "percentLine": "{p} mniej czasu",
+    "footnote": "Typowe zakresy z porównywalnych projektów, liczone na osobę i na tydzień. To nie jest gwarancja: wynik zależy od Twoich wolumenów i porządku w danych, dlatego najpierw mierzymy je razem z Tobą.",
+    "items": [
+      {
+        "id": "invoices",
+        "name": "Faktury od dostawców",
+        "today": "Ktoś otwiera skrzynkę, przepisuje każdą fakturę do systemu i porównuje ją z zamówieniem.",
+        "before": 12,
+        "after": 4,
+        "instead": "Ten czas idzie na faktury, które naprawdę się nie zgadzają, i na szybsze zamknięcie miesiąca.",
+        "check": "Człowiek nadal zatwierdza wszystko, co nie zgadza się z zamówieniem."
+      },
+      {
+        "id": "questions",
+        "name": "Pytania klientów",
+        "today": "Ktoś czyta każdy mail i każdą wiadomość na czacie, i pisze w kółko te same odpowiedzi.",
+        "before": 15,
+        "after": 7,
+        "instead": "Ten czas idzie na trudne sprawy, a nie na odhaczanie kolejki.",
+        "check": "Człowiek nadal odpowiada we wszystkim, co dotyczy pieniędzy, reklamacji i wyjątków."
+      },
+      {
+        "id": "reports",
+        "name": "Raporty i analizy",
+        "today": "Ktoś zbiera liczby z kilku systemów do arkusza i pisze miesięczne podsumowanie.",
+        "before": 10,
+        "after": 3,
+        "instead": "Ten czas idzie na to, co te liczby znaczą i co z nimi zrobić.",
+        "check": "Człowiek nadal zatwierdza liczby, zanim ktokolwiek oprze na nich decyzję."
+      },
+      {
+        "id": "hiring",
+        "name": "Rekrutacja i CV",
+        "today": "Ktoś czyta każde CV, które przychodzi, i decyduje, kogo zaprosić na pierwszą rozmowę.",
+        "before": 8,
+        "after": 3,
+        "instead": "Ten czas idzie na rozmowy z krótką listą, a nie na czytanie stosu.",
+        "check": "Człowiek nadal podejmuje każdą decyzję o zatrudnieniu. Krótka lista to tylko lista."
+      }
+    ],
+    "greyClause": "Cztery zadania nadal robione ręcznie i godziny, które kosztują.",
+    "backLabel": "z powrotem"
+  },
+  "tokenMeasure": {
+    "label": "Co liczymy",
+    "title": "Mierzymy w tokenach, nie w roboczogodzinach",
+    "greyClause": "Ile kosztuje utrzymanie procesu, miesiąc po miesiącu.",
+    "tokenLine": "Token to mały fragment tekstu, mniej więcej jedno krótkie słowo.",
+    "fieldLabel": "Miesiąc pracy, na proces",
+    "processLabel": "Proces",
+    "shareLabel": "Udział",
+    "volumeLabel": "Tokeny, w milionach",
+    "totalLabel": "Wszystkie procesy",
+    "honesty": "Liczymy ilość pracy, nie jej wartość, i zawsze na proces, nigdy na osobę. Liczby są przykładem, nie wynikiem klienta.",
+    "items": [
+      {
+        "id": "invoices",
+        "name": "Obsługa faktur",
+        "tokens": 9
+      },
+      {
+        "id": "replies",
+        "name": "Odpowiedzi do klientów",
+        "tokens": 6.4
+      },
+      {
+        "id": "reporting",
+        "name": "Raportowanie miesięczne",
+        "tokens": 3
+      },
+      {
+        "id": "rest",
+        "name": "Pozostałe",
+        "tokens": 1.6
+      }
+    ]
+  },
+  "people": {
+    "eyebrow": "Z kim pracujesz",
+    "title": "Dwie osoby, które wykonują tę pracę",
+    "body": "Bez opiekunów klienta i bez przekazywania projektu dalej. Ci sami ludzie, którzy planują projekt, później go budują. Możesz kontaktować się z nimi bezpośrednio.",
+    "groupAlt": "Dawid Kubicki i Krzysztof Suliński, założyciele Pluscode",
+    "aboutLink": "Więcej o Pluscode",
+    "bookLink": "Umów rozmowę",
+    "members": {
+      "dawid": {
+        "name": "Dawid Kubicki",
+        "role": "CEO i konsultant AI",
+        "alt": "Dawid Kubicki"
+      },
+      "krzysztof": {
+        "name": "Krzysztof Suliński",
+        "role": "Konsultant AI",
+        "alt": "Krzysztof Suliński"
+      }
+    },
+    "greyClause": "Bez opiekunów klienta. Kto planuje projekt, ten go buduje, i piszesz do niego wprost."
+  },
+  "europe": {
+    "flagAlt": "Flaga Unii Europejskiej",
+    "eyebrow": "Europejscy z założenia",
+    "title": "Poznajemy, jak naprawdę działa Twoja firma",
+    "body": "Jesteśmy polską firmą, która pracuje w całej Europie. Zanim cokolwiek zbudujemy, siadamy z Twoim zespołem i poznajemy tę pracę. To, co dostarczamy, działa zgodnie z europejskimi zasadami dotyczącymi danych i AI.",
+    "chips": [
+      {
+        "title": "Hosting w UE domyślnie",
+        "text": "Regiony UE, chyba że ustalimy inaczej, plus umowa powierzenia (RODO)."
+      },
+      {
+        "title": "Budowane pod unijny AI Act",
+        "text": "Ustalamy Twoją kategorię ryzyka, zanim cokolwiek zaprojektujemy."
+      },
+      {
+        "title": "Poznajemy zasady Twojej branży",
+        "text": "Handel, bankowość, zdrowie, logistyka. Czytamy je przed napisaniem kodu."
+      }
+    ],
+    "entity": "Pluscode Sp. z o.o., Poznań, Polska",
+    "greyClause": "Polska firma w całej Europie, według europejskich zasad dla danych i AI."
+  },
   "insights": {
     "label": "Insights",
     "title": "Nasze najnowsze przemyślenia o AI",
@@ -408,7 +573,9 @@
       "contact": "Kontakt",
       "connect": "Kontakt",
       "legal": "Dane rejestrowe"
-    }
+    },
+    "ourProduct": "Quanty (nasz produkt)",
+    "address": "Kosowska 12/3, 60-464 Poznań, Polska"
   },
   "shared": {
     "home": "Strona główna",
@@ -484,6 +651,178 @@
           "title": "Potrzebujesz więcej rąk do pracy?",
           "subtitle": "Powiedz nam, gdzie Twój zespół potrzebuje wsparcia, a dobierzemy odpowiednich inżynierów.",
           "button": "Rozszerz swój zespół"
+        }
+      },
+      "forwardDeployedEngineers": {
+        "label": "Platforma i zespół",
+        "title": "Forward Deployed Engineers",
+        "subtitle": "Jeden z naszych doświadczonych inżynierów AI pracuje wewnątrz Twojego zespołu i odpowiada za wspólnie ustalony wynik, a nie za listę zadań. Zaczyna od Twoich prawdziwych danych, procesów i ograniczeń, a kończy, gdy rozwiązanie działa i Twoi ludzie z niego korzystają.",
+        "breadcrumb": "Forward Deployed Engineers",
+        "featuresTitle": "Co taki inżynier może dla Ciebie zbudować",
+        "featuresIntro": "Jedna osoba, doświadczona, z zakresem od pierwszej rozmowy do czegoś, co działa na produkcji. To, co zbuduje, zależy od tego, czego wymaga praca.",
+        "features": {
+          "documents": {
+            "title": "Asystenci na Twoich dokumentach",
+            "description": "Odpowiedzi z Twoich własnych umów, instrukcji i dokumentów, ze wskazaniem źródła, żeby każdy mógł je sprawdzić. Nikt nie musi ufać czarnej skrzynce."
+          },
+          "models": {
+            "title": "Modele do Twoich trudnych przypadków",
+            "description": "Kiedy ogólny model wciąż myli się w Twoich sprawach, budujemy taki, który się nie myli. Uczony na Twojej historii i mierzony względem decyzji, które Twoi ludzie już podejmują."
+          },
+          "production": {
+            "title": "Od prototypu do produkcji",
+            "description": "Mniej efektowna połowa: wdrożenie, uprawnienia, logi, monitoring i kontrola kosztów. Prototyp, którego nikt nie potrafi uruchomić, nie jest wynikiem."
+          },
+          "architecture": {
+            "title": "Projekt dopasowany do tego, co już masz",
+            "description": "Pracujemy z ERP, CRM i arkuszami, za które już płacisz. Wymiana Twoich systemów prawie nigdy nie jest najtańszym sposobem naprawy procesu."
+          },
+          "data": {
+            "title": "Liczby, na których można działać",
+            "description": "Twoje dane oczyszczone, połączone i umieszczone tam, gdzie wszyscy z nich korzystają, a na tym prognozy, które wytrzymują trudny miesiąc."
+          },
+          "product": {
+            "title": "Decyzja, co dalej",
+            "description": "Patrzymy, z czego ludzie naprawdę korzystają, a nie co zakładał plan, i mówimy, którą pracę warto sfinansować jako następną."
+          }
+        },
+        "processTitle": "Jak wyglądają pierwsze dwa miesiące",
+        "process": {
+          "fit": {
+            "title": "Rozmowa wstępna",
+            "description": "Trzydzieści minut z inżynierem, który wykonałby tę pracę. Jeśli uznamy, że nie jesteśmy właściwą odpowiedzią, powiemy to na tej rozmowie."
+          },
+          "week1": {
+            "title": "Tydzień 1: zrozumieć",
+            "description": "Oglądamy jeden pełny cykl tej pracy, dostajemy dostęp do systemów, których dotyczy, i ustalamy jedną stronę: wynik, sposób pomiaru i to, co mogłoby go zepsuć."
+          },
+          "week2": {
+            "title": "Tydzień 2: coś, co działa",
+            "description": "Pierwsza działająca wersja na Twoich danych, przed ludźmi, którzy będą z niej korzystać. Będzie wąska i będzie się mylić, a te błędy napiszą resztę planu."
+          },
+          "month2": {
+            "title": "Miesiąc 2: produkcja i przekazanie",
+            "description": "Wpięte w Twoje systemy, z uprawnieniami, logami i możliwością sprawdzenia lub poprawienia przez człowieka. Opisane tak, żeby Twój zespół prowadził to bez nas."
+          }
+        },
+        "deliverablesTitle": "Co zostaje u Ciebie",
+        "deliverablesIntro": "Wszystko, co powstaje, jest Twoje, w Twoim repozytorium i na Twoich kontach, od pierwszego dnia.",
+        "deliverables": [
+          {
+            "title": "Działający system na produkcji",
+            "description": "Uruchomiony na infrastrukturze, która należy do Ciebie, używany przez ludzi, których pracę miał zmienić."
+          },
+          {
+            "title": "Jedna strona ustalona w tygodniu 1",
+            "description": "Wynik, miara i warunki porażki, uzupełnione o to, czego naprawdę się nauczyliśmy."
+          },
+          {
+            "title": "Uczciwy pomiar",
+            "description": "Ile godzin kosztował ten proces wcześniej, ile kosztuje teraz i gdzie nadal potrzebny jest człowiek."
+          },
+          {
+            "title": "Dokumentacja, z której skorzysta Twój zespół",
+            "description": "Jak to działa, ile kosztuje miesięcznie, co to psuje i do kogo dzwonić."
+          },
+          {
+            "title": "Krótka lista tego, co warto zrobić dalej",
+            "description": "Na podstawie tego, co zobaczyliśmy w Twojej firmie, razem z pomysłami, których naszym zdaniem nie warto finansować."
+          }
+        ],
+        "modelsTitle": "Jak wygląda współpraca",
+        "modelsIntro": "Miesięczna stawka za jednego inżyniera, nie stawka godzinowa i nie cena za zadanie. Ta liczba należy do rozmowy o Twojej sytuacji, więc najpierw odbądźmy tę rozmowę.",
+        "models": [
+          {
+            "name": "Rozmowa wstępna",
+            "duration": "30 minut · bezpłatnie",
+            "description": "Szczera rozmowa z inżynierem, który wszedłby do Twojego zespołu, o zadaniu, które chcesz wykonać, i o tym, czy to właściwa droga.",
+            "bullets": [
+              "Rozmawiasz z inżynierem, a nie z handlowcem",
+              "Wskazujemy tańszą opcję, jeśli istnieje",
+              "Wychodzisz z ostrzejszym opisem problemu",
+              "Nic nie podpisujesz i nic nie płacisz"
+            ]
+          },
+          {
+            "name": "Pierwszy wynik",
+            "duration": "3 miesiące · stawka miesięczna",
+            "description": "Minimum, które doprowadza do czegoś realnego. Zrozumienie w tygodniu 1, coś działającego w tygodniu 2, produkcja i przekazanie w miesiącu 2.",
+            "bullets": [
+              "Jeden doświadczony inżynier AI w Twoim zespole",
+              "Jeden ustalony wynik, mierzony tak, jak ustaliliście",
+              "Wszystko w Twoim repozytorium od pierwszego commita",
+              "Nic nie przedłużasz, jeśli wynik wystarczy"
+            ]
+          },
+          {
+            "name": "Współpraca ciągła",
+            "duration": "Miesięcznie · 30 dni wypowiedzenia",
+            "description": "Dla firm, które po pierwszym zadaniu znajdują drugie i trzecie warte zrobienia. Ten sam inżynier, ta sama odpowiedzialność, miesiąc po miesiącu.",
+            "bullets": [
+              "Trwa dalej po pierwszych trzech miesiącach",
+              "Trzydzieści dni wypowiedzenia po obu stronach, bez opłat",
+              "Drugi inżynier, kiedy praca tego wymaga",
+              "Kończymy, gdy Twój zespół sam to udźwignie"
+            ]
+          }
+        ],
+        "whoTitle": "Dla kogo to jest",
+        "who": [
+          {
+            "title": "Wiesz, co trzeba zrobić, ale nie wiesz jak",
+            "description": "Potrafisz wskazać proces, który kosztuje Cię najwięcej godzin. Nie masz w firmie nikogo, kto zbudowałby rozwiązanie."
+          },
+          {
+            "title": "Masz strategię i nic, co działa",
+            "description": "Ktoś dostarczył dokument o Twoich możliwościach w AI. Od tego czasu nikt nie postawił niczego przed ludźmi, którzy wykonują tę pracę."
+          },
+          {
+            "title": "Rekrutacja jest na to za wolna",
+            "description": "Szukanie doświadczonego inżyniera AI zajęłoby miesiące, a nie wiesz jeszcze, czy ta praca uzasadnia etat."
+          },
+          {
+            "title": "Wyjątki są tu najtrudniejsze",
+            "description": "Twój proces ma zasady, których nikt nie spisał, i przypadki, które nigdy nie wyglądają tak samo. Sztywny zakres z góry byłby zgadywaniem."
+          }
+        ],
+        "toolsTitle": "Na czym budujemy",
+        "tools": [
+          "Python",
+          "TypeScript",
+          "PostgreSQL",
+          "API Anthropic i OpenAI",
+          "Otwarte modele na własnym serwerze",
+          "Docker",
+          "AWS, Azure lub Twoje serwery",
+          "ERP i CRM, których już używasz"
+        ],
+        "faqTitle": "Odpowiedzi na pytania",
+        "faq": [
+          {
+            "q": "Czym to się różni od usługi Team Extension?",
+            "a": "Team Extension daje Ci moce przerobowe: inżynierów, którzy realizują backlog pisany przez Twój zespół. Forward deployed engineer odpowiada natomiast za wynik. Razem z wyznaczoną przez Ciebie osobą decyduje, co budować, na podstawie tego, co widzi, patrząc na tę pracę. Jeśli już dokładnie wiesz, co ma powstać, Team Extension jest tańszy i prostszy, i tak Ci powiemy."
+          },
+          {
+            "q": "Dlaczego nie projekt za stałą cenę?",
+            "a": "Bo przy takiej pracy zakres jest naprawdę nieznany, dopóki nie uruchomisz czegoś na prawdziwych przypadkach z zeszłego miesiąca. Stała cena albo zostaje napompowana, żeby to pokryć, i wtedy jest droga, albo jest trzymana co do litery, i wtedy jest bezużyteczna. Analiza wymagań i Wdrożenie MVP zostają za stałą cenę, bo tam odpowiedź naprawdę da się poznać z góry."
+          },
+          {
+            "q": "Co musimy zapewnić?",
+            "a": "Jedną wyznaczoną osobę, która może powiedzieć tak i ma czas na krótką rozmowę raz w tygodniu. Dostęp do systemów i danych, których dotyczy praca, załatwiony w pierwszym tygodniu. Kilka godzin ludzi, którzy wykonują to zadanie dzisiaj. I szczerość co do zasad, których musicie przestrzegać, także tych niespisanych."
+          },
+          {
+            "q": "Co dzieje się z pracą, jeśli skończymy?",
+            "a": "Zostaje u Ciebie. Wszystko jest w Twoim repozytorium i na Twoich kontach chmurowych od pierwszego commita, a dokumentacja przekazania to element dostawy, nie przysługa. Po pierwszych trzech miesiącach obowiązuje trzydzieści dni wypowiedzenia po obu stronach i żadnej opłaty za wyjście."
+          },
+          {
+            "q": "Czego nam nie obiecacie?",
+            "a": "Nie obiecamy poziomu dokładności, zanim zobaczymy Twoje dane. Nie obiecamy stałej ceny za wynik, którego nikt jeszcze nie potrafi opisać. Nie obiecamy, że AI jest odpowiedzią, a jeśli reguła, skrypt albo zmiana procesu będą tańsze, powiemy to. Nie jesteśmy zespołem dyżurnym i nie podejmujemy decyzji za Ciebie."
+          }
+        ],
+        "cta": {
+          "title": "Chcesz sprawdzić, czy to pasuje?",
+          "subtitle": "Trzydzieści minut z inżynierem, który wszedłby do Twojego zespołu. Opisujesz zadanie, a dostajesz szczerą odpowiedź, czy to właściwa droga, czy coś tańszego wystarczy.",
+          "button": "Umów rozmowę z Krzysztofem"
         }
       },
       "machineLearning": {
@@ -4739,8 +5078,8 @@
     },
     "about": {
       "label": "O Nas",
-      "title": "Budujemy przyszłość oprogramowania",
-      "subtitle": "Zespół pasjonatów inżynierów, projektantów i strategów dedykowanych pomaganiu firmom prosperować w erze cyfrowej.",
+      "title": "Dwóch inżynierów, którzy sami budują to, co planują",
+      "subtitle": "Rozmawiasz z inżynierem, który pisze kod. Bez opiekunów klienta, bez przekazywania projektu, bez zespołu, którego nigdy nie poznasz.",
       "breadcrumb": "O nas",
       "story": {
         "label": "Nasza Historia",
@@ -4773,20 +5112,20 @@
       "stats": {
         "items": {
           "years": {
-            "value": "8+",
-            "label": "Lat doświadczenia"
+            "value": "7+",
+            "label": "Lat budowania AI i oprogramowania"
           },
           "projects": {
-            "value": "150+",
+            "value": "40+",
             "label": "Zrealizowanych projektów"
           },
           "clients": {
-            "value": "50+",
-            "label": "Zadowolonych klientów"
+            "value": "8",
+            "label": "Branż, w których pracowaliśmy"
           },
           "team": {
-            "value": "25+",
-            "label": "Członków zespołu"
+            "value": "2",
+            "label": "Inżynierów, którzy wykonują pracę"
           }
         }
       },
@@ -4794,25 +5133,15 @@
         "label": "Nasz Zespół",
         "title": "Poznaj ludzi stojących za Pluscode",
         "members": {
-          "ceo": {
+          "dawid": {
             "name": "Dawid Kubicki",
-            "role": "CEO i Założyciel",
-            "bio": "Pasjonat technologii i jej potencjału do transformacji biznesów."
+            "role": "CEO i konsultant AI",
+            "bio": "Planuje pracę z klientem, a potem buduje ją razem z zespołem."
           },
-          "cto": {
-            "name": "Tech Lead",
-            "role": "CTO",
-            "bio": "Kieruje naszymi wysiłkami inżynieryjnymi z naciskiem na innowację i jakość."
-          },
-          "design": {
-            "name": "Design Lead",
-            "role": "Head of Design",
-            "bio": "Tworzy piękne, intuicyjne doświadczenia, które użytkownicy kochają."
-          },
-          "engineering": {
-            "name": "Engineering Lead",
-            "role": "Head of Engineering",
-            "bio": "Buduje skalowalne rozwiązania z najnowocześniejszymi technologiami."
+          "krzysztof": {
+            "name": "Krzysztof Suliński",
+            "role": "Konsultant AI",
+            "bio": "Pierwsza osoba, z którą rozmawiasz, i jedna z dwóch, które to budują."
           }
         }
       },
@@ -5116,6 +5445,7 @@
         "services": {
           "title": "Usługi",
           "links": {
+            "forwardDeployedEngineers": "Forward Deployed Engineers",
             "softwareDevelopment": "Tworzenie Oprogramowania",
             "webDevelopment": "Aplikacje Webowe",
             "mobile": "Aplikacje Mobilne",
@@ -5711,531 +6041,14 @@
     "text": "Masz pomysł na projekt? Opowiedz nam o nim, a odezwiemy się w ciągu 24 godzin.",
     "button": "Skontaktuj się"
   },
-  "home": {
-    "about": {
-      "tag": "Kim jesteśmy",
-      "headingLead": "Nie zaczynamy od technologii,",
-      "headingRest": "zaczynamy od ludzi."
-    },
-    "highlight": {
-      "tag": "W liczbach",
-      "amount": "150+",
-      "text": "Projektów zrealizowanych dla firm, od startupów po globalne przedsiębiorstwa.",
-      "text2": "Osiem lat tworzenia oprogramowania, które przynosi wymierne rezultaty biznesowe, od AI i danych po web, mobile i chmurę.",
-      "features": [
-        {
-          "title": "AI i Dane",
-          "text": "Machine learning, analityka i doradztwo, które zamieniają dane w decyzje."
-        },
-        {
-          "title": "Inżynieria produktu",
-          "text": "Aplikacje webowe, mobilne i chmurowe budowane do skalowania."
-        },
-        {
-          "title": "Prawdziwe partnerstwo",
-          "text": "Działamy jak rozszerzenie Twojego zespołu, zaangażowani w Twoje rezultaty."
-        }
-      ]
-    }
-  },
   "banners": {
-    "documents": {
-      "titleStart": "Ile ",
-      "titleEm": "naprawdę",
-      "titleEnd": " kosztuje Cię ręczne wprowadzanie danych?",
-      "text": "Większość zespołów spędza 20-30% czasu na przenoszeniu danych między dokumentami a systemami. My to automatyzujemy.",
-      "cta": "Sprawdź w 45 minut"
-    },
     "move": {
-      "titleStart": "Opowiedz nam o swoim ",
-      "titleEm": "najtrudniejszym",
-      "titleEnd": " problemie z AI.",
-      "text": "Umów 30-minutową rozmowę. Zmapujemy, gdzie AI tworzy realną wartość w Twoim biznesie. Bez slajdów, bez zobowiązań.",
-      "cta": "Umów rozmowę"
+      "titleStart": "Powiedz nam, gdzie uciekają ",
+      "titleEm": "godziny",
+      "titleEnd": ".",
+      "text": "Trzydzieści minut z Krzysztofem Sulińskim, naszym konsultantem AI. Powie wprost, jeśli nie warto się za to brać.",
+      "cta": "Umów rozmowę z Krzysztofem"
     }
-  },
-  "useCases": {
-    "label": "Zastosowane AI, na produkcji",
-    "title": "Ambicja w działaniu",
-    "items": [
-      {
-        "category": "Document AI",
-        "title": "Dane z faktur trafiają prosto do ERP, bez ręcznego wpisywania"
-      },
-      {
-        "category": "Conversational AI",
-        "title": "Asystent wsparcia, który rozwiązuje połowę zgłoszeń"
-      },
-      {
-        "category": "Prognozowanie",
-        "title": "Prognozy popytu, które utrzymują pełne półki i niskie straty"
-      },
-      {
-        "category": "Computer Vision",
-        "title": "Kontrola jakości, która wykrywa wady zanim zrobią to klienci"
-      },
-      {
-        "category": "Knowledge AI",
-        "title": "Wiedza firmowa przeszukiwalna prostym językiem"
-      }
-    ]
-  },
-  "useCaseFlows": {
-    "label": "Poziom niżej",
-    "title": "Prześledź dane, krok po kroku",
-    "subtitle": "Wybierz zastosowanie i prześledź drogę danych.",
-    "legend": {
-      "in": "Wchodzi",
-      "run": "Co się dzieje",
-      "out": "Wychodzi",
-      "tools": "Systemy",
-      "decision": "Punkt decyzyjny",
-      "pass": "Idzie dalej",
-      "fail": "Do człowieka",
-      "human": "Gdzie zostaje człowiek"
-    },
-    "items": [
-      {
-        "id": "invoices",
-        "tab": "Faktury",
-        "icon": "doc",
-        "title": "Od faktury do zaksięgowanego dokumentu",
-        "in": [
-          {
-            "icon": "mail",
-            "label": "Faktura na wspólnej skrzynce"
-          },
-          {
-            "icon": "box",
-            "label": "Zamówienie i przyjęcie z ERP"
-          },
-          {
-            "icon": "db",
-            "label": "Dane dostawcy i NIP"
-          }
-        ],
-        "steps": [
-          {
-            "icon": "scan",
-            "title": "Odczyt",
-            "tools": [
-              {
-                "icon": "mail",
-                "label": "Wspólna skrzynka"
-              },
-              {
-                "icon": "sparkle",
-                "label": "Model dokumentowy"
-              }
-            ]
-          },
-          {
-            "icon": "match",
-            "title": "Zestawienie",
-            "tools": [
-              {
-                "brand": "sap",
-                "label": "SAP"
-              },
-              {
-                "icon": "box",
-                "label": "Comarch"
-              },
-              {
-                "icon": "box",
-                "label": "Dynamics 365"
-              },
-              {
-                "icon": "db",
-                "label": "Baza dostawców"
-              }
-            ]
-          },
-          {
-            "icon": "ledger",
-            "title": "Księgowanie",
-            "tools": [
-              {
-                "icon": "plug",
-                "label": "API ERP"
-              },
-              {
-                "icon": "folder",
-                "label": "Archiwum dokumentów"
-              }
-            ]
-          }
-        ],
-        "decision": {
-          "question": "Faktura, zamówienie i dostawa się zgadzają?",
-          "pass": "Księguje się w ERP, z plikiem.",
-          "fail": "Do kolejki: 1200 zł vs 1320 zł."
-        },
-        "out": [
-          {
-            "icon": "check",
-            "label": "Zaksięgowany dokument w ERP"
-          },
-          {
-            "icon": "alert",
-            "label": "Kolejka z samymi realnymi wyjątkami"
-          },
-          {
-            "icon": "search",
-            "label": "Ślad przy każdym odczytanym polu"
-          }
-        ],
-        "human": "Księgowa: wyjątki i akcepty."
-      },
-      {
-        "id": "support",
-        "tab": "Obsługa klienta",
-        "icon": "chat",
-        "title": "Od pytania klienta do wysłanej odpowiedzi",
-        "in": [
-          {
-            "icon": "mail",
-            "label": "Mail, czat albo formularz"
-          },
-          {
-            "icon": "truck",
-            "label": "Status zamówienia i dostawy"
-          },
-          {
-            "icon": "book",
-            "label": "Baza wiedzy i regulaminy"
-          }
-        ],
-        "steps": [
-          {
-            "icon": "search",
-            "title": "Zrozumienie",
-            "tools": [
-              {
-                "brand": "zendesk",
-                "label": "Zendesk"
-              },
-              {
-                "brand": "jira",
-                "label": "Jira"
-              },
-              {
-                "icon": "chat",
-                "label": "Freshdesk"
-              }
-            ]
-          },
-          {
-            "icon": "db",
-            "title": "Sprawdzenie",
-            "tools": [
-              {
-                "icon": "plug",
-                "label": "API zamówień"
-              },
-              {
-                "icon": "box",
-                "label": "ERP / WMS"
-              }
-            ]
-          },
-          {
-            "icon": "pen",
-            "title": "Redakcja",
-            "tools": [
-              {
-                "icon": "book",
-                "label": "Baza odpowiedzi"
-              },
-              {
-                "icon": "clock",
-                "label": "Historia zgłoszeń"
-              }
-            ]
-          }
-        ],
-        "decision": {
-          "question": "Sprawa typowa i każde zdanie ma pokrycie w źródle?",
-          "pass": "Wysyłka w kilka sekund.",
-          "fail": "Do konsultanta z projektem."
-        },
-        "out": [
-          {
-            "icon": "mail",
-            "label": "Odpowiedź w języku klienta"
-          },
-          {
-            "icon": "tag",
-            "label": "Zgłoszenie otagowane i zamknięte"
-          },
-          {
-            "icon": "list",
-            "label": "Lista tego, o co pytają w kółko"
-          }
-        ],
-        "human": "Konsultant: eskalacje."
-      },
-      {
-        "id": "demand",
-        "tab": "Popyt i zapasy",
-        "icon": "chart",
-        "title": "Od historii sprzedaży do propozycji zamówienia",
-        "in": [
-          {
-            "icon": "chart",
-            "label": "Trzy lata sprzedaży"
-          },
-          {
-            "icon": "tag",
-            "label": "Ceny i promocje"
-          },
-          {
-            "icon": "box",
-            "label": "Stany i czasy dostaw"
-          },
-          {
-            "icon": "calendar",
-            "label": "Święta, ferie, pogoda"
-          }
-        ],
-        "steps": [
-          {
-            "icon": "chart",
-            "title": "Prognoza",
-            "tools": [
-              {
-                "icon": "db",
-                "label": "Historia sprzedaży"
-              },
-              {
-                "icon": "sparkle",
-                "label": "Modele prognostyczne"
-              }
-            ]
-          },
-          {
-            "icon": "cart",
-            "title": "Przełożenie",
-            "tools": [
-              {
-                "icon": "box",
-                "label": "ERP / WMS"
-              },
-              {
-                "icon": "doc",
-                "label": "Warunki dostawców"
-              }
-            ]
-          },
-          {
-            "icon": "gauge",
-            "title": "Kontrola",
-            "tools": [
-              {
-                "icon": "gauge",
-                "label": "Dashboard BI"
-              }
-            ]
-          }
-        ],
-        "decision": {
-          "question": "Mieści się w limitach kupca: budżet, termin, minimum?",
-          "pass": "Projekt zamówienia w ERP.",
-          "fail": "Do kupca z powodem."
-        },
-        "out": [
-          {
-            "icon": "cart",
-            "label": "Cotygodniowe propozycje na sklep"
-          },
-          {
-            "icon": "alert",
-            "label": "Ryzyka braków i nadstanów"
-          },
-          {
-            "icon": "gauge",
-            "label": "Prognoza kontra wykonanie"
-          }
-        ],
-        "human": "Kupiec: limity i ostatnie słowo."
-      },
-      {
-        "id": "quality",
-        "tab": "Kontrola jakości",
-        "icon": "camera",
-        "title": "Od klatki z kamery do decyzji OK albo NOK",
-        "in": [
-          {
-            "icon": "camera",
-            "label": "Klatki z kamery na linii"
-          },
-          {
-            "icon": "doc",
-            "label": "Wzorzec i tolerancje"
-          },
-          {
-            "icon": "factory",
-            "label": "Partia, zmiana, maszyna"
-          }
-        ],
-        "steps": [
-          {
-            "icon": "camera",
-            "title": "Zdjęcie",
-            "tools": [
-              {
-                "icon": "camera",
-                "label": "Kamera na linii"
-              },
-              {
-                "icon": "cpu",
-                "label": "Wyzwalanie z PLC"
-              }
-            ]
-          },
-          {
-            "icon": "match",
-            "title": "Porównanie",
-            "tools": [
-              {
-                "icon": "sparkle",
-                "label": "Model wizyjny"
-              },
-              {
-                "icon": "cpu",
-                "label": "Urządzenie przy linii"
-              }
-            ]
-          },
-          {
-            "icon": "list",
-            "title": "Zapis",
-            "tools": [
-              {
-                "icon": "factory",
-                "label": "MES"
-              },
-              {
-                "icon": "chart",
-                "label": "Raport jakości"
-              }
-            ]
-          }
-        ],
-        "decision": {
-          "question": "Werdykt jest jednoznaczny, czy model nie jest pewny?",
-          "pass": "Sygnał NOK do sterownika.",
-          "fail": "Zdjęcie na ekran operatora."
-        },
-        "out": [
-          {
-            "icon": "check",
-            "label": "OK albo NOK dla każdej sztuki"
-          },
-          {
-            "icon": "image",
-            "label": "Wady pogrupowane po zmianie i maszynie"
-          },
-          {
-            "icon": "sparkle",
-            "label": "Zbiór przykładów, coraz celniejszy"
-          }
-        ],
-        "human": "Operator: przypadki niepewne."
-      },
-      {
-        "id": "knowledge",
-        "tab": "Wiedza firmowa",
-        "icon": "book",
-        "title": "Od pytania do odpowiedzi z podanym źródłem",
-        "in": [
-          {
-            "icon": "folder",
-            "label": "SharePoint, Drive, Confluence"
-          },
-          {
-            "icon": "doc",
-            "label": "Umowy, procedury, oferty"
-          },
-          {
-            "icon": "lock",
-            "label": "Twoje istniejące uprawnienia"
-          }
-        ],
-        "steps": [
-          {
-            "icon": "db",
-            "title": "Indeks",
-            "tools": [
-              {
-                "icon": "folder",
-                "label": "SharePoint"
-              },
-              {
-                "brand": "drive",
-                "label": "Google Drive"
-              },
-              {
-                "brand": "confluence",
-                "label": "Confluence"
-              },
-              {
-                "icon": "lock",
-                "label": "Dostawca tożsamości"
-              }
-            ]
-          },
-          {
-            "icon": "chat",
-            "title": "Odpowiedź",
-            "tools": [
-              {
-                "icon": "search",
-                "label": "Wyszukiwarka"
-              },
-              {
-                "icon": "chat",
-                "label": "Teams"
-              },
-              {
-                "icon": "chat",
-                "label": "Slack"
-              }
-            ]
-          },
-          {
-            "icon": "list",
-            "title": "Rejestr",
-            "tools": [
-              {
-                "icon": "list",
-                "label": "Rejestr pytań"
-              }
-            ]
-          }
-        ],
-        "decision": {
-          "question": "Odpowiedź jest udokumentowana i ta osoba ma do niej prawo?",
-          "pass": "Odpowiedź z linkiem do paragrafu.",
-          "fail": "Wskazuje właściciela obszaru."
-        },
-        "out": [
-          {
-            "icon": "clock",
-            "label": "Odpowiedź w kilka sekund"
-          },
-          {
-            "icon": "link",
-            "label": "Każda odpowiedź do prześledzenia"
-          },
-          {
-            "icon": "alert",
-            "label": "Lista luk w dokumentacji"
-          }
-        ],
-        "human": "Właściciel: domyka luki."
-      }
-    ]
   },
   "reports": {
     "cta": "Dowiedz się więcej",
@@ -6344,6 +6157,23 @@
           "slug": "fractional-ai-team"
         }
       ],
+      "toolingTitle": "Jak dobieramy narzędzia",
+      "toolingIntro": "Z warsztatu masz wyjść z odpowiedzią, co zrobić, a nie z listą zakupową. Dlatego mówimy wprost, co jest nasze, a co nie.",
+      "tooling": [
+        {
+          "title": "Najpierw problem, potem narzędzie",
+          "text": "Na warsztacie nie sprzedajemy licencji. Częściej niż wdrożenie proponujemy zmianę w procesie albo narzędzie, którego w ogóle nie mamy w ofercie."
+        },
+        {
+          "title": "Quanty jest nasze i mówimy o tym głośno",
+          "text": "Quanty to nasza platforma do pracy na dokumentach i danych. Sami ją budujemy, ma polskie wsparcie i część wdrożeń u klientów robimy właśnie na niej. Kiedy proponujemy Quanty, słyszysz to razem z alternatywami i z kosztem jednej i drugiej drogi."
+        },
+        {
+          "title": "Rekomendacja jest na piśmie",
+          "text": "Wychodzisz z listą opcji, kosztem każdej z nich i uzasadnieniem kolejności. Możesz to zrealizować z nami albo z kimkolwiek innym."
+        }
+      ],
+      "toolingCta": "Zobacz Quanty",
       "faq": [
         {
           "q": "Jak wyceniacie warsztaty?",
@@ -6837,12 +6667,12 @@
   "booking": {
     "nextTitle": "Co dalej",
     "steps": [
-      "Dobieramy inżyniera do Twojego tematu.",
+      "Krzysztof czyta Twoją wiadomość osobiście.",
       "Odpowiadamy w jeden dzień roboczy.",
       "30 minut rozmowy o zakresie."
     ],
-    "contactName": "Dawid Kubicki",
-    "contactRole": "Założyciel, Pluscode",
+    "contactName": "Krzysztof Suliński",
+    "contactRole": "Konsultant AI",
     "emailPrefix": "Albo napisz na",
     "trustTitle": "Zaufali nam",
     "summaryTitle": "Co rezerwujesz"
@@ -6904,5 +6734,53 @@
     "subtitle": "Napisz, co chcesz ruszyć z miejsca. Doświadczony inżynier odpowie w jeden dzień roboczy.",
     "submit": "Poproś o rozmowę",
     "backLabel": "Wróć na stronę główną"
+  },
+  "clients": {
+    "label": "Dla kogo budowaliśmy",
+    "title": "Dla sieci sklepów, banku i kliniki",
+    "greyClause": "Trzy zespoły, dla których dowieźliśmy, i co tam zrobiliśmy.",
+    "cta": "Zobacz case studies",
+    "items": [
+      {
+        "key": "zabka",
+        "name": "Żabka",
+        "tag": "Handel",
+        "what": "Architektura sklepów autonomicznych",
+        "detail": "Zaplanowaliśmy, zaprojektowaliśmy i utrzymywaliśmy architekturę systemu sklepów bezobsługowych największej sieci convenience w Polsce."
+      },
+      {
+        "key": "ubs",
+        "name": "UBS",
+        "tag": "Bankowość",
+        "what": "Nowy design aplikacji mobilnej, w tempie",
+        "detail": "Nasi inżynierowie dołączyli do zespołu banku, by ujednolicić płatności i nawigację w aplikacji mobilnej."
+      },
+      {
+        "key": "ebm",
+        "name": "EBM Dental",
+        "tag": "Ochrona zdrowia",
+        "what": "Nowoczesna platforma www kliniki stomatologicznej",
+        "detail": "Projekt i wdrożenie w Next.js dla wielospecjalistycznej praktyki w Poznaniu, od szkicu do startu."
+      }
+    ]
+  },
+  "figures": {
+    "label": "W liczbach",
+    "title": "Mały zespół, długi staż",
+    "greyClause": "Cztery liczby, które sprawdzisz na pierwszej rozmowie."
+  },
+  "quanty": {
+    "label": "Nasz własny produkt",
+    "title": "Budujemy też własny produkt. Quanty",
+    "greyClause": "to arkusz AI, który czyta faktury, umowy i zamówienia do tabeli i przy każdej wartości pokazuje stronę, z której pochodzi.",
+    "points": [
+      "Zaprojektowany i zbudowany przez tych samych dwóch inżynierów, z którymi będziesz pracować",
+      "Dziś w becie, publiczny start tej jesieni",
+      "Z tych samych klocków, które wkładamy w systemy klientów: czytanie dokumentów, odpowiedzi ze źródłem, zatwierdzenia"
+    ],
+    "cta": "Zobacz quanty.ai",
+    "note": "Quanty jest produktem Pluscode Sp. z o.o.",
+    "imageAlt": "Skoroszyt Quanty z fakturami wczytanymi do tabeli",
+    "chip": "Zbudowane przez Pluscode"
   }
 }

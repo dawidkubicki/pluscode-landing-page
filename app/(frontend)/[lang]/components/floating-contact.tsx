@@ -19,34 +19,53 @@ function Avatar({ photo, initials }: { photo: Photo; initials: string }) {
       <img
         src={photo.url}
         alt={photo.alt}
-        className="size-full object-cover object-top"
+        className="size-full object-cover object-center [filter:grayscale(1)_contrast(1.02)]"
+        loading="lazy"
+        decoding="async"
       />
     );
   }
   return (
-    <span className="flex size-full items-center justify-center bg-gradient-to-br from-lime/40 to-night-soft text-sm font-semibold text-bone">
+    <span className="flex size-full items-center justify-center bg-cream-surface text-sm font-semibold text-ink-soft">
       {initials}
     </span>
   );
 }
 
-/** Pulsing "online" indicator dot. */
-function OnlineDot({ size = "size-2.5" }: { size?: string }) {
+/**
+ * Availability dot. The green is a status signal, not leftover brand colour:
+ * green means "available" everywhere on the web, so rendering it in the page
+ * accent would read as decoration and lose the meaning. It is 10px, it appears
+ * once, and it is the only non-accent colour on the page.
+ */
+function OnlineDot({
+  size = "size-2.5",
+  ring = "",
+}: {
+  size?: string;
+  /** Separating halo, used where the dot sits on top of a photograph. */
+  ring?: string;
+}) {
   return (
     <span className={`relative flex ${size}`}>
       <span
-        className={`absolute inline-flex size-full animate-ping rounded-full bg-lime opacity-70`}
+        className="absolute inline-flex size-full animate-ping rounded-full bg-status-online/30"
         style={PULSE}
       />
-      <span className={`relative inline-flex ${size} rounded-full bg-lime`} />
+      <span
+        className={`relative inline-flex ${size} rounded-full bg-status-online ${ring}`}
+      />
     </span>
   );
 }
 
 /**
  * Floating chat-style contact widget. Slides in once the visitor scrolls past
- * the hero, showing the featured person's avatar with an online indicator; tap
- * to expand a card offering WhatsApp or a phone call. Shown on every page.
+ * the hero, showing the contact person's face with an online indicator; tap to
+ * expand a card offering WhatsApp or a phone call. Shown on every page.
+ *
+ * The bubble is a surface-coloured circle with a hairline ring, never a coloured border:
+ * the accent never encircles a face, and a 2px ring around one reads as a badge.
  */
 export default function FloatingContact({
   dict,
@@ -98,12 +117,18 @@ export default function FloatingContact({
     .join("")
     .toUpperCase();
 
+  // `talkToName` holds the whole phrase already inflected, because the
+  // "{talkTo} {firstName}" concatenation puts the Polish name in the wrong
+  // case ("Napisz do Krzysztof" instead of "Napisz do Krzysztofa"). The
+  // concatenation stays as the fallback only.
+  const talkToLabel = dict.talkToName || `${dict.talkTo} ${firstName}`;
+
   return (
     <AnimatePresence>
       {visible && (
         <motion.div
           ref={ref}
-          className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-3"
+          className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3 sm:bottom-8 sm:right-8"
           initial={{ opacity: 0, scale: 0.6, y: 24 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.6, y: 24 }}
@@ -112,49 +137,54 @@ export default function FloatingContact({
           <AnimatePresence>
             {open && (
               <motion.div
-                className="w-64 origin-bottom-right rounded-2xl border border-night-line bg-night/95 p-4 text-bone shadow-[0_24px_60px_-15px_rgba(0,0,0,0.6)] backdrop-blur-md"
+                className="w-72 origin-bottom-right rounded-2xl bg-cream-surface/95 p-4 shadow-[0_2px_6px_rgba(0,0,0,0.35),0_28px_56px_-20px_rgba(0,0,0,0.7)] ring-1 ring-cream-line-strong backdrop-blur-xl"
                 initial={{ opacity: 0, y: 12, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 12, scale: 0.95 }}
                 transition={{ duration: 0.25, ease: EASE }}
               >
                 <div className="flex items-center gap-3">
-                  <span className="flex size-12 shrink-0 overflow-hidden rounded-full border border-lime/40">
+                  <span className="flex size-11 shrink-0 overflow-hidden rounded-full bg-photo-ground ring-1 ring-white/10">
                     <Avatar photo={photo} initials={initials} />
                   </span>
                   <div className="min-w-0">
-                    <p className="truncate text-sm font-medium text-bone">
+                    <p className="truncate text-[14.5px] font-semibold text-ink">
                       {name}
                     </p>
                     {role && (
-                      <p className="truncate font-mono text-[10px] uppercase tracking-[0.16em] text-bone-soft">
+                      <p className="truncate text-[12.5px] text-ink-mute">
                         {role}
                       </p>
                     )}
                   </div>
                 </div>
 
-                <div className="mt-2 flex items-center gap-1.5">
+                <div className="mt-3 flex items-center gap-1.5">
                   <OnlineDot size="size-2" />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-lime">
+                  <span className="text-[12px] text-ink-mute">
                     {dict.online}
                   </span>
                 </div>
+                {dict.replyTime && (
+                  <p className="mt-1 text-[12px] text-ink-mute">
+                    {dict.replyTime}
+                  </p>
+                )}
 
                 <div className="mt-4 flex items-center gap-2">
                   <a
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-full bg-lime px-3 py-2 text-[13px] font-medium text-ink transition-colors hover:bg-lime-deep"
+                    className="btn btn-primary flex-1"
                   >
                     <WhatsAppIcon className="size-4" />
-                    {dict.talkTo} {firstName}
+                    {talkToLabel}
                   </a>
                   <a
                     href={telUrl}
                     aria-label={`${dict.call} ${name}`}
-                    className="flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/15 text-bone transition-colors hover:bg-white/10"
+                    className="flex size-9 shrink-0 items-center justify-center rounded-lg text-ink-soft ring-1 ring-cream-line transition-colors duration-300 ease-io-attio hover:bg-cream-surface hover:text-ink hover:duration-50 max-lg:size-[46px] max-lg:rounded-xl"
                   >
                     <PhoneIcon className="size-4" />
                   </a>
@@ -166,16 +196,16 @@ export default function FloatingContact({
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            aria-label={`${dict.talkTo} ${firstName}`}
+            aria-label={talkToLabel}
             aria-expanded={open}
-            className="group relative flex size-14 cursor-pointer items-center justify-center rounded-full border-2 border-lime/60 bg-night shadow-[0_12px_30px_-8px_rgba(0,0,0,0.6)] transition-transform hover:scale-105"
+            className="relative flex size-14 cursor-pointer items-center justify-center rounded-full bg-cream-surface shadow-[0_1px_2px_rgba(0,0,0,0.4),0_14px_32px_-14px_rgba(0,0,0,0.8)] ring-1 ring-cream-line-strong transition-[transform,box-shadow] duration-200 ease-out-expo hover:scale-[1.04] hover:shadow-[0_1px_2px_rgba(0,0,0,0.4),0_18px_40px_-14px_rgba(0,0,0,0.85)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime"
           >
             {/* avatar is clipped to the circle, the dot is not */}
             <span className="absolute inset-0 overflow-hidden rounded-full">
               <Avatar photo={photo} initials={initials} />
             </span>
-            <span className="absolute bottom-0 right-0 z-10 flex size-3.5 items-center justify-center rounded-full bg-night ring-1 ring-night">
-              <OnlineDot size="size-2.5" />
+            <span className="absolute bottom-0.5 right-0.5 z-10">
+              <OnlineDot ring="ring-2 ring-cream-surface" />
             </span>
           </button>
         </motion.div>

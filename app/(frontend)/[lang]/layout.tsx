@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import "./globals.css";
-import { figtree } from "./fonts";
+import { inter, interTight } from "./fonts";
 import SmoothScroll from "./components/smooth-scroll";
 import Header from "./components/header";
 import FloatingContact from "./components/floating-contact";
@@ -11,7 +11,8 @@ import { LocaleProvider } from "./components/locale-context";
 import { locales, isLocale, localeHrefLang } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { buildOpenGraph } from "@/lib/seo";
-import { getFeatured, contactLinks } from "@/lib/team";
+import { contactLinks } from "@/lib/team";
+import { CONTACT_PERSON } from "@/lib/contact-person";
 import { getActiveAnnouncement } from "@/lib/announcement";
 import { announcementStorageKey } from "@/lib/announcement-key";
 
@@ -56,11 +57,12 @@ export default async function LocaleLayout({
   if (!isLocale(lang)) notFound();
 
   const dict = getDictionary(lang);
-  const [featured, announcement] = await Promise.all([
-    getFeatured(lang),
-    getActiveAnnouncement(lang),
-  ]);
-  const { whatsappUrl, telUrl } = contactLinks(featured?.phone);
+  const announcement = await getActiveAnnouncement(lang);
+  // The contact person is a static constant, not a CMS lookup: the widget
+  // renders on every route, so a database round trip here would cost every
+  // page a query that can no longer change the answer. `getFeatured` stays
+  // exported from lib/team.ts for a caller that needs the CMS entry.
+  const { whatsappUrl, telUrl } = contactLinks(CONTACT_PERSON.phone);
 
   const banner =
     announcement ??
@@ -88,7 +90,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={lang}
-      className={`${figtree.variable} antialiased`}
+      className={`${inter.variable} ${interTight.variable} antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-screen bg-cream text-ink">
@@ -101,9 +103,9 @@ export default async function LocaleLayout({
           </SmoothScroll>
           <FloatingContact
             dict={dict.hero}
-            name={featured?.name ?? dict.hero.fallbackName}
-            role={featured?.role ?? dict.hero.fallbackRole}
-            photo={featured?.photo ?? null}
+            name={CONTACT_PERSON.name}
+            role={CONTACT_PERSON.role}
+            photo={CONTACT_PERSON.photo}
             whatsappUrl={whatsappUrl}
             telUrl={telUrl}
           />

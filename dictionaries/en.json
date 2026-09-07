@@ -20,9 +20,9 @@
     ]
   },
   "announcement": {
-    "text": "New: AI Opportunity Workshops. From use case to an ROI-backed plan in one session.",
-    "linkText": "Book a workshop",
-    "linkUrl": "/contact"
+    "text": "An AI engineer in your team.",
+    "linkText": "How it works",
+    "linkUrl": "/services/forward-deployed-engineers"
   },
   "navigation": {
     "aiData": "AI Services",
@@ -37,16 +37,16 @@
     "language": "Language",
     "aiDataItems": {
       "machineLearning": {
-        "title": "Generative AI & LLMs",
-        "description": "Assistants and automation that work from your own data"
+        "title": "Assistants and automation",
+        "description": "Software that reads, answers and files, using your own data"
       },
       "dataAnalytics": {
-        "title": "ML & Data Foundations",
-        "description": "The data and models that make AI possible"
+        "title": "Forecasting and reporting",
+        "description": "Your numbers in one place, and a view of what comes next"
       },
       "aiConsulting": {
-        "title": "AI Strategy & Consulting",
-        "description": "Process mapping, roadmaps and data governance"
+        "title": "Process mapping and roadmaps",
+        "description": "We find the work worth automating before anyone writes code"
       }
     },
     "servicesItems": {
@@ -66,6 +66,10 @@
         "title": "Team Extension",
         "description": "Senior engineers embedded in your team"
       },
+      "forwardDeployedEngineers": {
+        "title": "Forward Deployed Engineers",
+        "description": "Our AI engineer inside your team, accountable for the result"
+      },
       "softwareDevelopment": {
         "title": "Software Development",
         "description": "Custom systems built end to end"
@@ -82,165 +86,201 @@
         "title": "Technologies",
         "description": "The stack we build and ship with"
       }
-    }
+    },
+    "callNote": "30 minutes with an engineer, not a sales deck."
   },
   "hero": {
-    "headlineStart": "AI consulting that puts artificial intelligence to work.",
-    "subtext": "You do not need another digital product. You need less paperwork and fewer hours lost to retyping data. That is the work we take on.",
-    "ctaPrimary": "Book a discovery call",
-    "ctaSecondary": "See our work",
+    "eyebrow": "AI consulting",
+    "headlineStart": "AI that gives your team back its",
+    "headlineEm": "hours",
+    "headlineEnd": ".",
+    "subtext": "We find the work your people repeat by hand, and automate it properly.",
+    "ctaPrimary": "Book a call",
+    "ctaNote": "30 minutes with Krzysztof Suliński, AI consultant.",
+    "ctaSecondary": "See the time it saves",
     "online": "Online",
     "talkTo": "Chat with",
+    "talkToName": "Chat with Krzysztof",
+    "replyTime": "Usually replies in a few minutes",
     "call": "Call",
-    "fallbackName": "Dawid Kubicki",
-    "fallbackRole": "CEO & Founder",
-    "eyebrow": "AI consulting · process automation · data governance",
-    "headlineEm": "For real.",
-    "headlineEnd": "",
+    "fallbackName": "Krzysztof Suliński",
+    "fallbackRole": "AI Consultant",
     "stats": [
       {
+        "value": "7 yrs",
+        "label": "Building AI and software since 2019"
+      },
+      {
         "value": "40+",
-        "label": "AI & software projects shipped across 8 industries"
-      },
-      {
-        "value": "99.2%",
-        "label": "Straight-through processing on our document-AI pipelines"
-      },
-      {
-        "value": "6 yrs",
-        "label": "Building AI & software systems since 2019"
+        "label": "Projects delivered across eight industries"
       },
       {
         "value": "2 wks",
-        "label": "From kickoff to a working AI prototype, typically"
+        "label": "First call to working prototype"
+      },
+      {
+        "value": "EU",
+        "label": "Hosted in EU regions by default"
       }
     ]
   },
   "trust": {
-    "label": "Trusted by teams shipping AI to production",
+    "label": "Teams we have built for",
     "clients": [
       "Żabka",
       "UBS",
-      "EBM Dental",
-      "Startups & scale-ups"
+      "EBM Dental"
     ]
   },
   "services": {
-    "label": "Capabilities",
-    "title": "From process map to system in production",
-    "subtitle": "Engineers, not slide decks. We automate what costs you hours.",
+    "label": "What we do",
+    "title": "Five ways we take work off your desk",
+    "subtitle": "Engineers, not slide decks. Each one removes hours from somebody's week.",
     "items": [
       {
         "num": "01",
-        "title": "Process mapping & AI roadmap",
-        "desc": "We follow the paperwork and count where the hours go.",
-        "tags": "process mapping · readiness audit · costed roadmap"
+        "title": "Paperwork automation",
+        "desc": "Invoices, orders and forms read and filed without anyone retyping them.",
+        "tags": "invoices · delivery notes · contracts · straight into your system",
+        "caption": "Documents arrive, get read, and land in the right place."
       },
       {
         "num": "02",
-        "title": "Assistants that answer from your own documents",
-        "desc": "Answers from your own documents, source attached.",
-        "tags": "answers from your own sources · quoted sources · measured accuracy"
+        "title": "Answers from your documents",
+        "desc": "Your team asks a question and gets the answer, with the source attached.",
+        "tags": "your files · your wording · answers with a source",
+        "caption": "A question goes in, an answer comes back with where it came from."
       },
       {
         "num": "03",
-        "title": "Automation with a person in the loop",
-        "desc": "Runs the repetitive steps, stops where risk starts.",
-        "tags": "step-by-step automation · approval points · full audit trail"
+        "title": "Software development",
+        "desc": "Custom systems built end to end by the people who will run them.",
+        "tags": "web · mobile · fits the systems you already use",
+        "caption": "Parts that fit together into one system that runs."
       },
       {
         "num": "04",
-        "title": "Document & paperwork automation",
-        "desc": "Invoices, delivery notes, customs and contracts, straight into your systems.",
-        "tags": "scanning + reading · automatic checks · straight into your ERP"
+        "title": "MVP Development",
+        "desc": "Your first working version in front of real users in weeks.",
+        "tags": "fixed scope · real users · built to be kept",
+        "caption": "A first version, live in weeks, then grown."
       },
       {
         "num": "05",
-        "title": "Data foundations & forecasting",
-        "desc": "Your numbers in one place, then models that predict.",
-        "tags": "data pipelines · forecasting models · keeping them accurate"
-      },
-      {
-        "num": "06",
-        "title": "Data governance, risk & privacy",
-        "desc": "Data ownership, risk, GDPR and the EU AI Act.",
-        "tags": "data ownership · risk classification · GDPR & EU AI Act"
-      },
-      {
-        "num": "07",
-        "title": "Technical hiring & competency checks",
-        "desc": "Technical screening and a scored report you can defend.",
-        "tags": "competency verification · technical interviews · scorecards"
+        "title": "Forecasting and reporting",
+        "desc": "Your numbers in one place, and a view of what happens next.",
+        "tags": "one set of numbers · demand and cash forecasts",
+        "caption": "Many numbers become one picture of what comes next."
       }
-    ]
+    ],
+    "greyClause": "Engineers, not slide decks. Each takes hours out of somebody's week."
   },
   "offerings": {
-    "label": "Ways to work together",
-    "title": "Start with one process, not a transformation programme",
-    "subtitle": "The same senior engineers whether you are a 15-person forwarder or a corporate department. Fixed scope, fixed price, and you know what lands at the end before we start.",
-    "note": "Every engagement starts with a free 30-minute call. You talk to the engineer who would do the work, and you get a straight answer on whether it is worth doing at all.",
+    "label": "Ways to work",
+    "title": "Four ways to start",
+    "subtitle": "Fixed scope, fixed price. You know what lands at the end before we begin.",
+    "note": "Every engagement starts with a free 30-minute call with the engineer who would do the work.",
     "forLabel": "Best for",
     "deliverablesLabel": "You leave with",
     "featuredLabel": "Most popular",
     "items": [
       {
-        "name": "AI Opportunity Workshop",
-        "meta": "Half day · fixed fee",
-        "for": "Owners and ops leads, 10 to 500 people",
-        "desc": "Pressure-test your AI ideas against ROI and feasibility. Leave with a clear first move.",
+        "name": "Requirement Analysis",
+        "meta": "1 to 2 weeks · fixed fee",
+        "for": "Companies who know something is slow but not what to fix",
+        "desc": "We follow one process, count the hours, price the fix.",
         "deliverables": [
-          "Prioritized use-case shortlist",
-          "ROI & feasibility scoring",
-          "Your recommended first pilot"
+          "A map of the process as it runs today",
+          "The hours and the cost of doing it by hand",
+          "A costed shortlist of what to fix first"
+        ],
+        "cta": "Book an analysis",
+        "featured": false,
+        "example": "Your accounting team retypes 300 invoices a month. We count the hours and price what it takes to stop.",
+        "steps": [
+          "We sit with the person doing the job",
+          "We count the hours and where they go",
+          "You get a costed shortlist of what to fix first"
+        ]
+      },
+      {
+        "name": "MVP Deployment",
+        "meta": "4 to 8 weeks · fixed scope",
+        "for": "Teams with an idea that needs to become real",
+        "desc": "A first working version, live with real users.",
+        "deliverables": [
+          "A working product your team can use",
+          "Live with real users, not a demo",
+          "A clear plan for what comes next"
+        ],
+        "cta": "Scope an MVP",
+        "featured": false,
+        "example": "A portal where your customers check their order status without calling you.",
+        "steps": [
+          "We agree what version one must do",
+          "We build it with your users watching",
+          "It goes live, and you own it"
+        ]
+      },
+      {
+        "name": "AI Native Development",
+        "meta": "From 6 weeks · fixed scope",
+        "for": "Companies putting AI into daily work",
+        "desc": "We build the system that does the repeat work.",
+        "deliverables": [
+          "A system running on your own data",
+          "Checks and approvals wherever a person is needed",
+          "Handover, training and support"
+        ],
+        "cta": "Talk it through",
+        "featured": false,
+        "example": "Incoming emails are read, answered where it is routine, and passed to a person where it is not.",
+        "steps": [
+          "We map the repeat work",
+          "We build it on your own data, with approvals",
+          "We hand it over and stay for support"
+        ]
+      },
+      {
+        "name": "AI Workshops",
+        "meta": "Half a day · fixed fee",
+        "for": "Leadership and the people doing the work",
+        "desc": "Half a day on what AI can do, and cannot.",
+        "deliverables": [
+          "A shortlist of ideas worth funding",
+          "The ideas that are not worth it, and why",
+          "One first move you can start next week"
         ],
         "cta": "Book a workshop",
         "featured": false,
-        "example": "Half a day with the person who actually runs operations. We walk through one week of real paperwork, count where the hours go, and leave you with two ideas worth funding and the list of ones that are not."
-      },
-      {
-        "name": "AI Discovery Sprint",
-        "meta": "2 weeks · fixed scope",
-        "for": "One team with one painful process",
-        "desc": "One use case, taken deep: data, feasibility and a working prototype. Commit with confidence.",
-        "deliverables": [
-          "Technical feasibility assessment",
-          "Working prototype",
-          "Costed delivery roadmap"
-        ],
-        "cta": "Book a sprint",
-        "featured": true,
-        "example": "Two weeks on a single process. Say delivery notes that arrive as PDFs, phone photos and email attachments: we run your real ones through a working prototype and show you how often it gets them right."
-      },
-      {
-        "name": "GenAI Proof-of-Concept",
-        "meta": "4-6 weeks",
-        "for": "A department that has to show a result upstairs",
-        "desc": "A production-grade pilot on your data, measured on real evals and ready to pitch for rollout.",
-        "deliverables": [
-          "Production-ready pilot",
-          "Evaluation harness & metrics",
-          "Rollout plan"
-        ],
-        "cta": "Scope a pilot",
-        "featured": false,
-        "example": "Four to six weeks turning that prototype into something your team opens every morning: wired into the systems you already run, with the checks, logs and access rules an auditor will ask about."
-      },
-      {
-        "name": "Fractional AI Team",
-        "meta": "Monthly · ongoing",
-        "for": "Companies with no AI people of their own",
-        "desc": "A senior AI team embedded in yours: strategy, engineering and MLOps, scaling with your roadmap.",
-        "deliverables": [
-          "Embedded senior AI engineers",
-          "Strategy & MLOps support",
-          "Flexible monthly capacity"
-        ],
-        "cta": "Talk to us",
-        "featured": false,
-        "example": "A few days of senior engineering a week, on your board and in your standups. Cheaper than a hire, and you can stop at the end of any month."
+        "example": "Half a day with your managers on what AI can do for your company, in plain language.",
+        "steps": [
+          "We learn your business beforehand",
+          "Half a day of examples, no slides",
+          "You leave with one first move"
+        ]
       }
     ],
-    "exampleLabel": "What that looks like"
+    "fde": {
+      "label": "Ongoing",
+      "name": "Forward Deployed Engineers",
+      "meta": "Monthly · from three months",
+      "desc": "Our engineer inside your team, accountable for a result, not a ticket list.",
+      "bulletsLabel": "What they can build",
+      "bullets": [
+        "Assistants answering from your documents",
+        "Custom models for awkward cases",
+        "Prototypes moved into production and kept",
+        "Design that fits your software",
+        "Numbers cleaned, joined and forecast",
+        "Deciding what to build next"
+      ],
+      "cta": "See how it works",
+      "readLink": "Read: what is a forward deployed engineer"
+    },
+    "greyClause": "Fixed scope, fixed price. You know what lands up front.",
+    "exampleLabel": "For example",
+    "stepsLabel": "How it goes"
   },
   "process": {
     "label": "How we work",
@@ -268,9 +308,6 @@
         "desc": "We roll out, hand over the knowledge, and stay on as advisors as you scale."
       }
     ]
-  },
-  "stats": {
-    "lead": "Eight years building software that moves the needle. The numbers behind why teams, from fast-moving startups to global enterprises, partner with Pluscode."
   },
   "industries": {
     "title": "Sector knowledge, engineering depth",
@@ -345,6 +382,134 @@
     "name": "Dawid Kubicki",
     "title": "CEO & Founder, Pluscode"
   },
+  "timeSaved": {
+    "label": "Time back",
+    "title": "About a day a week, back",
+    "subtitle": "Four jobs nearly every company still does by hand. The top bar is today, the bottom bar is after.",
+    "scaleMax": 16,
+    "unit": "h",
+    "beforeLabel": "Today",
+    "afterLabel": "With AI",
+    "percentLine": "{p} less time on it",
+    "footnote": "Typical ranges from comparable projects, counted per person per week. Not a guarantee: your numbers depend on your volumes and how tidy your records are, so we measure them with you first.",
+    "items": [
+      {
+        "id": "invoices",
+        "name": "Supplier invoices",
+        "today": "Someone opens the mailbox, types each invoice into the system and checks it against the order.",
+        "before": 12,
+        "after": 4,
+        "instead": "That time goes into the invoices that are actually wrong, and into closing the month earlier.",
+        "check": "A person still approves anything that does not match the order."
+      },
+      {
+        "id": "questions",
+        "name": "Customer questions",
+        "today": "Someone reads every email and chat message and writes the same answers again and again.",
+        "before": 15,
+        "after": 7,
+        "instead": "That time goes into the difficult cases instead of clearing a queue.",
+        "check": "A person still answers anything about money, complaints or exceptions."
+      },
+      {
+        "id": "reports",
+        "name": "Reports and analysis",
+        "today": "Someone pulls numbers out of several systems into a spreadsheet and writes up the monthly summary.",
+        "before": 10,
+        "after": 3,
+        "instead": "That time goes into what the numbers mean and what to do about them.",
+        "check": "A person still signs off the figures before anyone acts on them."
+      },
+      {
+        "id": "hiring",
+        "name": "Hiring and CVs",
+        "today": "Someone reads every CV that arrives and decides who is worth a first call.",
+        "before": 8,
+        "after": 3,
+        "instead": "That time goes into talking to the shortlist instead of reading the pile.",
+        "check": "A person still makes every hiring decision. The shortlist is only a shortlist."
+      }
+    ],
+    "greyClause": "Four jobs still done by hand, and what they cost.",
+    "backLabel": "back"
+  },
+  "tokenMeasure": {
+    "label": "What we count",
+    "title": "Measured in tokens, not timesheets",
+    "greyClause": "What each process costs to run, month by month.",
+    "tokenLine": "A token is a small piece of text, about one short word.",
+    "fieldLabel": "One month, by process",
+    "processLabel": "Process",
+    "shareLabel": "Share",
+    "volumeLabel": "Tokens, millions",
+    "totalLabel": "All processes",
+    "honesty": "This counts volume of work, not value, and always per process, never per person. The figures are an illustration, not a client result.",
+    "items": [
+      {
+        "id": "invoices",
+        "name": "Invoice handling",
+        "tokens": 9
+      },
+      {
+        "id": "replies",
+        "name": "Customer replies",
+        "tokens": 6.4
+      },
+      {
+        "id": "reporting",
+        "name": "Monthly reporting",
+        "tokens": 3
+      },
+      {
+        "id": "rest",
+        "name": "Everything else",
+        "tokens": 1.6
+      }
+    ]
+  },
+  "people": {
+    "eyebrow": "Who you work with",
+    "title": "The two people who do the work",
+    "body": "No account managers, no handover. The people who scope your project are the people who build it, and you can reach them directly.",
+    "groupAlt": "Dawid Kubicki and Krzysztof Suliński, founders of Pluscode",
+    "aboutLink": "More about Pluscode",
+    "bookLink": "Book a call",
+    "members": {
+      "dawid": {
+        "name": "Dawid Kubicki",
+        "role": "CEO & AI Consultant",
+        "alt": "Dawid Kubicki"
+      },
+      "krzysztof": {
+        "name": "Krzysztof Suliński",
+        "role": "AI Consultant",
+        "alt": "Krzysztof Suliński"
+      }
+    },
+    "greyClause": "No account managers. Whoever scopes your project builds it, and you reach them directly."
+  },
+  "europe": {
+    "flagAlt": "Flag of the European Union",
+    "eyebrow": "European by design",
+    "title": "We learn how your company actually works",
+    "body": "We are a Polish company working across Europe. Before we build, we sit with your team and learn the job. What we ship follows European rules on data and AI.",
+    "chips": [
+      {
+        "title": "EU hosting by default",
+        "text": "EU regions unless agreed otherwise, plus a GDPR processing agreement."
+      },
+      {
+        "title": "Built for the EU AI Act",
+        "text": "We work out your risk tier before designing anything."
+      },
+      {
+        "title": "We learn your industry's rules",
+        "text": "Retail, banking, healthcare, logistics. We read them before writing code."
+      }
+    ],
+    "entity": "Pluscode Sp. z o.o., Poznań, Poland",
+    "greyClause": "A Polish company across Europe, working to European data and AI rules."
+  },
   "insights": {
     "label": "Insights",
     "title": "Our latest thinking on AI",
@@ -408,7 +573,9 @@
       "contact": "Contact",
       "connect": "Connect",
       "legal": "Legal"
-    }
+    },
+    "ourProduct": "Quanty (our product)",
+    "address": "Kosowska 12/3, 60-464 Poznań, Poland"
   },
   "shared": {
     "home": "Home",
@@ -484,6 +651,178 @@
           "title": "Need more hands on deck?",
           "subtitle": "Tell us where your team needs support and we'll assemble the right engineers.",
           "button": "Extend your team"
+        }
+      },
+      "forwardDeployedEngineers": {
+        "label": "Platform & Team",
+        "title": "Forward Deployed Engineers",
+        "subtitle": "One of our senior AI engineers works inside your team and is accountable for a result you agreed together, not for a list of tickets. They start with your real data, your real process and your real constraints, and they finish when the thing is running and your people are using it.",
+        "breadcrumb": "Forward Deployed Engineers",
+        "featuresTitle": "What the engineer can build for you",
+        "featuresIntro": "One person, senior, with the range to take a job from a first conversation to something running in production. What they build depends on what the work needs.",
+        "features": {
+          "documents": {
+            "title": "Assistants on your own documents",
+            "description": "Answers pulled from your own contracts, manuals and records, with the source attached so anyone can check them. Nobody has to trust a black box."
+          },
+          "models": {
+            "title": "Models for your hard cases",
+            "description": "When a general model keeps getting your cases wrong, we build one that does not. Trained on your history, measured against the decisions your people already make."
+          },
+          "production": {
+            "title": "From prototype to production",
+            "description": "The unglamorous half: deployment, access rules, logging, monitoring and cost control. A prototype that nobody can run is not a result."
+          },
+          "architecture": {
+            "title": "Design that fits what you already run",
+            "description": "We work with the ERP, the CRM and the spreadsheets you already pay for. Replacing your systems is almost never the cheapest way to fix a process."
+          },
+          "data": {
+            "title": "Numbers you can act on",
+            "description": "Your data cleaned, joined and put somewhere everyone reads from, and then forecasts built on top of it that hold up when a real month goes wrong."
+          },
+          "product": {
+            "title": "Deciding what comes next",
+            "description": "We watch what people actually use, not what the plan said they would, and tell you which piece of work is worth funding next."
+          }
+        },
+        "processTitle": "How the first two months go",
+        "process": {
+          "fit": {
+            "title": "Fit call",
+            "description": "Thirty minutes with the engineer who would do the work. If we do not think we are the right answer, we say so on that call."
+          },
+          "week1": {
+            "title": "Week 1: understand",
+            "description": "We watch one full cycle of the work, get access to the systems it touches, and agree one page: the outcome, how it is measured, and what would make it fail."
+          },
+          "week2": {
+            "title": "Week 2: something running",
+            "description": "A first working version on your own data, in front of the people who will use it. It will be narrow and it will get things wrong, and those errors write the rest of the plan."
+          },
+          "month2": {
+            "title": "Month 2: production and handover",
+            "description": "Wired into your systems, with access rules, logging and a way for a person to check or override it. Written down so your team can run it without us."
+          }
+        },
+        "deliverablesTitle": "What you end up owning",
+        "deliverablesIntro": "Everything the engineer produces is yours, in your repository and your accounts, from the first day.",
+        "deliverables": [
+          {
+            "title": "A working system in production",
+            "description": "Running on infrastructure you own, used by the people whose job it was meant to change."
+          },
+          {
+            "title": "The one page we agreed in week 1",
+            "description": "The outcome, the measure and the failure conditions, updated with what we actually learned."
+          },
+          {
+            "title": "An honest measurement",
+            "description": "What the process cost in hours before, what it costs now, and where the system still needs a person."
+          },
+          {
+            "title": "Documentation your team can use",
+            "description": "How it works, what it costs to run each month, what breaks it and who to call."
+          },
+          {
+            "title": "A short list of what is worth doing next",
+            "description": "Based on what we saw inside your business, with the ideas we think are not worth funding named as well."
+          }
+        ],
+        "modelsTitle": "How the engagement is shaped",
+        "modelsIntro": "A monthly fee for one engineer, not an hourly rate and not a price per ticket. The number belongs in a conversation about your actual situation, so let us have that conversation first.",
+        "models": [
+          {
+            "name": "Fit call",
+            "duration": "30 minutes · free",
+            "description": "A straight conversation with the engineer who would be embedded, about the job you want done and whether this is the right way to do it.",
+            "bullets": [
+              "You talk to the engineer, not to a salesperson",
+              "We name the cheaper option when there is one",
+              "You leave with a sharper description of the problem",
+              "No document to sign and nothing to pay"
+            ]
+          },
+          {
+            "name": "First result",
+            "duration": "3 months · monthly fee",
+            "description": "The minimum that gets to something real. Understand in week 1, something running in week 2, in production and handed over by month 2.",
+            "bullets": [
+              "One senior AI engineer inside your team",
+              "One agreed outcome, measured the way you agreed",
+              "Everything in your repository from the first commit",
+              "Nothing to renew if the result is enough"
+            ]
+          },
+          {
+            "name": "Ongoing",
+            "duration": "Monthly · 30 days notice",
+            "description": "For companies that find a second and a third job worth doing once the first one lands. The same engineer, the same accountability, month by month.",
+            "bullets": [
+              "Continues after the first three months",
+              "Thirty days notice on either side, no exit fee",
+              "Scale to a second engineer when the work needs it",
+              "Stop when your own team can carry it"
+            ]
+          }
+        ],
+        "whoTitle": "Who this is for",
+        "who": [
+          {
+            "title": "You know the job, not the how",
+            "description": "You can point at the process that costs you the most hours. You do not have anyone in house who could build the thing that fixes it."
+          },
+          {
+            "title": "You have a strategy and nothing running",
+            "description": "Someone delivered a document about your AI opportunities. Nobody has since put anything in front of the people who do the work."
+          },
+          {
+            "title": "Hiring is too slow for this",
+            "description": "You would need months to find a senior AI engineer, and you are not sure yet whether the work justifies a permanent hire."
+          },
+          {
+            "title": "The exceptions are the hard part",
+            "description": "Your process has rules that nobody has written down and cases that never look the same twice. Fixed scope written up front would be a guess."
+          }
+        ],
+        "toolsTitle": "What we build with",
+        "tools": [
+          "Python",
+          "TypeScript",
+          "PostgreSQL",
+          "Anthropic & OpenAI APIs",
+          "Open models you can self-host",
+          "Docker",
+          "AWS, Azure or your own servers",
+          "The ERP and CRM you already run"
+        ],
+        "faqTitle": "Questions, answered",
+        "faq": [
+          {
+            "q": "How is this different from your Team Extension service?",
+            "a": "Team Extension gives you capacity: engineers who work the backlog your team writes. A forward deployed engineer is accountable for a result instead. They decide what to build with your named decision maker, based on what they see when they watch the work being done. If you already know exactly what needs building, Team Extension is cheaper and simpler, and we will tell you that."
+          },
+          {
+            "q": "Why not a fixed price project?",
+            "a": "Because with this kind of work the scope is genuinely unknown until you run something against last month's real cases. A fixed price either gets padded to cover that, which makes it expensive, or gets held to the letter, which makes it useless. Our Requirement Analysis and MVP Deployment engagements stay fixed price, because there the answer really is knowable up front."
+          },
+          {
+            "q": "What do we have to provide?",
+            "a": "One named decision maker who can say yes and is available for a short call each week. Access to the systems and data the work touches, arranged in week one. A couple of hours with the people who do the job today. And honesty about the rules you have to follow, including the ones nobody has written down."
+          },
+          {
+            "q": "What happens to the work if we stop?",
+            "a": "It stays with you. Everything is in your repository and your cloud accounts from the first commit, and the handover documentation is a deliverable, not a favour. After the first three months there is thirty days notice on either side and no exit fee."
+          },
+          {
+            "q": "What will you not promise us?",
+            "a": "We will not promise an accuracy figure before we have seen your data. We will not promise a fixed price for an outcome nobody can describe yet. We will not promise that AI is the answer, and if a rule, a script or a process change is cheaper we will say so. We are not an on call team, and we do not make your decisions for you."
+          }
+        ],
+        "cta": {
+          "title": "Want to know if this fits?",
+          "subtitle": "Thirty minutes with the engineer who would be embedded. You describe the job you want done, and you get a straight answer on whether this is the right way to do it, or whether something cheaper would work.",
+          "button": "Book a call with Krzysztof"
         }
       },
       "machineLearning": {
@@ -4739,8 +5078,8 @@
     },
     "about": {
       "label": "About Us",
-      "title": "We're building the future of software",
-      "subtitle": "A team of passionate engineers, designers, and strategists dedicated to helping businesses thrive in the digital age.",
+      "title": "Two engineers who build what they scope",
+      "subtitle": "You talk to the engineer who writes the code. No account managers, no handover, no team you never meet.",
       "breadcrumb": "About",
       "story": {
         "label": "Our Story",
@@ -4773,20 +5112,20 @@
       "stats": {
         "items": {
           "years": {
-            "value": "8+",
-            "label": "Years of experience"
+            "value": "7+",
+            "label": "Years building AI and software"
           },
           "projects": {
-            "value": "150+",
+            "value": "40+",
             "label": "Projects delivered"
           },
           "clients": {
-            "value": "50+",
-            "label": "Happy clients"
+            "value": "8",
+            "label": "Industries worked in"
           },
           "team": {
-            "value": "25+",
-            "label": "Team members"
+            "value": "2",
+            "label": "Engineers who do the work"
           }
         }
       },
@@ -4794,25 +5133,15 @@
         "label": "Our Team",
         "title": "Meet the people behind Pluscode",
         "members": {
-          "ceo": {
+          "dawid": {
             "name": "Dawid Kubicki",
-            "role": "CEO & Founder",
-            "bio": "Passionate about technology and its potential to transform businesses."
+            "role": "CEO & AI Consultant",
+            "bio": "Scopes the work with clients, then builds it with the team."
           },
-          "cto": {
-            "name": "Tech Lead",
-            "role": "CTO",
-            "bio": "Leading our engineering efforts with a focus on innovation and quality."
-          },
-          "design": {
-            "name": "Design Lead",
-            "role": "Head of Design",
-            "bio": "Creating beautiful, intuitive experiences that users love."
-          },
-          "engineering": {
-            "name": "Engineering Lead",
-            "role": "Head of Engineering",
-            "bio": "Building scalable solutions with cutting-edge technologies."
+          "krzysztof": {
+            "name": "Krzysztof Suliński",
+            "role": "AI Consultant",
+            "bio": "The first person you talk to, and one of the two who build it."
           }
         }
       },
@@ -5116,6 +5445,7 @@
         "services": {
           "title": "Services",
           "links": {
+            "forwardDeployedEngineers": "Forward Deployed Engineers",
             "softwareDevelopment": "Software Development",
             "webDevelopment": "Web Development",
             "mobile": "Mobile Apps",
@@ -5711,531 +6041,14 @@
     "text": "Have a project in mind? Tell us about it and we'll get back to you within 24 hours.",
     "button": "Get in touch"
   },
-  "home": {
-    "about": {
-      "tag": "Who we are",
-      "headingLead": "We don't start with technology,",
-      "headingRest": "we start with people."
-    },
-    "highlight": {
-      "tag": "By the numbers",
-      "amount": "150+",
-      "text": "Projects delivered for teams from fast-moving startups to global enterprises.",
-      "text2": "Eight years crafting software that drives measurable business impact, from AI and data to web, mobile and cloud.",
-      "features": [
-        {
-          "title": "AI & Data",
-          "text": "Machine learning, analytics and consulting that turn data into decisions."
-        },
-        {
-          "title": "Product engineering",
-          "text": "Web, mobile and cloud applications built to scale."
-        },
-        {
-          "title": "True partnership",
-          "text": "We work as an extension of your team, invested in your outcomes."
-        }
-      ]
-    }
-  },
   "banners": {
-    "documents": {
-      "titleStart": "How much is manual data entry ",
-      "titleEm": "really",
-      "titleEnd": " costing you?",
-      "text": "Most teams spend 20-30% of their time moving data between documents and systems. We automate that away.",
-      "cta": "Find out in 45 minutes"
-    },
     "move": {
-      "titleStart": "Tell us your ",
-      "titleEm": "hardest",
-      "titleEnd": " AI problem.",
-      "text": "Book a 30-minute call. We'll map where AI creates real value in your business. No slideware, no obligation.",
-      "cta": "Book a call"
+      "titleStart": "Tell us where the ",
+      "titleEm": "hours",
+      "titleEnd": " go.",
+      "text": "Thirty minutes with Krzysztof Suliński, our AI consultant. He will tell you straight if it is not worth doing.",
+      "cta": "Book a call with Krzysztof"
     }
-  },
-  "useCases": {
-    "label": "Applied AI, in production",
-    "title": "Ambition in action",
-    "items": [
-      {
-        "category": "Document AI",
-        "title": "Invoice data flowing straight into the ERP, no manual entry"
-      },
-      {
-        "category": "Conversational AI",
-        "title": "A support assistant that resolves half of all tickets"
-      },
-      {
-        "category": "Forecasting",
-        "title": "Demand forecasts that keep shelves stocked and waste low"
-      },
-      {
-        "category": "Computer Vision",
-        "title": "Quality inspection that spots defects before customers do"
-      },
-      {
-        "category": "Knowledge AI",
-        "title": "Company knowledge, searchable in plain language"
-      }
-    ]
-  },
-  "useCaseFlows": {
-    "label": "One level deeper",
-    "title": "Follow the data, step by step",
-    "subtitle": "Pick a use case and follow the data.",
-    "legend": {
-      "in": "Comes in",
-      "run": "What runs",
-      "out": "Comes out",
-      "tools": "Systems",
-      "decision": "Decision point",
-      "pass": "Goes through",
-      "fail": "To a person",
-      "human": "Where a person stays in the loop"
-    },
-    "items": [
-      {
-        "id": "invoices",
-        "tab": "Invoices",
-        "icon": "doc",
-        "title": "Supplier invoice to posted entry",
-        "in": [
-          {
-            "icon": "mail",
-            "label": "Invoice in a shared mailbox"
-          },
-          {
-            "icon": "box",
-            "label": "Order and goods receipt from the ERP"
-          },
-          {
-            "icon": "db",
-            "label": "Supplier data and tax ID"
-          }
-        ],
-        "steps": [
-          {
-            "icon": "scan",
-            "title": "Read",
-            "tools": [
-              {
-                "icon": "mail",
-                "label": "Shared mailbox"
-              },
-              {
-                "icon": "sparkle",
-                "label": "Document model"
-              }
-            ]
-          },
-          {
-            "icon": "match",
-            "title": "Match",
-            "tools": [
-              {
-                "brand": "sap",
-                "label": "SAP"
-              },
-              {
-                "icon": "box",
-                "label": "Comarch"
-              },
-              {
-                "icon": "box",
-                "label": "Dynamics 365"
-              },
-              {
-                "icon": "db",
-                "label": "Supplier register"
-              }
-            ]
-          },
-          {
-            "icon": "ledger",
-            "title": "Post",
-            "tools": [
-              {
-                "icon": "plug",
-                "label": "ERP API"
-              },
-              {
-                "icon": "folder",
-                "label": "Document archive"
-              }
-            ]
-          }
-        ],
-        "decision": {
-          "question": "Do the invoice, the order and the delivery agree?",
-          "pass": "Booked into the ERP, file attached.",
-          "fail": "Into the queue: 1,200 vs 1,320."
-        },
-        "out": [
-          {
-            "icon": "check",
-            "label": "A posted entry in the ERP"
-          },
-          {
-            "icon": "alert",
-            "label": "A queue of real exceptions only"
-          },
-          {
-            "icon": "search",
-            "label": "A trace behind every field read"
-          }
-        ],
-        "human": "Accountant: exceptions and approvals."
-      },
-      {
-        "id": "support",
-        "tab": "Customer support",
-        "icon": "chat",
-        "title": "Customer question to a sent reply",
-        "in": [
-          {
-            "icon": "mail",
-            "label": "Email, chat or contact form"
-          },
-          {
-            "icon": "truck",
-            "label": "Order and delivery status"
-          },
-          {
-            "icon": "book",
-            "label": "Help centre and policies"
-          }
-        ],
-        "steps": [
-          {
-            "icon": "search",
-            "title": "Understand",
-            "tools": [
-              {
-                "brand": "zendesk",
-                "label": "Zendesk"
-              },
-              {
-                "brand": "jira",
-                "label": "Jira"
-              },
-              {
-                "icon": "chat",
-                "label": "Freshdesk"
-              }
-            ]
-          },
-          {
-            "icon": "db",
-            "title": "Look up",
-            "tools": [
-              {
-                "icon": "plug",
-                "label": "Order API"
-              },
-              {
-                "icon": "box",
-                "label": "ERP / WMS"
-              }
-            ]
-          },
-          {
-            "icon": "pen",
-            "title": "Draft",
-            "tools": [
-              {
-                "icon": "book",
-                "label": "Answer library"
-              },
-              {
-                "icon": "clock",
-                "label": "Ticket history"
-              }
-            ]
-          }
-        ],
-        "decision": {
-          "question": "Routine case, and every claim backed by a source?",
-          "pass": "Sent in seconds, ticket closed.",
-          "fail": "To an agent with the draft."
-        },
-        "out": [
-          {
-            "icon": "mail",
-            "label": "A reply in the customer's language"
-          },
-          {
-            "icon": "tag",
-            "label": "A ticket tagged and closed"
-          },
-          {
-            "icon": "list",
-            "label": "What people keep asking about"
-          }
-        ],
-        "human": "Agent: escalations."
-      },
-      {
-        "id": "demand",
-        "tab": "Demand and stock",
-        "icon": "chart",
-        "title": "Sales history to an order proposal",
-        "in": [
-          {
-            "icon": "chart",
-            "label": "Three years of sales"
-          },
-          {
-            "icon": "tag",
-            "label": "Prices and promotions"
-          },
-          {
-            "icon": "box",
-            "label": "Stock and lead times"
-          },
-          {
-            "icon": "calendar",
-            "label": "Holidays, school terms, weather"
-          }
-        ],
-        "steps": [
-          {
-            "icon": "chart",
-            "title": "Forecast",
-            "tools": [
-              {
-                "icon": "db",
-                "label": "Sales history"
-              },
-              {
-                "icon": "sparkle",
-                "label": "Forecasting models"
-              }
-            ]
-          },
-          {
-            "icon": "cart",
-            "title": "Translate",
-            "tools": [
-              {
-                "icon": "box",
-                "label": "ERP / WMS"
-              },
-              {
-                "icon": "doc",
-                "label": "Supplier terms"
-              }
-            ]
-          },
-          {
-            "icon": "gauge",
-            "title": "Track",
-            "tools": [
-              {
-                "icon": "gauge",
-                "label": "BI dashboard"
-              }
-            ]
-          }
-        ],
-        "decision": {
-          "question": "Within the buyer's limits: budget, shelf life, minimum order?",
-          "pass": "A draft order in the ERP.",
-          "fail": "To the buyer with the reason."
-        },
-        "out": [
-          {
-            "icon": "cart",
-            "label": "Weekly proposals per location"
-          },
-          {
-            "icon": "alert",
-            "label": "Stock-out and overstock risks"
-          },
-          {
-            "icon": "gauge",
-            "label": "Forecast against actual"
-          }
-        ],
-        "human": "Buyer: limits and the last word."
-      },
-      {
-        "id": "quality",
-        "tab": "Quality control",
-        "icon": "camera",
-        "title": "Camera frame to a pass or fail",
-        "in": [
-          {
-            "icon": "camera",
-            "label": "Frames from the line camera"
-          },
-          {
-            "icon": "doc",
-            "label": "Drawing and tolerances"
-          },
-          {
-            "icon": "factory",
-            "label": "Batch, shift, machine"
-          }
-        ],
-        "steps": [
-          {
-            "icon": "camera",
-            "title": "Capture",
-            "tools": [
-              {
-                "icon": "camera",
-                "label": "Line camera"
-              },
-              {
-                "icon": "cpu",
-                "label": "PLC trigger"
-              }
-            ]
-          },
-          {
-            "icon": "match",
-            "title": "Compare",
-            "tools": [
-              {
-                "icon": "sparkle",
-                "label": "Vision model"
-              },
-              {
-                "icon": "cpu",
-                "label": "Edge device on the line"
-              }
-            ]
-          },
-          {
-            "icon": "list",
-            "title": "Record",
-            "tools": [
-              {
-                "icon": "factory",
-                "label": "MES"
-              },
-              {
-                "icon": "chart",
-                "label": "Quality report"
-              }
-            ]
-          }
-        ],
-        "decision": {
-          "question": "Is the verdict clear, or is the model unsure?",
-          "pass": "Fail signal inside cycle time.",
-          "fail": "Photo to the operator."
-        },
-        "out": [
-          {
-            "icon": "check",
-            "label": "A pass or fail per part"
-          },
-          {
-            "icon": "image",
-            "label": "Defects grouped by shift and machine"
-          },
-          {
-            "icon": "sparkle",
-            "label": "An example set that keeps sharpening"
-          }
-        ],
-        "human": "Operator: the uncertain parts."
-      },
-      {
-        "id": "knowledge",
-        "tab": "Company knowledge",
-        "icon": "book",
-        "title": "A question to a sourced answer",
-        "in": [
-          {
-            "icon": "folder",
-            "label": "SharePoint, Drive, Confluence"
-          },
-          {
-            "icon": "doc",
-            "label": "Contracts, procedures, offers"
-          },
-          {
-            "icon": "lock",
-            "label": "Your existing permissions"
-          }
-        ],
-        "steps": [
-          {
-            "icon": "db",
-            "title": "Index",
-            "tools": [
-              {
-                "icon": "folder",
-                "label": "SharePoint"
-              },
-              {
-                "brand": "drive",
-                "label": "Google Drive"
-              },
-              {
-                "brand": "confluence",
-                "label": "Confluence"
-              },
-              {
-                "icon": "lock",
-                "label": "Identity provider"
-              }
-            ]
-          },
-          {
-            "icon": "chat",
-            "title": "Answer",
-            "tools": [
-              {
-                "icon": "search",
-                "label": "Document search"
-              },
-              {
-                "icon": "chat",
-                "label": "Teams"
-              },
-              {
-                "icon": "chat",
-                "label": "Slack"
-              }
-            ]
-          },
-          {
-            "icon": "list",
-            "title": "Log",
-            "tools": [
-              {
-                "icon": "list",
-                "label": "Question log"
-              }
-            ]
-          }
-        ],
-        "decision": {
-          "question": "Is it documented, and is this person allowed to see it?",
-          "pass": "Answer linked to the exact clause.",
-          "fail": "Names who owns the area."
-        },
-        "out": [
-          {
-            "icon": "clock",
-            "label": "An answer in seconds"
-          },
-          {
-            "icon": "link",
-            "label": "Every answer traceable to a source"
-          },
-          {
-            "icon": "alert",
-            "label": "A list of the gaps in your documentation"
-          }
-        ],
-        "human": "Area owner: closes the gaps."
-      }
-    ]
   },
   "reports": {
     "cta": "Learn more",
@@ -6344,6 +6157,23 @@
           "slug": "fractional-ai-team"
         }
       ],
+      "toolingTitle": "How we pick tools",
+      "toolingIntro": "A workshop should leave you with an answer, not a shopping list. So we say plainly what is ours and what is not.",
+      "tooling": [
+        {
+          "title": "The problem first, the tool second",
+          "text": "We do not sell licences in a workshop. More often than a rollout, we propose a change to the process, or a tool we do not sell at all."
+        },
+        {
+          "title": "Quanty is ours, and we say so out loud",
+          "text": "Quanty is our own platform for working with documents and data. We build it, it has Polish-language support, and some of our client work runs on it. When we propose Quanty, you hear it alongside the alternatives and the cost of each route."
+        },
+        {
+          "title": "The recommendation is in writing",
+          "text": "You leave with the options, what each one costs and why we ranked them that way. Build it with us or with anyone else."
+        }
+      ],
+      "toolingCta": "See Quanty",
       "faq": [
         {
           "q": "How are workshops priced?",
@@ -6837,12 +6667,12 @@
   "booking": {
     "nextTitle": "What happens next",
     "steps": [
-      "We match you with the right engineer.",
+      "Krzysztof reads your note personally.",
       "You hear back within one business day.",
       "A 30-minute call to scope it."
     ],
-    "contactName": "Dawid Kubicki",
-    "contactRole": "Founder, Pluscode",
+    "contactName": "Krzysztof Suliński",
+    "contactRole": "AI Consultant",
     "emailPrefix": "Or email",
     "trustTitle": "Trusted by",
     "summaryTitle": "What you're booking"
@@ -6904,5 +6734,53 @@
     "subtitle": "Tell us what you want to move. A senior engineer replies within one business day.",
     "submit": "Request a call",
     "backLabel": "Back to home"
+  },
+  "clients": {
+    "label": "Who we have built for",
+    "title": "Built for a retail chain, a bank and a clinic",
+    "greyClause": "Three of the teams we have shipped for, and what we did there.",
+    "cta": "Read the case studies",
+    "items": [
+      {
+        "key": "zabka",
+        "name": "Żabka",
+        "tag": "Retail",
+        "what": "Architecture for autonomous stores",
+        "detail": "Planned, designed and ran the system architecture behind unstaffed stores for Poland's largest convenience chain."
+      },
+      {
+        "key": "ubs",
+        "name": "UBS",
+        "tag": "Banking",
+        "what": "A mobile redesign, delivered at speed",
+        "detail": "Our engineers joined the bank's own team to unify payment flows and navigation across its mobile app."
+      },
+      {
+        "key": "ebm",
+        "name": "EBM Dental",
+        "tag": "Healthcare",
+        "what": "A modern web platform for a dental clinic",
+        "detail": "Design and Next.js build for a multi-specialist practice in Poznań, from the first sketch to launch."
+      }
+    ]
+  },
+  "figures": {
+    "label": "In numbers",
+    "title": "A small team with a long record",
+    "greyClause": "Four numbers you can check on the first call."
+  },
+  "quanty": {
+    "label": "Our own product",
+    "title": "We also build our own. Quanty",
+    "greyClause": "is an AI spreadsheet that reads invoices, contracts and orders into rows, with the source page beside every value.",
+    "points": [
+      "Designed and built by the same two engineers you would work with",
+      "In beta now, with a public launch this autumn",
+      "Made from the same parts we put into client systems: document reading, answers with a source, approvals"
+    ],
+    "cta": "See quanty.ai",
+    "note": "Quanty is a product of Pluscode Sp. z o.o.",
+    "imageAlt": "The Quanty workbook with invoices read into a table",
+    "chip": "Built by Pluscode"
   }
 }

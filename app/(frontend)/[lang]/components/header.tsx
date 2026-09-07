@@ -5,9 +5,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { useLenis } from "lenis/react";
-import { Plus, Pill } from "./ui";
 import LocaleLink from "./locale-link";
-import { LinkedInIcon, InstagramIcon } from "./icons";
+import { LinkedInIcon, InstagramIcon, FacebookIcon, GlobeIcon } from "./icons";
+import { socialLinks, type SocialKey } from "@/lib/social";
 import { locales, localeNames, localeLabels, type Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
@@ -15,14 +15,20 @@ type Nav = Dictionary["navigation"];
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
+/* Every interactive element in the bar answers in 50ms and relaxes over
+   300ms, so the header feels immediate without flickering under a moving
+   pointer. */
+const HOVER =
+  "transition-colors duration-300 ease-io-attio hover:duration-50 active:duration-50";
+
 const aiDataLinks = [
   { key: "machineLearning", href: "/ai-data/machine-learning" },
   { key: "dataAnalytics", href: "/ai-data/analytics" },
   { key: "aiConsulting", href: "/ai-data/consulting" },
 ] as const;
 
-// Engineering is split across two mega-menu columns so the panel fits a
-// laptop viewport without scrolling.
+// Engineering is split across two mega-menu columns so the panel stays a
+// short grid rather than one long list.
 const servicesLinks = [
   { key: "softwareDevelopment", href: "/services/software-development" },
   { key: "webDevelopment", href: "/services/web-development" },
@@ -35,36 +41,60 @@ const platformLinks = [
   { key: "cloudSolutions", href: "/services/cloud" },
   { key: "teamExtension", href: "/services/team-extension" },
   { key: "technologies", href: "/services/technologies" },
+  { key: "forwardDeployedEngineers", href: "/services/forward-deployed-engineers" },
 ] as const;
 
-const socials = [
-  { label: "LinkedIn", Icon: LinkedInIcon, href: "https://www.linkedin.com/company/pluscode" },
-  { label: "Instagram", Icon: InstagramIcon, href: "https://www.instagram.com/pluscode" },
-];
+const socialIcons: Record<SocialKey, typeof LinkedInIcon> = {
+  linkedin: LinkedInIcon,
+  instagram: InstagramIcon,
+  facebook: FacebookIcon,
+};
+
+const socials = socialLinks.map((s) => ({ ...s, Icon: socialIcons[s.key] }));
 
 const panelVariants: Variants = {
   hidden: { y: "-101%" },
   show: {
     y: 0,
-    transition: { duration: 0.7, ease: EASE, when: "beforeChildren", staggerChildren: 0.05, delayChildren: 0.12 },
+    transition: { duration: 0.6, ease: EASE, when: "beforeChildren", staggerChildren: 0.04, delayChildren: 0.08 },
   },
-  exit: { y: "-101%", transition: { duration: 0.5, ease: EASE } },
+  exit: { y: "-101%", transition: { duration: 0.45, ease: EASE } },
 };
 
+/* The panel's own children resolve into focus rather than sliding, matching
+   the site-wide reveal. The panel itself is the only thing that travels. */
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 18 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
+  hidden: { opacity: 0, filter: "blur(1.5px)" },
+  show: { opacity: 1, filter: "blur(0px)", transition: { duration: 0.4, ease: [0, 0, 0, 1] } },
   exit: { opacity: 0, transition: { duration: 0.2 } },
 };
 
-function Logo({ onNavigate }: { onNavigate?: () => void }) {
+/* One row of the mega grid and of the phone sheet's service lists: a title
+   only, 15px, in a 44px row. The description lines are gone; the owner's
+   note was "too much text in menu", and the titles already say what each
+   page is. The hover ground bleeds 12px past the text on either side so the
+   row reads as a cell, like Quanty's mega items, without a border. */
+const ITEM =
+  "-mx-3 flex min-h-11 items-center rounded-lg px-3 text-[15px] font-medium text-ink-soft hover:bg-cream-surface hover:text-ink";
+
+/* Column label in the mega grid and the phone sheet. The same voice as the
+   footer's column titles, one step quieter. */
+const COL_TITLE =
+  "text-[12px] font-semibold uppercase tracking-[0.08em] text-ink-mute";
+
+function Logo({ onNavigate, onMouseEnter }: { onNavigate?: () => void; onMouseEnter?: () => void }) {
   return (
     <LocaleLink
       href="/"
       onClick={onNavigate}
+      onMouseEnter={onMouseEnter}
       aria-label="Pluscode home"
-      className="flex items-center"
+      // min-h-11: the mark is 28px tall, so the anchor's own box was a 28px
+      // tap target in a 72px bar. The height is on the link, not on the
+      // image, so nothing about the wordmark's size or position changes.
+      className="flex min-h-11 items-center"
     >
+      {/* The white mark. The black one was invisible on the dark page. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/assets/logo/pluscode-logo.svg"
@@ -72,6 +102,19 @@ function Logo({ onNavigate }: { onNavigate?: () => void }) {
         className="h-7 w-auto"
       />
     </LocaleLink>
+  );
+}
+
+function Caret({ open = false, className = "" }: { open?: boolean; className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 12 12"
+      aria-hidden
+      fill="none"
+      className={`size-2.5 shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""} ${className}`}
+    >
+      <path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }
 
@@ -84,7 +127,7 @@ function pathWithoutLocale(pathname: string): string {
   return stripped || "/";
 }
 
-/** Compact language control for the top bar. */
+/** Compact language control for the top bar: a globe, the code, a caret. */
 function LocaleDropdown({
   active,
   basePath,
@@ -158,12 +201,11 @@ function LocaleDropdown({
         aria-haspopup="menu"
         aria-expanded={open}
         aria-label={`${label}: ${localeLabels[active]}`}
-        className="flex items-center gap-1 px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.14em] text-bone transition-colors hover:text-lime-soft"
+        className={`flex min-h-11 items-center gap-1.5 rounded-lg px-2 text-[13px] font-medium text-ink-soft hover:text-ink ${HOVER}`}
       >
+        <GlobeIcon className="size-3.5 text-ink-mute" />
         {localeNames[active]}
-        <svg viewBox="0 0 12 12" aria-hidden className={`size-2.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`} fill="none">
-          <path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
+        <Caret open={open} className="text-ink-mute" />
       </button>
       {/* The panel hangs off a padded wrapper rather than sitting on a margin:
           padding is part of the hover region, a margin is a dead zone that
@@ -175,13 +217,16 @@ function LocaleDropdown({
             : "pointer-events-none invisible -translate-y-1 opacity-0"
         }`}
       >
+        {/* One step off the page (`cream-dim`) with the stronger hairline, so
+            the list has an edge on the dark ground where a shadow alone has
+            nothing to fall on. The active row sits on `cream-surface`. */}
         <div
           role="menu"
-          className="min-w-[9.5rem] overflow-hidden rounded-[2px] border border-white/10 bg-night-soft/95 p-1 shadow-[0_12px_30px_-12px_rgba(0,0,0,0.6)] backdrop-blur-xl"
+          className="min-w-[10rem] overflow-hidden rounded-xl border border-cream-line-strong bg-cream-dim p-1 shadow-[0_16px_40px_-12px_rgb(0_0_0/0.6)]"
         >
           {locales.map((loc) => {
-            const target = `/${loc}${basePath === "/" ? "" : basePath}`;
             const isActive = loc === active;
+            const target = `/${loc}${basePath === "/" ? "" : basePath}`;
             return (
               <Link
                 key={loc}
@@ -189,11 +234,13 @@ function LocaleDropdown({
                 role="menuitem"
                 onClick={() => setOpen(false)}
                 aria-current={isActive ? "true" : undefined}
-                className={`flex items-center gap-2.5 rounded-[2px] px-2.5 py-1.5 transition-colors ${
-                  isActive ? "bg-lime text-night" : "text-bone-soft hover:bg-white/5 hover:text-bone"
+                className={`flex min-h-11 items-center gap-2.5 rounded-lg px-2.5 ${HOVER} ${
+                  isActive
+                    ? "bg-cream-surface text-ink"
+                    : "text-ink-soft hover:bg-cream-surface hover:text-ink"
                 }`}
               >
-                <span className="font-mono text-[11px] uppercase tracking-[0.14em]">
+                <span className="w-5 text-[12px] font-semibold">
                   {localeNames[loc]}
                 </span>
                 <span className="text-[13px]">{localeLabels[loc]}</span>
@@ -216,11 +263,11 @@ export default function Header({
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  // Lenis drives the real scroll position; fade the header chrome in once the
-  // page has moved off the top.
+  // Lenis drives the real scroll position; the hairline and the translucent
+  // blur fade in once the page has moved off the top.
   const lenis = useLenis(({ scroll }) => setScrolled(scroll > 8));
 
-  // Lock scrolling while the mega menu is open.
+  // Lock scrolling while the menu is open.
   useEffect(() => {
     if (!lenis) return;
     if (open) lenis.stop();
@@ -245,11 +292,11 @@ export default function Header({
   const close = () => setOpen(false);
   const basePath = pathWithoutLocale(pathname);
 
-  // Flat top-bar links — the Services entry opens the mega-menu on hover
-  // (desktop); the hamburger stays as the mobile entry point.
+  // Four short links, like Quanty's bar. Services opens the mega grid on
+  // hover (desktop); the hamburger stays as the phone entry point.
   const mainLinks = [
     { label: nav.allServices, href: "/services", mega: true },
-    { label: nav.workshops, href: "/workshops", mega: false },
+    { label: nav.caseStudies, href: "/case-studies", mega: false },
     { label: nav.insights, href: "/insights", mega: false },
     { label: nav.about, href: "/about", mega: false },
   ];
@@ -257,20 +304,29 @@ export default function Header({
   const menuColumns: {
     title: string;
     links: readonly { key: string; href: string }[];
-    group: Record<string, { title: string; description: string }>;
+    group: Record<string, { title: string; description: string } | undefined>;
   }[] = [
     { title: nav.aiData, links: aiDataLinks, group: nav.aiDataItems },
     { title: nav.services, links: servicesLinks, group: nav.servicesItems },
     { title: nav.platformTeam, links: platformLinks, group: nav.servicesItems },
   ];
 
-  const companyLinks = [
-    { label: nav.about, href: "/about" },
-    { label: nav.workshops, href: "/workshops" },
-    { label: nav.insights, href: "/insights" },
-    { label: nav.caseStudies, href: "/case-studies" },
-    { label: nav.getInTouch, href: "/book-a-call" },
-  ];
+  /** One muted line above the pill in the promo cell. `navigation.callNote`
+   *  may not have landed in every dictionary yet. */
+  const callNote =
+    (nav as Nav & { callNote?: string }).callNote ??
+    "30 minutes with an engineer, not a sales deck.";
+
+  /* The service groups as they appear in the mega grid and the phone sheet.
+     A key can be missing while a locale file is still catching up: skip the
+     row rather than crash the whole header on `undefined.title`. */
+  const groups = menuColumns.map((col) => ({
+    title: col.title,
+    items: col.links.flatMap((link) => {
+      const entry = col.group[link.key];
+      return entry ? [{ href: link.href, title: entry.title }] : [];
+    }),
+  }));
 
   return (
     // Sits below the announcement bar while <html data-announcement> is set;
@@ -279,66 +335,87 @@ export default function Header({
       className="fixed inset-x-0 z-50 top-0 [[data-announcement]_&]:top-10"
       onMouseLeave={() => open && setOpen(false)}
     >
+      {/* Solid page ground at the top of the page and while a panel is open
+          (bar and panel then read as one surface, no seam between them). Once
+          the page has moved, a translucent blur with the hairline under it:
+          the page is uniformly dark now, so nothing pale ever shows through. */}
       <div
-        className={`relative z-20 border-b transition-colors duration-300 ${
-          scrolled || open
-            ? "border-white/10 bg-night/90 backdrop-blur-xl"
-            : "border-transparent bg-transparent"
+        className={`relative z-20 border-b transition-[background-color,border-color] duration-300 ${
+          open
+            ? "border-transparent bg-cream"
+            : scrolled
+              ? "border-cream-line bg-cream/80 backdrop-blur-xl"
+              : "border-transparent bg-cream"
         }`}
       >
-        <div className="mx-auto flex h-[72px] max-w-[1240px] items-center justify-between px-5 sm:px-10">
-          <Logo onNavigate={close} />
+        {/* THE ONE GRID: the bar sits on the shell and the 24 column field,
+            at `col-[2/-2]`, which is where the hero, the bands and the footer
+            all start. */}
+        <div className="pc-shell">
+          <div className="pc-grid">
+            <div className="col-[2/-2] flex h-[72px] items-center gap-4">
+              <Logo onNavigate={close} onMouseEnter={close} />
 
-          <div className="flex items-center gap-4 lg:gap-9">
-            <nav className="hidden items-center gap-9 lg:flex">
-              {mainLinks.map((l) => {
-                const active = basePath === l.href;
-                return (
-                  <LocaleLink
-                    key={l.href}
-                    href={l.href}
-                    onClick={close}
-                    // Hovering the Services entry opens the mega-menu; leaving
-                    // the header (bar + panel) closes it again.
-                    onMouseEnter={l.mega ? () => setOpen(true) : undefined}
-                    className={`text-[14.5px] font-medium transition-colors ${
-                      active
-                        ? "text-bone underline decoration-lime-soft decoration-[1.5px] underline-offset-8"
-                        : "text-bone hover:text-lime-soft"
-                    }`}
-                  >
-                    {l.label}
+              {/* Links beside the logo, actions on the right: Quanty's bar. */}
+              <nav className="ml-3 hidden items-center lg:flex">
+                {mainLinks.map((l) => {
+                  const active = basePath === l.href;
+                  return (
+                    <LocaleLink
+                      key={l.href}
+                      href={l.href}
+                      onClick={close}
+                      // Hovering Services opens the grid; hovering any other
+                      // link, the logo or the actions closes it again, so the
+                      // panel never sticks under a pointer that has moved on.
+                      onMouseEnter={l.mega ? () => setOpen(true) : close}
+                      className={`group inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 px-3 text-[14px] font-medium ${HOVER} ${
+                        active || (l.mega && open) ? "text-ink" : "text-ink-soft hover:text-ink"
+                      }`}
+                    >
+                      {/* The rule lives on an inner span: text-decoration does
+                          not reach the anonymous flex item that the label
+                          becomes once the link is `inline-flex`. */}
+                      <span
+                        className={
+                          active
+                            ? "underline decoration-ink-mute decoration-[1.5px] underline-offset-8"
+                            : ""
+                        }
+                      >
+                        {l.label}
+                      </span>
+                      {l.mega && (
+                        <Caret open={open} className={`text-ink-mute group-hover:text-ink ${HOVER}`} />
+                      )}
+                    </LocaleLink>
+                  );
+                })}
+              </nav>
+
+              <div className="ml-auto flex items-center gap-2 lg:gap-3" onMouseEnter={close}>
+                {/* Also on phones: the sheet's own switcher is at its foot,
+                    a long scroll away. */}
+                <LocaleDropdown active={locale} basePath={basePath} label={nav.language} />
+                <div className="hidden lg:block">
+                  <LocaleLink href="/book-a-call" onClick={close} className="btn btn-primary">
+                    {nav.getInTouch}
                   </LocaleLink>
-                );
-              })}
-              <LocaleLink
-                href="/book-a-call"
-                onClick={close}
-                className={`rounded-[2px] border-[1.5px] px-[22px] py-[11px] text-sm font-semibold transition-colors ${
-                  scrolled || open
-                    ? "border-lime bg-lime text-night hover:border-lime-bright hover:bg-lime-bright"
-                    : "border-white/60 text-bone hover:border-lime hover:bg-lime hover:text-night"
-                }`}
-              >
-                {nav.getInTouch}
-              </LocaleLink>
-            </nav>
-
-            {/* Also on phones: the only other switcher lives at the bottom of
-                the mega menu, which is a long scroll away. */}
-            <LocaleDropdown active={locale} basePath={basePath} label={nav.language} />
-            <button
-              type="button"
-              onClick={() => setOpen((v) => !v)}
-              aria-label={open ? "Close menu" : "Open menu"}
-              aria-expanded={open}
-              className="group relative flex size-11 items-center justify-center text-bone transition-colors hover:text-lime-soft lg:hidden"
-            >
-              <span className="relative block h-3 w-6">
-                <span className={`absolute left-0 block h-[2px] w-6 bg-current transition-all duration-300 ${open ? "top-1.5 rotate-45" : "top-0"}`} />
-                <span className={`absolute left-0 top-3 block h-[2px] w-6 bg-current transition-all duration-300 ${open ? "-translate-y-1.5 -rotate-45" : ""}`} />
-              </span>
-            </button>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setOpen((v) => !v)}
+                  aria-label={open ? "Close menu" : "Open menu"}
+                  aria-expanded={open}
+                  className={`group relative flex size-11 items-center justify-center text-ink hover:text-ink-soft lg:hidden ${HOVER}`}
+                >
+                  <span className="relative block h-3 w-6">
+                    <span className={`absolute left-0 block h-[2px] w-6 bg-current transition-all duration-300 ${open ? "top-1.5 rotate-45" : "top-0"}`} />
+                    <span className={`absolute left-0 top-3 block h-[2px] w-6 bg-current transition-all duration-300 ${open ? "-translate-y-1.5 -rotate-45" : ""}`} />
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -357,8 +434,13 @@ export default function Header({
               // never fires while it covers the viewport; entering it means
               // the pointer left the bar/panel, which closes the hover menu.
               onMouseEnter={() => setOpen(false)}
-              className="fixed inset-0 -z-10 bg-night-deep/60 backdrop-blur-sm"
+              className="fixed inset-0 -z-10 bg-cream/60 backdrop-blur-sm"
             />
+
+            {/* DESKTOP: the mega grid. Three columns of titles and a slim
+                promo cell, about half the height of the old panel. The
+                company links are in the bar and the footer, so they have no
+                column here any more. */}
             <motion.div
               key="panel"
               variants={panelVariants}
@@ -366,102 +448,141 @@ export default function Header({
               animate="show"
               exit="exit"
               // data-lenis-prevent: Lenis is stopped while the menu is open and
-              // would otherwise swallow touch/wheel events over the panel.
-              // dvh (with vh fallback): in-app browsers report vh as the large
-              // viewport, which pushed the panel below the fold unscrollably.
+              // would otherwise swallow wheel events over the panel.
               data-lenis-prevent
-              className="absolute inset-x-0 top-0 z-10 max-h-[92vh] overflow-y-auto overscroll-contain border-b border-white/10 bg-night text-bone shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] supports-[height:100dvh]:max-h-[88dvh]"
+              className="absolute inset-x-0 top-0 z-10 hidden max-h-[92vh] overflow-y-auto overscroll-contain border-b border-cream-line bg-cream text-ink lg:block"
             >
-              <div className="mx-auto max-w-[1240px] px-5 pb-8 pt-24 sm:px-10">
-                <div className="grid gap-10 lg:grid-cols-[repeat(3,minmax(0,1fr))_1.25fr]">
-                  {menuColumns.map((col) => (
-                    <motion.div key={col.title} variants={itemVariants}>
-                      <h3 className="mb-4 font-serif text-2xl font-medium tracking-[-0.01em] text-bone">
-                        {col.title}
-                      </h3>
-                      <ul className="space-y-3">
-                        {col.links.map((link) => (
-                          <li key={link.href}>
-                            <LocaleLink href={link.href} onClick={close} className="group block">
-                              <span className="text-lg text-bone transition-colors group-hover:text-lime-soft">
-                                {col.group[link.key].title}
-                              </span>
-                              <span className="block text-sm text-bone-dim">
-                                {col.group[link.key].description}
-                              </span>
-                            </LocaleLink>
-                          </li>
-                        ))}
-                      </ul>
-                    </motion.div>
-                  ))}
+              <div className="pc-shell">
+                <div className="pc-grid pb-7 pt-[92px]">
+                  <div className="col-[2/-2] grid grid-cols-[repeat(3,minmax(0,1fr))_minmax(14rem,0.8fr)] gap-x-10">
+                    {groups.map((g) => (
+                      <motion.div key={g.title} variants={itemVariants}>
+                        <h3 className={`mb-2 border-b border-cream-line pb-2.5 ${COL_TITLE}`}>
+                          {g.title}
+                        </h3>
+                        <ul>
+                          {g.items.map((item) => (
+                            <li key={item.href}>
+                              <LocaleLink href={item.href} onClick={close} className={`${ITEM} ${HOVER}`}>
+                                {item.title}
+                              </LocaleLink>
+                            </li>
+                          ))}
+                        </ul>
+                      </motion.div>
+                    ))}
 
-                  {/* Company links + a fixed-height promo card share the last
-                      column so no column outgrows the viewport. */}
-                  <motion.div variants={itemVariants}>
-                    <h3 className="mb-4 font-serif text-2xl font-medium tracking-[-0.01em] text-bone">
-                      {nav.about}
-                    </h3>
-                    <ul className="space-y-3">
-                      {companyLinks.map((l) => (
-                        <li key={l.href}>
-                          <LocaleLink href={l.href} onClick={close} className="text-lg text-bone transition-colors hover:text-lime-soft">
-                            {l.label}
-                          </LocaleLink>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <div className="blueprint-grid relative isolate mt-6 flex h-48 flex-col justify-end overflow-hidden rounded border border-white/10 bg-night-soft p-8">
-                      <div className="pointer-events-none absolute -right-24 -top-24 -z-10 size-72 rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.25)_0%,rgba(16,185,129,0)_65%)]" />
-                      <p className="max-w-xs font-serif text-2xl font-medium leading-tight text-bone">
-                        {nav.getInTouch}
+                    {/* Flush, not a card: a hairline cell on the off ground,
+                        one muted line and the pill. */}
+                    <motion.div
+                      variants={itemVariants}
+                      className="flex flex-col justify-between border border-cream-line bg-cream-dim p-5"
+                    >
+                      <p className="max-w-[18em] text-[13px] leading-[1.5] text-ink-mute">
+                        {callNote}
                       </p>
                       <div className="mt-6">
-                        <Pill variant="lime" href="/book-a-call" onClick={close}>
+                        <LocaleLink href="/book-a-call" onClick={close} className="btn btn-primary">
                           {nav.getInTouch}
-                        </Pill>
+                        </LocaleLink>
                       </div>
-                    </div>
-                  </motion.div>
-                </div>
-
-                {/* Bottom row */}
-                <motion.div
-                  variants={itemVariants}
-                  className="mt-6 flex flex-col gap-6 border-t border-white/10 pt-5 sm:flex-row sm:items-center sm:justify-between"
-                >
-                  <span className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-bone-dim">
-                    <Plus className="size-3" /> {nav.language}
-                  </span>
-                  <div className="flex items-center gap-4">
-                    <div className="flex items-center gap-1">
-                      {locales.map((loc) => {
-                        const target = `/${loc}${basePath === "/" ? "" : basePath}`;
-                        const isActive = loc === locale;
-                        return (
-                          <Link
-                            key={loc}
-                            href={target}
-                            onClick={close}
-                            className={`rounded-[2px] px-2 py-1 font-mono text-[11px] uppercase tracking-[0.14em] transition-colors ${
-                              isActive ? "bg-lime text-night" : "text-bone-dim hover:text-bone"
-                            }`}
-                          >
-                            {localeNames[loc]}
-                          </Link>
-                        );
-                      })}
-                    </div>
-                    <div className="flex items-center gap-4 text-bone-dim">
-                      {socials.map(({ label, Icon, href }) => (
-                        <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="transition-colors hover:text-bone">
-                          <Icon className="size-[18px]" />
-                        </a>
-                      ))}
-                    </div>
+                    </motion.div>
                   </div>
-                </motion.div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* PHONE: a full-height sheet. The four top links set large, the
+                three service groups as compact lists, the pill, then language
+                and socials at the foot. `fixed` (not `absolute`) so its height
+                is the viewport's, minus the announcement strip when shown;
+                the bar paints over its first 72px. */}
+            <motion.div
+              key="sheet"
+              variants={panelVariants}
+              initial="hidden"
+              animate="show"
+              exit="exit"
+              // data-lenis-prevent: Lenis is stopped while the sheet is open and
+              // would otherwise swallow touch events over it.
+              data-lenis-prevent
+              className="fixed inset-0 z-10 flex flex-col overflow-y-auto overscroll-contain bg-cream text-ink lg:hidden [[data-announcement]_&]:top-10"
+            >
+              <div className="pc-shell flex flex-1 flex-col pt-[72px]">
+                <div className="pc-grid flex-1">
+                  <div className="col-[2/-2] flex flex-col">
+                    <motion.nav variants={itemVariants} className="pt-2">
+                      {mainLinks.map((l) => (
+                        <LocaleLink
+                          key={l.href}
+                          href={l.href}
+                          onClick={close}
+                          className={`display flex min-h-[56px] items-center text-[28px] ${HOVER} ${
+                            basePath === l.href ? "text-ink" : "text-ink hover:text-ink-soft"
+                          }`}
+                        >
+                          {l.label}
+                        </LocaleLink>
+                      ))}
+                    </motion.nav>
+
+                    <motion.div variants={itemVariants} className="mt-4 border-t border-cream-line pt-2">
+                      {groups.map((g) => (
+                        <div key={g.title} className="pt-4">
+                          <h3 className={`pb-1 ${COL_TITLE}`}>{g.title}</h3>
+                          <ul>
+                            {g.items.map((item) => (
+                              <li key={item.href}>
+                                <LocaleLink href={item.href} onClick={close} className={`${ITEM} ${HOVER}`}>
+                                  {item.title}
+                                </LocaleLink>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </motion.div>
+
+                    {/* The foot. `mt-auto` pins it to the bottom of a short
+                        sheet; on a long one it simply follows the lists. */}
+                    <motion.div
+                      variants={itemVariants}
+                      className="mt-auto border-t border-cream-line pb-8 pt-6"
+                    >
+                      <LocaleLink href="/book-a-call" onClick={close} className="btn btn-primary w-full">
+                        {nav.getInTouch}
+                      </LocaleLink>
+                      <div className="mt-4 flex items-center justify-between gap-4">
+                        <div className="flex items-center gap-1" aria-label={nav.language}>
+                          {locales.map((loc) => {
+                            const target = `/${loc}${basePath === "/" ? "" : basePath}`;
+                            const isActive = loc === locale;
+                            return (
+                              <Link
+                                key={loc}
+                                href={target}
+                                onClick={close}
+                                aria-current={isActive ? "true" : undefined}
+                                className={`inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg px-3 text-[12px] font-semibold ${HOVER} ${
+                                  isActive ? "bg-cream-surface text-ink" : "text-ink-mute hover:text-ink"
+                                }`}
+                              >
+                                {localeNames[loc]}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                        <div className="flex items-center gap-1 text-ink-mute">
+                          {socials.map(({ label, Icon, href }) => (
+                            <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className={`flex size-11 items-center justify-center rounded-full hover:text-ink ${HOVER}`}>
+                              <Icon className="size-[18px]" />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </>

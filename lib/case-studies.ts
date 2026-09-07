@@ -39,25 +39,28 @@ export type CaseStudyDoc = {
   seoDescription?: string | null;
 };
 
+/** Card ground when a document carries no cover image and no gradient of
+ *  its own. Neutral near-black, the same family as the baked cover art. */
 const DEFAULT_GRADIENT =
-  "bg-gradient-to-br from-night-soft via-night-soft to-night";
+  "bg-gradient-to-br from-night-soft via-night to-night-deep";
 
-/** Static fallbacks used until the CMS is seeded — keyed to dictionary copy. */
+/** Static fallbacks used until the CMS is seeded, keyed to dictionary copy.
+ *  The gradients match the ones scripts/seed.ts writes for the same slugs. */
 const FALLBACK = [
   {
     slug: "zabka" as const,
     logo: "/assets/portfolio/zabka-logo.svg" as string | null,
-    gradient: "bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-400",
+    gradient: "bg-gradient-to-br from-night via-night-soft to-night-deep",
   },
   {
     slug: "ubs" as const,
     logo: "/assets/portfolio/ubs-logo.svg" as string | null,
-    gradient: "bg-gradient-to-br from-indigo-500 via-blue-600 to-slate-700",
+    gradient: "bg-gradient-to-br from-night-deep via-night to-night-soft",
   },
   {
     slug: "ebm" as const,
     logo: null as string | null,
-    gradient: "bg-gradient-to-br from-[#047857] via-[#059669] to-[#34d399]",
+    gradient: "bg-gradient-to-br from-night via-night-deep to-night-soft",
   },
 ];
 
@@ -93,7 +96,7 @@ function fallbackCards(locale: Locale): CaseStudyCard[] {
   });
 }
 
-/** All case studies as cards — CMS first, dictionary fallback otherwise. */
+/** All case studies as cards: CMS first, dictionary fallback otherwise. */
 export async function getCaseStudies(locale: Locale): Promise<CaseStudyCard[]> {
   const docs = await findDocs<CaseStudyDoc>("case-studies", {
     sort: "order",

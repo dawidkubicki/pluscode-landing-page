@@ -46,7 +46,7 @@ export default function Stats({
             return (
               <StaggerItem key={key}>
                 <div className="flex flex-col">
-                  <div className={`display text-6xl sm:text-7xl ${dark ? "text-lime" : "text-ink"}`}>
+                  <div className={`display text-6xl sm:text-7xl ${dark ? "text-lime-soft" : "text-ink"}`}>
                     <CountUp to={to} suffix={suffix} />
                   </div>
                   <p className={`mt-4 max-w-[16rem] text-sm leading-relaxed ${labelColor}`}>

@@ -71,7 +71,7 @@ export default async function AnnouncementPage({
     <main>
       <PageHero eyebrow={t.eyebrow} title={data.title} />
 
-      <article className="bg-white">
+      <article className="bg-cream">
         <div className="mx-auto max-w-3xl px-5 py-20 sm:px-10 sm:py-[6.25rem]">
           {date && (
             <Reveal>
@@ -90,7 +90,7 @@ export default async function AnnouncementPage({
           <div className="mt-12">
             <LocaleLink
               href="/"
-              className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime transition-colors hover:text-ink"
+              className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime-soft transition-colors hover:text-ink"
             >
               ← {t.back}
             </LocaleLink>

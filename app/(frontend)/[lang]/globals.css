@@ -1,53 +1,175 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ *
- *  Pluscode — design tokens
+ *  Pluscode: design tokens
  *
- *  Editorial blueprint system from the Claude Design "Pluscode landing page
- *  redesign" project: deep-navy dark surfaces, a cool paper-white light
- *  surface, an emerald green accent and a serif display voice. Token names
- *  are kept stable (`night`, `cream`, `ink`, `bone`, `lime`) so shared
- *  components keep reading the same — `lime` is the emerald brand accent.
+ *  A calm, ruled, near-white system. Light surfaces carry the whole page
+ *  and dark surfaces are reserved for the final CTA band, the footer, the
+ *  announcement bar and /book-a-call. The accent is indigo and it is
+ *  rationed: buttons, one emphasised word per headline, chart bars, the
+ *  eyebrow pill, 2px marks and focus rings.
+ *
+ *  Token names are deliberately unchanged (`night`, `cream`, `ink`,
+ *  `bone`, `lime`). Hundreds of usages across the components read them, so
+ *  only the values move. `lime` is the indigo accent, not a green.
+ *
+ *  `static` so every token is emitted to :root even when no utility class
+ *  references it yet. A few components reach for these as raw
+ *  `var(--color-*)` in inline styles, and Tailwind's default usage-based
+ *  pruning would drop exactly those.
  * ------------------------------------------------------------------ */
-@theme {
-  /* Surfaces */
-  --color-night: #0a1929; /* dark hero / sections (deep navy) */
-  --color-night-soft: #0f2237; /* raised cards on dark */
-  --color-night-deep: #061220; /* footer (deepest navy) */
-  --color-night-line: #22303e; /* hairlines on dark */
-  --color-cream: #f7f8fa; /* light section background (paper white) */
-  --color-cream-dim: #eef0f4; /* muted light surface */
-  --color-cream-line: #e2e6ec; /* hairlines on light */
+@theme static {
+  /* ------------------------------------------------------------------
+   *  DARK FIRST, as of 2026-09-04. The page ground is a cool near-black
+   *  and the accent is an electric blue. The token NAMES are unchanged
+   *  (`cream` is still "the page ground", `ink` is still "text on the
+   *  page", `night` is still "the closing band"), only the values moved,
+   *  so the hundreds of call sites keep reading. The old light palette
+   *  is kept whole under `html[data-theme="light"]` below.
+   * ------------------------------------------------------------------ */
 
-  /* Ink + accent */
-  --color-ink: #0a1929; /* near-black text on light */
-  --color-ink-soft: #4a5a6d; /* secondary text on light */
-  --color-ink-mute: #8093a8; /* mono tags / metadata on light */
-  --color-bone: #ffffff; /* headings on dark */
-  --color-bone-soft: #b9c6d8; /* body copy on dark */
-  --color-bone-dim: #8fa3bd; /* muted / metadata on dark */
-  --color-lime: #059669; /* primary accent — emerald green */
-  --color-lime-deep: #047857; /* hover / accent text on light */
-  --color-lime-soft: #34d399; /* accent text on dark */
-  --color-lime-bright: #10b981; /* primary button hover */
+  /* ---- The closing band, the footer, the announcement bar, /book-a-call.
+          On a dark page these are one step ABOVE the page (night) or one
+          step BELOW it (night-deep), never the same value as the page. ---- */
+  --color-night: #111219; /* CTA band ground, lifted off the page */
+  --color-night-soft: #1a1b26; /* raised cards / inputs on the band */
+  --color-night-deep: #07080b; /* footer, the darkest thing on the site */
+  --color-night-line: #24252f; /* hairlines on the band */
 
-  /* Typography — Figtree across every role (display, body, and the former
-     mono label slots), so the whole site is one humanist sans. */
-  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, -apple-system,
+  /* ---- Page surfaces ---- */
+  --color-cream: #0b0c10; /* THE PAGE. body background, default ground */
+  --color-cream-dim: #0e0f14; /* the off band: services, offerings, people */
+  --color-cream-surface: #14151c; /* inset panels, hovered cells */
+  --color-cream-line: #1f202a; /* THE hairline: container rules, card borders, dividers */
+  --color-cream-line-soft: #181924; /* hairline inside a card */
+  --color-cream-line-strong: #2e2f3d; /* input borders, outline buttons */
+  --color-photo-ground: #14151c; /* frame ground behind every photograph */
+
+  /* ---- Ink ---- */
+  --color-ink: #f3f3f8; /* headlines, strong text on the page */
+  --color-ink-soft: #a9aabd; /* body copy, the grey half of a two-tone headline */
+  --color-ink-mute: #80819b; /* captions and metadata. 5.1:1 on the page ground */
+  --color-bone: #ffffff; /* headlines on the closing band */
+  --color-bone-soft: #b4b4c4; /* body copy on the closing band */
+  --color-bone-dim: #7e7e90; /* metadata on the closing band */
+
+  /* ---- Accent: ELECTRIC BLUE. Buttons, one word per headline, chart
+          bars, the eyebrow pill, 2px marks, focus rings. `lime` is the
+          accent's token name for historical reasons; it is blue. ---- */
+  --color-lime: #3366ff; /* primary button fill, chart bars, the one hero word. 4.7:1 under white text */
+  --color-lime-bright: #4d7aff; /* button hover, top stop of the button's radial highlight */
+  --color-lime-deep: #2352e6; /* pressed button */
+  --color-lime-soft: #8ab0ff; /* accent TEXT on the page: 8.9:1, the one to use for links and figures */
+  --color-lime-tint: #121c3c; /* eyebrow-pill ground */
+  --color-lime-tint-line: #223578; /* border of an accent-tinted pill */
+  --color-lime-ink: #9dbaff; /* eyebrow-pill text, inline links */
+
+  /* ---- Signal colours. ONLY for the WebGL surfaces (hero mesh, closing
+          band) and as the second and third series in a chart. Never for
+          text, never for a button. ---- */
+  --color-signal-cyan: #22d3ee;
+  --color-signal-violet: #7c5cff;
+  --color-signal-coral: #ff5c7a;
+
+  /* ---- Status. Sanctioned exception to the accent budget: green means
+          "available" everywhere on the web. 10px, appears once. ---- */
+  --color-status-online: #22c55e;
+
+  /* ---- Type ---- */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
     sans-serif;
-  --font-mono: var(--font-figtree), ui-sans-serif, system-ui, -apple-system,
+  --font-display: var(--font-inter-tight), var(--font-inter), ui-sans-serif,
+    system-ui, sans-serif;
+  /* ALIASES. Do not point --font-serif at a real serif: 55 places use `font-serif`
+     for headlines and the `.display` utility reads it. Aliasing it to Inter Tight
+     converts every existing headline to the new display face with zero component
+     edits. Do not load JetBrains Mono: 80 places use `font-mono` and a monospaced
+     label voice is exactly wrong for this audience. */
+  --font-serif: var(--font-inter-tight), var(--font-inter), ui-sans-serif,
+    system-ui, sans-serif;
+  --font-mono: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
     sans-serif;
-  --font-serif: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
 
-  /* Motion */
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  /* ---- Type scale. Every size carries its own weight, line-height and
+          tracking. Body weight is 500, never 400. ---- */
+  /* Display weight is 500, not 600: on a dark ground a 600 Inter Tight
+     headline blooms and reads heavy, and Quanty's display sits at 400. */
+  --text-heading-xl: 4rem;
+  --text-heading-xl--line-height: 1;
+  --text-heading-xl--letter-spacing: -0.028em;
+  --text-heading-xl--font-weight: 500;
+  --text-heading-lg: 3.5rem;
+  --text-heading-lg--line-height: 1.07;
+  --text-heading-lg--letter-spacing: -0.024em;
+  --text-heading-lg--font-weight: 500;
+  --text-heading-md: 2.5rem;
+  --text-heading-md--line-height: 1.1;
+  --text-heading-md--letter-spacing: -0.02em;
+  --text-heading-md--font-weight: 500;
+  --text-heading-sm: 2rem;
+  --text-heading-sm--line-height: 1.13;
+  --text-heading-sm--letter-spacing: -0.016em;
+  --text-heading-sm--font-weight: 500;
+  --text-heading-xs: 1.75rem;
+  --text-heading-xs--line-height: 1.21;
+  --text-heading-xs--letter-spacing: -0.012em;
+  --text-heading-xs--font-weight: 500;
+
+  /* ---- Elevation. Alpha never exceeds 8%. ---- */
+  --shadow-l1: 0 1px 3px 0 rgba(22, 22, 40, 0.02);
+  --shadow-l2: 0 2px 4px -1px rgba(22, 22, 40, 0.03);
+  --shadow-l3: 0 4px 8px -2px rgba(22, 22, 40, 0.04);
+  --shadow-l4: 0 8px 16px -4px rgba(22, 22, 40, 0.05);
+  --shadow-l5: 0 16px 32px -8px rgba(22, 22, 40, 0.06);
+  --shadow-card:
+    0 1px 2px -1px rgba(22, 22, 40, 0.08), 0 2px 4px 0 rgba(22, 22, 40, 0.04);
+  --shadow-photo:
+    inset 0 0 0 1px rgba(22, 22, 29, 0.07), 0 1px 2px rgba(22, 22, 29, 0.04),
+    0 14px 32px -18px rgba(22, 22, 29, 0.22);
+
+  /* ---- Motion ---- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1); /* existing, 6 call sites, keep */
+  --ease-out-attio: cubic-bezier(0, 0, 0, 1); /* the reveal curve */
+  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-io-attio: cubic-bezier(0.2, 0, 0, 1); /* hover in/out */
 
   /* Marquee */
   --animate-marquee: marquee 38s linear infinite;
   --animate-marquee-slow: marquee 60s linear infinite;
 
-  /* Pulsing status dot (hero eyebrow) */
+  /* Pulsing status dot */
   --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
+}
+
+/* ------------------------------------------------------------------ *
+ *  The light palette, kept whole. Set `data-theme="light"` on <html> and
+ *  every token above takes its 2026-08 value; nothing else on the site
+ *  needs to know. No toggle ships today. Keep this block in step with
+ *  the @theme block: same names, same order.
+ * ------------------------------------------------------------------ */
+html[data-theme="light"] {
+  color-scheme: light;
+  --color-night: #101014;
+  --color-night-soft: #1b1b22;
+  --color-night-deep: #0b0b0e;
+  --color-night-line: #2a2a34;
+  --color-cream: #ffffff;
+  --color-cream-dim: #fcfcfd;
+  --color-cream-surface: #f4f4f8;
+  --color-cream-line: #e9e9ef;
+  --color-cream-line-soft: #f1f1f6;
+  --color-cream-line-strong: #dcdce6;
+  --color-photo-ground: #f4f4f6;
+  --color-ink: #16161d;
+  --color-ink-soft: #5a5a6b;
+  --color-ink-mute: #6e6e85;
+  --color-lime: #2f5fff;
+  --color-lime-bright: #4d7aff;
+  --color-lime-deep: #1f47d6;
+  --color-lime-soft: #2f5fff;
+  --color-lime-tint: #eaf0ff;
+  --color-lime-tint-line: #cfdcff;
+  --color-lime-ink: #1f47d6;
 }
 
 @keyframes pulse-dot {
@@ -74,16 +196,24 @@
  * ------------------------------------------------------------------ */
 @layer base {
   html {
-    /* Lenis drives scrolling — keep native smooth off to avoid conflicts */
+    /* Lenis drives scrolling, so keep native smooth off to avoid conflicts */
     scroll-behavior: auto;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    /* Dark first: form controls, scrollbars and the canvas behind the page
+       all follow, so nothing paints a white strip while a route loads. */
+    color-scheme: dark;
+    background-color: var(--color-cream);
   }
 
   body {
-    background-color: var(--color-cream);
+    background-color: var(--color-cream); /* now pure white */
     color: var(--color-ink);
     font-family: var(--font-sans);
+    /* The default UI weight is 500, not 400. It is most of the reason small
+       text reads as confident rather than thin. Do not skip this line. */
+    font-weight: 500;
+    letter-spacing: -0.01em;
   }
 
   /* Tailwind v4 preflight leaves buttons with the default cursor */
@@ -93,8 +223,8 @@
   }
 
   ::selection {
-    background-color: var(--color-lime);
-    color: #fff;
+    background-color: var(--color-lime-tint);
+    color: var(--color-lime-ink);
   }
 
   /* Lenis */
@@ -114,37 +244,18 @@
  *  Utilities
  * ------------------------------------------------------------------ */
 @layer utilities {
-  /* Subtle film grain overlay for richer sections */
-  .grain::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.5;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
-  }
-
   .text-balance {
     text-wrap: balance;
   }
 
-  /* Editorial display voice — serif headlines across the site */
+  /* Display voice: Inter Tight for every headline on the site. `.display` and
+     the 55 `font-serif` call sites both resolve to it through --font-serif. */
   .display {
-    font-family: var(--font-serif);
-    font-weight: 600;
-    letter-spacing: -0.015em;
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.026em; /* Inter Tight at 500 wants a touch more than at 600 */
     line-height: 1.05;
-  }
-
-  /* Faint emerald blueprint grid used on dark hero / contact surfaces */
-  .blueprint-grid {
-    background-image: linear-gradient(
-        rgba(16, 185, 129, 0.07) 1px,
-        transparent 1px
-      ),
-      linear-gradient(90deg, rgba(16, 185, 129, 0.07) 1px, transparent 1px);
-    background-size: 56px 56px;
+    text-wrap: balance;
   }
 
   .mask-fade-x {
@@ -162,6 +273,392 @@
       #000 92%,
       transparent
     );
+  }
+
+  /* --- layout shell ------------------------------------------------- */
+  .pc-shell {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 24px;
+  }
+  @media (max-width: 640px) {
+    .pc-shell {
+      padding-inline: 16px;
+    }
+  }
+  /* `.pc-inner` is deleted. It capped the measure at 1200 inside rules drawn
+     at 1356, and every band then added `lg:px-10` on top, so the content
+     column was 1,120px with 118px of dead gutter each side and nothing on
+     the page ever reached the hairlines. The inset is now one grid column,
+     not a padding value. */
+
+  /* --- the 24 column field ------------------------------------------ *
+   *  Every band lays its content on this and on nothing else, so a block
+   *  in band 3 lines up with a block in band 8. One column is 58px at
+   *  1440: `col-[2/-2]` is a 1,276px measure that reaches the rules, and
+   *  `col-[3/-3]` is the narrower reading measure. Inside a nested block
+   *  the inset is `px-[calc(100%/24)]`, which scales with its container
+   *  and needs no media query.
+   * ------------------------------------------------------------------ */
+  .pc-grid {
+    display: grid;
+    grid-template-columns: repeat(24, minmax(0, 1fr));
+  }
+
+  /* The continuous vertical hairlines at the container edges. They start at
+     768, not 1024: from 768 up the shell already sits inside the viewport
+     and the rules are what make the page read as one ruled sheet instead of
+     a stack of unrelated blocks. Below 768 there is no room for them. */
+  @media (min-width: 768px) {
+    .pc-rules {
+      border-inline: 1px solid var(--color-cream-line);
+    }
+    /* The same edges on a dark ground, so the closing CTA band and the
+       footer line up with the light bands above them. */
+    .pc-rules-dark {
+      border-inline: 1px solid rgb(255 255 255 / 0.035);
+    }
+  }
+
+  /* --- textures. 3.5%, 8px pinstripes, ALWAYS radially masked -------- */
+  .pinstripe-light {
+    background-image: repeating-linear-gradient(
+      90deg,
+      rgb(255 255 255 / 0.045) 0 1px,
+      transparent 1px 8px
+    );
+  }
+  .pinstripe-dark {
+    background-image: repeating-linear-gradient(
+      to right,
+      rgb(255 255 255 / 0.035) 0 1px,
+      transparent 1px 8px
+    );
+  }
+  .texture-mask {
+    -webkit-mask-image: radial-gradient(
+      ellipse 70% 50% at 50% 50%,
+      transparent 35%,
+      #000 75%
+    );
+    mask-image: radial-gradient(
+      ellipse 70% 50% at 50% 50%,
+      transparent 35%,
+      #000 75%
+    );
+  }
+
+  /* --- buttons ------------------------------------------------------- */
+  /* Pills, like Quanty's: fully rounded, 40px tall on desktop. */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 40px;
+    padding-inline: 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    white-space: nowrap;
+    border: 1px solid transparent;
+    transition:
+      color 300ms var(--ease-io-attio),
+      border-color 300ms var(--ease-io-attio),
+      background-color 300ms var(--ease-io-attio),
+      box-shadow 300ms var(--ease-io-attio);
+  }
+  @media (max-width: 1023px) {
+    .btn {
+      height: 48px;
+      font-size: 16px;
+      padding-inline: 20px;
+    }
+  }
+  /* Asymmetric: the button answers in 50ms and relaxes over 300ms. */
+  .btn:hover,
+  .btn:active {
+    transition-duration: 50ms;
+  }
+  .btn-primary {
+    color: #ffffff;
+    border-color: #5c86ff; /* LIGHTER than the fill. This is the whole trick. */
+    background-color: var(--color-lime);
+    background-image: radial-gradient(
+      at center -10%,
+      var(--color-lime-bright) 0%,
+      var(--color-lime) 100%
+    );
+    box-shadow: 0 0 0 0 rgb(51 102 255 / 0);
+  }
+  .btn-primary:hover {
+    background-color: var(--color-lime-bright);
+    box-shadow: 0 0 24px 0 rgb(51 102 255 / 0.35);
+  }
+  .btn-primary:active {
+    background-color: var(--color-lime-deep);
+  }
+  .btn-outline {
+    color: var(--color-ink);
+    background: transparent;
+    border-color: var(--color-cream-line-strong);
+  }
+  .btn-outline:hover {
+    color: var(--color-ink);
+    border-color: var(--color-ink-mute);
+    background: var(--color-cream-surface);
+  }
+  /* on the dark CTA band */
+  .btn-outline-dark {
+    color: var(--color-bone-soft);
+    background: transparent;
+    border-color: var(--color-night-line);
+  }
+  .btn-outline-dark:hover {
+    color: var(--color-bone);
+    border-color: var(--color-bone-dim);
+  }
+  /* THE FOCUS RING. WCAG 2.2 asks a focus indicator to reach 3:1 against
+     whatever it sits on. At 30% alpha this ring composited to about #d7d7f7
+     on the white page, which is 1.7:1, so keyboard focus was a suggestion
+     rather than an indicator. Solid `lime` measures 5.3:1 on the page white
+     and 3.6:1 on the night band, so one ring clears both grounds. The 2px
+     offset is load-bearing: it keeps a gap of ground between the ring and a
+     primary button's own indigo fill, so the ring is never drawn against a
+     colour close to itself. Rings are a sanctioned accent use, so this
+     spends nothing from the budget. */
+  :where(.btn):focus-visible {
+    outline: 2px solid var(--color-lime);
+    outline-offset: 2px;
+  }
+
+  /* --- the eyebrow pill. Replaces every `font-mono uppercase tracking` label. --- */
+  .pc-pill {
+    display: inline-flex;
+    align-items: center;
+    height: 24px;
+    padding-inline: 6px;
+    border-radius: 8px;
+    background: var(--color-lime-tint);
+    color: var(--color-lime-ink);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.14px;
+  }
+  .pc-pill-dark {
+    background: var(--color-lime-tint);
+    color: var(--color-lime-ink);
+  }
+
+  /* --- photo frame. Every photograph on the site uses this. ---------- */
+  .photo-frame {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-photo-ground);
+    box-shadow: var(--shadow-photo);
+  }
+  .photo-frame > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(1) contrast(1.02);
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  Hero field: three static layers, no canvas and no WebGL
+   *
+   *  The animated hairline field is gone. It cost a WebGL context and a
+   *  full-bleed canvas on the LCP route to render something measured at
+   *  roughly #eeeef4 on #fdfdfe, and its curves flattened into parallel
+   *  horizontals at the right edge, so it read as ruled paper that had
+   *  been cut off. The replacement is three absolutely positioned divs
+   *  inside one `overflow-hidden` layer, so it stops at the band edge:
+   *
+   *    1. `.hero-wash`        the tint, rising from the bottom centre
+   *    2. `.pinstripe-light`  VERTICAL rules, 1px every 8px, defined above
+   *    3. `.hero-erase`       a page coloured radial that rubs 1 and 2 out
+   *                           behind the headline block
+   *
+   *  Layer 3 is the one that was missing. The rules are vertical, they are
+   *  erased in the middle top, and so they never fight the headline and
+   *  never look like streaks. Nothing here moves, so reduced motion needs
+   *  no special case.
+   * ------------------------------------------------------------------ */
+  .hero-wash {
+    background-image: radial-gradient(
+      90% 80% at 50% 100%,
+      color-mix(in oklab, var(--color-lime) 6%, var(--color-cream)) 0%,
+      color-mix(in oklab, var(--color-lime) 14%, var(--color-cream)) 45%,
+      color-mix(in oklab, var(--color-lime) 26%, var(--color-cream)) 100%
+    );
+    opacity: 0.35;
+  }
+
+  .hero-erase {
+    background-image: radial-gradient(
+      70% 106.6667% at 50% 0%,
+      var(--color-cream) 32%,
+      transparent 64%
+    );
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ *  ENTRANCES. Deliberately unlayered.
+ *
+ *  These rules sit outside `@layer` on purpose: unlayered declarations
+ *  beat every layered one regardless of specificity, so the visible
+ *  floor below cannot be undercut by a utility class, a later import or
+ *  a component's own opacity rule. Visible is the state that must not be
+ *  reachable by accident.
+ *
+ *  What this replaces: `Reveal` used to ship `initial="hidden"` through
+ *  framer-motion, which server-rendered 44 elements at
+ *  `opacity:0;filter:blur(1.5px)` and then relied on an intersection
+ *  callback plus a rAF loop to undo it. Three ways to lose: JS off, a
+ *  missed callback for an element already in view at mount, or a starved
+ *  frame loop in a background tab or on low power. All three ended with
+ *  permanently invisible content, including both hero calls to action.
+ *
+ *  The rule now: nothing on this page depends on JavaScript to become
+ *  visible. Every entrance is CSS, and every entrance's failure mode is
+ *  "it appeared without animating".
+ * ------------------------------------------------------------------ */
+
+/* --- 1. Below the fold: a scroll driven reveal -------------------- *
+ *  The floor. This is the whole no-JS, no-support and missed-frame
+ *  state, and it is the state the server renders.
+ */
+[data-reveal] {
+  opacity: 1;
+}
+
+/* The animation is additive and entirely optional. `view()` needs no
+   observer, no listener and no main-thread work, so there is nothing to
+   miss and nothing to starve. Browsers without scroll driven animations
+   keep the floor and simply show the content.
+
+   THE HEIGHT GUARD. `both` is the right fill mode while the timeline is
+   live, and it is the wrong one when the timeline never becomes live: a
+   viewport as tall as the document gives the entry range zero length, the
+   range never resolves, and every element holds the keyframe's `from`
+   state, which is opacity 0. That is not a hypothetical viewport. It is
+   exactly what a full-page screenshot does (Chrome's captureBeyondViewport,
+   devtools "capture full size screenshot", headless page captures, OG image
+   bots), and it rendered the proof rail, all four band headers, the people
+   band and the whole Europe band blank. `forwards` would fix that case and
+   break the normal one, because a staggered range starts at `entry 21%` and
+   the element would paint at full opacity before snapping to 0.
+
+   So the animation is scoped to viewports a person could actually have.
+   Past 2400px tall there is no reveal to run and the floor above stands.
+   Print gets the same treatment below, for the same reason. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) and (max-height: 2400px) {
+    [data-reveal] {
+      animation: pc-reveal 1s linear both;
+      animation-timeline: view();
+      animation-range: entry calc(var(--reveal-delay, 0) * 30%) entry 62%;
+    }
+  }
+}
+
+/* `Stagger` sets no delay of its own. Its direct children take one, in
+   `--reveal-gap` steps, from their position, so `StaggerItem` needs no
+   index prop and the call sites stay exactly as they are. */
+[data-reveal-stagger] > * {
+  --reveal-delay: 0;
+}
+[data-reveal-stagger] > *:nth-child(2) {
+  --reveal-delay: calc(var(--reveal-gap, 0.07) * 1);
+}
+[data-reveal-stagger] > *:nth-child(3) {
+  --reveal-delay: calc(var(--reveal-gap, 0.07) * 2);
+}
+[data-reveal-stagger] > *:nth-child(4) {
+  --reveal-delay: calc(var(--reveal-gap, 0.07) * 3);
+}
+[data-reveal-stagger] > *:nth-child(5) {
+  --reveal-delay: calc(var(--reveal-gap, 0.07) * 4);
+}
+[data-reveal-stagger] > *:nth-child(6) {
+  --reveal-delay: calc(var(--reveal-gap, 0.07) * 5);
+}
+[data-reveal-stagger] > *:nth-child(n + 7) {
+  --reveal-delay: calc(var(--reveal-gap, 0.07) * 6);
+}
+
+/* --- 2. Above the fold: a plain timed rise ------------------------ *
+ *  The hero uses none of the scroll machinery. It is already in view at
+ *  load, so it runs one hand staggered time based animation with no
+ *  observer, no timeline and no scroll dependency. Blur only, never a
+ *  translate: nothing shifts under the reader's eye.
+ */
+[data-rise] {
+  animation: pc-rise 700ms var(--ease-out-attio) both;
+}
+[data-rise="0"] {
+  animation-delay: 0ms;
+}
+[data-rise="1"] {
+  animation-delay: 80ms;
+}
+[data-rise="2"] {
+  animation-delay: 160ms;
+}
+[data-rise="3"] {
+  animation-delay: 240ms;
+}
+[data-rise="4"] {
+  animation-delay: 340ms;
+}
+
+@keyframes pc-reveal {
+  from {
+    opacity: 0;
+    filter: blur(1.5px);
+  }
+  to {
+    opacity: 1;
+    filter: none;
+  }
+}
+
+@keyframes pc-rise {
+  from {
+    opacity: 0;
+    filter: blur(1.5px);
+  }
+  to {
+    opacity: 1;
+    filter: none;
+  }
+}
+
+/* Reduced motion cancels both outright rather than clamping them to
+   0.001ms. The global block below does not reset `animation-delay`, so a
+   clamped `[data-rise="4"]` would still hold at opacity 0 for 340ms. */
+@media (prefers-reduced-motion: reduce) {
+  [data-rise],
+  [data-reveal] {
+    animation: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+}
+
+/* Print and print-to-PDF: no timeline resolves on a paged medium and no
+   entrance is worth a blank page, so both animations are simply off. */
+@media print {
+  [data-rise],
+  [data-reveal] {
+    animation: none !important;
+    opacity: 1 !important;
+    filter: none !important;
   }
 }
 
@@ -200,7 +697,7 @@
   margin-top: 1.5em;
 }
 .prose-pc a {
-  color: var(--color-lime-deep);
+  color: var(--color-lime-soft);
   text-decoration: underline;
   text-underline-offset: 2px;
 }

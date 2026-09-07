@@ -36,11 +36,11 @@ export default async function ContactPage({
       <Contact locale={locale} showIntro={false} />
 
       {/* Location */}
-      <section className="bg-white">
+      <section className="bg-cream">
         <div className="mx-auto grid max-w-[1240px] items-center gap-12 px-5 py-20 sm:px-10 sm:py-[6.25rem] lg:grid-cols-2 lg:gap-20">
           <div>
             <Reveal>
-              <div className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime">{t.location.label}</div>
+              <div className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime-soft">{t.location.label}</div>
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="mt-4 text-balance font-serif text-[2.5rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-5xl">
@@ -54,8 +54,8 @@ export default async function ContactPage({
             </Reveal>
             <Reveal delay={0.15}>
               <div className="mt-8 grid gap-6 sm:grid-cols-2">
-                <div className="rounded border border-cream-line bg-white p-6">
-                  <p className="font-mono text-xs uppercase tracking-[0.1em] text-lime">
+                <div className="rounded border border-cream-line bg-cream-surface p-6">
+                  <p className="font-mono text-xs uppercase tracking-[0.1em] text-lime-soft">
                     {t.location.address.title}
                   </p>
                   <p className="mt-3 text-ink">
@@ -66,8 +66,8 @@ export default async function ContactPage({
                     {t.location.address.line2}
                   </p>
                 </div>
-                <div className="rounded border border-cream-line bg-white p-6">
-                  <p className="font-mono text-xs uppercase tracking-[0.1em] text-lime">
+                <div className="rounded border border-cream-line bg-cream-surface p-6">
+                  <p className="font-mono text-xs uppercase tracking-[0.1em] text-lime-soft">
                     {t.location.hours.title}
                   </p>
                   <p className="mt-3 text-ink">
@@ -91,7 +91,7 @@ export default async function ContactPage({
       <section className="border-t border-cream-line bg-cream">
         <div className="mx-auto max-w-3xl px-5 py-20 sm:px-10 sm:py-[6.25rem]">
           <Reveal className="text-center">
-            <div className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime">{t.faq.label}</div>
+            <div className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime-soft">{t.faq.label}</div>
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="mx-auto mt-4 max-w-xl text-balance text-center font-serif text-[2.5rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-5xl">
@@ -101,10 +101,10 @@ export default async function ContactPage({
           <Stagger className="mt-12 space-y-4" gap={0.06}>
             {faq.map((item) => (
               <StaggerItem key={item.question}>
-                <details className="group rounded border border-cream-line bg-white p-6">
+                <details className="group rounded border border-cream-line bg-cream-surface p-6">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-medium text-ink">
                     {item.question}
-                    <span className="flex size-7 shrink-0 items-center justify-center rounded-[2px] border border-cream-line text-lime transition-transform duration-300 group-open:rotate-45">
+                    <span className="flex size-7 shrink-0 items-center justify-center rounded-[2px] border border-cream-line text-lime-soft transition-transform duration-300 group-open:rotate-45">
                       <svg viewBox="0 0 24 24" className="size-4" fill="none" aria-hidden>
                         <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                       </svg>

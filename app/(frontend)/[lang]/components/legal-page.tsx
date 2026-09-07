@@ -1,6 +1,7 @@
 import { PageHero } from "./page-hero";
 import Footer from "./footer";
 import { Reveal } from "./motion";
+import { Eyebrow } from "./ui";
 import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 
@@ -30,19 +31,17 @@ export default function LegalPage({
     <main>
       <PageHero eyebrow={d.lastUpdated} title={d.title} intro={d.subtitle} />
 
-      <section className="bg-white">
+      <section className="bg-cream">
         <div className="mx-auto grid max-w-[1240px] gap-12 px-5 py-20 sm:px-10 sm:py-[6.25rem] lg:grid-cols-[260px_1fr] lg:gap-16">
           {/* TOC */}
           <aside className="lg:sticky lg:top-28 lg:self-start">
-            <p className="font-mono text-[13px] uppercase tracking-[0.14em] text-lime">
-              {d.tableOfContents}
-            </p>
+            <Eyebrow>{d.tableOfContents}</Eyebrow>
             <nav className="mt-5 space-y-2.5 border-l border-cream-line pl-4">
               {entries.map(([key, s]) => (
                 <a
                   key={key}
                   href={`#${key}`}
-                  className="block text-sm text-ink-soft transition-colors hover:text-lime-deep"
+                  className="block text-sm text-ink-soft transition-colors duration-300 ease-io-attio hover:text-ink hover:duration-50"
                 >
                   {s.title}
                 </a>
@@ -55,10 +54,10 @@ export default function LegalPage({
             {entries.map(([key, s], i) => (
               <Reveal key={key} delay={i === 0 ? 0 : 0.02}>
                 <section id={key} className="scroll-mt-28 border-b border-cream-line py-8 first:pt-0 last:border-0">
-                  <h2 className="font-serif text-[1.75rem] font-medium tracking-[-0.01em] text-ink">
+                  <h2 className="display text-heading-xs text-ink">
                     {s.title}
                   </h2>
-                  <p className="mt-4 whitespace-pre-line leading-relaxed text-ink-soft">
+                  <p className="mt-4 whitespace-pre-line text-[15px] leading-[1.6] text-ink-soft">
                     {s.content}
                   </p>
                 </section>

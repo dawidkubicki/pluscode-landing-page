@@ -1,0 +1,38 @@
+/* ------------------------------------------------------------------ *
+ *  Pluscode — design tokens
+ *  Mirrors app/(frontend)/[lang]/globals.css. If the two ever disagree,
+ *  globals.css is the source of truth.
+ * ------------------------------------------------------------------ */
+@theme {
+  /* Surfaces */
+  --color-night: #0a1929;       /* dark hero / sections (deep navy) */
+  --color-night-soft: #0f2237;  /* raised cards on dark */
+  --color-night-deep: #061220;  /* footer (deepest navy) */
+  --color-night-line: #22303e;  /* hairlines on dark */
+  --color-cream: #f7f8fa;       /* light section background (paper white) */
+  --color-cream-dim: #eef0f4;   /* muted light surface */
+  --color-cream-line: #e2e6ec;  /* hairlines on light */
+
+  /* Ink + accent */
+  --color-ink: #0a1929;         /* near-black text on light */
+  --color-ink-soft: #4a5a6d;    /* secondary text on light */
+  --color-ink-mute: #8093a8;    /* labels / metadata on light — never body copy */
+  --color-bone: #ffffff;        /* headings on dark */
+  --color-bone-soft: #b9c6d8;   /* body copy on dark */
+  --color-bone-dim: #8fa3bd;    /* muted / metadata on dark */
+  --color-lime: #059669;        /* primary accent — emerald green */
+  --color-lime-deep: #047857;   /* hover / accent text on light */
+  --color-lime-soft: #34d399;   /* accent text on dark */
+  --color-lime-bright: #10b981; /* primary button hover */
+
+  /* Typography — one humanist sans in every slot */
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-figtree), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-marquee-slow: marquee 60s linear infinite;
+  --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
+}

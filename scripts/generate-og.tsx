@@ -1,8 +1,9 @@
 /**
  * Renders the localized Open Graph images (public/og/{en,pl,de}.png, 1200×630)
- * from the hero copy in dictionaries/*.json, mirroring the live dark hero:
- * night background, emerald glow, white Figtree headline with the em-phrase
- * in lime-soft, and the white wordmark.
+ * from the hero copy in dictionaries/*.json, on the same ground as the site's
+ * closing CTA band: neutral near-black, one soft indigo wash in the top right,
+ * a white Figtree headline with the em-phrase in indigo, and the white wordmark.
+ * It is the same family as the baked insight covers, never navy, never emerald.
  *
  * Run after changing hero copy or the brand palette:
  *   pnpm generate:og
@@ -20,13 +21,15 @@ const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 
 const LOCALES = ["en", "pl", "de"] as const;
 
-// Palette — keep in sync with app/(frontend)/[lang]/globals.css.
-const NIGHT = "#0a1929";
-const BONE = "#ffffff";
-const BONE_SOFT = "#b9c6d8";
-const BONE_DIM = "#8fa3bd";
-const LIME = "#059669";
-const LIME_SOFT = "#34d399";
+/* The card is a baked PNG, so nothing in globals.css can reach it: these six
+   constants are the site tokens copied by hand. Change one and every locale
+   has to be re-rendered with `pnpm generate:og`. */
+const NIGHT = "#0b0c10"; /* --color-cream, the page ground */
+const BONE = "#ffffff"; /* --color-bone */
+const BONE_SOFT = "#b4b4c4"; /* --color-bone-soft */
+const BONE_DIM = "#7e7e90"; /* --color-bone-dim */
+const LIME = "#3366ff"; /* --color-lime, electric blue */
+const LIME_SOFT = "#8ab0ff"; /* --color-lime-soft, the accent on dark */
 
 const logoDataUri = `data:image/svg+xml;base64,${fs
   .readFileSync(path.join(root, "public/assets/logo/pluscode-logo.svg"))
@@ -41,6 +44,13 @@ async function render(locale: (typeof LOCALES)[number]) {
   );
   const hero = dict.hero;
 
+  // headlineEnd is appended to headlineEm with no separator on the page. Split
+  // off whatever runs up to the first space (a full stop, usually) so it can be
+  // set tight against the accent word; the rest wraps as ordinary words.
+  const end = String(hero.headlineEnd || "");
+  const glue = end.slice(0, end.search(/\s|$/));
+  const endWords = end.slice(glue.length).split(/\s+/).filter(Boolean);
+
   const image = new ImageResponse(
     (
       <div
@@ -50,7 +60,7 @@ async function render(locale: (typeof LOCALES)[number]) {
           display: "flex",
           flexDirection: "column",
           backgroundColor: NIGHT,
-          backgroundImage: `radial-gradient(circle at 88% 0%, rgba(16,185,129,0.22) 0%, rgba(16,185,129,0) 60%)`,
+          backgroundImage: `radial-gradient(circle at 85% 10%, rgba(91,91,214,0.16) 0%, rgba(91,91,214,0) 55%)`,
           padding: "60px 72px 56px",
           fontFamily: "Figtree",
         }}
@@ -102,18 +112,19 @@ async function render(locale: (typeof LOCALES)[number]) {
                 {word}
               </span>
             ))}
-          {/* the em phrase wraps as one unit so it never splits across lines */}
-          <span style={{ display: "flex", color: LIME_SOFT, marginRight: 17 }}>
-            {hero.headlineEm}
+          {/* The em phrase wraps as one unit so it never splits across lines,
+              and it carries `glue` with it: the page joins headlineEm and
+              headlineEnd with no space, so a trailing full stop has to sit
+              tight against the accent word instead of a word-gap away. */}
+          <span style={{ display: "flex", marginRight: 17 }}>
+            <span style={{ color: LIME_SOFT }}>{hero.headlineEm}</span>
+            {glue && <span style={{ color: BONE }}>{glue}</span>}
           </span>
-          {String(hero.headlineEnd || "")
-            .split(/\s+/)
-            .filter(Boolean)
-            .map((word, i) => (
-              <span key={`e${i}`} style={{ color: BONE, marginRight: 17 }}>
-                {word}
-              </span>
-            ))}
+          {endWords.map((word, i) => (
+            <span key={`e${i}`} style={{ color: BONE, marginRight: 17 }}>
+              {word}
+            </span>
+          ))}
         </div>
 
         <div

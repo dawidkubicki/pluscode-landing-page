@@ -44,7 +44,7 @@ export default async function CaseStudiesPage({
               <StaggerItem key={cs.slug} className="h-full">
                 <LocaleLink
                   href={`/case-studies/${cs.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded border border-cream-line bg-white transition-colors duration-300 hover:border-lime"
+                  className="group flex h-full flex-col overflow-hidden rounded border border-cream-line bg-cream-surface transition-colors duration-300 hover:border-lime"
                 >
                   <div className={`relative isolate flex h-52 items-center justify-center overflow-hidden ${cs.gradient}`}>
                     {cs.image ? (
@@ -60,14 +60,14 @@ export default async function CaseStudiesPage({
                     )}
                   </div>
                   <div className="flex flex-1 flex-col gap-3 p-7">
-                    <span className="font-mono text-xs uppercase tracking-[0.1em] text-lime">
+                    <span className="font-mono text-xs uppercase tracking-[0.1em] text-lime-soft">
                       {cs.category}
                     </span>
                     <h2 className="font-serif text-[22px] font-semibold leading-[1.25] text-ink">
                       {cs.title}
                     </h2>
                     <p className="flex-1 text-[15px] leading-[1.65] text-ink-soft">{cs.excerpt}</p>
-                    <span className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime transition-colors group-hover:text-ink">
+                    <span className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-lime-soft transition-colors group-hover:text-ink">
                       {shared.viewCaseStudy}
                       <Arrow className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </span>

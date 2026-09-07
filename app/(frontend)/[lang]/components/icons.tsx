@@ -66,3 +66,20 @@ export function LeafMark({ className = "size-5" }: IconProps) {
     </svg>
   );
 }
+
+/* The language picker's mark in the header: a globe at stroke weight, so it
+   sits at the same visual weight as the caret next to it. */
+export function GlobeIcon({ className = "size-4" }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden className={className}>
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
+      <path
+        d="M3 12h18M12 3a14.5 14.5 0 0 1 0 18a14.5 14.5 0 0 1 0-18"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}

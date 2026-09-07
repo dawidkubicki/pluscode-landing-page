@@ -1,152 +1,92 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Arrow } from "./ui";
-import GradientCanvas from "./gradient-canvas";
+import Image from "next/image";
+import HeroMesh from "./hero-mesh";
 import LocaleLink from "./locale-link";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
-import type { TrustLogo } from "@/lib/trust";
-
-const EASE = [0.16, 1, 0.3, 1] as const;
-
-const rise = (delay: number) => ({
-  initial: { opacity: 0, y: 24 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.9, ease: EASE, delay },
-});
-
-/** Optional hero background media. */
-export type HeroMedia =
-  | { type: "image"; src: string; alt?: string }
-  | { type: "video"; src: string; poster?: string };
 
 /**
- * To give the hero a background image or video, set this to a file in `/public`
- * (e.g. `{ type: "image", src: "/hero/bg.jpg" }` or
- * `{ type: "video", src: "/hero/bg.mp4", poster: "/hero/bg.jpg" }`). The navy
- * gradient + blueprint overlay stay on top so the headline remains readable.
- * Leave as `null` for the animated gradient look.
+ * The hero. One promise, one ask, and the lit surface behind them.
+ *
+ * The band is tall on purpose (78svh of visible height on a desktop, natural
+ * on a phone) because the object here is the WebGL surface in `hero-mesh.tsx`
+ * and it needs a floor to lie on: the copy sits in the upper part of the band
+ * and the folds of light rise around and below it. The copy column carries
+ * `data-hero-copy`, which the mesh measures on every layout to keep the
+ * ground behind the words at the page's own colour.
+ *
+ * The first 72px of the section sit under the fixed header, hence the
+ * `+72px` in the minimum height and the top padding. From 768px up the
+ * bottom padding has a 340px floor as well as an svh share: on a short
+ * viewport around 860x806 the copy runs most of the way down the band and
+ * the svh share alone left the surface a dim strip under the note.
+ *
+ * The entrance is `[data-rise]`: a plain time based CSS animation, hand
+ * staggered, with no observer, no scroll timeline and no JavaScript. Nothing
+ * above the fold, and in particular neither call to action, may depend on a
+ * scroll animation or on hydration to become visible.
  */
-const HERO_MEDIA: HeroMedia | null = null;
-
-export default function Hero({
-  dict,
-  trust,
-  logos = [],
-  media = HERO_MEDIA,
-}: {
-  dict: Dictionary["hero"];
-  trust: Dictionary["trust"];
-  /** CMS logos for the trust strip; falls back to `trust.clients` text. */
-  logos?: TrustLogo[];
-  media?: HeroMedia | null;
-}) {
+export default function Hero({ dict }: { dict: Dictionary["hero"] }) {
   return (
     <section
       id="top"
-      className="relative isolate flex min-h-svh flex-col overflow-hidden bg-night text-bone"
+      className="relative isolate overflow-hidden border-b border-cream-line bg-cream text-ink"
     >
-      {media && (
-        <div className="absolute inset-0 -z-30">
-          {media.type === "video" ? (
-            <video
-              className="size-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              poster={media.poster}
-              src={media.src}
-            />
-          ) : (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              className="size-full object-cover"
-              src={media.src}
-              alt={media.alt ?? ""}
-            />
-          )}
-          {/* Gradient overlay keeps the headline readable over any media */}
-          <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(10,25,41,0.94)_0%,rgba(10,25,41,0.78)_46%,rgba(10,25,41,0.6)_100%)]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-night via-night/30 to-transparent" />
+      <HeroMesh className="pointer-events-none z-0" />
+
+      <div className="pc-shell">
+        <div className="pc-rules relative z-10">
+          <div className="pc-grid relative min-h-[calc(78svh+72px)] pb-[min(38svh,300px)] pt-[max(128px,calc(72px+8svh))] md:pb-[max(340px,22svh)] lg:min-h-[calc(80svh+72px)] lg:pt-[max(136px,calc(72px+9svh))]">
+            <div
+              data-hero-copy
+              className="relative col-[2/-2] flex flex-col items-center self-start text-center"
+            >
+              <span className="pc-pill" data-rise="0">
+                {dict.eyebrow}
+              </span>
+
+              <h1
+                className="display mt-9 max-w-[16em] text-balance text-[clamp(44px,calc(14px+5.2svh),76px)] leading-[1.06] tracking-[-0.028em] text-ink lg:leading-[0.95]"
+                data-rise="1"
+              >
+                {dict.headlineStart}{" "}
+                <em className="not-italic text-lime-soft">{dict.headlineEm}</em>
+                {dict.headlineEnd}
+              </h1>
+
+              <p
+                className="mt-5 max-w-[27em] text-[18px] font-medium leading-[1.4] tracking-[-0.18px] text-ink-soft"
+                data-rise="2"
+              >
+                {dict.subtext}
+              </p>
+
+              <div
+                className="mt-8 flex items-center gap-x-2.5 gap-y-2 max-md:w-full max-md:flex-col"
+                data-rise="3"
+              >
+                <LocaleLink href="/book-a-call" className="btn btn-primary max-md:w-full">
+                  {dict.ctaPrimary}
+                </LocaleLink>
+                <a href="#time-saved" className="btn btn-outline max-md:w-full">
+                  {dict.ctaSecondary}
+                </a>
+              </div>
+
+              <p
+                className="mt-5 flex flex-wrap items-center justify-center gap-2 text-[14px] leading-[1.5] text-ink-mute"
+                data-rise="3"
+              >
+                <Image
+                  src="/assets/team/krzysztof-avatar.jpg"
+                  alt=""
+                  width={28}
+                  height={28}
+                  className="size-7 shrink-0 rounded-full object-cover object-center ring-1 ring-cream-line-strong"
+                />
+                {dict.ctaNote}
+              </p>
+            </div>
+          </div>
         </div>
-      )}
-      {media ? (
-        <div className="absolute -right-44 -top-44 -z-10 size-[38rem] rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.22)_0%,rgba(16,185,129,0)_65%)]" />
-      ) : (
-        // Animated WebGL gradient (opaque navy base), so it only renders when
-        // no background media is set — it would fully cover the media layer.
-        <GradientCanvas className="absolute inset-0 -z-20 size-full" />
-      )}
-
-      {/* main content fills the viewport; stats bar sits on the fold */}
-      <div className="mx-auto flex w-full max-w-[1240px] flex-1 flex-col justify-center px-5 pb-10 pt-32 sm:px-10">
-        <motion.div {...rise(0.1)} className="mb-8 flex items-center gap-2.5 sm:mb-9">
-          <span className="inline-block size-2 rounded-full bg-lime animate-pulse-dot" />
-          <span className="font-mono text-[12px] uppercase tracking-[0.14em] text-bone-dim sm:text-[13px]">
-            {dict.eyebrow}
-          </span>
-        </motion.div>
-
-        <motion.h1
-          {...rise(0.2)}
-          className="display max-w-[980px] text-balance text-5xl sm:text-6xl lg:text-[5rem]"
-        >
-          {dict.headlineStart}{" "}
-          <em className="not-italic text-lime-soft">{dict.headlineEm}</em>
-          {dict.headlineEnd}
-        </motion.h1>
-
-        <motion.p
-          {...rise(0.3)}
-          className="mt-7 max-w-[580px] text-lg leading-[1.65] text-bone sm:text-[19px]"
-        >
-          {dict.subtext}
-        </motion.p>
-
-        <motion.div {...rise(0.4)} className="mt-11 flex flex-wrap items-center gap-5">
-          <LocaleLink
-            href="/book-a-call"
-            className="group inline-flex items-center gap-3 rounded-[2px] bg-lime px-[30px] py-4 text-[15.5px] font-semibold text-night transition-colors hover:bg-lime-bright"
-          >
-            {dict.ctaPrimary}
-            <Arrow className="size-[18px] transition-transform duration-300 group-hover:translate-x-1" />
-          </LocaleLink>
-        </motion.div>
-
-        {/* Minimal social-proof strip, folded into the hero */}
-        <motion.div {...rise(0.55)} className="mt-14 sm:mt-16">
-          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-bone">
-            {trust.label}
-          </p>
-          {logos.length > 0 ? (
-            <ul className="mt-5 flex flex-wrap items-center gap-x-10 gap-y-5 sm:gap-x-12">
-              {logos.map((l) => (
-                <li key={l.id}>
-                  {/* brightness-0 + invert renders any logo color as white */}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={l.logo.url}
-                    alt={l.logo.alt || l.name}
-                    loading="lazy"
-                    className="h-6 w-auto opacity-60 brightness-0 invert transition-opacity hover:opacity-90 sm:h-7"
-                  />
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <ul className="mt-4 flex flex-wrap items-center gap-x-8 gap-y-2.5 sm:gap-x-10">
-              {trust.clients.map((client) => (
-                <li
-                  key={client}
-                  className="text-[15px] font-medium text-bone/50 transition-colors hover:text-bone/80 sm:text-base"
-                >
-                  {client}
-                </li>
-              ))}
-            </ul>
-          )}
-        </motion.div>
       </div>
     </section>
   );

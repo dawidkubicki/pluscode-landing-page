@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Reveal } from "./motion";
-import { Arrow } from "./ui";
-import { Visual, type VisualKind } from "./visual";
+import { BandGlow, Eyebrow } from "./ui";
+import { type VisualKind } from "./visual";
 import LocaleLink from "./locale-link";
 import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
@@ -11,77 +11,89 @@ type Cta = { label: string; href: string };
 /**
  * Shared hero banner for routed subpages.
  *
- * Full-bleed dark navy with a serif display headline, so every subpage opens
- * with the same brand language as the home hero, while clearing the fixed
- * header. The blueprint grid is on by default and off on form pages.
+ * Eleven routes open with this, so it carries the site's first impression
+ * everywhere except the homepage. Page ground, a tinted eyebrow pill, one
+ * display headline and one sentence: the same language as the home hero, and
+ * nothing behind the words. The top padding clears the fixed header.
+ *
+ * THE ONE GRID. This used to wrap in `max-w-[1240px] px-5 sm:px-10`, which was
+ * a third container beside the homepage's shell and the footer's own copy of
+ * the same 1240 wrapper. Eleven subpages therefore lined up with nothing. It
+ * now sits on `.pc-shell` > `.pc-rules` > `.pc-grid` at `col-[2/-2]`, the same
+ * 1,276px measure inside the same two hairlines that every homepage band uses,
+ * so a headline here starts on the same x as a headline there.
  */
 export function PageHero({
   eyebrow,
   title,
   intro,
-  visual,
   cta,
-  grid = true,
 }: {
   eyebrow: string;
   title: ReactNode;
   intro?: ReactNode;
+  /** @deprecated The hero carries no artwork on the page ground. Ignored. */
   visual?: VisualKind;
   cta?: Cta;
-  /** Faint blueprint grid. Off on form pages, where the surface stays plain. */
+  /** @deprecated The blueprint grid is gone with the dark surfaces. Ignored. */
   grid?: boolean;
 }) {
   return (
-    <section className="relative isolate overflow-hidden bg-night text-bone">
-      {visual && (
-        <>
-          <Visual kind={visual} className="absolute inset-0 -z-20 opacity-30" />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-t from-night via-night/85 to-night/55" />
-        </>
-      )}
-      {grid && <div className="blueprint-grid absolute inset-0 -z-10" />}
-      <div className="absolute -right-44 -top-44 -z-10 size-[34rem] rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.2)_0%,rgba(16,185,129,0)_65%)]" />
-
-      <div className="mx-auto max-w-[1240px] px-5 pb-16 pt-40 sm:px-10 sm:pb-20 sm:pt-[11rem]">
-        <Reveal>
-          <div className="mb-7 flex items-center gap-2.5">
-            <span className="inline-block size-2 rounded-full bg-lime animate-pulse-dot" />
-            <span className="font-mono text-[12px] uppercase tracking-[0.14em] text-bone-dim sm:text-[13px]">
-              {eyebrow}
-            </span>
-          </div>
-        </Reveal>
-        <Reveal delay={0.05}>
-          <h1 className="display max-w-[940px] text-balance text-5xl sm:text-6xl lg:text-[4.5rem]">
-            {title}
-          </h1>
-        </Reveal>
-        {intro && (
-          <Reveal delay={0.1}>
-            <p className="mt-7 max-w-[620px] text-lg leading-[1.65] text-bone-soft sm:text-[19px]">
-              {intro}
-            </p>
-          </Reveal>
-        )}
-        {cta && (
-          <Reveal delay={0.15}>
-            <div className="mt-10">
-              <LocaleLink
-                href={cta.href}
-                className="group inline-flex items-center gap-3 rounded-[2px] bg-lime px-[30px] py-4 text-[15.5px] font-semibold text-night transition-colors hover:bg-lime-bright"
-              >
-                {cta.label}
-                <Arrow className="size-[18px] transition-transform duration-300 group-hover:translate-x-1" />
-              </LocaleLink>
+    <section className="border-b border-cream-line bg-cream">
+      <div className="pc-shell">
+        <div className="pc-rules">
+          {/* The header is 72px and fixed, and the layout already pushes the
+              page down past the announcement bar, so `pt-32` leaves 56px of
+              clear ground under the bar rather than 72. */}
+          <div className="pc-grid pb-14 pt-32 lg:pb-16 lg:pt-36 xl:pb-18 xl:pt-40">
+            <div className="col-[2/-2] flex flex-col items-start">
+              <Reveal>
+                <Eyebrow>{eyebrow}</Eyebrow>
+              </Reveal>
+              <Reveal delay={0.05}>
+                <h1 className="display mt-6 max-w-[16em] text-balance text-heading-md text-ink sm:text-heading-lg xl:text-heading-xl">
+                  {title}
+                </h1>
+              </Reveal>
+              {intro && (
+                <Reveal delay={0.1}>
+                  <p className="mt-5 max-w-[32em] text-[17px] leading-[1.6] text-ink-soft">
+                    {intro}
+                  </p>
+                </Reveal>
+              )}
+              {cta && (
+                <Reveal delay={0.15}>
+                  <div className="mt-8">
+                    <LocaleLink href={cta.href} className="btn btn-primary">
+                      {cta.label}
+                    </LocaleLink>
+                  </div>
+                </Reveal>
+              )}
             </div>
-          </Reveal>
-        )}
+          </div>
+        </div>
       </div>
     </section>
   );
 }
 
-/** Closing emerald call-to-action band pointing subpages back to /contact. */
+/**
+ * Closing call-to-action band for subpages.
+ *
+ * On `night`, one step above the page, pinstriped and radially masked, with
+ * both hairlines and the same accent glow as the homepage banner, so it reads
+ * as the same ask rather than as a second, competing one. It used to be a
+ * full accent-coloured ground, which spent the whole page's accent budget on a
+ * band nobody reads twice.
+ *
+ * On the same grid as everything else, with `.pc-rules-dark` carrying the two
+ * vertical hairlines through onto the dark ground, so the band's edges line up
+ * with the light bands above it instead of stopping 100px short of them.
+ * The split is Attio's 24/8: the ask at columns 2 to 13, the sentence and the
+ * button at 14 to 25.
+ */
 export function CtaBand({
   locale,
   title,
@@ -96,26 +108,41 @@ export function CtaBand({
   const t = getDictionary(locale).cta;
   const resolvedTitle = title ?? t.title;
   const resolvedText = text ?? t.text;
+  // Left on /contact deliberately: retargeting every subpage's closing ask at
+  // /book-a-call is a routing decision, not a restyle.
   const resolvedCta = cta ?? { label: t.button, href: "/contact" };
   return (
-    <section className="bg-lime text-white">
-      <div className="mx-auto grid max-w-[1240px] items-center gap-10 px-5 py-16 sm:px-10 sm:py-24 lg:grid-cols-[1.3fr_1fr] lg:gap-20">
-        <Reveal>
-          <h2 className="display text-balance text-4xl leading-[1.1] sm:text-5xl">
-            {resolvedTitle}
-          </h2>
-        </Reveal>
-        <Reveal delay={0.08}>
-          <div>
-            <p className="text-[16.5px] leading-[1.7] text-white/90">{resolvedText}</p>
-            <LocaleLink
-              href={resolvedCta.href}
-              className="mt-7 inline-block rounded-[2px] bg-white px-[30px] py-[15px] text-[15px] font-semibold text-ink transition-colors duration-300 hover:bg-night hover:text-white"
-            >
-              {resolvedCta.label}
-            </LocaleLink>
+    <section className="relative isolate overflow-hidden border-y border-night-line bg-night text-bone">
+      <div
+        aria-hidden
+        className="pinstripe-dark texture-mask pointer-events-none absolute inset-0 -z-10"
+      />
+      <BandGlow />
+      <div className="pc-shell">
+        <div className="pc-rules-dark">
+          <div className="pc-grid gap-y-8 py-16 lg:py-20">
+            <div className="col-[2/-2] lg:col-[2/13] lg:self-center">
+              <Reveal>
+                <h2 className="display max-w-[12em] text-balance text-heading-md lg:text-heading-lg">
+                  {resolvedTitle}
+                </h2>
+              </Reveal>
+            </div>
+            <div className="col-[2/-2] lg:col-[14/-2] lg:self-center">
+              <Reveal delay={0.08}>
+                <p className="max-w-[32em] text-[16px] leading-[1.6] text-bone-soft">
+                  {resolvedText}
+                </p>
+                <LocaleLink
+                  href={resolvedCta.href}
+                  className="btn btn-primary mt-7"
+                >
+                  {resolvedCta.label}
+                </LocaleLink>
+              </Reveal>
+            </div>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );
