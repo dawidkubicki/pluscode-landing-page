@@ -26,6 +26,7 @@
  * ------------------------------------------------------------------ */
 
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
@@ -239,6 +240,11 @@ export default function HeaderMenu({
 }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  /* Whether the bar has slid up out of view. Set on a downward scroll past
+     the bar's own height, cleared on any upward scroll, and never set while
+     the panel is open or the page is at the top. */
+  const [hidden, setHidden] = useState(false);
+  const lastY = useRef(0);
   const pathname = usePathname();
   const reduce = useReducedMotion();
 
@@ -263,7 +269,25 @@ export default function HeaderMenu({
 
   // Lenis owns the real scroll position, so it is also what tells the bar
   // it has left the hero, and what stops the page under the open panel.
-  const lenis = useLenis(({ scroll }) => setScrolled(scroll > 24));
+  /* Lenis owns the real scroll position, so it is what tells the bar it has
+     left the hero, and whether the reader is heading down or back up.
+
+     HIDE ON SCROLL DOWN, SHOW ON SCROLL UP. Direction comes from comparing
+     against the last position rather than from Lenis's own `direction`
+     field, so it does not depend on which Lenis version reports what. The
+     6px dead band stops the bar flickering on a trackpad's sub-pixel
+     jitter; the 96px floor keeps it in view across the hero and stops it
+     hiding the moment the page moves. Any upward movement at all brings it
+     back, which is the behaviour people expect: reach for the top and the
+     nav is there before the hand arrives. */
+  const lenis = useLenis(({ scroll }) => {
+    setScrolled(scroll > 24);
+    const delta = scroll - lastY.current;
+    if (Math.abs(delta) < 6) return;
+    lastY.current = scroll;
+    if (scroll < 96 || delta < 0) setHidden(false);
+    else setHidden(true);
+  });
 
   const close = useCallback(() => setOpen(false), []);
 
@@ -387,8 +411,18 @@ export default function HeaderMenu({
     { label: nav.getInTouch, href: "/book-a-call" },
   ];
 
+  /* THE SLIDE. `-translate-y-full` moves the bar up by its own 72px: with no
+     announcement strip that is fully off screen, and with one the strip
+     (z-60, above this z-50) covers the last 40px, so the bar is out of sight
+     either way without a per-case offset. The panel overrides the hide,
+     because a fullscreen menu whose header just slid away would strand the
+     close control. */
   return (
-    <header className="fixed inset-x-0 top-0 z-50 [[data-announcement]_&]:top-10">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-transform duration-[320ms] ease-[var(--ease-out-cubic)] motion-reduce:transition-none [[data-announcement]_&]:top-10 ${
+        hidden && !open ? "-translate-y-full" : "translate-y-0"
+      }`}
+    >
       {/* THE BAR. Above the panel in z order so the header row never moves
           when the menu opens; only its ground changes. */}
       <div className={`relative z-20 ${SWAP} ${barGround}`}>
@@ -399,9 +433,35 @@ export default function HeaderMenu({
             <LocaleLink
               href="/"
               onClick={close}
-              className="order-1 flex min-h-11 items-center text-[1.5rem] leading-none"
+              className="order-1 flex min-h-11 items-center"
             >
-              Pluscode
+              {/* THE LOGO, in the cut that matches the bar's ground. Both
+                  files are rendered and one is display:none, rather than
+                  swapping one img's src on scroll: a src swap repaints
+                  through a blank frame the first time each file arrives,
+                  and this swap fires 24px into every page load. `unoptimized`
+                  because these are svg and /_next/image refuses svg without
+                  a flag that is not worth turning on sitewide. The alt is the
+                  accessible name; the hidden copy is display:none, so a
+                  screen reader hears "Pluscode" exactly once. */}
+              <Image
+                src="/assets/logo/pluscode-logo.svg"
+                alt="Pluscode"
+                width={203}
+                height={44}
+                unoptimized
+                priority
+                className={`h-7 w-auto ${onDark ? "block" : "hidden"}`}
+              />
+              <Image
+                src="/assets/logo/pluscode-black-logo.svg"
+                alt="Pluscode"
+                width={203}
+                height={44}
+                unoptimized
+                priority
+                className={`h-7 w-auto ${onDark ? "hidden" : "block"}`}
+              />
             </LocaleLink>
 
             {/* THE PHONE TRIGGER. Below md the bar carries the wordmark and

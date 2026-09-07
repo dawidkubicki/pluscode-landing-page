@@ -1,3 +1,4 @@
+import Image from "next/image";
 import LocaleLink from "./locale-link";
 import { LinkedInIcon, InstagramIcon, FacebookIcon } from "./icons";
 import type { Locale } from "@/lib/i18n/config";
@@ -113,9 +114,19 @@ export default function Footer({ locale }: { locale: Locale }) {
             <LocaleLink
               href="/"
               aria-label="Pluscode"
-              className="block text-heading-md text-white"
+              className="block"
             >
-              Pluscode
+              {/* The white cut of the mark on the carbon ground. `unoptimized`
+                  for the same reason as the header: svg through /_next/image
+                  needs a sitewide flag that is not worth its cost. */}
+              <Image
+                src="/assets/logo/pluscode-logo.svg"
+                alt="Pluscode"
+                width={203}
+                height={44}
+                unoptimized
+                className="h-8 w-auto"
+              />
             </LocaleLink>
             <p className="mt-5 max-w-[24em] text-[1.125rem] leading-[1.375] text-sage">
               {f.tagline}

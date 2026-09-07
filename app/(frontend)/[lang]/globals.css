@@ -442,10 +442,16 @@
     letter-spacing: normal;
     white-space: nowrap;
     border: 1px solid transparent;
+    /* The ember arrives on a 320ms ease-out and leaves on the same curve.
+       An earlier version answered hover in 60ms, which is right for a
+       colour that merely darkens and wrong for one that changes hue: at
+       60ms the orange snapped on like a warning. Dawid asked for it to
+       appear nicely and smoothly, and 320ms on an ease-out is the point
+       where the fill visibly blooms in without the button feeling slow. */
     transition:
-      color 240ms var(--ease-io-attio),
-      border-color 240ms var(--ease-io-attio),
-      background-color 240ms var(--ease-io-attio);
+      color 320ms var(--ease-out-cubic),
+      border-color 320ms var(--ease-out-cubic),
+      background-color 320ms var(--ease-out-cubic);
   }
   @media (max-width: 640px) {
     .btn {
@@ -453,7 +459,9 @@
       padding: 14px 18px;
     }
   }
-  .btn:hover,
+  /* Press is the one state that should feel instant: the hand has already
+     committed. Hover is deliberately NOT here any more, so it keeps the
+     320ms bloom above. */
   .btn:active {
     transition-duration: 60ms;
   }
