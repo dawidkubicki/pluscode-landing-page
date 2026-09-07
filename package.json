@@ -23,7 +23,8 @@
     "seed:insights": "node --env-file=.env --import tsx scripts/seed-insights.ts",
     "seed:insights:prod": "node --import tsx scripts/seed-insights.ts",
     "seed:announcement": "node --env-file=.env --import tsx scripts/localize-announcement.ts",
-    "seed:announcement:prod": "node --import tsx scripts/localize-announcement.ts"
+    "seed:announcement:prod": "node --import tsx scripts/localize-announcement.ts",
+    "content:home": "node --import tsx scripts/content/home-netcompany.ts && node --import tsx scripts/content/home-consulting.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "3.85.0",

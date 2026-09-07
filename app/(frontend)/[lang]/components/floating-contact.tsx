@@ -39,7 +39,7 @@ function Avatar({ photo, initials }: { photo: Photo; initials: string }) {
 /**
  * Availability mark. The green is a status signal, not leftover brand colour:
  * green means "available" everywhere on the web, and the palette has no accent
- * to confuse it with. It is an 8px square, it appears twice, and it is the only
+ * to confuse it with. It is an 8px dot, it appears twice, and it is the only
  * colour on the widget.
  *
  * There is no pulse and no halo. The pulse was a ping animation, and the halo
@@ -47,7 +47,17 @@ function Avatar({ photo, initials }: { photo: Photo; initials: string }) {
  * rendered greyscale, so a saturated green separates from it on its own.
  */
 function OnlineDot({ className = "" }: { className?: string }) {
-  return <span className={`block size-2 bg-status-online ${className}`} />;
+  return (
+    <span
+      className={`block size-2 rounded-full bg-status-online ${className}`}
+      // The radius is inline, not left to the class. globals.css carries an
+      // UNLAYERED `.rounded-full { border-radius: 0 }` that squares the whole
+      // site off, and an unlayered author rule beats every utility; only an
+      // inline style outranks it. The class stays for intent, this is what
+      // actually rounds the dot. Same on the avatar and the launcher below.
+      style={{ borderRadius: "9999px" }}
+    />
+  );
 }
 
 /**
@@ -56,9 +66,12 @@ function OnlineDot({ className = "" }: { className?: string }) {
  * expand a card offering WhatsApp or a phone call. Shown on every page.
  *
  * The reference design has no floating widget at all, so this one is built to
- * be ignorable: a square ink launcher, a square white card on a single
- * hairline, no radius, no shadow, no blur and no scaling. Every separation here
- * is either a rule or a change of ground.
+ * be ignorable: a square white card on a single hairline, no shadow, no blur
+ * and no scaling. Every separation here is either a rule or a change of ground.
+ *
+ * The ONE exception to the site's square geometry is the face: the launcher,
+ * the avatar inside the card and the status mark are round, because a portrait
+ * badge is read as a person rather than as a tile. Nothing else here rounds.
  */
 export default function FloatingContact({
   dict,
@@ -137,7 +150,13 @@ export default function FloatingContact({
                 transition={{ duration: 0.16, ease: EASE }}
               >
                 <div className="flex items-center gap-3">
-                  <span className="flex size-11 shrink-0 overflow-hidden bg-paper-dim text-ink">
+                  <span
+                    className="flex size-11 shrink-0 overflow-hidden rounded-full bg-paper-dim text-ink"
+                    // Inline radius for the reason given on OnlineDot: the
+                    // class alone is flattened by an unlayered rule in
+                    // globals.css. `overflow-hidden` clips the photo to it.
+                    style={{ borderRadius: "9999px" }}
+                  >
                     <Avatar photo={photo} initials={initials} />
                   </span>
                   <div className="min-w-0">
@@ -185,16 +204,27 @@ export default function FloatingContact({
             onClick={() => setOpen((v) => !v)}
             aria-label={talkToLabel}
             aria-expanded={open}
-            // 56px square. The ink ground is what the visitor sees while the
+            // 56px circle. The ink ground is what the visitor sees while the
             // photograph loads and what stands in for it when there is none,
             // which is also the only state where the hover step to deep green
             // is visible: a full-bleed portrait covers it.
-            className="relative flex size-14 cursor-pointer items-center justify-center bg-ink text-white transition-colors duration-300 ease-io-attio hover:bg-deep hover:duration-50"
+            className="relative flex size-14 cursor-pointer items-center justify-center rounded-full bg-ink text-white transition-colors duration-300 ease-io-attio hover:bg-deep hover:duration-50"
+            // Inline radius for the reason given on OnlineDot.
+            style={{ borderRadius: "9999px" }}
           >
-            <span className="absolute inset-0 overflow-hidden">
+            <span
+              className="absolute inset-0 overflow-hidden rounded-full"
+              // The clipping layer needs the radius too, or the square photo
+              // corners cover the round button underneath. Inline for the same
+              // reason as the button.
+              style={{ borderRadius: "9999px" }}
+            >
               <Avatar photo={photo} initials={initials} />
             </span>
-            <OnlineDot className="absolute bottom-1 right-1 z-10" />
+            {/* 8px, not 4px. The launcher is a circle: at a 4px inset the dot's
+                centre sits 28.3px from the middle against a 28px radius, so it
+                straddles the arc. This inset seats it inside the edge. */}
+            <OnlineDot className="absolute bottom-2 right-2 z-10" />
           </button>
         </motion.div>
       )}

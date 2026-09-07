@@ -113,6 +113,11 @@ export type HomeContent = {
   };
   menu: {
     label: string;
+    /** The hamburger's accessible name below lg, where the one button opens
+     *  the nav links, the offering columns AND the language switcher. `label`
+     *  is wrong there: it says "Offerings", which is a third of what the
+     *  button actually opens. */
+    open: string;
     close: string;
     columns: {
       key: string;
@@ -334,6 +339,7 @@ const en: HomeContent = {
   },
   menu: {
     label: "Offerings",
+    open: "Menu",
     close: "Close",
     columns: [
       {
@@ -642,6 +648,7 @@ const pl: HomeContent = {
   },
   menu: {
     label: "Oferta",
+    open: "Menu",
     close: "Zamknij",
     columns: [
       {
@@ -950,6 +957,7 @@ const de: HomeContent = {
   },
   menu: {
     label: "Leistungen",
+    open: "Menü",
     close: "Schließen",
     columns: [
       {

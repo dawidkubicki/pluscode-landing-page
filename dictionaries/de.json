@@ -6856,29 +6856,64 @@
     "platform": {
       "eyebrow": "Plattform",
       "title": "Quanty",
-      "intro": "Die KI-Tabelle, die Ihre Dokumente in prüfbare Zeilen liest. Unsere, hier gebaut, aus denselben Teilen wie unsere Kundensysteme.",
-      "cta": "Quanty kennenlernen",
+      "logoAlt": "Quanty",
+      "tagline": "Dokumente rein. Die Tabelle füllt sich selbst.",
+      "intro": "Quanty liest Ihre Rechnungen, Verträge und Bestellungen, füllt die Tabelle und zeigt die Seite, aus der jeder Wert stammt. Wir bauen es, und dieselben Teile stecken in Kundensystemen.",
+      "cta": "Quanty ansehen",
       "note": "Quanty ist ein Produkt der Pluscode Sp. z o.o.",
+      "forLabel": "Gebaut für",
       "items": [
         {
-          "key": "read",
-          "name": "LESEN",
-          "body": "Rechnungen, Verträge, Auszüge und E-Mails werden zu Zeilen, mit der Quellseite neben jedem Wert."
+          "key": "reads",
+          "name": "Es liest Ihre Dateien",
+          "body": "Die KI liest Ihre Dokumente, baut die Spalten und rechnet selbst. Sie müssen niemanden darum bitten."
         },
         {
-          "key": "check",
-          "name": "PRÜFEN",
-          "body": "Jede Zahl behält den Verweis auf ihre Herkunft, ein falscher Wert ist einen Klick von seiner Seite entfernt."
+          "key": "chat",
+          "name": "Sagen Sie, was sich ändern soll",
+          "body": "Der Chat sitzt neben jeder Tabelle. Er fügt Spalten hinzu, markiert Zeilen und rechnet Summen."
         },
         {
-          "key": "forecast",
-          "name": "PROGNOSE",
-          "body": "Ihre Zahlen an einem Ort und ein Blick auf die kommenden Monate, aktualisiert mit jedem Dokument."
+          "key": "shape",
+          "name": "CRM, ERP oder ATS",
+          "body": "Eine Frage der Einstellungen, nicht der Einführung. Die Phasen ändern Sie selbst, in Minuten."
         },
         {
-          "key": "report",
-          "name": "BERICHT",
-          "body": "Die Arbeitsmappe baut die Präsentation, das Monatspaket ist nicht mehr jemandes Donnerstag."
+          "key": "slides",
+          "name": "Direkt zu Folien",
+          "body": "Folien und Diagramme nehmen ihre Zahlen aus der Tabelle. Ändern Sie die Tabelle, folgen die Folien."
+        }
+      ],
+      "industries": [
+        {
+          "key": "transport",
+          "name": "Transport",
+          "body": "Aufträge und Speditionsrechnungen"
+        },
+        {
+          "key": "accounting",
+          "name": "Buchhaltung",
+          "body": "Rechnungen aus der Mail, buchungsfertig"
+        },
+        {
+          "key": "finance",
+          "name": "Finanzen",
+          "body": "Wer gezahlt hat, Fixkosten, Liquidität"
+        },
+        {
+          "key": "contracts",
+          "name": "Verträge",
+          "body": "Alle Verträge in einer Tabelle"
+        },
+        {
+          "key": "hiring",
+          "name": "Recruiting",
+          "body": "Lebensläufe als Tabelle, Bewertung daneben"
+        },
+        {
+          "key": "property",
+          "name": "Immobilien",
+          "body": "Mieter, Mieten, Fristen"
         }
       ]
     },
@@ -7000,6 +7035,7 @@
     },
     "menu": {
       "label": "Leistungen",
+      "open": "Menü",
       "close": "Schließen",
       "columns": [
         {
@@ -7092,6 +7128,123 @@
               "href": "/services/team-extension"
             }
           ]
+        }
+      ]
+    },
+    "services": {
+      "title": "Was wir tun",
+      "intro": "Ingenieure, keine Foliensätze. Jedes davon nimmt Stunden aus jemandes Woche.",
+      "cta": "Alle Leistungen",
+      "items": [
+        {
+          "key": "paperwork",
+          "num": "01",
+          "title": "Automatisierte Sachbearbeitung",
+          "body": "Rechnungen, Bestellungen und Formulare werden gelesen und abgelegt, ohne dass jemand sie abtippt.",
+          "tags": "Rechnungen, Lieferscheine, Verträge, direkt in Ihr System"
+        },
+        {
+          "key": "answers",
+          "num": "02",
+          "title": "Antworten aus Ihren Dokumenten",
+          "body": "Ihr Team stellt eine Frage und bekommt die Antwort, mit der Quellseite dazu.",
+          "tags": "Ihre Dateien, Ihre Begriffe, Antworten mit Quelle"
+        },
+        {
+          "key": "software",
+          "num": "03",
+          "title": "Softwareentwicklung",
+          "body": "Systeme, von Anfang bis Ende gebaut von den Leuten, die sie danach betreiben.",
+          "tags": "Web, Mobile, passend zu Ihren bestehenden Systemen"
+        },
+        {
+          "key": "mvp",
+          "num": "04",
+          "title": "MVP-Entwicklung",
+          "body": "Eine erste Version in Wochen live, danach gewachsen an dem, was echte Nutzer tun.",
+          "tags": "Umfang, Bau, Launch, Messung"
+        },
+        {
+          "key": "forecasting",
+          "num": "05",
+          "title": "Prognose und Reporting",
+          "body": "Zahlen aus allen Systemen an einem Ort, und ein Blick auf die kommenden Monate.",
+          "tags": "Ein Bild, aktualisiert mit den Daten"
+        }
+      ]
+    },
+    "offerings": {
+      "title": "Vier Wege zu beginnen",
+      "intro": "Nehmen Sie den, der zu Ihrem Stand passt.",
+      "cta": "Gespräch buchen",
+      "forLabel": "Für wen",
+      "exampleLabel": "Zum Beispiel",
+      "deliverablesLabel": "Sie bekommen",
+      "items": [
+        {
+          "key": "audit",
+          "title": "Prozessaudit",
+          "audience": "Unternehmen, die wissen, dass etwas langsam ist, aber nicht was",
+          "example": "Ihre Buchhaltung tippt 300 Rechnungen im Monat ab. Wir zählen die Stunden und beziffern, was es kostet, damit aufzuhören.",
+          "deliverables": [
+            "Eine Karte des Prozesses, wie er heute läuft",
+            "Die Stunden und die Kosten der Handarbeit",
+            "Eine bezifferte Liste dessen, was zuerst drankommt"
+          ]
+        },
+        {
+          "key": "mvp",
+          "title": "Die erste Version bauen",
+          "audience": "Teams mit einer Idee, die real werden muss",
+          "example": "Ein Portal, in dem Ihre Kunden den Auftragsstatus sehen, ohne anzurufen.",
+          "deliverables": [
+            "Ein laufendes Produkt, das Ihr Team nutzt",
+            "Live bei echten Nutzern, keine Demo",
+            "Ein klarer Plan für das, was folgt"
+          ]
+        },
+        {
+          "key": "ai",
+          "title": "KI in der täglichen Arbeit",
+          "audience": "Unternehmen, die KI in die Arbeit bringen, die ohnehin getan wird",
+          "example": "Eingehende E-Mails werden gelesen, im Routinefall beantwortet und sonst an eine Person übergeben.",
+          "deliverables": [
+            "Ein System, das auf Ihren eigenen Daten läuft",
+            "Prüfungen und Freigaben überall dort, wo ein Mensch nötig ist",
+            "Übergabe, Schulung und Support"
+          ]
+        },
+        {
+          "key": "workshop",
+          "title": "Workshop",
+          "audience": "Führung und die Leute, die die Arbeit machen",
+          "example": "Ein halber Tag mit Ihren Führungskräften darüber, was KI für Ihr Unternehmen tun kann, in klarer Sprache.",
+          "deliverables": [
+            "Ein gemeinsames Bild davon, was sich lohnt",
+            "Die Ideen sortiert nach Aufwand und Ertrag",
+            "Eine schriftliche Zusammenfassung zum Handeln"
+          ]
+        }
+      ]
+    },
+    "approach": {
+      "title": "Wie wir arbeiten",
+      "intro": "Ein polnisches Unternehmen, das in ganz Europa arbeitet. Bevor wir bauen, sitzen wir bei Ihrem Team und lernen die Arbeit.",
+      "items": [
+        {
+          "key": "hosting",
+          "title": "EU-Hosting als Standard",
+          "body": "EU-Regionen, sofern nicht anders vereinbart, mit Auftragsverarbeitungsvertrag."
+        },
+        {
+          "key": "aiact",
+          "title": "Auf die KI-Verordnung ausgelegt",
+          "body": "Wir klären Ihre Risikostufe, bevor etwas entworfen wird, nicht danach."
+        },
+        {
+          "key": "rules",
+          "title": "Wir lernen die Regeln Ihrer Branche",
+          "body": "Handel, Banken, Gesundheit, Logistik. Wir lesen sie, bevor wir Code schreiben."
         }
       ]
     }

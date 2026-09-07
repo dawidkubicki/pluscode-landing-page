@@ -52,7 +52,7 @@ const FOCUSABLE =
   'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 /* The panel always renders both layouts and hides one of them with
-   `md:hidden`, so the raw query returns links that are display:none at
+   `lg:hidden`, so the raw query returns links that are display:none at
    this width. Calling focus() on one of those is a silent no-op, which
    would leave focus on the page behind the dialog. Client rects are the
    cheap test for "actually laid out"; the sr-only close button keeps its
@@ -90,6 +90,35 @@ function PlusMinus({ open }: { open: boolean }) {
         className={`transition-opacity duration-200 ${open ? "opacity-0" : "opacity-100"}`}
       />
     </svg>
+  );
+}
+
+/**
+ * The phone trigger. Three 1px rules in `currentColor`, so the icon inherits
+ * the bar's ink-or-white state without a second colour rule of its own, and
+ * folds into a close mark while the panel is open.
+ */
+function Burger({ open, reduce }: { open: boolean; reduce: boolean }) {
+  /* Absolutely placed rather than stacked in a flex column: the close mark is
+     the two outer rules rotated onto one another, and that only reads as an X
+     if both can travel to the middle rule's y before they turn. */
+  const line = "absolute left-0 block h-px w-full bg-current";
+  /* No transition at all under prefers-reduced-motion, rather than a 0ms one:
+     the states then swap outright, which is what the panel itself does. */
+  const move = reduce ? "" : "transition-transform duration-200 ease-io-attio";
+  const fade = reduce ? "" : "transition-opacity duration-200 ease-io-attio";
+  return (
+    <span aria-hidden className="relative block h-[11px] w-[18px]">
+      <span
+        className={`${line} top-0 ${move} ${open ? "translate-y-[5px] rotate-45" : ""}`}
+      />
+      <span
+        className={`${line} top-[5px] ${fade} ${open ? "opacity-0" : "opacity-100"}`}
+      />
+      <span
+        className={`${line} top-[10px] ${move} ${open ? "-translate-y-[5px] -rotate-45" : ""}`}
+      />
+    </span>
   );
 }
 
@@ -214,8 +243,23 @@ export default function HeaderMenu({
   const reduce = useReducedMotion();
 
   const triggerRef = useRef<HTMLButtonElement>(null);
+  const burgerRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const wasOpen = useRef(false);
+
+  /* Two buttons open the same panel now, and only one of them is laid out at
+     any given width: the burger below md, the offerings trigger above it. So
+     "the trigger", for the focus return and for the Tab cycle, is whichever
+     of the pair is actually on screen. Same client-rect test `focusablesIn`
+     uses, and for the same reason: focus() on a display:none element is a
+     silent no-op that would drop focus to <body>. */
+  const activeTrigger = useCallback(
+    () =>
+      [burgerRef.current, triggerRef.current].find(
+        (el): el is HTMLButtonElement => !!el && el.getClientRects().length > 0,
+      ) ?? null,
+    [],
+  );
 
   // Lenis owns the real scroll position, so it is also what tells the bar
   // it has left the hero, and what stops the page under the open panel.
@@ -259,8 +303,8 @@ export default function HeaderMenu({
     }
     if (!wasOpen.current) return;
     wasOpen.current = false;
-    triggerRef.current?.focus({ preventScroll: true });
-  }, [open]);
+    activeTrigger()?.focus({ preventScroll: true });
+  }, [open, activeTrigger]);
 
   /* Escape, and the Tab trap. The cycle is the trigger plus everything in
      the panel: the trigger is this dialog's close button and it stays
@@ -277,7 +321,7 @@ export default function HeaderMenu({
       if (e.key !== "Tab") return;
       const panel = panelRef.current;
       if (!panel) return;
-      const items = [triggerRef.current, ...focusablesIn(panel)].filter(
+      const items = [activeTrigger(), ...focusablesIn(panel)].filter(
         (el): el is HTMLElement => el !== null,
       );
       if (items.length === 0) return;
@@ -297,9 +341,18 @@ export default function HeaderMenu({
     };
     document.addEventListener("keydown", onKeyDown);
     return () => document.removeEventListener("keydown", onKeyDown);
-  }, [open]);
+  }, [open, activeTrigger]);
 
   const basePath = pathWithoutLocale(pathname);
+
+  /* The switcher is rendered twice now, in the bar above md and in the panel
+     below it, so the path rewriting is stated once here and read by both.
+     Two copies of this expression is exactly how the two switchers would
+     drift apart. */
+  const localeHref = useCallback(
+    (loc: Locale) => `/${loc}${basePath === "/" ? "" : basePath}`,
+    [basePath],
+  );
 
   // ONLY the home page has a dark hero for the bar to sit on. Every other
   // route opens on the pale page ground, so a transparent bar with white
@@ -351,9 +404,36 @@ export default function HeaderMenu({
               Pluscode
             </LocaleLink>
 
-            {/* Below md only the offerings trigger survives, and it moves to
-                the right of the row: the four links move inside the panel. */}
-            <nav className="order-3 flex items-center gap-6 md:order-2 md:ml-10 md:mr-auto md:gap-7">
+            {/* THE PHONE TRIGGER. Below md the bar carries the wordmark and
+                this and nothing else: the links, the offerings trigger and
+                the language switcher all move inside the panel. It is a 44px
+                square hit area, and it is the same `open` state as the
+                offerings trigger, so the two are one control at two widths.
+                The label comes off the menu dict rather than a hardcoded
+                "Menu": there is no Menu string in the dictionaries, and
+                `label`/`close` are already localised in all three. */}
+            <button
+              ref={burgerRef}
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              aria-expanded={open}
+              aria-controls={PANEL_ID}
+              /* `menu.open`, not `menu.label`. Below lg this one button
+                 opens the nav links, the three offering columns AND the
+                 language switcher, so naming it "Offerings" described a
+                 third of what it does. */
+              aria-label={open ? menu.close : menu.open}
+              className="order-2 ml-auto flex size-11 items-center justify-center lg:hidden"
+            >
+              <Burger open={open} reduce={!!reduce} />
+            </button>
+
+            {/* Above md the row is unchanged. The inset from the wordmark is
+                the reference's, held back a step at md: measured across the
+                three locales, the bar's own content already fills the 720px
+                available at exactly 768, so the full 128px lands only from
+                lg, where there is room for it. */}
+            <nav className="hidden items-center lg:order-2 lg:ml-24 lg:mr-auto lg:flex lg:gap-7 xl:ml-32">
               <button
                 ref={triggerRef}
                 type="button"
@@ -370,24 +450,25 @@ export default function HeaderMenu({
                   key={l.href}
                   href={l.href}
                   onClick={close}
-                  className="hidden min-h-11 items-center text-[1.125rem] leading-none hover:underline hover:underline-offset-4 md:flex"
+                  className="hidden min-h-11 items-center text-[1.125rem] leading-none hover:underline hover:underline-offset-4 lg:flex"
                 >
                   {l.label}
                 </LocaleLink>
               ))}
             </nav>
 
+            {/* Below md this is inside the panel instead, so the bar keeps to
+                the wordmark and the burger. */}
             <nav
               aria-label={nav.language}
-              className="order-2 ml-auto flex items-center gap-3 md:order-3 md:ml-0"
+              className="order-3 hidden items-center gap-3 lg:flex"
             >
               {locales.map((loc) => {
-                const target = `/${loc}${basePath === "/" ? "" : basePath}`;
                 const isActive = loc === locale;
                 return (
                   <Link
                     key={loc}
-                    href={target}
+                    href={localeHref(loc)}
                     hrefLang={loc}
                     title={localeLabels[loc]}
                     onClick={close}
@@ -437,7 +518,7 @@ export default function HeaderMenu({
               <div className="pc-grid pb-20 pt-10 md:pb-[104px] md:pt-14">
                 {/* The bar's links, which are hidden below md, listed above
                     the columns so the phone panel is the whole navigation. */}
-                <div className="col-span-4 border-b border-rule-dark pb-7 md:hidden">
+                <div className="col-span-4 border-b border-rule-dark pb-7 lg:hidden">
                   <ul className="flex flex-col gap-4">
                     {links.map((l) => (
                       <li key={l.href}>
@@ -461,6 +542,40 @@ export default function HeaderMenu({
                     onNavigate={close}
                   />
                 ))}
+
+                {/* THE PHONE LANGUAGE SWITCHER, last in the reading order:
+                    nav links, offering columns, language. Above md it is
+                    display:none, because the bar still carries it there, so
+                    the two are never both exposed to a screen reader and the
+                    focus trap's client-rect test skips this one on desktop.
+                    Body size rather than the bar's 14px micro: at the foot of
+                    a fullscreen panel these are tap targets, not chrome. */}
+                <nav
+                  aria-label={nav.language}
+                  className="col-span-4 border-t border-rule-dark pt-7 lg:hidden"
+                >
+                  <ul className="flex flex-wrap items-center gap-6">
+                    {locales.map((loc) => {
+                      const isActive = loc === locale;
+                      return (
+                        <li key={loc}>
+                          <Link
+                            href={localeHref(loc)}
+                            hrefLang={loc}
+                            title={localeLabels[loc]}
+                            onClick={close}
+                            aria-current={isActive ? "true" : undefined}
+                            className={`flex min-h-11 min-w-11 items-center text-[1.125rem] leading-none ${SWAP} ${
+                              isActive ? "text-white" : "text-sage hover:text-white"
+                            }`}
+                          >
+                            {localeNames[loc]}
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </nav>
 
                 {/* `aria-modal` hides the bar, and with it the trigger, from
                     assistive technology, so the dialog carries its own way

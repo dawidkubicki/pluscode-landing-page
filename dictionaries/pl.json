@@ -6856,29 +6856,64 @@
     "platform": {
       "eyebrow": "Platforma",
       "title": "Quanty",
-      "intro": "Arkusz AI, który czyta Twoje dokumenty do wierszy, które można sprawdzić. Nasz, zbudowany tutaj, z tych samych części co systemy klientów.",
-      "cta": "Poznaj Quanty",
+      "logoAlt": "Quanty",
+      "tagline": "Wrzuć dokumenty. Arkusz wypełni się sam.",
+      "intro": "Quanty czyta faktury, umowy i zamówienia, wpisuje wartości do tabeli i przy każdej pokazuje stronę, z której pochodzi. Budujemy go my, a te same części trafiają do systemów klientów.",
+      "cta": "Zobacz Quanty",
       "note": "Quanty jest produktem Pluscode Sp. z o.o.",
+      "forLabel": "Zbudowane dla",
       "items": [
         {
-          "key": "read",
-          "name": "CZYTA",
-          "body": "Faktury, umowy, wyciągi i maile stają się wierszami, a przy każdej wartości zostaje strona źródłowa."
+          "key": "reads",
+          "name": "Czyta Wasze pliki",
+          "body": "AI czyta dokumenty, buduje kolumny i liczy sama. Nie trzeba nikogo o to prosić."
         },
         {
-          "key": "check",
-          "name": "SPRAWDZA",
-          "body": "Każda liczba ma odnośnik do miejsca, z którego pochodzi, więc błędna wartość jest o jedno kliknięcie od swojej strony."
+          "key": "chat",
+          "name": "Powiedz, co zmienić",
+          "body": "Czat jest obok każdej tabeli. Dodaje kolumny, oznacza wiersze i liczy sumy."
         },
         {
-          "key": "forecast",
-          "name": "PROGNOZUJE",
-          "body": "Twoje liczby w jednym miejscu i widok najbliższych miesięcy, aktualizowany wraz z dokumentami."
+          "key": "shape",
+          "name": "CRM, ERP albo ATS",
+          "body": "Kwestia ustawień, nie wdrożenia. Etapy zmieniacie sami, w kilka minut."
         },
         {
-          "key": "report",
-          "name": "RAPORTUJE",
-          "body": "Arkusz sam składa prezentację, więc miesięczny raport przestaje być czyimś czwartkiem."
+          "key": "slides",
+          "name": "Od razu prezentacja",
+          "body": "Slajdy i wykresy biorą liczby prosto z tabeli. Zmieniasz tabelę, zmieniają się slajdy."
+        }
+      ],
+      "industries": [
+        {
+          "key": "transport",
+          "name": "Transport",
+          "body": "Zlecenia i faktury przewoźników"
+        },
+        {
+          "key": "accounting",
+          "name": "Księgowość",
+          "body": "Faktury z maila, gotowe do księgowania"
+        },
+        {
+          "key": "finance",
+          "name": "Finanse",
+          "body": "Kto zapłacił, koszty stałe, gotówka"
+        },
+        {
+          "key": "contracts",
+          "name": "Umowy",
+          "body": "Wszystkie umowy w jednej tabeli"
+        },
+        {
+          "key": "hiring",
+          "name": "Rekrutacja",
+          "body": "CV w tabeli, ocena obok"
+        },
+        {
+          "key": "property",
+          "name": "Nieruchomości",
+          "body": "Najemcy, czynsze, terminy"
         }
       ]
     },
@@ -7000,6 +7035,7 @@
     },
     "menu": {
       "label": "Oferta",
+      "open": "Menu",
       "close": "Zamknij",
       "columns": [
         {
@@ -7092,6 +7128,123 @@
               "href": "/services/team-extension"
             }
           ]
+        }
+      ]
+    },
+    "services": {
+      "title": "Co robimy",
+      "intro": "Inżynierowie, nie prezentacje. Każda z tych rzeczy zdejmuje godziny z czyjegoś tygodnia.",
+      "cta": "Wszystkie usługi",
+      "items": [
+        {
+          "key": "paperwork",
+          "num": "01",
+          "title": "Automatyzacja papierologii",
+          "body": "Faktury, zamówienia i formularze zostają odczytane i opisane bez przepisywania ręcznie.",
+          "tags": "Faktury, listy przewozowe, umowy, prosto do Twojego systemu"
+        },
+        {
+          "key": "answers",
+          "num": "02",
+          "title": "Odpowiedzi z Twoich dokumentów",
+          "body": "Zespół zadaje pytanie i dostaje odpowiedź razem ze stroną źródłową.",
+          "tags": "Twoje pliki, Twoje słownictwo, odpowiedzi ze źródłem"
+        },
+        {
+          "key": "software",
+          "num": "03",
+          "title": "Tworzenie oprogramowania",
+          "body": "Systemy budowane od początku do końca przez ludzi, którzy potem je utrzymują.",
+          "tags": "Web, mobile, dopasowane do systemów, które już macie"
+        },
+        {
+          "key": "mvp",
+          "num": "04",
+          "title": "Rozwój MVP",
+          "body": "Pierwsza wersja na żywo w kilka tygodni, potem rozwijana na podstawie tego, co robią użytkownicy.",
+          "tags": "Zakres, budowa, wdrożenie, pomiar"
+        },
+        {
+          "key": "forecasting",
+          "num": "05",
+          "title": "Prognozy i raporty",
+          "body": "Liczby ze wszystkich systemów w jednym miejscu i widok najbliższych miesięcy.",
+          "tags": "Jeden obraz, aktualizowany wraz z danymi"
+        }
+      ]
+    },
+    "offerings": {
+      "title": "Cztery sposoby, żeby zacząć",
+      "intro": "Wybierz ten, który pasuje do miejsca, w którym jesteście.",
+      "cta": "Umów rozmowę",
+      "forLabel": "Dla kogo",
+      "exampleLabel": "Na przykład",
+      "deliverablesLabel": "Co dostajecie",
+      "items": [
+        {
+          "key": "audit",
+          "title": "Audyt procesu",
+          "audience": "Firm, które wiedzą, że coś idzie wolno, ale nie wiedzą co naprawić",
+          "example": "Księgowość przepisuje 300 faktur miesięcznie. Liczymy godziny i wyceniamy, ile kosztuje to zatrzymać.",
+          "deliverables": [
+            "Mapa procesu takiego, jaki jest dzisiaj",
+            "Godziny i koszt robienia tego ręcznie",
+            "Wyceniona lista tego, co naprawić najpierw"
+          ]
+        },
+        {
+          "key": "mvp",
+          "title": "Pierwsza wersja produktu",
+          "audience": "Zespołów z pomysłem, który ma stać się czymś realnym",
+          "example": "Portal, w którym klienci sprawdzają status zamówienia bez dzwonienia do Was.",
+          "deliverables": [
+            "Działający produkt, z którego korzysta zespół",
+            "Wdrożony u prawdziwych użytkowników, nie demo",
+            "Jasny plan tego, co dalej"
+          ]
+        },
+        {
+          "key": "ai",
+          "title": "AI w codziennej pracy",
+          "audience": "Firm, które wprowadzają AI do pracy, którą ludzie już wykonują",
+          "example": "Przychodzące maile są czytane, rutynowe odpowiadane, a reszta trafia do człowieka.",
+          "deliverables": [
+            "System działający na Waszych danych",
+            "Kontrole i akceptacje wszędzie tam, gdzie potrzebny jest człowiek",
+            "Przekazanie, szkolenie i wsparcie"
+          ]
+        },
+        {
+          "key": "workshop",
+          "title": "Warsztat",
+          "audience": "Zarządu i ludzi, którzy wykonują tę pracę",
+          "example": "Pół dnia z Waszymi menedżerami o tym, co AI może zrobić dla firmy, prostym językiem.",
+          "deliverables": [
+            "Wspólny obraz tego, co warto zrobić",
+            "Pomysły uszeregowane według nakładu i zwrotu",
+            "Pisemne podsumowanie, na którym można działać"
+          ]
+        }
+      ]
+    },
+    "approach": {
+      "title": "Jak pracujemy",
+      "intro": "Polska firma pracująca w całej Europie. Zanim zaczniemy budować, siadamy z Waszym zespołem i uczymy się tej pracy.",
+      "items": [
+        {
+          "key": "hosting",
+          "title": "Hosting w UE domyślnie",
+          "body": "Regiony UE, chyba że ustalimy inaczej, wraz z umową powierzenia danych."
+        },
+        {
+          "key": "aiact",
+          "title": "Zgodnie z AI Act",
+          "body": "Poziom ryzyka ustalamy przed projektowaniem, nie po wdrożeniu."
+        },
+        {
+          "key": "rules",
+          "title": "Uczymy się reguł Waszej branży",
+          "body": "Handel, bankowość, ochrona zdrowia, logistyka. Czytamy je, zanim napiszemy kod."
         }
       ]
     }
