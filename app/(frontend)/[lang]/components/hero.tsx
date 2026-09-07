@@ -88,12 +88,24 @@ export default function Hero({ dict }: { dict: Dictionary["home"]["hero"] }) {
       </video>
 
       {/* 2. The wash. */}
-      {/* 65%, down from 88%. The first hero ran an abstract contour field
-          that only had to read as texture, so it could sit almost fully
-          under the green. This is real footage, a Pluscode cyclist against
-          a pale wall, and at 88% it disappeared. At 65% the figure reads
-          and the white headline still measures about 5:1 on the blend. */}
-      <div aria-hidden="true" className="absolute inset-0 bg-deep/[0.65]" />
+      {/* NO COLOUR OVER THE FOOTAGE. The green wash is gone at Dawid's
+          request; what is left is a neutral fade at the two horizontal
+          edges and nothing across the middle, so the cyclist and the wall
+          read as shot. The fades exist for one reason: the clip alternates
+          between a pale concrete wall (bottom-left luma about 150 of 255)
+          and a near-black jersey close-up (about 50), and neither ink nor
+          white type survives both bare. The bottom fade gives the white
+          headline a ground on the pale shots; the top fade does the same
+          for the transparent header. On the dark shots both are moot.
+          Measured with ffmpeg signalstats before choosing. */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgb(20 30 30 / 0.62) 0%, transparent 24%, transparent 46%, rgb(20 30 30 / 0.74) 100%)",
+        }}
+      />
 
       {/* 3. The column ruling, carried across the hero so the grid that
              aligns the page is visible from the first screen. */}
