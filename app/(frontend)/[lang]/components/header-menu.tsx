@@ -416,15 +416,26 @@ export default function HeaderMenu({
      (z-60, above this z-50) covers the last 40px, so the bar is out of sight
      either way without a per-case offset. The panel overrides the hide,
      because a fullscreen menu whose header just slid away would strand the
-     close control. */
+     close control. See the wrapper inside <header> for why the transform is
+     not on the header itself. */
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-transform duration-[320ms] ease-[var(--ease-out-cubic)] motion-reduce:transition-none [[data-announcement]_&]:top-10 ${
-        hidden && !open ? "-translate-y-full" : "translate-y-0"
-      }`}
-    >
+    <header className="fixed inset-x-0 top-0 z-50 [[data-announcement]_&]:top-10">
       {/* THE BAR. Above the panel in z order so the header row never moves
           when the menu opens; only its ground changes. */}
+      {/* THE SLIDE lives on this wrapper and NOT on <header>. The panel
+          below is position:fixed and is a child of the header, and any
+          transform on an ancestor, even the identity one, makes that
+          ancestor the containing block for fixed descendants. The first
+          version put the transform on the header and the fullscreen menu
+          silently sized itself to the 72px bar: "click Oferta, nothing
+          opens". So the bar slides inside its own box and the header
+          itself stays untransformed. No class at all when visible, rather
+          than translate-y-0, for the same reason. */}
+      <div
+        className={`transition-transform duration-[320ms] ease-[var(--ease-out-cubic)] motion-reduce:transition-none ${
+          hidden && !open ? "-translate-y-full" : ""
+        }`}
+      >
       <div className={`relative z-20 ${SWAP} ${barGround}`}>
         <div className="pc-shell">
           <div className="flex h-[72px] items-center gap-4">
@@ -544,6 +555,7 @@ export default function HeaderMenu({
             </nav>
           </div>
         </div>
+      </div>
       </div>
 
       {/* THE FULLSCREEN MENU. The ground fades; the content is what slides,
