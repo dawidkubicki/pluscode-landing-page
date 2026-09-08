@@ -154,7 +154,7 @@ const en: HomeContent = {
         key: "quanty",
         tag: "Quanty",
         title: "Our own AI spreadsheet reaches public beta",
-        body: "Quanty reads invoices, contracts and statements into rows you can check, with the source page beside every value. Built by the same two engineers you would work with.",
+        body: "Quanty reads invoices, contracts and statements into rows you can check, with the source page beside every value. Built by the same engineers you would work with.",
         href: "https://quanty.ai",
         image: "/assets/quanty/chat-2x.webp",
         alt: "The Quanty AI agent adding a delivery status column to an orders sheet",
@@ -200,7 +200,6 @@ const en: HomeContent = {
   clients: {
     title: "Selected clients",
     items: [
-      { key: "zabka", name: "Żabka", what: "Autonomous store architecture" },
       { key: "ubs", name: "UBS", what: "Mobile banking, redesigned" },
       { key: "ebm", name: "EBM Dental", what: "A platform for a clinic" },
     ],
@@ -493,7 +492,7 @@ const pl: HomeContent = {
         key: "quanty",
         tag: "Quanty",
         title: "Nasz arkusz AI wchodzi w publiczną betę",
-        body: "Quanty czyta faktury, umowy i wyciągi do wierszy, które można sprawdzić, a przy każdej wartości zostaje strona źródłowa. Zbudowany przez tych samych dwóch inżynierów, z którymi będziesz pracować.",
+        body: "Quanty czyta faktury, umowy i wyciągi do wierszy, które można sprawdzić, a przy każdej wartości zostaje strona źródłowa. Zbudowany przez tych samych inżynierów, z którymi będziesz pracować.",
         href: "https://quanty.ai",
         image: "/assets/quanty/chat-2x.webp",
         alt: "Agent AI Quanty dodaje kolumnę statusu dostawy do arkusza zamówień",
@@ -539,7 +538,6 @@ const pl: HomeContent = {
   clients: {
     title: "Wybrani klienci",
     items: [
-      { key: "zabka", name: "Żabka", what: "Architektura sklepów autonomicznych" },
       { key: "ubs", name: "UBS", what: "Bankowość mobilna od nowa" },
       { key: "ebm", name: "EBM Dental", what: "Platforma dla kliniki" },
     ],
@@ -832,7 +830,7 @@ const de: HomeContent = {
         key: "quanty",
         tag: "Quanty",
         title: "Unsere KI-Tabelle geht in die öffentliche Beta",
-        body: "Quanty liest Rechnungen, Verträge und Kontoauszüge in prüfbare Zeilen, mit der Quellseite neben jedem Wert. Gebaut von denselben zwei Ingenieuren, mit denen Sie arbeiten würden.",
+        body: "Quanty liest Rechnungen, Verträge und Kontoauszüge in prüfbare Zeilen, mit der Quellseite neben jedem Wert. Gebaut von denselben Ingenieuren, mit denen Sie arbeiten würden.",
         href: "https://quanty.ai",
         image: "/assets/quanty/chat-2x.webp",
         alt: "Der Quanty-KI-Agent fügt einer Bestelltabelle eine Lieferstatus-Spalte hinzu",
@@ -878,7 +876,6 @@ const de: HomeContent = {
   clients: {
     title: "Ausgewählte Kunden",
     items: [
-      { key: "zabka", name: "Żabka", what: "Architektur autonomer Filialen" },
       { key: "ubs", name: "UBS", what: "Mobile Banking, neu gedacht" },
       { key: "ebm", name: "EBM Dental", what: "Eine Plattform für eine Klinik" },
     ],

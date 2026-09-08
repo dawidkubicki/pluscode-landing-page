@@ -16,6 +16,7 @@ import {
   getLatestBand,
   getStoriesBand,
 } from "@/lib/home-bands";
+import { getHeroSlides } from "@/lib/hero-slides";
 import { isLocale, defaultLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { MAP_VIEWBOX, MAP_BACKDROP } from "@/lib/europe-map";
@@ -31,7 +32,7 @@ export const revalidate = 60;
  *
  * THE ORDER IS AN ARGUMENT, in the order a buyer asks it:
  *
- *   1.  Hero        the promise, over the video          (deep)
+ *   1.  Hero        the promise, over the playlist       (deep)
  *   2.  Latest      what is happening here now           (paper)
  *   3.  Clients     who has already bought               (paper)
  *   4.  Services    what we actually do, five of them    (paper)
@@ -39,7 +40,7 @@ export const revalidate = 60;
  *   6.  Platform    the product we built ourselves       (ink)
  *   7.  Cases       proof that the work shipped          (paper)
  *   8.  Stories     how we think about the problem       (paper)
- *   9.  Founders    the two people who do it             (paper)
+ *   9.  Founders    the people who do it                 (paper)
  *  10.  Approach    the rules the work follows           (paper-dim)
  *  11.  Locations   where we are and where we consult    (deep)
  *  12.  Footer                                           (carbon)
@@ -57,19 +58,21 @@ export const revalidate = 60;
  * useful: on Offerings, next to the four ways to start, and on Founders, next
  * to the faces of the people who answer.
  *
- * FOUR OF THE BANDS READ THE CMS FIRST. Latest, Clients, Cases and Stories
- * take their items from Payload when there are any: Clients from its own
- * collection, Cases from the case studies flagged for the home page, Latest
- * and Stories from the insights flagged for each of their bands. The four
- * readers live in lib/home-bands.ts and each returns the exact shape its band
- * already rendered, so this file hands the result down and nothing else
- * changes.
+ * FIVE OF THEM READ THE CMS FIRST. The Hero, Latest, Clients, Cases and
+ * Stories take their items from Payload when there are any: the Hero from its
+ * own hero-slides collection, Clients from its own collection, Cases from the
+ * case studies flagged for the home page, Latest and Stories from the insights
+ * flagged for each of their bands. Four of the readers live in
+ * lib/home-bands.ts and the hero's in lib/hero-slides.ts, and each returns the
+ * exact shape its band already rendered, so this file hands the result down
+ * and nothing else changes.
  *
  * EVERY ONE OF THEM CAN RETURN null, and then the band renders the dictionary
  * as it always did. That is not a failure path, it is the normal one: the site
  * is built in CI with no database, and a fresh or unflagged CMS says nothing
- * about a band either. The four reads run together rather than in sequence,
- * because they are independent and the page waits for the slowest.
+ * about a band either. It matters most for the hero, which is the one screen
+ * that can never come up blank. The five reads run together rather than in
+ * sequence, because they are independent and the page waits for the slowest.
  */
 export default async function Home({
   params,
@@ -81,8 +84,9 @@ export default async function Home({
   const dict = getDictionary(locale);
   const home = dict.home;
 
-  const [latestItems, clientsItems, casesItems, storiesItems] =
+  const [heroSlides, latestItems, clientsItems, casesItems, storiesItems] =
     await Promise.all([
+      getHeroSlides(locale),
       getLatestBand(locale),
       getClientsBand(locale),
       getCasesBand(locale),
@@ -91,7 +95,10 @@ export default async function Home({
 
   return (
     <main>
-      <Hero dict={home.hero} />
+      {/* The hero reads its own top level key, not `home.hero`: it is a
+          playlist of slides now, each with the words written for its own
+          footage, and `home.hero` held one headline for one clip. */}
+      <Hero dict={dict.heroSlides} items={heroSlides} />
       <Latest dict={home.latest} items={latestItems} />
       <Clients dict={home.clients} items={clientsItems} />
       <Services dict={home.services} />

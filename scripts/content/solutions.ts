@@ -18,12 +18,14 @@
  * no embeddings. Say what arrives on their desk today and what arrives on it
  * afterwards. One sentence per idea. No em dashes anywhere, in any locale.
  *
- * HONESTY. Pluscode is two engineers in Poznan working across Europe. EU
- * hosting by default with a GDPR processing agreement, and the EU AI Act
- * risk tier is settled before anything is designed. No case studies, client
- * names, team sizes, certifications, awards or metrics are invented here.
- * Zabka, UBS and EBM Dental are the only client names on the site and they
- * are not needed on these pages.
+ * HONESTY. Pluscode is a small AI consultancy in Poznan working across
+ * Europe. EU hosting by default with a GDPR processing agreement, and the
+ * EU AI Act risk tier is settled before anything is designed. No case
+ * studies, client names, team sizes, certifications, awards or metrics are
+ * invented here. The site states no headcount either, in any direction:
+ * drop the arithmetic, keep the promise that whoever scopes the work builds
+ * it. Zabka, UBS and EBM Dental are the only client names on the site and
+ * they are not needed on these pages.
  *
  * This key is consumed by app/(frontend)/[lang]/components/solution-page.tsx
  * and the seven routes under app/(frontend)/[lang]/solutions/. The type below
@@ -212,7 +214,7 @@ const en: SolutionsContent = {
         "We build the part in the middle. The documents keep arriving the way they already arrive. Software reads them, checks them against what you already know, and posts them into your system. Anything it cannot read with confidence goes to a short queue for a person, and that queue is the point: the goal is not zero people, it is one person looking at ten documents a day instead of three hundred.",
       ],
       whatNote:
-        "Two engineers, based in Poznan, working across Europe. Your documents stay on EU infrastructure and the processing agreement is signed before we see a single file.",
+        "Pluscode, based in Poznan, working across Europe. Your documents stay on EU infrastructure and the processing agreement is signed before we see a single file.",
       doesTitle: "What it does",
       doesIntro: "Five steps, and every one of them can be checked.",
       does: [
@@ -1161,7 +1163,7 @@ const pl: SolutionsContent = {
         "My budujemy to, co pośrodku. Dokumenty dalej przychodzą tak, jak przychodziły. Oprogramowanie je odczytuje, sprawdza względem tego, co już wiesz, i wprowadza do Twojego systemu. To, czego nie odczyta z pewnością, trafia do krótkiej kolejki dla człowieka, i o tę kolejkę tu chodzi: celem nie jest zero ludzi, tylko jedna osoba oglądająca dziesięć dokumentów dziennie zamiast trzystu.",
       ],
       whatNote:
-        "Dwóch inżynierów z Poznania, pracujących w całej Europie. Twoje dokumenty zostają na infrastrukturze w UE, a umowa powierzenia jest podpisana, zanim zobaczymy pierwszy plik.",
+        "Pluscode, z Poznania, pracujemy w całej Europie. Twoje dokumenty zostają na infrastrukturze w UE, a umowa powierzenia jest podpisana, zanim zobaczymy pierwszy plik.",
       doesTitle: "Co to robi",
       doesIntro: "Pięć kroków i każdy z nich da się sprawdzić.",
       does: [
@@ -2095,7 +2097,7 @@ const de: SolutionsContent = {
         "Wir bauen das Stück dazwischen. Die Dokumente kommen weiter so an, wie sie ohnehin ankommen. Software liest sie, prüft sie gegen das, was Sie bereits wissen, und bucht sie in Ihr System. Was sie nicht sicher lesen kann, landet in einer kurzen Warteschlange für einen Menschen, und genau darum geht es: Das Ziel sind nicht null Menschen, sondern eine Person, die zehn Dokumente am Tag ansieht statt dreihundert.",
       ],
       whatNote:
-        "Zwei Ingenieure aus Poznan, tätig in ganz Europa. Ihre Dokumente bleiben auf europäischer Infrastruktur, und der Auftragsverarbeitungsvertrag ist unterschrieben, bevor wir die erste Datei sehen.",
+        "Pluscode, aus Poznan, tätig in ganz Europa. Ihre Dokumente bleiben auf europäischer Infrastruktur, und der Auftragsverarbeitungsvertrag ist unterschrieben, bevor wir die erste Datei sehen.",
       doesTitle: "Was es tut",
       doesIntro: "Fünf Schritte, und jeder davon ist überprüfbar.",
       does: [

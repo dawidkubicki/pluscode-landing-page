@@ -10,16 +10,26 @@
  * about "a vision to make technology accessible", a claim that Pluscode had
  * "grown into a full-service software development company", and four generic
  * values (Excellence, Innovation, Partnership, Transparency). None of it is
- * true of a two person AI consultancy in Poznan and none of it sounds like
- * the rest of the site. Every string below is rewritten in the site's own
- * voice: what we are, who the two of us are, how the work actually runs, and
- * what a client gets.
+ * true of an AI consultancy in Poznan and none of it sounds like the rest of
+ * the site. Every string below is rewritten in the site's own voice: what we
+ * are, who you work with, how the work actually runs, and what a client gets.
  *
- * WHAT IS DELIBERATELY UNCHANGED. `stats.items` keeps the four figures the
- * site already claims everywhere else (7+ years, 40+ projects, 8 industries,
- * 2 engineers), because components/stats.tsx reads this exact object for the
- * homepage band as well as for /about. Changing a number here changes it in
- * two places, so nothing is invented and nothing is rounded up.
+ * NO HEADCOUNT, IN EITHER DIRECTION. This page used to open with "Two
+ * engineers", say "a two person AI consultancy" and count "2" in the stats
+ * band. The number is gone: a buyer should read a company, not an arithmetic
+ * problem. Nothing bigger has been put in its place. There are no offices,
+ * no departments, no delivery organisation and no employees on this page,
+ * because there are none to describe, and every claim here still survives a
+ * question on a call. What stays is the promise the number used to carry:
+ * whoever scopes the work writes it, and nobody hands the project on.
+ *
+ * WHAT IS DELIBERATELY UNCHANGED. `stats.items` keeps its four keys and the
+ * three figures the site already claims everywhere else (7+ years, 40+
+ * projects, 8 industries), because components/stats.tsx reads this exact
+ * object through a hardcoded `order` array. The fourth figure was "2
+ * engineers" and is now "0 account managers", which is the same fact told
+ * without the headcount and is just as checkable. Nothing is invented and
+ * nothing is rounded up.
  *
  * WHO ELSE READS THIS. scripts/content/team.ts pulls the role line and the
  * bio for each person out of `team.members.{dawid,krzysztof}` and writes them
@@ -75,6 +85,10 @@ export type AboutContent = {
     label: string;
     title: string;
     intro: string;
+    /** Who the portraits are: the people who lead the work and whom a client
+     *  deals with. It says the band is a selection, which is true, and it
+     *  says nothing about how many people there are, which is the point. */
+    note: string;
     /** Screen reader labels for the two contact icons. "{name}" is filled in. */
     emailLabel: string;
     linkedinLabel: string;
@@ -94,15 +108,15 @@ export type AboutContent = {
  * ------------------------------------------------------------------ */
 const en: AboutContent = {
   label: "About us",
-  title: "Two engineers who build what they scope",
+  title: "Engineers who build what they scope",
   subtitle:
     "You talk to the engineer who writes the code. No account managers, no handover, no team you never meet.",
   breadcrumb: "About",
   story: {
     label: "Who we are",
-    title: "A two person AI consultancy in Poznań",
+    title: "An AI consultancy in Poznań, working across Europe",
     paragraph1:
-      "Pluscode is Dawid Kubicki and Krzysztof Suliński. We build AI systems and the software around them: reading documents, searching a company's own records, forecasting the months ahead, and the infrastructure that keeps all of it running after launch.",
+      "Pluscode was founded by Dawid Kubicki and Krzysztof Suliński. We build AI systems and the software around them: reading documents, searching a company's own records, forecasting the months ahead, and the infrastructure that keeps all of it running after launch.",
     paragraph2:
       "Seven years, forty projects, eight industries. We take on what we can finish, and when a piece of work does not need us we say so on the first call.",
     caption: "Dawid Kubicki and Krzysztof Suliński, Poznań.",
@@ -130,7 +144,7 @@ const en: AboutContent = {
       access: {
         title: "One engineer, start to finish",
         description:
-          "The person who scopes the work writes it and answers when it breaks. Nobody is handed the project halfway, because there is nobody to hand it to.",
+          "The person who scopes the work writes it and answers when it breaks. Nobody hands your project on halfway.",
       },
     },
   },
@@ -139,14 +153,15 @@ const en: AboutContent = {
       years: { value: "7+", label: "Years building AI and software" },
       projects: { value: "40+", label: "Projects delivered" },
       clients: { value: "8", label: "Industries worked in" },
-      team: { value: "2", label: "Engineers who do the work" },
+      team: { value: "0", label: "Account managers between you and the engineer" },
     },
   },
   team: {
     label: "The team",
-    title: "Dawid and Krzysztof",
+    title: "The people you work with",
     intro:
-      "Two engineers, both in Poznań. Whichever of us you speak to first stays with the project until it is done.",
+      "Based in Poznań, working across Europe. Whoever you speak to first stays with the project until it is done.",
+    note: "These are the people who lead the work and whom you deal with directly.",
     emailLabel: "Email {name}",
     linkedinLabel: "{name} on LinkedIn",
     members: {
@@ -158,7 +173,7 @@ const en: AboutContent = {
       krzysztof: {
         name: "Krzysztof Suliński",
         role: "AI Consultant",
-        bio: "The first person you talk to, and one of the two who build it. He starts by counting what the work costs in hours today, so the decision to automate is a number and not an opinion, and he stays on the project after that number changes.",
+        bio: "The first person you talk to, and one of the people who build it. He starts by counting what the work costs in hours today, so the decision to automate is a number and not an opinion, and he stays on the project after that number changes.",
       },
     },
   },
@@ -176,15 +191,15 @@ const en: AboutContent = {
  * ------------------------------------------------------------------ */
 const pl: AboutContent = {
   label: "O nas",
-  title: "Dwóch inżynierów, którzy sami budują to, co planują",
+  title: "Inżynierowie, którzy sami budują to, co planują",
   subtitle:
     "Rozmawiasz z inżynierem, który pisze kod. Bez opiekunów klienta, bez przekazywania projektu, bez zespołu, którego nigdy nie poznasz.",
   breadcrumb: "O nas",
   story: {
     label: "Kim jesteśmy",
-    title: "Dwuosobowa firma konsultingowa AI w Poznaniu",
+    title: "Firma konsultingowa AI w Poznaniu, pracująca w całej Europie",
     paragraph1:
-      "Pluscode to Dawid Kubicki i Krzysztof Suliński. Budujemy systemy AI i oprogramowanie wokół nich: czytanie dokumentów, wyszukiwanie we własnych danych firmy, prognozy na kolejne miesiące oraz infrastrukturę, która utrzymuje to wszystko po wdrożeniu.",
+      "Pluscode założyli Dawid Kubicki i Krzysztof Suliński. Budujemy systemy AI i oprogramowanie wokół nich: czytanie dokumentów, wyszukiwanie we własnych danych firmy, prognozy na kolejne miesiące oraz infrastrukturę, która utrzymuje to wszystko po wdrożeniu.",
     paragraph2:
       "Siedem lat, czterdzieści projektów, osiem branż. Bierzemy tyle, ile jesteśmy w stanie skończyć, a jeśli dana praca nas nie potrzebuje, mówimy to już na pierwszej rozmowie.",
     caption: "Dawid Kubicki i Krzysztof Suliński, Poznań.",
@@ -212,7 +227,7 @@ const pl: AboutContent = {
       access: {
         title: "Jeden inżynier od początku do końca",
         description:
-          "Osoba, która ustala zakres, pisze kod i odbiera telefon, gdy coś przestaje działać. Nikt nie przejmuje projektu w połowie, bo nie ma komu go przekazać.",
+          "Osoba, która ustala zakres, pisze kod i odbiera telefon, gdy coś przestaje działać. Nikt nie przekazuje Waszego projektu w połowie drogi.",
       },
     },
   },
@@ -221,14 +236,15 @@ const pl: AboutContent = {
       years: { value: "7+", label: "Lat budowania AI i oprogramowania" },
       projects: { value: "40+", label: "Zrealizowanych projektów" },
       clients: { value: "8", label: "Branż, w których pracowaliśmy" },
-      team: { value: "2", label: "Inżynierów, którzy wykonują pracę" },
+      team: { value: "0", label: "Opiekunów klienta między Wami a inżynierem" },
     },
   },
   team: {
     label: "Zespół",
-    title: "Dawid i Krzysztof",
+    title: "Ludzie, z którymi pracujesz",
     intro:
-      "Dwóch inżynierów, obaj w Poznaniu. Ten z nas, z którym porozmawiasz najpierw, zostaje przy projekcie do końca.",
+      "Z Poznania, pracujemy w całej Europie. Ten z nas, z którym porozmawiasz najpierw, zostaje przy projekcie do końca.",
+    note: "To osoby, które prowadzą projekty i z którymi masz bezpośredni kontakt.",
     emailLabel: "E-mail: {name}",
     linkedinLabel: "{name} na LinkedIn",
     members: {
@@ -240,7 +256,7 @@ const pl: AboutContent = {
       krzysztof: {
         name: "Krzysztof Suliński",
         role: "Konsultant AI",
-        bio: "Pierwsza osoba, z którą rozmawiasz, i jedna z dwóch, które to budują. Zaczyna od policzenia, ile ta praca kosztuje dziś w godzinach, żeby decyzja o automatyzacji była liczbą, a nie opinią, i zostaje przy projekcie, gdy ta liczba się zmieni.",
+        bio: "Pierwsza osoba, z którą rozmawiasz, i jedna z osób, które to budują. Zaczyna od policzenia, ile ta praca kosztuje dziś w godzinach, żeby decyzja o automatyzacji była liczbą, a nie opinią, i zostaje przy projekcie, gdy ta liczba się zmieni.",
       },
     },
   },
@@ -258,15 +274,15 @@ const pl: AboutContent = {
  * ------------------------------------------------------------------ */
 const de: AboutContent = {
   label: "Über uns",
-  title: "Zwei Engineers, die bauen, was sie zuschneiden",
+  title: "Engineers, die bauen, was sie zuschneiden",
   subtitle:
     "Sie sprechen mit dem Engineer, der den Code schreibt. Keine Account Manager, keine Übergabe, kein Team, das Sie nie zu sehen bekommen.",
   breadcrumb: "Über uns",
   story: {
     label: "Wer wir sind",
-    title: "Eine KI-Beratung aus zwei Personen in Poznań",
+    title: "Eine KI-Beratung in Poznań, tätig in ganz Europa",
     paragraph1:
-      "Pluscode sind Dawid Kubicki und Krzysztof Suliński. Wir bauen KI-Systeme und die Software darum herum: Dokumente lesen, in den eigenen Daten eines Unternehmens suchen, die kommenden Monate prognostizieren, und die Infrastruktur, die das alles nach dem Start am Laufen hält.",
+      "Pluscode wurde von Dawid Kubicki und Krzysztof Suliński gegründet. Wir bauen KI-Systeme und die Software darum herum: Dokumente lesen, in den eigenen Daten eines Unternehmens suchen, die kommenden Monate prognostizieren, und die Infrastruktur, die das alles nach dem Start am Laufen hält.",
     paragraph2:
       "Sieben Jahre, vierzig Projekte, acht Branchen. Wir nehmen an, was wir zu Ende bringen können, und wenn eine Aufgabe uns nicht braucht, sagen wir das im ersten Gespräch.",
     caption: "Dawid Kubicki und Krzysztof Suliński, Poznań.",
@@ -294,7 +310,7 @@ const de: AboutContent = {
       access: {
         title: "Ein Engineer, von Anfang bis Ende",
         description:
-          "Wer die Arbeit zuschneidet, schreibt sie auch und geht ans Telefon, wenn etwas kaputt ist. Niemand übernimmt das Projekt auf halbem Weg, weil es niemanden gibt, dem man es übergeben könnte.",
+          "Wer die Arbeit zuschneidet, schreibt sie auch und geht ans Telefon, wenn etwas kaputt ist. Niemand gibt Ihr Projekt auf halbem Weg weiter.",
       },
     },
   },
@@ -303,14 +319,15 @@ const de: AboutContent = {
       years: { value: "7+", label: "Jahre KI und Software" },
       projects: { value: "40+", label: "Umgesetzte Projekte" },
       clients: { value: "8", label: "Branchen, in denen wir gearbeitet haben" },
-      team: { value: "2", label: "Engineers, die die Arbeit machen" },
+      team: { value: "0", label: "Account Manager zwischen Ihnen und dem Engineer" },
     },
   },
   team: {
     label: "Das Team",
-    title: "Dawid und Krzysztof",
+    title: "Die Menschen, mit denen Sie arbeiten",
     intro:
-      "Zwei Engineers, beide in Poznań. Wer von uns zuerst mit Ihnen spricht, bleibt bis zum Ende beim Projekt.",
+      "Aus Poznań, tätig in ganz Europa. Wer von uns zuerst mit Ihnen spricht, bleibt bis zum Ende beim Projekt.",
+    note: "Das sind die Menschen, die die Arbeit leiten und mit denen Sie direkt zu tun haben.",
     emailLabel: "E-Mail an {name}",
     linkedinLabel: "{name} auf LinkedIn",
     members: {
@@ -322,7 +339,7 @@ const de: AboutContent = {
       krzysztof: {
         name: "Krzysztof Suliński",
         role: "KI-Berater",
-        bio: "Die erste Person, mit der Sie sprechen, und einer der beiden, die bauen. Er zählt zuerst, was die Arbeit heute an Stunden kostet, damit die Entscheidung für eine Automatisierung eine Zahl ist und keine Meinung, und er bleibt am Projekt, wenn sich diese Zahl ändert.",
+        bio: "Die erste Person, mit der Sie sprechen, und einer von denen, die es bauen. Er zählt zuerst, was die Arbeit heute an Stunden kostet, damit die Entscheidung für eine Automatisierung eine Zahl ist und keine Meinung, und er bleibt am Projekt, wenn sich diese Zahl ändert.",
       },
     },
   },

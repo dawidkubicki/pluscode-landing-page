@@ -127,7 +127,6 @@
   "trust": {
     "label": "Firmy, dla których budowaliśmy",
     "clients": [
-      "Żabka",
       "UBS",
       "EBM Dental"
     ]
@@ -5082,13 +5081,13 @@
     },
     "about": {
       "label": "O nas",
-      "title": "Dwóch inżynierów, którzy sami budują to, co planują",
+      "title": "Inżynierowie, którzy sami budują to, co planują",
       "subtitle": "Rozmawiasz z inżynierem, który pisze kod. Bez opiekunów klienta, bez przekazywania projektu, bez zespołu, którego nigdy nie poznasz.",
       "breadcrumb": "O nas",
       "story": {
         "label": "Kim jesteśmy",
-        "title": "Dwuosobowa firma konsultingowa AI w Poznaniu",
-        "paragraph1": "Pluscode to Dawid Kubicki i Krzysztof Suliński. Budujemy systemy AI i oprogramowanie wokół nich: czytanie dokumentów, wyszukiwanie we własnych danych firmy, prognozy na kolejne miesiące oraz infrastrukturę, która utrzymuje to wszystko po wdrożeniu.",
+        "title": "Firma konsultingowa AI w Poznaniu, pracująca w całej Europie",
+        "paragraph1": "Pluscode założyli Dawid Kubicki i Krzysztof Suliński. Budujemy systemy AI i oprogramowanie wokół nich: czytanie dokumentów, wyszukiwanie we własnych danych firmy, prognozy na kolejne miesiące oraz infrastrukturę, która utrzymuje to wszystko po wdrożeniu.",
         "paragraph2": "Siedem lat, czterdzieści projektów, osiem branż. Bierzemy tyle, ile jesteśmy w stanie skończyć, a jeśli dana praca nas nie potrzebuje, mówimy to już na pierwszej rozmowie.",
         "caption": "Dawid Kubicki i Krzysztof Suliński, Poznań.",
         "imageAlt": "Dawid Kubicki i Krzysztof Suliński"
@@ -5111,7 +5110,7 @@
           },
           "access": {
             "title": "Jeden inżynier od początku do końca",
-            "description": "Osoba, która ustala zakres, pisze kod i odbiera telefon, gdy coś przestaje działać. Nikt nie przejmuje projektu w połowie, bo nie ma komu go przekazać."
+            "description": "Osoba, która ustala zakres, pisze kod i odbiera telefon, gdy coś przestaje działać. Nikt nie przekazuje Waszego projektu w połowie drogi."
           }
         }
       },
@@ -5130,15 +5129,16 @@
             "label": "Branż, w których pracowaliśmy"
           },
           "team": {
-            "value": "2",
-            "label": "Inżynierów, którzy wykonują pracę"
+            "value": "0",
+            "label": "Opiekunów klienta między Wami a inżynierem"
           }
         }
       },
       "team": {
         "label": "Zespół",
-        "title": "Dawid i Krzysztof",
-        "intro": "Dwóch inżynierów, obaj w Poznaniu. Ten z nas, z którym porozmawiasz najpierw, zostaje przy projekcie do końca.",
+        "title": "Ludzie, z którymi pracujesz",
+        "intro": "Z Poznania, pracujemy w całej Europie. Ten z nas, z którym porozmawiasz najpierw, zostaje przy projekcie do końca.",
+        "note": "To osoby, które prowadzą projekty i z którymi masz bezpośredni kontakt.",
         "emailLabel": "E-mail: {name}",
         "linkedinLabel": "{name} na LinkedIn",
         "members": {
@@ -5150,7 +5150,7 @@
           "krzysztof": {
             "name": "Krzysztof Suliński",
             "role": "Konsultant AI",
-            "bio": "Pierwsza osoba, z którą rozmawiasz, i jedna z dwóch, które to budują. Zaczyna od policzenia, ile ta praca kosztuje dziś w godzinach, żeby decyzja o automatyzacji była liczbą, a nie opinią, i zostaje przy projekcie, gdy ta liczba się zmieni."
+            "bio": "Pierwsza osoba, z którą rozmawiasz, i jedna z osób, które to budują. Zaczyna od policzenia, ile ta praca kosztuje dziś w godzinach, żeby decyzja o automatyzacji była liczbą, a nie opinią, i zostaje przy projekcie, gdy ta liczba się zmieni."
           }
         }
       },
@@ -6809,7 +6809,7 @@
           "key": "quanty",
           "tag": "Quanty",
           "title": "Nasz arkusz AI wchodzi w publiczną betę",
-          "body": "Quanty czyta faktury, umowy i wyciągi do wierszy, które można sprawdzić, a przy każdej wartości zostaje strona źródłowa. Zbudowany przez tych samych dwóch inżynierów, z którymi będziesz pracować.",
+          "body": "Quanty czyta faktury, umowy i wyciągi do wierszy, które można sprawdzić, a przy każdej wartości zostaje strona źródłowa. Zbudowany przez tych samych inżynierów, z którymi będziesz pracować.",
           "href": "https://quanty.ai",
           "image": "/assets/quanty/chat-2x.webp",
           "alt": "Agent AI Quanty dodaje kolumnę statusu dostawy do arkusza zamówień"
@@ -6855,11 +6855,6 @@
     "clients": {
       "title": "Wybrani klienci",
       "items": [
-        {
-          "key": "zabka",
-          "name": "Żabka",
-          "what": "Architektura sklepów autonomicznych"
-        },
         {
           "key": "ubs",
           "name": "UBS",
@@ -7388,7 +7383,7 @@
           "Każda firma ma biurko, na które trafiają dokumenty. Przychodzą mailem, pocztą, z portalu dostawcy, jako zdjęcie listu przewozowego zrobione na placu. Ktoś otwiera każdy z nich, odczytuje cztery czy pięć liczb, przepisuje je do innego systemu i archiwizuje. To cicha, nieustanna praca i pierwsza rzecz, która się sypie, kiedy osoba, która ją wykonuje, bierze tydzień wolnego.",
           "My budujemy to, co pośrodku. Dokumenty dalej przychodzą tak, jak przychodziły. Oprogramowanie je odczytuje, sprawdza względem tego, co już wiesz, i wprowadza do Twojego systemu. To, czego nie odczyta z pewnością, trafia do krótkiej kolejki dla człowieka, i o tę kolejkę tu chodzi: celem nie jest zero ludzi, tylko jedna osoba oglądająca dziesięć dokumentów dziennie zamiast trzystu."
         ],
-        "whatNote": "Dwóch inżynierów z Poznania, pracujących w całej Europie. Twoje dokumenty zostają na infrastrukturze w UE, a umowa powierzenia jest podpisana, zanim zobaczymy pierwszy plik.",
+        "whatNote": "Pluscode, z Poznania, pracujemy w całej Europie. Twoje dokumenty zostają na infrastrukturze w UE, a umowa powierzenia jest podpisana, zanim zobaczymy pierwszy plik.",
         "doesTitle": "Co to robi",
         "doesIntro": "Pięć kroków i każdy z nich da się sprawdzić.",
         "does": [
@@ -8228,8 +8223,8 @@
         },
         {
           "key": "team",
-          "figure": "2",
-          "label": "inżynierów buduje produkt i odpisuje na maile"
+          "figure": "0",
+          "label": "opiekunów klienta, na maile odpowiadają inżynierowie"
         }
       ]
     },
@@ -8360,7 +8355,7 @@
       "eyebrow": "Quanty i Pluscode",
       "title": "Zbudowaliśmy go sami, a te same części trafiają do systemów klientów.",
       "body": [
-        "Quanty nie jest platformą partnera ani certyfikatem. To nasz własny produkt, zaprojektowany i zbudowany przez tych samych dwóch inżynierów, z którymi pracowalibyście przy projekcie.",
+        "Quanty nie jest platformą partnera ani certyfikatem. To nasz własny produkt, zaprojektowany i zbudowany przez tych samych inżynierów, z którymi pracowalibyście przy projekcie.",
         "Czytanie dokumentów, odpowiedzi z podanym źródłem, akceptacja zanim cokolwiek zostanie zapisane: to są części Quanty i dokładnie to wkładamy w systemy, które budujemy dla klientów. Produkt jest miejscem, w którym sprawdzamy je na własnym czasie."
       ],
       "ownership": "Quanty jest produktem Pluscode Sp. z o.o., Poznań, Polska.",
@@ -8372,5 +8367,31 @@
       "text": "Przynieście prawdziwy folder na 30 minut rozmowy. Przeczytamy go razem z wami i powiemy wprost, czy Quanty pasuje, czy trzeba zbudować coś innego.",
       "button": "Umów rozmowę"
     }
+  },
+  "heroSlides": {
+    "cta": "Zobacz, co robimy",
+    "scroll": "Przewiń",
+    "slides": [
+      {
+        "key": "pluscode",
+        "headline": "AI, które pracuje",
+        "subline": "Pluscode, z Poznania, w całej Europie.",
+        "mp4": "/hero/hero.mp4",
+        "webm": "/hero/hero.webm",
+        "poster": "/hero/hero-poster.jpg",
+        "overlayTop": 0.62,
+        "overlayBottom": 0.74
+      },
+      {
+        "key": "logistics",
+        "headline": "Transport bez papierologii",
+        "subline": "Doradztwo AI dla przewoźników i spedycji: faktury, zlecenia, listy przewozowe.",
+        "mp4": "/hero/logistics.mp4",
+        "webm": "/hero/logistics.webm",
+        "poster": "/hero/logistics-poster.jpg",
+        "overlayTop": 0.42,
+        "overlayBottom": 0.58
+      }
+    ]
   }
 }

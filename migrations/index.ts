@@ -11,6 +11,8 @@ import * as migration_20260824_131000_seed_startup_consultations_announcement fr
 import * as migration_20260825_090000_use_case_art from './20260825_090000_use_case_art';
 import * as migration_20260908_090000_home_bands from './20260908_090000_home_bands';
 import * as migration_20260908_091000_team_real_people from './20260908_091000_team_real_people';
+import * as migration_20260908_120000_hero_slides from './20260908_120000_hero_slides';
+import * as migration_20260908_130000_team_bio_no_headcount from './20260908_130000_team_bio_no_headcount';
 
 export const migrations = [
   {
@@ -77,5 +79,15 @@ export const migrations = [
     up: migration_20260908_091000_team_real_people.up,
     down: migration_20260908_091000_team_real_people.down,
     name: '20260908_091000_team_real_people',
+  },
+  {
+    up: migration_20260908_120000_hero_slides.up,
+    down: migration_20260908_120000_hero_slides.down,
+    name: '20260908_120000_hero_slides',
+  },
+  {
+    up: migration_20260908_130000_team_bio_no_headcount.up,
+    down: migration_20260908_130000_team_bio_no_headcount.down,
+    name: '20260908_130000_team_bio_no_headcount',
   },
 ];

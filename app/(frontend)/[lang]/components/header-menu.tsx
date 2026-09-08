@@ -20,6 +20,29 @@
  *  surface with the plus turned to a minus, and the panel's content
  *  simply starts below the 72px row.
  *
+ *  THE BREAKPOINT THAT MATTERS IS lg. Below 1024 the bar carries the
+ *  wordmark and the burger and nothing else, so the panel IS the whole
+ *  navigation: the way out, then the bar's links, then the offering
+ *  columns, then the language switcher. From lg the bar takes its links
+ *  and the switcher back and the panel is the three offering columns
+ *  alone. The panel's layout and the bar's `lg:hidden` blocks therefore
+ *  turn at the same width, and that is not a preference: when they
+ *  disagreed, every width from 768 to 1023 drew the stacked phone
+ *  navigation AND three desktop columns at once, with the phone blocks
+ *  still spanning 4 of a grid that had become 12 columns wide. The first
+ *  row of that grid came out as [links | Solutions | Platform], which is
+ *  what "the layout gets messed up" looked like. The panel's own columns
+ *  step once more, one up to two up at sm, but nothing in the bar moves
+ *  there; see COLUMN_SPAN for the measured widths behind both steps.
+ *
+ *  THE WAY OUT. `aria-modal` hides the bar, and with it the trigger and
+ *  the burger, from assistive technology, so the panel has to carry its
+ *  own close control. It is the first thing in the panel in both senses:
+ *  first in the DOM, so opening the menu lands focus on it, and first on
+ *  the page, so a way out is visible the moment the panel is. It replaced
+ *  an `sr-only focus:not-sr-only` button at the foot which nobody using a
+ *  pointer could ever see.
+ *
  *  The announcement strip is keyed off `data-announcement` on <html>
  *  (set pre-paint by layout.tsx). Both the bar and the panel drop 40px
  *  while it is up, so the panel never covers it.
@@ -56,19 +79,53 @@ const FOCUSABLE =
    `lg:hidden`, so the raw query returns links that are display:none at
    this width. Calling focus() on one of those is a silent no-op, which
    would leave focus on the page behind the dialog. Client rects are the
-   cheap test for "actually laid out"; the sr-only close button keeps its
-   1px box and stays in the cycle. */
+   cheap test for "actually laid out"; the panel's close control is laid
+   out at every width, so the cycle always has at least one stop. */
 function focusablesIn(root: HTMLElement): HTMLElement[] {
   return Array.from(root.querySelectorAll<HTMLElement>(FOCUSABLE)).filter(
     (el) => el.getClientRects().length > 0,
   );
 }
 
-/* The reference's three columns are not equal: 5, 3 and 4 of the twelve,
-   which is what lets the Solutions descriptions run to a comfortable
-   measure while Platform stays a narrow list. Below md there are only
-   four columns, so every one of them is full width. */
-const COLUMN_SPAN = ["md:col-span-5", "md:col-span-3", "md:col-span-4"];
+/* WHERE THE COLUMNS SPLIT, in measured pixels rather than by feel.
+   The grid is 4 columns with a 16px gutter below 768 and 12 with a 24px one
+   from 768 up; the page inset is 16px to 640 and 24px above; and inside a
+   column every row gives up another 24px to `pl-6`, where it has a rule to
+   its left, plus 26px to the arrow and its gap. So the text of an item is
+   this wide, which is the number that decides everything below:
+
+     width   4 of 4   2 of 4   6 of 12   4 of 12   3 of 12
+     375     317      -        -         -         -
+     640     582      246      -         -         -
+     768     -        -        298       174       112
+     1023    -        -        425       -         -
+     1024    -        -        -         259       176
+     1280    -        -        -         345       240
+
+   Three columns were a lie until 1024. At 768 the old 3-of-12 middle column
+   left 112px for a two-line description, which is about nine characters a
+   line, and the old 4-of-12 left 174px for "Forward deployed engineers".
+   So:
+
+     below sm   one column, 317px of measure on a 375px phone
+     sm to lg   two up, 246px at worst, which is what makes a landscape
+                phone readable without three screens of scrolling
+     lg         three equal columns, 259px each. NOT the reference's
+                5/3/4 yet: that would put the Platform column back to
+                176px, too tight for "Automatisierte Sachbearbeitung"
+     xl         the reference's own 5, 3 and 4, measured on a 1440 screen,
+                where the wide column earns 473px and the narrow one still
+                has 240
+
+   The three-up start is lg and not a width of its own on purpose: it is
+   where the bar takes its links and the language switcher back, so the
+   panel never shows the phone navigation and a desktop column layout at
+   the same time. */
+const COLUMN_SPAN = [
+  "sm:col-span-2 md:col-span-6 lg:col-span-4 xl:col-span-5",
+  "sm:col-span-2 md:col-span-6 lg:col-span-4 xl:col-span-3",
+  "sm:col-span-2 md:col-span-6 lg:col-span-4",
+];
 
 /** Strip the leading locale segment so we can re-prefix with another locale. */
 function pathWithoutLocale(pathname: string): string {
@@ -89,6 +146,20 @@ function PlusMinus({ open }: { open: boolean }) {
         stroke="currentColor"
         strokeWidth="1"
         className={`transition-opacity duration-200 ${open ? "opacity-0" : "opacity-100"}`}
+      />
+    </svg>
+  );
+}
+
+/** The panel's way out: the trigger's 12px box and 1px stroke, crossed. */
+function CloseMark({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 12 12" aria-hidden fill="none" className={className}>
+      <path
+        d="M1 1l10 10M11 1l-10 10"
+        stroke="currentColor"
+        strokeWidth="1"
+        strokeLinecap="square"
       />
     </svg>
   );
@@ -183,11 +254,28 @@ function Column({
   index: number;
   onNavigate: () => void;
 }) {
+  /* The hairline follows the layout, not the index: a column stacked under
+     another is divided by a rule above it, a column standing beside one by
+     a rule to its left. Column 2 comes up beside column 1 at sm, column 3
+     only at lg, so through the two-up range column 3 keeps its top rule and
+     column 2 has already given its own up. Reading this off the index alone
+     is what leaves a stray vertical hairline down the left edge of a column
+     with nothing to its left. */
+  const rule =
+    index === 0
+      ? ""
+      : index === 1
+        ? "border-t sm:border-t-0 sm:border-l sm:pl-6"
+        : "border-t lg:border-t-0 lg:border-l lg:pl-6";
   return (
     <div
-      className={`col-span-4 border-rule-dark pt-7 md:pt-0 ${
-        COLUMN_SPAN[index] ?? "md:col-span-4"
-      } ${index > 0 ? "border-t md:border-t-0 md:border-l md:pl-6" : ""}`}
+      /* `pt-7` holds all the way to lg. Below lg every column has a rule
+         above it, either the links' or another column's, and the two columns
+         of a two-up row have to carry the same top padding or their headings
+         sit 28px out of line with each other. */
+      className={`col-span-4 border-rule-dark pt-7 lg:pt-0 ${
+        COLUMN_SPAN[index] ?? "sm:col-span-2 md:col-span-6 lg:col-span-4"
+      } ${rule}`}
     >
       <MenuLink
         href={column.href}
@@ -254,7 +342,7 @@ export default function HeaderMenu({
   const wasOpen = useRef(false);
 
   /* Two buttons open the same panel now, and only one of them is laid out at
-     any given width: the burger below md, the offerings trigger above it. So
+     any given width: the burger below lg, the offerings trigger above it. So
      "the trigger", for the focus return and for the Tab cycle, is whichever
      of the pair is actually on screen. Same client-rect test `focusablesIn`
      uses, and for the same reason: focus() on a display:none element is a
@@ -369,7 +457,7 @@ export default function HeaderMenu({
 
   const basePath = pathWithoutLocale(pathname);
 
-  /* The switcher is rendered twice now, in the bar above md and in the panel
+  /* The switcher is rendered twice now, in the bar from lg and in the panel
      below it, so the path rewriting is stated once here and read by both.
      Two copies of this expression is exactly how the two switchers would
      drift apart. */
@@ -475,7 +563,7 @@ export default function HeaderMenu({
               />
             </LocaleLink>
 
-            {/* THE PHONE TRIGGER. Below md the bar carries the wordmark and
+            {/* THE PHONE TRIGGER. Below lg the bar carries the wordmark and
                 this and nothing else: the links, the offerings trigger and
                 the language switcher all move inside the panel. It is a 44px
                 square hit area, and it is the same `open` state as the
@@ -499,7 +587,7 @@ export default function HeaderMenu({
               <Burger open={open} reduce={!!reduce} />
             </button>
 
-            {/* Above md the row is unchanged. The inset from the wordmark is
+            {/* From lg the row is unchanged. The inset from the wordmark is
                 the reference's, held back a step at md: measured across the
                 three locales, the bar's own content already fills the 720px
                 available at exactly 768, so the full 128px lands only from
@@ -528,7 +616,7 @@ export default function HeaderMenu({
               ))}
             </nav>
 
-            {/* Below md this is inside the panel instead, so the bar keeps to
+            {/* Below lg this is inside the panel instead, so the bar keeps to
                 the wordmark and the burger. */}
             <nav
               aria-label={nav.language}
@@ -588,16 +676,50 @@ export default function HeaderMenu({
               className="pc-shell pt-[72px]"
             >
               <div className="pc-grid pb-20 pt-10 md:pb-[104px] md:pt-14">
-                {/* The bar's links, which are hidden below md, listed above
-                    the columns so the phone panel is the whole navigation. */}
-                <div className="col-span-4 border-b border-rule-dark pb-7 lg:hidden">
-                  <ul className="flex flex-col gap-4">
+                {/* THE WAY OUT. First in the DOM, so the open effect below
+                    lands focus here and Tab starts from it, and first on the
+                    page, so nobody has to hunt the bar for the burger they
+                    just pressed. The word carries it, the mark only confirms
+                    it: `menu.close` is already localised in all three, the
+                    mark is the trigger's own 12px box crossed, and there is
+                    no circle, frame or shadow around either because nothing
+                    on this site has one. Sage on carbon is 7.4:1, and it
+                    goes white on hover like every other secondary mark in
+                    this panel. 44px of height, right where the thumb is. */}
+                <div className="col-span-4 flex justify-end md:col-span-12">
+                  <button
+                    type="button"
+                    onClick={close}
+                    className={`flex min-h-11 items-center gap-2 text-[1.125rem] leading-none text-sage ${SWAP} hover:text-white`}
+                  >
+                    {menu.close}
+                    <CloseMark className="size-3 shrink-0" />
+                  </button>
+                </div>
+
+                {/* The bar's links, which it only carries from lg, listed
+                    above the columns so the panel below lg is the whole
+                    navigation. FULL WIDTH ON BOTH GRIDS: as a bare
+                    `col-span-4` this was a third of the row from 768 up, and
+                    the row then filled its remaining 8 columns with the
+                    first two offering columns. Laid out as a row from sm,
+                    where the four labels measure 385px in English and 525 in
+                    German against 608px of usable width, and `flex-wrap`
+                    catches the locale that does not fit: two 44px rows
+                    instead of four is what makes the panel usable on a phone
+                    held sideways. And 44px per link, because 24px of type in
+                    a 25px box was the whole tap target: `min-h-11` takes
+                    each row to 44 and the gap comes down from 16 to 8 to pay
+                    for it, so 149px of list becomes 200px and every row of
+                    it is thumb-sized. */}
+                <div className="col-span-4 border-b border-rule-dark pb-7 md:col-span-12 lg:hidden">
+                  <ul className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-8">
                     {links.map((l) => (
                       <li key={l.href}>
                         <LocaleLink
                           href={l.href}
                           onClick={close}
-                          className="text-heading-sm text-white"
+                          className="flex min-h-11 items-center text-heading-sm text-white"
                         >
                           {l.label}
                         </LocaleLink>
@@ -615,16 +737,18 @@ export default function HeaderMenu({
                   />
                 ))}
 
-                {/* THE PHONE LANGUAGE SWITCHER, last in the reading order:
-                    nav links, offering columns, language. Above md it is
-                    display:none, because the bar still carries it there, so
-                    the two are never both exposed to a screen reader and the
-                    focus trap's client-rect test skips this one on desktop.
-                    Body size rather than the bar's 14px micro: at the foot of
-                    a fullscreen panel these are tap targets, not chrome. */}
+                {/* THE PANEL'S LANGUAGE SWITCHER, last in the reading order:
+                    the way out, nav links, offering columns, language. From
+                    lg it is display:none, because the bar carries it there,
+                    so the two are never both exposed to a screen reader and
+                    the focus trap's client-rect test skips this one on a
+                    wide screen. Body size rather than the bar's 14px micro:
+                    at the foot of a fullscreen panel these are tap targets,
+                    not chrome. Full width on both grids, same as the links
+                    above and for the same reason. */}
                 <nav
                   aria-label={nav.language}
-                  className="col-span-4 border-t border-rule-dark pt-7 lg:hidden"
+                  className="col-span-4 border-t border-rule-dark pt-7 md:col-span-12 lg:hidden"
                 >
                   <ul className="flex flex-wrap items-center gap-6">
                     {locales.map((loc) => {
@@ -648,20 +772,6 @@ export default function HeaderMenu({
                     })}
                   </ul>
                 </nav>
-
-                {/* `aria-modal` hides the bar, and with it the trigger, from
-                    assistive technology, so the dialog carries its own way
-                    out. Last in the order and invisible until focused, so it
-                    never takes a place in the layout or in the eye. */}
-                <div className="col-span-4 md:col-span-12">
-                  <button
-                    type="button"
-                    onClick={close}
-                    className="btn btn-invert sr-only focus:not-sr-only"
-                  >
-                    {menu.close}
-                  </button>
-                </div>
               </div>
             </motion.div>
           </motion.div>

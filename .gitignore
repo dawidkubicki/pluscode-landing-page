@@ -45,3 +45,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw video sources. The hero ships the encoded clips in public/hero/; the
+# multi-megabyte originals they were cut from are working files, and putting
+# one in the repo also puts it in every Docker build context.
+/*.mp4
+/*.mov

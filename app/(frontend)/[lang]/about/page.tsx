@@ -18,13 +18,14 @@ const resolve = (lang: string): Locale => (isLocale(lang) ? lang : defaultLocale
 /* ------------------------------------------------------------------ *
  *  THE ROSTER, AND WHY THE PAGE IS BUILT FROM IT RATHER THAN FROM THE CMS.
  *
- *  Pluscode is two people. This page used to render whatever the `team`
- *  collection happened to hold, falling back to the dictionary only when the
- *  collection was completely empty. Production's collection was not empty: it
- *  still held the placeholder seed, so /about spent months introducing
- *  "Engineering Lead, Head of Engineering" and "Design Lead, Head of Design"
- *  to every visitor. Two of the three people on the page did not exist, and
- *  the one who does but was missing, Krzysztof, was nowhere.
+ *  This page renders a fixed roster of real people. It used to render
+ *  whatever the `team` collection happened to hold, falling back to the
+ *  dictionary only when the collection was completely empty. Production's
+ *  collection was not empty: it still held the placeholder seed, so /about
+ *  spent months introducing "Engineering Lead, Head of Engineering" and
+ *  "Design Lead, Head of Design" to every visitor. Most of the people on the
+ *  page did not exist, and the one who does but was missing, Krzysztof, was
+ *  nowhere.
  *
  *  So the loop is inverted. The page iterates THIS list, never the CMS
  *  response, and a CMS row is consulted only after it has been matched to a
@@ -44,8 +45,14 @@ const resolve = (lang: string): Locale => (isLocale(lang) ? lang : defaultLocale
  *
  *  The caption and the quote come from `home.founders` rather than from a
  *  second set of strings written for this page. There is one description of
- *  each of these two people on the site and the homepage People band owns it;
- *  /about adds the longer bio and the way to reach them, and repeats nothing.
+ *  each person on the site and the homepage People band owns it; /about adds
+ *  the longer bio and the way to reach them, and repeats nothing.
+ *
+ *  THE BAND SAYS WHOSE FACES THESE ARE. `team.note` sits under the intro and
+ *  names the roster for what it is: the people who lead the work and whom a
+ *  client deals with. It is deliberately silent about how many people there
+ *  are, in both directions. Nothing on this page states a headcount, and
+ *  nothing on it may imply an organisation that does not exist.
  *
  *  Adding a person means adding a real one, here and in
  *  scripts/content/team.ts, which is the same list for the seed scripts.
@@ -233,6 +240,9 @@ export default async function AboutPage({
             >
               <p className="text-[1.125rem] leading-[1.375] text-moss">
                 {t.team.intro}
+              </p>
+              <p className="mt-4 text-[0.875rem] leading-[1.375] text-moss">
+                {t.team.note}
               </p>
             </Reveal>
           </div>

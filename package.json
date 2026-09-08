@@ -28,8 +28,12 @@
     "seed:team:prod": "node --import tsx scripts/seed-team.ts",
     "seed:home-bands": "node --env-file=.env --import tsx scripts/seed-home-bands.ts",
     "seed:home-bands:prod": "node --import tsx scripts/seed-home-bands.ts",
-    "content:home": "node --import tsx scripts/content/home-netcompany.ts && node --import tsx scripts/content/home-consulting.ts && node --import tsx scripts/content/services-links.ts && node --import tsx scripts/content/approach-flags.ts",
-    "content:pages": "node --import tsx scripts/content/solutions.ts && node --import tsx scripts/content/quanty-page.ts && node --import tsx scripts/content/about.ts"
+    "content:home": "node --import tsx scripts/content/home-netcompany.ts && node --import tsx scripts/content/home-consulting.ts && node --import tsx scripts/content/services-links.ts && node --import tsx scripts/content/approach-flags.ts && node --import tsx scripts/content/trust.ts",
+    "content:pages": "node --import tsx scripts/content/solutions.ts && node --import tsx scripts/content/quanty-page.ts && node --import tsx scripts/content/about.ts",
+    "content:hero": "node --import tsx scripts/content/hero-slides.ts",
+    "content:trust": "node --import tsx scripts/content/trust.ts",
+    "seed:hero-slides": "node --env-file=.env --import tsx scripts/seed-hero-slides.ts",
+    "seed:hero-slides:prod": "node --import tsx scripts/seed-hero-slides.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "3.85.0",

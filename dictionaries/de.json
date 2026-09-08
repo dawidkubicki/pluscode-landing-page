@@ -127,7 +127,6 @@
   "trust": {
     "label": "Teams, für die wir gebaut haben",
     "clients": [
-      "Żabka",
       "UBS",
       "EBM Dental"
     ]
@@ -5082,13 +5081,13 @@
     },
     "about": {
       "label": "Über uns",
-      "title": "Zwei Engineers, die bauen, was sie zuschneiden",
+      "title": "Engineers, die bauen, was sie zuschneiden",
       "subtitle": "Sie sprechen mit dem Engineer, der den Code schreibt. Keine Account Manager, keine Übergabe, kein Team, das Sie nie zu sehen bekommen.",
       "breadcrumb": "Über uns",
       "story": {
         "label": "Wer wir sind",
-        "title": "Eine KI-Beratung aus zwei Personen in Poznań",
-        "paragraph1": "Pluscode sind Dawid Kubicki und Krzysztof Suliński. Wir bauen KI-Systeme und die Software darum herum: Dokumente lesen, in den eigenen Daten eines Unternehmens suchen, die kommenden Monate prognostizieren, und die Infrastruktur, die das alles nach dem Start am Laufen hält.",
+        "title": "Eine KI-Beratung in Poznań, tätig in ganz Europa",
+        "paragraph1": "Pluscode wurde von Dawid Kubicki und Krzysztof Suliński gegründet. Wir bauen KI-Systeme und die Software darum herum: Dokumente lesen, in den eigenen Daten eines Unternehmens suchen, die kommenden Monate prognostizieren, und die Infrastruktur, die das alles nach dem Start am Laufen hält.",
         "paragraph2": "Sieben Jahre, vierzig Projekte, acht Branchen. Wir nehmen an, was wir zu Ende bringen können, und wenn eine Aufgabe uns nicht braucht, sagen wir das im ersten Gespräch.",
         "caption": "Dawid Kubicki und Krzysztof Suliński, Poznań.",
         "imageAlt": "Dawid Kubicki und Krzysztof Suliński"
@@ -5111,7 +5110,7 @@
           },
           "access": {
             "title": "Ein Engineer, von Anfang bis Ende",
-            "description": "Wer die Arbeit zuschneidet, schreibt sie auch und geht ans Telefon, wenn etwas kaputt ist. Niemand übernimmt das Projekt auf halbem Weg, weil es niemanden gibt, dem man es übergeben könnte."
+            "description": "Wer die Arbeit zuschneidet, schreibt sie auch und geht ans Telefon, wenn etwas kaputt ist. Niemand gibt Ihr Projekt auf halbem Weg weiter."
           }
         }
       },
@@ -5130,15 +5129,16 @@
             "label": "Branchen, in denen wir gearbeitet haben"
           },
           "team": {
-            "value": "2",
-            "label": "Engineers, die die Arbeit machen"
+            "value": "0",
+            "label": "Account Manager zwischen Ihnen und dem Engineer"
           }
         }
       },
       "team": {
         "label": "Das Team",
-        "title": "Dawid und Krzysztof",
-        "intro": "Zwei Engineers, beide in Poznań. Wer von uns zuerst mit Ihnen spricht, bleibt bis zum Ende beim Projekt.",
+        "title": "Die Menschen, mit denen Sie arbeiten",
+        "intro": "Aus Poznań, tätig in ganz Europa. Wer von uns zuerst mit Ihnen spricht, bleibt bis zum Ende beim Projekt.",
+        "note": "Das sind die Menschen, die die Arbeit leiten und mit denen Sie direkt zu tun haben.",
         "emailLabel": "E-Mail an {name}",
         "linkedinLabel": "{name} auf LinkedIn",
         "members": {
@@ -5150,7 +5150,7 @@
           "krzysztof": {
             "name": "Krzysztof Suliński",
             "role": "KI-Berater",
-            "bio": "Die erste Person, mit der Sie sprechen, und einer der beiden, die bauen. Er zählt zuerst, was die Arbeit heute an Stunden kostet, damit die Entscheidung für eine Automatisierung eine Zahl ist und keine Meinung, und er bleibt am Projekt, wenn sich diese Zahl ändert."
+            "bio": "Die erste Person, mit der Sie sprechen, und einer von denen, die es bauen. Er zählt zuerst, was die Arbeit heute an Stunden kostet, damit die Entscheidung für eine Automatisierung eine Zahl ist und keine Meinung, und er bleibt am Projekt, wenn sich diese Zahl ändert."
           }
         }
       },
@@ -6809,7 +6809,7 @@
           "key": "quanty",
           "tag": "Quanty",
           "title": "Unsere KI-Tabelle geht in die öffentliche Beta",
-          "body": "Quanty liest Rechnungen, Verträge und Kontoauszüge in prüfbare Zeilen, mit der Quellseite neben jedem Wert. Gebaut von denselben zwei Ingenieuren, mit denen Sie arbeiten würden.",
+          "body": "Quanty liest Rechnungen, Verträge und Kontoauszüge in prüfbare Zeilen, mit der Quellseite neben jedem Wert. Gebaut von denselben Ingenieuren, mit denen Sie arbeiten würden.",
           "href": "https://quanty.ai",
           "image": "/assets/quanty/chat-2x.webp",
           "alt": "Der Quanty-KI-Agent fügt einer Bestelltabelle eine Lieferstatus-Spalte hinzu"
@@ -6855,11 +6855,6 @@
     "clients": {
       "title": "Ausgewählte Kunden",
       "items": [
-        {
-          "key": "zabka",
-          "name": "Żabka",
-          "what": "Architektur autonomer Filialen"
-        },
         {
           "key": "ubs",
           "name": "UBS",
@@ -7388,7 +7383,7 @@
           "Jedes Unternehmen hat einen Schreibtisch, auf dem Dokumente landen. Sie kommen per Mail, per Post, aus einem Lieferantenportal, als Foto eines Lieferscheins vom Hof. Jemand öffnet jedes einzelne, liest vier oder fünf Zahlen ab, tippt sie in ein anderes System und legt es ab. Es ist stille, ununterbrochene Arbeit, und sie ist das Erste, was kippt, wenn die Person, die sie macht, eine Woche frei nimmt.",
           "Wir bauen das Stück dazwischen. Die Dokumente kommen weiter so an, wie sie ohnehin ankommen. Software liest sie, prüft sie gegen das, was Sie bereits wissen, und bucht sie in Ihr System. Was sie nicht sicher lesen kann, landet in einer kurzen Warteschlange für einen Menschen, und genau darum geht es: Das Ziel sind nicht null Menschen, sondern eine Person, die zehn Dokumente am Tag ansieht statt dreihundert."
         ],
-        "whatNote": "Zwei Ingenieure aus Poznan, tätig in ganz Europa. Ihre Dokumente bleiben auf europäischer Infrastruktur, und der Auftragsverarbeitungsvertrag ist unterschrieben, bevor wir die erste Datei sehen.",
+        "whatNote": "Pluscode, aus Poznan, tätig in ganz Europa. Ihre Dokumente bleiben auf europäischer Infrastruktur, und der Auftragsverarbeitungsvertrag ist unterschrieben, bevor wir die erste Datei sehen.",
         "doesTitle": "Was es tut",
         "doesIntro": "Fünf Schritte, und jeder davon ist überprüfbar.",
         "does": [
@@ -8228,8 +8223,8 @@
         },
         {
           "key": "team",
-          "figure": "2",
-          "label": "Ingenieure bauen es und beantworten Ihre E-Mails"
+          "figure": "0",
+          "label": "Account Manager, Ihre E-Mails beantworten die Ingenieure"
         }
       ]
     },
@@ -8360,7 +8355,7 @@
       "eyebrow": "Quanty und Pluscode",
       "title": "Wir haben es gebaut, und dieselben Teile gehen in Kundensysteme.",
       "body": [
-        "Quanty ist keine Partnerplattform und keine Zertifizierung. Es ist unser eigenes Produkt, entworfen und gebaut von denselben zwei Ingenieuren, mit denen Sie in einem Projekt arbeiten würden.",
+        "Quanty ist keine Partnerplattform und keine Zertifizierung. Es ist unser eigenes Produkt, entworfen und gebaut von denselben Ingenieuren, mit denen Sie in einem Projekt arbeiten würden.",
         "Dokumente lesen, Antworten mit erhaltener Quelle, Freigabe bevor etwas zurückgeschrieben wird: das sind die Teile von Quanty, und genau die setzen wir in den Systemen ein, die wir für Kunden bauen. Das Produkt ist der Ort, an dem wir sie auf eigene Rechnung beweisen."
       ],
       "ownership": "Quanty ist ein Produkt der Pluscode Sp. z o.o., Poznań, Polen.",
@@ -8372,5 +8367,31 @@
       "text": "Bringen Sie einen echten Ordner in ein 30 Minuten langes Gespräch mit. Wir lesen ihn gemeinsam und sagen Ihnen offen, ob Quanty passt oder ob Sie etwas Gebautes brauchen.",
       "button": "Gespräch buchen"
     }
+  },
+  "heroSlides": {
+    "cta": "Jetzt entdecken",
+    "scroll": "Scrollen",
+    "slides": [
+      {
+        "key": "pluscode",
+        "headline": "KI, die arbeitet",
+        "subline": "Pluscode, aus Poznań, in ganz Europa.",
+        "mp4": "/hero/hero.mp4",
+        "webm": "/hero/hero.webm",
+        "poster": "/hero/hero-poster.jpg",
+        "overlayTop": 0.62,
+        "overlayBottom": 0.74
+      },
+      {
+        "key": "logistics",
+        "headline": "Fracht ohne Papierkram",
+        "subline": "KI-Beratung für Speditionen und Frachtführer: Rechnungen, Aufträge, Lieferscheine.",
+        "mp4": "/hero/logistics.mp4",
+        "webm": "/hero/logistics.webm",
+        "poster": "/hero/logistics-poster.jpg",
+        "overlayTop": 0.42,
+        "overlayBottom": 0.58
+      }
+    ]
   }
 }

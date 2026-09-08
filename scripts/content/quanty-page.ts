@@ -28,9 +28,11 @@
  *     may soften it into one.
  *   - The four figures in `about.facts` are checkable claims about a real
  *     product. "1 price" and "$0" are quanty.ai's own pricing shape, "EU"
- *     is its own hosting statement and "2" is the two people who build it.
- *     Do not add a figure that cannot be checked, and re-check these
- *     whenever quanty.ai's pricing or trust page changes.
+ *     is its own hosting statement and "0" is the number of account
+ *     managers between a customer and the engineers who answer support.
+ *     The site states no headcount, so do not put one back here. Do not
+ *     add a figure that cannot be checked, and re-check these whenever
+ *     quanty.ai's pricing or trust page changes.
  *
  * House style: one clause per line, no headline explains the next
  * section, and no em dashes anywhere, in any locale.
@@ -172,8 +174,8 @@ const en: QuantyPageContent = {
       },
       {
         key: "team",
-        figure: "2",
-        label: "engineers build it and answer your e-mail",
+        figure: "0",
+        label: "account managers, the engineers answer your e-mail",
       },
     ],
   },
@@ -295,7 +297,7 @@ const en: QuantyPageContent = {
     eyebrow: "Quanty and Pluscode",
     title: "We built it, and the same parts go into client systems.",
     body: [
-      "Quanty is not a partner platform and not a certification. It is our own product, designed and built by the two engineers you would work with on a consulting project.",
+      "Quanty is not a partner platform and not a certification. It is our own product, designed and built by the same engineers you would work with on a consulting project.",
       "Reading documents, answers that carry their source, approval before anything is written back: those are the parts of Quanty, and they are the parts we put into the systems we build for clients. The product is where we prove them on our own time.",
     ],
     ownership: "Quanty is a product of Pluscode Sp. z o.o., Poznań, Poland.",
@@ -369,8 +371,8 @@ const pl: QuantyPageContent = {
       },
       {
         key: "team",
-        figure: "2",
-        label: "inżynierów buduje produkt i odpisuje na maile",
+        figure: "0",
+        label: "opiekunów klienta, na maile odpowiadają inżynierowie",
       },
     ],
   },
@@ -500,7 +502,7 @@ const pl: QuantyPageContent = {
     eyebrow: "Quanty i Pluscode",
     title: "Zbudowaliśmy go sami, a te same części trafiają do systemów klientów.",
     body: [
-      "Quanty nie jest platformą partnera ani certyfikatem. To nasz własny produkt, zaprojektowany i zbudowany przez tych samych dwóch inżynierów, z którymi pracowalibyście przy projekcie.",
+      "Quanty nie jest platformą partnera ani certyfikatem. To nasz własny produkt, zaprojektowany i zbudowany przez tych samych inżynierów, z którymi pracowalibyście przy projekcie.",
       "Czytanie dokumentów, odpowiedzi z podanym źródłem, akceptacja zanim cokolwiek zostanie zapisane: to są części Quanty i dokładnie to wkładamy w systemy, które budujemy dla klientów. Produkt jest miejscem, w którym sprawdzamy je na własnym czasie.",
     ],
     ownership: "Quanty jest produktem Pluscode Sp. z o.o., Poznań, Polska.",
@@ -575,8 +577,8 @@ const de: QuantyPageContent = {
       },
       {
         key: "team",
-        figure: "2",
-        label: "Ingenieure bauen es und beantworten Ihre E-Mails",
+        figure: "0",
+        label: "Account Manager, Ihre E-Mails beantworten die Ingenieure",
       },
     ],
   },
@@ -706,7 +708,7 @@ const de: QuantyPageContent = {
     eyebrow: "Quanty und Pluscode",
     title: "Wir haben es gebaut, und dieselben Teile gehen in Kundensysteme.",
     body: [
-      "Quanty ist keine Partnerplattform und keine Zertifizierung. Es ist unser eigenes Produkt, entworfen und gebaut von denselben zwei Ingenieuren, mit denen Sie in einem Projekt arbeiten würden.",
+      "Quanty ist keine Partnerplattform und keine Zertifizierung. Es ist unser eigenes Produkt, entworfen und gebaut von denselben Ingenieuren, mit denen Sie in einem Projekt arbeiten würden.",
       "Dokumente lesen, Antworten mit erhaltener Quelle, Freigabe bevor etwas zurückgeschrieben wird: das sind die Teile von Quanty, und genau die setzen wir in den Systemen ein, die wir für Kunden bauen. Das Produkt ist der Ort, an dem wir sie auf eigene Rechnung beweisen.",
     ],
     ownership: "Quanty ist ein Produkt der Pluscode Sp. z o.o., Poznań, Polen.",

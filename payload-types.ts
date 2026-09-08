@@ -78,6 +78,7 @@ export interface Config {
     bookings: Booking;
     'trust-logos': TrustLogo;
     clients: Client;
+    'hero-slides': HeroSlide;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -96,6 +97,7 @@ export interface Config {
     bookings: BookingsSelect<false> | BookingsSelect<true>;
     'trust-logos': TrustLogosSelect<false> | TrustLogosSelect<true>;
     clients: ClientsSelect<false> | ClientsSelect<true>;
+    'hero-slides': HeroSlidesSelect<false> | HeroSlidesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -663,6 +665,61 @@ export interface Client {
   createdAt: string;
 }
 /**
+ * The full screen slides at the top of the home page. One is chosen at random on load and the rest follow as each clip ends. Active slides play in Order; when none are active the hero falls back to the slides built into the site copy.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "hero-slides".
+ */
+export interface HeroSlide {
+  id: number;
+  /**
+   * A short identity for this slide, e.g. "pluscode" or "logistics". Not shown to anyone: it is how the seed script finds this row again and how the page tells one slide from another. Lower case, no spaces.
+   */
+  key: string;
+  /**
+   * The one large line, set in white over the footage. A noun phrase, no full stop. Write it for this clip: the slide exists so the words and the picture say the same thing.
+   */
+  headline: string;
+  /**
+   * The single grey line under the headline. One short sentence.
+   */
+  subline: string;
+  /**
+   * Path to the H.264 file in public/hero/, e.g. /hero/logistics.mp4. This is the source the page offers first, because every browser and every phone can decode it. It must be encoded with faststart or it will not begin playing until the whole file has arrived.
+   */
+  mp4Path: string;
+  /**
+   * Optional path to a VP9 file in public/hero/. Offered second, for a browser built with no H.264 decoder. Leave empty and the slide plays the mp4 everywhere.
+   */
+  webmPath?: string | null;
+  /**
+   * Path to the still in public/hero/. It is what a visitor on a slow connection sees, and what stands in when a phone refuses to autoplay, so use the clip's own first frame: then the still and the first frame of playback are the same picture and nothing jumps.
+   */
+  posterPath: string;
+  /**
+   * Optional. Upload a still here to use instead of the path above, when the poster needs changing and a deploy does not. The clips themselves cannot be uploaded: they ship with the site so the first screen survives a fresh deploy.
+   */
+  posterOverride?: (number | null) | Media;
+  /**
+   * How much ink is washed over the TOP edge of this clip, 0 to 1. It is what keeps the header legible over bright footage. Measured, not chosen: read the average luma of the top strip of the clip and raise this until white type on it is comfortable. A dark clip needs less.
+   */
+  overlayTop?: number | null;
+  /**
+   * The same wash at the BOTTOM edge, where the headline sits. Raise it for pale footage, lower it for footage shot at night, and check the result rather than trusting the number.
+   */
+  overlayBottom?: number | null;
+  /**
+   * Lower numbers play first. The playlist starts on a random slide and then follows this order.
+   */
+  order?: number | null;
+  /**
+   * Uncheck to take this slide out of the playlist without deleting it. With every slide unchecked the hero falls back to the site copy.
+   */
+  isActive?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -729,6 +786,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'clients';
         value: number | Client;
+      } | null)
+    | ({
+        relationTo: 'hero-slides';
+        value: number | HeroSlide;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -1011,6 +1072,25 @@ export interface TrustLogosSelect<T extends boolean = true> {
 export interface ClientsSelect<T extends boolean = true> {
   name?: T;
   what?: T;
+  order?: T;
+  isActive?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "hero-slides_select".
+ */
+export interface HeroSlidesSelect<T extends boolean = true> {
+  key?: T;
+  headline?: T;
+  subline?: T;
+  mp4Path?: T;
+  webmPath?: T;
+  posterPath?: T;
+  posterOverride?: T;
+  overlayTop?: T;
+  overlayBottom?: T;
   order?: T;
   isActive?: T;
   updatedAt?: T;
