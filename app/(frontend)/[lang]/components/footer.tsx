@@ -3,7 +3,7 @@ import LocaleLink from "./locale-link";
 import { LinkedInIcon, InstagramIcon, FacebookIcon } from "./icons";
 import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
-import { socialLinks, QUANTY_URL, type SocialKey } from "@/lib/social";
+import { socialLinks, type SocialKey } from "@/lib/social";
 
 /* Three shared strings, so a column can never drift from its neighbour.
    `pc-link` carries the hover underline; the colour step is a plain hover
@@ -47,6 +47,66 @@ export default function Footer({ locale }: { locale: Locale }) {
   const nav = dict.navigation;
   const f = dict.footer;
 
+  /* THE SOLUTIONS GROUP. It used to be three links called "AI Services"
+     pointing at /ai-data/machine-learning, /ai-data/analytics and
+     /ai-data/consulting, so a reader who clicked "Assistants and
+     automation" landed on a page headed "Machine Learning Solutions". There
+     are six real pages behind those promises now, under /solutions, and the
+     labels here are those pages' own titles rather than a second set of
+     names for the same things.
+
+     Four of the six plus the index, which is the five-link ceiling every
+     group in this footer keeps. Process mapping and data governance are
+     the two the index has to carry: they are the pages a reader arrives at
+     after deciding, not the ones that make them decide.
+
+     WHY THE READ IS OPTIONAL. `solutions` is written into the three
+     dictionaries by scripts/content/solutions.ts. This component is on
+     every page of the site, so it may not be the thing that breaks if that
+     script has not run yet: without the key it falls back to the old nav
+     labels, still pointed at the new routes. The old /ai-data pages are
+     untouched and keep working; nothing here deletes them. */
+  const solutions = (
+    dict as unknown as {
+      solutions?: {
+        index: {
+          label: string;
+          allLabel: string;
+          items: { slug: string; name: string }[];
+        };
+      };
+    }
+  ).solutions;
+
+  const solutionsGroup = solutions
+    ? {
+        title: solutions.index.label,
+        links: [
+          ...solutions.index.items.slice(0, 4).map((item) => ({
+            label: item.name,
+            href: `/solutions/${item.slug}`,
+          })),
+          { label: solutions.index.allLabel, href: "/solutions" },
+        ],
+      }
+    : {
+        title: nav.aiData,
+        links: [
+          {
+            label: nav.aiDataItems.machineLearning.title,
+            href: "/solutions/assistants-and-automation",
+          },
+          {
+            label: nav.aiDataItems.dataAnalytics.title,
+            href: "/solutions/forecasting-and-reporting",
+          },
+          {
+            label: nav.aiDataItems.aiConsulting.title,
+            href: "/solutions/process-mapping",
+          },
+        ],
+      };
+
   // Five links a group at most. The footer used to carry every route the
   // site has, which is what /site-map is for; a wall of eight makes the one
   // link a visitor wants harder to find, not easier.
@@ -54,20 +114,7 @@ export default function Footer({ locale }: { locale: Locale }) {
     title: string;
     links: { label: string; href: string; external?: boolean }[];
   }[] = [
-    {
-      title: nav.aiData,
-      links: [
-        {
-          label: nav.aiDataItems.machineLearning.title,
-          href: "/ai-data/machine-learning",
-        },
-        {
-          label: nav.aiDataItems.dataAnalytics.title,
-          href: "/ai-data/analytics",
-        },
-        { label: nav.aiDataItems.aiConsulting.title, href: "/ai-data/consulting" },
-      ],
-    },
+    solutionsGroup,
     {
       title: nav.services,
       links: [
@@ -96,7 +143,11 @@ export default function Footer({ locale }: { locale: Locale }) {
         { label: nav.about, href: "/about" },
         { label: nav.caseStudies, href: "/case-studies" },
         { label: nav.insights, href: "/insights" },
-        { label: f.ourProduct, href: QUANTY_URL, external: true },
+        /* Our own platform page, not quanty.ai. The product still has
+           its own host and /quanty links out to it twice, but a footer
+           link that leaves the site is a link a reader does not come
+           back from. */
+        { label: f.ourProduct, href: "/quanty" },
       ],
     },
   ];

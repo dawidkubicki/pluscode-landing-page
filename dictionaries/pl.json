@@ -5081,35 +5081,37 @@
       }
     },
     "about": {
-      "label": "O Nas",
+      "label": "O nas",
       "title": "Dwóch inżynierów, którzy sami budują to, co planują",
       "subtitle": "Rozmawiasz z inżynierem, który pisze kod. Bez opiekunów klienta, bez przekazywania projektu, bez zespołu, którego nigdy nie poznasz.",
       "breadcrumb": "O nas",
       "story": {
-        "label": "Nasza Historia",
-        "title": "Zaczęliśmy z wizją uczynienia technologii dostępną",
-        "paragraph1": "Pluscode zostało założone z prostym przekonaniem: że świetna technologia powinna być dostępna dla firm każdej wielkości. Zaczęliśmy jako mały zespół inżynierów sfrustrowanych złożonością i kosztami oprogramowania korporacyjnego.",
-        "paragraph2": "Dziś rozwinęliśmy się w pełnoprawną firmę tworzącą oprogramowanie, ale nasza misja pozostaje ta sama: dostarczać wyjątkowe rozwiązania programowe, które przynoszą realne wyniki biznesowe."
+        "label": "Kim jesteśmy",
+        "title": "Dwuosobowa firma konsultingowa AI w Poznaniu",
+        "paragraph1": "Pluscode to Dawid Kubicki i Krzysztof Suliński. Budujemy systemy AI i oprogramowanie wokół nich: czytanie dokumentów, wyszukiwanie we własnych danych firmy, prognozy na kolejne miesiące oraz infrastrukturę, która utrzymuje to wszystko po wdrożeniu.",
+        "paragraph2": "Siedem lat, czterdzieści projektów, osiem branż. Bierzemy tyle, ile jesteśmy w stanie skończyć, a jeśli dana praca nas nie potrzebuje, mówimy to już na pierwszej rozmowie.",
+        "caption": "Dawid Kubicki i Krzysztof Suliński, Poznań.",
+        "imageAlt": "Dawid Kubicki i Krzysztof Suliński"
       },
       "values": {
-        "label": "Nasze Wartości",
-        "title": "Za czym stoimy",
+        "label": "Jak pracujemy",
+        "title": "Cztery rzeczy, które się nie zmieniają",
         "items": {
-          "excellence": {
-            "title": "Doskonałość",
-            "description": "Stawiamy sobie najwyższe standardy we wszystkim co robimy, od jakości kodu po komunikację z klientem."
+          "eu": {
+            "title": "Wasze dane zostają w UE",
+            "description": "Hosting w Unii Europejskiej domyślnie i umowa powierzenia przetwarzania danych podpisana, zanim cokolwiek Waszego dotkniemy. Jeśli potrzebujecie innego układu, wystarczy powiedzieć."
           },
-          "innovation": {
-            "title": "Innowacja",
-            "description": "Przyjmujemy nowe technologie i podejścia, zawsze szukając lepszych sposobów rozwiązywania problemów."
+          "risk": {
+            "title": "Najpierw poziom ryzyka z AI Act",
+            "description": "Ustalamy, do której kategorii ryzyka unijnego AI Act trafia Wasz przypadek, zanim cokolwiek zaprojektujemy. Obowiązki kształtują wtedy budowę systemu, zamiast pojawiać się po jej zakończeniu."
           },
-          "partnership": {
-            "title": "Partnerstwo",
-            "description": "Postrzegamy siebie jako rozszerzenie Twojego zespołu, zaangażowani w Twój sukces tak samo jak w nasz."
+          "domain": {
+            "title": "Najpierw branża, potem kod",
+            "description": "Zanim napiszemy linijkę kodu, uczymy się od ludzi, którzy tę pracę wykonują, jak wygląda ona dzisiaj. System, który nie rozumie procesu, automatyzuje jego niewłaściwą część."
           },
-          "transparency": {
-            "title": "Przejrzystość",
-            "description": "Wierzymy w szczerą, otwartą komunikację. Bez ukrytych agend, bez niespodzianek."
+          "access": {
+            "title": "Jeden inżynier od początku do końca",
+            "description": "Osoba, która ustala zakres, pisze kod i odbiera telefon, gdy coś przestaje działać. Nikt nie przejmuje projektu w połowie, bo nie ma komu go przekazać."
           }
         }
       },
@@ -5134,27 +5136,30 @@
         }
       },
       "team": {
-        "label": "Nasz Zespół",
-        "title": "Poznaj ludzi stojących za Pluscode",
+        "label": "Zespół",
+        "title": "Dawid i Krzysztof",
+        "intro": "Dwóch inżynierów, obaj w Poznaniu. Ten z nas, z którym porozmawiasz najpierw, zostaje przy projekcie do końca.",
+        "emailLabel": "E-mail: {name}",
+        "linkedinLabel": "{name} na LinkedIn",
         "members": {
           "dawid": {
             "name": "Dawid Kubicki",
             "role": "CEO i konsultant AI",
-            "bio": "Planuje pracę z klientem, a potem buduje ją razem z zespołem."
+            "bio": "Ustala z Wami zakres pracy, a potem sam ją pisze. Buduje głównie wyszukiwanie we własnych danych firmy, systemy grafowe i wektorowe, które muszą wytrzymać zderzenie z prawdziwymi, niespójnymi danymi, wraz z infrastrukturą, która utrzymuje je po wdrożeniu."
           },
           "krzysztof": {
             "name": "Krzysztof Suliński",
             "role": "Konsultant AI",
-            "bio": "Pierwsza osoba, z którą rozmawiasz, i jedna z dwóch, które to budują."
+            "bio": "Pierwsza osoba, z którą rozmawiasz, i jedna z dwóch, które to budują. Zaczyna od policzenia, ile ta praca kosztuje dziś w godzinach, żeby decyzja o automatyzacji była liczbą, a nie opinią, i zostaje przy projekcie, gdy ta liczba się zmieni."
           }
         }
       },
       "cta": {
-        "titleStart": "Chcesz dołączyć do ",
-        "titleEm": "naszego zespołu",
-        "titleEnd": "?",
-        "text": "Zawsze szukamy utalentowanych ludzi, którzy podzielają naszą pasję do świetnego oprogramowania.",
-        "cta": "Skontaktuj się"
+        "titleStart": "Powiedz nam, jak ta ",
+        "titleEm": "praca wygląda",
+        "titleEnd": " dzisiaj.",
+        "text": "Jedna rozmowa, bez sprzedaży. Jeśli to zadanie nas nie potrzebuje, powiemy to wprost.",
+        "cta": "Umów rozmowę"
       }
     },
     "caseStudies": {
@@ -7094,59 +7099,64 @@
         {
           "key": "solutions",
           "title": "Rozwiązania",
-          "href": "/ai-data/consulting",
+          "href": "/solutions",
           "items": [
             {
               "title": "Automatyzacja papierologii",
               "description": "Dokumenty przychodzą, zostają odczytane i trafiają na miejsce",
-              "href": "/ai-data/machine-learning"
+              "href": "/solutions/paperwork-automation"
             },
             {
               "title": "Odpowiedzi z Twoich dokumentów",
               "description": "Wchodzi pytanie, wraca odpowiedź razem ze źródłem",
-              "href": "/ai-data/machine-learning"
+              "href": "/solutions/answers-from-documents"
+            },
+            {
+              "title": "Asystenci i automatyzacja",
+              "description": "Powtarzalne kroki dzieją się same, człowiek zatwierdza wynik",
+              "href": "/solutions/assistants-and-automation"
             },
             {
               "title": "Prognozy i raporty",
               "description": "Twoje liczby w jednym miejscu i widok tego, co dalej",
-              "href": "/ai-data/analytics"
+              "href": "/solutions/forecasting-and-reporting"
             },
             {
               "title": "Mapowanie procesów",
               "description": "Szukamy pracy wartej automatyzacji, zanim ktokolwiek pisze kod",
-              "href": "/ai-data/consulting"
+              "href": "/solutions/process-mapping"
             },
             {
               "title": "Ład danych",
               "description": "RODO, AI Act i to, kto co może zobaczyć",
-              "href": "/ai-data/consulting"
+              "href": "/solutions/data-governance"
             }
           ]
         },
         {
           "key": "platform",
           "title": "Platforma",
-          "href": "https://quanty.ai",
+          "href": "/quanty",
           "items": [
             {
               "title": "Quanty",
               "description": "Arkusz AI, który czyta Twoje dokumenty do wierszy",
-              "href": "https://quanty.ai"
+              "href": "/quanty"
             },
             {
               "title": "Odczyt dokumentów",
               "description": "Faktury, umowy i wyciągi, ze źródłem przy każdej wartości",
-              "href": "https://quanty.ai"
+              "href": "/quanty#showcase"
             },
             {
-              "title": "Prognozowanie",
-              "description": "Najbliższe miesiące, aktualizowane wraz z dokumentami",
-              "href": "https://quanty.ai"
+              "title": "Czat i agenci",
+              "description": "Mówisz, co zmienić, a arkusz się zmienia",
+              "href": "/quanty#in-the-box"
             },
             {
               "title": "Raportowanie",
               "description": "Arkusz sam składa prezentację",
-              "href": "https://quanty.ai"
+              "href": "/quanty#in-the-box"
             }
           ]
         },
@@ -7188,36 +7198,42 @@
       "title": "Co robimy",
       "intro": "Inżynierowie, nie prezentacje. Każda z tych rzeczy zdejmuje godziny z czyjegoś tygodnia.",
       "cta": "Wszystkie usługi",
+      "readMore": "Dowiedz się więcej",
       "items": [
         {
           "key": "paperwork",
           "num": "01",
           "title": "Automatyzacja papierologii",
-          "body": "Faktury, zamówienia i formularze zostają odczytane i opisane bez przepisywania ręcznie."
+          "body": "Faktury, zamówienia i formularze zostają odczytane i opisane bez przepisywania ręcznie.",
+          "href": "/solutions/paperwork-automation"
         },
         {
           "key": "answers",
           "num": "02",
           "title": "Odpowiedzi z Twoich dokumentów",
-          "body": "Zespół zadaje pytanie i dostaje odpowiedź razem ze stroną źródłową."
+          "body": "Zespół zadaje pytanie i dostaje odpowiedź razem ze stroną źródłową.",
+          "href": "/solutions/answers-from-documents"
         },
         {
           "key": "software",
           "num": "03",
           "title": "Tworzenie oprogramowania",
-          "body": "Systemy budowane od początku do końca przez ludzi, którzy potem je utrzymują."
+          "body": "Systemy budowane od początku do końca przez ludzi, którzy potem je utrzymują.",
+          "href": "/services/software-development"
         },
         {
           "key": "mvp",
           "num": "04",
           "title": "Rozwój MVP",
-          "body": "Pierwsza wersja na żywo w kilka tygodni, potem rozwijana na podstawie tego, co robią użytkownicy."
+          "body": "Pierwsza wersja na żywo w kilka tygodni, potem rozwijana na podstawie tego, co robią użytkownicy.",
+          "href": "/services/mvp-development"
         },
         {
           "key": "forecasting",
           "num": "05",
           "title": "Prognozy i raporty",
-          "body": "Liczby ze wszystkich systemów w jednym miejscu i widok najbliższych miesięcy."
+          "body": "Liczby ze wszystkich systemów w jednym miejscu i widok najbliższych miesięcy.",
+          "href": "/solutions/forecasting-and-reporting"
         }
       ]
     },
@@ -7251,23 +7267,1110 @@
     "approach": {
       "title": "Jak pracujemy",
       "intro": "Polska firma pracująca w całej Europie. Zanim zaczniemy budować, siadamy z Waszym zespołem i uczymy się tej pracy.",
+      "countries": "Flagi Polski, Niemiec, Finlandii, Włoch, Holandii, Norwegii i Szwecji",
       "items": [
         {
           "key": "hosting",
+          "caption": "Gdzie leżą dane",
           "title": "Hosting w UE domyślnie",
           "body": "Regiony UE, chyba że ustalimy inaczej, wraz z umową powierzenia danych."
         },
         {
           "key": "aiact",
+          "caption": "Jakie przepisy obowiązują",
           "title": "Zgodnie z AI Act",
           "body": "Poziom ryzyka ustalamy przed projektowaniem, nie po wdrożeniu."
         },
         {
           "key": "rules",
+          "caption": "Gdzie pracujemy",
           "title": "Uczymy się reguł Waszej branży",
           "body": "Handel, bankowość, ochrona zdrowia, logistyka. Czytamy je, zanim napiszemy kod."
         }
       ]
+    }
+  },
+  "solutions": {
+    "index": {
+      "label": "Rozwiązania",
+      "allLabel": "Wszystkie rozwiązania",
+      "title": "Praca, którą zdejmujemy z Twojego biurka",
+      "intro": "Sześć rzeczy, o które firmy pytają nas najczęściej. Każda zaczyna się od papierkowej roboty, którą ktoś dziś robi ręcznie, a kończy na oprogramowaniu, które robi ją za niego, podczas gdy człowiek sprawdza wynik.",
+      "metaDescription": "Sześć praktycznych rozwiązań od Pluscode: automatyzacja dokumentów, odpowiedzi z Twoich dokumentów, asystenci, prognozy i raporty, mapowanie procesów oraz zarządzanie danymi. Hosting w UE domyślnie.",
+      "listTitle": "Od czego zacząć",
+      "listIntro": "Większość firm przychodzi do nas z jedną z tych spraw. Jeśli dwie opisują Ciebie, zacznij od tej, która boli w poniedziałek rano.",
+      "items": [
+        {
+          "key": "paperworkAutomation",
+          "slug": "paperwork-automation",
+          "name": "Automatyzacja dokumentów",
+          "teaser": "Dokumenty przychodzą, zostają odczytane, sprawdzone i trafiają do właściwego systemu. Nikt nic nie przepisuje."
+        },
+        {
+          "key": "answersFromDocuments",
+          "slug": "answers-from-documents",
+          "name": "Odpowiedzi z Twoich dokumentów",
+          "teaser": "Zadajesz pytanie normalnym językiem i dostajesz odpowiedź z własnych plików, wraz ze stroną, z której pochodzi."
+        },
+        {
+          "key": "assistantsAndAutomation",
+          "slug": "assistants-and-automation",
+          "name": "Asystenci i automatyzacja",
+          "teaser": "Asystent, który wykonuje powtarzalne kroki w Twoich narzędziach i zatrzymuje się, żeby człowiek zatwierdził."
+        },
+        {
+          "key": "forecastingAndReporting",
+          "slug": "forecasting-and-reporting",
+          "name": "Prognozy i raporty",
+          "teaser": "Twoje liczby w jednym miejscu, miesięczny raport, który składa się sam, i widok tego, co przed Tobą."
+        },
+        {
+          "key": "processMapping",
+          "slug": "process-mapping",
+          "name": "Mapowanie procesów",
+          "teaser": "Dwa dni z ludźmi, którzy wykonują pracę, a potem wyceniona lista tego, co warto zautomatyzować."
+        },
+        {
+          "key": "dataGovernance",
+          "slug": "data-governance",
+          "name": "Zarządzanie danymi",
+          "teaser": "Gdzie leżą dane, kto może je zobaczyć i co unijny AI Act mówi o tym, co budujesz."
+        }
+      ],
+      "startTitle": "Jak zaczyna się współpraca",
+      "startIntro": "Te same trzy kroki za każdym razem, niezależnie od tego, które z sześciu wybierzesz.",
+      "start": [
+        {
+          "title": "Rozmowa z inżynierem",
+          "body": "Trzydzieści minut. Ty opisujesz pracę, my mówimy, co byśmy zbudowali, czego nie, i mniej więcej ile to zajmie. Nie ma prezentacji ani działu sprzedaży do przejścia."
+        },
+        {
+          "title": "Jeden mały, ustalony kawałek",
+          "body": "Prawie każdy projekt zaczyna się od jednego zamkniętego kroku: jeden typ dokumentu, jeden zbiór plików, jeden raport. Ustalony zakres, ustalona cena, więc pierwsza faktura nigdy nie jest niespodzianką."
+        },
+        {
+          "title": "Decyzja, którą możesz cofnąć",
+          "body": "Jeśli pierwszy krok się nie zwróci, kończysz na nim. Mapę, pomiary i kod zachowujesz tak czy inaczej."
+        }
+      ],
+      "elsewhereTitle": "To nie tego szukasz?",
+      "elsewhere": [
+        {
+          "title": "Inżynieria",
+          "body": "Oprogramowanie na zamówienie, MVP, chmura i inżynier osadzony w Twoim zespole na kilka miesięcy.",
+          "href": "/services"
+        },
+        {
+          "title": "Quanty",
+          "body": "Nasz własny produkt, zbudowany przez nas: arkusz, który wczytuje Twoje dokumenty jako wiersze.",
+          "href": "/quanty"
+        },
+        {
+          "title": "Warsztaty",
+          "body": "Dzień z Twoim zespołem nad jednym procesem, jeśli chcesz przemyśleć rzecz przed projektem.",
+          "href": "/workshops"
+        }
+      ],
+      "cta": {
+        "title": "Powiedz nam, jak wygląda ta papierkowa robota",
+        "text": "Trzydzieści minut z inżynierem, nie z handlowcem. Przynieś jeden proces, a powiemy, czy w ogóle warto tykać go oprogramowaniem.",
+        "button": "Umów rozmowę"
+      }
+    },
+    "pages": {
+      "paperworkAutomation": {
+        "label": "Rozwiązania",
+        "title": "Automatyzacja dokumentów",
+        "intro": "Faktury, listy przewozowe, zamówienia i formularze przychodzą przez cały dzień. Oprogramowanie może je odczytać, sprawdzić względem Twoich reguł i odłożyć tam, gdzie ich miejsce, a człowiek patrzy tylko na te, które tego wymagają.",
+        "metaDescription": "Zautomatyzuj dokumenty, które przychodzą codziennie. Pluscode buduje przyjmowanie, odczyt, kontrole i księgowanie faktur, listów przewozowych, zamówień i formularzy. Hosting w UE domyślnie.",
+        "whatTitle": "Co to jest",
+        "whatBody": [
+          "Każda firma ma biurko, na które trafiają dokumenty. Przychodzą mailem, pocztą, z portalu dostawcy, jako zdjęcie listu przewozowego zrobione na placu. Ktoś otwiera każdy z nich, odczytuje cztery czy pięć liczb, przepisuje je do innego systemu i archiwizuje. To cicha, nieustanna praca i pierwsza rzecz, która się sypie, kiedy osoba, która ją wykonuje, bierze tydzień wolnego.",
+          "My budujemy to, co pośrodku. Dokumenty dalej przychodzą tak, jak przychodziły. Oprogramowanie je odczytuje, sprawdza względem tego, co już wiesz, i wprowadza do Twojego systemu. To, czego nie odczyta z pewnością, trafia do krótkiej kolejki dla człowieka, i o tę kolejkę tu chodzi: celem nie jest zero ludzi, tylko jedna osoba oglądająca dziesięć dokumentów dziennie zamiast trzystu."
+        ],
+        "whatNote": "Dwóch inżynierów z Poznania, pracujących w całej Europie. Twoje dokumenty zostają na infrastrukturze w UE, a umowa powierzenia jest podpisana, zanim zobaczymy pierwszy plik.",
+        "doesTitle": "Co to robi",
+        "doesIntro": "Pięć kroków i każdy z nich da się sprawdzić.",
+        "does": [
+          {
+            "title": "Przyjmuje dokumenty",
+            "body": "Skrzynka mailowa, folder współdzielony, portal dostawcy, skaner, aparat w telefonie. Podłączamy się do tego, czego używasz dziś, zamiast prosić dostawców o zmianę sposobu wysyłki."
+          },
+          {
+            "title": "Odczytuje pola, na których Ci zależy",
+            "body": "Dostawca, daty, pozycje, kwoty, podatek, numery referencyjne. Listę ustalamy najpierw z Tobą, bo pole, którego nikt nie używa, to pole, którego nikt nie sprawdzi."
+          },
+          {
+            "title": "Sprawdza względem Twoich reguł",
+            "body": "Czy suma się zgadza. Czy dostawca jest znany. Czy zamówienie istnieje. Czy to nie ten sam dokument, który przyszedł we wtorek. Reguły są Twoje i są spisane zwykłym językiem."
+          },
+          {
+            "title": "Odkłada tam, gdzie trzeba",
+            "body": "Do systemu księgowego, do ERP, do archiwum albo do arkusza, jeśli naprawdę z niego korzystacie. Oryginał zostaje przypięty do zapisu, który utworzył."
+          },
+          {
+            "title": "Resztę oddaje człowiekowi",
+            "body": "Wszystko niejasne trafia do kolejki, gdzie z jednej strony jest dokument, a z drugiej odczyt, więc poprawka zajmuje sekundy. Każda poprawka poprawia następną partię."
+          }
+        ],
+        "getTitle": "Z czym zostajesz",
+        "getIntro": "Działające oprogramowanie i tyle spisanej wiedzy, żeby ktoś inny niż my mógł je utrzymać.",
+        "get": [
+          {
+            "title": "Działające przyjmowanie jednego typu dokumentu",
+            "body": "Na żywo, podłączone do Twojej prawdziwej skrzynki lub folderu, obsługujące prawdziwe dokumenty w dniu, w którym kończymy."
+          },
+          {
+            "title": "Kolejka wyjątków",
+            "body": "Jeden ekran, na którym człowiek domyka to, czego oprogramowanie nie chciało zgadywać. Zaprojektowany dla osoby, która dziś wykonuje tę pracę, nie dla administratora."
+          },
+          {
+            "title": "Raport skuteczności na Twoich dokumentach",
+            "body": "Zmierzony na próbce, którą wybierasz, pole po polu, żebyś wiedział, gdzie jest mocny, a gdzie człowiek nadal musi zajrzeć."
+          },
+          {
+            "title": "Kod, wdrożenie i przekazanie",
+            "body": "Twoje, w Twoim repozytorium, uruchomione na Twoim koncie chmurowym albo na naszym, z runbookiem i przejściem po całości z osobą, która to przejmie."
+          }
+        ],
+        "stepsTitle": "Jak to przebiega",
+        "steps": [
+          {
+            "title": "Jeden typ dokumentu",
+            "body": "Wybieramy ten o największym wolumenie i najmniejszej różnorodności. Objęcie wszystkiego naraz to najpewniejszy sposób, żeby nie skończyć niczego."
+          },
+          {
+            "title": "Próbka prawdziwych dokumentów",
+            "body": "Kilkaset Twoich, razem z tymi brzydkimi: krzywe skany, pismo odręczne, dostawca, który zmienił układ zeszłej wiosny."
+          },
+          {
+            "title": "Budujemy i mierzymy",
+            "body": "Budujemy odczyt i kontrole, a potem mierzymy je na próbce. Widzisz liczby, zanim cokolwiek dotknie Twoich systemów."
+          },
+          {
+            "title": "Najpierw równolegle, potem przełączenie",
+            "body": "Działa obok obecnego procesu przez kilka tygodni i porównujemy oba. Przełączasz się wtedy, kiedy mówi o tym porównanie, a nie kiedy my mówimy, że skończyliśmy."
+          }
+        ],
+        "whoTitle": "Dla kogo to jest",
+        "who": [
+          {
+            "title": "Zespoły finansowe i back office",
+            "body": "Rozliczanie faktur, wprowadzanie zamówień, przyjmowanie zgłoszeń. Wszędzie tam, gdzie człowiek jest łącznikiem między skrzynką a systemem."
+          },
+          {
+            "title": "Firmy rosnące szybciej niż ich administracja",
+            "body": "Wolumen się podwoił, liczba etatów nie, a zaległości zaczęli widzieć klienci."
+          },
+          {
+            "title": "Zespoły z jedną osobą, która wie, jak to działa",
+            "body": "Proces siedzi w czyjejś głowie i wszyscy po cichu martwią się tygodniem jej nieobecności."
+          }
+        ],
+        "timeTitle": "Ile to kosztuje w czasie",
+        "timeIntro": "Czas kalendarzowy, przy założeniu, że dostaniemy próbkę dokumentów i pół godziny tygodniowo od osoby, która dziś wykonuje tę pracę.",
+        "time": [
+          {
+            "span": "Tydzień 1",
+            "title": "Próbka i zakres",
+            "body": "Oglądamy prawdziwe dokumenty, ustalamy pola i reguły i uczciwie mówimy, jeśli któregoś nie warto automatyzować."
+          },
+          {
+            "span": "Tygodnie 2 do 4",
+            "title": "Działający pilotaż",
+            "body": "Odczyt, kontrole i kolejka wyjątków, uruchomione na Twojej próbce, ze zmierzoną skutecznością."
+          },
+          {
+            "span": "Tygodnie 5 do 8",
+            "title": "Podłączone i na produkcji",
+            "body": "Wpięte w Twoje systemy, uruchomione równolegle z obecnym procesem, a potem przełączone, z opisanym przekazaniem."
+          }
+        ],
+        "relatedTitle": "Powiązane",
+        "related": [
+          {
+            "title": "Odpowiedzi z Twoich dokumentów",
+            "body": "Kiedy dokumenty da się już odczytać, następne pytanie brzmi zwykle, jak je o coś zapytać.",
+            "href": "/solutions/answers-from-documents"
+          },
+          {
+            "title": "Asystenci i automatyzacja",
+            "body": "Kiedy pracą nie jest jeden dokument, tylko ciąg kroków w kilku narzędziach.",
+            "href": "/solutions/assistants-and-automation"
+          },
+          {
+            "title": "Rozwój oprogramowania",
+            "body": "Jeśli system, do którego dokumenty mają trafiać, jeszcze nie istnieje.",
+            "href": "/services/software-development"
+          }
+        ],
+        "cta": {
+          "title": "Przyślij nam pięć swoich dokumentów",
+          "text": "Prawdziwych, z całym bałaganem. Powiemy, co oprogramowanie mogłoby z nich odczytać, a czego nie, zanim wydasz złotówkę.",
+          "button": "Umów rozmowę"
+        }
+      },
+      "answersFromDocuments": {
+        "label": "Rozwiązania",
+        "title": "Odpowiedzi z Twoich dokumentów",
+        "intro": "Twoje umowy, procedury i instrukcje już zawierają odpowiedź. Zadaj pytanie normalnym językiem i dostań ją z powrotem razem ze stroną, z której pochodzi, żeby każdy mógł ją sprawdzić.",
+        "metaDescription": "Zapytaj własne dokumenty i dostań sprawdzalną odpowiedź ze źródłem. Pluscode buduje wyszukiwanie i odpowiadanie na Twoich plikach, z Twoimi uprawnieniami i hostingiem w UE.",
+        "whatTitle": "Co to jest",
+        "whatBody": [
+          "Firmy rzadko tracą wiedzę. Tracą drogę do niej. Klauzula jest w umowie podpisanej cztery lata temu, procedura w instrukcji, która krąży w trzech wersjach, a odpowiedź na dzisiejsze pytanie klienta padła w mailu kolegi w marcu. Znalezienie tego zajmuje dwadzieścia minut, a sama wiedza, że to istnieje, bierze się z lat doświadczenia.",
+          "To jest wyszukiwarka, która odpowiada zdaniami zamiast wypluwać listę plików, i która pokazuje, skąd każde zdanie pochodzi. Korzysta z Twoich dokumentów i z niczego więcej. Kiedy Twoje dokumenty nie odpowiadają na pytanie, mówi o tym wprost, i to jest najważniejsza rzecz, jaką robi: asystent, który zgaduje, jest gorszy niż brak asystenta, bo ludzie przestają go sprawdzać."
+        ],
+        "whatNote": "Odpowiada z Twoich plików i je cytuje, więc każdą odpowiedź da się zweryfikować jednym kliknięciem. Testujemy go na prawdziwych pytaniach ze znanymi odpowiedziami, zanim zobaczy go ktokolwiek inny, a pliki zostają na infrastrukturze w UE.",
+        "doesTitle": "Co to robi",
+        "doesIntro": "Jedno pytanie wchodzi, jedna sprawdzalna odpowiedź wychodzi.",
+        "does": [
+          {
+            "title": "Przyjmuje pytanie tak, jak zadaje je człowiek",
+            "body": "Nie słowa kluczowe. Czy możemy wcześniej zakończyć umowę z Mullerem i ile to kosztuje to pytanie, z którym powinien sobie poradzić za jednym razem."
+          },
+          {
+            "title": "Odpowiada wyłącznie z Twoich dokumentów",
+            "body": "Żadnej wiedzy ogólnej i żadnego uzupełniania luk. Jeśli odpowiedzi nie ma w plikach, odpowiedzią jest to, że jej tam nie ma."
+          },
+          {
+            "title": "Pokazuje źródło",
+            "body": "Każda odpowiedź niesie ze sobą dokument, stronę i fragment, więc osoba, która ją czyta, potwierdza ją w kilka sekund."
+          },
+          {
+            "title": "Szanuje to, kto co może zobaczyć",
+            "body": "Korzysta z uprawnień, które już masz. Ktoś, kto nie otworzy folderu, nie wyciągnie z niego odpowiedzi przez uprzejme zapytanie."
+          },
+          {
+            "title": "Mówi Ci, o co jest pytany",
+            "body": "Widok administracyjny z pytaniami ludzi i z tymi, na które nie umiał odpowiedzieć. Ta lista to najlepsza mapa braków w Twojej dokumentacji, jaką dostaniesz."
+          }
+        ],
+        "getTitle": "Z czym zostajesz",
+        "getIntro": "Narzędzie, z którego jeden zespół już korzysta, i test, który mówi, czy można mu ufać.",
+        "get": [
+          {
+            "title": "Wyszukiwanie i odpowiedzi na jednym zbiorze",
+            "body": "Nazwany zbiór dokumentów: archiwum umów, biblioteka procedur, instrukcja produktu, folder przetargowy."
+          },
+          {
+            "title": "Zestaw testowy prawdziwych pytań",
+            "body": "Około czterdziestu pytań od ludzi, którzy będą z tego korzystać, ze spisanymi poprawnymi odpowiedziami i wynikiem. Uruchamiany ponownie przy każdej zmianie."
+          },
+          {
+            "title": "Model uprawnień, na piśmie",
+            "body": "Kto o co może pytać, jak jest to egzekwowane i co się dzieje w dniu, w którym ktoś zmienia rolę albo odchodzi."
+          },
+          {
+            "title": "Kod i wdrożenie",
+            "body": "Uruchomione na infrastrukturze w UE, na Twoim koncie albo na naszym, z runbookiem i sesją dla osoby, która to przejmie."
+          }
+        ],
+        "stepsTitle": "Jak to przebiega",
+        "steps": [
+          {
+            "title": "Wybierz jeden zbiór",
+            "body": "Jeden zbiór dokumentów z jedną grupą odbiorców. Wszystko naraz daje asystenta, który jest przeciętny we wszystkim."
+          },
+          {
+            "title": "Najpierw spisujemy pytania",
+            "body": "Siadamy z ludźmi, którzy będą z tego korzystać, i zbieramy prawdziwe pytania razem z odpowiedziami, o których wiedzą, że są poprawne. To jest test i powstaje przed budową."
+          },
+          {
+            "title": "Budujemy i punktujemy",
+            "body": "Budujemy, uruchamiamy pytania i pokazujemy wynik: jak często ma rację i jak często słusznie odmawia odpowiedzi."
+          },
+          {
+            "title": "Jeden zespół, potem szerzej",
+            "body": "Trafia do jednego zespołu, patrzymy, o co pytają, i poprawiamy to, co pokazuje log. Udostępnienie wszystkim pierwszego dnia tylko zakrywa problemy."
+          }
+        ],
+        "whoTitle": "Dla kogo to jest",
+        "who": [
+          {
+            "title": "Działy prawne i zespoły kontraktowe",
+            "body": "Setki umów, garść klauzul, które mają znaczenie, i pytania, które zawsze przychodzą na termin."
+          },
+          {
+            "title": "Wsparcie i serwis",
+            "body": "Odpowiedź jest w instrukcji. Trudne jest znalezienie jej, kiedy klient czeka."
+          },
+          {
+            "title": "Zespoły ofertowe i przetargowe",
+            "body": "Każda oferta powtarza coś, co raz już dobrze napisaliście. Tu to jest."
+          }
+        ],
+        "timeTitle": "Ile to kosztuje w czasie",
+        "timeIntro": "Czas kalendarzowy, przy dostępie do dokumentów i dwóch godzinach od ludzi, którzy będą z tego korzystać.",
+        "time": [
+          {
+            "span": "Tydzień 1",
+            "title": "Pytania i dokumenty",
+            "body": "Zbieramy prawdziwe pytania, oglądamy pliki i mówimy, które części zbioru nadają się do użycia, a które trzeba najpierw uporządkować."
+          },
+          {
+            "span": "Tygodnie 2 do 3",
+            "title": "Wersja do wypróbowania",
+            "body": "Odpowiada na Twoich dokumentach ze źródłami, oceniona na pytaniach z pierwszego tygodnia."
+          },
+          {
+            "span": "Tygodnie 4 do 6",
+            "title": "Uprawnienia i wdrożenie",
+            "body": "Wpięte w Twoje reguły dostępu, oddane jednemu zespołowi, a potem poprawione pod to, o co naprawdę pytają."
+          }
+        ],
+        "relatedTitle": "Powiązane",
+        "related": [
+          {
+            "title": "Automatyzacja dokumentów",
+            "body": "Jeśli dokumentów nie da się jeszcze pewnie odczytać, to jest krok wcześniejszy.",
+            "href": "/solutions/paperwork-automation"
+          },
+          {
+            "title": "Zarządzanie danymi",
+            "body": "Kto co może zobaczyć i co mówi o tym unijny AI Act, ustalone przed budową.",
+            "href": "/solutions/data-governance"
+          },
+          {
+            "title": "Machine learning",
+            "body": "Inżynieria pod spodem, jeśli chcesz techniczną wersję tej strony.",
+            "href": "/ai-data/machine-learning"
+          }
+        ],
+        "cta": {
+          "title": "Przynieś nam dziesięć pytań, na które nie umiesz szybko odpowiedzieć",
+          "text": "Prawdziwe pytania od prawdziwych ludzi i dokumenty, które powinny zawierać odpowiedzi. Powiemy, czy na Twoich plikach to zadziała.",
+          "button": "Umów rozmowę"
+        }
+      },
+      "assistantsAndAutomation": {
+        "label": "Rozwiązania",
+        "title": "Asystenci i automatyzacja",
+        "intro": "Praca, która nie jest jednym dokumentem, tylko ciągiem: przeczytaj zgłoszenie, znajdź plik, napisz odpowiedź, zaktualizuj rekord, przypomnij się o to, co nigdy nie wróciło. Asystent wykonuje kroki, a człowiek zatwierdza wynik.",
+        "metaDescription": "Asystenci, którzy wykonują powtarzalne kroki w narzędziach, z których Twój zespół już korzysta, z człowiekiem zatwierdzającym wynik i czytelnym logiem wszystkiego, co zrobili.",
+        "whatTitle": "Co to jest",
+        "whatBody": [
+          "Część pracy to nie przychodzący dokument. To krótki ciąg kroków, który powtarza się czterdzieści razy w tygodniu. Przychodzi zgłoszenie, ktoś sprawdza klienta, weryfikuje dwie rzeczy, pisze odpowiedź prawie taką samą jak poprzednio, aktualizuje rekord i ustawia przypomnienie, żeby dopytać o to, czego brakuje. Każdy krok jest łatwy. Zjada dzień dopiero cały ciąg.",
+          "Asystent wykonuje ten ciąg i zatrzymuje się tam, gdzie potrzebna jest ocena. Przygotowuje treść, ale nie wysyła. Przygotowuje rekord, człowiek go zatwierdza. Wszystko, co zrobił, trafia do logu, który da się przeczytać, więc kiedy się pomyli, widzisz, który krok zawiódł, i poprawiasz ten krok, zamiast wyłączać całość i wracać do ręcznej roboty."
+        ],
+        "whatNote": "Nie budujemy asystenta, który za pierwszym razem działa sam. Zatwierdzenia zdejmujemy później, po jednym, kiedy log pokaże, że dany krok na to zasłużył.",
+        "doesTitle": "Co to robi",
+        "doesIntro": "Pięć nawyków, a piąty jest tym, który pozwala bezpiecznie utrzymać cztery pozostałe.",
+        "does": [
+          {
+            "title": "Mieszka tam, gdzie praca już się dzieje",
+            "body": "We wspólnej skrzynce, w Teams albo Slacku, w CRM, w kolejce zgłoszeń. Nikt nie musi logować się do nowego systemu, żeby z niego skorzystać."
+          },
+          {
+            "title": "Przygotowuje zamiast wysyłać",
+            "body": "Odpowiedzi, oferty, streszczenia, notatki wewnętrzne. Człowiek czyta i wysyła, i tak samo asystent się poprawia: poprawki są informacją zwrotną."
+          },
+          {
+            "title": "Wyszukuje za Ciebie",
+            "body": "Zbiera klienta, zamówienie, umowę i ostatnią rozmowę w jednym miejscu, zanim ktokolwiek o to poprosi, więc człowiek zaczyna od pełnego obrazu zamiast go składać."
+          },
+          {
+            "title": "Dopytuje o to, czego brakuje",
+            "body": "Dokument, który nigdy nie wrócił, zatwierdzenie, które utknęło, formularz z trzema pustymi polami. Uprzejmie, według harmonogramu, i przestaje w chwili, gdy rzecz przyjdzie."
+          },
+          {
+            "title": "Zapisuje, co zrobił",
+            "body": "Każde uruchomienie, każdy krok, każdą decyzję, razem z tym, co weszło i co wyszło. To dzięki temu rozsądne jest danie mu więcej pracy w kolejnym miesiącu."
+          }
+        ],
+        "getTitle": "Z czym zostajesz",
+        "getIntro": "Jeden asystent na prawdziwej pracy i mechanizmy, którymi poszerzasz albo zawężasz jego uprawnienia.",
+        "get": [
+          {
+            "title": "Asystent wykonujący dwa albo trzy prawdziwe zadania",
+            "body": "Wybrane razem z zespołem, działające na bieżącej pracy, w narzędziu, które i tak mają otwarte cały dzień."
+          },
+          {
+            "title": "Krok zatwierdzenia, który kontrolujesz",
+            "body": "Co może zrobić sam, a co wymaga człowieka, spisane i możliwe do zmiany bez programisty."
+          },
+          {
+            "title": "Log i koszt jednego uruchomienia",
+            "body": "Co zrobił i ile to kosztowało. Automatyzacja o nieznanym koszcie utrzymania to niespodzianka czekająca na koniec kwartału."
+          },
+          {
+            "title": "Kod, wdrożenie i przekazanie",
+            "body": "Twoje, z runbookiem i przejściem po całości z osobą, która przejmie to po naszym wyjściu."
+          }
+        ],
+        "stepsTitle": "Jak to przebiega",
+        "steps": [
+          {
+            "title": "Dzień obserwacji prawdziwej pracy",
+            "body": "Siadamy z osobą, która ją wykonuje. Spisany proces opisuje, co powinno się dziać; dzień obserwacji pokazuje, co się dzieje."
+          },
+          {
+            "title": "Wybieramy dwa kroki",
+            "body": "Te dwa z największą powtarzalnością i najmniejszą liczbą decyzji, a nie te dwa, które najciekawiej się buduje."
+          },
+          {
+            "title": "Budujemy z zatwierdzeniem w środku",
+            "body": "Od pierwszego dnia przygotowuje i proponuje. Nic nie wychodzi na zewnątrz nieprzeczytane przez człowieka."
+          },
+          {
+            "title": "Poluzowujemy powoli",
+            "body": "Kiedy log pokaże, że dany krok jest prawie zawsze poprawny, ten krok przestaje wymagać kliknięcia. Po jednym i tylko za Twoją zgodą."
+          }
+        ],
+        "whoTitle": "Dla kogo to jest",
+        "who": [
+          {
+            "title": "Zespoły sprzedaży i obsługi",
+            "body": "To samo wyszukanie, ta sama odpowiedź, to samo przypomnienie, kilkadziesiąt razy w tygodniu."
+          },
+          {
+            "title": "HR i rekrutacja",
+            "body": "Przesiew, umawianie terminów i to nieskończone dopytywanie o dokumenty, którego nikt nie lubi, a wszyscy potrzebują."
+          },
+          {
+            "title": "Małe zespoły bez osoby od operacji",
+            "body": "Dziesięć osób wykonujących pracę dwudziestu, a administracja jest tym, co puszcza pierwsze."
+          }
+        ],
+        "timeTitle": "Ile to kosztuje w czasie",
+        "timeIntro": "Czas kalendarzowy. Zmienną rzadko jest oprogramowanie, a zwykle to, jak szybko dostaniemy dostęp do narzędzi, których asystent ma dotykać.",
+        "time": [
+          {
+            "span": "Tydzień 1",
+            "title": "Dzień obserwacji, potem lista",
+            "body": "Śledzimy prawdziwą pracę i wracamy z krokami, które warto zautomatyzować, oraz z tymi, których nie warto."
+          },
+          {
+            "span": "Tygodnie 2 do 4",
+            "title": "Pierwsze dwa zadania, na żywo",
+            "body": "Działają na prawdziwej pracy z człowiekiem zatwierdzającym wszystko, wewnątrz Waszych obecnych narzędzi."
+          },
+          {
+            "span": "Tygodnie 5 do 8",
+            "title": "Więcej zadań, mniej klikania",
+            "body": "Dokładamy zadania i zdejmujemy zatwierdzenia tam, gdzie log na to zapracował, a potem przekazujemy całość."
+          }
+        ],
+        "relatedTitle": "Powiązane",
+        "related": [
+          {
+            "title": "Automatyzacja dokumentów",
+            "body": "Kiedy pracą są przychodzące dokumenty, a nie powtarzające się kroki.",
+            "href": "/solutions/paperwork-automation"
+          },
+          {
+            "title": "Odpowiedzi z Twoich dokumentów",
+            "body": "Asystenci są lepsi, kiedy mogą czytać Twoje pliki. Te dwie rzeczy często budujemy razem.",
+            "href": "/solutions/answers-from-documents"
+          },
+          {
+            "title": "Forward deployed engineers",
+            "body": "Jeśli wolisz mieć inżyniera w zespole przez kilka miesięcy niż projekt o ustalonym zakresie.",
+            "href": "/services/forward-deployed-engineers"
+          }
+        ],
+        "cta": {
+          "title": "Opisz nam jeden dzień pracy, przy której chcesz pomocy",
+          "text": "Które czterdzieści minut schodzi na te same trzy kroki. To zwykle wystarczy, żebyśmy powiedzieli, czy warto budować asystenta.",
+          "button": "Umów rozmowę"
+        }
+      },
+      "forecastingAndReporting": {
+        "label": "Rozwiązania",
+        "title": "Prognozy i raporty",
+        "intro": "Liczby już są w Twoich systemach, w czterech różnych formach. Zbieramy je w jedno miejsce, ustalamy, co każda z nich znaczy, i sprawiamy, że miesięczny raport oraz prognoza składają się same.",
+        "metaDescription": "Jeden zestaw liczb, raport, który składa się sam, i prognoza, którą można podważyć. Pluscode łączy Twoje systemy, spisuje definicje i uzgadnia wynik z Twoimi własnymi zamknięciami.",
+        "whatTitle": "Co to jest",
+        "whatBody": [
+          "Większość problemów z raportowaniem to nie są problemy analityczne. Ktoś w pierwszy poniedziałek miesiąca eksportuje trzy pliki, wkleja je do skoroszytu, który rośnie od sześciu lat, poprawia dwie kolumny, które zawsze się psują, i wysyła prezentację. Liczby zwykle są poprawne. Nikt nie umie dokładnie powiedzieć, skąd się wzięły, a jedyna osoba, która by umiała, jest na urlopie.",
+          "My robimy tę mniej efektowną połowę. Podłączamy źródła, ustalamy jedną definicję dla każdej liczby, uzgadniamy wynik z danymi, którym już ufasz, a potem sprawiamy, że raport składa się sam. Prognoza przychodzi później i tylko dla tych liczb, dla których prognoza jest uczciwa. Części liczb przy Twojej skali nie da się sensownie prognozować i powiemy to, zamiast mimo wszystko rysować linię."
+        ],
+        "whatNote": "Budujemy też Quanty, nasz własny produkt dokładnie do tego: arkusz, który wczytuje dokumenty jako wiersze. Czasem właściwą odpowiedzią jest Quanty i żaden projekt, i wolimy to powiedzieć, niż sprzedać Ci wdrożenie.",
+        "doesTitle": "Co to robi",
+        "doesIntro": "Pięć kroków, a drugi z nich okazuje się zwykle najbardziej wartościowy.",
+        "does": [
+          {
+            "title": "Zbiera liczby w jedno miejsce",
+            "body": "Księgowość, CRM, magazyn, bank i arkusz, który ktoś prowadzi ręcznie. To, co dziś trzyma prawdę, a nie to, co powinno."
+          },
+          {
+            "title": "Ustala, co znaczy każda liczba",
+            "body": "Jedna definicja przychodu, jedna aktywnego klienta, jedna zrealizowanego zamówienia, spisane tam, gdzie wszyscy je widzą i mogą się o nie pokłócić raz, a nie co miesiąc."
+          },
+          {
+            "title": "Uzgadnia z tym, czemu ufasz",
+            "body": "Nowe wartości porównujemy z Twoimi własnymi zamknięciami, zanim ktokolwiek ma na nich polegać. Różnicę się wyjaśnia, a nie zaokrągla."
+          },
+          {
+            "title": "Sam składa raport",
+            "body": "Co miesiąc, co tydzień albo przy każdej zmianie danych. Ten sam układ, te same definicje i żadnego pierwszego poniedziałku miesiąca."
+          },
+          {
+            "title": "Prognozuje, z widocznymi założeniami",
+            "body": "Jak wyglądają najbliższe miesiące, jeśli nic się nie zmieni, i na które założenia wynik jest wrażliwy. Prognoza, której nie da się podważyć, to zgadywanie z wykresem."
+          }
+        ],
+        "getTitle": "Z czym zostajesz",
+        "getIntro": "Zestaw liczb, których obronisz na spotkaniu, i arkusz mówiący, jak liczy się każdą z nich.",
+        "get": [
+          {
+            "title": "Jeden połączony zestaw liczb",
+            "body": "Odświeżany według harmonogramu, z nazwanym źródłem i przekształceniami czytelnymi dla kogoś, kto nie jest inżynierem."
+          },
+          {
+            "title": "Spisany arkusz definicji",
+            "body": "Każda miara, jej wzór, jej źródło i osoba, która decyduje, kiedy trzeba ją zmienić."
+          },
+          {
+            "title": "Cykliczny raport",
+            "body": "Budowany i dostarczany według harmonogramu, w formie, którą Twój zarząd albo zespół i tak już czyta."
+          },
+          {
+            "title": "Prognoza i jej założenia",
+            "body": "Razem z założeniami, których nie udało się obronić, i powodem, dla którego te liczby zostały pominięte."
+          }
+        ],
+        "stepsTitle": "Jak to przebiega",
+        "steps": [
+          {
+            "title": "Ustalamy dziesięć liczb",
+            "body": "Te, od których naprawdę zależy decyzja. Raport z sześćdziesięcioma liczbami to raport, którego nikt nie czyta do końca."
+          },
+          {
+            "title": "Podłączamy i uzgadniamy",
+            "body": "Ściągamy źródła i dopasowujemy wynik do Twoich zamknięć, aż każda różnica będzie wyjaśniona."
+          },
+          {
+            "title": "Publikujemy raport",
+            "body": "Automatycznie, według harmonogramu, w formie, której ludzie się spodziewają. Zmiana powinna być niewidoczna poza tym, że raport po prostu przychodzi."
+          },
+          {
+            "title": "Dokładamy prognozę",
+            "body": "Tylko tam, gdzie historia ją uzasadnia, i zawsze z założeniami wypisanymi obok liczby."
+          }
+        ],
+        "whoTitle": "Dla kogo to jest",
+        "who": [
+          {
+            "title": "Zespoły finansowe zamykające ręcznie",
+            "body": "Koniec miesiąca to trzy dni kopiowania, a większość z nich to te same trzy dni co poprzednio."
+          },
+          {
+            "title": "Założyciele i zarządy",
+            "body": "Potrzebujesz jednej strony miesięcznie, która co miesiąc jest tą samą stroną i wytrzymuje trudne pytanie."
+          },
+          {
+            "title": "Operacje z liczbami w czterech systemach",
+            "body": "Stany w jednym miejscu, zamówienia w drugim, dostawy w trzecim i żadnego widoku, który to spina."
+          }
+        ],
+        "timeTitle": "Ile to kosztuje w czasie",
+        "timeIntro": "Czas kalendarzowy, przy dostępie do odczytu systemów i kimś, kto odpowie, co naprawdę oznacza dana kolumna.",
+        "time": [
+          {
+            "span": "Tygodnie 1 do 2",
+            "title": "Definicje i źródła",
+            "body": "Ustalamy liczby i sprawdzamy, skąd naprawdę pochodzi każda z nich. To zwykle najbardziej zaskakująca część."
+          },
+          {
+            "span": "Tygodnie 3 do 5",
+            "title": "Podłączone i uzgodnione",
+            "body": "Pipeline działa, a wartości zgadzają się z tym, czym już zamykasz miesiąc."
+          },
+          {
+            "span": "Tygodnie 6 do 8",
+            "title": "Raport, potem prognoza",
+            "body": "Cykliczny raport rusza, a prognoza dochodzi, kiedy liczbom bazowym można już ufać."
+          }
+        ],
+        "relatedTitle": "Powiązane",
+        "related": [
+          {
+            "title": "Quanty",
+            "body": "Nasz własny produkt. Jeśli Twoje liczby przychodzą jako dokumenty, a nie jako dane, zacznij tutaj.",
+            "href": "/quanty"
+          },
+          {
+            "title": "Automatyzacja dokumentów",
+            "body": "Kiedy liczby przychodzą jako faktury i listy przewozowe, które ktoś przepisuje.",
+            "href": "/solutions/paperwork-automation"
+          },
+          {
+            "title": "Analityka danych",
+            "body": "Inżynierska wersja tej strony, napisana dla technicznego czytelnika.",
+            "href": "/ai-data/analytics"
+          }
+        ],
+        "cta": {
+          "title": "Przyślij nam raport z zeszłego miesiąca",
+          "text": "Skoroszyt, prezentację, cokolwiek naprawdę wysyłasz. Powiemy, co mogłoby składać się samo, a co byłoby prawdziwą pracą.",
+          "button": "Umów rozmowę"
+        }
+      },
+      "processMapping": {
+        "label": "Rozwiązania",
+        "title": "Mapowanie procesów",
+        "intro": "Zanim ktokolwiek napisze kod, dwa dni z ludźmi, którzy wykonują pracę. Dostajesz mapę tego, jak to naprawdę działa, wycenioną listę tego, co warto zautomatyzować, i jasną listę tego, czego nie.",
+        "metaDescription": "Dwa dni z Twoim zespołem, a potem wyceniona lista tego, co warto zautomatyzować i czego nie. Zlecenie za ustaloną cenę od Pluscode, zaliczane na poczet wdrożenia.",
+        "whatTitle": "Co to jest",
+        "whatBody": [
+          "Wielu firmom mówi się, żeby zrobiły coś z AI, i nie mają dobrego sposobu, żeby zdecydować co. Presja jest prawdziwa, budżet bywa już zatwierdzony, a lista, która przychodzi od dostawcy, to lista rzeczy, które ten dostawca akurat sprzedaje. Brakuje jasnego obrazu tego, gdzie naprawdę idą godziny.",
+          "To jest ten obraz i celowo nie jest to ćwiczenie sprzedażowe. Siadamy z ludźmi, którzy wykonują pracę, liczymy, gdzie idzie czas, wyceniamy każdego kandydata i oddajemy Ci uszeregowaną listę z szacunkiem i zwrotem dla każdej pozycji. Kilka pozycji zwykle wraca z adnotacją, żeby tego nie automatyzować, i jest to warte tyle samo co te pozostałe."
+        ],
+        "whatNote": "Ustalona cena, uzgodniona przed startem i zaliczana na poczet wdrożenia, jeśli pójdziesz dalej z nami. Jeśli uczciwą odpowiedzią jest, że nic tu nie warto budować, mapę i liczby i tak zachowujesz.",
+        "doesTitle": "Co to robi",
+        "doesIntro": "Pięć rzeczy, a ostatnią dostawcy zwykle pomijają.",
+        "does": [
+          {
+            "title": "Śledzi pracę, nie opis procesu",
+            "body": "Patrzymy, jak robota jest wykonywana. Spisany proces i ten prawdziwy rzadko są tym samym, a różnica między nimi to miejsce, w którym chowają się godziny."
+          },
+          {
+            "title": "Liczy godziny",
+            "body": "Jak często zdarza się każdy krok, ile trwa, kto go robi i ile kosztuje, kiedy pójdzie źle i trzeba go powtórzyć."
+          },
+          {
+            "title": "Wycenia każdego kandydata",
+            "body": "Ile zajęłoby zbudowanie, ile kosztowałoby utrzymanie i ile by oszczędziło. W tych samych jednostkach, żeby dwóch kandydatów dało się naprawdę porównać."
+          },
+          {
+            "title": "Szereguje uczciwie",
+            "body": "Najtańsza użyteczna rzecz na górze. Efektowny projekt, który zwraca się po trzech latach, ląduje na dole, gdzie jego miejsce."
+          },
+          {
+            "title": "Mówi, czego nie ruszać",
+            "body": "Pracy z dużym udziałem oceny, ze zbyt małym wolumenem albo z takim ogonem regulacyjnym, że automatyzacja staje się droższą opcją."
+          }
+        ],
+        "getTitle": "Z czym zostajesz",
+        "getIntro": "Cztery dokumenty, wszystkie na tyle krótkie, żeby ktoś je przeczytał.",
+        "get": [
+          {
+            "title": "Mapa procesu takiego, jaki jest",
+            "body": "Kroki, systemy, przekazania i czas oczekiwania, na jednej stronie, językiem, w którym ludzie wykonujący tę pracę rozpoznają swoją robotę."
+          },
+          {
+            "title": "Uszeregowana i wyceniona lista",
+            "body": "Każda pozycja z szacunkiem budowy, kosztem utrzymania, spodziewaną oszczędnością i okresem zwrotu."
+          },
+          {
+            "title": "Notatka o ryzyku wobec unijnego AI Act",
+            "body": "W której kategorii mieści się każdy kandydat i co to oznacza w praktyce, ustalone zanim cokolwiek zostanie zaprojektowane."
+          },
+          {
+            "title": "Spisana rekomendacja",
+            "body": "Na tyle krótka, żeby zanieść ją zarządowi, na tyle konkretna, żeby działać, i wskazująca, czego byśmy nie robili i dlaczego."
+          }
+        ],
+        "stepsTitle": "Jak to przebiega",
+        "steps": [
+          {
+            "title": "Pół dnia na ustalenie zakresu",
+            "body": "Która część firmy, które zespoły i jak wyglądałby dobry wynik. Ta część spokojnie może być zdalna."
+          },
+          {
+            "title": "Dwa dni z zespołami",
+            "body": "Na miejscu albo na rozmowie, z ludźmi, którzy wykonują pracę, a nie tylko z tymi, którzy nią zarządzają."
+          },
+          {
+            "title": "Tydzień wyceny",
+            "body": "Zamieniamy to, co zobaczyliśmy, w szacunki i na bieżąco sprawdzamy z Tobą założenia, żeby nic w podsumowaniu nie było zaskoczeniem."
+          },
+          {
+            "title": "Podsumowanie",
+            "body": "Przechodzimy z całą salą przez mapę, listę i rekomendację i odpowiadamy na trudne pytania na żywo."
+          }
+        ],
+        "whoTitle": "Dla kogo to jest",
+        "who": [
+          {
+            "title": "Firmy, którym kazano zrobić coś z AI",
+            "body": "Presja jest prawdziwa, a w budynku nie ma listy, której ktokolwiek naprawdę ufa."
+          },
+          {
+            "title": "Zespoły z budżetem i bez planu",
+            "body": "Pieniądze są zatwierdzone na ten rok, a prawdziwym ryzykiem jest wydanie ich dobrze, ale na niewłaściwą rzecz."
+          },
+          {
+            "title": "Każdy przed podpisaniem umowy z dużym dostawcą",
+            "body": "Druga opinia o tym, ile ta praca jest warta, od ludzi, którzy powiedzą też: kup, zamiast budować."
+          }
+        ],
+        "timeTitle": "Ile to kosztuje w czasie",
+        "timeIntro": "Dwa do trzech tygodni od początku do końca. Jedyne, czego potrzebujemy od Ciebie, to dostęp do ludzi wykonujących pracę.",
+        "time": [
+          {
+            "span": "Tydzień 1",
+            "title": "Zakres i dni z zespołami",
+            "body": "Pół dnia na ustalenie zakresu, a potem dwa dni śledzenia pracy tak, jak jest naprawdę wykonywana."
+          },
+          {
+            "span": "Tydzień 2",
+            "title": "Wycena i redakcja",
+            "body": "Szacujemy, sprawdzamy z Tobą założenia i spisujemy całość."
+          },
+          {
+            "span": "Tydzień 3",
+            "title": "Podsumowanie i decyzja",
+            "body": "Dostajesz mapę, listę i rekomendację oraz spotkanie, na którym możesz się z wszystkimi trzema pokłócić."
+          }
+        ],
+        "relatedTitle": "Powiązane",
+        "related": [
+          {
+            "title": "Warsztaty",
+            "body": "Krótsza wersja: jeden dzień z Twoim zespołem nad jednym procesem.",
+            "href": "/workshops"
+          },
+          {
+            "title": "Zarządzanie danymi",
+            "body": "Druga rzecz, którą warto ustalić, zanim ktokolwiek zacznie budować.",
+            "href": "/solutions/data-governance"
+          },
+          {
+            "title": "Doradztwo AI",
+            "body": "Dłuższe zlecenie, kiedy pytaniem jest mapa drogowa, a nie jeden proces.",
+            "href": "/ai-data/consulting"
+          }
+        ],
+        "cta": {
+          "title": "Powiedz nam, który zespół tonie",
+          "text": "Jeden dział, jeden proces. Powiemy, co obejmie mapowanie i ile będzie kosztowało, zanim się do czegokolwiek zobowiążesz.",
+          "button": "Umów rozmowę"
+        }
+      },
+      "dataGovernance": {
+        "label": "Rozwiązania",
+        "title": "Zarządzanie danymi",
+        "intro": "Gdzie leżą dane, kto może je zobaczyć, jak długo są przechowywane i co unijny AI Act mówi o tym, co budujesz. Ustalone przed pierwszą linią kodu, a nie po tym, jak przyjdzie ankieta bezpieczeństwa.",
+        "metaDescription": "RODO, kategorie ryzyka unijnego AI Act, reguły dostępu i retencja dla projektów AI. Hosting w UE domyślnie i umowa powierzenia podpisana, zanim ruszą jakiekolwiek dane.",
+        "whatTitle": "Co to jest",
+        "whatBody": [
+          "Pytanie, które zatrzymuje projekt AI, prawie nigdy nie jest techniczne. To ankieta bezpieczeństwa od klienta, rada pracownicza pytająca, gdzie trafiają dane, prawnik pytający, w której kategorii ryzyka to się mieści, albo członek zarządu pytający, co się stanie, jeśli system pomyli się co do konkretnej osoby. Te pytania przychodzą późno i przychodzą naraz.",
+          "To jest praca polegająca na odpowiedzeniu na nie, zanim padną. Skąd bierze się każdy kawałek danych i gdzie kończy, na jakiej podstawie prawnej się przemieszcza, kto co może zobaczyć, jak długo cokolwiek jest trzymane i czego unijny AI Act wymaga od konkretnego systemu, który budujesz. To nie jest dokument polityki, którego nikt nie czyta. To zestaw decyzji, spisanych tak, żeby dało się pod nie napisać oprogramowanie."
+        ],
+        "whatNote": "Hosting w UE domyślnie i umowa powierzenia podpisana, zanim czegokolwiek dotkniemy. Kategorię ryzyka wobec AI Act ustalamy przed projektowaniem, bo to ona zmienia, co trzeba zbudować.",
+        "doesTitle": "Co to robi",
+        "doesIntro": "Pięć pytań, na które odpowiadamy raz, w formie, którą podpisze Twój dział prawny, a wdrożą inżynierowie.",
+        "does": [
+          {
+            "title": "Mapuje dane, których dotyka system",
+            "body": "Każde źródło, każde pole, które jest danymi osobowymi, i każde miejsce, w którym ląduje kopia, łącznie z kopiami, których nikt nie zamierzał tworzyć."
+          },
+          {
+            "title": "Ustala podstawę prawną i papiery",
+            "body": "Umowa powierzenia, podprocesorzy, transfery i rejestr, który musisz prowadzić. Napisane tak, żeby dział prawny mógł podpisać, a nie jako szablon do uzupełnienia później."
+          },
+          {
+            "title": "Klasyfikuje system wobec unijnego AI Act",
+            "body": "Która kategoria, czego to wymaga w praktyce i co trzeba by zrobić, żeby nie wejść w cięższą kategorię, tam gdzie to realna opcja."
+          },
+          {
+            "title": "Określa, kto co może zobaczyć",
+            "body": "Model dostępu pasujący do tego, jak firma naprawdę pracuje, i plan na dzień, w którym ktoś zmienia rolę albo odchodzi."
+          },
+          {
+            "title": "Ustawia retencję, usuwanie i logowanie",
+            "body": "Jak długo trzymamy, jak realizuje się żądanie usunięcia od początku do końca i co jest logowane, żeby na audyt odpowiedzieć dowodami zamiast zapewnieniami."
+          }
+        ],
+        "getTitle": "Z czym zostajesz",
+        "getIntro": "Dokumenty odpowiadające na pytania, zanim padną, i reguły, które żyją w oprogramowaniu, a nie w folderze.",
+        "get": [
+          {
+            "title": "Mapa danych i rejestr",
+            "body": "Czego dotyka system, gdzie to leży, kto to przetwarza i na jakiej podstawie."
+          },
+          {
+            "title": "Podpisane papiery",
+            "body": "Umowa powierzenia, lista podprocesorów i stanowisko wobec transferów, gotowe dla Twojego działu prawnego."
+          },
+          {
+            "title": "Spisana klasyfikacja wobec AI Act",
+            "body": "Kategoria, uzasadnienie i wynikające z niej obowiązki, językiem, na podstawie którego nie-prawnik potrafi działać."
+          },
+          {
+            "title": "Macierz dostępu i harmonogram retencji",
+            "body": "Kto co widzi, jak długo i co system robi automatycznie, kiedy odpowiedź się zmienia."
+          }
+        ],
+        "stepsTitle": "Jak to przebiega",
+        "steps": [
+          {
+            "title": "Jeden system naraz",
+            "body": "Porządkujemy to, co jest budowane, a nie całą firmę. Program obejmujący całą organizację trwa rok i przez ten rok nie chroni niczego."
+          },
+          {
+            "title": "Idziemy za danymi",
+            "body": "Źródła, kopie, backupy, logi i strony trzecie. Kopie, o których nikt nie pamięta, to te, które powodują incydent."
+          },
+          {
+            "title": "Decydujemy i spisujemy",
+            "body": "Każda decyzja dostaje właściciela i datę. Otwarte pytanie jest w porządku; nieudokumentowane założenie nie jest."
+          },
+          {
+            "title": "Wbudowujemy w system",
+            "body": "Reguły dostępu, retencja i logowanie stają się konfiguracją i kodem, a nie obietnicą w dokumencie."
+          }
+        ],
+        "whoTitle": "Dla kogo to jest",
+        "who": [
+          {
+            "title": "Branże regulowane",
+            "body": "Finanse, zdrowie i wszystko, gdzie audytor Twojego klienta w końcu staje się Twoim audytorem."
+          },
+          {
+            "title": "Firmy odpowiadające na ankiety bezpieczeństwa",
+            "body": "Duzi klienci pytają. Odpowiedzi powinny istnieć, zanim zależy od nich transakcja."
+          },
+          {
+            "title": "Każdy przed podpisaniem umowy z dostawcą AI",
+            "body": "Gdzie trafiają dane, co na nich trenuje i co się dzieje, kiedy odchodzisz. Warte godziny przed podpisem."
+          }
+        ],
+        "timeTitle": "Ile to kosztuje w czasie",
+        "timeIntro": "Czas kalendarzowy dla jednego systemu. Krócej, jeśli system jeszcze nie działa, co jest też najtańszym momentem na tę pracę.",
+        "time": [
+          {
+            "span": "Tydzień 1",
+            "title": "Mapa i pytania",
+            "body": "Idziemy za danymi przez system i wracamy z pytaniami, na które tylko Ty możesz odpowiedzieć."
+          },
+          {
+            "span": "Tygodnie 2 do 3",
+            "title": "Decyzje i klasyfikacja",
+            "body": "Podstawa prawna, kategoria wobec AI Act, dostęp i retencja, spisane z właścicielem przy każdej pozycji."
+          },
+          {
+            "span": "Tygodnie 4 do 5",
+            "title": "Wbudowane",
+            "body": "Reguły stają się konfiguracją i kodem, a papiery trafiają do Twojego działu prawnego."
+          }
+        ],
+        "relatedTitle": "Powiązane",
+        "related": [
+          {
+            "title": "Mapowanie procesów",
+            "body": "Druga rzecz, którą warto ustalić, zanim ktokolwiek zacznie budować.",
+            "href": "/solutions/process-mapping"
+          },
+          {
+            "title": "Chmura i MLOps",
+            "body": "Miejsce, w którym hosting w UE, kontrola dostępu i logowanie naprawdę się wdraża.",
+            "href": "/services/cloud"
+          },
+          {
+            "title": "Doradztwo AI",
+            "body": "Kiedy pytaniem jest mapa drogowa dla całej firmy, a nie jeden system.",
+            "href": "/ai-data/consulting"
+          }
+        ],
+        "cta": {
+          "title": "Przyślij nam ankietę, na której utknąłeś",
+          "text": "Albo klauzulę, którą klient dopisał w ostatniej chwili. Trzydzieści minut zwykle wystarczy, żeby powiedzieć, na co trzeba odpowiedzieć i w jakiej kolejności.",
+          "button": "Umów rozmowę"
+        }
+      }
+    }
+  },
+  "quantyPage": {
+    "meta": {
+      "title": "Quanty, nasz własny arkusz z AI",
+      "description": "Quanty wczytuje faktury, umowy i zamówienia do tabeli i pokazuje stronę, z której pochodzi każda wartość. Zbudowane przez Pluscode w Poznaniu."
+    },
+    "hero": {
+      "eyebrow": "Platforma",
+      "logoAlt": "Quanty",
+      "intro": "Nasz własny arkusz z AI. Wrzucasz dokumenty, a tabela wypełnia się sama, ze stroną źródłową przy każdej wartości.",
+      "cta": "Umów rozmowę"
+    },
+    "showcase": {
+      "eyebrow": "Produkt",
+      "title": "Tak to wygląda w pracy.",
+      "intro": "Nic tu nie jest makietą. Oba ekrany to zrzuty z Quanty, które działa dzisiaj: arkusz czytający folder faktur i agent, który dodaje kolumnę i liczy to, co znalazł.",
+      "tryIt": "Wypróbuj na quanty.ai",
+      "frames": [
+        {
+          "key": "sheet",
+          "label": "Faktury",
+          "caption": "Faktury wczytane do wierszy. Klikasz wartość, a Quanty pokazuje stronę, z której pochodzi.",
+          "alt": "Arkusz Quanty z fakturami wczytanymi do wierszy i stroną źródłową otwartą przy wartości"
+        },
+        {
+          "key": "agent",
+          "label": "Agent",
+          "caption": "Piszesz zwykłym zdaniem. Agent dodaje kolumnę, uruchamia ją i mówi, co znalazł.",
+          "alt": "Agent Quanty dodający kolumnę statusu dostawy do arkusza zamówień i liczący opóźnione"
+        }
+      ]
+    },
+    "about": {
+      "eyebrow": "Czym jest Quanty",
+      "title": "Arkusz, który czyta wasze papiery, żeby nikt nie musiał ich przepisywać.",
+      "body": [
+        "Wrzucacie folder z fakturami, umowami albo zamówieniami. Quanty je czyta, buduje kolumny, liczy i trzyma odnośnik do strony, z której pochodzi każda wartość. Sprawdzacie wiersz, nie plik.",
+        "To jedno narzędzie zamiast kilku. Nie zastąpi księgowej ani programu do faktur, ale zastąpi arkusze, foldery PDF i wątki na czacie, które prowadzicie obok nich."
+      ],
+      "facts": [
+        {
+          "key": "price",
+          "figure": "1 cena",
+          "label": "za całą firmę, nie za osobę"
+        },
+        {
+          "key": "free",
+          "figure": "$0",
+          "label": "plan Free"
+        },
+        {
+          "key": "eu",
+          "figure": "UE",
+          "label": "serwery w Polsce, pliki zostają w UE"
+        },
+        {
+          "key": "team",
+          "figure": "2",
+          "label": "inżynierów buduje produkt i odpisuje na maile"
+        }
+      ]
+    },
+    "work": {
+      "eyebrow": "Codzienna praca",
+      "title": "To, co i tak robicie co tydzień.",
+      "intro": "Faktury, umowy, zamówienia, klienci, reklamacje, rekrutacja. Każde w tabeli albo na tablicy, która sama czyta swoje papiery.",
+      "items": [
+        {
+          "key": "invoices",
+          "name": "Faktury",
+          "body": "Kwoty, terminy i sprawdzenie z umową wypełniają się z waszych faktur."
+        },
+        {
+          "key": "contracts",
+          "name": "Umowy",
+          "body": "Daty końca, okresy wypowiedzenia i kary z każdej umowy. Cytat przy każdej wartości."
+        },
+        {
+          "key": "orders",
+          "name": "Zamówienia",
+          "body": "Zamówienia z maila trafiają do tabeli, która porównuje dostawę z fakturą."
+        },
+        {
+          "key": "customers",
+          "name": "Klienci",
+          "body": "Kto co zamówił i kiedy. Co zapłacił, co zostało do zapłaty."
+        },
+        {
+          "key": "complaints",
+          "name": "Reklamacje",
+          "body": "Zgłoszenie z formularza trafia na tablicę: nowe, w naprawie, zamknięte."
+        },
+        {
+          "key": "hiring",
+          "name": "Rekrutacja",
+          "body": "CV z maila i z formularza w jednej tabeli, ocenione względem opisu stanowiska."
+        }
+      ]
+    },
+    "audience": {
+      "eyebrow": "Dla kogo",
+      "title": "Małe i średnie firmy, w których papierów jest więcej niż ludzi.",
+      "intro": "Sześć branż, w których co tydzień przychodzi ten sam folder, a ktoś przepisuje go do arkusza.",
+      "items": [
+        {
+          "key": "transport",
+          "name": "Transport",
+          "body": "Zlecenia i faktury przewoźników"
+        },
+        {
+          "key": "accounting",
+          "name": "Księgowość",
+          "body": "Faktury z maila, gotowe do księgowania"
+        },
+        {
+          "key": "finance",
+          "name": "Finanse",
+          "body": "Kto zapłacił, koszty stałe, gotówka"
+        },
+        {
+          "key": "contracts",
+          "name": "Umowy",
+          "body": "Wszystkie umowy w jednej tabeli"
+        },
+        {
+          "key": "hiring",
+          "name": "Rekrutacja",
+          "body": "CV w tabeli, ocena obok"
+        },
+        {
+          "key": "property",
+          "name": "Nieruchomości",
+          "body": "Najemcy, czynsze, terminy"
+        }
+      ]
+    },
+    "box": {
+      "eyebrow": "Co jest w środku",
+      "title": "Siedem części, jeden produkt.",
+      "intro": "Nie kupujecie modułów i nie wdrażacie ich osobno. Wszystko poniżej jest w każdym planie, a arkusz jest miejscem, od którego się zaczyna.",
+      "items": [
+        {
+          "key": "sheets",
+          "name": "Arkusze",
+          "line": "Wasz mały ERP, opisany jednym zdaniem.",
+          "body": "AI czyta wasze pliki, buduje kolumny i liczy. Nigdy nie musicie nikogo o to prosić."
+        },
+        {
+          "key": "chat",
+          "name": "Czat",
+          "line": "Powiedzcie, co zmienić.",
+          "body": "Czat stoi obok każdego arkusza. Dodaje kolumny, oznacza wiersze i liczy sumy."
+        },
+        {
+          "key": "boards",
+          "name": "Tablice Kanban",
+          "line": "To może być wasz CRM.",
+          "body": "Albo ERP, albo ATS. Kwestia ustawień, nie wdrożenia: etapy zmieniacie sami, w kilka minut."
+        },
+        {
+          "key": "forms",
+          "name": "Formularze",
+          "line": "Wyślijcie link. Odpowiedzi wypełniają tabelę.",
+          "body": "Link wstawiacie na swoją stronę. Każde zgłoszenie to nowy wiersz w tabeli."
+        },
+        {
+          "key": "slides",
+          "name": "Prezentacje",
+          "line": "Z tabeli prosto na slajdy.",
+          "body": "Slajdy i wykresy biorą liczby wprost z tabeli. Zmieniacie tabelę, slajdy idą za nią."
+        },
+        {
+          "key": "agents",
+          "name": "Agenci",
+          "line": "Każde zadanie dostaje swojego agenta.",
+          "body": "Agent to pomocnik AI, którego raz instruujecie i któremu dajecie pliki. Potem piszecie do niego na czacie obok tabeli."
+        },
+        {
+          "key": "connect",
+          "name": "Quanty Connect",
+          "line": "Sprawdźcie firmę bez wychodzenia z tabeli.",
+          "body": "Quanty dodaje to, co o firmach z waszej tabeli wiedzą internet i płatne rejestry. Przy każdej liczbie widać, skąd pochodzi."
+        }
+      ]
+    },
+    "pluscode": {
+      "eyebrow": "Quanty i Pluscode",
+      "title": "Zbudowaliśmy go sami, a te same części trafiają do systemów klientów.",
+      "body": [
+        "Quanty nie jest platformą partnera ani certyfikatem. To nasz własny produkt, zaprojektowany i zbudowany przez tych samych dwóch inżynierów, z którymi pracowalibyście przy projekcie.",
+        "Czytanie dokumentów, odpowiedzi z podanym źródłem, akceptacja zanim cokolwiek zostanie zapisane: to są części Quanty i dokładnie to wkładamy w systemy, które budujemy dla klientów. Produkt jest miejscem, w którym sprawdzamy je na własnym czasie."
+      ],
+      "ownership": "Quanty jest produktem Pluscode Sp. z o.o., Poznań, Polska.",
+      "servicesCta": "Co budujemy dla klientów",
+      "externalCta": "Wypróbuj na quanty.ai"
+    },
+    "cta": {
+      "title": "Zacznijcie od jednego folderu faktur.",
+      "text": "Przynieście prawdziwy folder na 30 minut rozmowy. Przeczytamy go razem z wami i powiemy wprost, czy Quanty pasuje, czy trzeba zbudować coś innego.",
+      "button": "Umów rozmowę"
     }
   }
 }

@@ -14,6 +14,13 @@ const hrefMap: Record<string, string> = {
   "main.home": "/",
   "main.about": "/about",
   "main.contact": "/contact",
+  "solutions.index": "/solutions",
+  "solutions.paperworkAutomation": "/solutions/paperwork-automation",
+  "solutions.answersFromDocuments": "/solutions/answers-from-documents",
+  "solutions.assistantsAndAutomation": "/solutions/assistants-and-automation",
+  "solutions.forecastingAndReporting": "/solutions/forecasting-and-reporting",
+  "solutions.processMapping": "/solutions/process-mapping",
+  "solutions.dataGovernance": "/solutions/data-governance",
   "aiData.machineLearning": "/ai-data/machine-learning",
   "aiData.analytics": "/ai-data/analytics",
   "aiData.consulting": "/ai-data/consulting",
@@ -57,11 +64,46 @@ export default async function Page({
 }) {
   const { lang } = await params;
   const locale = resolve(lang);
-  const t = getDictionary(locale).pages.sitemap;
+  const dict = getDictionary(locale);
+  const t = dict.pages.sitemap;
   const sections = Object.entries(t.sections) as [
     string,
     { title: string; links: Record<string, string> },
   ][];
+
+  /* THE SOLUTIONS SECTION. `pages.sitemap.sections` is one shape shared by
+     all three dictionaries and it has no entry for the six /solutions pages,
+     so this section is assembled from the `solutions` key itself: the names
+     are the pages' own titles, already translated, and they cannot fall out
+     of step with the routes. The read is optional for the same reason it is
+     optional in the footer: `solutions` is written by
+     scripts/content/solutions.ts, and the sitemap should still render the
+     rest of the site if that has not run. The /ai-data section stays exactly
+     as it is; those routes are untouched and still work. */
+  const solutions = (
+    dict as unknown as {
+      solutions?: {
+        index: {
+          label: string;
+          allLabel: string;
+          items: { slug: string; name: string }[];
+        };
+      };
+    }
+  ).solutions;
+
+  const solutionsSection = solutions
+    ? {
+        title: solutions.index.label,
+        links: [
+          { href: "/solutions", label: solutions.index.allLabel },
+          ...solutions.index.items.map((item) => ({
+            href: `/solutions/${item.slug}`,
+            label: item.name,
+          })),
+        ],
+      }
+    : null;
 
   return (
     <main>
@@ -73,6 +115,25 @@ export default async function Page({
               section title was a two-pixel accent rule over a mono caps
               label; it is a plain hairline and a sentence case label now. */}
           <Stagger className="pc-grid" gap={0.06}>
+            {solutionsSection && (
+              <StaggerItem className="col-span-4 border-t border-rule pt-8 ">
+                <h2>
+                  <Eyebrow>{solutionsSection.title}</Eyebrow>
+                </h2>
+                <ul className="mt-5 flex flex-col gap-3">
+                  {solutionsSection.links.map((link) => (
+                    <li key={link.href}>
+                      <LocaleLink
+                        href={link.href}
+                        className="pc-link text-[1.125rem] text-ink"
+                      >
+                        {link.label}
+                      </LocaleLink>
+                    </li>
+                  ))}
+                </ul>
+              </StaggerItem>
+            )}
             {sections.map(([sectionKey, section]) => (
               <StaggerItem
                 key={sectionKey}

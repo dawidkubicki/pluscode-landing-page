@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import type { StoriesItems } from "@/lib/home-bands";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import LocaleLink from "./locale-link";
 
@@ -23,6 +24,14 @@ import LocaleLink from "./locale-link";
  *  margin, the cards carry the offsets. It spans the full 12 columns
  *  with the same gutter, so every card still lands on the page grid and
  *  lines up with the header above it.
+ *
+ *  THE ITEMS COME FROM THE CMS WHEN THERE ARE ANY. `items` is whatever
+ *  lib/home-bands.ts read out of the insights flagged for this band,
+ *  capped at three because the offsets below are defined per position for
+ *  exactly three. It is null on any build without a reachable, populated
+ *  database, and the dictionary takes the band back whole. Both sides
+ *  carry the same six fields, so everything under this line is written
+ *  once.
  * ------------------------------------------------------------------ */
 
 /** Per-card offset and image crop, desktop only. Below md every card is
@@ -51,9 +60,13 @@ const RATIO = "aspect-[16/9]";
 
 export default function Stories({
   dict,
+  items: cmsItems,
 }: {
   dict: Dictionary["home"]["stories"];
+  items?: StoriesItems | null;
 }) {
+  const items = cmsItems && cmsItems.length > 0 ? cmsItems : dict.items;
+
   return (
     <section className="bg-paper py-20 md:py-[104px]">
       <div className="pc-shell">
@@ -69,7 +82,7 @@ export default function Stories({
           </div>
 
           <div className="pc-grid col-span-4 mt-16 md:col-span-12 md:mt-24">
-            {dict.items.map((item, i) => {
+            {items.map((item, i) => {
               const layout = CARD_LAYOUT[i] ?? CARD_LAYOUT[1];
 
               return (

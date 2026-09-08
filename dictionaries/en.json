@@ -5081,35 +5081,37 @@
       }
     },
     "about": {
-      "label": "About Us",
+      "label": "About us",
       "title": "Two engineers who build what they scope",
       "subtitle": "You talk to the engineer who writes the code. No account managers, no handover, no team you never meet.",
       "breadcrumb": "About",
       "story": {
-        "label": "Our Story",
-        "title": "Started with a vision to make technology accessible",
-        "paragraph1": "Pluscode was founded with a simple belief: that great technology should be accessible to businesses of all sizes. We started as a small team of engineers who were frustrated with the complexity and cost of enterprise software.",
-        "paragraph2": "Today, we've grown into a full-service software development company, but our mission remains the same: to deliver exceptional software solutions that drive real business results."
+        "label": "Who we are",
+        "title": "A two person AI consultancy in Poznań",
+        "paragraph1": "Pluscode is Dawid Kubicki and Krzysztof Suliński. We build AI systems and the software around them: reading documents, searching a company's own records, forecasting the months ahead, and the infrastructure that keeps all of it running after launch.",
+        "paragraph2": "Seven years, forty projects, eight industries. We take on what we can finish, and when a piece of work does not need us we say so on the first call.",
+        "caption": "Dawid Kubicki and Krzysztof Suliński, Poznań.",
+        "imageAlt": "Dawid Kubicki and Krzysztof Suliński"
       },
       "values": {
-        "label": "Our Values",
-        "title": "What we stand for",
+        "label": "How we work",
+        "title": "Four things that do not change",
         "items": {
-          "excellence": {
-            "title": "Excellence",
-            "description": "We hold ourselves to the highest standards in everything we do, from code quality to client communication."
+          "eu": {
+            "title": "Your data stays in the EU",
+            "description": "EU hosting by default, and a GDPR processing agreement signed before we touch anything of yours. If you need a different arrangement, you ask for it."
           },
-          "innovation": {
-            "title": "Innovation",
-            "description": "We embrace new technologies and approaches, always looking for better ways to solve problems."
+          "risk": {
+            "title": "The AI Act tier comes first",
+            "description": "We work out which EU AI Act risk tier your use case falls into before anything is designed. The obligations then shape the build instead of arriving after it."
           },
-          "partnership": {
-            "title": "Partnership",
-            "description": "We see ourselves as an extension of your team, invested in your success as much as our own."
+          "domain": {
+            "title": "Your industry before your code",
+            "description": "We learn how the work is done today, from the people who do it, before we write a line. A system that does not understand the process automates the wrong part of it."
           },
-          "transparency": {
-            "title": "Transparency",
-            "description": "We believe in honest, open communication. No hidden agendas, no surprises."
+          "access": {
+            "title": "One engineer, start to finish",
+            "description": "The person who scopes the work writes it and answers when it breaks. Nobody is handed the project halfway, because there is nobody to hand it to."
           }
         }
       },
@@ -5134,27 +5136,30 @@
         }
       },
       "team": {
-        "label": "Our Team",
-        "title": "Meet the people behind Pluscode",
+        "label": "The team",
+        "title": "Dawid and Krzysztof",
+        "intro": "Two engineers, both in Poznań. Whichever of us you speak to first stays with the project until it is done.",
+        "emailLabel": "Email {name}",
+        "linkedinLabel": "{name} on LinkedIn",
         "members": {
           "dawid": {
             "name": "Dawid Kubicki",
             "role": "CEO & AI Consultant",
-            "bio": "Scopes the work with clients, then builds it with the team."
+            "bio": "Scopes the work with you and then writes it. Most of what he builds is retrieval over a company's own records, graph and vector systems that have to survive real and inconsistent data, together with the infrastructure that keeps them running once they are live."
           },
           "krzysztof": {
             "name": "Krzysztof Suliński",
             "role": "AI Consultant",
-            "bio": "The first person you talk to, and one of the two who build it."
+            "bio": "The first person you talk to, and one of the two who build it. He starts by counting what the work costs in hours today, so the decision to automate is a number and not an opinion, and he stays on the project after that number changes."
           }
         }
       },
       "cta": {
-        "titleStart": "Want to join ",
-        "titleEm": "our team",
-        "titleEnd": "?",
-        "text": "We're always looking for talented people who share our passion for great software.",
-        "cta": "Get in touch"
+        "titleStart": "Tell us what the ",
+        "titleEm": "work looks like",
+        "titleEnd": " today.",
+        "text": "One call, no pitch. If the job does not need us, we will tell you that instead.",
+        "cta": "Book a call"
       }
     },
     "caseStudies": {
@@ -7094,59 +7099,64 @@
         {
           "key": "solutions",
           "title": "Solutions",
-          "href": "/ai-data/consulting",
+          "href": "/solutions",
           "items": [
             {
               "title": "Paperwork automation",
               "description": "Documents arrive, get read, and land in the right place",
-              "href": "/ai-data/machine-learning"
+              "href": "/solutions/paperwork-automation"
             },
             {
               "title": "Answers from your documents",
               "description": "A question goes in, an answer comes back with its source",
-              "href": "/ai-data/machine-learning"
+              "href": "/solutions/answers-from-documents"
+            },
+            {
+              "title": "Assistants and automation",
+              "description": "The repeated steps get done, a person approves the result",
+              "href": "/solutions/assistants-and-automation"
             },
             {
               "title": "Forecasting and reporting",
               "description": "Your numbers in one place, and a view of what comes next",
-              "href": "/ai-data/analytics"
+              "href": "/solutions/forecasting-and-reporting"
             },
             {
               "title": "Process mapping",
               "description": "We find the work worth automating before anyone writes code",
-              "href": "/ai-data/consulting"
+              "href": "/solutions/process-mapping"
             },
             {
               "title": "Data governance",
               "description": "GDPR, the EU AI Act, and who may see what",
-              "href": "/ai-data/consulting"
+              "href": "/solutions/data-governance"
             }
           ]
         },
         {
           "key": "platform",
           "title": "Platform",
-          "href": "https://quanty.ai",
+          "href": "/quanty",
           "items": [
             {
               "title": "Quanty",
               "description": "The AI spreadsheet that reads your documents into rows",
-              "href": "https://quanty.ai"
+              "href": "/quanty"
             },
             {
               "title": "Document reading",
               "description": "Invoices, contracts and statements, with the source kept",
-              "href": "https://quanty.ai"
+              "href": "/quanty#showcase"
             },
             {
-              "title": "Forecasting",
-              "description": "The months ahead, updated as documents arrive",
-              "href": "https://quanty.ai"
+              "title": "Chat and agents",
+              "description": "Say what to change, and the sheet changes",
+              "href": "/quanty#in-the-box"
             },
             {
               "title": "Reporting",
               "description": "The workbook builds the deck",
-              "href": "https://quanty.ai"
+              "href": "/quanty#in-the-box"
             }
           ]
         },
@@ -7188,36 +7198,42 @@
       "title": "What we do",
       "intro": "Engineers, not slide decks. Each one takes hours off somebody's week.",
       "cta": "All services",
+      "readMore": "Learn more",
       "items": [
         {
           "key": "paperwork",
           "num": "01",
           "title": "Paperwork automation",
-          "body": "Invoices, orders and forms are read and filed without anyone retyping them."
+          "body": "Invoices, orders and forms are read and filed without anyone retyping them.",
+          "href": "/solutions/paperwork-automation"
         },
         {
           "key": "answers",
           "num": "02",
           "title": "Answers from your documents",
-          "body": "Your team asks a question and gets the answer, with the source page attached."
+          "body": "Your team asks a question and gets the answer, with the source page attached.",
+          "href": "/solutions/answers-from-documents"
         },
         {
           "key": "software",
           "num": "03",
           "title": "Software development",
-          "body": "Custom systems built end to end by the people who will run them."
+          "body": "Custom systems built end to end by the people who will run them.",
+          "href": "/services/software-development"
         },
         {
           "key": "mvp",
           "num": "04",
           "title": "MVP development",
-          "body": "A first version live in weeks, then grown on what real users do with it."
+          "body": "A first version live in weeks, then grown on what real users do with it.",
+          "href": "/services/mvp-development"
         },
         {
           "key": "forecasting",
           "num": "05",
           "title": "Forecasting and reporting",
-          "body": "Numbers from every system in one place, and a view of the months ahead."
+          "body": "Numbers from every system in one place, and a view of the months ahead.",
+          "href": "/solutions/forecasting-and-reporting"
         }
       ]
     },
@@ -7251,23 +7267,1110 @@
     "approach": {
       "title": "How we work",
       "intro": "A Polish company working across Europe. Before we build, we sit with your team and learn the job.",
+      "countries": "Flags of Poland, Germany, Finland, Italy, the Netherlands, Norway and Sweden",
       "items": [
         {
           "key": "hosting",
+          "caption": "Where the data sits",
           "title": "EU hosting by default",
           "body": "EU regions unless you agree otherwise, with a GDPR processing agreement."
         },
         {
           "key": "aiact",
+          "caption": "Which rules apply",
           "title": "Built for the EU AI Act",
           "body": "We work out your risk tier before anything is designed, not after it is built."
         },
         {
           "key": "rules",
+          "caption": "Where we work",
           "title": "We learn your industry's rules",
           "body": "Retail, banking, healthcare, logistics. We read them before writing code."
         }
       ]
+    }
+  },
+  "solutions": {
+    "index": {
+      "label": "Solutions",
+      "allLabel": "All solutions",
+      "title": "Work we take off your desk",
+      "intro": "Six things companies ask us for most often. Each one starts with paperwork somebody is doing by hand today and ends with software doing it while a person checks the result.",
+      "metaDescription": "Six practical solutions from Pluscode: paperwork automation, answers from your documents, assistants, forecasting and reporting, process mapping and data governance. EU hosting by default.",
+      "listTitle": "Where to start",
+      "listIntro": "Most companies arrive with one of these. If two of them describe you, start with the one that hurts on a Monday morning.",
+      "items": [
+        {
+          "key": "paperworkAutomation",
+          "slug": "paperwork-automation",
+          "name": "Paperwork automation",
+          "teaser": "Documents arrive, get read, get checked and land in the right system. Nobody retypes anything."
+        },
+        {
+          "key": "answersFromDocuments",
+          "slug": "answers-from-documents",
+          "name": "Answers from your documents",
+          "teaser": "Ask a question in plain language and get an answer from your own files, with the page it came from."
+        },
+        {
+          "key": "assistantsAndAutomation",
+          "slug": "assistants-and-automation",
+          "name": "Assistants and automation",
+          "teaser": "An assistant that does the repeated steps inside your own tools and stops for a person to approve."
+        },
+        {
+          "key": "forecastingAndReporting",
+          "slug": "forecasting-and-reporting",
+          "name": "Forecasting and reporting",
+          "teaser": "Your numbers in one place, a monthly report that rebuilds itself, and a view of what comes next."
+        },
+        {
+          "key": "processMapping",
+          "slug": "process-mapping",
+          "name": "Process mapping",
+          "teaser": "Two days with the people doing the work, then a costed shortlist of what is worth automating."
+        },
+        {
+          "key": "dataGovernance",
+          "slug": "data-governance",
+          "name": "Data governance",
+          "teaser": "Where the data lives, who may see it, and what the EU AI Act says about what you are building."
+        }
+      ],
+      "startTitle": "How an engagement starts",
+      "startIntro": "The same three steps every time, whichever of the six you pick.",
+      "start": [
+        {
+          "title": "A call with an engineer",
+          "body": "Thirty minutes. You describe the work, we say what we would build, what we would not, and roughly how long it takes. There is no deck and no sales team to get past."
+        },
+        {
+          "title": "One small piece, fixed",
+          "body": "Almost every project begins with a scoped first step: one document type, one collection of files, one report. Fixed scope, fixed fee, so the first invoice is never a surprise."
+        },
+        {
+          "title": "A decision you can reverse",
+          "body": "If the first step does not pay for itself, you stop there. You keep the map, the measurements and the code either way."
+        }
+      ],
+      "elsewhereTitle": "Not what you are looking for?",
+      "elsewhere": [
+        {
+          "title": "Engineering",
+          "body": "Custom software, MVPs, cloud, and an engineer embedded in your team for a few months.",
+          "href": "/services"
+        },
+        {
+          "title": "Quanty",
+          "body": "Our own product, built by us: a spreadsheet that reads your documents into rows.",
+          "href": "/quanty"
+        },
+        {
+          "title": "Workshops",
+          "body": "A day with your team on one process, if you want the thinking before the project.",
+          "href": "/workshops"
+        }
+      ],
+      "cta": {
+        "title": "Tell us what the paperwork looks like",
+        "text": "Thirty minutes with an engineer, not a salesperson. Bring one process and we will tell you whether software should touch it at all.",
+        "button": "Book a call"
+      }
+    },
+    "pages": {
+      "paperworkAutomation": {
+        "label": "Solutions",
+        "title": "Paperwork automation",
+        "intro": "Invoices, delivery notes, orders and forms arrive all day. Software can read them, check them against your rules and put them where they belong, with a person looking only at the ones that need a person.",
+        "metaDescription": "Automate the documents that arrive every day. Pluscode builds the intake, the reading, the checks and the posting for invoices, delivery notes, orders and forms. EU hosting by default.",
+        "whatTitle": "What this is",
+        "whatBody": [
+          "Every company has a desk where documents land. They come by email, by post, from a supplier portal, as a photograph of a delivery note taken in a yard. Somebody opens each one, reads four or five numbers off it, types them into another system and files it. It is quiet, constant work, and it is the first thing that breaks when the person who does it takes a week off.",
+          "We build the part in the middle. The documents keep arriving the way they already arrive. Software reads them, checks them against what you already know, and posts them into your system. Anything it cannot read with confidence goes to a short queue for a person, and that queue is the point: the goal is not zero people, it is one person looking at ten documents a day instead of three hundred."
+        ],
+        "whatNote": "Two engineers, based in Poznan, working across Europe. Your documents stay on EU infrastructure and the processing agreement is signed before we see a single file.",
+        "doesTitle": "What it does",
+        "doesIntro": "Five steps, and every one of them can be checked.",
+        "does": [
+          {
+            "title": "Takes the documents in",
+            "body": "A mailbox, a shared folder, a supplier portal, a scanner, a phone camera. We connect to what you use now instead of asking your suppliers to change how they send things."
+          },
+          {
+            "title": "Reads the fields you care about",
+            "body": "Supplier, dates, line items, totals, tax, reference numbers. We agree the list with you first, because a field nobody uses is a field nobody will check."
+          },
+          {
+            "title": "Checks it against your rules",
+            "body": "Does the total add up. Is the supplier known. Does the order exist. Is this the same document that already arrived on Tuesday. The rules are yours and they are written down in plain language."
+          },
+          {
+            "title": "Puts it where it belongs",
+            "body": "Your accounting system, your ERP, your archive, or a spreadsheet if that is genuinely what you use. The original document stays attached to the record it created."
+          },
+          {
+            "title": "Hands the rest to a person",
+            "body": "Anything unclear goes to a queue with the document on one side and the reading on the other, so a correction takes seconds. Every correction improves the next batch."
+          }
+        ],
+        "getTitle": "What you walk away with",
+        "getIntro": "Working software, and enough written down that somebody who is not us could keep it running.",
+        "get": [
+          {
+            "title": "A running intake for one document type",
+            "body": "Live, connected to your real mailbox or folder, handling real documents on the day we finish."
+          },
+          {
+            "title": "The exception queue",
+            "body": "One screen where a person clears what the software would not guess at. Designed for the person who does this work today, not for an administrator."
+          },
+          {
+            "title": "An accuracy report on your own documents",
+            "body": "Measured on a sample you choose, field by field, so you know where it is strong and where a person still has to look."
+          },
+          {
+            "title": "The code, the deployment and a handover",
+            "body": "Yours, in your repository, running in your cloud account or ours, with a written runbook and a walkthrough for whoever will own it."
+          }
+        ],
+        "stepsTitle": "How it runs",
+        "steps": [
+          {
+            "title": "One document type",
+            "body": "We pick the one with the highest volume and the least variety. Covering everything at once is the most reliable way to finish nothing."
+          },
+          {
+            "title": "A sample of real documents",
+            "body": "A few hundred of yours, including the ugly ones: the crooked scans, the handwriting, the supplier who changed their layout last spring."
+          },
+          {
+            "title": "Build and measure",
+            "body": "We build the reading and the checks, then measure them against the sample. You see the numbers before anything touches your systems."
+          },
+          {
+            "title": "Shadow, then switch",
+            "body": "It runs beside the current process for a few weeks and the two are compared. You switch when the comparison says so, not when we say we are done."
+          }
+        ],
+        "whoTitle": "Who this suits",
+        "who": [
+          {
+            "title": "Finance and back office teams",
+            "body": "Accounts payable, order entry, claims intake. Anywhere a person is the connection between an inbox and a system."
+          },
+          {
+            "title": "Companies growing faster than their admin",
+            "body": "Volume doubled, headcount did not, and the backlog has become visible to customers."
+          },
+          {
+            "title": "Teams with one person who knows how it works",
+            "body": "The process lives in somebody's head and everyone quietly worries about the week they are away."
+          }
+        ],
+        "timeTitle": "What it costs in time",
+        "timeIntro": "Calendar time, assuming we can get a sample of documents and half an hour a week from the person who does the work today.",
+        "time": [
+          {
+            "span": "Week 1",
+            "title": "Sample and scope",
+            "body": "We look at real documents, agree the fields and the rules, and say honestly if one of them is not worth automating."
+          },
+          {
+            "span": "Weeks 2 to 4",
+            "title": "A working pilot",
+            "body": "Reading, checks and the exception queue, running on your sample with the accuracy measured."
+          },
+          {
+            "span": "Weeks 5 to 8",
+            "title": "Connected and live",
+            "body": "Wired into your systems, run in shadow beside the current process, then switched over with the handover written."
+          }
+        ],
+        "relatedTitle": "Related",
+        "related": [
+          {
+            "title": "Answers from your documents",
+            "body": "Once the documents can be read, the next question is usually how to ask them things.",
+            "href": "/solutions/answers-from-documents"
+          },
+          {
+            "title": "Assistants and automation",
+            "body": "When the work is not one document but a sequence of steps across several tools.",
+            "href": "/solutions/assistants-and-automation"
+          },
+          {
+            "title": "Software development",
+            "body": "If the system the documents should land in does not exist yet.",
+            "href": "/services/software-development"
+          }
+        ],
+        "cta": {
+          "title": "Send us five of your documents",
+          "text": "Real ones, with the mess left in. We will tell you what software could read from them and what it could not, before you spend anything.",
+          "button": "Book a call"
+        }
+      },
+      "answersFromDocuments": {
+        "label": "Solutions",
+        "title": "Answers from your documents",
+        "intro": "Your contracts, policies and manuals already contain the answer. Ask a question in plain language and get it back with the page it came from, so anyone can check it.",
+        "metaDescription": "Ask your own documents a question and get a checkable answer with its source. Pluscode builds search and answering over your files, with your permissions and EU hosting.",
+        "whatTitle": "What this is",
+        "whatBody": [
+          "Companies rarely lose knowledge. They lose the path to it. The clause is in a contract somebody signed four years ago, the procedure is in a manual with three versions in circulation, and the answer to today's customer question was given by a colleague in an email last March. Finding it takes twenty minutes, and knowing it exists at all takes years of experience.",
+          "This is a search box that answers in sentences instead of listing files, and that shows where each sentence came from. It uses your documents and nothing else. When your documents do not answer the question, it says so, which is the single most important thing it does: an assistant that guesses is worse than no assistant, because people stop checking it."
+        ],
+        "whatNote": "It answers from your files and quotes them, so any answer can be verified in one click. We test it against real questions with known answers before anyone else sees it, and the files stay on EU infrastructure.",
+        "doesTitle": "What it does",
+        "doesIntro": "One question in, one checkable answer out.",
+        "does": [
+          {
+            "title": "Takes a question the way a person asks it",
+            "body": "Not keywords. Whether we can end the Mueller contract early and what it would cost is a question it should handle in one go."
+          },
+          {
+            "title": "Answers from your documents only",
+            "body": "No general knowledge and no filling in of gaps. If the answer is not in the files, the answer is that it is not in the files."
+          },
+          {
+            "title": "Shows the source",
+            "body": "Every answer carries the document, the page and the passage it came from, so the person reading it can confirm it in seconds."
+          },
+          {
+            "title": "Respects who may see what",
+            "body": "It uses the permissions you already have. Somebody who cannot open a folder does not get answers out of it by asking nicely."
+          },
+          {
+            "title": "Tells you what it is being asked",
+            "body": "An admin view of the questions people ask and the ones it could not answer. That list is the best map of what is missing from your documentation you will ever get."
+          }
+        ],
+        "getTitle": "What you walk away with",
+        "getIntro": "A tool one team is already using, and the test that says whether it can be trusted.",
+        "get": [
+          {
+            "title": "Search and answers over one collection",
+            "body": "A named set of documents: the contract archive, the policy library, the product manual, the tender folder."
+          },
+          {
+            "title": "A test set of real questions",
+            "body": "Around forty questions from the people who will use it, with the correct answers written down, and a score. Re-run on every change."
+          },
+          {
+            "title": "The permission model, in writing",
+            "body": "Who may ask what, how it is enforced, and what happens the day somebody changes role or leaves."
+          },
+          {
+            "title": "The code and the deployment",
+            "body": "Running on EU infrastructure, in your account or ours, with a runbook and a session for whoever will own it."
+          }
+        ],
+        "stepsTitle": "How it runs",
+        "steps": [
+          {
+            "title": "Pick one collection",
+            "body": "One set of documents with one audience. Everything at once produces an assistant that is mediocre at everything."
+          },
+          {
+            "title": "Write the questions first",
+            "body": "We sit with the people who will use it and collect the real questions, with the answers they know to be right. This is the test, and it exists before the build does."
+          },
+          {
+            "title": "Build and score",
+            "body": "We build it, run the questions and show you the score: how often it is right, and how often it correctly declines to answer."
+          },
+          {
+            "title": "One team, then wider",
+            "body": "It goes to one team, we watch what they ask, and we fix what the log shows. Rolling out to everybody on day one only hides the problems."
+          }
+        ],
+        "whoTitle": "Who this suits",
+        "who": [
+          {
+            "title": "Legal and contract teams",
+            "body": "Hundreds of agreements, a handful of clauses that matter, and questions that always arrive on a deadline."
+          },
+          {
+            "title": "Support and service desks",
+            "body": "The answer is in the manual. Finding it while a customer waits is the hard part."
+          },
+          {
+            "title": "Bid and tender teams",
+            "body": "Every proposal repeats something you have already written well once. This is where it is."
+          }
+        ],
+        "timeTitle": "What it costs in time",
+        "timeIntro": "Calendar time, assuming access to the documents and a couple of hours from the people who will use it.",
+        "time": [
+          {
+            "span": "Week 1",
+            "title": "Questions and documents",
+            "body": "We collect the real questions, look at the files, and say which parts of the collection are usable and which need cleaning up first."
+          },
+          {
+            "span": "Weeks 2 to 3",
+            "title": "A version you can try",
+            "body": "Answering over your documents with sources, scored against the questions from week one."
+          },
+          {
+            "span": "Weeks 4 to 6",
+            "title": "Permissions and rollout",
+            "body": "Wired into your access rules, given to one team, then corrected against what they actually ask it."
+          }
+        ],
+        "relatedTitle": "Related",
+        "related": [
+          {
+            "title": "Paperwork automation",
+            "body": "If the documents cannot be read reliably yet, this is the step before this one.",
+            "href": "/solutions/paperwork-automation"
+          },
+          {
+            "title": "Data governance",
+            "body": "Who may see what, and what the EU AI Act says about it, settled before the build.",
+            "href": "/solutions/data-governance"
+          },
+          {
+            "title": "Machine learning",
+            "body": "The engineering underneath, if you want the technical version of this page.",
+            "href": "/ai-data/machine-learning"
+          }
+        ],
+        "cta": {
+          "title": "Bring us ten questions you cannot answer quickly",
+          "text": "Real questions from real people, and the documents that should contain the answers. We will tell you whether this would work on your files.",
+          "button": "Book a call"
+        }
+      },
+      "assistantsAndAutomation": {
+        "label": "Solutions",
+        "title": "Assistants and automation",
+        "intro": "The work that is not one document but a sequence: read the request, find the file, draft the reply, update the record, chase the thing that never came back. An assistant does the steps and a person approves the result.",
+        "metaDescription": "Assistants that do the repeated steps inside the tools your team already uses, with a person approving the result and a readable log of everything they did.",
+        "whatTitle": "What this is",
+        "whatBody": [
+          "Some work is not a document arriving. It is a small chain of steps that happens forty times a week. A request comes in, somebody looks up the customer, checks two things, writes a reply that is almost the same as last time, updates a record and sets a reminder to chase whatever is missing. Every step is easy. The chain is what eats the day.",
+          "An assistant does the chain and stops where judgement is needed. It drafts, it does not send. It prepares the record, a person confirms it. Everything it did is written to a log you can read, so when it gets something wrong you can see which step went wrong and fix that step, instead of switching the whole thing off and going back to doing it by hand."
+        ],
+        "whatNote": "We do not build an assistant that acts on its own the first time round. Approvals come out later, one step at a time, once the log shows that step has earned it.",
+        "doesTitle": "What it does",
+        "doesIntro": "Five habits, and the fifth is what makes the other four safe to keep.",
+        "does": [
+          {
+            "title": "Lives where the work already happens",
+            "body": "In the shared mailbox, in Teams or Slack, in the CRM, in the ticket queue. Nobody has to log into a new system to use it."
+          },
+          {
+            "title": "Drafts instead of sends",
+            "body": "Replies, offers, summaries, internal notes. A person reads and sends, which is also how it improves: the edits are the feedback."
+          },
+          {
+            "title": "Does the lookups",
+            "body": "Pulls the customer, the order, the contract and the last conversation together before anyone asks, so the person starts from a full picture instead of building one."
+          },
+          {
+            "title": "Chases what is missing",
+            "body": "The document that never came back, the approval that stalled, the form with three empty fields. Politely, on a schedule, and it stops the moment the thing arrives."
+          },
+          {
+            "title": "Writes down what it did",
+            "body": "Every run, every step, every decision, with what went in and what came out. This is what makes it reasonable to give it more to do next month."
+          }
+        ],
+        "getTitle": "What you walk away with",
+        "getIntro": "One assistant on real work, and the controls that let you widen or narrow what it may do.",
+        "get": [
+          {
+            "title": "An assistant doing two or three real tasks",
+            "body": "Chosen with the team, running on live work, inside the tool they already have open all day."
+          },
+          {
+            "title": "An approval step you control",
+            "body": "What it may do alone and what needs a person, written down and changeable without a developer."
+          },
+          {
+            "title": "The log, and a cost per run",
+            "body": "What it did and what it cost to do it. Automation with an unknown running cost is a surprise waiting for a quarter end."
+          },
+          {
+            "title": "The code, the deployment and a handover",
+            "body": "Yours, with a runbook and a walkthrough for the person who will own it after we leave."
+          }
+        ],
+        "stepsTitle": "How it runs",
+        "steps": [
+          {
+            "title": "Watch a day of the real work",
+            "body": "We sit with the person doing it. A written process describes what should happen; a day of watching shows what does."
+          },
+          {
+            "title": "Pick two steps",
+            "body": "The two with the most repetition and the least judgement, not the two that are most interesting to build."
+          },
+          {
+            "title": "Build with the approval in",
+            "body": "It drafts and proposes from the first day it runs. Nothing leaves the building unread by a person."
+          },
+          {
+            "title": "Loosen it slowly",
+            "body": "Once the log shows a step is right nearly every time, that step stops needing a click. One at a time, and only with your agreement."
+          }
+        ],
+        "whoTitle": "Who this suits",
+        "who": [
+          {
+            "title": "Sales and service teams",
+            "body": "The same lookup, the same reply, the same follow up, several dozen times a week."
+          },
+          {
+            "title": "HR and recruitment",
+            "body": "Screening, scheduling and the endless chasing of documents that nobody enjoys and everybody needs done."
+          },
+          {
+            "title": "Small teams without an operations person",
+            "body": "Ten people doing the work of twenty, and the admin is what gives way first."
+          }
+        ],
+        "timeTitle": "What it costs in time",
+        "timeIntro": "Calendar time. The variable is rarely the software, it is how quickly we get access to the tools the assistant has to touch.",
+        "time": [
+          {
+            "span": "Week 1",
+            "title": "A day of watching, then a shortlist",
+            "body": "We follow the real work and come back with the steps worth automating and the ones that are not."
+          },
+          {
+            "span": "Weeks 2 to 4",
+            "title": "The first two tasks, live",
+            "body": "Running on real work with a person approving everything, inside your existing tools."
+          },
+          {
+            "span": "Weeks 5 to 8",
+            "title": "More tasks, fewer clicks",
+            "body": "We add tasks and remove approvals where the log has earned it, then hand the whole thing over."
+          }
+        ],
+        "relatedTitle": "Related",
+        "related": [
+          {
+            "title": "Paperwork automation",
+            "body": "When the work is documents arriving rather than steps repeating.",
+            "href": "/solutions/paperwork-automation"
+          },
+          {
+            "title": "Answers from your documents",
+            "body": "Assistants get better when they can read your files. These two are often built together.",
+            "href": "/solutions/answers-from-documents"
+          },
+          {
+            "title": "Forward deployed engineers",
+            "body": "If you would rather have an engineer inside the team for a few months than a fixed project.",
+            "href": "/services/forward-deployed-engineers"
+          }
+        ],
+        "cta": {
+          "title": "Describe a day in the job you want help with",
+          "text": "Which forty minutes go on the same three steps. That is usually enough for us to say whether an assistant is worth building.",
+          "button": "Book a call"
+        }
+      },
+      "forecastingAndReporting": {
+        "label": "Solutions",
+        "title": "Forecasting and reporting",
+        "intro": "The numbers are already in your systems, in four different shapes. We put them in one place, agree what each one means, and make the monthly report and the forecast build themselves.",
+        "metaDescription": "One set of numbers, a report that rebuilds itself and a forecast you can question. Pluscode connects your systems, writes the definitions down and reconciles against your own figures.",
+        "whatTitle": "What this is",
+        "whatBody": [
+          "Most reporting problems are not analysis problems. Somebody exports three files on the first Monday of the month, pastes them into a workbook that has been growing for six years, fixes the two columns that always break, and sends a deck. The numbers are usually right. Nobody can say exactly how they were arrived at, and the one person who can is on holiday.",
+          "We do the unglamorous half. Connect the sources, agree one definition for each number, reconcile the result against the figures you already trust, and then make the report rebuild itself. The forecast comes after that, and only for the numbers where a forecast is honest. Some numbers cannot be forecast usefully at your size and we will say so rather than draw the line anyway."
+        ],
+        "whatNote": "We also build Quanty, our own product for exactly this: a spreadsheet that reads documents into rows. Sometimes the right answer is Quanty and no project at all, and we would rather tell you that than sell you a build.",
+        "doesTitle": "What it does",
+        "doesIntro": "Five steps, and the second one is where most of the value turns out to be.",
+        "does": [
+          {
+            "title": "Pulls the numbers together",
+            "body": "Accounting, the CRM, the warehouse, the bank, and the spreadsheet somebody maintains by hand. Whatever holds the truth today, rather than whatever should."
+          },
+          {
+            "title": "Agrees what each number means",
+            "body": "One definition of revenue, one of an active customer, one of a delivered order, written down where everyone can see it and argue with it once instead of every month."
+          },
+          {
+            "title": "Reconciles against what you trust",
+            "body": "The new figures are matched to your own closing numbers before anybody is asked to rely on them. A difference gets explained, not rounded away."
+          },
+          {
+            "title": "Rebuilds the report on its own",
+            "body": "Monthly, weekly, or whenever the data changes. Same layout, same definitions, and no first Monday of the month."
+          },
+          {
+            "title": "Forecasts, with the assumptions visible",
+            "body": "What the next months look like if nothing changes, and which assumptions the answer is sensitive to. A forecast you cannot interrogate is a guess with a chart on it."
+          }
+        ],
+        "getTitle": "What you walk away with",
+        "getIntro": "A set of numbers you can defend in a meeting, and the sheet that says how each one is calculated.",
+        "get": [
+          {
+            "title": "One connected set of numbers",
+            "body": "Refreshed on a schedule, with every source named and every transformation readable by somebody who is not an engineer."
+          },
+          {
+            "title": "A written definitions sheet",
+            "body": "Every metric, its formula, its source, and who owns the decision when it has to change."
+          },
+          {
+            "title": "The recurring report",
+            "body": "Built and delivered on a schedule, in the shape your board or your team already reads."
+          },
+          {
+            "title": "The forecast and its assumptions",
+            "body": "Including the assumptions we could not support, and the reason we left those numbers out."
+          }
+        ],
+        "stepsTitle": "How it runs",
+        "steps": [
+          {
+            "title": "Agree the ten numbers",
+            "body": "The ones a decision actually depends on. A report with sixty numbers on it is a report nobody reads to the end."
+          },
+          {
+            "title": "Connect and reconcile",
+            "body": "We pull the sources and match the result to your own closing figures until every difference is explained."
+          },
+          {
+            "title": "Publish the report",
+            "body": "Automated, on a schedule, in the shape people already expect. The change should be invisible except that it simply arrives."
+          },
+          {
+            "title": "Add the forecast",
+            "body": "Only where the history supports one, and always with the assumptions written next to the number."
+          }
+        ],
+        "whoTitle": "Who this suits",
+        "who": [
+          {
+            "title": "Finance teams closing by hand",
+            "body": "Month end is three days of copying, and most of it is the same three days as last month."
+          },
+          {
+            "title": "Founders and boards",
+            "body": "You need one page a month that is the same page every month and that survives a hard question."
+          },
+          {
+            "title": "Operations with numbers in four systems",
+            "body": "Stock in one place, orders in another, deliveries in a third, and no view that spans them."
+          }
+        ],
+        "timeTitle": "What it costs in time",
+        "timeIntro": "Calendar time, assuming read access to the systems and somebody who can answer what a given column actually means.",
+        "time": [
+          {
+            "span": "Weeks 1 to 2",
+            "title": "Definitions and sources",
+            "body": "We agree the numbers and find out where each one really comes from. This is usually the surprising part."
+          },
+          {
+            "span": "Weeks 3 to 5",
+            "title": "Connected and reconciled",
+            "body": "The pipeline runs and the figures match what you already close your month with."
+          },
+          {
+            "span": "Weeks 6 to 8",
+            "title": "Report, then forecast",
+            "body": "The recurring report goes live, and the forecast follows once the base numbers are trusted."
+          }
+        ],
+        "relatedTitle": "Related",
+        "related": [
+          {
+            "title": "Quanty",
+            "body": "Our own product. If your numbers arrive as documents rather than as data, start here.",
+            "href": "/quanty"
+          },
+          {
+            "title": "Paperwork automation",
+            "body": "When the numbers arrive as invoices and delivery notes that somebody types in.",
+            "href": "/solutions/paperwork-automation"
+          },
+          {
+            "title": "Data analytics",
+            "body": "The engineering version of this page, written for a technical reader.",
+            "href": "/ai-data/analytics"
+          }
+        ],
+        "cta": {
+          "title": "Send us last month's report",
+          "text": "The workbook, the deck, whatever you actually send. We will tell you what could rebuild itself and what would genuinely be work.",
+          "button": "Book a call"
+        }
+      },
+      "processMapping": {
+        "label": "Solutions",
+        "title": "Process mapping",
+        "intro": "Before anybody writes code, two days with the people doing the work. You get a map of how it really runs, a costed shortlist of what is worth automating, and a clear list of what is not.",
+        "metaDescription": "Two days with your team, then a costed shortlist of what is worth automating and what is not. A fixed fee engagement from Pluscode, credited against the build if you go ahead.",
+        "whatTitle": "What this is",
+        "whatBody": [
+          "A lot of companies are told to do something with AI and have no good way to decide what. The pressure is real, the budget is sometimes already approved, and the shortlist that arrives from a vendor is a list of things that vendor happens to sell. What is missing is a clear picture of where the hours actually go.",
+          "This is that picture, and it is deliberately not a sales exercise. We sit with the people doing the work, count where the time goes, price each candidate and hand you a ranked list with an estimate and a payback for every item on it. Several items usually come back marked do not automate this, which is worth as much as the ones that do."
+        ],
+        "whatNote": "Fixed fee, agreed before we start and credited against the build if you go ahead with us. If the honest answer is that nothing here is worth building, you still keep the map and the numbers.",
+        "doesTitle": "What it does",
+        "doesIntro": "Five things, and the last one is the one vendors skip.",
+        "does": [
+          {
+            "title": "Follows the work, not the process document",
+            "body": "We watch the job being done. The written process and the real one are rarely the same, and the gap between them is where the hours hide."
+          },
+          {
+            "title": "Counts the hours",
+            "body": "How often each step happens, how long it takes, who does it, and what it costs when it goes wrong and has to be done twice."
+          },
+          {
+            "title": "Prices each candidate",
+            "body": "What building it would take, what running it would cost, and what it would save. In the same units, so two candidates can actually be compared."
+          },
+          {
+            "title": "Ranks them honestly",
+            "body": "The cheapest useful thing first. The impressive project that pays back in three years goes at the bottom, where it belongs."
+          },
+          {
+            "title": "Says what to leave alone",
+            "body": "Work with too much judgement in it, too little volume, or a regulatory tail that makes automation the expensive option."
+          }
+        ],
+        "getTitle": "What you walk away with",
+        "getIntro": "Four documents, all short enough that somebody will read them.",
+        "get": [
+          {
+            "title": "A map of the process as it runs",
+            "body": "Steps, systems, handovers and waiting time, on one page, in language the people who do the work recognise as their job."
+          },
+          {
+            "title": "A ranked and costed shortlist",
+            "body": "Each item with an estimate to build, a running cost, an expected saving and a payback period."
+          },
+          {
+            "title": "A risk note under the EU AI Act",
+            "body": "Which tier each candidate falls into and what that means in practice, worked out before anything is designed."
+          },
+          {
+            "title": "A written recommendation",
+            "body": "Short enough to take to a board, specific enough to act on, and it names what we would not do and why."
+          }
+        ],
+        "stepsTitle": "How it runs",
+        "steps": [
+          {
+            "title": "Half a day of scoping",
+            "body": "Which part of the business, which teams, and what a good outcome would look like. Remote is fine for this part."
+          },
+          {
+            "title": "Two days with the teams",
+            "body": "On site or on a call, with the people who do the work rather than only the people who manage it."
+          },
+          {
+            "title": "A week of costing",
+            "body": "We turn what we saw into estimates and check the assumptions with you as we go, so nothing in the readout is a surprise."
+          },
+          {
+            "title": "The readout",
+            "body": "We walk the room through the map, the shortlist and the recommendation, and answer the hard questions live."
+          }
+        ],
+        "whoTitle": "Who this suits",
+        "who": [
+          {
+            "title": "Companies told to do something with AI",
+            "body": "The pressure is real and there is no shortlist anybody in the building actually trusts."
+          },
+          {
+            "title": "Teams with a budget and no plan",
+            "body": "The money is approved for this year and the real risk is spending it on the wrong thing well."
+          },
+          {
+            "title": "Anyone about to sign a large vendor",
+            "body": "A second opinion on what the work is worth, from people who will also say buy it rather than build it."
+          }
+        ],
+        "timeTitle": "What it costs in time",
+        "timeIntro": "Two to three weeks end to end. The only thing we need from you is access to the people doing the work.",
+        "time": [
+          {
+            "span": "Week 1",
+            "title": "Scoping and the days with the teams",
+            "body": "Half a day of scoping, then two days following the work as it is actually done."
+          },
+          {
+            "span": "Week 2",
+            "title": "Costing and drafting",
+            "body": "We estimate, check the assumptions with you, and write it up."
+          },
+          {
+            "span": "Week 3",
+            "title": "Readout and decision",
+            "body": "You get the map, the shortlist and the recommendation, and a session in which to argue with all three."
+          }
+        ],
+        "relatedTitle": "Related",
+        "related": [
+          {
+            "title": "Workshops",
+            "body": "A shorter version: one day with your team on a single process.",
+            "href": "/workshops"
+          },
+          {
+            "title": "Data governance",
+            "body": "The other thing worth settling before anybody builds.",
+            "href": "/solutions/data-governance"
+          },
+          {
+            "title": "AI consulting",
+            "body": "The longer engagement, when the question is a roadmap rather than one process.",
+            "href": "/ai-data/consulting"
+          }
+        ],
+        "cta": {
+          "title": "Tell us which team is drowning",
+          "text": "One department, one process. We will tell you what the mapping would cover and what it would cost before you commit to anything.",
+          "button": "Book a call"
+        }
+      },
+      "dataGovernance": {
+        "label": "Solutions",
+        "title": "Data governance",
+        "intro": "Where the data sits, who may see it, how long it is kept, and what the EU AI Act says about the thing you are building. Settled before the first line of code, not after the security questionnaire arrives.",
+        "metaDescription": "GDPR, EU AI Act risk tiers, access rules and retention for AI projects. EU hosting by default and a processing agreement signed before any data moves. From Pluscode.",
+        "whatTitle": "What this is",
+        "whatBody": [
+          "The question that stops an AI project is almost never technical. It is a customer's security questionnaire, a works council asking where the data goes, a lawyer asking which risk tier this falls into, or a board member asking what happens if the thing is wrong about somebody. These questions arrive late, and they arrive all at once.",
+          "This is the work of answering them before they are asked. Where each piece of data comes from and where it ends up, what lawful basis it moves on, who may see what, how long anything is kept, and what the EU AI Act requires of the specific system you are building. It is not a policy document nobody reads. It is a set of decisions, written down, that software can be built against."
+        ],
+        "whatNote": "EU hosting by default and a GDPR processing agreement signed before we touch anything. The AI Act risk tier is worked out before design starts, because the tier changes what has to be built.",
+        "doesTitle": "What it does",
+        "doesIntro": "Five questions, answered once, in a form your legal team can sign and your engineers can implement.",
+        "does": [
+          {
+            "title": "Maps the data the system touches",
+            "body": "Every source, every field that is personal, and every place a copy ends up, including the copies nobody meant to create."
+          },
+          {
+            "title": "Settles the lawful basis and the paperwork",
+            "body": "Processing agreement, sub-processors, transfers, and the record you are required to keep. Written for a legal team to sign rather than a template to fill in later."
+          },
+          {
+            "title": "Classifies the system under the EU AI Act",
+            "body": "Which tier, what that requires in practice, and what it would take to stay out of a heavier tier where that is a real option."
+          },
+          {
+            "title": "Defines who may see what",
+            "body": "An access model that matches how the company actually works, and a plan for the day somebody changes role or leaves."
+          },
+          {
+            "title": "Sets retention, deletion and logging",
+            "body": "How long things are kept, how a deletion request is honoured end to end, and what is logged so an audit can be answered with evidence instead of assurances."
+          }
+        ],
+        "getTitle": "What you walk away with",
+        "getIntro": "Documents that answer the questions before they are asked, and rules that live in the software rather than in a folder.",
+        "get": [
+          {
+            "title": "A data map and a register",
+            "body": "What the system touches, where it lives, who processes it, and on what basis."
+          },
+          {
+            "title": "The signed paperwork",
+            "body": "A processing agreement, the sub-processor list and the transfer position, ready for your legal team."
+          },
+          {
+            "title": "A written AI Act classification",
+            "body": "The tier, the reasoning behind it, and the obligations that follow, in language a non-lawyer can act on."
+          },
+          {
+            "title": "An access matrix and a retention schedule",
+            "body": "Who sees what, for how long, and what the system does automatically when the answer changes."
+          }
+        ],
+        "stepsTitle": "How it runs",
+        "steps": [
+          {
+            "title": "One system at a time",
+            "body": "We govern the thing being built, not the whole company. A company wide programme takes a year and protects nothing in the meantime."
+          },
+          {
+            "title": "Follow the data",
+            "body": "Sources, copies, backups, logs and third parties. The copies nobody remembers are the ones that cause the incident."
+          },
+          {
+            "title": "Decide and write it down",
+            "body": "Every decision gets an owner and a date. An open question is fine; an undocumented assumption is not."
+          },
+          {
+            "title": "Build it into the system",
+            "body": "Access rules, retention and logging become configuration and code, not a promise in a document."
+          }
+        ],
+        "whoTitle": "Who this suits",
+        "who": [
+          {
+            "title": "Regulated industries",
+            "body": "Finance, health and anything where your customer's auditor eventually becomes your auditor."
+          },
+          {
+            "title": "Companies answering security questionnaires",
+            "body": "Enterprise customers ask. The answers should exist before a deal depends on them."
+          },
+          {
+            "title": "Anyone about to sign an AI vendor",
+            "body": "Where the data goes, what it trains, and what happens when you leave. Worth an hour before signature."
+          }
+        ],
+        "timeTitle": "What it costs in time",
+        "timeIntro": "Calendar time for one system. Shorter if the system is not live yet, which is also the cheapest moment to do this.",
+        "time": [
+          {
+            "span": "Week 1",
+            "title": "Map and questions",
+            "body": "We follow the data through the system and come back with the questions only you can answer."
+          },
+          {
+            "span": "Weeks 2 to 3",
+            "title": "Decisions and classification",
+            "body": "Lawful basis, the AI Act tier, access and retention, written down with an owner against each one."
+          },
+          {
+            "span": "Weeks 4 to 5",
+            "title": "Built in",
+            "body": "The rules become configuration and code, and the paperwork goes to your legal team."
+          }
+        ],
+        "relatedTitle": "Related",
+        "related": [
+          {
+            "title": "Process mapping",
+            "body": "The other thing worth settling before anybody builds.",
+            "href": "/solutions/process-mapping"
+          },
+          {
+            "title": "Cloud and MLOps",
+            "body": "Where EU hosting, access control and logging actually get implemented.",
+            "href": "/services/cloud"
+          },
+          {
+            "title": "AI consulting",
+            "body": "When the question is a roadmap for the whole company rather than one system.",
+            "href": "/ai-data/consulting"
+          }
+        ],
+        "cta": {
+          "title": "Send us the questionnaire you are stuck on",
+          "text": "Or the clause your customer added at the last minute. Thirty minutes is usually enough to say what needs answering and in what order.",
+          "button": "Book a call"
+        }
+      }
+    }
+  },
+  "quantyPage": {
+    "meta": {
+      "title": "Quanty, our own AI spreadsheet",
+      "description": "Quanty reads your invoices, contracts and orders into a table and shows the page every value came from. Built by Pluscode in Poznań."
+    },
+    "hero": {
+      "eyebrow": "Platform",
+      "logoAlt": "Quanty",
+      "intro": "Our own AI spreadsheet. Drop in documents and the sheet fills itself, with the source page beside every value.",
+      "cta": "Book a call"
+    },
+    "showcase": {
+      "eyebrow": "The product",
+      "title": "What it looks like at work.",
+      "intro": "Nothing here is a mock-up. Both screens are captures of Quanty as it runs today: a sheet reading a folder of invoices, and the agent adding a column and counting what it found.",
+      "tryIt": "Try it at quanty.ai",
+      "frames": [
+        {
+          "key": "sheet",
+          "label": "Invoices",
+          "caption": "Invoices read into rows. Click a value and Quanty shows the page it came from.",
+          "alt": "The Quanty sheet with invoices read into rows and the source page open beside a value"
+        },
+        {
+          "key": "agent",
+          "label": "The agent",
+          "caption": "Ask in plain words. The agent adds the column, runs it and says what it found.",
+          "alt": "The Quanty agent adding a delivery status column to an orders sheet and counting the overdue ones"
+        }
+      ]
+    },
+    "about": {
+      "eyebrow": "What Quanty is",
+      "title": "A spreadsheet that reads your paperwork, so nobody has to type it in again.",
+      "body": [
+        "Drop in a folder of invoices, contracts or orders. Quanty reads them, builds the columns, does the counting and keeps a link to the page every value came from. You check the row, not the file.",
+        "It is one tool instead of several. Not a replacement for your accountant or your invoicing program, but for the spreadsheets, PDF folders and chat threads you run beside them."
+      ],
+      "facts": [
+        {
+          "key": "price",
+          "figure": "1 price",
+          "label": "for the whole company, not per person"
+        },
+        {
+          "key": "free",
+          "figure": "$0",
+          "label": "the Free plan"
+        },
+        {
+          "key": "eu",
+          "figure": "EU",
+          "label": "servers in Poland, files stay in the EU"
+        },
+        {
+          "key": "team",
+          "figure": "2",
+          "label": "engineers build it and answer your e-mail"
+        }
+      ]
+    },
+    "work": {
+      "eyebrow": "Everyday work",
+      "title": "The things you already do every week.",
+      "intro": "Invoices, contracts, orders, customers, complaints, hiring. Each one in a table, or on a board, that reads its own paperwork.",
+      "items": [
+        {
+          "key": "invoices",
+          "name": "Invoices",
+          "body": "Amounts, due dates and the contract check fill in from your invoices."
+        },
+        {
+          "key": "contracts",
+          "name": "Contracts",
+          "body": "End dates, notice periods and penalties from every contract. A quote next to each value."
+        },
+        {
+          "key": "orders",
+          "name": "Orders",
+          "body": "Orders from e-mail land in a table that checks delivery against invoice."
+        },
+        {
+          "key": "customers",
+          "name": "Customers",
+          "body": "Who ordered what and when. What they paid, what is still due."
+        },
+        {
+          "key": "complaints",
+          "name": "Complaints",
+          "body": "A request from your form lands on a board: new, in repair, closed."
+        },
+        {
+          "key": "hiring",
+          "name": "Hiring",
+          "body": "CVs from e-mail and your form in one table, scored against the job description."
+        }
+      ]
+    },
+    "audience": {
+      "eyebrow": "Built for",
+      "title": "Small and medium companies with more paperwork than people.",
+      "intro": "Six trades where the same folder arrives every week and somebody types it into a spreadsheet.",
+      "items": [
+        {
+          "key": "transport",
+          "name": "Transport",
+          "body": "Orders and carrier invoices"
+        },
+        {
+          "key": "accounting",
+          "name": "Accounting",
+          "body": "Invoices from e-mail, ready to book"
+        },
+        {
+          "key": "finance",
+          "name": "Finance",
+          "body": "Who paid, fixed costs, cash"
+        },
+        {
+          "key": "contracts",
+          "name": "Contracts",
+          "body": "All contracts in one table"
+        },
+        {
+          "key": "hiring",
+          "name": "Hiring",
+          "body": "CVs in a table, scores beside"
+        },
+        {
+          "key": "property",
+          "name": "Property",
+          "body": "Tenants, rents, dates"
+        }
+      ]
+    },
+    "box": {
+      "eyebrow": "What is in the box",
+      "title": "Seven parts, one product.",
+      "intro": "You do not buy modules and you do not roll them out. Everything below is in every plan, and the sheet is where all of it starts.",
+      "items": [
+        {
+          "key": "sheets",
+          "name": "Sheets",
+          "line": "Your small ERP, described in one sentence.",
+          "body": "The AI reads your files, builds the columns and does the counting. You never have to ask anyone for it."
+        },
+        {
+          "key": "chat",
+          "name": "Chat",
+          "line": "Say what to change.",
+          "body": "The chat sits beside every sheet. It adds columns, flags rows and does the sums."
+        },
+        {
+          "key": "boards",
+          "name": "Kanban boards",
+          "line": "This can be your CRM.",
+          "body": "Or your ERP, or your ATS. A matter of settings, not a rollout: you change the stages yourself, in minutes."
+        },
+        {
+          "key": "forms",
+          "name": "Forms",
+          "line": "Send a link. Answers fill your table.",
+          "body": "Put the link on your website. Every submission is a new row in the table."
+        },
+        {
+          "key": "slides",
+          "name": "Presentations",
+          "line": "From the table straight to slides.",
+          "body": "Slides and charts take their numbers straight from the table. Change the table, the slides follow."
+        },
+        {
+          "key": "agents",
+          "name": "Agents",
+          "line": "Every job gets its own agent.",
+          "body": "An agent is an AI helper you brief once and hand your files. Then you write to it in the chat beside a table."
+        },
+        {
+          "key": "connect",
+          "name": "Quanty Connect",
+          "line": "Check a company without leaving the table.",
+          "body": "Quanty adds what the web and paid registers know about the companies in your table. Every number shows where it came from."
+        }
+      ]
+    },
+    "pluscode": {
+      "eyebrow": "Quanty and Pluscode",
+      "title": "We built it, and the same parts go into client systems.",
+      "body": [
+        "Quanty is not a partner platform and not a certification. It is our own product, designed and built by the two engineers you would work with on a consulting project.",
+        "Reading documents, answers that carry their source, approval before anything is written back: those are the parts of Quanty, and they are the parts we put into the systems we build for clients. The product is where we prove them on our own time."
+      ],
+      "ownership": "Quanty is a product of Pluscode Sp. z o.o., Poznań, Poland.",
+      "servicesCta": "What we build for clients",
+      "externalCta": "Try it at quanty.ai"
+    },
+    "cta": {
+      "title": "Start with one folder of invoices.",
+      "text": "Bring a real folder to a 30 minute call. We will read it with you and say plainly whether Quanty fits or whether you need something built.",
+      "button": "Book a call"
     }
   }
 }

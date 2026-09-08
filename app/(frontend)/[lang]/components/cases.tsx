@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import LocaleLink from "./locale-link";
+import type { CasesItems } from "@/lib/home-bands";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 /* ------------------------------------------------------------------ *
@@ -20,6 +21,14 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
  *  order of the three elements here is load bearing.
  *
  *  Server component: no state, no effects, hover is CSS.
+ *
+ *  THE ITEMS COME FROM THE CMS WHEN THERE ARE ANY. `items` is whatever
+ *  lib/home-bands.ts read out of the case studies flagged for the home
+ *  page, capped at three because the stagger below is defined per
+ *  position for exactly three. It is null on any build without a
+ *  reachable, populated database, and the dictionary takes the band back
+ *  whole. Both sides carry the same six fields, so everything under this
+ *  line is written once.
  * ------------------------------------------------------------------ */
 
 /** Per position, not per item: position 1 is tall, 2 drops and widens, 3
@@ -31,7 +40,15 @@ const SHAPES = [
   { offset: "md:mt-48", aspect: "aspect-[4/3] md:aspect-[3/4]" },
 ] as const;
 
-export default function Cases({ dict }: { dict: Dictionary["home"]["cases"] }) {
+export default function Cases({
+  dict,
+  items: cmsItems,
+}: {
+  dict: Dictionary["home"]["cases"];
+  items?: CasesItems | null;
+}) {
+  const items = cmsItems && cmsItems.length > 0 ? cmsItems : dict.items;
+
   return (
     <section className="bg-paper py-20 md:py-[104px]">
       <div className="pc-shell">
@@ -48,7 +65,7 @@ export default function Cases({ dict }: { dict: Dictionary["home"]["cases"] }) {
         </div>
 
         <div className="pc-grid mt-16 md:mt-24">
-          {dict.items.map((item, i) => {
+          {items.map((item, i) => {
             const shape = SHAPES[i] ?? SHAPES[0];
 
             /* The three images are abstract contour fields rendered to

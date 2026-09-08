@@ -375,59 +375,65 @@ const en: HomeContent = {
       {
         key: "solutions",
         title: "Solutions",
-        href: "/ai-data/consulting",
+        href: "/solutions",
         items: [
           {
             title: "Paperwork automation",
             description: "Documents arrive, get read, and land in the right place",
-            href: "/ai-data/machine-learning",
+            href: "/solutions/paperwork-automation",
           },
           {
             title: "Answers from your documents",
             description: "A question goes in, an answer comes back with its source",
-            href: "/ai-data/machine-learning",
+            href: "/solutions/answers-from-documents",
+          },
+          {
+            title: "Assistants and automation",
+            description:
+              "The repeated steps get done, a person approves the result",
+            href: "/solutions/assistants-and-automation",
           },
           {
             title: "Forecasting and reporting",
             description: "Your numbers in one place, and a view of what comes next",
-            href: "/ai-data/analytics",
+            href: "/solutions/forecasting-and-reporting",
           },
           {
             title: "Process mapping",
             description: "We find the work worth automating before anyone writes code",
-            href: "/ai-data/consulting",
+            href: "/solutions/process-mapping",
           },
           {
             title: "Data governance",
             description: "GDPR, the EU AI Act, and who may see what",
-            href: "/ai-data/consulting",
+            href: "/solutions/data-governance",
           },
         ],
       },
       {
         key: "platform",
         title: "Platform",
-        href: "https://quanty.ai",
+        href: "/quanty",
         items: [
           {
             title: "Quanty",
             description: "The AI spreadsheet that reads your documents into rows",
-            href: "https://quanty.ai",
+            href: "/quanty",
           },
           {
             title: "Document reading",
             description: "Invoices, contracts and statements, with the source kept",
-            href: "https://quanty.ai",
+            href: "/quanty#showcase",
           },
           {
-            title: "Forecasting",
-            description: "The months ahead, updated as documents arrive",
-            href: "https://quanty.ai",
+            title: "Chat and agents",
+            description: "Say what to change, and the sheet changes",
+            href: "/quanty#in-the-box",
           },
           {
             title: "Reporting",
             description: "The workbook builds the deck",
-            href: "https://quanty.ai",
+            href: "/quanty#in-the-box",
           },
         ],
       },
@@ -708,59 +714,65 @@ const pl: HomeContent = {
       {
         key: "solutions",
         title: "Rozwiązania",
-        href: "/ai-data/consulting",
+        href: "/solutions",
         items: [
           {
             title: "Automatyzacja papierologii",
             description: "Dokumenty przychodzą, zostają odczytane i trafiają na miejsce",
-            href: "/ai-data/machine-learning",
+            href: "/solutions/paperwork-automation",
           },
           {
             title: "Odpowiedzi z Twoich dokumentów",
             description: "Wchodzi pytanie, wraca odpowiedź razem ze źródłem",
-            href: "/ai-data/machine-learning",
+            href: "/solutions/answers-from-documents",
+          },
+          {
+            title: "Asystenci i automatyzacja",
+            description:
+              "Powtarzalne kroki dzieją się same, człowiek zatwierdza wynik",
+            href: "/solutions/assistants-and-automation",
           },
           {
             title: "Prognozy i raporty",
             description: "Twoje liczby w jednym miejscu i widok tego, co dalej",
-            href: "/ai-data/analytics",
+            href: "/solutions/forecasting-and-reporting",
           },
           {
             title: "Mapowanie procesów",
             description: "Szukamy pracy wartej automatyzacji, zanim ktokolwiek pisze kod",
-            href: "/ai-data/consulting",
+            href: "/solutions/process-mapping",
           },
           {
             title: "Ład danych",
             description: "RODO, AI Act i to, kto co może zobaczyć",
-            href: "/ai-data/consulting",
+            href: "/solutions/data-governance",
           },
         ],
       },
       {
         key: "platform",
         title: "Platforma",
-        href: "https://quanty.ai",
+        href: "/quanty",
         items: [
           {
             title: "Quanty",
             description: "Arkusz AI, który czyta Twoje dokumenty do wierszy",
-            href: "https://quanty.ai",
+            href: "/quanty",
           },
           {
             title: "Odczyt dokumentów",
             description: "Faktury, umowy i wyciągi, ze źródłem przy każdej wartości",
-            href: "https://quanty.ai",
+            href: "/quanty#showcase",
           },
           {
-            title: "Prognozowanie",
-            description: "Najbliższe miesiące, aktualizowane wraz z dokumentami",
-            href: "https://quanty.ai",
+            title: "Czat i agenci",
+            description: "Mówisz, co zmienić, a arkusz się zmienia",
+            href: "/quanty#in-the-box",
           },
           {
             title: "Raportowanie",
             description: "Arkusz sam składa prezentację",
-            href: "https://quanty.ai",
+            href: "/quanty#in-the-box",
           },
         ],
       },
@@ -1041,59 +1053,65 @@ const de: HomeContent = {
       {
         key: "solutions",
         title: "Lösungen",
-        href: "/ai-data/consulting",
+        href: "/solutions",
         items: [
           {
             title: "Automatisierte Sachbearbeitung",
             description: "Dokumente kommen an, werden gelesen und landen am richtigen Ort",
-            href: "/ai-data/machine-learning",
+            href: "/solutions/paperwork-automation",
           },
           {
             title: "Antworten aus Ihren Dokumenten",
             description: "Eine Frage geht rein, eine Antwort kommt mit ihrer Quelle zurück",
-            href: "/ai-data/machine-learning",
+            href: "/solutions/answers-from-documents",
+          },
+          {
+            title: "Assistenten und Automatisierung",
+            description:
+              "Die wiederkehrenden Schritte laufen, ein Mensch gibt das Ergebnis frei",
+            href: "/solutions/assistants-and-automation",
           },
           {
             title: "Prognose und Reporting",
             description: "Ihre Zahlen an einem Ort, und ein Blick nach vorn",
-            href: "/ai-data/analytics",
+            href: "/solutions/forecasting-and-reporting",
           },
           {
             title: "Prozessaufnahme",
             description: "Wir finden die Arbeit, die sich lohnt, bevor jemand Code schreibt",
-            href: "/ai-data/consulting",
+            href: "/solutions/process-mapping",
           },
           {
             title: "Daten-Governance",
             description: "DSGVO, KI-Verordnung, und wer was sehen darf",
-            href: "/ai-data/consulting",
+            href: "/solutions/data-governance",
           },
         ],
       },
       {
         key: "platform",
         title: "Plattform",
-        href: "https://quanty.ai",
+        href: "/quanty",
         items: [
           {
             title: "Quanty",
             description: "Die KI-Tabelle, die Ihre Dokumente in Zeilen liest",
-            href: "https://quanty.ai",
+            href: "/quanty",
           },
           {
             title: "Dokumente lesen",
             description: "Rechnungen, Verträge und Auszüge, mit erhaltener Quelle",
-            href: "https://quanty.ai",
+            href: "/quanty#showcase",
           },
           {
-            title: "Prognose",
-            description: "Die kommenden Monate, aktualisiert mit jedem Dokument",
-            href: "https://quanty.ai",
+            title: "Chat und Agenten",
+            description: "Sie sagen, was sich ändern soll, und die Tabelle folgt",
+            href: "/quanty#in-the-box",
           },
           {
             title: "Reporting",
             description: "Die Arbeitsmappe baut die Präsentation",
-            href: "https://quanty.ai",
+            href: "/quanty#in-the-box",
           },
         ],
       },

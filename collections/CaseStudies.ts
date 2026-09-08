@@ -49,7 +49,10 @@ export const CaseStudies: CollectionConfig = {
       name: "excerpt",
       type: "textarea",
       localized: true,
-      admin: { description: "Short summary shown on cards." },
+      admin: {
+        description:
+          "Short summary shown on cards, and the caption set above the headline in the home page Cases band.",
+      },
     },
     {
       name: "logo",
@@ -61,6 +64,10 @@ export const CaseStudies: CollectionConfig = {
       name: "heroImage",
       type: "upload",
       relationTo: "media",
+      admin: {
+        description:
+          "Lead image for the case page, and the picture used by the home page Cases band. The band crops it to 4:5, 4:3 and 3:4 by position, so keep the subject centred.",
+      },
     },
     {
       name: "gradient",
@@ -101,19 +108,34 @@ export const CaseStudies: CollectionConfig = {
       ],
     },
     {
+      name: "showOnHome",
+      type: "checkbox",
+      defaultValue: false,
+      admin: {
+        position: "sidebar",
+        description:
+          "Show this case in the Cases band on the home page. The band takes the first three in Order and needs a Hero image on each; Excerpt is the caption above the headline. When nothing is ticked the band falls back to the three cases built into the site copy.",
+      },
+    },
+    {
       name: "featured",
       type: "checkbox",
       defaultValue: false,
       admin: {
         position: "sidebar",
-        description: "Show on the homepage portfolio section.",
+        description:
+          "Marks this case as a lead entry for listings. It does NOT put the case on the home page: that is Show on home page.",
       },
     },
     {
       name: "order",
       type: "number",
       defaultValue: 0,
-      admin: { position: "sidebar", description: "Lower numbers appear first." },
+      admin: {
+        position: "sidebar",
+        description:
+          "Lower numbers appear first, in listings and in the home page Cases band.",
+      },
     },
     {
       name: "publishedAt",

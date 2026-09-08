@@ -10,6 +10,12 @@ import Founders from "./components/founders";
 import Approach from "./components/approach";
 import Locations from "./components/locations";
 import Footer from "./components/footer";
+import {
+  getCasesBand,
+  getClientsBand,
+  getLatestBand,
+  getStoriesBand,
+} from "@/lib/home-bands";
 import { isLocale, defaultLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { MAP_VIEWBOX, MAP_BACKDROP } from "@/lib/europe-map";
@@ -50,6 +56,20 @@ export const revalidate = 60;
  * There is no closing call-to-action band. The ask lives twice where it is
  * useful: on Offerings, next to the four ways to start, and on Founders, next
  * to the faces of the people who answer.
+ *
+ * FOUR OF THE BANDS READ THE CMS FIRST. Latest, Clients, Cases and Stories
+ * take their items from Payload when there are any: Clients from its own
+ * collection, Cases from the case studies flagged for the home page, Latest
+ * and Stories from the insights flagged for each of their bands. The four
+ * readers live in lib/home-bands.ts and each returns the exact shape its band
+ * already rendered, so this file hands the result down and nothing else
+ * changes.
+ *
+ * EVERY ONE OF THEM CAN RETURN null, and then the band renders the dictionary
+ * as it always did. That is not a failure path, it is the normal one: the site
+ * is built in CI with no database, and a fresh or unflagged CMS says nothing
+ * about a band either. The four reads run together rather than in sequence,
+ * because they are independent and the page waits for the slowest.
  */
 export default async function Home({
   params,
@@ -61,16 +81,24 @@ export default async function Home({
   const dict = getDictionary(locale);
   const home = dict.home;
 
+  const [latestItems, clientsItems, casesItems, storiesItems] =
+    await Promise.all([
+      getLatestBand(locale),
+      getClientsBand(locale),
+      getCasesBand(locale),
+      getStoriesBand(locale),
+    ]);
+
   return (
     <main>
       <Hero dict={home.hero} />
-      <Latest dict={home.latest} />
-      <Clients dict={home.clients} />
+      <Latest dict={home.latest} items={latestItems} />
+      <Clients dict={home.clients} items={clientsItems} />
       <Services dict={home.services} />
       <Offerings dict={home.offerings} />
       <Platform dict={home.platform} />
-      <Cases dict={home.cases} />
-      <Stories dict={home.stories} />
+      <Cases dict={home.cases} items={casesItems} />
+      <Stories dict={home.stories} items={storiesItems} />
       <Founders dict={home.founders} />
       <Approach dict={home.approach} />
       {/* The map's backdrop path is 60KB and is imported HERE, on the

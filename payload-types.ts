@@ -77,6 +77,7 @@ export interface Config {
     'use-cases': UseCase;
     bookings: Booking;
     'trust-logos': TrustLogo;
+    clients: Client;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -94,6 +95,7 @@ export interface Config {
     'use-cases': UseCasesSelect<false> | UseCasesSelect<true>;
     bookings: BookingsSelect<false> | BookingsSelect<true>;
     'trust-logos': TrustLogosSelect<false> | TrustLogosSelect<true>;
+    clients: ClientsSelect<false> | ClientsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -231,13 +233,16 @@ export interface CaseStudy {
    */
   client?: string | null;
   /**
-   * Short summary shown on cards.
+   * Short summary shown on cards, and the caption set above the headline in the home page Cases band.
    */
   excerpt?: string | null;
   /**
    * Client logo (shown on the card).
    */
   logo?: (number | null) | Media;
+  /**
+   * Lead image for the case page, and the picture used by the home page Cases band. The band crops it to 4:5, 4:3 and 3:4 by position, so keep the subject centred.
+   */
   heroImage?: (number | null) | Media;
   /**
    * Optional Tailwind gradient classes used when there is no image, e.g. "bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-400".
@@ -311,11 +316,15 @@ export interface CaseStudy {
       }[]
     | null;
   /**
-   * Show on the homepage portfolio section.
+   * Show this case in the Cases band on the home page. The band takes the first three in Order and needs a Hero image on each; Excerpt is the caption above the headline. When nothing is ticked the band falls back to the three cases built into the site copy.
+   */
+  showOnHome?: boolean | null;
+  /**
+   * Marks this case as a lead entry for listings. It does NOT put the case on the home page: that is Show on home page.
    */
   featured?: boolean | null;
   /**
-   * Lower numbers appear first.
+   * Lower numbers appear first, in listings and in the home page Cases band.
    */
   order?: number | null;
   publishedAt?: string | null;
@@ -337,10 +346,13 @@ export interface Insight {
    */
   slug: string;
   /**
-   * Short summary shown in listings.
+   * Short summary shown in listings. It is also the standfirst in the home page Insights band and the caption in the home page Stories band.
    */
   excerpt?: string | null;
   category?: ('ai' | 'development' | 'business' | 'technology' | 'cloud' | 'mobile') | null;
+  /**
+   * Cover art. Both home page bands need it: the Insights band shows it 16:9 beside the text, the Stories band shows it 16:9 above the headline. An insight without one is skipped by both.
+   */
   coverImage?: (number | null) | Media;
   /**
    * Optional Tailwind gradient classes used when there is no image, e.g. "bg-gradient-to-br from-purple-600 via-violet-500 to-indigo-400".
@@ -368,9 +380,29 @@ export interface Insight {
   readTime?: number | null;
   publishedAt?: string | null;
   /**
-   * Highlight as the lead article on the Insights page / home.
+   * Highlight as the lead article on the Insights page. It does NOT put the article on the home page: those are the two band checkboxes below.
    */
   featured?: boolean | null;
+  /**
+   * Show in the Insights band near the top of the home page, the tab strip that advances by itself. It takes the first five in Home order and each one needs a Home tag and a cover image. When nothing is ticked the band falls back to the five items built into the site copy.
+   */
+  showInInsightsBand?: boolean | null;
+  /**
+   * Show in the Stories band lower down the home page, the three staggered cards under Cases. It takes the first three in Home order and each one needs a cover image. When nothing is ticked the band falls back to the three stories built into the site copy.
+   */
+  showInStoriesBand?: boolean | null;
+  /**
+   * The short label on the tab strip of the home page Insights band, e.g. "Retail" or "EU AI Act". One or two words: the tags sit on a single row. Required by that band and unused by the Stories band.
+   */
+  homeTag?: string | null;
+  /**
+   * Position in whichever home page band this article is ticked for. Lower numbers show first.
+   */
+  homeOrder?: number | null;
+  /**
+   * Where the home page bands send a reader, when it should not be this article. Leave empty for the article itself. Use a path without a language prefix ("/services/forward-deployed-engineers") or a full address for somewhere else entirely ("https://quanty.ai"), which opens in a new tab.
+   */
+  homeHref?: string | null;
   seoTitle?: string | null;
   seoDescription?: string | null;
   updatedAt: string;
@@ -604,6 +636,33 @@ export interface TrustLogo {
   createdAt: string;
 }
 /**
+ * The "Selected clients" band on the home page. Active clients show in Order; when none are active the band falls back to the three names built into the site copy.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "clients".
+ */
+export interface Client {
+  id: number;
+  /**
+   * Company name, set in the large type of the home page band. Not translated: a company is called the same thing in every language.
+   */
+  name: string;
+  /**
+   * The single grey line under the name on the home page, e.g. "Autonomous store architecture". One short phrase, no full stop.
+   */
+  what: string;
+  /**
+   * Lower numbers show first. The band sets three across a row.
+   */
+  order?: number | null;
+  /**
+   * Uncheck to drop this client from the home page band without deleting the record.
+   */
+  isActive?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -666,6 +725,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'trust-logos';
         value: number | TrustLogo;
+      } | null)
+    | ({
+        relationTo: 'clients';
+        value: number | Client;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -808,6 +871,7 @@ export interface CaseStudiesSelect<T extends boolean = true> {
         label?: T;
         id?: T;
       };
+  showOnHome?: T;
   featured?: T;
   order?: T;
   publishedAt?: T;
@@ -833,6 +897,11 @@ export interface InsightsSelect<T extends boolean = true> {
   readTime?: T;
   publishedAt?: T;
   featured?: T;
+  showInInsightsBand?: T;
+  showInStoriesBand?: T;
+  homeTag?: T;
+  homeOrder?: T;
+  homeHref?: T;
   seoTitle?: T;
   seoDescription?: T;
   updatedAt?: T;
@@ -930,6 +999,18 @@ export interface BookingsSelect<T extends boolean = true> {
 export interface TrustLogosSelect<T extends boolean = true> {
   name?: T;
   logo?: T;
+  order?: T;
+  isActive?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "clients_select".
+ */
+export interface ClientsSelect<T extends boolean = true> {
+  name?: T;
+  what?: T;
   order?: T;
   isActive?: T;
   updatedAt?: T;

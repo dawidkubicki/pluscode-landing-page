@@ -1,3 +1,4 @@
+import type { ClientsItems } from "@/lib/home-bands";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 /* ------------------------------------------------------------------ *
@@ -19,12 +20,23 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
  *  and because the wrapper spans all 12 columns the inner grid resolves
  *  to the same column positions as the outer one, so the names still
  *  land on the page's column lines.
+ *
+ *  THE ITEMS COME FROM THE CMS WHEN THERE ARE ANY. `items` is whatever
+ *  lib/home-bands.ts read out of the `clients` collection, and it is null
+ *  whenever that collection is empty, unflagged or unreachable, which is
+ *  every build with no database. The dictionary is the fallback and stays
+ *  the shape of record: both sides are the same three fields, so nothing
+ *  below this line knows which one it is rendering.
  * ------------------------------------------------------------------ */
 export default function Clients({
   dict,
+  items: cmsItems,
 }: {
   dict: Dictionary["home"]["clients"];
+  items?: ClientsItems | null;
 }) {
+  const items = cmsItems && cmsItems.length > 0 ? cmsItems : dict.items;
+
   return (
     <section className="bg-paper py-20 md:py-[104px]">
       <div className="pc-shell">
@@ -38,7 +50,7 @@ export default function Clients({
                 gutter would crowd each note against the next hairline.
                 On desktop the three sit in one row, so it does nothing. */}
             <div className="pc-grid gap-y-10">
-              {dict.items.map((item) => (
+              {items.map((item) => (
                 <div
                   key={item.key}
                   className="col-span-4 border-t border-rule"

@@ -6,26 +6,70 @@ import Stats from "../components/stats";
 import Footer from "../components/footer";
 import { Reveal, Stagger, StaggerItem } from "../components/motion";
 import { Eyebrow, Plus } from "../components/ui";
-import { Visual } from "../components/visual";
 import { LinkedInIcon, MailIcon } from "../components/icons";
 import { isLocale, defaultLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
-import { getTeam, type TeamMember } from "@/lib/team";
+import { getTeam } from "@/lib/team";
 
 export const revalidate = 60;
 
 const resolve = (lang: string): Locale => (isLocale(lang) ? lang : defaultLocale);
 
-/**
- * The 3:4 portrait register from spec F1. These files ship in the repo, so the
- * page shows the two real people with their real faces even when the CMS is
- * unreachable and the dictionary fallback is doing the work. Keyed by name so
- * it matches scripts/content/team.ts without importing a seed script.
- */
-const PORTRAITS: Record<string, string> = {
-  "Dawid Kubicki": "/assets/team/dawid-kubicki.jpg",
-  "Krzysztof Suliński": "/assets/team/krzysztof-sulinski.jpg",
-};
+/* ------------------------------------------------------------------ *
+ *  THE ROSTER, AND WHY THE PAGE IS BUILT FROM IT RATHER THAN FROM THE CMS.
+ *
+ *  Pluscode is two people. This page used to render whatever the `team`
+ *  collection happened to hold, falling back to the dictionary only when the
+ *  collection was completely empty. Production's collection was not empty: it
+ *  still held the placeholder seed, so /about spent months introducing
+ *  "Engineering Lead, Head of Engineering" and "Design Lead, Head of Design"
+ *  to every visitor. Two of the three people on the page did not exist, and
+ *  the one who does but was missing, Krzysztof, was nowhere.
+ *
+ *  So the loop is inverted. The page iterates THIS list, never the CMS
+ *  response, and a CMS row is consulted only after it has been matched to a
+ *  name that is on it. A row for somebody who does not work here is not
+ *  filtered out at the end, it is never reached: there is no code path from a
+ *  `team` document to the screen that does not start here. A database holding
+ *  "Design Lead" cannot print "Design Lead" again, however it got there, and
+ *  the same is true of the next placeholder somebody seeds by accident.
+ *
+ *  The CMS is still in charge of everything it is good at. For a matched
+ *  person it supplies the role, the bio, the portrait and the contact details,
+ *  because those are the fields an editor is meant to be able to change. Each
+ *  one falls back independently: the portraits below ship in the repo, and the
+ *  role and bio fall back to the dictionary, so a half filled record renders a
+ *  complete person instead of a gap. Deleting the whole collection, or losing
+ *  the database, leaves the page correct.
+ *
+ *  The caption and the quote come from `home.founders` rather than from a
+ *  second set of strings written for this page. There is one description of
+ *  each of these two people on the site and the homepage People band owns it;
+ *  /about adds the longer bio and the way to reach them, and repeats nothing.
+ *
+ *  Adding a person means adding a real one, here and in
+ *  scripts/content/team.ts, which is the same list for the seed scripts.
+ * ------------------------------------------------------------------ */
+const ROSTER = [
+  {
+    /** Key under pages.about.team.members and under home.founders.items. */
+    key: "dawid",
+    name: "Dawid Kubicki",
+    photo: "/assets/team/dawid-kubicki.jpg",
+    email: "contact@pluscode.io",
+    linkedin: "https://www.linkedin.com/company/pluscode",
+  },
+  {
+    key: "krzysztof",
+    name: "Krzysztof Suliński",
+    photo: "/assets/team/krzysztof-sulinski.jpg",
+    email: "contact@pluscode.io",
+    linkedin: null,
+  },
+] as const;
+
+/** The two of them in one frame, for the story band. 1350 by 1800, so 3:4. */
+const PAIR_PHOTO = "/assets/team/founders.jpg";
 
 export async function generateMetadata({
   params,
@@ -44,22 +88,30 @@ export default async function AboutPage({
 }) {
   const { lang } = await params;
   const locale = resolve(lang);
-  const t = getDictionary(locale).pages.about;
+  const dict = getDictionary(locale);
+  const t = dict.pages.about;
 
-  const cmsTeam = await getTeam(locale);
-  const fallbackTeam: TeamMember[] = Object.values(t.team.members).map(
-    (m, i) => ({
-      id: String(i),
-      name: m.name,
-      role: m.role,
-      bio: m.bio,
-      email: "contact@pluscode.io",
-      phone: null,
-      linkedin: null,
-      photo: PORTRAITS[m.name] ? { url: PORTRAITS[m.name], alt: m.name } : null,
-    }),
-  );
-  const team = cmsTeam.length > 0 ? cmsTeam : fallbackTeam;
+  /* The CMS is a lookup table here, not a list to render. `find` by name is
+     the whole filter: a row nobody on the roster is named after is simply
+     never found, and every field it might have supplied falls back. */
+  const cms = await getTeam(locale);
+  const people = ROSTER.map((person) => {
+    const row = cms.find((m) => m.name === person.name);
+    const copy = t.team.members[person.key];
+    const said = dict.home.founders.items.find((i) => i.key === person.key);
+    return {
+      key: person.key,
+      name: person.name,
+      role: row?.role ?? copy.role,
+      bio: row?.bio ?? copy.bio,
+      caption: said?.caption ?? null,
+      quote: said?.quote ?? null,
+      photo: row?.photo?.url ?? person.photo,
+      email: row?.email ?? person.email,
+      linkedin: row?.linkedin ?? person.linkedin,
+    };
+  });
+
   const values = Object.values(t.values.items);
 
   return (
@@ -68,12 +120,13 @@ export default async function AboutPage({
         eyebrow={t.label}
         title={t.title}
         intro={t.subtitle}
-        visual="aurora"
-        cta={{ label: t.cta.cta, href: "/contact" }}
+        cta={{ label: t.cta.cta, href: "/book-a-call" }}
       />
 
-      {/* Story. The text runs in six columns and the plate fills the last
-          five, which is the same pair the homepage uses for a band header. */}
+      {/* Story. The text runs in six columns and the photograph fills the
+          last four, at the same 3:4 register as the portraits below it. The
+          plate used to be an abstract SVG; a page about the company is the
+          one place where a picture of the company is the better object. */}
       <section className="bg-paper py-20 md:py-[104px]">
         <div className="pc-shell">
           <div className="pc-grid">
@@ -93,16 +146,31 @@ export default async function AboutPage({
                 </div>
               </Reveal>
             </div>
-            <Reveal delay={0.1} className="col-span-4 md:col-span-5 md:col-start-8">
-              <div className="aspect-[4/3] overflow-hidden bg-paper-dim">
-                <Visual kind="nodes" />
-              </div>
+            <Reveal
+              delay={0.1}
+              className="col-span-4 mt-12 md:col-start-9 md:mt-0"
+            >
+              <figure>
+                <div className="relative aspect-[3/4] overflow-hidden bg-paper-dim">
+                  <Image
+                    src={PAIR_PHOTO}
+                    alt={t.story.imageAlt}
+                    fill
+                    sizes="(min-width: 768px) 33vw, 92vw"
+                    className="object-cover object-center grayscale contrast-[1.02]"
+                  />
+                </div>
+                <figcaption className="mt-4 text-[0.875rem] text-moss">
+                  {t.story.caption}
+                </figcaption>
+              </figure>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* Values */}
+      {/* How we work. Four cells of three columns, ruled at the top rather
+          than boxed, so they land on the same columns as every other band. */}
       <section className="bg-paper-dim py-20 md:py-[104px]">
         <div className="pc-shell">
           <div className="pc-grid">
@@ -138,11 +206,18 @@ export default async function AboutPage({
 
       <Stats locale={locale} />
 
-      {/* Team */}
+      {/* Team. One row per person rather than two cards side by side: this is
+          the page about the company, so each of them gets the portrait at a
+          size worth printing, the longer bio, the line they say on the
+          homepage and a way to reach them. The photo register is the one the
+          page has always used, 3:4 and grayscale contrast-[1.02]. Each row is
+          its own `pc-grid` spanning the full twelve columns of the band, which
+          nests exactly: same width, same gutter, so the portrait in row two
+          starts on the same rule as the portrait in row one. */}
       <section className="bg-paper py-20 md:py-[104px]">
         <div className="pc-shell">
           <div className="pc-grid">
-            <div className="col-span-4 md:col-span-8">
+            <div className="col-span-4 md:col-span-6">
               <Reveal>
                 <Eyebrow>{t.team.label}</Eyebrow>
               </Reveal>
@@ -152,64 +227,90 @@ export default async function AboutPage({
                 </h2>
               </Reveal>
             </div>
+            <Reveal
+              delay={0.1}
+              className="col-span-4 mt-6 md:col-span-5 md:col-start-8 md:mt-0 md:self-end"
+            >
+              <p className="text-[1.125rem] leading-[1.375] text-moss">
+                {t.team.intro}
+              </p>
+            </Reveal>
           </div>
-          {/* Two people, so two cells of four columns each. The 3:4 portrait
-              and the one filter, grayscale(1) contrast(1.02), are the photo
-              system from spec F1, the same one the homepage uses. The card is
-              the photograph plus the words under it: no frame, no ground and
-              no border, because the portrait is its own edge. */}
-          <Stagger className="pc-grid mt-16 md:mt-24" gap={0.08}>
-            {team.map((m) => (
-              <StaggerItem key={m.id} className="col-span-4">
-                <article>
+
+          <div className="mt-16 space-y-16 md:mt-24 md:space-y-24">
+            {people.map((p) => (
+              <article key={p.key} className="pc-grid">
+                <Reveal className="col-span-4">
                   <div className="relative aspect-[3/4] overflow-hidden bg-paper-dim">
-                    {m.photo && (
-                      <Image
-                        src={m.photo.url}
-                        alt={m.photo.alt}
-                        fill
-                        sizes="(min-width: 768px) 33vw, 92vw"
-                        className="object-cover object-center grayscale contrast-[1.02]"
-                      />
-                    )}
+                    <Image
+                      src={p.photo}
+                      alt={p.name}
+                      fill
+                      sizes="(min-width: 768px) 33vw, 92vw"
+                      className="object-cover object-center grayscale contrast-[1.02]"
+                    />
                   </div>
-                  <h3 className="mt-6 text-heading-md text-ink">{m.name}</h3>
-                  {m.role && (
-                    <p className="mt-2 text-[0.875rem] text-moss">{m.role}</p>
-                  )}
-                  {m.bio && (
-                    <p className="mt-4 text-[1.125rem] leading-[1.375] text-moss">
-                      {m.bio}
+                </Reveal>
+
+                <div className="col-span-4 mt-8 md:col-span-7 md:col-start-6 md:mt-0 md:self-center">
+                  <Reveal>
+                    <h3 className="text-heading-md text-ink">{p.name}</h3>
+                    <p className="mt-2 text-[0.875rem] text-moss">{p.role}</p>
+                  </Reveal>
+                  <Reveal delay={0.05}>
+                    <p className="mt-6 max-w-[52ch] text-[1.125rem] leading-[1.375] text-moss">
+                      {p.bio}
                     </p>
+                  </Reveal>
+
+                  {/* The line they actually say, straight off the homepage
+                      band, with its caption above it. The muted line first
+                      and the large line second is the house inversion. */}
+                  {p.quote && (
+                    <Reveal delay={0.1}>
+                      <figure className="mt-10 border-t border-rule pt-6">
+                        {p.caption && (
+                          <figcaption className="text-[0.875rem] text-moss">
+                            {p.caption}
+                          </figcaption>
+                        )}
+                        <blockquote className="mt-4 max-w-[34ch] text-heading-sm text-ink">
+                          {p.quote}
+                        </blockquote>
+                      </figure>
+                    </Reveal>
                   )}
-                  {(m.email || m.linkedin) && (
-                    <div className="-ml-3 mt-4 flex items-center text-moss">
-                      {m.email && (
-                        <a
-                          href={`mailto:${m.email}`}
-                          aria-label={`Email ${m.name}`}
-                          className="inline-flex size-11 items-center justify-center transition-colors hover:text-ink"
-                        >
-                          <MailIcon className="size-[18px]" />
-                        </a>
-                      )}
-                      {m.linkedin && (
-                        <a
-                          href={m.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${m.name} on LinkedIn`}
-                          className="inline-flex size-11 items-center justify-center transition-colors hover:text-ink"
-                        >
-                          <LinkedInIcon className="size-[18px]" />
-                        </a>
-                      )}
-                    </div>
+
+                  {(p.email || p.linkedin) && (
+                    <Reveal delay={0.15}>
+                      <div className="-ml-3 mt-4 flex items-center text-moss">
+                        {p.email && (
+                          <a
+                            href={`mailto:${p.email}`}
+                            aria-label={t.team.emailLabel.replace("{name}", p.name)}
+                            className="inline-flex size-11 items-center justify-center transition-colors hover:text-ember"
+                          >
+                            <MailIcon className="size-[18px]" />
+                          </a>
+                        )}
+                        {p.linkedin && (
+                          <a
+                            href={p.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={t.team.linkedinLabel.replace("{name}", p.name)}
+                            className="inline-flex size-11 items-center justify-center transition-colors hover:text-ember"
+                          >
+                            <LinkedInIcon className="size-[18px]" />
+                          </a>
+                        )}
+                      </div>
+                    </Reveal>
                   )}
-                </article>
-              </StaggerItem>
+                </div>
+              </article>
             ))}
-          </Stagger>
+          </div>
         </div>
       </section>
 

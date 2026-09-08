@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import LocaleLink from "./locale-link";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
 /* ------------------------------------------------------------------ *
@@ -29,6 +30,32 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
  *  band is ink, so a 1px rule-dark hairline draws the edge of the window;
  *  there is no browser chrome and no shadow, by the same rule as every
  *  other image on the page.
+ *
+ *  IT IS NOT FULL WIDTH ANY MORE. The capture used to span all twelve
+ *  columns under the header, which made a 2240px screenshot the largest
+ *  object on the home page and left the band reading as a poster for
+ *  someone else's app. It now sits in the six right-hand columns, opposite
+ *  the header text, so the header and the product are one two-up
+ *  composition and the capture is roughly a quarter of the area it was.
+ *
+ *  At six columns the whole 2240x1282 window would render its table text
+ *  around 8px, so the band shows a DERIVED CROP instead:
+ *  `sheet-table-2x.webp` is `sheet-2x.webp` cut to the table panel alone
+ *  (sharp `extract`, left 444, top 118, 1772x908), which drops the left
+ *  navigation rail and the window's title bar and keeps the toolbar, the
+ *  column headers, all ten rows, the totals line and the open source
+ *  popover. Nothing is scaled, recoloured, retouched or composited: it is
+ *  the same pixels, in a tighter frame, and every row of content that was
+ *  visible in the wide shot is still whole. Re-derive it from the new
+ *  capture whenever `sheet-2x.webp` is replaced. The whole window still
+ *  appears, at a size where it can be read, on /quanty.
+ *
+ *  THE BUTTON GOES TO OUR OWN PAGE. "See Quanty" is a LocaleLink to
+ *  /quanty, the platform page on this site, not an anchor to quanty.ai:
+ *  a reader who wants to know what the product is should be told that by
+ *  us, in their own language, without leaving pluscode.io. The product
+ *  itself does live on another host, so the domain sits beside the button
+ *  as a small external link. Both are needed; neither replaces the other.
  *
  *  The note line is a disclosure, not decoration. Quanty is built by
  *  Pluscode, it is not a partner platform and not a certification, so the
@@ -126,7 +153,12 @@ export default function Platform({
       <style>{ITEM_CSS}</style>
       <div className="pc-shell">
         <div className="pc-grid">
-          <div className="col-span-4 md:col-span-6">
+          {/* The header, five of twelve columns. It used to be split across
+              the row (title left, sentence and button right) with the
+              screenshot underneath. The capture now takes the right half,
+              so the whole written argument stacks in one column: label,
+              wordmark, tagline, sentence, the two ways to go. */}
+          <div className="col-span-4 md:col-span-5">
             <p className="text-[0.875rem] text-sage">{dict.eyebrow}</p>
 
             {/* The product's own wordmark, not type. The explicit intrinsic
@@ -157,38 +189,66 @@ export default function Platform({
             </h2>
 
             <p className="mt-6 text-heading-md text-white">{dict.tagline}</p>
-          </div>
 
-          <div className="col-span-4 mt-10 md:col-span-5 md:col-start-8 md:mt-0">
-            <p className="text-[1.125rem] leading-[1.375] text-mist">
+            <p className="mt-6 text-[1.125rem] leading-[1.375] text-mist">
               {dict.intro}
             </p>
-            {/* quanty.ai is a separate host, so this is a plain anchor and
-                never LocaleLink: there is no /pl of it to stay inside. */}
-            <a
-              href="https://quanty.ai"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-invert mt-8"
-            >
-              {dict.cta}
-            </a>
+
+            {/* TWO WAYS TO GO, and they go to different places.
+                The button is now an internal LocaleLink to /quanty, our own
+                platform page, so "See Quanty" keeps the reader on
+                pluscode.io and inside their locale. The product itself
+                still lives on a separate host, so the domain sits beside
+                the button as a plain external anchor. Its label is the bare
+                domain in every language: it needs no translation, it says
+                where it goes, and a reader can tell the two apart without
+                reading either one twice. */}
+            <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+              <LocaleLink href="/quanty" className="btn btn-invert">
+                {dict.cta}
+              </LocaleLink>
+              {/* The colour sits on the anchor and `pc-link` on the span
+                  inside it: `.pc-link` sets `color: inherit` and is declared
+                  after Tailwind's own utilities in the same layer, so a
+                  `text-sage` on the same element would lose to it. The arrow
+                  is decoration and is hidden from the accessible name, which
+                  is then exactly "quanty.ai". */}
+              <a
+                href="https://quanty.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="text-[1rem] text-sage"
+              >
+                <span className="pc-link">quanty.ai</span>
+                <span aria-hidden="true"> ↗</span>
+              </a>
+            </div>
           </div>
 
-          {/* The product itself, full width under the header. The hairline
-              is load-bearing: the capture's own ground is near black on an
-              ink band, and without the border there would be no edge to say
-              where the window ends. `sizes="100vw"` because the figure
-              spans every column of the shell at every width. No
-              `unoptimized` here; that exception is for the SVG wordmark
+          {/* The product itself, opposite the header rather than under it.
+              Six of twelve columns above 768px, the full four below, and it
+              is a crop of the real capture (see the note at the top of the
+              file) so the table is still legible at half the width.
+
+              The hairline is load-bearing: the capture's own ground is near
+              black on an ink band, and without the border there would be no
+              edge to say where the window ends.
+
+              `sizes` is measured off this grid, not guessed. The shell is
+              full bleed with 24px of padding and a 24px gutter, so six of
+              twelve columns is `50vw - 36px`; below 768px the figure spans
+              the content width, which is `100vw - 48px` and `100vw - 32px`
+              under 640px where the shell's padding drops to 16.
+
+              No `unoptimized` here; that exception is for the SVG wordmark
               only, and this is a raster that /_next/image serves resized. */}
-          <figure className="col-span-4 mt-16 md:col-span-12 md:mt-24">
-            <div className="relative aspect-[2240/1282] overflow-hidden border border-rule-dark">
+          <figure className="col-span-4 mt-10 md:col-span-6 md:col-start-7 md:mt-0">
+            <div className="relative aspect-[1772/908] overflow-hidden border border-rule-dark">
               <Image
-                src="/assets/quanty/sheet-2x.webp"
+                src="/assets/quanty/sheet-table-2x.webp"
                 alt={dict.shotAlt}
                 fill
-                sizes="100vw"
+                sizes="(max-width: 639px) calc(100vw - 32px), (max-width: 767px) calc(100vw - 48px), calc(50vw - 36px)"
                 className="object-cover"
               />
             </div>
@@ -199,8 +259,9 @@ export default function Platform({
               the box has no other border. `group` lets the name answer the
               same hover as the ring, on the same 240ms curve, so the two
               read as one movement rather than a border and then a title.
-              The top margin now measures from the screenshot, not the
-              header, so the rhythm stays header, screenshot, boxes. */}
+              The top margin measures from the header row, which is now the
+              header and the screenshot side by side, so the rhythm is one
+              two-up plate, then the four boxes, then the trades. */}
           {dict.items.map((item) => (
             <div
               key={item.key}
