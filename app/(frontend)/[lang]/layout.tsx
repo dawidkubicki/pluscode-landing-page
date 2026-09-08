@@ -99,7 +99,12 @@ export default async function LocaleLayout({
           {banner && <AnnouncementBar announcement={banner} />}
           <SmoothScroll>
             <Header locale={lang} nav={dict.navigation} />
-            <div className="[[data-announcement]_&]:pt-10">{children}</div>
+            {/* The announcement bar publishes its real height as
+              `--pc-announcement-h`; 2.5rem is the one line case and the
+              value the pre-paint script implies before the bar mounts. */}
+          <div className="[[data-announcement]_&]:pt-[var(--pc-announcement-h,2.5rem)]">
+            {children}
+          </div>
           </SmoothScroll>
           <FloatingContact
             dict={dict.hero}

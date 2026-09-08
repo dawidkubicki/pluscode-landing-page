@@ -43,7 +43,11 @@
  *  an `sr-only focus:not-sr-only` button at the foot which nobody using a
  *  pointer could ever see.
  *
- *  The announcement strip is keyed off `data-announcement` on <html>
+ *  The announcement strip is keyed off `data-announcement` on <html>, and
+ *  its HEIGHT off `--pc-announcement-h`, which the bar measures and
+ *  publishes. It used to be hardcoded here as 40px, which is what stopped a
+ *  long sentence ever taking a second line: the bar had nowhere to grow into
+ *  and hid itself instead.
  *  (set pre-paint by layout.tsx). Both the bar and the panel drop 40px
  *  while it is up, so the panel never covers it.
  * ------------------------------------------------------------------ */
@@ -507,7 +511,7 @@ export default function HeaderMenu({
      close control. See the wrapper inside <header> for why the transform is
      not on the header itself. */
   return (
-    <header className="fixed inset-x-0 top-0 z-50 [[data-announcement]_&]:top-10">
+    <header className="fixed inset-x-0 top-0 z-50 [[data-announcement]_&]:top-[var(--pc-announcement-h,2.5rem)]">
       {/* THE BAR. Above the panel in z order so the header row never moves
           when the menu opens; only its ground changes. */}
       {/* THE SLIDE lives on this wrapper and NOT on <header>. The panel
@@ -666,7 +670,7 @@ export default function HeaderMenu({
             animate={{ opacity: 1 }}
             exit={{ opacity: reduce ? 1 : 0 }}
             transition={{ duration: reduce ? 0 : 0.2, ease: EASE }}
-            className="on-dark fixed inset-0 z-10 overflow-y-auto overscroll-contain bg-carbon [[data-announcement]_&]:top-10"
+            className="on-dark fixed inset-0 z-10 overflow-y-auto overscroll-contain bg-carbon [[data-announcement]_&]:top-[var(--pc-announcement-h,2.5rem)]"
           >
             <motion.div
               initial={{ y: reduce ? 0 : -12 }}
