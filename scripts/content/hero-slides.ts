@@ -59,6 +59,16 @@ export type HeroSlidesContent = {
     overlayTop: number;
     /** Opacity of the ink wash at the very bottom edge of the footage. */
     overlayBottom: number;
+    /** HOW FAST THE CLIP RUNS, as a multiplier on its own timeline. 1 is the
+     *  file as encoded, and anything below it is slower. It is a playback
+     *  rate and not a re-encode on purpose: the file on disk stays the
+     *  footage as shot, the number is one value an editor can change in the
+     *  CMS without anybody opening ffmpeg, and slowing a clip down this way
+     *  costs nothing at all in bytes. It also sets how long the slide holds
+     *  the screen, because the playlist hands over when the clip ends: the
+     *  freight hyperlapse is 10 seconds of file, so at 0.8 it lasts 12.5,
+     *  which is exactly the length of the studio clip beside it. */
+    rate: number;
   }[];
 };
 
@@ -82,6 +92,7 @@ const en: HeroSlidesContent = {
          heavier of the two washes. Measured with ffmpeg signalstats. */
       overlayTop: 0.62,
       overlayBottom: 0.74,
+      rate: 1,
     },
     {
       key: "logistics",
@@ -99,6 +110,7 @@ const en: HeroSlidesContent = {
          with ffmpeg signalstats on the shipped encode. */
       overlayTop: 0.42,
       overlayBottom: 0.58,
+      rate: 0.8,
     },
   ],
 };
@@ -119,6 +131,7 @@ const pl: HeroSlidesContent = {
       poster: "/hero/hero-poster.jpg",
       overlayTop: 0.62,
       overlayBottom: 0.74,
+      rate: 1,
     },
     {
       key: "logistics",
@@ -130,6 +143,7 @@ const pl: HeroSlidesContent = {
       poster: "/hero/logistics-poster.jpg",
       overlayTop: 0.42,
       overlayBottom: 0.58,
+      rate: 0.8,
     },
   ],
 };
@@ -150,6 +164,7 @@ const de: HeroSlidesContent = {
       poster: "/hero/hero-poster.jpg",
       overlayTop: 0.62,
       overlayBottom: 0.74,
+      rate: 1,
     },
     {
       key: "logistics",
@@ -161,6 +176,7 @@ const de: HeroSlidesContent = {
       poster: "/hero/logistics-poster.jpg",
       overlayTop: 0.42,
       overlayBottom: 0.58,
+      rate: 0.8,
     },
   ],
 };

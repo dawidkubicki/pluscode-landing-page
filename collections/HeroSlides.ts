@@ -167,6 +167,17 @@ export const HeroSlides: CollectionConfig = {
       },
     },
     {
+      name: "rate",
+      type: "number",
+      defaultValue: 1,
+      min: 0.25,
+      max: 2,
+      admin: {
+        description:
+          "How fast the clip runs. 1 is the file as it was encoded, 0.8 is a fifth slower, 0.5 is half speed. Nothing is re-encoded, so this costs no bandwidth and can be changed as often as you like. It also decides how long the slide holds the screen, because the next one starts when this clip ends: a 10 second clip at 0.8 lasts 12.5 seconds.",
+      },
+    },
+    {
       name: "order",
       type: "number",
       defaultValue: 0,

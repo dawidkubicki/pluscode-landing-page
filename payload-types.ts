@@ -709,6 +709,10 @@ export interface HeroSlide {
    */
   overlayBottom?: number | null;
   /**
+   * How fast the clip runs. 1 is the file as it was encoded, 0.8 is a fifth slower, 0.5 is half speed. Nothing is re-encoded, so this costs no bandwidth and can be changed as often as you like. It also decides how long the slide holds the screen, because the next one starts when this clip ends: a 10 second clip at 0.8 lasts 12.5 seconds.
+   */
+  rate?: number | null;
+  /**
    * Lower numbers play first. The playlist starts on a random slide and then follows this order.
    */
   order?: number | null;
@@ -1091,6 +1095,7 @@ export interface HeroSlidesSelect<T extends boolean = true> {
   posterOverride?: T;
   overlayTop?: T;
   overlayBottom?: T;
+  rate?: T;
   order?: T;
   isActive?: T;
   updatedAt?: T;

@@ -42,6 +42,7 @@ type SlideEntry = {
   poster: string;
   overlayTop: number;
   overlayBottom: number;
+  rate: number;
 };
 
 /** The `heroSlides.slides` block of one dictionary, checked field by field
@@ -71,7 +72,7 @@ function slidesIn(locale: SeedLocale): SlideEntry[] {
         );
       }
     }
-    for (const field of ["overlayTop", "overlayBottom"]) {
+    for (const field of ["overlayTop", "overlayBottom", "rate"]) {
       if (typeof slide?.[field] !== "number") {
         throw new Error(
           `dictionaries/${locale}.json: a hero slide is missing "${field}"`,
@@ -135,6 +136,7 @@ for (let index = 0; index < english.length; index++) {
     posterPath: entry.poster,
     overlayTop: entry.overlayTop,
     overlayBottom: entry.overlayBottom,
+    rate: entry.rate,
     order: index,
     isActive: true,
   };

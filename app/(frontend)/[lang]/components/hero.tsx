@@ -1,6 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 import LocaleLink from "./locale-link";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
@@ -106,6 +112,22 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
 export type HeroSlide = Dictionary["heroSlides"]["slides"][number];
 
 const REDUCED_QUERY = "(prefers-reduced-motion: reduce)";
+
+/* `prefers-reduced-motion` as a value the RENDER can read, which the effects
+   in this file do not need but the progress line does: the line is markup,
+   so the decision not to draw it has to be made while rendering rather than
+   afterwards. Read through useSyncExternalStore, the same way the Insights
+   band reads it, because a media query is an external store with exactly a
+   subscribe and a snapshot. The server snapshot is `false`, so the server
+   emits the line and a client that asked for less motion drops it on
+   hydration. Losing one hairline is the whole of that difference. */
+const subscribeReduced = (onChange: () => void) => {
+  const query = window.matchMedia(REDUCED_QUERY);
+  query.addEventListener("change", onChange);
+  return () => query.removeEventListener("change", onChange);
+};
+const readReduced = () => window.matchMedia(REDUCED_QUERY).matches;
+const readReducedOnServer = () => false;
 
 /* The slide change, in milliseconds. The picture leads and the words follow,
  * the same sequence and the same easings as the Insights band, because it is
@@ -216,6 +238,12 @@ export default function Hero({
   /** The slides allowed to fetch bytes. The server's slide starts armed. */
   const [armed, setArmed] = useState<number[]>([0]);
 
+  const reduced = useSyncExternalStore(
+    subscribeReduced,
+    readReduced,
+    readReducedOnServer,
+  );
+
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   /** Mirrors of state for the media event handlers, which fire outside a
    *  render and must not close over a stale value. */
@@ -241,6 +269,32 @@ export default function Hero({
       return from;
     },
     [count],
+  );
+
+  /* HOW FAST A SLIDE RUNS.
+     `defaultPlaybackRate` is set as well as `playbackRate`, and that is the
+     load bearing half: `load()` resets the current rate back to the default
+     one, and this hero calls `load()` every time a slide is armed or
+     disarmed, so a rate written only to `playbackRate` would be thrown away
+     the moment the clip it belongs to was armed. Setting the default too
+     means the value survives a reload, a bfcache restore and a source swap.
+     Applied at every point the element can have been reset rather than once
+     at mount, because there is no single moment that covers all three. */
+  /* The fill of the progress line. It is written to imperatively rather
+     than held in state: this moves every frame, and a state update per
+     frame would re-render the whole hero sixty times a second to change one
+     transform. */
+  const progressRef = useRef<HTMLDivElement>(null);
+
+  const applyRate = useCallback(
+    (video: HTMLVideoElement | null, i: number) => {
+      const value = slides[i]?.rate;
+      if (!video || typeof value !== "number" || !Number.isFinite(value)) return;
+      const clamped = Math.min(2, Math.max(0.25, value));
+      video.defaultPlaybackRate = clamped;
+      video.playbackRate = clamped;
+    },
+    [slides],
   );
 
   /* THE RANDOM START, once, after mount.
@@ -321,8 +375,11 @@ export default function Hero({
         video.autoplay = false;
       }
       video.load();
+      // `load()` has just reset the rate to the element's default, so the
+      // slide's own speed is written back on the other side of it.
+      applyRate(video, i);
     }
-  }, [armed, count]);
+  }, [armed, count, applyRate]);
 
   /* PLAY THE ACTIVE SLIDE, and put the others back to their first frame.
      The reset waits for the cover to finish: the outgoing clip is still on
@@ -332,6 +389,7 @@ export default function Hero({
     const active = videoRefs.current[index];
     const reduce = window.matchMedia(REDUCED_QUERY).matches;
     if (active && armed.includes(index) && !reduce) {
+      applyRate(active, index);
       active.autoplay = true;
       void active.play().catch(() => {
         // Refused. The poster is already on screen and stays there.
@@ -356,7 +414,7 @@ export default function Hero({
       // SHOT_MS + 80, so a dropped frame cannot let the rewind show.
     }, SHOT_MS + 240);
     return () => window.clearTimeout(id);
-  }, [index, armed, count]);
+  }, [index, armed, count, applyRate]);
 
   /* THE WORDS. Out, swap, in.
      `copyVisible` is DERIVED and not stored: the words are visible exactly
@@ -374,6 +432,36 @@ export default function Hero({
     const id = window.setTimeout(() => setShown(index), COPY_OUT_MS);
     return () => window.clearTimeout(id);
   }, [index, shown]);
+
+  /* THE PROGRESS LINE, driven off the clip itself rather than off a timer.
+     `currentTime / duration` is the one number that cannot drift from what
+     the viewer is watching: it already accounts for the playback rate, for
+     buffering, for a stall on a slow line and for a tab that was in the
+     background. A CSS animation of a fixed length would have to guess at all
+     four and would be wrong about each of them.
+
+     `scaleX` from a left origin, so the browser can keep this on the
+     compositor and no frame of it costs a layout. rAF stops itself when the
+     tab is hidden, which is exactly when the video stops too. */
+  useEffect(() => {
+    const fill = progressRef.current;
+    if (!fill) return;
+    if (count < 2 || reduced) return;
+
+    let raf = 0;
+    const tick = () => {
+      const video = videoRefs.current[indexRef.current];
+      const duration = video?.duration ?? 0;
+      const progress =
+        video && Number.isFinite(duration) && duration > 0
+          ? Math.min(1, Math.max(0, video.currentTime / duration))
+          : 0;
+      fill.style.transform = `scaleX(${progress})`;
+      raf = window.requestAnimationFrame(tick);
+    };
+    raf = window.requestAnimationFrame(tick);
+    return () => window.cancelAnimationFrame(raf);
+  }, [count, reduced]);
 
   /** The clip finished. Hand over to the next one that works.
    *
@@ -402,6 +490,7 @@ export default function Hero({
 
   /** The clip is running, so the next one can start filling its buffer. */
   const onPlaying = (i: number) => () => {
+    applyRate(videoRefs.current[i], i);
     if (i !== indexRef.current) return;
     const next = nextIndex(i);
     if (next === i) return;
@@ -495,6 +584,43 @@ export default function Hero({
       {/* 2. The column ruling, carried across the hero so the grid that
              aligns the page is visible from the first screen. */}
       <div aria-hidden="true" className="pc-ruled-dark absolute inset-0 z-10" />
+
+      {/* THE LINE ALONG THE FOOT, showing how much of this clip is left and
+          so how long until the next one. One hairline, not a bar: it sits on
+          the bottom edge of the footage where the heavy end of the wash
+          already is, so white reads against it without needing weight.
+
+          Two layers, because a fill with no track behind it reads as a
+          scratch on the picture rather than as a measure of anything: the
+          track is white at 0.18, the fill at 0.75, and neither is ember,
+          because ember is a hover colour and nothing here is hoverable.
+
+          It is drawn only when there is somewhere to go. With one slide the
+          playlist is a single clip on repeat and a progress line would be
+          counting down to itself, and under reduced motion nothing advances
+          at all, so in both cases the line is simply not rendered. Hidden
+          from assistive technology: it is a picture of the timer, and the
+          timer is decoration. */}
+      {count > 1 && !reduced && (
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 bottom-0 z-30 h-px bg-white/[0.18]"
+        >
+          {/* THE STARTING STATE IS AN INLINE `transform`, AND `scale-x-0`
+              WOULD BREAK IT. Tailwind 4 compiles its scale utilities to the
+              standalone `scale` property, not to `transform`, and the two
+              COMPOSE: the class would leave `scale: 0 1` on the element for
+              good, so every `transform: scaleX(p)` the loop wrote would be
+              multiplied by zero and the line would never appear at all. It
+              looks right in the markup and renders nothing, which is the
+              worst kind of wrong. One property, written from one place. */}
+          <div
+            ref={progressRef}
+            style={{ transform: "scaleX(0)" }}
+            className="h-full w-full origin-left bg-white/75"
+          />
+        </div>
+      )}
 
       {/* 3. The content. `relative` lifts it clear of the two stacks. */}
       <div className="pc-shell relative z-20 pb-24 md:pb-[104px]">

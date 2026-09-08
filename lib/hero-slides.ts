@@ -49,6 +49,7 @@ type HeroSlideDoc = {
   posterOverride?: MediaRel;
   overlayTop?: number | null;
   overlayBottom?: number | null;
+  rate?: number | null;
 };
 
 /** Everything the hero may name ships with the repo under this prefix. */
@@ -58,6 +59,15 @@ const HERO_DIR = "/hero/";
    opacity of its own falls back to. See the note at the reader. */
 const HEAVY_OVERLAY_TOP = 0.62;
 const HEAVY_OVERLAY_BOTTOM = 0.74;
+
+/* Playback speed, as a multiplier on the file's own timeline, and the range
+   the hero will honour. The floor is not taste, it is the point below which
+   browsers stop rendering audio and start dropping frames on some hardware;
+   the ceiling stops a typo in the admin turning the first screen into a
+   flicker. A row that never set a rate plays the file as it was encoded. */
+const DEFAULT_RATE = 1;
+const MIN_RATE = 0.25;
+const MAX_RATE = 2;
 
 /** An optional CMS string, or null when it is absent or only whitespace. */
 function text(value: string | null | undefined): string | null {
@@ -97,6 +107,12 @@ function opacity(value: number | null | undefined, fallback: number): number {
 }
 
 /** Nothing to say: either no rows at all, or none complete enough. */
+/** A playback rate, clamped into the range the hero will honour. */
+function rate(value: number | null | undefined): number {
+  if (typeof value !== "number" || !Number.isFinite(value)) return DEFAULT_RATE;
+  return Math.min(MAX_RATE, Math.max(MIN_RATE, value));
+}
+
 function orNull<T>(items: T[]): T[] | null {
   return items.length > 0 ? items : null;
 }
@@ -153,6 +169,9 @@ export async function getHeroSlides(
              headline. The seed writes the measured value for each clip. */
           overlayTop: opacity(doc.overlayTop, HEAVY_OVERLAY_TOP),
           overlayBottom: opacity(doc.overlayBottom, HEAVY_OVERLAY_BOTTOM),
+          /* Unset means "as encoded", which is the one answer that is never
+             wrong for footage nobody has looked at yet. */
+          rate: rate(doc.rate),
         },
       ];
     }),
