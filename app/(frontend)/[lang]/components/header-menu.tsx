@@ -35,13 +35,17 @@
  *  step once more, one up to two up at sm, but nothing in the bar moves
  *  there; see COLUMN_SPAN for the measured widths behind both steps.
  *
- *  THE WAY OUT. `aria-modal` hides the bar, and with it the trigger and
- *  the burger, from assistive technology, so the panel has to carry its
- *  own close control. It is the first thing in the panel in both senses:
- *  first in the DOM, so opening the menu lands focus on it, and first on
- *  the page, so a way out is visible the moment the panel is. It replaced
- *  an `sr-only focus:not-sr-only` button at the foot which nobody using a
- *  pointer could ever see.
+ *  THE WAY OUT, AND THERE IS EXACTLY ONE OF IT PER WIDTH. `aria-modal`
+ *  hides the bar, and with it the trigger and the burger, from assistive
+ *  technology, so the panel must carry its own close control; it is first
+ *  in the DOM, so opening the menu lands focus on it. Whether it is also
+ *  first on the SCREEN depends on the width, because the bar above it is
+ *  not the same object at both. Below lg the burger is a cross and sits
+ *  over the panel, so the panel's control is sr-only: two crosses a foot
+ *  apart is not twice as clear, it is a question about which one is the
+ *  real one. From lg the trigger is "Offerings" with a minus, which reads
+ *  as a toggle rather than as an exit, so the control is visible there.
+ *  Either way it is one keystroke from focus, and Escape closes.
  *
  *  The announcement strip is keyed off `data-announcement` on <html>, and
  *  its HEIGHT off `--pc-announcement-h`, which the bar measures and
@@ -406,8 +410,16 @@ export default function HeaderMenu({
     if (!open) return;
     const panel = panelRef.current;
     if (!panel) return;
-    const [first] = focusablesIn(panel);
-    (first ?? panel).focus({ preventScroll: true });
+    /* FOCUS THE DIALOG, NOT ITS FIRST CONTROL. Focusing the first control
+       used to be this line's job, and below lg that control is the close
+       button, which is `sr-only` until something inside it takes focus: the
+       programmatic focus tripped `focus-within` and put the very control the
+       phone is not supposed to see back on screen, on every open. Focusing
+       the panel itself is the dialog pattern anyway (it carries `tabIndex`
+       -1, `role="dialog"` and `aria-modal`), a screen reader announces the
+       panel rather than one button inside it, and the first Tab still lands
+       on the close control, which is where the trap starts. */
+    panel.focus({ preventScroll: true });
   }, [open]);
 
   // Give focus back to the trigger on close, but only if we were the ones
@@ -690,7 +702,25 @@ export default function HeaderMenu({
                     on this site has one. Sage on carbon is 7.4:1, and it
                     goes white on hover like every other secondary mark in
                     this panel. 44px of height, right where the thumb is. */}
-                <div className="col-span-4 flex justify-end md:col-span-12">
+                <div
+                  /* ONE CROSS ON A PHONE, NOT TWO. Below lg the bar carries
+                     the burger, and the burger IS the close: it morphs into a
+                     cross while the panel is open and it sits above it (bar
+                     z-20, panel z-10), so a visible "Close" here as well gave
+                     a phone two ways to say the same thing, a foot apart. It
+                     is hidden from sight below lg for that reason and not
+                     removed, because `aria-modal` on the panel hides the bar,
+                     and with it the burger, from assistive technology: take
+                     this away and a screen reader has no exit but Escape.
+                     `sr-only` until something inside it takes focus, so a
+                     keyboard still gets a visible, labelled way out.
+
+                     From lg the bar's trigger is "Offerings" with a minus
+                     rather than a cross, which is a toggle and does not read
+                     as a way out of a full screen panel, so there the control
+                     stays visible and does the job it was added for. */
+                  className="sr-only col-span-4 flex justify-end focus-within:not-sr-only md:col-span-12 lg:not-sr-only"
+                >
                   <button
                     type="button"
                     onClick={close}

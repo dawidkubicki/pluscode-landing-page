@@ -14,6 +14,7 @@ import * as migration_20260908_091000_team_real_people from './20260908_091000_t
 import * as migration_20260908_120000_hero_slides from './20260908_120000_hero_slides';
 import * as migration_20260908_130000_team_bio_no_headcount from './20260908_130000_team_bio_no_headcount';
 import * as migration_20260908_150000_hero_slide_rate from './20260908_150000_hero_slide_rate';
+import * as migration_20260908_170000_announcement_fits_a_phone from './20260908_170000_announcement_fits_a_phone';
 
 export const migrations = [
   {
@@ -95,5 +96,10 @@ export const migrations = [
     up: migration_20260908_150000_hero_slide_rate.up,
     down: migration_20260908_150000_hero_slide_rate.down,
     name: '20260908_150000_hero_slide_rate',
+  },
+  {
+    up: migration_20260908_170000_announcement_fits_a_phone.up,
+    down: migration_20260908_170000_announcement_fits_a_phone.down,
+    name: '20260908_170000_announcement_fits_a_phone',
   },
 ];

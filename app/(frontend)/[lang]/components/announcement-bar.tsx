@@ -271,7 +271,16 @@ export default function AnnouncementBar({
           {linkText}
         </span>
       )}
-      {linkUrl && <Arrow className="size-3 shrink-0 text-sage" />}
+      {/* THE ARROW GOES WHEN THE LABEL DOES. It points at "Learn more", and
+          on the compact rung there is no "Learn more" to point at: the whole
+          row is the link and the label is already folded into the anchor's
+          accessible name. Keeping it would be 26px of decoration out of the
+          282px a 360px phone gives the sentence, which is 9% of the line
+          spent on a glyph that no longer refers to anything. Dropping it is
+          the difference between this sentence fitting and wrapping. */}
+      {linkUrl && !compact && (
+        <Arrow className="size-3 shrink-0 text-sage" />
+      )}
     </span>
   );
 
@@ -328,8 +337,15 @@ export default function AnnouncementBar({
           className="pointer-events-none invisible absolute left-0 top-0 flex items-center gap-1.5 whitespace-nowrap"
         >
           <span>{text}</span>
-          {linkText && <span ref={labelRef}>{linkText}</span>}
-          {linkUrl && <Arrow className="size-3 shrink-0" />}
+          {/* The label and the arrow travel together: `full` is the only rung
+              that renders either, so the ruler prices them as one lump and
+              `compact` is that width minus the lump. */}
+          {linkText && (
+            <span ref={labelRef}>
+              {linkText}
+              {linkUrl && <Arrow className="ml-1.5 inline-block size-3" />}
+            </span>
+          )}
         </span>
         {linkUrl ? (
           <LocaleLink
