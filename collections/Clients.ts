@@ -1,8 +1,12 @@
 import type { CollectionConfig } from "payload";
 
 /**
- * The "Selected clients" band on the home page: a name and one line about
- * the work, three across at desktop width.
+ * The "Selected clients" band on the home page: a mark, a name and one line
+ * about the work, three across at desktop width.
+ *
+ * The logo is optional per client but all or nothing per band: the band shows
+ * marks only when every active client has one, so adding a client without a
+ * logo takes the marks off the whole row rather than leaving a gap in it.
  *
  * lib/home-bands.ts reads the active documents in Order and hands them to
  * the band. When nothing is active, or the database is unreachable, the
@@ -40,6 +44,15 @@ export const Clients: CollectionConfig = {
       admin: {
         description:
           'The single grey line under the name on the home page, e.g. "Autonomous store architecture". One short phrase, no full stop.',
+      },
+    },
+    {
+      name: "logo",
+      type: "upload",
+      relationTo: "media",
+      admin: {
+        description:
+          "Optional wordmark, ideally an SVG or a PNG with a transparent background. It is set above the company name and recoloured to flat ink, so any logo colour works, but it must still read at 56px tall. Pad the file to roughly a quarter of its height in clearspace so it lands at the same size as the marks beside it. Leave this empty and the whole band drops back to names in type, this client's neighbours included.",
       },
     },
     {

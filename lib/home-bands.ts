@@ -52,6 +52,7 @@ type ClientDoc = {
   id: string | number;
   name?: string | null;
   what?: string | null;
+  logo?: MediaRel;
 };
 
 type CaseStudyBandDoc = {
@@ -85,6 +86,14 @@ function orNull<T>(items: T[]): T[] | null {
 
 /**
  * "Selected clients": a name and one line each, in Order.
+ *
+ * The logo is the one optional part of a client, so a document without one is
+ * still complete and is returned as usual. It does cost the band its marks:
+ * components/clients.tsx shows them only when every client has one.
+ *
+ * `depth: 1` is what resolves the upload relation to a document with a `url`
+ * on it. At depth 0 it comes back as a bare id, `img()` reads that as no
+ * image, and the band would lose every mark at once with nothing to say why.
  */
 export async function getClientsBand(
   locale: Locale,
@@ -93,7 +102,7 @@ export async function getClientsBand(
     where: { isActive: { equals: true } },
     sort: "order",
     limit: 12,
-    depth: 0,
+    depth: 1,
     locale,
   });
   if (!docs) return null;
@@ -103,7 +112,12 @@ export async function getClientsBand(
       const name = text(doc.name);
       const what = text(doc.what);
       if (!name || !what) return [];
-      return [{ key: `client-${doc.id}`, name, what }];
+      /* "" and not null for an absent mark, so a CMS client and a
+         dictionary one are the same type and the band can treat both
+         with a plain truthiness check. */
+      return [
+        { key: `client-${doc.id}`, name, what, logo: img(doc.logo, name)?.url ?? "" },
+      ];
     }),
   );
 }

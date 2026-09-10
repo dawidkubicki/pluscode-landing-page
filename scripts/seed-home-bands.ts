@@ -36,21 +36,23 @@ type SeedLocale = (typeof LOCALES)[number];
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 
-type ClientEntry = { key: string; name: string; what: string };
+type ClientEntry = { key: string; name: string; what: string; logo: string };
 
 /** Companies this script used to seed into the Selected clients band and no
  *  longer does. Deleted on every run, so a database seeded before the copy
  *  changed catches up instead of keeping an orphan row alive.
  *
- *  Żabka came off the band in September 2026 at Dawid's request. This is the
- *  Selected clients band ONLY: the Żabka case study, the Cases band and the
- *  Retail item in Insights are separate content and are untouched.
+ *  Żabka came off the band in September 2026 at Dawid's request. UBS and EBM
+ *  Dental came off in the same month, when BTC Transport and Verde Cargo took
+ *  the band. This is the Selected clients band ONLY: the Żabka, UBS and EBM
+ *  case studies, the Cases band and the Retail item in Insights are separate
+ *  content and are untouched.
  *
  *  Add a name here when you remove it from `home.clients.items`, and never
  *  add one that is still in the dictionary. The assertion below enforces
  *  that, because a name in both lists would be created and deleted on every
  *  run and the band would flicker between two states depending on ordering. */
-const RETIRED = ["Żabka"] as const;
+const RETIRED = ["Żabka", "UBS", "EBM Dental"] as const;
 
 /** The `home.clients.items` block of one dictionary. */
 function clientsIn(locale: SeedLocale): ClientEntry[] {
@@ -64,15 +66,77 @@ function clientsIn(locale: SeedLocale): ClientEntry[] {
     if (
       typeof item?.key !== "string" ||
       typeof item?.name !== "string" ||
-      typeof item?.what !== "string"
+      typeof item?.what !== "string" ||
+      typeof item?.logo !== "string"
     ) {
-      throw new Error(`dictionaries/${locale}.json: a client is missing key, name or what`);
+      throw new Error(
+        `dictionaries/${locale}.json: a client is missing key, name, what or logo`,
+      );
     }
   }
   return items as ClientEntry[];
 }
 
 const payload = await getPayload({ config });
+
+/* ------------------------------------------------------------------ *
+ *  LOGOS.
+ *
+ *  The band prefers the CMS over the dictionary, so a seeded client with
+ *  no `logo` relation would blank the mark that the dictionary was
+ *  serving a moment earlier, and components/clients.tsx drops the whole
+ *  row of marks the moment one is missing. Seeding the name without the
+ *  logo would therefore take the logos off the home page, which is the
+ *  opposite of what a re-run is for. So the file behind each dictionary
+ *  path is uploaded into Media here and linked.
+ *
+ *  Matched on filename, not on content: re-running must find the media
+ *  document it made last time rather than pile up a copy per run. That
+ *  also means REPLACING A LOGO IS NOT A CONTENT EDIT. A new file at the
+ *  same path is never re-uploaded, because the name still matches. Give
+ *  the new artwork a new filename, or delete the media document first.
+ * ------------------------------------------------------------------ */
+const logoCache = new Map<string, number>();
+
+async function ensureLogo(entry: ClientEntry): Promise<number | null> {
+  if (!entry.logo) return null;
+
+  const cached = logoCache.get(entry.logo);
+  if (cached !== undefined) return cached;
+
+  const filename = path.basename(entry.logo);
+  const existing = await payload.find({
+    collection: "media",
+    where: { filename: { equals: filename } },
+    limit: 1,
+  });
+
+  let id = existing.docs[0]?.id;
+  if (id) {
+    console.log(`  = logo ${filename} already in Media`);
+  } else {
+    /* `entry.logo` is a browser path ("/assets/..."), so it is resolved
+       against public/ rather than the repo root. */
+    const filePath = path.join(root, "public", entry.logo);
+    if (!fs.existsSync(filePath)) {
+      throw new Error(
+        `${entry.name}: dictionary points at ${entry.logo} but ${filePath} does not exist.`,
+      );
+    }
+    id = (
+      await payload.create({
+        collection: "media",
+        locale: "en",
+        filePath,
+        data: { alt: `${entry.name} logo` },
+      })
+    ).id;
+    console.log(`  + logo ${filename} uploaded`);
+  }
+
+  logoCache.set(entry.logo, id);
+  return id;
+}
 
 const english = clientsIn("en");
 
@@ -95,9 +159,12 @@ for (let index = 0; index < english.length; index++) {
     locale: "en",
   });
 
+  const logo = await ensureLogo(entry);
+
   const data = {
     name: entry.name,
     what: entry.what,
+    logo,
     order: index,
     isActive: true,
   };

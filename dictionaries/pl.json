@@ -127,8 +127,8 @@
   "trust": {
     "label": "Firmy, dla których budowaliśmy",
     "clients": [
-      "UBS",
-      "EBM Dental"
+      "BTC Transport",
+      "Verde Cargo"
     ]
   },
   "services": {
@@ -6856,14 +6856,16 @@
       "title": "Wybrani klienci",
       "items": [
         {
-          "key": "ubs",
-          "name": "UBS",
-          "what": "Bankowość mobilna od nowa"
+          "key": "btc",
+          "name": "BTC Transport",
+          "what": "Kontraktowy transport drogowy w Europie",
+          "logo": "/assets/portfolio/btc-transport-logo.svg"
         },
         {
-          "key": "ebm",
-          "name": "EBM Dental",
-          "what": "Platforma dla kliniki"
+          "key": "verde",
+          "name": "Verde Cargo",
+          "what": "Transport chłodniczy i spedycja",
+          "logo": "/assets/portfolio/verde-cargo-logo.png"
         }
       ]
     },

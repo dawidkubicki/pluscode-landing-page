@@ -52,7 +52,11 @@ export type HomeContent = {
   };
   clients: {
     title: string;
-    items: { key: string; name: string; what: string }[];
+    /** `logo` is a path under public/, or "" for a client we hold no mark for.
+     *  Never null: the dictionary is read back through `typeof en`, and a key
+     *  that is a string in one item and null in another widens the item type
+     *  to a union the band cannot index. Empty string is the absent case. */
+    items: { key: string; name: string; what: string; logo: string }[];
   };
   platform: {
     eyebrow: string;
@@ -200,8 +204,18 @@ const en: HomeContent = {
   clients: {
     title: "Selected clients",
     items: [
-      { key: "ubs", name: "UBS", what: "Mobile banking, redesigned" },
-      { key: "ebm", name: "EBM Dental", what: "A platform for a clinic" },
+      {
+        key: "btc",
+        name: "BTC Transport",
+        what: "Contract road freight in Europe",
+        logo: "/assets/portfolio/btc-transport-logo.svg",
+      },
+      {
+        key: "verde",
+        name: "Verde Cargo",
+        what: "Refrigerated freight and forwarding",
+        logo: "/assets/portfolio/verde-cargo-logo.png",
+      },
     ],
   },
   platform: {
@@ -538,8 +552,18 @@ const pl: HomeContent = {
   clients: {
     title: "Wybrani klienci",
     items: [
-      { key: "ubs", name: "UBS", what: "Bankowość mobilna od nowa" },
-      { key: "ebm", name: "EBM Dental", what: "Platforma dla kliniki" },
+      {
+        key: "btc",
+        name: "BTC Transport",
+        what: "Kontraktowy transport drogowy w Europie",
+        logo: "/assets/portfolio/btc-transport-logo.svg",
+      },
+      {
+        key: "verde",
+        name: "Verde Cargo",
+        what: "Transport chłodniczy i spedycja",
+        logo: "/assets/portfolio/verde-cargo-logo.png",
+      },
     ],
   },
   platform: {
@@ -876,8 +900,18 @@ const de: HomeContent = {
   clients: {
     title: "Ausgewählte Kunden",
     items: [
-      { key: "ubs", name: "UBS", what: "Mobile Banking, neu gedacht" },
-      { key: "ebm", name: "EBM Dental", what: "Eine Plattform für eine Klinik" },
+      {
+        key: "btc",
+        name: "BTC Transport",
+        what: "Straßengüterverkehr in Europa",
+        logo: "/assets/portfolio/btc-transport-logo.svg",
+      },
+      {
+        key: "verde",
+        name: "Verde Cargo",
+        what: "Kühltransport und Spedition",
+        logo: "/assets/portfolio/verde-cargo-logo.png",
+      },
     ],
   },
   platform: {

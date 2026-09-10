@@ -15,6 +15,7 @@ import * as migration_20260908_120000_hero_slides from './20260908_120000_hero_s
 import * as migration_20260908_130000_team_bio_no_headcount from './20260908_130000_team_bio_no_headcount';
 import * as migration_20260908_150000_hero_slide_rate from './20260908_150000_hero_slide_rate';
 import * as migration_20260908_170000_announcement_fits_a_phone from './20260908_170000_announcement_fits_a_phone';
+import * as migration_20260910_170000_client_logos from './20260910_170000_client_logos';
 
 export const migrations = [
   {
@@ -101,5 +102,10 @@ export const migrations = [
     up: migration_20260908_170000_announcement_fits_a_phone.up,
     down: migration_20260908_170000_announcement_fits_a_phone.down,
     name: '20260908_170000_announcement_fits_a_phone',
+  },
+  {
+    up: migration_20260910_170000_client_logos.up,
+    down: migration_20260910_170000_client_logos.down,
+    name: '20260910_170000_client_logos',
   },
 ];

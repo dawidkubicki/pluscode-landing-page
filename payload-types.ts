@@ -654,6 +654,10 @@ export interface Client {
    */
   what: string;
   /**
+   * Optional wordmark, ideally an SVG or a PNG with a transparent background. It is set above the company name and recoloured to flat ink, so any logo colour works, but it must still read at 56px tall. Pad the file to roughly a quarter of its height in clearspace so it lands at the same size as the marks beside it. Leave this empty and the whole band drops back to names in type, this client's neighbours included.
+   */
+  logo?: (number | null) | Media;
+  /**
    * Lower numbers show first. The band sets three across a row.
    */
   order?: number | null;
@@ -1076,6 +1080,7 @@ export interface TrustLogosSelect<T extends boolean = true> {
 export interface ClientsSelect<T extends boolean = true> {
   name?: T;
   what?: T;
+  logo?: T;
   order?: T;
   isActive?: T;
   updatedAt?: T;

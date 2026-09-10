@@ -9,11 +9,34 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
  *  are facts on the sheet, so the only structure is the hairline above
  *  each name and the change of colour between name and note.
  *
- *  NO LOGOS. public/assets/portfolio holds marks for some of these
- *  clients and not others, and a logo row with an empty cell reads as a
- *  broken image rather than as a shorter list. The reference sets its
- *  customer row in the page's own type for the same reason, so the names
- *  are typed at heading-md and the logo files stay unused here.
+ *  LOGOS, BUT ONLY WHEN EVERY CLIENT HAS ONE. A mark above the name is
+ *  the one thing this band shows that is not type, and a row where some
+ *  cells carry one and others do not reads as a broken image rather than
+ *  as a shorter list. So the row is all or nothing: `showLogos` below is
+ *  true only when every item has a mark, and the moment a client without
+ *  one is added the whole band drops back to names in type. That is the
+ *  safe direction to fail, because names always exist.
+ *
+ *  THE MARKS ARE INK, NOT BRAND COLOUR. `brightness(0)` collapses each
+ *  logo to a flat ink silhouette against the paper ground, which is what
+ *  keeps two saturated freight-company palettes from fighting the muted
+ *  page. Alpha survives the filter, so the anti-aliased edges stay clean.
+ *  The files themselves keep their real colours: lib/case-studies.ts
+ *  serves the same directory onto dark gradient cards, and an asset that
+ *  had ink baked in would be unusable there.
+ *
+ *  ONE HEIGHT MEANS ONE ARTWORK SIZE. Both files carry the same share of
+ *  vertical clearspace (artwork fills ~0.757 of the canvas, the ratio
+ *  BTC's own SVG ships with), so one `h-14` renders both marks at the
+ *  same optical weight without the component knowing anything about
+ *  either, and a third logo needs no code here. Pad a new file to that
+ *  same ratio before it lands in public/, or it will arrive in the row
+ *  visibly larger or smaller than the marks beside it.
+ *
+ *  The name stays under the mark in full. A wordmark and a heading saying
+ *  the same thing is mild redundancy, and it is worth it: it is what the
+ *  band still reads as when an image fails, and it is the only part a
+ *  screen reader and the page's own type have in common.
  *
  *  The cells live in a nested pc-grid inside a full width cell. That
  *  keeps a single `mt-16` under the title instead of one per cell, and
@@ -26,7 +49,7 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
  *  is editable in the CMS now and it lost a name today, and two thirds
  *  of a row leaves the last third bare: the two hairlines stop at column
  *  8 and the gap reads as a client that failed to load, which is the
- *  same failure the note above gives as the reason there are no logos.
+ *  same failure the logo note above guards against.
  *  So the cell is 12 divided by the count, for the counts that divide
  *  the grid, and a third for anything else, which keeps a list of five
  *  as a tidy 3 + 2 rather than as four slivers and an orphan.
@@ -35,8 +58,9 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
  *  lib/home-bands.ts read out of the `clients` collection, and it is null
  *  whenever that collection is empty, unflagged or unreachable, which is
  *  every build with no database. The dictionary is the fallback and stays
- *  the shape of record: both sides are the same three fields, so nothing
- *  below this line knows which one it is rendering.
+ *  the shape of record: both sides are the same four fields, and both
+ *  spell an absent mark "" rather than null, so nothing below this line
+ *  knows which one it is rendering.
  * ------------------------------------------------------------------ */
 export default function Clients({
   dict,
@@ -46,6 +70,11 @@ export default function Clients({
   items?: ClientsItems | null;
 }) {
   const items = cmsItems && cmsItems.length > 0 ? cmsItems : dict.items;
+
+  /* All or nothing, per the note above. An absent mark is "" on both
+     sides, dictionary and CMS alike, so one client without one empties
+     the whole row of marks. */
+  const showLogos = items.every((item) => !!item.logo);
 
   /* Written out rather than computed, because Tailwind scans source text
      for class names: `md:col-span-${12 / n}` is invisible to it and would
@@ -78,6 +107,20 @@ export default function Clients({
                   className={`col-span-4 border-t border-rule ${span}`}
                 >
                   <div className="pt-8">
+                    {showLogos && (
+                      /* object-left keeps the mark on the cell's own column
+                         line, so the logos line up with the names under
+                         them rather than centring inside a wide cell. */
+                      <img
+                        src={item.logo}
+                        alt=""
+                        aria-hidden
+                        loading="lazy"
+                        decoding="async"
+                        className="mb-6 h-10 w-auto max-w-full object-contain object-left md:h-14"
+                        style={{ filter: "brightness(0)" }}
+                      />
+                    )}
                     <h3 className="text-heading-md text-ink">{item.name}</h3>
                     <p className="mt-4 text-[1.125rem] leading-[1.375] text-moss">
                       {item.what}
