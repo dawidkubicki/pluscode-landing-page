@@ -1,6 +1,7 @@
 import Image from "next/image";
 import LocaleLink from "./locale-link";
 import { LinkedInIcon, InstagramIcon, FacebookIcon } from "./icons";
+import { CookieSettingsLink } from "./cookie-consent";
 import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { socialLinks, type SocialKey } from "@/lib/social";
@@ -275,6 +276,9 @@ export default function Footer({ locale }: { locale: Locale }) {
                 <LocaleLink href="/privacy-policy" className={legalCls}>
                   {f.privacyPolicy}
                 </LocaleLink>
+                <CookieSettingsLink className={legalCls}>
+                  {dict.cookies.settings}
+                </CookieSettingsLink>
                 <LocaleLink href="/terms-of-use" className={legalCls}>
                   {f.termsOfUse}
                 </LocaleLink>

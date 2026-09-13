@@ -8397,5 +8397,13 @@
         "rate": 0.8
       }
     ]
+  },
+  "cookies": {
+    "title": "Pliki cookie",
+    "text": "Używamy plików cookie Google Analytics, żeby wiedzieć, które strony są czytane, i ulepszać serwis. Zapisujemy je tylko wtedy, gdy się zgodzisz.",
+    "accept": "Akceptuję",
+    "reject": "Odrzucam",
+    "settings": "Ustawienia cookie",
+    "label": "Zgoda na pliki cookie"
   }
 }

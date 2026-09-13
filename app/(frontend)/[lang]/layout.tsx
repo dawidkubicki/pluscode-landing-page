@@ -8,6 +8,7 @@ import FloatingContact from "./components/floating-contact";
 import AnnouncementBar from "./components/announcement-bar";
 import AnnouncementScript from "./components/announcement-script";
 import GoogleAnalytics from "./components/google-analytics";
+import CookieConsent from "./components/cookie-consent";
 import { LocaleProvider } from "./components/locale-context";
 import { locales, isLocale, localeHrefLang } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
@@ -114,6 +115,10 @@ export default async function LocaleLayout({
             photo={CONTACT_PERSON.photo}
             whatsappUrl={whatsappUrl}
             telUrl={telUrl}
+          />
+          <CookieConsent
+            dict={dict.cookies}
+            privacyLabel={dict.footer.privacyPolicy}
           />
         </LocaleProvider>
         <GoogleAnalytics />

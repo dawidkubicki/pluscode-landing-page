@@ -8397,5 +8397,13 @@
         "rate": 0.8
       }
     ]
+  },
+  "cookies": {
+    "title": "Cookies",
+    "text": "We use Google Analytics cookies to see which pages people read, so we can make the site more useful. They are only set if you accept.",
+    "accept": "Accept",
+    "reject": "Reject",
+    "settings": "Cookie settings",
+    "label": "Cookie consent"
   }
 }
