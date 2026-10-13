@@ -1,15 +1,32 @@
 import type { CollectionConfig } from "payload";
 import { formatSlug } from "./formatSlug";
 
+/**
+ * News. The slug and tables are the original `insights` ones, so every
+ * published article and its versions carry over; only the labels changed.
+ * lib/news.ts reads the published documents, newest first.
+ *
+ * The hidden fields fed the home page bands and the lead card of the old
+ * Insights page. Nothing reads them now. They stay in the config so the
+ * columns, and what editors stored in them, are not dropped.
+ */
 export const Insights: CollectionConfig = {
   slug: "insights",
-  labels: { singular: "Insight", plural: "Insights" },
+  labels: { singular: "News item", plural: "News" },
   admin: {
+    group: "Content",
     useAsTitle: "title",
-    defaultColumns: ["title", "category", "featured", "publishedAt", "_status"],
+    defaultColumns: ["title", "category", "publishedAt", "_status"],
+    description: "Articles on the News page. Only published items are shown, newest first.",
   },
   access: {
-    read: () => true,
+    // The collection has drafts, and the REST and GraphQL APIs are public:
+    // without this, an unpublished item could be read by anyone who asked
+    // the API for it. Editors see everything; everyone else sees what is
+    // published. The site itself reads through the Local API and applies the
+    // same rule in lib/news.ts.
+    read: ({ req }) =>
+      req.user ? true : { _status: { equals: "published" } },
   },
   versions: {
     drafts: true,
@@ -20,6 +37,7 @@ export const Insights: CollectionConfig = {
       type: "text",
       required: true,
       localized: true,
+      admin: { description: "Headline, on the news card and at the top of the article." },
     },
     {
       name: "slug",
@@ -29,7 +47,7 @@ export const Insights: CollectionConfig = {
       index: true,
       admin: {
         position: "sidebar",
-        description: 'URL path, e.g. "ai-transforming-business".',
+        description: 'Address of the article, e.g. "quanty-is-live". Filled from the title when left blank.',
       },
       hooks: { beforeValidate: [formatSlug] },
     },
@@ -37,10 +55,7 @@ export const Insights: CollectionConfig = {
       name: "excerpt",
       type: "textarea",
       localized: true,
-      admin: {
-        description:
-          "Short summary shown in listings. It is also the standfirst in the home page Insights band and the caption in the home page Stories band.",
-      },
+      admin: { description: "Short summary, on the news card and under the headline." },
     },
     {
       name: "category",
@@ -54,43 +69,37 @@ export const Insights: CollectionConfig = {
         { label: "Cloud", value: "cloud" },
         { label: "Mobile", value: "mobile" },
       ],
-      admin: { position: "sidebar" },
+      admin: { position: "sidebar", description: "Small label on the news card." },
     },
     {
       name: "coverImage",
       type: "upload",
       relationTo: "media",
-      admin: {
-        description:
-          "Cover art. Both home page bands need it: the Insights band shows it 16:9 beside the text, the Stories band shows it 16:9 above the headline. An insight without one is skipped by both.",
-      },
+      admin: { description: "Cover picture, shown 16:9 on the news card and above the article." },
     },
     {
       name: "gradient",
       type: "text",
-      admin: {
-        position: "sidebar",
-        description:
-          'Optional Tailwind gradient classes used when there is no image, e.g. "bg-gradient-to-br from-purple-600 via-violet-500 to-indigo-400".',
-      },
+      admin: { hidden: true, position: "sidebar" },
     },
     {
       name: "content",
       type: "richText",
       localized: true,
+      admin: { description: "The article itself." },
     },
     {
       name: "author",
       type: "text",
       defaultValue: "Pluscode",
-      admin: { position: "sidebar" },
+      admin: { position: "sidebar", description: "Shown beside the date on the article." },
     },
     {
       name: "readTime",
       type: "number",
       defaultValue: 5,
       min: 1,
-      admin: { position: "sidebar", description: "Estimated read time (minutes)." },
+      admin: { position: "sidebar", description: "Estimated read time in minutes." },
     },
     {
       name: "publishedAt",
@@ -98,78 +107,61 @@ export const Insights: CollectionConfig = {
       admin: {
         position: "sidebar",
         date: { pickerAppearance: "dayAndTime" },
+        description: "Date shown on the article. It also sets the order: newest first.",
       },
     },
     {
       name: "featured",
       type: "checkbox",
       defaultValue: false,
-      admin: {
-        position: "sidebar",
-        description:
-          "Highlight as the lead article on the Insights page. It does NOT put the article on the home page: those are the two band checkboxes below.",
-      },
+      admin: { hidden: true, position: "sidebar" },
     },
     {
       name: "showInInsightsBand",
       type: "checkbox",
       defaultValue: false,
-      admin: {
-        position: "sidebar",
-        description:
-          "Show in the Insights band near the top of the home page, the tab strip that advances by itself. It takes the first five in Home order and each one needs a Home tag and a cover image. When nothing is ticked the band falls back to the five items built into the site copy.",
-      },
+      admin: { hidden: true, position: "sidebar" },
     },
     {
       name: "showInStoriesBand",
       type: "checkbox",
       defaultValue: false,
-      admin: {
-        position: "sidebar",
-        description:
-          "Show in the Stories band lower down the home page, the three staggered cards under Cases. It takes the first three in Home order and each one needs a cover image. When nothing is ticked the band falls back to the three stories built into the site copy.",
-      },
+      admin: { hidden: true, position: "sidebar" },
     },
     {
       name: "homeTag",
       type: "text",
       localized: true,
-      admin: {
-        position: "sidebar",
-        description:
-          'The short label on the tab strip of the home page Insights band, e.g. "Retail" or "EU AI Act". One or two words: the tags sit on a single row. Required by that band and unused by the Stories band.',
-      },
+      admin: { hidden: true, position: "sidebar" },
     },
     {
       name: "homeOrder",
       type: "number",
       defaultValue: 0,
-      admin: {
-        position: "sidebar",
-        description:
-          "Position in whichever home page band this article is ticked for. Lower numbers show first.",
-      },
+      admin: { hidden: true, position: "sidebar" },
     },
     {
       name: "homeHref",
       type: "text",
-      admin: {
-        position: "sidebar",
-        description:
-          'Where the home page bands send a reader, when it should not be this article. Leave empty for the article itself. Use a path without a language prefix ("/services/forward-deployed-engineers") or a full address for somewhere else entirely ("https://quanty.ai"), which opens in a new tab.',
-      },
+      admin: { hidden: true, position: "sidebar" },
     },
     {
       name: "seoTitle",
       type: "text",
       localized: true,
-      admin: { position: "sidebar" },
+      admin: {
+        position: "sidebar",
+        description: "Title for search engines. Empty: the headline is used.",
+      },
     },
     {
       name: "seoDescription",
       type: "textarea",
       localized: true,
-      admin: { position: "sidebar" },
+      admin: {
+        position: "sidebar",
+        description: "Description for search engines. Empty: the summary is used.",
+      },
     },
   ],
 };

@@ -1,4 +1,4 @@
-import { MigrateUpArgs, MigrateDownArgs } from "@payloadcms/db-postgres";
+import { MigrateUpArgs, MigrateDownArgs, sql } from "@payloadcms/db-postgres";
 
 /**
  * Seeds the "free AI consultations for startups" announcement (en/pl/de) with
@@ -6,6 +6,13 @@ import { MigrateUpArgs, MigrateDownArgs } from "@payloadcms/db-postgres";
  * most recently updated active announcement, it takes over the top banner.
  * Skipped when the slug already exists, so re-runs never duplicate or clobber
  * editor content.
+ *
+ * The Polish and German rows are written with SQL since 2026-10-14, where
+ * they went through `payload.update`. See the replay note in
+ * 20260824_121000_seed_home_use_cases: an update clears document locks with a
+ * query that needs columns later migrations add, so the chain could not be
+ * replayed into an empty database. Production already ran this file and is
+ * not affected.
  */
 
 const SLUG = "free-ai-consultations-for-startups";
@@ -131,7 +138,7 @@ const LOCALES = {
   },
 } as const;
 
-export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
+export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   const existing = await payload.find({
     collection: "announcements",
     where: { slug: { equals: SLUG } },
@@ -160,18 +167,15 @@ export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
 
   for (const locale of ["pl", "de"] as const) {
     const l = LOCALES[locale];
-    await payload.update({
-      collection: "announcements",
-      id: doc.id,
-      locale,
-      data: {
-        text: l.text,
-        linkText: l.linkText,
-        pageTitle: l.pageTitle,
-        body: l.body,
-      },
-      req,
-    });
+    await db.execute(sql`
+      INSERT INTO "announcements_locales" ("_locale", "_parent_id", "text", "link_text", "page_title", "body")
+      VALUES (${locale}::"_locales", ${doc.id}::integer, ${l.text}::varchar, ${l.linkText}::varchar, ${l.pageTitle}::varchar, ${JSON.stringify(l.body)}::jsonb)
+      ON CONFLICT ("_locale", "_parent_id")
+      DO UPDATE SET "text" = EXCLUDED."text",
+                    "link_text" = EXCLUDED."link_text",
+                    "page_title" = EXCLUDED."page_title",
+                    "body" = EXCLUDED."body"
+    `);
   }
 }
 

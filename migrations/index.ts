@@ -16,6 +16,8 @@ import * as migration_20260908_130000_team_bio_no_headcount from './20260908_130
 import * as migration_20260908_150000_hero_slide_rate from './20260908_150000_hero_slide_rate';
 import * as migration_20260908_170000_announcement_fits_a_phone from './20260908_170000_announcement_fits_a_phone';
 import * as migration_20260910_170000_client_logos from './20260910_170000_client_logos';
+import * as migration_20261014_090000_portfolio_and_pages from './20261014_090000_portfolio_and_pages';
+import * as migration_20261014_091000_seed_portfolio_and_pages from './20261014_091000_seed_portfolio_and_pages';
 
 export const migrations = [
   {
@@ -107,5 +109,15 @@ export const migrations = [
     up: migration_20260910_170000_client_logos.up,
     down: migration_20260910_170000_client_logos.down,
     name: '20260910_170000_client_logos',
+  },
+  {
+    up: migration_20261014_090000_portfolio_and_pages.up,
+    down: migration_20261014_090000_portfolio_and_pages.down,
+    name: '20261014_090000_portfolio_and_pages',
+  },
+  {
+    up: migration_20261014_091000_seed_portfolio_and_pages.up,
+    down: migration_20261014_091000_seed_portfolio_and_pages.down,
+    name: '20261014_091000_seed_portfolio_and_pages',
   },
 ];

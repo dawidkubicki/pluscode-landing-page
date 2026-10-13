@@ -9,11 +9,17 @@ import { MigrateUpArgs, MigrateDownArgs, sql } from "@payloadcms/db-postgres";
  * Existing cards are backfilled by their position in the seeded mosaic, which
  * is also the order the frontend falls back to when `art` is empty. That keeps
  * the page identical either way, and gives an editor something to change.
+ *
+ * The type and the column are guarded since 2026-10-14: on a replay into an
+ * empty database 20260824_121000_seed_home_use_cases now creates them first,
+ * see the note there. On a database that already ran this file nothing changes.
  */
 export async function up({ db }: MigrateUpArgs): Promise<void> {
   await db.execute(sql`
-   CREATE TYPE "public"."enum_use_cases_art" AS ENUM('document', 'assistant', 'forecast', 'vision', 'knowledge');
-   ALTER TABLE "use_cases" ADD COLUMN "art" "enum_use_cases_art";
+   DO $$ BEGIN
+    CREATE TYPE "public"."enum_use_cases_art" AS ENUM('document', 'assistant', 'forecast', 'vision', 'knowledge');
+   EXCEPTION WHEN duplicate_object THEN null; END $$;
+   ALTER TABLE "use_cases" ADD COLUMN IF NOT EXISTS "art" "enum_use_cases_art";
 
    UPDATE "use_cases" SET "art" = 'document'  WHERE "order" = 1 AND "art" IS NULL;
    UPDATE "use_cases" SET "art" = 'assistant' WHERE "order" = 2 AND "art" IS NULL;

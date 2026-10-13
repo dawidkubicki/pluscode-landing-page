@@ -67,15 +67,16 @@ export interface Config {
   };
   blocks: {};
   collections: {
-    users: User;
-    media: Media;
-    'case-studies': CaseStudy;
     insights: Insight;
-    announcements: Announcement;
     team: Team;
+    products: Product;
+    media: Media;
+    bookings: Booking;
+    users: User;
+    'case-studies': CaseStudy;
+    announcements: Announcement;
     reports: Report;
     'use-cases': UseCase;
-    bookings: Booking;
     'trust-logos': TrustLogo;
     clients: Client;
     'hero-slides': HeroSlide;
@@ -86,15 +87,16 @@ export interface Config {
   };
   collectionsJoins: {};
   collectionsSelect: {
-    users: UsersSelect<false> | UsersSelect<true>;
-    media: MediaSelect<false> | MediaSelect<true>;
-    'case-studies': CaseStudiesSelect<false> | CaseStudiesSelect<true>;
     insights: InsightsSelect<false> | InsightsSelect<true>;
-    announcements: AnnouncementsSelect<false> | AnnouncementsSelect<true>;
     team: TeamSelect<false> | TeamSelect<true>;
+    products: ProductsSelect<false> | ProductsSelect<true>;
+    media: MediaSelect<false> | MediaSelect<true>;
+    bookings: BookingsSelect<false> | BookingsSelect<true>;
+    users: UsersSelect<false> | UsersSelect<true>;
+    'case-studies': CaseStudiesSelect<false> | CaseStudiesSelect<true>;
+    announcements: AnnouncementsSelect<false> | AnnouncementsSelect<true>;
     reports: ReportsSelect<false> | ReportsSelect<true>;
     'use-cases': UseCasesSelect<false> | UseCasesSelect<true>;
-    bookings: BookingsSelect<false> | BookingsSelect<true>;
     'trust-logos': TrustLogosSelect<false> | TrustLogosSelect<true>;
     clients: ClientsSelect<false> | ClientsSelect<true>;
     'hero-slides': HeroSlidesSelect<false> | HeroSlidesSelect<true>;
@@ -108,9 +110,17 @@ export interface Config {
   };
   fallbackLocale: ('false' | 'none' | 'null') | false | null | ('en' | 'pl' | 'de') | ('en' | 'pl' | 'de')[];
   globals: {
+    'home-page': HomePage;
+    'about-page': AboutPage;
+    'news-page': NewsPage;
+    'contact-page': ContactPage;
     useCasesSection: UseCasesSection;
   };
   globalsSelect: {
+    'home-page': HomePageSelect<false> | HomePageSelect<true>;
+    'about-page': AboutPageSelect<false> | AboutPageSelect<true>;
+    'news-page': NewsPageSelect<false> | NewsPageSelect<true>;
+    'contact-page': ContactPageSelect<false> | ContactPageSelect<true>;
     useCasesSection: UseCasesSectionSelect<false> | UseCasesSectionSelect<true>;
   };
   locale: 'en' | 'pl' | 'de';
@@ -142,30 +152,81 @@ export interface UserAuthOperations {
   };
 }
 /**
+ * Articles on the News page. Only published items are shown, newest first.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "users".
+ * via the `definition` "insights".
  */
-export interface User {
+export interface Insight {
   id: number;
-  name?: string | null;
+  /**
+   * Headline, on the news card and at the top of the article.
+   */
+  title: string;
+  /**
+   * Address of the article, e.g. "quanty-is-live". Filled from the title when left blank.
+   */
+  slug: string;
+  /**
+   * Short summary, on the news card and under the headline.
+   */
+  excerpt?: string | null;
+  /**
+   * Small label on the news card.
+   */
+  category?: ('ai' | 'development' | 'business' | 'technology' | 'cloud' | 'mobile') | null;
+  /**
+   * Cover picture, shown 16:9 on the news card and above the article.
+   */
+  coverImage?: (number | null) | Media;
+  gradient?: string | null;
+  /**
+   * The article itself.
+   */
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Shown beside the date on the article.
+   */
+  author?: string | null;
+  /**
+   * Estimated read time in minutes.
+   */
+  readTime?: number | null;
+  /**
+   * Date shown on the article. It also sets the order: newest first.
+   */
+  publishedAt?: string | null;
+  featured?: boolean | null;
+  showInInsightsBand?: boolean | null;
+  showInStoriesBand?: boolean | null;
+  homeTag?: string | null;
+  homeOrder?: number | null;
+  homeHref?: string | null;
+  /**
+   * Title for search engines. Empty: the headline is used.
+   */
+  seoTitle?: string | null;
+  /**
+   * Description for search engines. Empty: the summary is used.
+   */
+  seoDescription?: string | null;
   updatedAt: string;
   createdAt: string;
-  email: string;
-  resetPasswordToken?: string | null;
-  resetPasswordExpiration?: string | null;
-  salt?: string | null;
-  hash?: string | null;
-  loginAttempts?: number | null;
-  lockUntil?: string | null;
-  sessions?:
-    | {
-        id: string;
-        createdAt?: string | null;
-        expiresAt: string;
-      }[]
-    | null;
-  password?: string | null;
-  collection: 'users';
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -214,6 +275,166 @@ export interface Media {
       filename?: string | null;
     };
   };
+}
+/**
+ * The people shown on the home and About pages.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "team".
+ */
+export interface Team {
+  id: number;
+  /**
+   * Full name, shown under the portrait.
+   */
+  name: string;
+  /**
+   * Shown under the name, e.g. "Founder and CEO".
+   */
+  role?: string | null;
+  /**
+   * Portrait, 4:5, shown in greyscale. A new person is not shown until they have one.
+   */
+  photo?: (number | null) | Media;
+  /**
+   * Opens from the Bio button on the portrait card.
+   */
+  bio?: string | null;
+  /**
+   * For reference. Not shown on the site.
+   */
+  email?: string | null;
+  /**
+   * For reference. Not shown on the site.
+   */
+  phone?: string | null;
+  /**
+   * Full LinkedIn profile address, behind the LinkedIn icon.
+   */
+  linkedin?: string | null;
+  featuredOnHome?: boolean | null;
+  /**
+   * Lower numbers appear first.
+   */
+  order?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * The products shown in the Portfolio section of the home page.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "products".
+ */
+export interface Product {
+  id: number;
+  /**
+   * Product name, shown on its portfolio card.
+   */
+  name: string;
+  /**
+   * Short id, e.g. "quanty". Filled from the name when left blank.
+   */
+  slug: string;
+  /**
+   * One line that says what the product is.
+   */
+  tagline?: string | null;
+  /**
+   * A short paragraph about the product.
+   */
+  description?: string | null;
+  /**
+   * Full address of the product, e.g. https://quanty.ai.
+   */
+  url?: string | null;
+  /**
+   * Short label on the card, e.g. "Our product".
+   */
+  badge?: string | null;
+  /**
+   * Comma separated, e.g. Documents, Spreadsheets, Reporting.
+   */
+  tags?: string | null;
+  /**
+   * Logo on the portfolio card, SVG preferred. A new product is not shown until it has one.
+   */
+  logo?: (number | null) | Media;
+  /**
+   * Optional screenshot of the product.
+   */
+  image?: (number | null) | Media;
+  /**
+   * Lower numbers show first.
+   */
+  order?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Messages sent through the contact form.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "bookings".
+ */
+export interface Booking {
+  id: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone?: string | null;
+  /**
+   * The contact form always sends General enquiry. Older leads name a booking page.
+   */
+  offering:
+    | 'ai-opportunity-workshop'
+    | 'ai-discovery-sprint'
+    | 'genai-proof-of-concept'
+    | 'fractional-ai-team'
+    | 'general';
+  /**
+   * How they found us. Asked by the earlier forms only.
+   */
+  hearAbout?: ('search' | 'recommendation' | 'social' | 'event' | 'content' | 'other') | null;
+  message: string;
+  consentTerms: boolean;
+  consentMarketing?: boolean | null;
+  /**
+   * Site language at submission.
+   */
+  locale?: string | null;
+  /**
+   * Page path the form was on.
+   */
+  source?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "users".
+ */
+export interface User {
+  id: number;
+  name?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  email: string;
+  resetPasswordToken?: string | null;
+  resetPasswordExpiration?: string | null;
+  salt?: string | null;
+  hash?: string | null;
+  loginAttempts?: number | null;
+  lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
+  password?: string | null;
+  collection: 'users';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -337,81 +558,6 @@ export interface CaseStudy {
   _status?: ('draft' | 'published') | null;
 }
 /**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "insights".
- */
-export interface Insight {
-  id: number;
-  title: string;
-  /**
-   * URL path, e.g. "ai-transforming-business".
-   */
-  slug: string;
-  /**
-   * Short summary shown in listings. It is also the standfirst in the home page Insights band and the caption in the home page Stories band.
-   */
-  excerpt?: string | null;
-  category?: ('ai' | 'development' | 'business' | 'technology' | 'cloud' | 'mobile') | null;
-  /**
-   * Cover art. Both home page bands need it: the Insights band shows it 16:9 beside the text, the Stories band shows it 16:9 above the headline. An insight without one is skipped by both.
-   */
-  coverImage?: (number | null) | Media;
-  /**
-   * Optional Tailwind gradient classes used when there is no image, e.g. "bg-gradient-to-br from-purple-600 via-violet-500 to-indigo-400".
-   */
-  gradient?: string | null;
-  content?: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  author?: string | null;
-  /**
-   * Estimated read time (minutes).
-   */
-  readTime?: number | null;
-  publishedAt?: string | null;
-  /**
-   * Highlight as the lead article on the Insights page. It does NOT put the article on the home page: those are the two band checkboxes below.
-   */
-  featured?: boolean | null;
-  /**
-   * Show in the Insights band near the top of the home page, the tab strip that advances by itself. It takes the first five in Home order and each one needs a Home tag and a cover image. When nothing is ticked the band falls back to the five items built into the site copy.
-   */
-  showInInsightsBand?: boolean | null;
-  /**
-   * Show in the Stories band lower down the home page, the three staggered cards under Cases. It takes the first three in Home order and each one needs a cover image. When nothing is ticked the band falls back to the three stories built into the site copy.
-   */
-  showInStoriesBand?: boolean | null;
-  /**
-   * The short label on the tab strip of the home page Insights band, e.g. "Retail" or "EU AI Act". One or two words: the tags sit on a single row. Required by that band and unused by the Stories band.
-   */
-  homeTag?: string | null;
-  /**
-   * Position in whichever home page band this article is ticked for. Lower numbers show first.
-   */
-  homeOrder?: number | null;
-  /**
-   * Where the home page bands send a reader, when it should not be this article. Leave empty for the article itself. Use a path without a language prefix ("/services/forward-deployed-engineers") or a full address for somewhere else entirely ("https://quanty.ai"), which opens in a new tab.
-   */
-  homeHref?: string | null;
-  seoTitle?: string | null;
-  seoDescription?: string | null;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-/**
  * The top banner. The most recently updated active announcement is shown. An announcement with a slug also gets its own page at "/announcements/<slug>".
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -466,39 +612,6 @@ export interface Announcement {
    * Only active announcements can be shown.
    */
   isActive?: boolean | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "team".
- */
-export interface Team {
-  id: number;
-  name: string;
-  /**
-   * e.g. "Product Manager".
-   */
-  role?: string | null;
-  photo?: (number | null) | Media;
-  bio?: string | null;
-  email?: string | null;
-  /**
-   * Full phone number, e.g. "+48 61 847-31-79".
-   */
-  phone?: string | null;
-  /**
-   * Full LinkedIn profile URL.
-   */
-  linkedin?: string | null;
-  /**
-   * Show this person in the homepage hero card. The first featured member is used.
-   */
-  featuredOnHome?: boolean | null;
-  /**
-   * Lower numbers appear first.
-   */
-  order?: number | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -575,45 +688,6 @@ export interface UseCase {
   createdAt: string;
 }
 /**
- * Workshop / engagement booking requests and contact submissions.
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "bookings".
- */
-export interface Booking {
-  id: number;
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone?: string | null;
-  /**
-   * Which page the request came from.
-   */
-  offering:
-    | 'ai-opportunity-workshop'
-    | 'ai-discovery-sprint'
-    | 'genai-proof-of-concept'
-    | 'fractional-ai-team'
-    | 'general';
-  /**
-   * How they found us.
-   */
-  hearAbout: 'search' | 'recommendation' | 'social' | 'event' | 'content' | 'other';
-  message: string;
-  consentTerms: boolean;
-  consentMarketing?: boolean | null;
-  /**
-   * Site language at submission.
-   */
-  locale?: string | null;
-  /**
-   * Page path the form was on.
-   */
-  source?: string | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
  * Client logos for the hero's "Trusted by" strip. Active logos show in Order; when none are active the strip falls back to the dictionary text names.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -622,11 +696,11 @@ export interface Booking {
 export interface TrustLogo {
   id: number;
   /**
-   * Client name — also the logo's alt text.
+   * Client name, also the logo's alt text.
    */
   name: string;
   /**
-   * Logo file — ideally SVG or PNG with a transparent background. It is recolored to white on the dark hero, so any logo color works.
+   * Logo file, ideally SVG or PNG with a transparent background. It is recolored to white on the dark hero, so any logo color works.
    */
   logo: number | Media;
   /**
@@ -752,28 +826,36 @@ export interface PayloadLockedDocument {
   id: number;
   document?:
     | ({
-        relationTo: 'users';
-        value: number | User;
+        relationTo: 'insights';
+        value: number | Insight;
+      } | null)
+    | ({
+        relationTo: 'team';
+        value: number | Team;
+      } | null)
+    | ({
+        relationTo: 'products';
+        value: number | Product;
       } | null)
     | ({
         relationTo: 'media';
         value: number | Media;
       } | null)
     | ({
+        relationTo: 'bookings';
+        value: number | Booking;
+      } | null)
+    | ({
+        relationTo: 'users';
+        value: number | User;
+      } | null)
+    | ({
         relationTo: 'case-studies';
         value: number | CaseStudy;
       } | null)
     | ({
-        relationTo: 'insights';
-        value: number | Insight;
-      } | null)
-    | ({
         relationTo: 'announcements';
         value: number | Announcement;
-      } | null)
-    | ({
-        relationTo: 'team';
-        value: number | Team;
       } | null)
     | ({
         relationTo: 'reports';
@@ -782,10 +864,6 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'use-cases';
         value: number | UseCase;
-      } | null)
-    | ({
-        relationTo: 'bookings';
-        value: number | Booking;
       } | null)
     | ({
         relationTo: 'trust-logos';
@@ -843,26 +921,65 @@ export interface PayloadMigration {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "users_select".
+ * via the `definition` "insights_select".
  */
-export interface UsersSelect<T extends boolean = true> {
-  name?: T;
+export interface InsightsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  excerpt?: T;
+  category?: T;
+  coverImage?: T;
+  gradient?: T;
+  content?: T;
+  author?: T;
+  readTime?: T;
+  publishedAt?: T;
+  featured?: T;
+  showInInsightsBand?: T;
+  showInStoriesBand?: T;
+  homeTag?: T;
+  homeOrder?: T;
+  homeHref?: T;
+  seoTitle?: T;
+  seoDescription?: T;
   updatedAt?: T;
   createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "team_select".
+ */
+export interface TeamSelect<T extends boolean = true> {
+  name?: T;
+  role?: T;
+  photo?: T;
+  bio?: T;
   email?: T;
-  resetPasswordToken?: T;
-  resetPasswordExpiration?: T;
-  salt?: T;
-  hash?: T;
-  loginAttempts?: T;
-  lockUntil?: T;
-  sessions?:
-    | T
-    | {
-        id?: T;
-        createdAt?: T;
-        expiresAt?: T;
-      };
+  phone?: T;
+  linkedin?: T;
+  featuredOnHome?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "products_select".
+ */
+export interface ProductsSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  tagline?: T;
+  description?: T;
+  url?: T;
+  badge?: T;
+  tags?: T;
+  logo?: T;
+  image?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -918,6 +1035,48 @@ export interface MediaSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "bookings_select".
+ */
+export interface BookingsSelect<T extends boolean = true> {
+  firstName?: T;
+  lastName?: T;
+  email?: T;
+  phone?: T;
+  offering?: T;
+  hearAbout?: T;
+  message?: T;
+  consentTerms?: T;
+  consentMarketing?: T;
+  locale?: T;
+  source?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "users_select".
+ */
+export interface UsersSelect<T extends boolean = true> {
+  name?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  email?: T;
+  resetPasswordToken?: T;
+  resetPasswordExpiration?: T;
+  salt?: T;
+  hash?: T;
+  loginAttempts?: T;
+  lockUntil?: T;
+  sessions?:
+    | T
+    | {
+        id?: T;
+        createdAt?: T;
+        expiresAt?: T;
+      };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "case-studies_select".
  */
 export interface CaseStudiesSelect<T extends boolean = true> {
@@ -952,33 +1111,6 @@ export interface CaseStudiesSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "insights_select".
- */
-export interface InsightsSelect<T extends boolean = true> {
-  title?: T;
-  slug?: T;
-  excerpt?: T;
-  category?: T;
-  coverImage?: T;
-  gradient?: T;
-  content?: T;
-  author?: T;
-  readTime?: T;
-  publishedAt?: T;
-  featured?: T;
-  showInInsightsBand?: T;
-  showInStoriesBand?: T;
-  homeTag?: T;
-  homeOrder?: T;
-  homeHref?: T;
-  seoTitle?: T;
-  seoDescription?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  _status?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "announcements_select".
  */
 export interface AnnouncementsSelect<T extends boolean = true> {
@@ -991,23 +1123,6 @@ export interface AnnouncementsSelect<T extends boolean = true> {
   slug?: T;
   publishedAt?: T;
   isActive?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "team_select".
- */
-export interface TeamSelect<T extends boolean = true> {
-  name?: T;
-  role?: T;
-  photo?: T;
-  bio?: T;
-  email?: T;
-  phone?: T;
-  linkedin?: T;
-  featuredOnHome?: T;
-  order?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -1039,25 +1154,6 @@ export interface UseCasesSelect<T extends boolean = true> {
   href?: T;
   featured?: T;
   order?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "bookings_select".
- */
-export interface BookingsSelect<T extends boolean = true> {
-  firstName?: T;
-  lastName?: T;
-  email?: T;
-  phone?: T;
-  offering?: T;
-  hearAbout?: T;
-  message?: T;
-  consentTerms?: T;
-  consentMarketing?: T;
-  locale?: T;
-  source?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -1147,6 +1243,178 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   createdAt?: T;
 }
 /**
+ * Text of the home page. A field left empty shows the built-in text.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home-page".
+ */
+export interface HomePage {
+  id: number;
+  /**
+   * The tagline beside the signet in the hero.
+   */
+  heroTagline?: string | null;
+  /**
+   * Large heading of the mission band, under the hero.
+   */
+  missionHeading?: string | null;
+  /**
+   * Text inside the ring of the mission band. Leave a blank line between paragraphs.
+   */
+  missionBody?: string | null;
+  /**
+   * Small grey label above the portfolio.
+   */
+  portfolioLabel?: string | null;
+  /**
+   * Statement above the portfolio cards. Words in [square brackets] become chips.
+   */
+  portfolioStatement?: string | null;
+  /**
+   * Heading above the portraits.
+   */
+  peopleHeading?: string | null;
+  /**
+   * Optional short line under the people heading.
+   */
+  peopleIntro?: string | null;
+  /**
+   * Heading above the latest news on the home page.
+   */
+  newsHeading?: string | null;
+  /**
+   * Page title for search engines and the browser tab.
+   */
+  seoTitle?: string | null;
+  /**
+   * One or two sentences for search engines and link previews.
+   */
+  seoDescription?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * Text of the About page. A field left empty shows the built-in text.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "about-page".
+ */
+export interface AboutPage {
+  id: number;
+  /**
+   * Page title, over the photo at the top.
+   */
+  heading?: string | null;
+  /**
+   * Opening text under the title. Leave a blank line between paragraphs.
+   */
+  intro?: string | null;
+  /**
+   * Small grey label above the story.
+   */
+  storyLabel?: string | null;
+  /**
+   * The story. Leave a blank line between paragraphs.
+   */
+  storyBody?: string | null;
+  /**
+   * Small grey label above the principles.
+   */
+  principlesLabel?: string | null;
+  /**
+   * Optional list under the story. Leave it empty to show none.
+   */
+  principles?:
+    | {
+        /**
+         * The principle in a few words.
+         */
+        title?: string | null;
+        /**
+         * One or two sentences under it.
+         */
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Page title for search engines and the browser tab.
+   */
+  seoTitle?: string | null;
+  /**
+   * One or two sentences for search engines and link previews.
+   */
+  seoDescription?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * Text of the News page. A field left empty shows the built-in text.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "news-page".
+ */
+export interface NewsPage {
+  id: number;
+  /**
+   * Page title, over the photo at the top.
+   */
+  heading?: string | null;
+  /**
+   * Optional text under the title. Leave a blank line between paragraphs.
+   */
+  intro?: string | null;
+  /**
+   * Page title for search engines and the browser tab.
+   */
+  seoTitle?: string | null;
+  /**
+   * One or two sentences for search engines and link previews.
+   */
+  seoDescription?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * Text of the Contact page. A field left empty shows the built-in text.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact-page".
+ */
+export interface ContactPage {
+  id: number;
+  /**
+   * Page title, over the photo at the top.
+   */
+  heading?: string | null;
+  /**
+   * Text under the title. Leave a blank line between paragraphs.
+   */
+  intro?: string | null;
+  /**
+   * Email address shown on the page, the same in every language.
+   */
+  email?: string | null;
+  /**
+   * Phone number shown on the page, the same in every language.
+   */
+  phone?: string | null;
+  /**
+   * Postal address shown on the page. One line per row.
+   */
+  address?: string | null;
+  /**
+   * Page title for search engines and the browser tab.
+   */
+  seoTitle?: string | null;
+  /**
+   * One or two sentences for search engines and link previews.
+   */
+  seoDescription?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "useCasesSection".
  */
@@ -1162,6 +1430,77 @@ export interface UseCasesSection {
   title?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home-page_select".
+ */
+export interface HomePageSelect<T extends boolean = true> {
+  heroTagline?: T;
+  missionHeading?: T;
+  missionBody?: T;
+  portfolioLabel?: T;
+  portfolioStatement?: T;
+  peopleHeading?: T;
+  peopleIntro?: T;
+  newsHeading?: T;
+  seoTitle?: T;
+  seoDescription?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "about-page_select".
+ */
+export interface AboutPageSelect<T extends boolean = true> {
+  heading?: T;
+  intro?: T;
+  storyLabel?: T;
+  storyBody?: T;
+  principlesLabel?: T;
+  principles?:
+    | T
+    | {
+        title?: T;
+        text?: T;
+        id?: T;
+      };
+  seoTitle?: T;
+  seoDescription?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "news-page_select".
+ */
+export interface NewsPageSelect<T extends boolean = true> {
+  heading?: T;
+  intro?: T;
+  seoTitle?: T;
+  seoDescription?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact-page_select".
+ */
+export interface ContactPageSelect<T extends boolean = true> {
+  heading?: T;
+  intro?: T;
+  email?: T;
+  phone?: T;
+  address?: T;
+  seoTitle?: T;
+  seoDescription?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

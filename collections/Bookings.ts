@@ -1,23 +1,23 @@
 import type { CollectionConfig } from "payload";
 
 /**
- * Form submissions from the "Book a workshop / sprint / PoC / team" pages, the
- * /book-a-call page and the contact section — every lead form on the site posts
- * the same shape here. Not localized (a submission is a single record). Public
- * create (so the site can submit), admin-only read so PII stays private.
+ * Messages sent through the contact form. Slug and tables are the original
+ * `bookings` ones, which also hold the leads from the earlier booking forms,
+ * hence the offering and "how they found us" fields the current form leaves
+ * alone. Not localized: a submission is a single record. Public create so the
+ * site can submit, signed-in read so personal data stays private.
  *
  * `consentTerms` / `consentMarketing` are the record of what the visitor agreed
  * to at submission time, so keep them alongside the contact details.
  */
 export const Bookings: CollectionConfig = {
   slug: "bookings",
-  labels: { singular: "Booking", plural: "Bookings" },
+  labels: { singular: "Message", plural: "Messages" },
   admin: {
+    group: "Inbox",
     useAsTitle: "email",
-    defaultColumns: ["firstName", "lastName", "email", "offering", "createdAt"],
-    group: "Submissions",
-    description:
-      "Workshop / engagement booking requests and contact submissions.",
+    defaultColumns: ["firstName", "lastName", "email", "message", "createdAt"],
+    description: "Messages sent through the contact form.",
   },
   access: {
     create: () => true,
@@ -42,12 +42,15 @@ export const Bookings: CollectionConfig = {
         { label: "Fractional AI Team", value: "fractional-ai-team" },
         { label: "General enquiry", value: "general" },
       ],
-      admin: { description: "Which page the request came from." },
+      admin: {
+        description: "The contact form always sends General enquiry. Older leads name a booking page.",
+      },
     },
     {
+      // Optional since the October 2026 form, which no longer asks. The column
+      // lost its NOT NULL in 20261014_090000_portfolio_and_pages.
       name: "hearAbout",
       type: "select",
-      required: true,
       options: [
         { label: "Search engine", value: "search" },
         { label: "Recommendation or referral", value: "recommendation" },
@@ -56,7 +59,7 @@ export const Bookings: CollectionConfig = {
         { label: "Blog, article, or newsletter", value: "content" },
         { label: "Other", value: "other" },
       ],
-      admin: { description: "How they found us." },
+      admin: { description: "How they found us. Asked by the earlier forms only." },
     },
     { name: "message", type: "textarea", required: true },
     {
@@ -67,8 +70,11 @@ export const Bookings: CollectionConfig = {
       admin: { position: "sidebar" },
     },
     {
+      // The default mirrors the column, which has had DEFAULT false since
+      // 20260823_090000_lead_form_fields.
       name: "consentMarketing",
       type: "checkbox",
+      defaultValue: false,
       label: "Opted in to email marketing",
       admin: { position: "sidebar" },
     },

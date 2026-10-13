@@ -1,4 +1,4 @@
-import { MigrateUpArgs, MigrateDownArgs } from "@payloadcms/db-postgres";
+import { MigrateUpArgs, MigrateDownArgs, sql } from "@payloadcms/db-postgres";
 
 /**
  * Content seed for the home "Ambition in action" mosaic: fills the
@@ -10,6 +10,21 @@ import { MigrateUpArgs, MigrateDownArgs } from "@payloadcms/db-postgres";
  * hooks behave exactly as if an editor had typed the content. Both seeds are
  * skipped when data already exists, so re-running (or a partially seeded
  * environment) never clobbers editor content.
+ *
+ * REPLAY NOTE, added 2026-10-14. The Local API speaks the schema of today's
+ * config, not the schema this point of the chain has built, so replaying the
+ * chain into an empty database failed right here, twice over:
+ *   1. `payload.create` writes every column of `use-cases`, and the collection
+ *      gained `art` one day after this seed, in 20260825_090000_use_case_art.
+ *      `up` now creates that enum and column first, guarded, and
+ *      20260825_090000 is guarded to match.
+ *   2. `payload.update` clears document locks before it writes, with a query
+ *      over one `payload_locked_documents_rels` column per collection in the
+ *      config. `clients_id`, `hero_slides_id` and `products_id` all arrive
+ *      later. The Polish and German rows are therefore inserted with SQL,
+ *      which writes the same two columns the update did.
+ * A fresh database ends where production is. Production itself is not
+ * affected: this migration is recorded there and never runs again.
  */
 
 const SECTION = {
@@ -76,7 +91,14 @@ const CARDS = [
   },
 ] as const;
 
-export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
+export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
+  // See the replay note above. Same DDL as 20260825_090000_use_case_art.
+  await db.execute(sql`
+   DO $$ BEGIN
+    CREATE TYPE "public"."enum_use_cases_art" AS ENUM('document', 'assistant', 'forecast', 'vision', 'knowledge');
+   EXCEPTION WHEN duplicate_object THEN null; END $$;
+   ALTER TABLE "use_cases" ADD COLUMN IF NOT EXISTS "art" "enum_use_cases_art";`);
+
   const existingSection = await payload.findGlobal({
     slug: "useCasesSection",
     locale: "en",
@@ -109,14 +131,16 @@ export async function up({ payload, req }: MigrateUpArgs): Promise<void> {
       },
       req,
     });
+    // SQL since 2026-10-14, where this was `payload.update`. See the replay
+    // note above: an update first clears document locks, and that query names
+    // one column per collection in today's config.
     for (const locale of ["pl", "de"] as const) {
-      await payload.update({
-        collection: "use-cases",
-        id: doc.id,
-        locale,
-        data: { title: card.title[locale], category: card.category[locale] },
-        req,
-      });
+      await db.execute(sql`
+        INSERT INTO "use_cases_locales" ("_locale", "_parent_id", "title", "category")
+        VALUES (${locale}::"_locales", ${doc.id}::integer, ${card.title[locale]}::varchar, ${card.category[locale]}::varchar)
+        ON CONFLICT ("_locale", "_parent_id")
+        DO UPDATE SET "title" = EXCLUDED."title", "category" = EXCLUDED."category"
+      `);
     }
   }
 }
