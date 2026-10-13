@@ -1,0 +1,57 @@
+{
+  "hero": {
+    "src": "/assets/nature/hero.webp",
+    "width": 2560,
+    "height": 1440,
+    "dominant": "#2f3a3e",
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAACwAwCdASoYAA4APsFUoksnpKMhsAgA8BgJZwCsACHZlMj6FvSEAAD+J75ThllAxBFImZ5k+HCP1fDWlxN0dTl7Cu6GRlbYfYnY+O1rLvqINoXyRlJcRlaNIAA=",
+    "alt": {
+      "en": "Aerial view of a dark sea with a line of white breaking surf.",
+      "pl": "Ciemne morze widziane z góry, z pasem białej, załamującej się fali."
+    }
+  },
+  "mission": {
+    "src": "/assets/nature/mission.webp",
+    "width": 2560,
+    "height": 1440,
+    "dominant": "#586e77",
+    "blurDataURL": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAABQBACdASoYAA4APsFOoUqnpCMhsAgA8BgJZQC7ACBicRpLjY7TBVS2KMFAAPxyVig+0JtILYHrGf9vHkPbLrnXl2W1mZuOMEb6dBzzfRpFX7KHtGuXQd4uWZj6yXojaOMJZkaaVBIch1fNHsEyZtW6zSv5fMhmtAGCWpb0iT80e7DHAAA=",
+    "alt": {
+      "en": "Aerial view of pale ice floes drifting on dark teal water.",
+      "pl": "Jasne kry lodowe na ciemnej wodzie, widziane z góry."
+    }
+  },
+  "about": {
+    "src": "/assets/nature/about.webp",
+    "width": 2560,
+    "height": 1440,
+    "dominant": "#36454d",
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAwBACdASoYAA4APsFSoUsnpKMhsAgA8BgJZQCdMoACtXKAbTWtbMuUyYAAziSAKYgxs7QomYtEe+7f8AdD1illGM17+XG/Vz18gh2zRX1dhUQ3391qKfq3NrFLAyZvugAAAA==",
+    "alt": {
+      "en": "Aerial view of dark volcanic mountain ridges streaked with snow.",
+      "pl": "Ciemne wulkaniczne grzbiety górskie z żyłami śniegu, widziane z góry."
+    }
+  },
+  "news": {
+    "src": "/assets/nature/news.webp",
+    "width": 2560,
+    "height": 1440,
+    "dominant": "#1d292f",
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQBACdASoYAA4APsFQoUqnpKMhsAgA8BgJZwC06CB+gH1LjNpj5/p9MAD+zfsU5/cmqZ4x8BPedBhp5VXSHR1yM8XsdCDrRdrB9LgA",
+    "alt": {
+      "en": "Aerial view of a braided glacial river crossing black sand.",
+      "pl": "Roztokowa rzeka lodowcowa na czarnym piasku, widziana z góry."
+    }
+  },
+  "contact": {
+    "src": "/assets/nature/contact.webp",
+    "width": 2560,
+    "height": 1440,
+    "dominant": "#182529",
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAwCdASoYAA4APsFQoUsnpKMhsAgA8BgJZQCdABrdaD1EswLh3SAA/t6feASbZe1Bsb4DmecKyRTGKu51VP6CcPOrPr1LKKyqhAVd4vx40zoAAAA=",
+    "alt": {
+      "en": "Aerial view of white surf washing onto a black sand beach.",
+      "pl": "Biała piana fal na plaży z czarnego piasku, widziana z góry."
+    }
+  }
+}

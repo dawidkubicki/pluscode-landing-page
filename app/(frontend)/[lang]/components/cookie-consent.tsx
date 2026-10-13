@@ -10,10 +10,10 @@ import {
   type ConsentChoice,
 } from "@/lib/consent";
 
-/** The site's one easing curve, `--ease-io-attio`, in framer's array form. */
-const EASE = [0.2, 0, 0, 1] as const;
+/** The site's easing curve, `--ease-out`, in framer's array form. */
+const EASE = [0.165, 0.84, 0.44, 1] as const;
 
-/** A few pixels of travel under a fade, the same as the floating contact. */
+/** A few pixels of travel under a fade. */
 const RISE = 6;
 
 declare global {
@@ -47,15 +47,12 @@ function clearAnalyticsCookies() {
 
 /**
  * Cookie consent banner. It appears once, for a visitor who has made no
- * choice, and the footer's "Cookie settings" link brings it back.
+ * choice, and the footer's "Manage Cookie Consent" control brings it back.
  *
- * It is the floating contact's sibling in every respect but position: a
- * square white card on one hairline, no shadow, no blur, no scaling. It sits
- * bottom LEFT above 640px so it never covers the contact launcher in the
- * bottom right corner; on a phone it is full width and sits over the
- * launcher (z-45 against its z-40) until the visitor chooses, which is one
- * tap. It stays under the header (z-50), so the fullscreen Offerings menu
- * still covers it.
+ * A small square white card on one hairline, no shadow: bottom left from
+ * 640px up, the full width of the screen on a phone. It sits under the header
+ * (z-50), and the menu and the biography dialogs open in the top layer, so
+ * they cover it.
  *
  * Reject and Accept are the same size on the same row. The only difference is
  * the fill, because refusing must not be harder than agreeing.
@@ -126,43 +123,35 @@ export default function CookieConsent({
           aria-labelledby="pc-cookies-title"
           aria-describedby="pc-cookies-text"
           tabIndex={-1}
-          className="fixed inset-x-4 bottom-4 z-[45] border border-rule bg-white p-6 outline-none sm:inset-x-auto sm:bottom-8 sm:left-8 sm:w-[26rem]"
+          className="fixed inset-x-0 bottom-0 z-[45] border-t border-grey-mid bg-white p-5 outline-none sm:inset-x-auto sm:bottom-6 sm:left-6 sm:w-[23rem] sm:border"
           initial={{ opacity: 0, y: RISE }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: RISE }}
           transition={{ duration: 0.24, ease: EASE }}
         >
-          <h2
-            id="pc-cookies-title"
-            className="text-[1.125rem] leading-[1.375] text-ink"
-          >
+          <h2 id="pc-cookies-title" className="text-body font-medium text-ink">
             {dict.title}
           </h2>
-          <p
-            id="pc-cookies-text"
-            className="mt-2 text-[1rem] leading-[1.375] text-moss"
-          >
+          <p id="pc-cookies-text" className="mt-1.5 text-small text-grey">
             {dict.text}
           </p>
-          {/* Its own line and in ink: `pc-link` only underlines on hover, so
-              inside the moss sentence it would not read as a link at rest. */}
-          <p className="mt-3 text-[1rem] leading-[1.375] text-ink">
+          <p className="mt-2.5 text-small text-ink">
             <LocaleLink href="/privacy-policy#cookies" className="pc-link">
               {privacyLabel}
             </LocaleLink>
           </p>
-          <div className="mt-5 flex gap-2">
+          <div className="mt-4 flex gap-2">
             <button
               type="button"
               onClick={() => choose("denied")}
-              className="btn btn-outline flex-1"
+              className="pc-btn min-h-11 flex-1 cursor-pointer justify-center px-4 text-small"
             >
               {dict.reject}
             </button>
             <button
               type="button"
               onClick={() => choose("granted")}
-              className="btn btn-primary flex-1"
+              className="pc-btn pc-btn--solid min-h-11 flex-1 cursor-pointer justify-center px-4 text-small"
             >
               {dict.accept}
             </button>

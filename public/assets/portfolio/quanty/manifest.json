@@ -1,0 +1,102 @@
+{
+  "logo": {
+    "src": "/assets/portfolio/quanty/logo.svg",
+    "width": 758,
+    "height": 174,
+    "dominant": "#000000",
+    "alt": {
+      "en": "Quanty wordmark, dark",
+      "pl": "Logotyp Quanty, ciemny"
+    }
+  },
+  "logo-white": {
+    "src": "/assets/portfolio/quanty/logo-white.svg",
+    "width": 758,
+    "height": 174,
+    "dominant": "#ffffff",
+    "alt": {
+      "en": "Quanty wordmark, light",
+      "pl": "Logotyp Quanty, jasny"
+    }
+  },
+  "signet": {
+    "src": "/assets/portfolio/quanty/signet.svg",
+    "width": 490,
+    "height": 491,
+    "dominant": "#000000",
+    "alt": {
+      "en": "Quanty signet, dark",
+      "pl": "Sygnet Quanty, ciemny"
+    }
+  },
+  "signet-white": {
+    "src": "/assets/portfolio/quanty/signet-white.svg",
+    "width": 490,
+    "height": 491,
+    "dominant": "#ffffff",
+    "alt": {
+      "en": "Quanty signet, light",
+      "pl": "Sygnet Quanty, jasny"
+    }
+  },
+  "app-icon": {
+    "src": "/assets/portfolio/quanty/app-icon.svg",
+    "width": 512,
+    "height": 512,
+    "dominant": "#0a0907",
+    "alt": {
+      "en": "Quanty app icon",
+      "pl": "Ikona aplikacji Quanty"
+    }
+  },
+  "app-sheet": {
+    "src": "/assets/portfolio/quanty/app-sheet.webp",
+    "width": 2400,
+    "height": 1500,
+    "dominant": "#f2f2ef",
+    "alt": {
+      "en": "Quanty spreadsheet of customer orders with an AI column that rates the delay risk of each route.",
+      "pl": "Arkusz Quanty ze zleceniami klientów i kolumną AI, która ocenia ryzyko opóźnienia każdej trasy."
+    }
+  },
+  "app-chat": {
+    "src": "/assets/portfolio/quanty/app-chat.webp",
+    "width": 2400,
+    "height": 1500,
+    "dominant": "#f4eee8",
+    "alt": {
+      "en": "Quanty chat panel docked beside the transport planner, with an AI answer waiting for approval.",
+      "pl": "Panel czatu Quanty obok planera transportu, z odpowiedzią AI czekającą na zatwierdzenie."
+    }
+  },
+  "app-chat-page": {
+    "src": "/assets/portfolio/quanty/app-chat-page.webp",
+    "width": 2400,
+    "height": 1500,
+    "dominant": "#faf9f9",
+    "alt": {
+      "en": "Quanty chat with AI agents, channels and direct messages, showing an agent answer built from a tool call.",
+      "pl": "Czat Quanty z agentami AI, kanałami i wiadomościami prywatnymi oraz odpowiedzią agenta opartą na wywołaniu narzędzia."
+    }
+  },
+  "app-mobile": {
+    "src": "/assets/portfolio/quanty/app-mobile.webp",
+    "width": 1206,
+    "height": 2622,
+    "dominant": "#f0eceb",
+    "alt": {
+      "en": "Quanty iPhone app, chat tab with AI agents, unread conversations and channels.",
+      "pl": "Aplikacja Quanty na iPhone, karta czatu z agentami AI, nieprzeczytanymi rozmowami i kanałami."
+    }
+  },
+  "app-dashboard": {
+    "src": "/assets/portfolio/quanty/app-dashboard.webp",
+    "width": 2400,
+    "height": 1350,
+    "dominant": "#eef3ef",
+    "alt": {
+      "en": "Quanty dashboard of carrier performance with shipment counts, booked value and charts.",
+      "pl": "Pulpit Quanty z wynikami przewoźników: liczba przesyłek, wartość zleceń i wykresy."
+    }
+  }
+}

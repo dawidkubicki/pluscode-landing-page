@@ -30,11 +30,20 @@ export async function generateMetadata({
   const { lang } = await params;
   const locale = resolveLocale(lang);
   const meta = getDictionary(locale).meta;
+  // The defaults every page starts from. `alternates` is left out on purpose:
+  // a canonical inherited from here would point a page that forgot its own
+  // `generateMetadata` at the home page, and it would do so silently. Each
+  // page states its own canonical and hreflang through `pageMetadata`.
+  const { alternates: _homeOnly, ...defaults } = pageMetadata(locale, {
+    path: "",
+    absoluteTitle: meta.title,
+  });
+  void _homeOnly;
   return {
     metadataBase: new URL(SITE_URL),
     applicationName: "Pluscode",
     keywords: meta.keywords,
-    ...pageMetadata(locale, { path: "", absoluteTitle: meta.title }),
+    ...defaults,
     // After the spread: the home page's absolute title is the default, and
     // every other page's own title goes through the template.
     title: { default: meta.title, template: "%s · Pluscode" },

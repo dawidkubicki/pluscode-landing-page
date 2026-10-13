@@ -17,7 +17,17 @@ import pl from "@/dictionaries/pl.json";
  * or ship a migration. Read it through `lib/pages.ts`, `lib/people.ts` and
  * `lib/products.ts`, never straight from the dictionary.
  */
-export type Dictionary = typeof en;
+type Raw = typeof en;
+
+/**
+ * `principles` ships as an empty list, which TypeScript would type as
+ * `never[]`. The CMS can fill it, so it is given its real element type here.
+ */
+export type Dictionary = Omit<Raw, "aboutPage"> & {
+  aboutPage: Omit<Raw["aboutPage"], "principles"> & {
+    principles: { title: string; text: string }[];
+  };
+};
 
 const dictionaries: Record<Locale, Dictionary> = {
   en,

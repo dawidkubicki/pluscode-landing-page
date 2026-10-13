@@ -306,7 +306,17 @@
     pointer-events: none;
   }
   .pc-portrait::before {
-    background: rgb(95 145 234 / 0.14);
+    /* The gradient gives light clothing a blue floor as well: `screen` alone
+       leaves a white shirt white all the way to the bottom edge. */
+    background:
+      linear-gradient(
+        to top,
+        rgb(31 58 122 / 0.52) 0%,
+        rgb(31 58 122 / 0.3) 16%,
+        rgb(31 58 122 / 0.08) 40%,
+        rgb(31 58 122 / 0) 58%
+      ),
+      rgb(95 145 234 / 0.12);
     mix-blend-mode: multiply;
   }
   .pc-portrait::after {
@@ -450,8 +460,10 @@
  * ------------------------------------------------------------------ */
 @media (prefers-reduced-motion: no-preference) {
   .pc-ring-draw [data-ring-path] {
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
+    /* 1.01, not 1: a dash exactly as long as the path leaves a hairline gap
+       where the ring closes once the offset reaches zero. */
+    stroke-dasharray: 1.01;
+    stroke-dashoffset: 1.01;
     animation: pc-ring-draw 2.2s var(--ease-out) 0.15s forwards;
   }
   .pc-ring-draw [data-ring-path="small"] {

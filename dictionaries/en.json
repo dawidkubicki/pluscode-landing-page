@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Pluscode | Creating the software of the future",
-    "description": "Pluscode is a software company from Poznań, Poland. We design and build AI-native products. In our portfolio: Quanty, an AI workspace where documents become a spreadsheet you can check.",
+    "description": "Pluscode is a software company from Poznań, Poland, creating the software of the future with AI. In our portfolio: Quanty, the AI workspace for documents.",
     "ogTitle": "Pluscode. Creating the software of the future.",
     "ogDescription": "A software company building AI-native products. The company behind Quanty.",
     "ogImageAlt": "Pluscode: creating the software of the future",
@@ -39,7 +39,7 @@
     "peopleIntro": "Small by design.",
     "newsHeading": "News",
     "seoTitle": "Pluscode | Creating the software of the future",
-    "seoDescription": "Pluscode is a software company from Poznań, Poland. We design and build AI-native products. In our portfolio: Quanty, an AI workspace where documents become a spreadsheet you can check."
+    "seoDescription": "Pluscode is a software company from Poznań, Poland, creating the software of the future with AI. In our portfolio: Quanty, the AI workspace for documents."
   },
   "aboutPage": {
     "heading": "About",
@@ -49,13 +49,13 @@
     "principlesLabel": "Principles",
     "principles": [],
     "seoTitle": "About",
-    "seoDescription": "Pluscode is a software company from Poznań, Poland, creating AI-native products. Led by founder and CEO Dawid Kubicki."
+    "seoDescription": "About Pluscode, a software company from Poznań, Poland, creating AI-native products such as Quanty. Led by founder and CEO Dawid Kubicki."
   },
   "newsPage": {
     "heading": "News",
     "intro": "",
     "seoTitle": "News",
-    "seoDescription": "News and notes from Pluscode, the software company behind Quanty."
+    "seoDescription": "News and notes from Pluscode, the software company behind Quanty: product updates, company announcements and writing on AI and software."
   },
   "contactPage": {
     "heading": "Contact",
@@ -64,7 +64,7 @@
     "phone": "",
     "address": "Pluscode Sp. z o.o.\nul. Kosowska 12/3\n60-464 Poznań, Poland",
     "seoTitle": "Contact",
-    "seoDescription": "Contact Pluscode at contact@pluscode.io. Pluscode Sp. z o.o., ul. Kosowska 12/3, 60-464 Poznań, Poland."
+    "seoDescription": "Contact Pluscode, the software company behind Quanty. Email contact@pluscode.io or write to Pluscode Sp. z o.o., ul. Kosowska 12/3, 60-464 Poznań, Poland."
   },
   "people": [
     {
@@ -101,7 +101,7 @@
       ],
       "logo": "/assets/portfolio/quanty/logo.svg",
       "image": "/assets/portfolio/quanty/app-sheet.webp",
-      "imageAlt": "Quanty: a spreadsheet filled from documents, each value linked to its source"
+      "imageAlt": "The Quanty app showing a spreadsheet of customer orders"
     }
   ],
   "ui": {
@@ -110,6 +110,7 @@
     "bio": "Bio",
     "closeBio": "Close bio",
     "linkedinOf": "LinkedIn profile of",
+    "linkedin": "LinkedIn",
     "aboutUs": "About us",
     "allNews": "All news",
     "contactUs": "Contact us",
@@ -161,8 +162,7 @@
       "error": "The message did not go through. Please try again, or write to us by email.",
       "required": "This field is required.",
       "invalidEmail": "Enter a valid email address.",
-      "consentRequired": "Your consent is needed to send the message.",
-      "recaptcha": "This form is protected by reCAPTCHA. The Google Privacy Policy and Terms of Service apply."
+      "consentRequired": "Your consent is needed to send the message."
     }
   },
   "footer": {
@@ -189,7 +189,7 @@
       "title": "Privacy Policy",
       "subtitle": "Your privacy is important to us. Learn how we collect, use, and protect your information in compliance with GDPR and applicable data protection laws.",
       "breadcrumb": "Privacy Policy",
-      "lastUpdated": "Last updated: February 2026",
+      "lastUpdated": "Last updated: October 2026",
       "tableOfContents": "Table of Contents",
       "sections": {
         "introduction": {
@@ -198,11 +198,11 @@
         },
         "dataCollection": {
           "title": "Information We Collect",
-          "content": "We collect several types of information to provide and improve our services. Personal Information: When you fill out a contact form, subscribe to our newsletter, or communicate with us, we may collect your name, email address, phone number, company name, job title, and project details. Technical Data: We automatically collect certain information when you visit our website, including your IP address, browser type and version, device information, operating system, referral source, pages visited, time spent on pages, and click patterns. Communication Data: We retain records of correspondence when you contact us via email, contact forms, or other channels. This includes the content of your messages and any attachments."
+          "content": "We collect several types of information to provide and improve our services. Personal Information: When you fill out the contact form on our website, we collect your first name, last name, email address, and the content of your message, together with a record of your consent. The message is stored in our website's database and delivered to our mailbox by our email delivery provider, Resend. When you communicate with us in another way, we may also collect your phone number, company name, job title, and project details. Technical Data: We automatically collect certain information when you visit our website, including your IP address, browser type and version, device information, operating system, referral source, pages visited, time spent on pages, and click patterns. Communication Data: We retain records of correspondence when you contact us via email, contact forms, or other channels. This includes the content of your messages and any attachments."
         },
         "dataUsage": {
           "title": "How We Use Your Information",
-          "content": "We use the information we collect for the following purposes: Service Delivery - to provide, maintain, and improve our software development and consulting services; Communication - to respond to your inquiries, send project updates, and provide customer support; Marketing - with your consent, to send you newsletters, promotional materials, and information about our services; Analytics - to understand how visitors use our website and to improve user experience; Legal Compliance - to comply with applicable laws, regulations, and legal processes; Security - to detect, prevent, and address technical issues, fraud, and security threats. We process your data based on legitimate interests, contractual necessity, legal obligations, or your explicit consent, depending on the specific processing activity."
+          "content": "We use the information we collect for the following purposes: Service Delivery: to provide, maintain, and improve our software products and services; Communication: to respond to your inquiries, send project updates, and provide customer support; Marketing: with your consent, to send you promotional materials and information about our services; Analytics: to understand how visitors use our website and to improve user experience; Legal Compliance: to comply with applicable laws, regulations, and legal processes; Security: to detect, prevent, and address technical issues, fraud, and security threats. We process your data based on legitimate interests, contractual necessity, legal obligations, or your explicit consent, depending on the specific processing activity."
         },
         "dataSecurity": {
           "title": "Data Security",
@@ -210,19 +210,19 @@
         },
         "cookies": {
           "title": "Cookies and Tracking Technologies",
-          "content": "Our website uses cookies and similar tracking technologies to enhance your browsing experience and collect analytical data. Essential Cookies: Required for basic website functionality, including session management and security features. These cannot be disabled. Analytics Cookies: Help us understand how visitors interact with our website through services like Google Analytics. This data is anonymized and used to improve our site. Marketing Cookies: Used to track visitors across websites and display relevant advertisements. These are only activated with your explicit consent. You can manage your cookie preferences through your browser settings or our cookie consent banner. Most browsers allow you to block or delete cookies, but this may affect website functionality."
+          "content": "Our website uses cookies and similar tracking technologies to enhance your browsing experience and collect analytical data. Essential Cookies: Required for basic website functionality, including session management and security features. These cannot be disabled. Your cookie choice itself is kept in your browser's local storage, so the banner does not ask again. Analytics Cookies: Help us understand how visitors interact with our website through Google Analytics, which we run in Google Consent Mode v2. Analytics cookies are set only after you accept them in our cookie consent banner. If you do not accept them, Google Analytics sets no cookies and receives only cookieless measurement signals. This data is anonymized and used to improve our site. Marketing Cookies: We do not use marketing or advertising cookies. Advertising storage is switched off for every visitor. You can manage your cookie preferences through your browser settings or our cookie consent banner, which you can reopen at any time with the \"Manage Cookie Consent\" link in the footer. Most browsers allow you to block or delete cookies, but this may affect website functionality."
         },
         "thirdParty": {
           "title": "Third-Party Services",
-          "content": "We may share your information with trusted third-party service providers who assist us in operating our business. These include: Cloud hosting providers (for website and data hosting); Email service providers (for communication and marketing); Analytics services (for website performance analysis); Payment processors (for transaction processing); CRM systems (for customer relationship management). All third-party providers are contractually obligated to protect your data and use it only for the specified purposes. We do not sell your personal information to third parties."
+          "content": "We may share your information with trusted third-party service providers who assist us in operating our business. These include: Cloud hosting providers (for website and data hosting); Email service providers (for communication and marketing), including Resend, which delivers the messages sent through our contact form; Analytics services (for website performance analysis), namely Google Analytics; Payment processors (for transaction processing); CRM systems (for customer relationship management). All third-party providers are contractually obligated to protect your data and use it only for the specified purposes. We do not sell your personal information to third parties."
         },
         "dataRetention": {
           "title": "Data Retention",
-          "content": "We retain your personal data only for as long as necessary to fulfill the purposes for which it was collected, including satisfying legal, accounting, or reporting requirements. Contact form submissions and inquiries are retained for up to 3 years after our last interaction. Newsletter subscriptions are retained until you unsubscribe. Project-related data is retained for the duration of our business relationship and for 7 years thereafter for legal and accounting purposes. Analytics data is retained in anonymized form for up to 26 months."
+          "content": "We retain your personal data only for as long as necessary to fulfill the purposes for which it was collected, including satisfying legal, accounting, or reporting requirements. Contact form submissions and inquiries are retained for up to 3 years after our last interaction. Consent to receive marketing communications, where you have given it, is retained until you withdraw it. Project-related data is retained for the duration of our business relationship and for 7 years thereafter for legal and accounting purposes. Analytics data is retained in anonymized form for up to 26 months."
         },
         "rights": {
           "title": "Your Rights Under GDPR",
-          "content": "Under the General Data Protection Regulation (GDPR), you have the following rights regarding your personal data: Right of Access - request a copy of your personal data we hold; Right to Rectification - request correction of inaccurate or incomplete data; Right to Erasure - request deletion of your personal data (\"right to be forgotten\"); Right to Restriction - request limitation of processing of your data; Right to Data Portability - receive your data in a structured, machine-readable format; Right to Object - object to processing based on legitimate interests or direct marketing; Right to Withdraw Consent - withdraw consent at any time where processing is based on consent. To exercise any of these rights, please contact us using the details provided below. We will respond to your request within 30 days."
+          "content": "Under the General Data Protection Regulation (GDPR), you have the following rights regarding your personal data: Right of Access: request a copy of your personal data we hold; Right to Rectification: request correction of inaccurate or incomplete data; Right to Erasure: request deletion of your personal data (\"right to be forgotten\"); Right to Restriction: request limitation of processing of your data; Right to Data Portability: receive your data in a structured, machine-readable format; Right to Object: object to processing based on legitimate interests or direct marketing; Right to Withdraw Consent: withdraw consent at any time where processing is based on consent. To exercise any of these rights, please contact us using the details provided below. We will respond to your request within 30 days."
         },
         "international": {
           "title": "International Data Transfers",
@@ -230,7 +230,7 @@
         },
         "contact": {
           "title": "Contact Us",
-          "content": "If you have any questions about this Privacy Policy, wish to exercise your data protection rights, or have concerns about how we handle your data, please contact us at: Pluscode Sp. z o.o., Kosowska 12/3, 60-464 Poznań, Poland. Email: contact@pluscode.io, Phone: +48 667 688 927. Data Protection Contact: Dawid Kubicki (CEO) - contact@pluscode.io. You also have the right to lodge a complaint with the Polish Data Protection Authority (Prezes Urzędu Ochrony Danych Osobowych - UODO) if you believe your data protection rights have been violated."
+          "content": "If you have any questions about this Privacy Policy, wish to exercise your data protection rights, or have concerns about how we handle your data, please contact us at: Pluscode Sp. z o.o., Kosowska 12/3, 60-464 Poznań, Poland. Email: contact@pluscode.io, Phone: +48 667 688 927. Data Protection Contact: Dawid Kubicki (CEO), contact@pluscode.io. You also have the right to lodge a complaint with the Polish Data Protection Authority (Prezes Urzędu Ochrony Danych Osobowych, UODO) if you believe your data protection rights have been violated."
         }
       }
     },
@@ -238,7 +238,7 @@
       "title": "Terms of Use",
       "subtitle": "Please read these terms carefully before using our website and services. They constitute a legally binding agreement between you and Pluscode.",
       "breadcrumb": "Terms of Use",
-      "lastUpdated": "Last updated: February 2026",
+      "lastUpdated": "Last updated: October 2026",
       "tableOfContents": "Table of Contents",
       "sections": {
         "acceptance": {
@@ -247,7 +247,7 @@
         },
         "services": {
           "title": "Description of Services",
-          "content": "Pluscode Sp. z o.o., a company registered in Poland (KRS: 0000811470, NIP: PL7812002984, REGON: 384741150, share capital: 5,000 PLN), with its registered office at Kosowska 12/3, 60-464 Poznań, provides professional software development, AI and machine learning solutions, data analytics, cloud services, and technology consulting. Our website serves as an informational platform about our services and a means to contact us. The specific scope, deliverables, timelines, and fees for any services will be outlined in separate service agreements, statements of work (SOW), or contracts between Pluscode and the client. Nothing on this website constitutes a binding offer or commitment to provide services at any particular price or timeline."
+          "content": "Pluscode Sp. z o.o., a company registered in Poland (KRS: 0000811470, NIP: PL7812002984, REGON: 384741150, share capital: 5,000 PLN), with its registered office at Kosowska 12/3, 60-464 Poznań, is a software company that designs and builds AI-native software products. Our website serves as an informational platform about our company and products and a means to contact us. The specific scope, deliverables, timelines, and fees for any services will be outlined in separate service agreements, statements of work (SOW), or contracts between Pluscode and the client. Nothing on this website constitutes a binding offer or commitment to provide services at any particular price or timeline."
         },
         "userObligations": {
           "title": "User Obligations",

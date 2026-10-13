@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Pluscode | Tworzymy oprogramowanie przyszłości",
-    "description": "Pluscode to firma z Poznania, która tworzy oprogramowanie. Projektujemy i budujemy produkty oparte na AI. W portfolio: Quanty, przestrzeń robocza AI, w której dokumenty stają się arkuszem, który można sprawdzić.",
+    "description": "Pluscode to firma z Poznania, która tworzy oprogramowanie przyszłości oparte na AI. W portfolio: Quanty, przestrzeń robocza AI do pracy z dokumentami.",
     "ogTitle": "Pluscode. Tworzymy oprogramowanie przyszłości.",
     "ogDescription": "Firma tworząca oprogramowanie oparte na AI. Twórcy Quanty.",
     "ogImageAlt": "Pluscode: tworzymy oprogramowanie przyszłości",
@@ -39,7 +39,7 @@
     "peopleIntro": "Mała firma. Z wyboru.",
     "newsHeading": "Aktualności",
     "seoTitle": "Pluscode | Tworzymy oprogramowanie przyszłości",
-    "seoDescription": "Pluscode to firma z Poznania, która tworzy oprogramowanie. Projektujemy i budujemy produkty oparte na AI. W portfolio: Quanty, przestrzeń robocza AI, w której dokumenty stają się arkuszem, który można sprawdzić."
+    "seoDescription": "Pluscode to firma z Poznania, która tworzy oprogramowanie przyszłości oparte na AI. W portfolio: Quanty, przestrzeń robocza AI do pracy z dokumentami."
   },
   "aboutPage": {
     "heading": "O nas",
@@ -49,13 +49,13 @@
     "principlesLabel": "Zasady",
     "principles": [],
     "seoTitle": "O nas",
-    "seoDescription": "Pluscode to firma z Poznania tworząca oprogramowanie oparte na AI. Firmą kieruje założyciel i CEO Dawid Kubicki."
+    "seoDescription": "O Pluscode: firma z Poznania, która tworzy oprogramowanie oparte na AI, w tym Quanty. Firmą kieruje założyciel i CEO Dawid Kubicki."
   },
   "newsPage": {
     "heading": "Aktualności",
     "intro": "",
     "seoTitle": "Aktualności",
-    "seoDescription": "Aktualności i notatki z Pluscode, firmy, która tworzy Quanty."
+    "seoDescription": "Aktualności i notatki z Pluscode, firmy, która tworzy Quanty: nowości produktowe, ogłoszenia firmy oraz teksty o AI i oprogramowaniu."
   },
   "contactPage": {
     "heading": "Kontakt",
@@ -64,7 +64,7 @@
     "phone": "",
     "address": "Pluscode Sp. z o.o.\nul. Kosowska 12/3\n60-464 Poznań, Polska",
     "seoTitle": "Kontakt",
-    "seoDescription": "Kontakt z Pluscode: contact@pluscode.io. Pluscode Sp. z o.o., ul. Kosowska 12/3, 60-464 Poznań."
+    "seoDescription": "Kontakt z Pluscode, firmą, która tworzy Quanty. Napisz na contact@pluscode.io lub do Pluscode Sp. z o.o., ul. Kosowska 12/3, 60-464 Poznań."
   },
   "people": [
     {
@@ -101,7 +101,7 @@
       ],
       "logo": "/assets/portfolio/quanty/logo.svg",
       "image": "/assets/portfolio/quanty/app-sheet.webp",
-      "imageAlt": "Quanty: arkusz wypełniony na podstawie dokumentów, każda wartość z odnośnikiem do źródła"
+      "imageAlt": "Aplikacja Quanty z arkuszem zamówień klientów"
     }
   ],
   "ui": {
@@ -110,6 +110,7 @@
     "bio": "Bio",
     "closeBio": "Zamknij bio",
     "linkedinOf": "Profil LinkedIn:",
+    "linkedin": "LinkedIn",
     "aboutUs": "O nas",
     "allNews": "Wszystkie aktualności",
     "contactUs": "Napisz do nas",
@@ -161,8 +162,7 @@
       "error": "Nie udało się wysłać wiadomości. Spróbuj ponownie albo napisz do nas e-mailem.",
       "required": "To pole jest wymagane.",
       "invalidEmail": "Podaj poprawny adres e-mail.",
-      "consentRequired": "Do wysłania wiadomości potrzebna jest Twoja zgoda.",
-      "recaptcha": "Formularz jest chroniony przez reCAPTCHA. Obowiązują Polityka prywatności i Warunki korzystania z usług Google."
+      "consentRequired": "Do wysłania wiadomości potrzebna jest Twoja zgoda."
     }
   },
   "footer": {
@@ -187,9 +187,9 @@
   "legal": {
     "privacy": {
       "title": "Polityka Prywatności",
-      "subtitle": "Twoja prywatność jest dla nas ważna. Dowiedz się, jak zbieramy, wykorzystujemy i chronimy Twoje dane zgodnie z RODO i obowiązującymi przepisami o ochronie danych.",
+      "subtitle": "Twoja prywatność jest dla nas ważna. Dowiedz się, jak zbieramy, wykorzystujemy i chronimy Twoje dane zgodnie z RODO i przepisami o ochronie danych.",
       "breadcrumb": "Polityka Prywatności",
-      "lastUpdated": "Ostatnia aktualizacja: Luty 2026",
+      "lastUpdated": "Ostatnia aktualizacja: październik 2026",
       "tableOfContents": "Spis Treści",
       "sections": {
         "introduction": {
@@ -198,11 +198,11 @@
         },
         "dataCollection": {
           "title": "Dane, które Zbieramy",
-          "content": "Zbieramy różne rodzaje informacji w celu świadczenia i ulepszania naszych usług. Dane osobowe: Wypełniając formularz kontaktowy, subskrybując newsletter lub kontaktując się z nami, możemy zbierać Twoje imię i nazwisko, adres email, numer telefonu, nazwę firmy, stanowisko oraz szczegóły projektu. Dane techniczne: Automatycznie zbieramy pewne informacje podczas odwiedzin na naszej stronie, w tym adres IP, typ i wersję przeglądarki, informacje o urządzeniu, system operacyjny, źródło przekierowania, odwiedzane strony, czas spędzony na stronach oraz wzorce kliknięć. Dane komunikacyjne: Przechowujemy zapisy korespondencji, gdy kontaktujesz się z nami przez email, formularze kontaktowe lub inne kanały. Obejmuje to treść Twoich wiadomości oraz wszelkie załączniki."
+          "content": "Zbieramy różne rodzaje informacji w celu świadczenia i ulepszania naszych usług. Dane osobowe: Gdy wypełniasz formularz kontaktowy na naszej stronie, zbieramy Twoje imię, nazwisko, adres email i treść wiadomości wraz z informacją o udzielonej zgodzie. Wiadomość jest zapisywana w bazie danych naszej strony i dostarczana na naszą skrzynkę przez dostawcę usługi wysyłki email, firmę Resend. Gdy kontaktujesz się z nami w inny sposób, możemy zbierać także Twój numer telefonu, nazwę firmy, stanowisko oraz szczegóły projektu. Dane techniczne: Automatycznie zbieramy pewne informacje podczas odwiedzin na naszej stronie, w tym adres IP, typ i wersję przeglądarki, informacje o urządzeniu, system operacyjny, źródło przekierowania, odwiedzane strony, czas spędzony na stronach oraz wzorce kliknięć. Dane komunikacyjne: Przechowujemy zapisy korespondencji, gdy kontaktujesz się z nami przez email, formularze kontaktowe lub inne kanały. Obejmuje to treść Twoich wiadomości oraz wszelkie załączniki."
         },
         "dataUsage": {
           "title": "Jak Wykorzystujemy Twoje Dane",
-          "content": "Wykorzystujemy zebrane informacje w następujących celach: Świadczenie usług – do dostarczania, utrzymywania i ulepszania naszych usług w zakresie tworzenia oprogramowania i konsultingu; Komunikacja – do odpowiadania na Twoje zapytania, wysyłania aktualizacji projektowych i zapewniania wsparcia klienta; Marketing – za Twoją zgodą, do wysyłania newsletterów, materiałów promocyjnych i informacji o naszych usługach; Analityka – do zrozumienia, w jaki sposób odwiedzający korzystają z naszej strony i do poprawy doświadczenia użytkownika; Zgodność prawna – do przestrzegania obowiązujących przepisów prawa i procesów prawnych; Bezpieczeństwo – do wykrywania, zapobiegania i rozwiązywania problemów technicznych, oszustw i zagrożeń bezpieczeństwa. Przetwarzamy Twoje dane na podstawie uzasadnionych interesów, konieczności umownej, obowiązków prawnych lub Twojej wyraźnej zgody, w zależności od konkretnej czynności przetwarzania."
+          "content": "Wykorzystujemy zebrane informacje w następujących celach: Świadczenie usług: do dostarczania, utrzymywania i ulepszania naszych produktów i usług w zakresie oprogramowania; Komunikacja: do odpowiadania na Twoje zapytania, wysyłania aktualizacji projektowych i zapewniania wsparcia klienta; Marketing: za Twoją zgodą, do wysyłania materiałów promocyjnych i informacji o naszych usługach; Analityka: do zrozumienia, w jaki sposób odwiedzający korzystają z naszej strony i do poprawy doświadczenia użytkownika; Zgodność prawna: do przestrzegania obowiązujących przepisów prawa i procesów prawnych; Bezpieczeństwo: do wykrywania, zapobiegania i rozwiązywania problemów technicznych, oszustw i zagrożeń bezpieczeństwa. Przetwarzamy Twoje dane na podstawie uzasadnionych interesów, konieczności umownej, obowiązków prawnych lub Twojej wyraźnej zgody, w zależności od konkretnej czynności przetwarzania."
         },
         "dataSecurity": {
           "title": "Bezpieczeństwo Danych",
@@ -210,19 +210,19 @@
         },
         "cookies": {
           "title": "Pliki Cookie i Technologie Śledzenia",
-          "content": "Nasza strona internetowa wykorzystuje pliki cookie i podobne technologie śledzenia w celu poprawy jakości przeglądania i zbierania danych analitycznych. Niezbędne pliki cookie: Wymagane do podstawowej funkcjonalności strony, w tym zarządzania sesją i funkcji bezpieczeństwa. Nie można ich wyłączyć. Analityczne pliki cookie: Pomagają nam zrozumieć, jak odwiedzający wchodzą w interakcję z naszą stroną za pośrednictwem usług takich jak Google Analytics. Dane te są anonimizowane i wykorzystywane do ulepszania naszej strony. Marketingowe pliki cookie: Służą do śledzenia odwiedzających na różnych stronach i wyświetlania odpowiednich reklam. Są aktywowane wyłącznie za Twoją wyraźną zgodą. Możesz zarządzać preferencjami dotyczącymi plików cookie poprzez ustawienia przeglądarki lub nasz baner zgody na pliki cookie. Większość przeglądarek pozwala blokować lub usuwać pliki cookie, ale może to wpłynąć na funkcjonalność strony."
+          "content": "Nasza strona internetowa wykorzystuje pliki cookie i podobne technologie śledzenia w celu poprawy jakości przeglądania i zbierania danych analitycznych. Niezbędne pliki cookie: Wymagane do podstawowej funkcjonalności strony, w tym zarządzania sesją i funkcji bezpieczeństwa. Nie można ich wyłączyć. Sam wybór dotyczący plików cookie zapisujemy w pamięci lokalnej Twojej przeglądarki (local storage), żeby baner nie pytał ponownie. Analityczne pliki cookie: Pomagają nam zrozumieć, jak odwiedzający wchodzą w interakcję z naszą stroną za pośrednictwem Google Analytics, z którego korzystamy w trybie Google Consent Mode v2. Analityczne pliki cookie są zapisywane dopiero po ich zaakceptowaniu w naszym banerze zgody na pliki cookie. Jeśli ich nie zaakceptujesz, Google Analytics nie zapisuje plików cookie i otrzymuje wyłącznie sygnały pomiarowe bez plików cookie. Dane te są anonimizowane i wykorzystywane do ulepszania naszej strony. Marketingowe pliki cookie: Nie używamy marketingowych ani reklamowych plików cookie. Przechowywanie danych reklamowych jest wyłączone dla każdego odwiedzającego. Możesz zarządzać preferencjami dotyczącymi plików cookie poprzez ustawienia przeglądarki lub nasz baner zgody na pliki cookie, który w każdej chwili otworzysz ponownie linkiem \"Zarządzaj zgodą na cookies\" w stopce. Większość przeglądarek pozwala blokować lub usuwać pliki cookie, ale może to wpłynąć na funkcjonalność strony."
         },
         "thirdParty": {
           "title": "Usługi Podmiotów Trzecich",
-          "content": "Możemy udostępniać Twoje dane zaufanym dostawcom usług zewnętrznych, którzy pomagają nam w prowadzeniu działalności. Należą do nich: dostawcy hostingu w chmurze (do hostowania strony i danych); dostawcy usług email (do komunikacji i marketingu); usługi analityczne (do analizy wydajności strony); operatorzy płatności (do przetwarzania transakcji); systemy CRM (do zarządzania relacjami z klientami). Wszyscy dostawcy zewnętrzni są umownie zobowiązani do ochrony Twoich danych i wykorzystywania ich wyłącznie w określonych celach. Nie sprzedajemy Twoich danych osobowych podmiotom trzecim."
+          "content": "Możemy udostępniać Twoje dane zaufanym dostawcom usług zewnętrznych, którzy pomagają nam w prowadzeniu działalności. Należą do nich: dostawcy hostingu w chmurze (do hostowania strony i danych); dostawcy usług email (do komunikacji i marketingu), w tym Resend, który dostarcza nam wiadomości wysłane przez formularz kontaktowy; usługi analityczne (do analizy wydajności strony), czyli Google Analytics; operatorzy płatności (do przetwarzania transakcji); systemy CRM (do zarządzania relacjami z klientami). Wszyscy dostawcy zewnętrzni są umownie zobowiązani do ochrony Twoich danych i wykorzystywania ich wyłącznie w określonych celach. Nie sprzedajemy Twoich danych osobowych podmiotom trzecim."
         },
         "dataRetention": {
           "title": "Przechowywanie Danych",
-          "content": "Przechowujemy Twoje dane osobowe tylko tak długo, jak jest to konieczne do realizacji celów, dla których zostały zebrane, w tym w celu spełnienia wymogów prawnych, księgowych lub sprawozdawczych. Formularze kontaktowe i zapytania są przechowywane do 3 lat od ostatniej interakcji. Subskrypcje newslettera są przechowywane do momentu rezygnacji z subskrypcji. Dane związane z projektem są przechowywane przez okres trwania relacji biznesowej i przez 7 lat po jej zakończeniu dla celów prawnych i księgowych. Dane analityczne są przechowywane w formie anonimowej przez maksymalnie 26 miesięcy."
+          "content": "Przechowujemy Twoje dane osobowe tylko tak długo, jak jest to konieczne do realizacji celów, dla których zostały zebrane, w tym w celu spełnienia wymogów prawnych, księgowych lub sprawozdawczych. Formularze kontaktowe i zapytania są przechowywane do 3 lat od ostatniej interakcji. Zgoda na otrzymywanie komunikacji marketingowej, jeśli została udzielona, jest przechowywana do momentu jej wycofania. Dane związane z projektem są przechowywane przez okres trwania relacji biznesowej i przez 7 lat po jej zakończeniu dla celów prawnych i księgowych. Dane analityczne są przechowywane w formie anonimowej przez maksymalnie 26 miesięcy."
         },
         "rights": {
           "title": "Twoje Prawa na Mocy RODO",
-          "content": "Zgodnie z Ogólnym Rozporządzeniem o Ochronie Danych (RODO) przysługują Ci następujące prawa dotyczące Twoich danych osobowych: Prawo dostępu – żądanie kopii przechowywanych przez nas danych osobowych; Prawo do sprostowania – żądanie poprawienia niedokładnych lub niekompletnych danych; Prawo do usunięcia – żądanie usunięcia danych osobowych (\"prawo do bycia zapomnianym\"); Prawo do ograniczenia – żądanie ograniczenia przetwarzania danych; Prawo do przenoszenia danych – otrzymanie danych w ustrukturyzowanym, nadającym się do odczytu maszynowego formacie; Prawo do sprzeciwu – sprzeciw wobec przetwarzania opartego na uzasadnionych interesach lub marketingu bezpośrednim; Prawo do wycofania zgody – wycofanie zgody w dowolnym momencie, gdy przetwarzanie opiera się na zgodzie. Aby skorzystać z któregokolwiek z tych praw, prosimy o kontakt za pomocą danych podanych poniżej. Odpowiemy na Twoje żądanie w ciągu 30 dni."
+          "content": "Zgodnie z Ogólnym Rozporządzeniem o Ochronie Danych (RODO) przysługują Ci następujące prawa dotyczące Twoich danych osobowych: Prawo dostępu: żądanie kopii przechowywanych przez nas danych osobowych; Prawo do sprostowania: żądanie poprawienia niedokładnych lub niekompletnych danych; Prawo do usunięcia: żądanie usunięcia danych osobowych (\"prawo do bycia zapomnianym\"); Prawo do ograniczenia: żądanie ograniczenia przetwarzania danych; Prawo do przenoszenia danych: otrzymanie danych w ustrukturyzowanym, nadającym się do odczytu maszynowego formacie; Prawo do sprzeciwu: sprzeciw wobec przetwarzania opartego na uzasadnionych interesach lub marketingu bezpośrednim; Prawo do wycofania zgody: wycofanie zgody w dowolnym momencie, gdy przetwarzanie opiera się na zgodzie. Aby skorzystać z któregokolwiek z tych praw, prosimy o kontakt za pomocą danych podanych poniżej. Odpowiemy na Twoje żądanie w ciągu 30 dni."
         },
         "international": {
           "title": "Międzynarodowe Przekazywanie Danych",
@@ -230,15 +230,15 @@
         },
         "contact": {
           "title": "Kontakt",
-          "content": "Jeśli masz pytania dotyczące niniejszej Polityki Prywatności, chcesz skorzystać ze swoich praw do ochrony danych lub masz wątpliwości dotyczące sposobu przetwarzania Twoich danych, prosimy o kontakt: Pluscode Sp. z o.o., ul. Kosowska 12/3, 60-464 Poznań, Polska. Email: contact@pluscode.io, Telefon: +48 667 688 927. Kontakt w sprawach ochrony danych: Dawid Kubicki (CEO) - contact@pluscode.io. Masz również prawo złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych (UODO), jeśli uważasz, że Twoje prawa do ochrony danych zostały naruszone."
+          "content": "Jeśli masz pytania dotyczące niniejszej Polityki Prywatności, chcesz skorzystać ze swoich praw do ochrony danych lub masz wątpliwości dotyczące sposobu przetwarzania Twoich danych, prosimy o kontakt: Pluscode Sp. z o.o., ul. Kosowska 12/3, 60-464 Poznań, Polska. Email: contact@pluscode.io, Telefon: +48 667 688 927. Kontakt w sprawach ochrony danych: Dawid Kubicki (CEO), contact@pluscode.io. Masz również prawo złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych (UODO), jeśli uważasz, że Twoje prawa do ochrony danych zostały naruszone."
         }
       }
     },
     "terms": {
       "title": "Regulamin",
-      "subtitle": "Prosimy o uważne zapoznanie się z niniejszym regulaminem przed korzystaniem z naszej strony internetowej i usług. Stanowi on prawnie wiążącą umowę między Tobą a Pluscode.",
+      "subtitle": "Prosimy o uważne zapoznanie się z regulaminem przed korzystaniem z naszej strony i usług. Stanowi on prawnie wiążącą umowę między Tobą a Pluscode.",
       "breadcrumb": "Regulamin",
-      "lastUpdated": "Ostatnia aktualizacja: Luty 2026",
+      "lastUpdated": "Ostatnia aktualizacja: październik 2026",
       "tableOfContents": "Spis Treści",
       "sections": {
         "acceptance": {
@@ -247,7 +247,7 @@
         },
         "services": {
           "title": "Opis Usług",
-          "content": "Pluscode Sp. z o.o., spółka zarejestrowana w Polsce (KRS: 0000811470, NIP: PL7812002984, REGON: 384741150, kapitał zakładowy: 5 000 PLN), z siedzibą przy ul. Kosowskiej 12/3, 60-464 Poznań, świadczy profesjonalne usługi w zakresie tworzenia oprogramowania, rozwiązań AI i machine learning, analityki danych, usług chmurowych oraz konsultingu technologicznego. Nasza strona internetowa służy jako platforma informacyjna o naszych usługach oraz środek do kontaktu z nami. Konkretny zakres, rezultaty, harmonogramy i opłaty za wszelkie usługi zostaną określone w odrębnych umowach o świadczenie usług, zakresach prac (SOW) lub kontraktach między Pluscode a klientem. Żadne informacje na tej stronie nie stanowią wiążącej oferty ani zobowiązania do świadczenia usług po określonej cenie lub w określonym terminie."
+          "content": "Pluscode Sp. z o.o., spółka zarejestrowana w Polsce (KRS: 0000811470, NIP: PL7812002984, REGON: 384741150, kapitał zakładowy: 5 000 PLN), z siedzibą przy ul. Kosowskiej 12/3, 60-464 Poznań, jest firmą tworzącą oprogramowanie: projektuje i buduje produkty oparte na AI. Nasza strona internetowa służy jako platforma informacyjna o naszej firmie i produktach oraz środek do kontaktu z nami. Konkretny zakres, rezultaty, harmonogramy i opłaty za wszelkie usługi zostaną określone w odrębnych umowach o świadczenie usług, zakresach prac (SOW) lub kontraktach między Pluscode a klientem. Żadne informacje na tej stronie nie stanowią wiążącej oferty ani zobowiązania do świadczenia usług po określonej cenie lub w określonym terminie."
         },
         "userObligations": {
           "title": "Obowiązki Użytkownika",
