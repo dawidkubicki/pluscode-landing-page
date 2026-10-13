@@ -1,62 +1,100 @@
 import type { Metadata } from "next";
-import { locales, type Locale } from "./i18n/config";
+import { SITE_URL } from "./company";
+import { locales, defaultLocale, localeHrefLang, type Locale } from "./i18n/config";
 import { getDictionary } from "./i18n/dictionaries";
 
-/**
- * Cache buster for the brand share cards in public/og/. Facebook, LinkedIn,
- * Slack and X all key their scrape cache on the image URL, so repainting the
- * cards with `pnpm generate:og` is invisible to them until the URL changes.
- * Bump this whenever those PNGs are regenerated. Currently: the neutral
- * near-black and indigo card that replaced the navy and emerald one.
- */
-const OG_CARD_VERSION = "2";
-
-/** Open Graph locale tags per supported locale. */
+/** Open Graph locale tags per site locale. */
 export const ogLocaleTag: Record<Locale, string> = {
   en: "en_GB",
   pl: "pl_PL",
-  de: "de_DE",
 };
 
-type OgOverrides = {
-  /** Page-specific og:title; defaults to the localized brand tagline. */
+/** Bump when the share cards in public/og/ are repainted: scrapers key on the URL. */
+const OG_CARD_VERSION = "3";
+
+/** `/about` in Polish is `/pl/about`; the home page is `/pl`. */
+export function localePath(locale: Locale, path = ""): string {
+  const clean = path === "/" ? "" : path;
+  return `/${locale}${clean}`;
+}
+
+export function absoluteUrl(path: string): string {
+  return `${SITE_URL}${path}`;
+}
+
+/** hreflang map for one page, with `x-default` on the default locale. */
+export function languageAlternates(path = ""): Record<string, string> {
+  return {
+    ...Object.fromEntries(
+      locales.map((l) => [localeHrefLang[l], localePath(l, path)]),
+    ),
+    "x-default": localePath(defaultLocale, path),
+  };
+}
+
+export type PageMeta = {
+  /** Path after the locale, "" for the home page, "/about", "/news/slug". */
+  path: string;
+  /** Goes through the "%s · Pluscode" template. */
   title?: string;
+  /** Used as is, bypassing the template (the home page). */
+  absoluteTitle?: string;
   description?: string;
-  /** Path after the locale prefix, e.g. "/insights/my-post". */
-  path?: string;
+  image?: { url: string; alt: string; width?: number; height?: number } | null;
   type?: "website" | "article";
-  /** Page-specific image (e.g. a CMS cover); defaults to the localized brand card. */
-  image?: { url: string; alt: string } | null;
+  publishedTime?: string | null;
+  modifiedTime?: string | null;
+  noindex?: boolean;
+  /** Set to false for a page that exists in one language only. */
+  alternates?: boolean;
 };
 
 /**
- * Complete Open Graph block for one page. Next.js replaces (not merges) a
- * layout's `openGraph` when a page provides its own, so pages overriding any
- * OG field must build the whole object through this helper to keep the url,
- * siteName, locale and image intact.
+ * The complete metadata for one page: title, description, canonical, hreflang,
+ * Open Graph and Twitter. Every page calls this from `generateMetadata`, so
+ * no page can ship without a canonical or with a half-built Open Graph block
+ * (Next replaces, not merges, a parent's `openGraph`).
  */
-export function buildOpenGraph(
-  locale: Locale,
-  overrides: OgOverrides = {},
-): Metadata["openGraph"] {
+export function pageMetadata(locale: Locale, page: PageMeta): Metadata {
   const meta = getDictionary(locale).meta;
+  const description = page.description || meta.description;
+  const ogTitle = page.absoluteTitle ?? page.title ?? meta.ogTitle;
+  const image = page.image ?? {
+    url: `/og/${locale}.png?v=${OG_CARD_VERSION}`,
+    alt: meta.ogImageAlt,
+    width: 1200,
+    height: 630,
+  };
+
   return {
-    title: overrides.title ?? meta.ogTitle,
-    description: overrides.description || meta.ogDescription,
-    url: `/${locale}${overrides.path ?? ""}`,
-    siteName: "Pluscode",
-    type: overrides.type ?? "website",
-    locale: ogLocaleTag[locale],
-    alternateLocale: locales.filter((l) => l !== locale).map((l) => ogLocaleTag[l]),
-    images: overrides.image
-      ? [{ url: overrides.image.url, alt: overrides.image.alt }]
-      : [
-          {
-            url: `/og/${locale}.png?v=${OG_CARD_VERSION}`,
-            width: 1200,
-            height: 630,
-            alt: meta.ogImageAlt,
-          },
-        ],
+    title: page.absoluteTitle ? { absolute: page.absoluteTitle } : page.title,
+    description,
+    alternates: {
+      canonical: localePath(locale, page.path),
+      languages: page.alternates === false ? undefined : languageAlternates(page.path),
+    },
+    robots: page.noindex ? { index: false, follow: true } : undefined,
+    openGraph: {
+      title: ogTitle,
+      description,
+      url: localePath(locale, page.path),
+      siteName: "Pluscode",
+      type: page.type ?? "website",
+      locale: ogLocaleTag[locale],
+      alternateLocale: locales.filter((l) => l !== locale).map((l) => ogLocaleTag[l]),
+      images: [image],
+      ...(page.type === "article"
+        ? {
+            publishedTime: page.publishedTime ?? undefined,
+            modifiedTime: page.modifiedTime ?? undefined,
+          }
+        : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description,
+      images: [image.url],
+    },
   };
 }

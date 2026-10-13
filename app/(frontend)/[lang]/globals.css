@@ -1,890 +1,483 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ *
- *  Pluscode design tokens, September 2026.
+ *  Pluscode design tokens, October 2026.
  *
- *  ONE theme. There is no light mode and no dark mode: the page ground is
- *  a cool pale grey-green and the dark bands are part of the same single
- *  palette, not an alternate skin. Nothing reads `data-theme` any more.
+ *  The site is quiet on purpose: a near-black first screen over an aerial
+ *  photograph, then white pages set in one typeface, with a single blue used
+ *  for hairlines, chips and hover. The one recurring shape is the Pluscode
+ *  signet (two overlapping discs), drawn as a thin gradient outline.
  *
- *  The system is measured, not invented. Every value below was read off a
- *  live reference build (computed styles, not screenshots):
+ *  THE PALETTE IS CLOSED. Tailwind's default colours are switched off below,
+ *  so `text-red-500` does not exist here and a new colour has to be added to
+ *  this file deliberately.
  *
- *    page ground   #e7ecec      ink / dark band   #141e1e
- *    deep band     #123836      carbon (menu)     #0e1111
- *    muted text    #41605e      sage (map fill)   #91a6a4
- *    dim on dark   #d0d7d7      white             #ffffff
+ *  `grey` is the text grey and passes 4.5:1 on white. `grey-soft` is lighter
+ *  and is for borders and icons only, never for words on white.
  *
- *  Three rules carry the whole look, and breaking any one of them is what
- *  makes a band stop belonging to the page:
- *
- *    1. ONE WEIGHT. Everything is 400. There is no bold anywhere, at any
- *       size. Hierarchy comes from size and from colour, never from weight.
- *    2. ALMOST NO LETTER-SPACING. Body and label sizes are tracked at
- *       `normal`. The two display sizes carry a small negative track
- *       (-0.02em on heading-xl, -0.01em on heading-lg), asked for on
- *       2026-09-07 so the 76px band titles ("Wybrani klienci") sit a
- *       little narrower. Nothing below heading-lg is ever tracked.
- *    3. NO RADIUS. Buttons, cards, inputs, images and pills are all square.
- *       `--radius-*` is 0 on purpose.
- *
- *  There is no bright accent colour. The emphasis colour is the ink itself,
- *  and the only "colour" on the site is the deep green of two bands. If a
- *  component wants to stand out it changes ground, not hue.
- *
- *  LEGACY NAMES. Around 20 shared components and every service subpage read
- *  the older token names (`cream`, `night`, `bone`, `lime`). Those names are
- *  kept and remapped onto the palette above so nothing has to be rewritten
- *  to keep compiling. `lime` is NOT a green highlight and NOT a blue accent
- *  any more: it resolves to the deep band green. Prefer the new names
- *  (`paper`, `ink`, `deep`, `carbon`, `moss`, `sage`, `mist`) in new work.
- *
- *  `static` so every token reaches :root even when no utility references it;
- *  several components read these as raw `var(--color-*)` in inline styles
- *  and Tailwind's usage-based pruning would drop exactly those.
+ *  `static` so every token reaches :root even when no utility references it:
+ *  several components read these as `var(--color-*)` in inline styles.
  * ------------------------------------------------------------------ */
 @theme static {
-  /* ---- The palette, canonical names ---- */
-  --color-paper: #e7ecec; /* THE PAGE. body ground, default surface */
-  --color-paper-dim: #dfe5e5; /* the off band, one step down from the page */
-  --color-ink: #141e1e; /* text, the dark band, the dark button fill */
-  --color-deep: #123836; /* the green band: hero overlay and the map */
-  --color-deep-soft: #1b4643; /* a raised cell on the green band */
-  --color-carbon: #0e1111; /* the fullscreen menu and the footer */
-  --color-moss: #41605e; /* captions, metadata, the map's quiet fill */
-  --color-sage: #91a6a4; /* the map's lit fill, marks on the green band */
-  --color-mist: #d0d7d7; /* body copy on any dark ground */
-  --color-white: #ffffff; /* cards, the light button, headlines on dark */
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-ink: #222222; /* text on white */
+  --color-night: #0a0a0a; /* the first screen, dark bands */
+  --color-navy: #162440; /* deep blue: active nav on white, ring midpoint */
+  --color-navy-rise: #1f3a7a; /* the blue that climbs the portraits */
+  --color-blue: #5f91ea; /* hairline accents, chips, hover */
+  --color-blue-tint: #eff4fd; /* blue at 10% over white, the chip ground */
+  --color-teal: #68bcca; /* rare second accent */
+  --color-grey: #767676; /* labels and quiet text on white */
+  --color-grey-soft: #999999; /* borders and icons; quiet text on dark */
+  --color-grey-mid: #cccccc; /* card borders */
+  --color-grey-light: #f0f0f0; /* card ground; text on dark */
 
-  /* ---- Hairlines. The page is ruled, and the rules are the structure. ---- */
-  --color-rule: #cbd3d3; /* on the page ground */
-  --color-rule-soft: #d8dede; /* inside a card on the page ground */
-  --color-rule-dark: #2a3535; /* on ink and carbon */
-  --color-rule-deep: #23514e; /* on the green band */
-
-  /* ---- Legacy aliases. Same colours, older names. See the note above. ---- */
-  --color-cream: #e7ecec; /* = paper */
-  --color-cream-dim: #dfe5e5; /* = paper-dim */
-  --color-cream-surface: #ffffff; /* = white */
-  --color-cream-line: #cbd3d3; /* = rule */
-  --color-cream-line-soft: #d8dede; /* = rule-soft */
-  --color-cream-line-strong: #b6c1c1; /* input borders, outline buttons */
-  --color-photo-ground: #d8dede; /* the ground behind a loading photograph */
-  --color-ink-soft: #41605e; /* = moss. body copy, the grey half of a headline */
-  --color-ink-mute: #41605e; /* = moss. captions and metadata. 5.6:1 on paper */
-  --color-night: #141e1e; /* = ink. the dark band */
-  --color-night-soft: #1f2c2c; /* a raised cell on the dark band */
-  --color-night-deep: #0e1111; /* = carbon. the footer */
-  --color-night-line: #2a3535; /* = rule-dark */
-  --color-bone: #ffffff; /* = white. headlines on the dark band */
-  --color-bone-soft: #d0d7d7; /* = mist. body copy on the dark band */
-  --color-bone-dim: #91a6a4; /* = sage. metadata on the dark band */
-
-  /* ---- The "accent". There isn't one. These four names exist only so the
-          older components keep resolving; every one of them lands on the
-          green or on the ink. Do not introduce a fifth. ---- */
-  --color-lime: #123836; /* = deep */
-  --color-lime-bright: #1b4643; /* = deep-soft, the hover step */
-  --color-lime-deep: #0d2927; /* the pressed step */
-  --color-lime-soft: #41605e; /* = moss */
-  --color-lime-tint: #dfe5e5; /* = paper-dim, the pill ground */
-  --color-lime-tint-line: #cbd3d3; /* = rule */
-  --color-lime-ink: #123836; /* = deep, the pill's text */
-
-  /* ---- Status. The one sanctioned hue outside the palette: green means
-          "available" everywhere on the web. 8px, appears once. ---- */
-  --color-status-online: #3f9142;
-
-  /* ---- EMBER. The one contrast colour, and it is a HOVER colour.
-          Dawid asked for a modern orange for the calls to action that is
-          not visible at rest: every button and editorial link is still ink
-          or white until the pointer lands, and then it goes ember. It never
-          appears on a resting surface, never on body text, never as a
-          background, so the page stays the quiet grey-green of the
-          reference and the orange is a reward for reaching for something.
-          Two steps: the fill, and a deeper press state. ---- */
-  --color-ember: #ff6a2b;
-  --color-ember-deep: #e5551a;
-
-  /* ---- Type. One family, one weight. ---- */
-  --font-sans: var(--font-inter), "Helvetica Neue", Helvetica, Arial,
-    ui-sans-serif, system-ui, sans-serif;
-  /* ALIASES. `--font-display`, `--font-serif` and `--font-mono` all resolve
-     to the same face on purpose. 55 places set `font-serif` on a headline
-     and 80 set `font-mono` on a label; pointing all of them at the one
-     family converts the whole site to the single-typeface system without
-     touching a component. Do not load a second family. */
-  --font-display: var(--font-inter), "Helvetica Neue", Helvetica, Arial,
-    ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-inter), "Helvetica Neue", Helvetica, Arial,
-    ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-inter), "Helvetica Neue", Helvetica, Arial,
+  --font-sans: var(--font-orbiter), "Helvetica Neue", Helvetica, Arial,
     ui-sans-serif, system-ui, sans-serif;
 
-  /* ---- Type scale. Measured off the reference: 75.6 / 35 / 18 / 16 / 14,
-          every one of them weight 400 and tracking normal. The display
-          sizes are fluid so the 76px top end only arrives on a wide
-          viewport, but the ratios and the line-height of 1 are fixed. ---- */
-  --text-heading-xl: clamp(2.75rem, 5.1vw, 4.725rem); /* -> 75.6px */
-  --text-heading-xl--line-height: 1;
-  /* The one deliberate departure from `normal`: the band titles read a
-     touch wide at 76px, so they close up by 2%. Measured against the
-     reference's own display setting this is still within a pixel per
-     letter pair, and it is the only size that gets it apart from lg. */
-  --text-heading-xl--letter-spacing: -0.02em;
-  --text-heading-xl--font-weight: 400;
-  --text-heading-lg: clamp(2.25rem, 4.1vw, 3.75rem);
-  --text-heading-lg--line-height: 1;
-  --text-heading-lg--letter-spacing: -0.01em;
-  --text-heading-lg--font-weight: 400;
-  --text-heading-md: clamp(1.75rem, 2.4vw, 2.1875rem); /* -> 35px */
-  /* Leading 1, not 1.05. The reference sets its 35px card headlines at
-     exactly 34.992px/34.992px, and a two-line card headline stacked that
-     tight is a large part of why the editorial grid reads the way it does.
-     At 1.05 the same headline looks like ordinary body-ish text that
-     happens to be big. Measured, not guessed. */
-  --text-heading-md--line-height: 1;
-  --text-heading-md--letter-spacing: normal;
-  --text-heading-md--font-weight: 400;
-  --text-heading-sm: 1.5rem;
-  --text-heading-sm--line-height: 1.05;
-  --text-heading-sm--letter-spacing: normal;
-  --text-heading-sm--font-weight: 400;
-  --text-heading-xs: 1.25rem;
-  --text-heading-xs--line-height: 1.1;
-  --text-heading-xs--letter-spacing: normal;
-  --text-heading-xs--font-weight: 400;
+  /* Type scale. Five reading sizes and two display sizes; the display sizes
+     are fluid so they land at 40px and 48px only on a wide screen. */
+  --text-fine: 0.75rem;
+  --text-fine--line-height: 1.5;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.4;
+  --text-body: 1rem;
+  --text-body--line-height: 1.5;
+  --text-lead: 1.25rem;
+  --text-lead--line-height: 1.4;
+  --text-title: clamp(1.25rem, 1.02rem + 0.95vw, 1.625rem);
+  --text-title--line-height: 1.4;
+  --text-display: clamp(1.75rem, 1.2rem + 2.2vw, 2.5rem);
+  --text-display--line-height: 1.3;
+  --text-display--font-weight: 500;
+  --text-hero: clamp(2.125rem, 1.4rem + 3vw, 3rem);
+  --text-hero--line-height: 1.15;
+  --text-hero--font-weight: 500;
 
-  /* Body sizes, so a component can ask for the exact reference values. */
-  --text-body: 1.125rem; /* 18px */
-  --text-body--line-height: 1.375; /* 24.75px */
-  --text-body--letter-spacing: normal;
-  --text-small: 1rem; /* 16px */
-  --text-small--line-height: 1.375;
-  --text-small--letter-spacing: normal;
-  --text-micro: 0.875rem; /* 14px */
-  --text-micro--line-height: 1.15;
-  --text-micro--letter-spacing: normal;
-
-  /* ---- Geometry. Square, everywhere. Overriding Tailwind's defaults is
-          deliberate: it means a stray `rounded-lg` left in an old component
-          renders square instead of breaking the system. ---- */
-  --radius-xs: 0px;
-  --radius-sm: 0px;
-  --radius-md: 0px;
-  --radius-lg: 0px;
-  --radius-xl: 0px;
-  --radius-2xl: 0px;
-  --radius-3xl: 0px;
-  --radius-4xl: 0px;
-
-  /* ---- The grid. 12 columns, full bleed, 24px gutter and 24px page
-          padding, exactly like the reference. There is no max-width
-          container anywhere on this site: bands run edge to edge and the
-          grid is what aligns them. 4 columns below 768. ---- */
-  --pc-gutter: 24px;
-  --pc-pad: 24px;
-
-  /* ---- Elevation. Almost nothing casts a shadow in this system. The one
-          survivor is the fullscreen menu, which must separate from the page
-          behind it. Cards use a hairline, never a shadow. ---- */
-  --shadow-l1: none;
-  --shadow-l2: none;
-  --shadow-l3: none;
-  --shadow-l4: none;
-  --shadow-l5: none;
-  --shadow-card: none;
-  --shadow-photo: none;
-  --shadow-menu: 0 24px 48px -24px rgb(14 17 17 / 0.45);
-
-  /* Tailwind's own shadow scale, flattened for the same reason as the
-     elevation tokens above: `shadow-md` on a legacy component would be the
-     only raised thing on a page that raises nothing. */
-  --shadow-2xs: none;
-  --shadow-xs: none;
-  --shadow-sm: none;
-  --shadow-md: none;
-  --shadow-lg: none;
-  --shadow-xl: none;
-  --shadow-2xl: none;
-
-  /* ---- Motion ---- */
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-out-attio: cubic-bezier(0, 0, 0, 1);
-  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
-  --ease-io-attio: cubic-bezier(0.2, 0, 0, 1);
-
-  --animate-marquee: marquee 38s linear infinite;
-  --animate-marquee-slow: marquee 60s linear infinite;
-  --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
+  --ease-out: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --header-h: 5rem;
 }
 
-@keyframes pulse-dot {
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.55;
-    transform: scale(0.86);
-  }
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-/* ------------------------------------------------------------------ *
- *  Base
- * ------------------------------------------------------------------ */
 @layer base {
   html {
-    /* Lenis drives scrolling, so keep native smooth off to avoid conflicts */
-    scroll-behavior: auto;
-    -webkit-font-smoothing: antialiased;
+    background: var(--color-white);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
-    /* One theme. `light` here is about form controls and the scrollbar, not
-       about a light/dark toggle: the page ground is pale, so native widgets
-       must be pale too. */
-    color-scheme: light;
-    background-color: var(--color-paper);
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-h);
   }
 
   body {
-    background-color: var(--color-paper);
-    color: var(--color-ink);
-    font-family: var(--font-sans);
-    /* 400 and `normal`. See rules 1 and 2 at the top of this file. Both of
-       these lines are load-bearing: the previous system set 500 and
-       -0.01em globally, and either one alone stops the page looking like
-       the reference. */
-    font-weight: 400;
-    letter-spacing: normal;
-    font-size: 1.125rem;
-    line-height: 1.375;
-  }
-
-  /* Headings inherit the single weight rather than the UA's bold. */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: 400;
-    letter-spacing: normal;
-  }
-
-  strong,
-  b {
-    font-weight: 400;
-  }
-
-  /* Tailwind v4 preflight leaves buttons with the default cursor */
-  button:not(:disabled),
-  [role="button"]:not(:disabled) {
-    cursor: pointer;
+    font-size: var(--text-body);
+    line-height: 1.5;
   }
 
   ::selection {
-    background-color: var(--color-ink);
-    color: var(--color-paper);
+    background: var(--color-blue);
+    color: var(--color-white);
   }
 
-  /* Lenis */
-  html.lenis,
-  html.lenis body {
-    height: auto;
+  /* One focus treatment everywhere: a blue ring that clears the element. */
+  :focus-visible {
+    outline: 2px solid var(--color-blue);
+    outline-offset: 3px;
   }
-  .lenis.lenis-smooth {
-    scroll-behavior: auto !important;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
   }
-  .lenis.lenis-stopped {
-    overflow: hidden;
+
+  p {
+    text-wrap: pretty;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 }
 
-/* ------------------------------------------------------------------ *
- *  Utilities
- * ------------------------------------------------------------------ */
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@layer components {
+  /* ---- Layout ---------------------------------------------------- */
 
-  /* The display voice. One family, weight 400, tracking normal, leading 1.
-     `.display` and the 55 `font-serif` call sites resolve to the same face,
-     so a headline written either way looks identical. */
-  .display {
-    font-family: var(--font-display);
-    font-weight: 400;
-    letter-spacing: normal;
-    line-height: 1;
-    text-wrap: balance;
-  }
-
-  /* --- the field ----------------------------------------------------- *
-   *  `.pc-shell` is the page inset and nothing else: full bleed with 24px
-   *  of padding, no max-width and no auto margin. Bands reach both edges
-   *  of the viewport, which is what makes the ruled grid read as one sheet
-   *  rather than a centred column floating on a ground.
-   * ------------------------------------------------------------------ */
-  .pc-shell {
+  /* The page column: 90rem at most, 5% gutters that never close below 20px. */
+  .pc-container {
     width: 100%;
-    padding-inline: var(--pc-pad);
-  }
-  @media (max-width: 640px) {
-    .pc-shell {
-      padding-inline: 16px;
-    }
+    max-width: 90rem;
+    margin-inline: auto;
+    padding-inline: max(1.25rem, 5%);
   }
 
-  /* 12 columns on the page, 4 on a phone, 24px gutter. Every band lays its
-     content on this and on nothing else, so a block in band 3 lines up with
-     a block in band 8. `col-span-6` is a half, `col-span-4` a third, and
-     `col-start-*` is how a block is indented: never a margin. */
-  .pc-grid {
-    display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    gap: var(--pc-gutter);
-  }
-  @media (max-width: 767px) {
-    .pc-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-    }
+  /* Vertical rhythm of a white section. */
+  .pc-section {
+    padding-block: clamp(4rem, 9vw, 7.5rem);
   }
 
-  /* The visible column rules. This is the faint vertical pinstripe over the
-     hero and under the bands: one hairline per grid column, drawn in the
-     ground's own hairline colour so it reads as ruling rather than as a
-     border. It sits on a wrapper, never on the content. */
-  .pc-rules {
-    border-inline: 1px solid var(--color-rule);
-  }
-  .pc-rules-dark {
-    border-inline: 1px solid var(--color-rule-dark);
+  /* ---- Type roles ------------------------------------------------ */
+
+  /* The grey word above a section ("Portfolio"). */
+  .pc-label {
+    color: var(--color-grey);
+    font-size: var(--text-body);
+    line-height: 1.4;
   }
 
-  /* The full column ruling, as a background. Draws 12 (or 4) evenly spaced
-     hairlines across whatever it is applied to, inset by the page padding
-     so the first and last rules land on the content edges. */
-  .pc-ruled {
-    background-image: repeating-linear-gradient(
-      to right,
-      var(--color-rule) 0 1px,
-      transparent 1px calc((100% - var(--pc-pad) * 2) / 12)
-    );
-    background-position: var(--pc-pad) 0;
-    background-size: calc(100% - var(--pc-pad) * 2 + 1px) 100%;
-    background-repeat: no-repeat;
-  }
-  .pc-ruled-dark {
-    background-image: repeating-linear-gradient(
-      to right,
-      rgb(255 255 255 / 0.07) 0 1px,
-      transparent 1px calc((100% - var(--pc-pad) * 2) / 12)
-    );
-    background-position: var(--pc-pad) 0;
-    background-size: calc(100% - var(--pc-pad) * 2 + 1px) 100%;
-    background-repeat: no-repeat;
-  }
-  @media (max-width: 767px) {
-    .pc-ruled,
-    .pc-ruled-dark {
-      background-image: none;
-    }
+  /* Nav links: small, heavy, uppercase. Colour comes from the context. */
+  .pc-nav-link {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
   }
 
-  /* Legacy texture names, kept so old components compile. They now draw the
-     same column ruling rather than an 8px pinstripe. */
-  .pinstripe-light {
-    background-image: repeating-linear-gradient(
-      90deg,
-      rgb(255 255 255 / 0.05) 0 1px,
-      transparent 1px 96px
-    );
-  }
-  .pinstripe-dark {
-    background-image: repeating-linear-gradient(
-      90deg,
-      rgb(20 30 30 / 0.06) 0 1px,
-      transparent 1px 96px
-    );
-  }
-  .texture-mask {
-    mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
-  }
-  .mask-fade-x {
-    mask-image: linear-gradient(
-      to right,
-      transparent 0,
-      #000 6%,
-      #000 94%,
-      transparent 100%
-    );
+  /* The statement: 26px copy with a 1px blue rule down its left side. */
+  .pc-statement {
+    border-left: 1px solid var(--color-blue);
+    padding-left: clamp(1.25rem, 2.2vw, 2rem);
+    font-size: var(--text-title);
+    line-height: 1.6;
   }
 
-  /* --- buttons ------------------------------------------------------- *
-   *  Square, 18px label, 16px of padding all round, no border and no
-   *  shadow. Two of them exist: dark on a pale ground, white on a dark
-   *  ground. Hover moves the ground one step, never the size.
-   * ------------------------------------------------------------------ */
-  .btn {
+  /* A word lifted out of a sentence. */
+  .pc-chip {
+    display: inline-block;
+    padding: 0 0.5rem;
+    border: 1px solid var(--color-blue);
+    border-radius: 4px;
+    background: rgb(95 145 234 / 0.1);
+    font-weight: 500;
+    line-height: 1.35;
+    white-space: nowrap;
+  }
+
+  /* ---- Controls -------------------------------------------------- */
+
+  /* The outline button with a chevron ("› About us"). */
+  .pc-btn {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 16px 20px;
-    border-radius: 0;
-    font-size: 1.125rem;
-    font-weight: 400;
-    line-height: 1;
-    letter-spacing: normal;
-    white-space: nowrap;
-    border: 1px solid transparent;
-    /* The ember arrives on a 320ms ease-out and leaves on the same curve.
-       An earlier version answered hover in 60ms, which is right for a
-       colour that merely darkens and wrong for one that changes hue: at
-       60ms the orange snapped on like a warning. Dawid asked for it to
-       appear nicely and smoothly, and 320ms on an ease-out is the point
-       where the fill visibly blooms in without the button feeling slow. */
+    gap: 0.625rem;
+    padding: 0.5rem 1rem 0.5rem 0.75rem;
+    border: 1px solid var(--color-grey-soft);
+    color: var(--color-ink);
+    font-size: var(--text-body);
+    line-height: 1.4;
     transition:
-      color 320ms var(--ease-out-cubic),
-      border-color 320ms var(--ease-out-cubic),
-      background-color 320ms var(--ease-out-cubic);
+      color 0.2s ease,
+      border-color 0.2s ease,
+      background-color 0.2s ease;
   }
-  @media (max-width: 640px) {
-    .btn {
-      font-size: 1rem;
-      padding: 14px 18px;
-    }
+  .pc-btn:hover {
+    border-color: var(--color-blue);
+    color: var(--color-blue);
   }
-  /* Press is the one state that should feel instant: the hand has already
-     committed. Hover is deliberately NOT here any more, so it keeps the
-     320ms bloom above. */
-  .btn:active {
-    transition-duration: 60ms;
+  .pc-btn > svg {
+    flex: none;
+    transition: transform 0.3s var(--ease-out);
   }
-
-  /* The dark button. The default on the page ground. */
-  .btn-primary {
+  .pc-btn:hover > svg {
+    transform: translateX(3px);
+  }
+  .pc-btn--lg {
+    font-size: var(--text-lead);
+  }
+  /* On a dark ground. */
+  .pc-btn--light {
+    border-color: rgb(255 255 255 / 0.45);
     color: var(--color-white);
-    background-color: var(--color-ink);
-    background-image: none;
-    box-shadow: none;
   }
-  .btn-primary:hover {
-    background-color: var(--color-ember);
-  }
-  .btn-primary:active {
-    background-color: var(--color-ember-deep);
-  }
-
-  /* The white button. The default on any dark ground. */
-  .btn-invert {
-    color: var(--color-ink);
-    background-color: var(--color-white);
-  }
-  .btn-invert:hover {
+  .pc-btn--light:hover {
+    border-color: var(--color-white);
     color: var(--color-white);
-    background-color: var(--color-ember);
+    background: rgb(255 255 255 / 0.08);
   }
-  .btn-invert:active {
-    color: var(--color-white);
-    background-color: var(--color-ember-deep);
-  }
-
-  .btn-outline {
-    color: var(--color-ink);
-    background: transparent;
+  /* The one filled button: form submit. */
+  .pc-btn--solid {
     border-color: var(--color-ink);
-  }
-  .btn-outline:hover {
+    background: var(--color-ink);
     color: var(--color-white);
-    background: var(--color-ember);
-    border-color: var(--color-ember);
+  }
+  .pc-btn--solid:hover {
+    border-color: var(--color-navy);
+    background: var(--color-navy);
+    color: var(--color-white);
   }
 
-  /* on a dark ground */
-  .btn-outline-dark {
-    color: var(--color-white);
-    background: transparent;
-    border-color: var(--color-rule-dark);
-  }
-  .btn-outline-dark:hover {
-    color: var(--color-white);
-    background: var(--color-ember);
-    border-color: var(--color-ember);
-  }
-
-  /* THE FOCUS RING. WCAG 2.2 asks for 3:1 against whatever the ring sits
-     on. Solid ink measures 11.4:1 on the page ground; white measures 13.9:1
-     on ink and 9.7:1 on the green band. Two rings cover every ground on the
-     site, and the 2px offset keeps a gap between the ring and a filled
-     button so the ring is never drawn against a colour close to itself. */
-  :where(.btn, a, button, input, textarea, select, [tabindex]):focus-visible {
-    outline: 2px solid var(--color-ink);
-    outline-offset: 2px;
-  }
-  :where(.on-dark)
-    :where(.btn, a, button, input, textarea, select, [tabindex]):focus-visible {
-    outline-color: var(--color-white);
-  }
-
-  /* --- the eyebrow. A 14px label in the muted green, not a pill. The old
-         `.pc-pill` name is kept because a dozen components set it. --- */
+  /* The small round control ("Bio +"). */
   .pc-pill {
     display: inline-flex;
     align-items: center;
-    padding: 0;
-    border-radius: 0;
-    background: transparent;
-    color: var(--color-moss);
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 1.15;
-    letter-spacing: normal;
+    gap: 0.375rem;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--color-grey-mid);
+    border-radius: 999px;
+    font-size: var(--text-fine);
+    line-height: 1.4;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease;
   }
-  .pc-pill-dark {
-    background: transparent;
-    color: var(--color-sage);
+  .pc-pill:hover {
+    border-color: var(--color-blue);
+    color: var(--color-blue);
   }
 
-  /* --- photo frame. Square, no shadow, and NOT desaturated: the portraits
-         and case images carry the only colour on the page. --- */
-  .photo-frame {
-    position: relative;
-    overflow: hidden;
-    border-radius: 0;
-    background: var(--color-photo-ground);
-    box-shadow: none;
+  /* An inline text link inside copy. */
+  .pc-link {
+    text-decoration: underline;
+    text-decoration-color: var(--color-grey-mid);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    transition:
+      color 0.2s ease,
+      text-decoration-color 0.2s ease;
   }
-  .photo-frame > img {
+  .pc-link:hover {
+    color: var(--color-blue);
+    text-decoration-color: currentColor;
+  }
+
+  /* ---- Surfaces -------------------------------------------------- */
+
+  /* The logo card: grey fading to white, ruled along the bottom. */
+  .pc-card {
+    position: relative;
+    display: flex;
+    background: linear-gradient(var(--color-grey-light), var(--color-white));
+    border-bottom: 1px solid var(--color-grey-soft);
+    transition: border-color 0.3s ease;
+  }
+  a.pc-card:hover {
+    border-bottom-color: var(--color-blue);
+  }
+
+  /* A bordered card that turns blue under the pointer (news). */
+  .pc-tile {
+    display: block;
+    border: 1px solid var(--color-grey-mid);
+    border-radius: 4px;
+    transition:
+      color 0.3s ease-in-out,
+      border-color 0.3s ease-in-out;
+  }
+  .pc-tile:hover {
+    border-color: var(--color-blue);
+    color: var(--color-blue);
+  }
+
+  /* ---- Portraits ------------------------------------------------- *
+   *  Every portrait gets the same treatment in CSS, so a photo uploaded
+   *  through the CMS matches the two that ship with the site: greyscale,
+   *  then a navy that rises from the bottom edge. `screen` turns dark
+   *  clothing navy and leaves faces and light shirts alone; the faint
+   *  `multiply` layer under it cools the whole frame by a few percent so
+   *  the grey backdrop is not neutral.
+   * ---------------------------------------------------------------- */
+  .pc-portrait {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: #8f9399;
+    isolation: isolate;
+  }
+  .pc-portrait > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-    filter: none;
+    filter: grayscale(1) contrast(1.04);
+    transition: transform 0.5s var(--ease-out);
+  }
+  .pc-portrait::before,
+  .pc-portrait::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .pc-portrait::before {
+    background: rgb(95 145 234 / 0.14);
+    mix-blend-mode: multiply;
+  }
+  .pc-portrait::after {
+    background: linear-gradient(
+      to top,
+      var(--color-navy-rise) 0%,
+      rgb(31 58 122 / 0.86) 16%,
+      rgb(31 58 122 / 0.35) 40%,
+      rgb(31 58 122 / 0) 62%
+    );
+    mix-blend-mode: screen;
+  }
+  a:hover > .pc-portrait > img,
+  button:hover > .pc-portrait > img,
+  .pc-portrait:hover > img {
+    transform: scale(1.02);
   }
 
-  /* A link that underlines on hover, used through the editorial bands. */
-  .pc-link {
-    color: inherit;
-    text-decoration: none;
-    /* The underline grows in from zero on hover, and it grows in EMBER
-       rather than in the text colour: that is the whole of the accent on
-       an editorial card. */
-    background-image: linear-gradient(var(--color-ember), var(--color-ember));
-    background-size: 0% 1px;
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    transition: background-size 260ms var(--ease-io-attio);
+  /* ---- Long-form copy (news articles, legal pages) ---------------- */
+  .pc-prose {
+    font-size: 1.0625rem;
+    line-height: 1.65;
   }
-  .pc-link:hover {
-    background-size: 100% 1px;
+  .pc-prose > * + * {
+    margin-top: 1.25em;
   }
-
-  /* An editorial card: image, then a muted caption, then a large headline.
-     The whole card is the link target and the headline is what moves. */
-  .pc-card-title {
-    font-size: var(--text-heading-md);
-    line-height: 1.05;
-    font-weight: 400;
-    letter-spacing: normal;
-    text-wrap: balance;
+  .pc-prose h2 {
+    margin-top: 2.2em;
+    font-size: var(--text-title);
+    font-weight: 500;
+    line-height: 1.3;
   }
-  .pc-caption {
-    color: var(--color-moss);
-    font-size: 1.125rem;
-    line-height: 1.375;
+  .pc-prose h3 {
+    margin-top: 1.8em;
+    font-size: var(--text-lead);
+    font-weight: 500;
+    line-height: 1.35;
+  }
+  .pc-prose a {
+    text-decoration: underline;
+    text-decoration-color: var(--color-blue);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+  .pc-prose a:hover {
+    color: var(--color-blue);
+  }
+  .pc-prose ul,
+  .pc-prose ol {
+    padding-left: 1.25em;
+  }
+  .pc-prose ul {
+    list-style: disc;
+  }
+  .pc-prose ol {
+    list-style: decimal;
+  }
+  .pc-prose li + li {
+    margin-top: 0.4em;
+  }
+  .pc-prose blockquote {
+    border-left: 1px solid var(--color-blue);
+    padding-left: 1.25rem;
+    font-size: var(--text-lead);
+    line-height: 1.5;
+  }
+  .pc-prose strong {
+    font-weight: 700;
+  }
+  .pc-prose img {
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+  }
+  .pc-prose hr {
+    border: 0;
+    border-top: 1px solid var(--color-grey-light);
+    margin-block: 2.5em;
+  }
+  .pc-prose code {
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+    background: var(--color-grey-light);
+    font-size: 0.9em;
   }
 }
 
 /* ------------------------------------------------------------------ *
- *  THE ONE WEIGHT, enforced. Deliberately unlayered.
+ *  Reveal on scroll.
  *
- *  Rule 1 at the top of this file says everything is 400. Around 60 files
- *  that predate this system still carry `font-medium`, `font-semibold` and
- *  `font-bold`, and rewriting all of them by hand is both a large diff and
- *  a permanent invitation for one to creep back. Flattening the utilities
- *  themselves settles it in one place: the classes stay valid, they just
- *  stop changing anything.
+ *  Content is visible by default: `opacity: 1` is the floor, and the
+ *  animation is an optional layer on a `view()` scroll timeline, so nothing
+ *  depends on JavaScript, an intersection callback or a running frame loop
+ *  to appear. A browser without scroll timelines, a reader who prefers
+ *  reduced motion and a headless screenshot all get the finished page.
  *
- *  Unlayered so it beats Tailwind's own `@layer utilities` definitions
- *  without `!important`, which would also defeat a legitimate inline
- *  override. Only 400 is loaded anyway (`fonts.ts`), so without this block
- *  those classes would render as SYNTHETIC bold: the browser smears the
- *  400 outlines, which looks worse than either real weight.
- *
- *  Tracking is flattened for the same reason. The reference tracks every
- *  size at `normal`, and the old system set negative tracking on 200-odd
- *  headlines.
- * ------------------------------------------------------------------ */
-.font-medium,
-.font-semibold,
-.font-bold,
-.font-extrabold,
-.font-black {
-  font-weight: 400;
-}
-
-.tracking-tight,
-.tracking-tighter,
-.tracking-wide,
-.tracking-wider,
-.tracking-widest,
-[class*="tracking-["] {
-  letter-spacing: normal;
-}
-
-/* `uppercase` + wide tracking was the old label voice, and it is not in this
-   system: labels are 14px sentence case in the muted green. Neutralising the
-   transform here converts every legacy label without touching the files. */
-.uppercase {
-  text-transform: none;
-}
-
-/* ------------------------------------------------------------------ *
- *  SQUARE AND FLAT, enforced. Same reasoning as the weight block above.
- *
- *  Rules 3 and 4 say no radius and no shadows. The `--radius-*` and
- *  `--shadow-*` theme tokens in the @theme block already flatten every
- *  NAMED utility (`rounded-lg`, `shadow-card`), because those compile to
- *  `var(--radius-lg)` and `var(--shadow-card)`. Three shapes escape that:
- *
- *    - `rounded-full`, which compiles to a literal 9999px, not a token.
- *      Nineteen files that predate this system use it for avatars, status
- *      dots and icon buttons.
- *    - arbitrary values, `rounded-[12px]` and `shadow-[0_2px_6px_...]`,
- *      which compile the literal straight into the rule.
- *    - Tailwind's own `shadow-sm` .. `shadow-2xl` scale, whose variables
- *      are separate from the elevation tokens this design defines.
- *
- *  The attribute selectors catch the arbitrary-value classes, whose names
- *  cannot be enumerated in advance. Unlayered, so they beat the utilities
- *  without `!important`.
- * ------------------------------------------------------------------ */
-.rounded-full,
-[class*="rounded-["] {
-  border-radius: 0;
-}
-
-.shadow-sm,
-.shadow-md,
-.shadow-lg,
-.shadow-xl,
-.shadow-2xl,
-[class*="shadow-["],
-[class*="drop-shadow-["] {
-  box-shadow: none;
-}
-
-/* ------------------------------------------------------------------ *
- *  ENTRANCES. Deliberately unlayered.
- *
- *  These rules sit outside `@layer` on purpose: unlayered declarations beat
- *  every layered one regardless of specificity, so the visible floor below
- *  cannot be undercut by a utility class, a later import or a component's
- *  own opacity rule. Visible is the state that must not be reachable by
- *  accident, and nothing on this page depends on JavaScript to become
- *  visible. Every entrance is CSS and every failure mode is "it appeared
- *  without animating".
+ *  It fades and lifts 12px. `--reveal-delay` (0 to about 0.3) staggers
+ *  siblings; components/motion.tsx sets it.
  * ------------------------------------------------------------------ */
 [data-reveal] {
   opacity: 1;
 }
 
-/* The animation is additive and entirely optional. `view()` needs no
-   observer, no listener and no main-thread work, so there is nothing to
-   miss and nothing to starve. Browsers without scroll driven animations
-   keep the floor and simply show the content.
-
-   THE HEIGHT GUARD. `both` is the right fill mode while the timeline is
-   live, and it is the wrong one when the timeline never becomes live: a
-   viewport as tall as the document gives the entry range zero length, the
-   range never resolves, and every element holds the keyframe's `from`
-   state, which is opacity 0. That is not a hypothetical viewport. It is
-   exactly what a full-page screenshot does (Chrome's captureBeyondViewport,
-   devtools "capture full size screenshot", headless page captures, OG image
-   bots), and it rendered the proof rail, all four band headers, the people
-   band and the whole Europe band blank. `forwards` would fix that case and
-   break the normal one, because a staggered range starts at `entry 21%` and
-   the element would paint at full opacity before snapping to 0.
-
-   So the animation is scoped to viewports a person could actually have.
-   Past 2400px tall there is no reveal to run and the floor above stands.
-   Print gets the same treatment below, for the same reason. */
 @supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) and (max-height: 2400px) {
+  @media (prefers-reduced-motion: no-preference) {
     [data-reveal] {
       animation: pc-reveal 1s linear both;
       animation-timeline: view();
-      animation-range: entry calc(var(--reveal-delay, 0) * 30%) entry 62%;
+      animation-range: entry calc(var(--reveal-delay, 0) * 30%) entry 60%;
     }
   }
 }
 
-/* `Stagger` sets no delay of its own. Its direct children take one, in
-   `--reveal-gap` steps, from their position, so `StaggerItem` needs no
-   index prop and the call sites stay exactly as they are. */
-[data-reveal-stagger] > * {
-  --reveal-delay: 0;
-}
 [data-reveal-stagger] > *:nth-child(2) {
-  --reveal-delay: calc(var(--reveal-gap, 0.07) * 1);
+  --reveal-delay: calc(var(--reveal-gap, 0.08) * 1);
 }
 [data-reveal-stagger] > *:nth-child(3) {
-  --reveal-delay: calc(var(--reveal-gap, 0.07) * 2);
+  --reveal-delay: calc(var(--reveal-gap, 0.08) * 2);
 }
 [data-reveal-stagger] > *:nth-child(4) {
-  --reveal-delay: calc(var(--reveal-gap, 0.07) * 3);
+  --reveal-delay: calc(var(--reveal-gap, 0.08) * 3);
 }
-[data-reveal-stagger] > *:nth-child(5) {
-  --reveal-delay: calc(var(--reveal-gap, 0.07) * 4);
-}
-[data-reveal-stagger] > *:nth-child(6) {
-  --reveal-delay: calc(var(--reveal-gap, 0.07) * 5);
-}
-[data-reveal-stagger] > *:nth-child(n + 7) {
-  --reveal-delay: calc(var(--reveal-gap, 0.07) * 6);
-}
-
-/* --- 2. Above the fold: a plain timed rise ------------------------ *
- *  The hero uses none of the scroll machinery. It is already in view at
- *  load, so it runs one hand staggered time based animation with no
- *  observer, no timeline and no scroll dependency. Blur only, never a
- *  translate: nothing shifts under the reader's eye.
- */
-[data-rise] {
-  animation: pc-rise 700ms var(--ease-out-attio) both;
-}
-[data-rise="0"] {
-  animation-delay: 0ms;
-}
-[data-rise="1"] {
-  animation-delay: 80ms;
-}
-[data-rise="2"] {
-  animation-delay: 160ms;
-}
-[data-rise="3"] {
-  animation-delay: 240ms;
-}
-[data-rise="4"] {
-  animation-delay: 340ms;
+[data-reveal-stagger] > *:nth-child(n + 5) {
+  --reveal-delay: calc(var(--reveal-gap, 0.08) * 4);
 }
 
 @keyframes pc-reveal {
   from {
     opacity: 0;
-    filter: blur(1.5px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
-    filter: none;
-  }
-}
-
-@keyframes pc-rise {
-  from {
-    opacity: 0;
-    filter: blur(1.5px);
-  }
-  to {
-    opacity: 1;
-    filter: none;
-  }
-}
-
-/* Reduced motion cancels both outright rather than clamping them to
-   0.001ms. The global block below does not reset `animation-delay`, so a
-   clamped `[data-rise="4"]` would still hold at opacity 0 for 340ms. */
-@media (prefers-reduced-motion: reduce) {
-  [data-rise],
-  [data-reveal] {
-    animation: none !important;
-    opacity: 1 !important;
-    filter: none !important;
-  }
-}
-
-/* Print and print-to-PDF: no timeline resolves on a paged medium and no
-   entrance is worth a blank page, so both animations are simply off. */
-@media print {
-  [data-rise],
-  [data-reveal] {
-    animation: none !important;
-    opacity: 1 !important;
-    filter: none !important;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
+    transform: none;
   }
 }
 
 /* ------------------------------------------------------------------ *
- *  Rich text (Lexical) rendered on insights & case-study pages
+ *  The signet ring drawing itself in, once, on load. The stroke is laid
+ *  down with a dash offset; under reduced motion it is simply there.
  * ------------------------------------------------------------------ */
-.prose-pc {
-  color: var(--color-ink);
-  font-size: 1.0625rem;
-  line-height: 1.75;
+@media (prefers-reduced-motion: no-preference) {
+  .pc-ring-draw [data-ring-path] {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: pc-ring-draw 2.2s var(--ease-out) 0.15s forwards;
+  }
+  .pc-ring-draw [data-ring-path="small"] {
+    animation-delay: 0.55s;
+    animation-duration: 1.6s;
+  }
 }
-.prose-pc > * + * {
-  margin-top: 1.1em;
+
+@keyframes pc-ring-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
-.prose-pc h2 {
-  font-size: 1.875rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  margin-top: 1.8em;
-  line-height: 1.15;
+
+/* The link that lets a keyboard user jump past the header. */
+.pc-skip {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.5rem 0.875rem;
+  background: var(--color-ink);
+  color: var(--color-white);
+  font-size: var(--text-small);
+  transform: translateY(-200%);
 }
-.prose-pc h3 {
-  font-size: 1.375rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  margin-top: 1.5em;
-}
-.prose-pc a {
-  color: var(--color-lime-soft);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-.prose-pc ul {
-  list-style: disc;
-  padding-left: 1.4em;
-}
-.prose-pc ol {
-  list-style: decimal;
-  padding-left: 1.4em;
-}
-.prose-pc li {
-  margin-top: 0.4em;
-}
-.prose-pc blockquote {
-  border-left: 2px solid var(--color-lime);
-  padding-left: 1em;
-  color: var(--color-ink-soft);
-  font-style: italic;
-}
-.prose-pc strong {
-  font-weight: 600;
-}
-.prose-pc img {
-  border-radius: 1rem;
+.pc-skip:focus {
+  transform: none;
 }
