@@ -10,7 +10,7 @@ export const ogLocaleTag: Record<Locale, string> = {
 };
 
 /** Bump when the share cards in public/og/ are repainted: scrapers key on the URL. */
-const OG_CARD_VERSION = "4";
+const OG_CARD_VERSION = "5";
 
 /** The share card for a locale, as painted by `pnpm generate:og`. */
 export const OG_CARD = { width: 1200, height: 630, type: "image/png" } as const;

@@ -98,5 +98,25 @@
       "en": "Quanty dashboard of carrier performance with shipment counts, booked value and charts.",
       "pl": "Pulpit Quanty z wynikami przewoźników: liczba przesyłek, wartość zleceń i wykresy."
     }
+  },
+  "tms-home-light-en": {
+    "src": "/assets/portfolio/quanty/tms-home-light-en.webp",
+    "width": 2560,
+    "height": 1600,
+    "dominant": "#f8f8f8",
+    "alt": {
+      "en": "The My work screen in Quanty TMS: a greeting, the list of things to do now and today's loadings on a timeline",
+      "pl": "Ekran Moja praca w Quanty TMS: powitanie, lista spraw na teraz i dzisiejsze załadunki na osi czasu"
+    }
+  },
+  "tms-home-light-pl": {
+    "src": "/assets/portfolio/quanty/tms-home-light-pl.webp",
+    "width": 2560,
+    "height": 1600,
+    "dominant": "#f8f8f8",
+    "alt": {
+      "en": "The My work screen in Quanty TMS: a greeting, the list of things to do now and today's loadings on a timeline",
+      "pl": "Ekran Moja praca w Quanty TMS: powitanie, lista spraw na teraz i dzisiejsze załadunki na osi czasu"
+    }
   }
 }

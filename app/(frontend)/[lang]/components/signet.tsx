@@ -147,7 +147,13 @@ export function Wordmark({
   );
 }
 
-/** The full lockup, signet and wordmark, exactly as the logo file draws it. */
+/**
+ * The full lockup, signet and wordmark, exactly as the logo file draws it.
+ *
+ * The letters sit in their own group (`data-logo-word`) so a caller can fade
+ * them without moving the signet: the header does that on the home page's
+ * first screen, where the wordmark already stands inside the ring.
+ */
 export function Logo({
   className,
   title = "Pluscode",
@@ -166,9 +172,11 @@ export function Logo({
     >
       <circle cx={SIGNET.small.cx} cy={SIGNET.small.cy} r={SIGNET.small.r} />
       <path d={SIGNET.bigPath} />
-      {WORDMARK_PATHS.map((d) => (
-        <path key={d.slice(0, 24)} d={d} />
-      ))}
+      <g data-logo-word>
+        {WORDMARK_PATHS.map((d) => (
+          <path key={d.slice(0, 24)} d={d} />
+        ))}
+      </g>
     </svg>
   );
 }

@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import "./globals.css";
-import { orbiter } from "./fonts";
+import { inter, interTight } from "./fonts";
 import SiteHeader from "./components/site-header";
 import SiteFooter from "./components/site-footer";
 import GoogleAnalytics from "./components/google-analytics";
@@ -63,7 +63,7 @@ export default async function LocaleLayout({
   const dict = getDictionary(lang);
 
   return (
-    <html lang={lang} className={`${orbiter.variable} antialiased`}>
+    <html lang={lang} className={`${inter.variable} ${interTight.variable} antialiased`}>
       <body className="min-h-screen bg-white text-ink">
         <a href="#main" className="pc-skip">
           {dict.nav.skip}

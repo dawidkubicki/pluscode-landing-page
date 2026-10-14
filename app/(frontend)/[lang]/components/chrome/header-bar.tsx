@@ -5,7 +5,7 @@ import { useEffect, useSyncExternalStore } from "react";
 import { COMPANY } from "@/lib/company";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import LocaleLink from "../locale-link";
-import { SignetMark } from "../signet";
+import { Logo } from "../signet";
 import { CloseIcon } from "../ui";
 import LanguageSwitch, { pathAfterLocale } from "./language-switch";
 import { NAV_ITEMS, type NavKey } from "./nav-items";
@@ -50,6 +50,11 @@ function currentKey(pathname: string): NavKey | null {
  * The home page's first screen carries the navigation itself on a wide
  * screen, so there the bar stays out of the way until that screen has mostly
  * gone, and is unreachable by keyboard while it is hidden.
+ *
+ * The bar carries the whole logo, signet and wordmark. The one exception is
+ * the top of the home page on a narrow screen: the wordmark already stands
+ * inside the ring there, so the bar shows the signet alone and the letters
+ * fade in as soon as the page moves.
  *
  * The menu is a sibling of the bar, not a child: the bar is moved with a
  * transform, and the panel must not inherit anything from it.
@@ -110,10 +115,15 @@ export default function HeaderBar({ nav }: { nav: Dictionary["nav"] }) {
             href="/"
             aria-label={nav.homeLink}
             className={`-ml-1 inline-flex min-h-11 items-center px-1 transition-colors duration-200 ${
-              scrolled ? "text-navy hover:text-blue" : "text-white"
+              scrolled ? "text-ink hover:text-blue" : "text-white"
             }`}
           >
-            <SignetMark className="h-8 w-auto" />
+            <Logo
+              title={nav.homeLink}
+              className={`h-7 w-auto sm:h-8 [&_[data-logo-word]]:transition-opacity [&_[data-logo-word]]:duration-300 motion-reduce:[&_[data-logo-word]]:transition-none ${
+                isHome && !scrolled ? "[&_[data-logo-word]]:opacity-0" : ""
+              }`}
+            />
           </LocaleLink>
 
           <nav aria-label={nav.primary} className="hidden items-center lg:flex">
@@ -161,7 +171,7 @@ export default function HeaderBar({ nav }: { nav: Dictionary["nav"] }) {
               onClick={close}
               className="-ml-1 inline-flex min-h-11 items-center px-1"
             >
-              <SignetMark className="h-8 w-auto" />
+              <Logo title={nav.homeLink} className="h-7 w-auto sm:h-8" />
             </LocaleLink>
             <button
               type="button"

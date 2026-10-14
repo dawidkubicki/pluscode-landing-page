@@ -2,27 +2,28 @@ import Image from "next/image";
 import { useId, type CSSProperties } from "react";
 import type { Locale } from "@/lib/i18n/config";
 import { Paragraphs } from "../ui";
-import { SIGNET, SignetRing } from "../signet";
+import { SignetRing } from "../signet";
 import { mediaInfo } from "./media";
 
-/* The ring's stroke weight, and so the padding of its viewBox: the tint
-   below is drawn in the same box so the two register exactly. */
+/* The ring's stroke weight, in the drawing's own units. */
 const WEIGHT = 0.24;
-const VIEWBOX = `${-WEIGHT} ${-WEIGHT} ${SIGNET.width + WEIGHT * 2} ${SIGNET.height + WEIGHT * 2}`;
 
 type Vars = CSSProperties & { "--u": string };
 
 /**
- * The mission band: the ice photograph under a cool wash, with the signet
- * laid over it as two darker lenses. The small disc holds the heading and
- * the big disc holds the paragraphs.
+ * The mission band: a mountain photograph under one even shade, with the
+ * signet laid over it as a thin ring and nothing else. The small disc holds
+ * the heading and the big disc holds the paragraphs.
  *
  * The signet is centred on the page. Its own midpoint is the gap between the
  * two discs, so the heading ends just left of the centre line and the
  * paragraphs start just right of it, which is the reference's arrangement.
  *
- * Inside the discs the photograph is tinted until white text clears 4.5:1 on
- * the brightest ice; outside them it stays lighter and reads as a picture.
+ * THE RING HAS NO FILL. The discs are outlines over the photograph, not
+ * panels: the owner asked for the tint inside them to go. So the contrast
+ * the text needs comes from the photograph, which is chosen dark and even,
+ * and from the shade over the whole band, never from a patch behind the
+ * words. A brighter photograph here needs a deeper shade, not a fill.
  * Everything is sized from `--u`, one unit of the signet's drawing (the mark
  * is 44 units tall), so the text boxes stay inside the discs at every width.
  *
@@ -41,7 +42,7 @@ export default function Mission({
   body: string;
 }) {
   const headingId = useId();
-  const photo = mediaInfo("/assets/nature/mission.webp", locale);
+  const photo = mediaInfo("/assets/nature/mission-2.webp", locale);
   const vars: Vars = { "--u": "clamp(15px, 1.18vw, 18.5px)" };
 
   return (
@@ -56,7 +57,7 @@ export default function Mission({
           style={{ backgroundColor: photo.dominant ?? undefined }}
         >
           <Image
-            src="/assets/nature/mission.webp"
+            src="/assets/nature/mission-2.webp"
             alt={photo.alt ?? ""}
             fill
             sizes="100vw"
@@ -66,8 +67,11 @@ export default function Mission({
           />
         </div>
       )}
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-night/75 lg:bg-night/45" />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-navy/25" />
+      {/* The one even shade over the whole band. The photograph is already
+          dark and low in contrast; this only settles its fog so white text
+          holds everywhere, and it is deeper on a narrow screen, where the
+          words run across the full width. */}
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-night/55 lg:bg-night/30" />
 
       {/* On a wide screen the signet is centred in what the fixed header
           leaves of the screen, so the bar never sits on the ring. */}
@@ -77,16 +81,6 @@ export default function Mission({
             aria-hidden="true"
             className="pointer-events-none absolute top-1/2 right-[-58%] aspect-[57.2108/44] w-[185%] -translate-y-1/2 opacity-25 sm:right-[-30%] sm:w-[120%] lg:inset-0 lg:w-auto lg:translate-y-0 lg:opacity-100"
           >
-            <svg
-              viewBox={VIEWBOX}
-              className="absolute inset-0 hidden h-full w-full lg:block"
-              focusable="false"
-            >
-              <g fill="var(--color-night)" fillOpacity="0.58">
-                <circle cx={SIGNET.small.cx} cy={SIGNET.small.cy} r={SIGNET.small.r} />
-                <path d={SIGNET.bigPath} />
-              </g>
-            </svg>
             <SignetRing tone="light" weight={WEIGHT} className="absolute inset-0 h-full w-full" />
           </div>
 

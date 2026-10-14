@@ -32,11 +32,11 @@
   "homePage": {
     "heroTagline": "Creating the software of the future.",
     "missionHeading": "Software that changes the world.",
-    "missionBody": "AI is rewriting what software can do. Most of that software has yet to be built.\n\nPluscode is a software company. We design and build AI-native products, from the first idea to the people who rely on them every day.\n\nWe build few things. We build them well.",
+    "missionBody": "AI is rewriting what software can do. Most of that software has yet to be built.\n\nPluscode is a software company. We design and build AI-native products, from the first idea to the people who rely on them every day.\n\nWe build with care, and we build to last.",
     "portfolioLabel": "Portfolio",
     "portfolioStatement": "We build AI-native products for [documents], [data], [analysis] and [automation].",
-    "peopleHeading": "People",
-    "peopleIntro": "Small by design.",
+    "peopleHeading": "Team",
+    "peopleIntro": "",
     "newsHeading": "News",
     "seoTitle": "Pluscode | Creating the software of the future",
     "seoDescription": "Pluscode is a software company from Poznań, Poland, creating the software of the future with AI. In our portfolio: Quanty, the AI workspace for documents."
@@ -100,8 +100,8 @@
         "Spreadsheets"
       ],
       "logo": "/assets/portfolio/quanty/logo.svg",
-      "image": "/assets/portfolio/quanty/app-sheet.webp",
-      "imageAlt": "The Quanty app showing a spreadsheet of customer orders"
+      "image": "/assets/portfolio/quanty/tms-home-light-en.webp",
+      "imageAlt": "The My work screen in Quanty TMS: a greeting, the list of things to do now and today's loadings on a timeline"
     }
   ],
   "ui": {
@@ -123,7 +123,7 @@
     "noNews": "Nothing here yet.",
     "latest": "Latest",
     "portfolio": "Portfolio",
-    "people": "People",
+    "people": "Team",
     "company": "Company",
     "scroll": "Scroll"
   },

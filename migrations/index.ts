@@ -18,6 +18,7 @@ import * as migration_20260908_170000_announcement_fits_a_phone from './20260908
 import * as migration_20260910_170000_client_logos from './20260910_170000_client_logos';
 import * as migration_20261014_090000_portfolio_and_pages from './20261014_090000_portfolio_and_pages';
 import * as migration_20261014_091000_seed_portfolio_and_pages from './20261014_091000_seed_portfolio_and_pages';
+import * as migration_20261014_120000_team_wording from './20261014_120000_team_wording';
 
 export const migrations = [
   {
@@ -119,5 +120,10 @@ export const migrations = [
     up: migration_20261014_091000_seed_portfolio_and_pages.up,
     down: migration_20261014_091000_seed_portfolio_and_pages.down,
     name: '20261014_091000_seed_portfolio_and_pages',
+  },
+  {
+    up: migration_20261014_120000_team_wording.up,
+    down: migration_20261014_120000_team_wording.down,
+    name: '20261014_120000_team_wording',
   },
 ];

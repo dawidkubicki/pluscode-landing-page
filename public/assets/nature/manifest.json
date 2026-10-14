@@ -1,24 +1,24 @@
 {
   "hero": {
-    "src": "/assets/nature/hero.webp",
+    "src": "/assets/nature/hero-2.webp",
     "width": 2560,
     "height": 1440,
-    "dominant": "#2f3a3e",
-    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAACwAwCdASoYAA4APsFUoksnpKMhsAgA8BgJZwCsACHZlMj6FvSEAAD+J75ThllAxBFImZ5k+HCP1fDWlxN0dTl7Cu6GRlbYfYnY+O1rLvqINoXyRlJcRlaNIAA=",
+    "dominant": "#111e24",
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACQAwCdASoYAA4APsFOoEqnpCMhsAgA8BgJZQCdACHYKjQXrXoAAP7pCGtqx167vLdLEl1vAlAP4ie3KTK5W3xvpUTUQyYIAAA=",
     "alt": {
-      "en": "Aerial view of a dark sea with a line of white breaking surf.",
-      "pl": "Ciemne morze widziane z góry, z pasem białej, załamującej się fali."
+      "en": "Aerial view of a jagged, snow-dusted mountain ridge at dusk above a dark valley.",
+      "pl": "Poszarpana, ośnieżona grań górska o zmierzchu nad ciemną doliną, widziana z powietrza."
     }
   },
   "mission": {
-    "src": "/assets/nature/mission.webp",
+    "src": "/assets/nature/mission-2.webp",
     "width": 2560,
     "height": 1440,
-    "dominant": "#586e77",
-    "blurDataURL": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAABQBACdASoYAA4APsFOoUqnpCMhsAgA8BgJZQC7ACBicRpLjY7TBVS2KMFAAPxyVig+0JtILYHrGf9vHkPbLrnXl2W1mZuOMEb6dBzzfRpFX7KHtGuXQd4uWZj6yXojaOMJZkaaVBIch1fNHsEyZtW6zSv5fMhmtAGCWpb0iT80e7DHAAA=",
+    "dominant": "#0e1c22",
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAwCdASoYAA4APsFSoUsnpKMhsAgA8BgJYwCdAB6OyD8I/4skAAD+9EUZqCw2SXM1ypUeY5HtBEVfyft0CjgtCxftrRoDoAA=",
     "alt": {
-      "en": "Aerial view of pale ice floes drifting on dark teal water.",
-      "pl": "Jasne kry lodowe na ciemnej wodzie, widziane z góry."
+      "en": "Aerial view of a dark conifer forest with fog drifting between the trees.",
+      "pl": "Ciemny las iglasty z mgłą snującą się między drzewami, widziany z góry."
     }
   },
   "about": {
@@ -44,14 +44,14 @@
     }
   },
   "contact": {
-    "src": "/assets/nature/contact.webp",
+    "src": "/assets/nature/contact-2.webp",
     "width": 2560,
     "height": 1440,
-    "dominant": "#182529",
-    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAwCdASoYAA4APsFQoUsnpKMhsAgA8BgJZQCdABrdaD1EswLh3SAA/t6feASbZe1Bsb4DmecKyRTGKu51VP6CcPOrPr1LKKyqhAVd4vx40zoAAAA=",
+    "dominant": "#26363d",
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAwCdASoYAA4APsFUpEqnpSOhsAgA8BgJZQAAWl19vvBJoxUGhMR0AP7vPiBowf6t7zV2DbSPrJtE3PcN3+hbEs6nc8+Sm9zhsDTpIDv9L3scAAA=",
     "alt": {
-      "en": "Aerial view of white surf washing onto a black sand beach.",
-      "pl": "Biała piana fal na plaży z czarnego piasku, widziana z góry."
+      "en": "Aerial view of a dark alpine lake beside grey scree and patches of snow.",
+      "pl": "Ciemne górskie jezioro obok szarego piargu i płatów śniegu, widziane z góry."
     }
   }
 }

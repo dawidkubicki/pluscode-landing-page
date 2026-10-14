@@ -1,18 +1,24 @@
-import { TASA_Orbiter } from "next/font/google";
+import { Inter, Inter_Tight } from "next/font/google";
 
 /**
- * One family for the whole site: TASA Orbiter, the face the reference design
- * is set in. It is a variable font, so 400 (text), 500 (display) and 700
- * (names, the nav) come from a single file per subset.
+ * Two cuts of one design. Inter sets everything that is read: paragraphs,
+ * labels, the navigation. Inter Tight, the same letterforms drawn closer
+ * together for large sizes, sets everything that is looked at: the tagline,
+ * section headings, the statement. Together they are the nearest freely
+ * licensed match for the quiet, tightly spaced grotesque the brief asked for.
  *
+ * Both are variable fonts, so every weight comes from one file per subset.
  * `latin-ext` is required: the site ships Polish.
- *
- * `adjustFontFallback` is off because Next has no metrics for this family and
- * would only warn on every build; the fallback stack is in globals.css.
  */
-export const orbiter = TASA_Orbiter({
-  variable: "--font-orbiter",
+export const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin", "latin-ext"],
   display: "swap",
-  adjustFontFallback: false,
+  axes: ["opsz"],
+});
+
+export const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
 });

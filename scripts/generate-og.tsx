@@ -41,8 +41,8 @@ const GREY_SOFT = "#999999";
 /** The ring's stroke, as SignetRing draws it on a dark ground. */
 const RING_STOPS = [WHITE, "#152644", WHITE];
 
-const HERO = "public/assets/nature/hero.webp";
-const FONT = "scripts/fonts/TASAOrbiter-Regular.ttf";
+const HERO = "public/assets/nature/hero-2.webp";
+const FONT = "scripts/fonts/InterTight-Regular.ttf";
 
 /* The big disc, in card pixels. It sits left of centre and the small disc runs
    off the left edge, as on the hero, which leaves the right half for words. */
@@ -129,7 +129,7 @@ async function render(locale: (typeof LOCALES)[number], background: string, font
           width: "100%",
           height: "100%",
           backgroundColor: NIGHT,
-          fontFamily: "TASA Orbiter",
+          fontFamily: "Inter Tight",
           color: WHITE,
         }}
       >
@@ -241,7 +241,7 @@ async function render(locale: (typeof LOCALES)[number], background: string, font
     {
       width: WIDTH,
       height: HEIGHT,
-      fonts: [{ name: "TASA Orbiter", data: font, weight: 400, style: "normal" }],
+      fonts: [{ name: "Inter Tight", data: font, weight: 400, style: "normal" }],
     },
   );
 

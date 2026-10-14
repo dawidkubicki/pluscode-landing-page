@@ -20,10 +20,13 @@ const NATURE_DIR = path.join(process.cwd(), "public", "assets", "nature");
  * The photograph for a band, or null when the file has not shipped. Read with
  * `fs` because a fresh checkout may build before the imagery exists, and an
  * `<img>` pointing at a missing file would print its alt text across the band.
+ *
+ * The manifest names the file. `/assets/*` is cached for a year as immutable,
+ * so a replaced photograph ships under a new file name (`contact-2.webp`) and
+ * the manifest entry for the band is pointed at it; `<name>.webp` is only the
+ * default for an entry that does not say.
  */
 function readPhoto(name: HeroImage, locale: Locale): Photo | null {
-  if (!fs.existsSync(path.join(NATURE_DIR, `${name}.webp`))) return null;
-
   const photo: Photo = {
     src: `/assets/nature/${name}.webp`,
     alt: "",
@@ -36,6 +39,9 @@ function readPhoto(name: HeroImage, locale: Locale): Photo | null {
     );
     const entry = (manifest as Record<string, Record<string, unknown> | undefined>)[name];
     if (entry) {
+      if (typeof entry.src === "string" && entry.src.startsWith("/assets/nature/")) {
+        photo.src = entry.src;
+      }
       const alt = entry.alt;
       if (typeof alt === "string") photo.alt = alt;
       else if (alt && typeof alt === "object") {
@@ -50,6 +56,7 @@ function readPhoto(name: HeroImage, locale: Locale): Photo | null {
     // No manifest, or one that does not parse: the photograph still shows,
     // over the night ground and without a blur placeholder.
   }
+  if (!fs.existsSync(path.join(NATURE_DIR, path.basename(photo.src)))) return null;
   return photo;
 }
 

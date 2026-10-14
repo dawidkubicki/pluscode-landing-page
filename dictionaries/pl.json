@@ -32,11 +32,11 @@
   "homePage": {
     "heroTagline": "Tworzymy oprogramowanie przyszłości.",
     "missionHeading": "Oprogramowanie, które zmienia świat.",
-    "missionBody": "AI zmienia to, co potrafi oprogramowanie. Większość tego oprogramowania jeszcze nie powstała.\n\nPluscode to firma, która tworzy oprogramowanie. Projektujemy i budujemy produkty oparte na AI, od pierwszego pomysłu po ludzi, którzy polegają na nich każdego dnia.\n\nBudujemy niewiele. Budujemy dobrze.",
+    "missionBody": "AI zmienia to, co potrafi oprogramowanie. Większość tego oprogramowania jeszcze nie powstała.\n\nPluscode to firma, która tworzy oprogramowanie. Projektujemy i budujemy produkty oparte na AI, od pierwszego pomysłu po ludzi, którzy polegają na nich każdego dnia.\n\nBudujemy starannie i na lata.",
     "portfolioLabel": "Portfolio",
     "portfolioStatement": "Budujemy produkty AI do pracy z [dokumentami], [danymi], [analizą] i [automatyzacją].",
-    "peopleHeading": "Ludzie",
-    "peopleIntro": "Mała firma. Z wyboru.",
+    "peopleHeading": "Zespół",
+    "peopleIntro": "",
     "newsHeading": "Aktualności",
     "seoTitle": "Pluscode | Tworzymy oprogramowanie przyszłości",
     "seoDescription": "Pluscode to firma z Poznania, która tworzy oprogramowanie przyszłości oparte na AI. W portfolio: Quanty, przestrzeń robocza AI do pracy z dokumentami."
@@ -100,8 +100,8 @@
         "Arkusze"
       ],
       "logo": "/assets/portfolio/quanty/logo.svg",
-      "image": "/assets/portfolio/quanty/app-sheet.webp",
-      "imageAlt": "Aplikacja Quanty z arkuszem zamówień klientów"
+      "image": "/assets/portfolio/quanty/tms-home-light-pl.webp",
+      "imageAlt": "Ekran Moja praca w Quanty TMS: powitanie, lista spraw na teraz i dzisiejsze załadunki na osi czasu"
     }
   ],
   "ui": {
@@ -123,7 +123,7 @@
     "noNews": "Jeszcze nic tu nie ma.",
     "latest": "Najnowsze",
     "portfolio": "Portfolio",
-    "people": "Ludzie",
+    "people": "Zespół",
     "company": "Firma",
     "scroll": "Przewiń"
   },

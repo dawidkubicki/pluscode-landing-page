@@ -11,9 +11,13 @@ const night = (percent: number) =>
   `color-mix(in srgb, var(--color-night) ${percent}%, transparent)`;
 
 /**
- * The first screen: the aerial photograph fading to night, the signet drawn
+ * The first screen: a mountain ridge at dusk fading to night, the signet drawn
  * large as a thin ring with the wordmark inside its big disc, and the tagline
  * beside it.
+ *
+ * The photograph keeps its ridge in the top third, so it is anchored to the
+ * top edge at every width. On a narrow screen only a slice of its width
+ * shows, and the anchor moves left to keep the tallest massif in it.
  *
  * The ring is placed by the big disc, which takes the part of the
  * reference's circle: on a wide screen it is half the viewport across and
@@ -33,7 +37,7 @@ export default function Hero({
   tagline: string;
   nav: Dictionary["nav"];
 }) {
-  const photo = mediaInfo("/assets/nature/hero.webp", locale);
+  const photo = mediaInfo("/assets/nature/hero-2.webp", locale);
 
   return (
     <section className="relative isolate h-svh min-h-[38.75rem] overflow-hidden bg-night text-white">
@@ -43,12 +47,12 @@ export default function Hero({
           style={{ backgroundColor: photo.dominant ?? undefined }}
         >
           <Image
-            src="/assets/nature/hero.webp"
+            src="/assets/nature/hero-2.webp"
             alt={photo.alt ?? ""}
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[50%_0%]"
+            className="object-cover object-[25%_0%] lg:object-[50%_0%]"
             placeholder={photo.blurDataURL ? "blur" : "empty"}
             blurDataURL={photo.blurDataURL ?? undefined}
           />
